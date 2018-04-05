@@ -1,0 +1,54 @@
+
+Gurobi 7.5.0 (linux64) logging started Mon Sep 11 11:25:45 2017
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 7.5.0 build v7.5.0rc0 (linux64)
+Copyright (c) 2017, Gurobi Optimization, Inc.
+
+Read LP format model from file jssp.lp
+Reading time = 0.02 seconds
+OBJROW: 3375 rows, 1801 columns, 9900 nonzeros
+Optimize a model with 3375 rows, 1801 columns and 9900 nonzeros
+Variable types: 0 continuous, 1801 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+04]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+03]
+  RHS range        [1e+00, 1e+04]
+Presolve time: 0.00s
+
+Explored 0 nodes (0 simplex iterations) in 0.01 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+
+Gurobi 7.5.0 (linux64) logging started Mon Sep 11 11:28:31 2017
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 7.5.0 build v7.5.0rc0 (linux64)
+Copyright (c) 2017, Gurobi Optimization, Inc.
+
+Read LP format model from file jssp.lp
+Reading time = 0.02 seconds
+OBJROW: 3375 rows, 1801 columns, 9900 nonzeros
+Optimize a model with 3375 rows, 1801 columns and 9900 nonzeros
+Variable types: 0 continuous, 1801 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+05]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+03]
+  RHS range        [1e+00, 1e+05]
+Presolve time: 0.00s
+
+Explored 0 nodes (0 simplex iterations) in 0.01 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -

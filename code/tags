@@ -1,0 +1,132 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+CONS_CARDINALITY	./lp.h	48;"	d
+CONS_COVERING	./lp.h	47;"	d
+CONS_FLOW_BIN	./lp.h	51;"	d
+CONS_FLOW_INT	./lp.h	52;"	d
+CONS_FLOW_MX	./lp.h	53;"	d
+CONS_INV_KNAPSACK	./lp.h	50;"	d
+CONS_KNAPSACK	./lp.h	49;"	d
+CONS_NUMBER	./lp.h	56;"	d
+CONS_OTHER	./lp.h	55;"	d
+CONS_PACKING	./lp.h	46;"	d
+CONS_PARTITIONING	./lp.h	45;"	d
+CONS_VBOUND	./lp.h	54;"	d
+LPCB_CUTS	./lp.h	59;"	d
+LPCB_HEUR	./lp.h	60;"	d
+LPC_FLOW	./lp.h	42;"	d
+LPC_GOMORY	./lp.h	35;"	d
+LPC_KNAPSACK	./lp.h	41;"	d
+LPC_L_AND_P	./lp.h	39;"	d
+LPC_MIR	./lp.h	37;"	d
+LPC_REDUCE	./lp.h	36;"	d
+LPC_TWO_MIR	./lp.h	38;"	d
+LPC_ZERO_HALF	./lp.h	40;"	d
+LP_CUT_TYPES	./lp.h	34;"	d
+LP_ERROR	./lp.h	31;"	d
+LP_FEASIBLE	./lp.h	28;"	d
+LP_HEADER	./lp.h	14;"	d
+LP_INFEASIBLE	./lp.h	26;"	d
+LP_INTINFEASIBLE	./lp.h	29;"	d
+LP_MAX	./lp.h	22;"	d
+LP_ME_DEFAULT	./lp.h	16;"	d
+LP_ME_FEASIBILITY	./lp.h	18;"	d
+LP_ME_OPTIMALITY	./lp.h	17;"	d
+LP_MIN	./lp.h	21;"	d
+LP_NO_SOL_FOUND	./lp.h	30;"	d
+LP_OPTIMAL	./lp.h	25;"	d
+LP_UNBOUNDED	./lp.h	27;"	d
+LinearProgram	./lp.h	/^typedef struct _LinearProgram LinearProgram;$/;"	t	typeref:struct:_LinearProgram
+LinearProgramPtr	./lp.h	/^typedef LinearProgram * LinearProgramPtr;$/;"	t
+lp_add_bin_cols	./lp.h	/^void lp_add_bin_cols( LinearProgram *lp, const int count, double *obj, char **name );$/;"	p	signature:( LinearProgram *lp, const int count, double *obj, char **name )
+lp_add_col	./lp.h	/^void lp_add_col( LinearProgram *lp, double obj, double lb, double ub, char integer, char *name, int nz, int *rowIdx, double *rowCoef );$/;"	p	signature:( LinearProgram *lp, double obj, double lb, double ub, char integer, char *name, int nz, int *rowIdx, double *rowCoef )
+lp_add_cols	./lp.h	/^void lp_add_cols( LinearProgram *lp, const int count, double *obj, double *lb, double *ub, char *integer, char **name );$/;"	p	signature:( LinearProgram *lp, const int count, double *obj, double *lb, double *ub, char *integer, char **name )
+lp_add_cols_same_bound	./lp.h	/^void lp_add_cols_same_bound( LinearProgram *lp, const int count, double *obj, double lb, double ub, char *integer, char **name );$/;"	p	signature:( LinearProgram *lp, const int count, double *obj, double lb, double ub, char *integer, char **name )
+lp_add_cut	./lp.h	/^void lp_add_cut( LinearProgram *lp, int nz, int *cutIdx, double *cutCoef, const char *name, char sense, double rhs );$/;"	p	signature:( LinearProgram *lp, int nz, int *cutIdx, double *cutCoef, const char *name, char sense, double rhs )
+lp_add_cutoff	./lp.h	/^void lp_add_cutoff( LinearProgram *lp, double cutoff, char addConstraint );$/;"	p	signature:( LinearProgram *lp, double cutoff, char addConstraint )
+lp_add_row	./lp.h	/^void lp_add_row( LinearProgram *lp, const int nz, int *indexes, double *coefs, const char *name, char sense, const double rhs );$/;"	p	signature:( LinearProgram *lp, const int nz, int *indexes, double *coefs, const char *name, char sense, const double rhs )
+lp_best_bound	./lp.h	/^double lp_best_bound(LinearProgram *lp); \/* best valid bound for the optimal solution obj value found *\/$/;"	p	signature:(LinearProgram *lp)
+lp_cb	./lp.h	/^typedef int (*lp_cb)( LinearProgram *lp, int whereFrom, const int *origCols, LinearProgram *origLP, void *data );$/;"	t
+lp_chg_obj	./lp.h	/^void lp_chg_obj(LinearProgram *lp, int count, int idx[], double obj[] );$/;"	p	signature:(LinearProgram *lp, int count, int idx[], double obj[] )
+lp_clone	./lp.h	/^LinearProgram *lp_clone( LinearProgram *lp );$/;"	p	signature:( LinearProgram *lp )
+lp_close_env	./lp.h	/^void lp_close_env();$/;"	p	signature:()
+lp_col	./lp.h	/^int lp_col( LinearProgram *lp, int col, int *idx, double *coef );$/;"	p	signature:( LinearProgram *lp, int col, int *idx, double *coef )
+lp_col_index	./lp.h	/^int lp_col_index( LinearProgram *lp, const char *name );$/;"	p	signature:( LinearProgram *lp, const char *name )
+lp_col_lb	./lp.h	/^double lp_col_lb( LinearProgram *lp, int col );$/;"	p	signature:( LinearProgram *lp, int col )
+lp_col_name	./lp.h	/^char *lp_col_name( LinearProgram *lp, int col, char *dest );$/;"	p	signature:( LinearProgram *lp, int col, char *dest )
+lp_col_ub	./lp.h	/^double lp_col_ub( LinearProgram *lp, int col );$/;"	p	signature:( LinearProgram *lp, int col )
+lp_cols	./lp.h	/^int lp_cols( LinearProgram *lp );$/;"	p	signature:( LinearProgram *lp )
+lp_cols_by_type	./lp.h	/^void lp_cols_by_type( LinearProgram *lp, int *binaries, int *integers, int *continuous );$/;"	p	signature:( LinearProgram *lp, int *binaries, int *integers, int *continuous )
+lp_create	./lp.h	/^LinearProgram *lp_create();$/;"	p	signature:()
+lp_fix_col	./lp.h	/^void lp_fix_col( LinearProgram *lp, int col, double val );$/;"	p	signature:( LinearProgram *lp, int col, double val )
+lp_fix_mipstart	./lp.h	/^void lp_fix_mipstart( LinearProgram *lp );$/;"	p	signature:( LinearProgram *lp )
+lp_free	./lp.h	/^void lp_free( LinearProgramPtr *lp );$/;"	p	signature:( LinearProgramPtr *lp )
+lp_get_direction	./lp.h	/^int lp_get_direction( LinearProgram *lp );$/;"	p	signature:( LinearProgram *lp )
+lp_get_mip_emphasis	./lp.h	/^int lp_get_mip_emphasis( LinearProgram *lp );$/;"	p	signature:( LinearProgram *lp )
+lp_help_options	./lp.h	/^void lp_help_options( );$/;"	p	signature:( )
+lp_is_binary	./lp.h	/^char lp_is_binary( LinearProgram *lp, const int j );$/;"	p	signature:( LinearProgram *lp, const int j )
+lp_is_integer	./lp.h	/^char lp_is_integer( LinearProgram *lp, const int j );$/;"	p	signature:( LinearProgram *lp, const int j )
+lp_is_mip	./lp.h	/^char lp_is_mip( LinearProgram *lp );$/;"	p	signature:( LinearProgram *lp )
+lp_load_mip_start	./lp.h	/^void lp_load_mip_start(LinearProgram *lp, int count, const char **colNames, const double *colValues);$/;"	p	signature:(LinearProgram *lp, int count, const char **colNames, const double *colValues)
+lp_load_mip_starti	./lp.h	/^void lp_load_mip_starti( LinearProgram *lp, int count, const int *colIndexes, const double *colValues );$/;"	p	signature:( LinearProgram *lp, int count, const int *colIndexes, const double *colValues )
+lp_mipstart_debug	./lp.h	/^void lp_mipstart_debug( LinearProgram *lp );$/;"	p	signature:( LinearProgram *lp )
+lp_num_saved_sols	./lp.h	/^int lp_num_saved_sols( LinearProgram *lp );$/;"	p	signature:( LinearProgram *lp )
+lp_nz	./lp.h	/^int lp_nz( LinearProgram *lp );$/;"	p	signature:( LinearProgram *lp )
+lp_obj_coef	./lp.h	/^const double *lp_obj_coef( LinearProgram *lp );$/;"	p	signature:( LinearProgram *lp )
+lp_obj_value	./lp.h	/^double lp_obj_value(LinearProgram *lp); \/* obj value of best solution found *\/$/;"	p	signature:(LinearProgram *lp)
+lp_optimize	./lp.h	/^int lp_optimize( LinearProgram *lp );$/;"	p	signature:( LinearProgram *lp )
+lp_optimize_as_continuous	./lp.h	/^int lp_optimize_as_continuous( LinearProgram *lp );$/;"	p	signature:( LinearProgram *lp )
+lp_original_colummns	./lp.h	/^int *lp_original_colummns( LinearProgram *lp );$/;"	p	signature:( LinearProgram *lp )
+lp_parse_options	./lp.h	/^void lp_parse_options( LinearProgram *lp, int argc, const char **argv );$/;"	p	signature:( LinearProgram *lp, int argc, const char **argv )
+lp_pre_process	./lp.h	/^LinearProgram *lp_pre_process( LinearProgram *lp );$/;"	p	signature:( LinearProgram *lp )
+lp_read	./lp.h	/^void lp_read( LinearProgram *lp, const char *fileName );$/;"	p	signature:( LinearProgram *lp, const char *fileName )
+lp_read_mip_start	./lp.h	/^int lp_read_mip_start( LinearProgram *lp, const char *fileName );$/;"	p	signature:( LinearProgram *lp, const char *fileName )
+lp_reduced_cost	./lp.h	/^double *lp_reduced_cost( LinearProgram *lp );$/;"	p	signature:( LinearProgram *lp )
+lp_remove_row	./lp.h	/^void lp_remove_row( LinearProgram *lp, int idxRow );$/;"	p	signature:( LinearProgram *lp, int idxRow )
+lp_remove_rows	./lp.h	/^void lp_remove_rows( LinearProgram *lp, int nRows, int *rows );$/;"	p	signature:( LinearProgram *lp, int nRows, int *rows )
+lp_rhs	./lp.h	/^double lp_rhs( LinearProgram *lp, int row );$/;"	p	signature:( LinearProgram *lp, int row )
+lp_row	./lp.h	/^int lp_row( LinearProgram *lp, int row, int *idx, double *coef );$/;"	p	signature:( LinearProgram *lp, int row, int *idx, double *coef )
+lp_row_index	./lp.h	/^int lp_row_index( LinearProgram *lp, const char *name );$/;"	p	signature:( LinearProgram *lp, const char *name )
+lp_row_name	./lp.h	/^char *lp_row_name( LinearProgram *lp, int row, char *dest );$/;"	p	signature:( LinearProgram *lp, int row, char *dest )
+lp_row_price	./lp.h	/^double *lp_row_price( LinearProgram *lp );$/;"	p	signature:( LinearProgram *lp )
+lp_row_slack	./lp.h	/^double *lp_row_slack( LinearProgram *lp );$/;"	p	signature:( LinearProgram *lp )
+lp_row_type	./lp.h	/^int lp_row_type( LinearProgram *lp, const int row );$/;"	p	signature:( LinearProgram *lp, const int row )
+lp_rows	./lp.h	/^int lp_rows( LinearProgram *lp );$/;"	p	signature:( LinearProgram *lp )
+lp_rows_by_type	./lp.h	/^void lp_rows_by_type( LinearProgram *lp, int rtype[] );$/;"	p	signature:( LinearProgram *lp, int rtype[] )
+lp_save_mip_start	./lp.h	/^void lp_save_mip_start( LinearProgram *lp, const char *fileName );$/;"	p	signature:( LinearProgram *lp, const char *fileName )
+lp_saved_sol_obj	./lp.h	/^double lp_saved_sol_obj( LinearProgram *lp, int isol );$/;"	p	signature:( LinearProgram *lp, int isol )
+lp_saved_sol_x	./lp.h	/^double *lp_saved_sol_x( LinearProgram *lp, int isol );$/;"	p	signature:( LinearProgram *lp, int isol )
+lp_sense	./lp.h	/^char lp_sense( LinearProgram *lp, int row );$/;"	p	signature:( LinearProgram *lp, int row )
+lp_set_abs_mip_gap	./lp.h	/^void lp_set_abs_mip_gap( LinearProgram *lp, const double _value );$/;"	p	signature:( LinearProgram *lp, const double _value )
+lp_set_branching_direction	./lp.h	/^void lp_set_branching_direction( LinearProgram *lp, int direction );$/;"	p	signature:( LinearProgram *lp, int direction )
+lp_set_branching_priorities	./lp.h	/^void lp_set_branching_priorities( LinearProgram *lp, int *priorities );$/;"	p	signature:( LinearProgram *lp, int *priorities )
+lp_set_callback	./lp.h	/^void lp_set_callback( LinearProgram *lp, lp_cb callback, void *data );$/;"	p	signature:( LinearProgram *lp, lp_cb callback, void *data )
+lp_set_col_bounds	./lp.h	/^void lp_set_col_bounds( LinearProgram *lp, int col, const double lb, const double ub );$/;"	p	signature:( LinearProgram *lp, int col, const double lb, const double ub )
+lp_set_cuts	./lp.h	/^void lp_set_cuts( LinearProgram *lp, char onOff );$/;"	p	signature:( LinearProgram *lp, char onOff )
+lp_set_direction	./lp.h	/^void lp_set_direction( LinearProgram *lp, const char direction );$/;"	p	signature:( LinearProgram *lp, const char direction )
+lp_set_heur_fp_passes	./lp.h	/^void lp_set_heur_fp_passes( LinearProgram *lp, int passes );$/;"	p	signature:( LinearProgram *lp, int passes )
+lp_set_heur_proximity	./lp.h	/^void lp_set_heur_proximity( LinearProgram *lp, char onOff );$/;"	p	signature:( LinearProgram *lp, char onOff )
+lp_set_integer	./lp.h	/^void lp_set_integer( LinearProgram *lp, int nCols, int cols[] );$/;"	p	signature:( LinearProgram *lp, int nCols, int cols[] )
+lp_set_max_nodes	./lp.h	/^void lp_set_max_nodes( LinearProgram *lp, int _max );$/;"	p	signature:( LinearProgram *lp, int _max )
+lp_set_max_saved_sols	./lp.h	/^void lp_set_max_saved_sols( LinearProgram *lp, int _max );$/;"	p	signature:( LinearProgram *lp, int _max )
+lp_set_max_seconds	./lp.h	/^void lp_set_max_seconds( LinearProgram *lp, int _max );$/;"	p	signature:( LinearProgram *lp, int _max )
+lp_set_max_solutions	./lp.h	/^void lp_set_max_solutions( LinearProgram *lp, int _max );$/;"	p	signature:( LinearProgram *lp, int _max )
+lp_set_mip_emphasis	./lp.h	/^void lp_set_mip_emphasis( LinearProgram *lp, const int mipEmphasis );$/;"	p	signature:( LinearProgram *lp, const int mipEmphasis )
+lp_set_obj	./lp.h	/^void lp_set_obj( LinearProgram *lp, double obj[] );$/;"	p	signature:( LinearProgram *lp, double obj[] )
+lp_set_parallel	./lp.h	/^void lp_set_parallel( LinearProgram *lp, char onOff );$/;"	p	signature:( LinearProgram *lp, char onOff )
+lp_set_print_messages	./lp.h	/^void lp_set_print_messages( LinearProgram *lp, char onOff );$/;"	p	signature:( LinearProgram *lp, char onOff )
+lp_set_rel_mip_gap	./lp.h	/^void lp_set_rel_mip_gap( LinearProgram *lp, const double _value );$/;"	p	signature:( LinearProgram *lp, const double _value )
+lp_set_rhs	./lp.h	/^void lp_set_rhs( LinearProgram *lp, int row, double rhs );$/;"	p	signature:( LinearProgram *lp, int row, double rhs )
+lp_set_sol_in_file_name	./lp.h	/^void lp_set_sol_in_file_name( LinearProgram *lp, const char *sfn );$/;"	p	signature:( LinearProgram *lp, const char *sfn )
+lp_set_sol_out_file_name	./lp.h	/^void lp_set_sol_out_file_name( LinearProgram *lp, const char *sfn );$/;"	p	signature:( LinearProgram *lp, const char *sfn )
+lp_set_store_names	./lp.h	/^void lp_set_store_names( bool store );$/;"	p	signature:( bool store )
+lp_solution_time	./lp.h	/^double lp_solution_time( LinearProgram *lp );$/;"	p	signature:( LinearProgram *lp )
+lp_status_str	./lp.h	/^char *lp_status_str( int status, char *statusStr );$/;"	p	signature:( int status, char *statusStr )
+lp_strengthen_with_cuts	./lp.h	/^int lp_strengthen_with_cuts( LinearProgram *lp, const int maxRoundsCuts[] );$/;"	p	signature:( LinearProgram *lp, const int maxRoundsCuts[] )
+lp_write_lp	./lp.h	/^void lp_write_lp( LinearProgram *lp, const char *fileName );$/;"	p	signature:( LinearProgram *lp, const char *fileName )
+lp_write_sol	./lp.h	/^void lp_write_sol( LinearProgram *lp, const char *fileName );$/;"	p	signature:( LinearProgram *lp, const char *fileName )
+lp_x	./lp.h	/^double *lp_x( LinearProgram *lp );$/;"	p	signature:( LinearProgram *lp )

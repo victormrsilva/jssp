@@ -66,6 +66,9 @@ public:
     // known upper bound
     int ub() const { return ub_; }
 
+    // max time
+    int maxTime() const { return t_; };
+
     // earliest starting time of job on machine
     int est( int j, int i ) const { return est_[j][i]; }
 
@@ -77,6 +80,8 @@ public:
 private:
     int n_;
     int m_;
+
+    int t_; // max time
 
     int ub_;
 

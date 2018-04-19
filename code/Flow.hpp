@@ -1,6 +1,5 @@
 #include "Instance.hpp"
 #include "lp.hpp"
-
 class Flow
 {
 public:
@@ -16,6 +15,11 @@ private:
 
     //std::vector< std::vector< std::vector< int > > > yIdx_;
 
-    //int cIdx_;
+    int cIdx_;
     LinearProgram *mip;
+
+    // std::vector < std::string > x11_color_;
+
+    // void create_x11();
+    void createCompleteGraphDot();
 };

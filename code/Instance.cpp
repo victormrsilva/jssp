@@ -25,15 +25,21 @@ Instance::Instance( const std::string &fileName, int idx ){
         // lst_ = vector< vector< int > >( n_, vector<int>( m_, 0 ) );
 
         cout << "there are " << n() << " jobs and " << m() << " machines." << endl;
+        t_ = 0;
 
         for (int i=0; i < n_; i++){
+            int sum_time = 0;
             getline( ifs, line);
             for (int j = 0; j < m_; j++){
                 int machine,time;
                 ifs >> machine >> time;
                 machines_[i][j] = machine;
                 times_[i][machine] = time; // para espelhar a formulação matemática do gurobi
+                sum_time += time;
                 //ifs >> machines_[i][j] >> times_[i][j];                
+            }
+            if (t_ < sum_time){
+                t_ = sum_time;
             }
         }
 

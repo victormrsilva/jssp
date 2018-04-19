@@ -1,7 +1,8 @@
 #include <string>
 #include <iostream>
 #include "Instance.hpp"
-#include "Compact.hpp"
+//#include "Compact.hpp"
+#include "Flow.hpp"
 
 using namespace std;
 /**
@@ -24,7 +25,7 @@ int main( int argc, char **argv )
 
     inst.saveCmpl("jssp.cdat");
 
-    Compact mip( inst );
+    Flow mip( inst );
 
     return EXIT_SUCCESS;
 }

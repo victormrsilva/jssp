@@ -1,4 +1,4 @@
-#include "Compact.hpp"
+#include "Flow.hpp"
 
 #include <vector>
 #include <string>
@@ -6,7 +6,7 @@
 
 using namespace std;
 
-Compact::Compact( const Instance &_inst ) :
+Flow::Flow( const Instance &_inst ) :
     inst_(_inst)
 {
     mip = lp_create();
@@ -133,7 +133,7 @@ Compact::Compact( const Instance &_inst ) :
     lp_write_lp( mip, "jssp" );
 }
 
-Compact::~Compact()
+Flow::~Flow()
 {
     lp_free( &mip );
 }

@@ -12,8 +12,7 @@ Instance::Instance( const std::string &fileName, int idx ){
 
     string line;
 
-    for ( int ii=0 ; ii<=idx ; ++ii )
-    {
+    for ( int ii=0 ; ii<=idx ; ++ii ){
         getline( ifs, line );
         ifs >> n_ >> m_;
 
@@ -21,28 +20,24 @@ Instance::Instance( const std::string &fileName, int idx ){
         machines_ = vector< vector< int > >( n_, vector<int>( m_, 0 ) );
 
 
-        // est_ = vector< vector< int > >( n_, vector<int>( m_, 0 ) );
-        // lst_ = vector< vector< int > >( n_, vector<int>( m_, 0 ) );
+        est_ = vector< vector< int > >( n_, vector<int>( m_, 0 ) );
+        lst_ = vector< vector< int > >( n_, vector<int>( m_, 0 ) );
 
         cout << "there are " << n() << " jobs and " << m() << " machines." << endl;
-        t_ = 0;
+        t_ = 1; // worse time of completion (all jobs happening simultaniously)
 
         for (int i=0; i < n_; i++){
-            int sum_time = 0;
             getline( ifs, line);
             for (int j = 0; j < m_; j++){
                 int machine,time;
                 ifs >> machine >> time;
                 machines_[i][j] = machine;
                 times_[i][machine] = time; // para espelhar a formulação matemática do gurobi
-                sum_time += time;
+                t_ += time;
                 //ifs >> machines_[i][j] >> times_[i][j];                
             }
-            if (t_ < sum_time){
-                t_ = sum_time;
-            }
         }
-
+    }
     //     int seed, machine, lb;
     //     string tmp;
     //     ifs >> seed >> machine >> lb >> ub_ >> tmp;
@@ -65,31 +60,24 @@ Instance::Instance( const std::string &fileName, int idx ){
     //     getline( ifs, line );
     // }
 
-    // // computing est and lst
-    // for ( int j=0 ; (j<n_) ; ++j )
-    // {
-    //     int t=0;
-    //     for ( int i=0 ; (i<m_) ; ++i )
-    //     {
-    //         int ii = machines_[j][i];
-    //         est_[j][ii] = t;
-    //         t += times_[j][ii];
-    //     }
-    // }
-
-    // for ( int j=0 ; (j<n_) ; ++j )
-    // {
-    //     int t=ub_;
-    //     for ( int i=m_-1 ; (i>=0) ; --i )
-    //     {
-    //         int ii = machines_[j][i];
-    //         t -= times_[j][ii];
-    //         lst_[j][ii] = t;
-    //     }
+    // computing est and lst
+    for ( int j=0 ; (j<n_) ; ++j ){
+        int t=1;
+        for ( int i=0 ; (i<m_) ; ++i ){
+            int mach = machines_[j][i]; // machine in order i for job j
+            est_[j][mach] = t;
+            t += times_[j][mach];
+        }
     }
 
-
-
+    for ( int j=0 ; (j<n_) ; ++j ){
+        int t=t_;
+        for ( int i=m_-1 ; (i>=0) ; --i ){ // start from last
+            int mach = machines_[j][i];
+            t -= times_[j][mach];
+            lst_[j][mach] = t;
+        }
+    }
 
     ifs.close();
 }
@@ -98,13 +86,13 @@ void Instance::saveCmpl( const string fname ) const {
     ofstream out( fname );
 
     out << "%Jobs set <0.."+str(n()-1)+">" << endl;;
-    out << "%Machines set <0.."+str(n()-1)+">" << endl << endl;
+    out << "%Machines set <0.."+str(m()-1)+">" << endl << endl;
 
     out << "%order[Jobs,Machines] < ";
 
     for ( int j=0 ; (j<n()) ; ++j )
     {
-        for ( int i=0 ; (i<n()) ; ++i )
+        for ( int i=0 ; (i<m()) ; ++i )
             out << machine( j, i ) << " ";
         if (j<n()-1) 
             out << endl << "    ";
@@ -117,7 +105,7 @@ void Instance::saveCmpl( const string fname ) const {
 
     for ( int j=0 ; (j<n()) ; ++j )
     {
-        for ( int i=0 ; (i<n()) ; ++i )
+        for ( int i=0 ; (i<m()) ; ++i )
             out << time( j, i ) << " ";
         if (j<n()-1) 
             out << endl << "    ";
@@ -125,6 +113,15 @@ void Instance::saveCmpl( const string fname ) const {
             out << " >" << endl;
     }
     out << endl;
+    out << "MaxTime: " << maxTime() << endl;
+    out << "Job n, Machine m: est lst" << endl;
+    for ( int j=0 ; (j<n()) ; ++j )    {
+        for ( int i=0 ; (i<m()) ; ++i ){
+            out << "Job " << j+1 << ", Machine " << i+1 <<": " << est(j,i) << " " << lst(j,i) << endl;
+        }
+    }
+
+
 
     out.close();
 }

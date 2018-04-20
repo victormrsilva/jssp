@@ -69,10 +69,10 @@ public:
     // max time
     int maxTime() const { return t_; };
 
-    // earliest starting time of job on machine
+    // earliest starting time of job on machine i
     int est( int j, int i ) const { return est_[j][i]; }
 
-    // latest starting job of job on machine
+    // latest starting job of job on machine i
     int lst( int j, int i ) const { return lst_[j][i]; }
 
     // save the cmpl file

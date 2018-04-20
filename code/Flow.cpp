@@ -23,30 +23,85 @@ Flow::Flow( const Instance &_inst ) :
 
     // creating x vars
     for ( int j=0 ; (j<inst_.n()) ; ++j ) {
-        for ( int m0=0 ; (m0<=inst_.m()) ; ++m0 ) {
-            for ( int t0 = 0; t0 < inst_.maxTime()-1; t0++  ) {
-                for (int mf = 1; mf <= inst_.m()+1; mf++){
-                    for (int tf=t0+1; tf < inst_.maxTime(); tf++){
-                        xIdx_[j][m0][t0][mf][tf] = names.size();
-                        if (m0 == mf && tf > t0+1) continue;
-                        if ( (m0 == 0 && mf == inst_.m()+1) )  continue; // variáveis que não entram
-                        if (m0 == 0){
-                            names.push_back( "x("+to_string(j+1)+",i,"+to_string(t0+1)+","+to_string(mf)+","+to_string(tf+1)+")" );
-                        } else
-                        if (mf == inst_.m()+1){
-                            names.push_back( "x("+to_string(j+1)+","+to_string(m0)+","+to_string(t0+1)+",f,"+to_string(tf+1)+")" );
-                        } else {
-                            names.push_back( "x("+to_string(j+1)+","+to_string(m0)+","+to_string(t0+1)+","+to_string(mf)+","+to_string(tf+1)+")" );
-                        }
-                        lb.push_back( 0.0 );
-                        ub.push_back( 1 );
-                        obj.push_back( 0 );
-                        integer.push_back( 1 );
-                    }
+        for ( int m=-1 ; (m < inst_.m()) ; ++m ) {
+            if (m == -1){ // máquina inicial
+                xIdx_[j][m+1][1][inst_.machine(j,0)][1] = names.size();
+                names.push_back( "x("+to_string(j+1)+",i,1,"+to_string(inst_.machine(j,0)+1)+",1)" );
+                lb.push_back( 0.0 );
+                ub.push_back( 1 );
+                obj.push_back( 0 );
+                integer.push_back( 1 );
+                continue;
+            }
+            int m0 = inst_.machine(j,m);
+            int mf = (m == inst_.m()-1 ? inst_.m() : inst_.machine(j,m+1));
+            int dur = inst_.time(j,m0); // duration time for machine m0 in job j
+            for (int t = inst_.est(j,m0); t < inst_.lst(j,m0); t++){
+                
+                if (mf < inst_.m()){
+                    // arc for another machine
+                    xIdx_[j][m0+1][t][mf+1][t+dur] = names.size();
+                    names.push_back( "x("+to_string(j+1)+","+to_string(m0+1)+","+to_string(t)+","+to_string(mf+1)+","+to_string(t+dur)+")" );
+                    lb.push_back( 0.0 );
+                    ub.push_back( 1 );
+                    obj.push_back( 0 );
+                    integer.push_back( 1 );
+                    // arc for same machine (waiting) 
+                    //can only be made in the last moment possible
+                    if (t == inst_.lst(j,m0)-1) continue;
+                    // else
+                    xIdx_[j][m0+1][t][m0+1][t+1] = names.size();
+                    names.push_back( "x("+to_string(j+1)+","+to_string(m0+1)+","+to_string(t)+","+to_string(m0+1)+","+to_string(t+1)+")" );
+                    lb.push_back( 0.0 );
+                    ub.push_back( 1 );
+                    obj.push_back( 0 );
+                    integer.push_back( 1 );
+                } else {
+                    // arc for another machine
+                    xIdx_[j][m0+1][t][mf+1][t+dur] = names.size();
+                    names.push_back( "x("+to_string(j+1)+","+to_string(m0+1)+","+to_string(t)+",f,"+to_string(t+dur)+")" );
+                    lb.push_back( 0.0 );
+                    ub.push_back( 1 );
+                    obj.push_back( 0 );
+                    integer.push_back( 1 );
                 }
             }
         }
     }
+    //         if (m == 0){
+    //             m0 = 0;
+    //             mf = inst_.machine(j,0);
+    //             est = inst_.est(j, inst_.machine(j,0));
+    //             lst = inst_.lst(j, inst_.machine(j,0)));
+    //         } else {
+    //             m0 = 0;
+    //             mf = inst_.machine(j,0);
+    //             est = inst_.est(j, inst_.machine(j,0));
+    //             lst = inst_.lst(j, inst_.machine(j,0)));
+    //         }
+    //         else int m0 = inst_.machine(j,m);
+    //         for ( int t0 = inst_.est(; t0 < inst_.est(j,inst_.machine(j,m0)); t0++  ) {
+    //             for (int tf=t0+1; tf < inst_.lst(j,inst_.machine(j,m0)); tf++){
+    //                     xIdx_[j][m0][t0][mf][tf] = names.size();
+    //                     if (m0 == mf && tf > t0+1) continue;
+    //                     if ( (m0 == 0 && mf == inst_.m()+1) )  continue; // variáveis que não entram
+    //                     if (m0 == 0){
+    //                         names.push_back( "x("+to_string(j+1)+",i,"+to_string(t0+1)+","+to_string(mf)+","+to_string(tf+1)+")" );
+    //                     } else
+    //                     if (mf == inst_.m()+1){
+    //                         names.push_back( "x("+to_string(j+1)+","+to_string(m0)+","+to_string(t0+1)+",f,"+to_string(tf+1)+")" );
+    //                     } else {
+    //                         names.push_back( "x("+to_string(j+1)+","+to_string(m0)+","+to_string(t0+1)+","+to_string(mf)+","+to_string(tf+1)+")" );
+    //                     }
+    //                     lb.push_back( 0.0 );
+    //                     ub.push_back( 1 );
+    //                     obj.push_back( 0 );
+    //                     integer.push_back( 1 );
+
+    //             }
+    //         }
+    //     }
+    // }
     ofstream f;
     f.open ("variables.txt");
     for (string name : names){
@@ -71,49 +126,49 @@ Flow::Flow( const Instance &_inst ) :
     // set of exiting flows
     vector<vector<vector<int>>> exit_flow = vector<vector<vector<int>>>(inst_.m()+1,vector<vector<int>>(inst_.maxTime()));
 
-    for ( int j=0 ; (j<inst_.n()) ; ++j ) {
-        for ( int m0=0 ; (m0<=inst_.m()) ; ++m0 ) {
-            for ( int t0 = 0; t0 < inst_.maxTime()-1; t0++  ) {
-                for (int mf = 1; mf <= inst_.m()+1; mf++){
-                    for (int tf=t0+1; tf < inst_.maxTime(); tf++){
-                        enter_flow[mf][tf].push_back(xIdx_[j][m0][t0][mf][tf]);
-                        exit_flow[m0][t0].push_back(xIdx_[j][m0][t0][mf][tf]);
-                    }
-                }
-            }
-        }
-    }
+    // for ( int j=0 ; (j<inst_.n()) ; ++j ) {
+    //     for ( int m0=0 ; (m0<=inst_.m()) ; ++m0 ) {
+    //         for ( int t0 = 0; t0 < inst_.maxTime()-1; t0++  ) {
+    //             for (int mf = 1; mf <= inst_.m()+1; mf++){
+    //                 for (int tf=t0+1; tf < inst_.maxTime(); tf++){
+    //                     enter_flow[mf][tf].push_back(xIdx_[j][m0][t0][mf][tf]);
+    //                     exit_flow[m0][t0].push_back(xIdx_[j][m0][t0][mf][tf]);
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
 
-    cout << "fluxos criados" << endl;
+    // cout << "fluxos criados" << endl;
 
-    f.open ("exit_flows.txt");
-    for (int mf = 1; mf < inst_.m()+1; mf++){
-        for (int tf=1; tf < inst_.maxTime(); tf++){
-            f << "machine " << mf << " time " << tf << endl;
-            for (int var : exit_flow[mf][tf]){
-                f << names[var] << endl;
-            }
-        }
-    }
-    f.close();
-    cout << "exit_flows criado" << endl;
+    // f.open ("exit_flows.txt");
+    // for (int mf = 1; mf < inst_.m()+1; mf++){
+    //     for (int tf=1; tf < inst_.maxTime(); tf++){
+    //         f << "machine " << mf << " time " << tf << endl;
+    //         for (int var : exit_flow[mf][tf]){
+    //             f << names[var] << endl;
+    //         }
+    //     }
+    // }
+    // f.close();
+    // cout << "exit_flows criado" << endl;
 
-    f.open ("enter_flows.txt");
-    for (int m0 = 0; m0 <= inst_.m(); m0++){
-        for (int t0=0; t0 < inst_.maxTime()-1; t0++){
-            f << "machine " << m0 << " time " << t0 << endl;
-            for (int var : enter_flow[m0][t0]){
-                f << names[var] << endl;
-            }
-        }
-    }
-    f.close();
-    cout << "enter_flows criado" << endl;
+    // f.open ("enter_flows.txt");
+    // for (int m0 = 0; m0 <= inst_.m(); m0++){
+    //     for (int t0=0; t0 < inst_.maxTime()-1; t0++){
+    //         f << "machine " << m0 << " time " << t0 << endl;
+    //         for (int var : enter_flow[m0][t0]){
+    //             f << names[var] << endl;
+    //         }
+    //     }
+    // }
+    // f.close();
+    // cout << "enter_flows criado" << endl;
     createCompleteGraphDot();
 
 
 
-    cout << "variáveis criadas" << endl;
+    cout << "arquivo dot criado" << endl;
 
     // constraint for job on each one of its machines
     // for ( int j=0 ; (j<inst_.n()) ; ++j )
@@ -211,44 +266,90 @@ void Flow::createCompleteGraphDot(){
     f.open ("complete.dot");
 
     f << "digraph complete {" << endl;
-    f << "ratio = \"auto\" ;" << endl;
+    //f << "ratio = \"auto\" ;" << endl;
     f << "rankdir=LR;" << endl << endl;
     for (int m = 0; m <= inst_.m()+1; m++){
-        string mach = to_string(m);
-        if (mach == "0") mach = "i";
-        else if (mach == to_string(inst_.m()+1)) mach = "f";
+        if (m == 0){
+            f << "\"i,1\" [shape=box];" << endl;
+            continue;
+        }
+        string mach;
+        if (mach == to_string(inst_.m()+1)) mach = "f";
+        else mach = to_string(m);
         for (int t = 0; t < inst_.maxTime(); t++){
-            f << "\"" << mach << "," << t+1 << "\" [shape=box, regular=1,style=filled,fillcolor=white];" << endl;
+            f << "\"" << mach << "," << t+1 << "\" [shape=box];" << endl;
         }
     }
-    string mach0,machf;
+
     for ( int j=0 ; (j<inst_.n()) ; ++j ) {
-        for ( int m0=0 ; (m0<=inst_.m()) ; ++m0 ) {
-            mach0 = to_string(m0);
-            if (mach0 == "0") mach0 = "i";
-            for ( int t0 = 0; t0 < inst_.maxTime()-1; t0++  ) {
-                for (int mf = 1; mf <= inst_.m()+1; mf++){
-                    machf = to_string(mf);
-                    if (machf == to_string(inst_.m()+1)) machf = "f";
-                    for (int tf=t0+1; tf < inst_.maxTime(); tf++){
-                        if (m0 == mf && tf > t0+1) continue;
-                        f << "\"" << m0 << "," << t0+1 << "\" -> " << "\"" << mf << "," << tf << "\"" << "[ label=\"x(" << j+1 << "," << mach0 << "," << t0+1 << "," << machf << "," << tf+1 << ")\" ];"<< endl ; // \" color=\"" << x11_color[j] <<
-                    }
+        for ( int m=-1 ; (m < inst_.m()) ; ++m ) {
+            if (m == -1){
+                f << "\"i,1\" -> \"" << inst_.machine(j,0)+1 <<",1\" [ label=\"x(" << j+1 << ",i,1," << inst_.machine(j,0)+1 << ",1)\" ]" << endl;
+                continue;
+            }
+            int m0 = inst_.machine(j,m);
+            int mf = (m == inst_.m()-1 ? inst_.m() : inst_.machine(j,m+1));
+            int dur = inst_.time(j,m0); // duration time for machine m0 in job j
+            for (int t = inst_.est(j,m0); t < inst_.lst(j,m0); t++){
+                if (mf < inst_.m()){
+                    // arc for another machine
+                    f << "\"" << m0+1 << "," << t << "\" -> \"" << mf+1 << "," << t+dur << "\" [ label=\"x(" << j+1 << "," << m0+1 << "," << t << "," << mf+1 << "," << t+dur<<")\" ]" << endl;
+                    // arc for same machine (waiting) 
+                    //can only be made in the last moment possible
+                    if (t == inst_.lst(j,m0)-1) continue;
+                    // else
+                    f << "\"" << m0+1 << "," << t << "\" -> \"" << m0+1 << "," << t+1 << "\" [ label=\"x(" << j+1 << "," << m0+1 << "," << t << "," << m0+1 << "," << t+1<<")\" ]" << endl;
+                } else { // last machine
+                    f << "\"" << m0+1 << "," << t << "\" -> \"f," << t+dur << "\" [ label=\"x(" << j+1 << "," << m0+1 << "," << t << ",f," << t+dur<<")\" ]" << endl;
                 }
             }
         }
     }
 
-    for (int m = 0; m <= inst_.m()+1; m++){
-        string mach = to_string(m);
-        if (mach == "0") mach = "i";
-        else if (mach == to_string(inst_.m()+1)) mach = "f";
+
+    // string mach0,machf;
+    // for ( int j=0 ; (j<inst_.n()) ; ++j ) {
+    //     for ( int m0=0 ; (m0<=inst_.m()) ; ++m0 ) {
+    //         mach0 = to_string(m0);
+    //         if (mach0 == "0") mach0 = "i";
+    //         for ( int t0 = 0; t0 < inst_.maxTime()-1; t0++  ) {
+    //             for (int mf = 1; mf <= inst_.m()+1; mf++){
+    //                 machf = to_string(mf);
+    //                 if (machf == to_string(inst_.m()+1)) machf = "f";
+    //                 for (int tf=t0+1; tf < inst_.maxTime(); tf++){
+    //                     if (m0 == mf && tf > t0+1) continue;
+    //                     f << "\"" << m0 << "," << t0+1 << "\" -> " << "\"" << machf << "," << tf << "\" [ label=\"x(" << j+1 << "," << mach0 << "," << t0+1 << "," << machf << "," << tf+1 << ")\" ];"<< endl ; // \" color=\"" << x11_color[j] <<
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+
+    f << "{rank=same;" << " \"i,1\" }" << endl;
+
+    for (int t = 0; t < inst_.maxTime(); t++){
         f << "{rank=same;";
-        for (int t = 0; t < inst_.maxTime(); t++){
+        for (int m = 1; m <= inst_.m()+1; m++){
+            string mach;
+            if (m == inst_.m()+1) mach = "f";
+            else mach = to_string(m);
+
+            if (m > 1 )
+                f << ",";
             f << " \"" << mach << "," << t+1 << "\"";
         }
         f << "}" << endl;
     }
+    // for (int m = 0; m <= inst_.m()+1; m++){
+    //     string mach = to_string(m);
+    //     if (mach == "0") mach = "i";
+    //     else if (mach == to_string(inst_.m()+1)) mach = "f";
+    //     f << "{rank=same;";
+    //     for (int t = 0; t < inst_.maxTime(); t++){
+    //         f << " \"" << mach << "," << t+1 << "\"";
+    //     }
+    //     f << "}" << endl;
+    // }
     f << "}" << endl;
     f.close();
 }

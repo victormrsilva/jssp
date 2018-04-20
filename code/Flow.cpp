@@ -8,9 +8,30 @@
 
 using namespace std;
 
+int Flow::getXidx(int j, int m0, int t0, int mf, int tf) const{
+    auto it = xIdx_[j][m0].find(t0);
+    if (it == xIdx_[j][m0].end()) return -1;
+    auto it2 = it.second.find(mf);
+    if (it2 == it.second.end()) return -1;
+    auto it3 = it2.second.find(tf);
+    if (it3 == it2.second.end()) return -1;
+    return it3.second; // return value of map tf (number of variable)
+}
+
 Flow::Flow( const Instance &_inst ) :
-    inst_(_inst) {
-    mip = lp_create();
+    inst_(_inst),
+    mip(lp_create()),
+    enter_flow(vector<vector<vector<int>>>(inst_.m()+2,vector<vector<int>>(inst_.maxTime()))),
+    exit_flow(vector<vector<vector<int>>>(inst_.m()+1,vector<vector<int>>(inst_.maxTime()))),
+    process(vector<vector<vector<int>>>(inst_.m()+1,vector<vector<int>>(inst_.maxTime()))),
+    xIdx_(vector<vector<map<map<map<int>>>>> (inst_.n(), vector<map<map<map<int>>>>(inst_.m()+1, map<map<map<int>>>(map<map<int>>(map<int>())))))
+  
+    
+    
+     {
+    
+
+
 
     vector< string > names;
     vector< double > lb;
@@ -18,7 +39,7 @@ Flow::Flow( const Instance &_inst ) :
     vector< double > obj;
     vector< char > integer;
 
-    xIdx_ = vector<vector<vector<vector<vector<int>>>>> (inst_.n(), vector<vector<vector<vector<int>>>>(inst_.m()+1, vector<vector<vector<int>>>(inst_.maxTime(),vector<vector<int>>(inst_.m()+2, vector<int>(inst_.maxTime()))))) ; 
+    
     
 
     // creating x vars
@@ -26,6 +47,7 @@ Flow::Flow( const Instance &_inst ) :
         for ( int m=-1 ; (m < inst_.m()) ; ++m ) {
             if (m == -1){ // máquina inicial
                 xIdx_[j][m+1][1][inst_.machine(j,0)][1] = names.size();
+                exit_flow[0][1].push_back(names.size());
                 names.push_back( "x("+to_string(j+1)+",i,1,"+to_string(inst_.machine(j,0)+1)+",1)" );
                 lb.push_back( 0.0 );
                 ub.push_back( 1 );
@@ -37,10 +59,14 @@ Flow::Flow( const Instance &_inst ) :
             int mf = (m == inst_.m()-1 ? inst_.m() : inst_.machine(j,m+1));
             int dur = inst_.time(j,m0); // duration time for machine m0 in job j
             for (int t = inst_.est(j,m0); t < inst_.lst(j,m0); t++){
-                
                 if (mf < inst_.m()){
                     // arc for another machine
                     xIdx_[j][m0+1][t][mf+1][t+dur] = names.size();
+                    enter_flow[mf+1][t+dur].push_back(names.size());
+                    exit_flow[m0+1][t].push_back(names.size());
+                    for (int tp = t; tp < t+dur; tp++){
+                        proccess[m0+1][tp].push_back(names.size());
+                    }
                     names.push_back( "x("+to_string(j+1)+","+to_string(m0+1)+","+to_string(t)+","+to_string(mf+1)+","+to_string(t+dur)+")" );
                     lb.push_back( 0.0 );
                     ub.push_back( 1 );
@@ -59,6 +85,8 @@ Flow::Flow( const Instance &_inst ) :
                 } else {
                     // arc for another machine
                     xIdx_[j][m0+1][t][mf+1][t+dur] = names.size();
+                    enter_flow[mf+1][t+dur].push_back(names.size());
+                    exit_flow[m0+1][t].push_back(names.size());
                     names.push_back( "x("+to_string(j+1)+","+to_string(m0+1)+","+to_string(t)+",f,"+to_string(t+dur)+")" );
                     lb.push_back( 0.0 );
                     ub.push_back( 1 );
@@ -121,10 +149,6 @@ Flow::Flow( const Instance &_inst ) :
 
     //lp_add_cols( mip, obj, lb, ub, integer, names );
 
-    // set of entering flows
-    vector<vector<vector<int>>> enter_flow = vector<vector<vector<int>>>(inst_.m()+2,vector<vector<int>>(inst_.maxTime()));
-    // set of exiting flows
-    vector<vector<vector<int>>> exit_flow = vector<vector<vector<int>>>(inst_.m()+1,vector<vector<int>>(inst_.maxTime()));
 
     // for ( int j=0 ; (j<inst_.n()) ; ++j ) {
     //     for ( int m0=0 ; (m0<=inst_.m()) ; ++m0 ) {

@@ -34,31 +34,12 @@ Instance::Instance( const std::string &fileName, int idx ){
                 machines_[i][j] = machine;
                 times_[i][machine] = time; // para espelhar a formulação matemática do gurobi
                 t_ += time;
-                //ifs >> machines_[i][j] >> times_[i][j];                
             }
         }
     }
-    //     int seed, machine, lb;
-    //     string tmp;
-    //     ifs >> seed >> machine >> lb >> ub_ >> tmp;
 
-    //     for ( int i=0 ; (i<n_) ; ++i )
-    //         for ( int j=0 ; (j<m_) ; ++j )
-    //             ifs >> times_[i][j];
+    t_ = 10;
 
-    //     ifs >> tmp;
-
-
-    //     for ( int i=0 ; (i<n_) ; ++i )
-    //     {
-    //         for ( int j=0 ; (j<m_) ; ++j )
-    //         {
-    //             ifs >> machines_[i][j];
-    //             --machines_[i][j];
-    //         }
-    //     }
-    //     getline( ifs, line );
-    // }
 
     // computing est and lst
     for ( int j=0 ; (j<n_) ; ++j ){

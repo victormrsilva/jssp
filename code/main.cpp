@@ -25,6 +25,8 @@ int main( int argc, char **argv )
 
     inst.saveCmpl("jssp.cdat");
 
+    cout << inst.m() << " " << inst.n() << endl;
+
     Flow mip( inst );
 
     return EXIT_SUCCESS;

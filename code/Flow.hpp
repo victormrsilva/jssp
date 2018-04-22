@@ -21,9 +21,9 @@ private:
     void createCompleteGraphDot();
 
       // set of entering flows
-    std::vector<std::vector<std::vector<int>>> enter_flow;
+    std::vector<std::vector<std::vector<std::vector<int>>>> enter_flow;
     // set of exiting flows
-    std::vector<std::vector<std::vector<int>>> exit_flow;
+    std::vector<std::vector<std::vector<std::vector<int>>>> exit_flow;
     // proccessing jobs flows
     std::vector<std::vector<std::vector<std::vector<int>>>> process;
 

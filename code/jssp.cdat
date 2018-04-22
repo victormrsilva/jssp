@@ -1,22 +1,55 @@
-%Jobs set <0..2>
-%Machines set <0..2>
+%Jobs set <0..5>
+%Machines set <0..5>
 
-%order[Jobs,Machines] < 2 0 1 
-    1 2 0 
-    2 1 0  >
+%order[Jobs,Machines] < 2 0 1 3 5 4 
+    1 2 4 5 0 3 
+    2 3 5 0 1 4 
+    1 0 2 3 4 5 
+    2 1 4 5 0 3 
+    1 3 5 0 4 2  >
 
-%time[Jobs,Machines] < 1 2 2 
-    2 1 2 
-    1 2 1  >
+%time[Jobs,Machines] < 3 6 1 7 6 3 
+    10 8 5 4 10 10 
+    9 1 5 4 7 8 
+    5 5 5 3 8 9 
+    3 3 9 1 5 4 
+    10 3 1 3 4 9  >
 
-MaxTime: 10
+MaxTime: 60
 Job n, Machine m: est lst
-Job 1, Machine 1: 3 7
-Job 1, Machine 2: 4 8
-Job 1, Machine 3: 1 5
-Job 2, Machine 1: 4 8
-Job 2, Machine 2: 1 5
-Job 2, Machine 3: 2 6
-Job 3, Machine 1: 4 9
-Job 3, Machine 2: 2 7
-Job 3, Machine 3: 1 6
+Job 1, Machine 1: 2 35
+Job 1, Machine 2: 5 38
+Job 1, Machine 3: 1 34
+Job 1, Machine 4: 11 44
+Job 1, Machine 5: 21 54
+Job 1, Machine 6: 18 51
+Job 2, Machine 1: 34 46
+Job 2, Machine 2: 1 13
+Job 2, Machine 3: 9 21
+Job 2, Machine 4: 44 56
+Job 2, Machine 5: 14 26
+Job 2, Machine 6: 24 36
+Job 3, Machine 1: 18 43
+Job 3, Machine 2: 27 52
+Job 3, Machine 3: 1 26
+Job 3, Machine 4: 6 31
+Job 3, Machine 5: 28 53
+Job 3, Machine 6: 10 35
+Job 4, Machine 1: 6 30
+Job 4, Machine 2: 1 25
+Job 4, Machine 3: 11 35
+Job 4, Machine 4: 16 40
+Job 4, Machine 5: 19 43
+Job 4, Machine 6: 27 51
+Job 5, Machine 1: 22 56
+Job 5, Machine 2: 10 44
+Job 5, Machine 3: 1 35
+Job 5, Machine 4: 25 59
+Job 5, Machine 5: 13 47
+Job 5, Machine 6: 18 52
+Job 6, Machine 1: 16 45
+Job 6, Machine 2: 1 30
+Job 6, Machine 3: 30 59
+Job 6, Machine 4: 4 33
+Job 6, Machine 5: 26 55
+Job 6, Machine 6: 7 36

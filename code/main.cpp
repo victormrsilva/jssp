@@ -6,7 +6,7 @@
 
 using namespace std;
 /**
- * @brief initialization: jssp instanceFile instanceNum. instanceFile is the name of the instance. instanceNum is the number of instances in the file
+ * @brief initialization: jssp instanceFile time. instanceFile is the name of the instance. time is the time of reference. 0 means no time and thus it will be calculated
  * 
  * 
  * @param argc 

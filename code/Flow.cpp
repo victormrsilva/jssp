@@ -23,8 +23,8 @@ Flow::Flow( const Instance &_inst ) :
     inst_(_inst),
     mip(lp_create()),
     xIdx_(vector< vector< map< int, map< int, map< int, int >>>>> (inst_.n(), vector< map< int, map< int, map< int, int >>>>(inst_.m()+1))),
-    enter_flow(vector<vector<vector<int>>>(inst_.m()+2+inst_.n(),vector<vector<int>>(inst_.maxTime()))),
-    exit_flow(vector<vector<vector<int>>>(inst_.m()+1,vector<vector<int>>(inst_.maxTime()))),
+    enter_flow(vector<vector<vector<vector<int>>>>(inst_.n(),vector<vector<vector<int>>>(inst_.m()+2+inst_.n(),vector<vector<int>>(inst_.maxTime())))),
+    exit_flow(vector<vector<vector<vector<int>>>>(inst_.n(),vector<vector<vector<int>>>(inst_.m()+1,vector<vector<int>>(inst_.maxTime())))),
     process(vector<vector<vector<vector<int>>>>(inst_.n(),(vector<vector<vector<int>>>(inst_.m()+1,vector<vector<int>>(inst_.maxTime()))))) {
     
     vector< string > names;
@@ -39,8 +39,8 @@ Flow::Flow( const Instance &_inst ) :
             if (m == -1){ // máquina inicial
                 
                 xIdx_[j][m+1][1][inst_.machine(j,0)+1][1] = names.size();
-                exit_flow[0][j].push_back(names.size());
-                enter_flow[inst_.machine(j,0)+1][1].push_back(names.size());
+                exit_flow[j][0][j].push_back(names.size());
+                enter_flow[j][inst_.machine(j,0)+1][1].push_back(names.size());
                 names.push_back( "x("+to_string(j+1)+",i,1,"+to_string(inst_.machine(j,0)+1)+",1)" );
                 lb.push_back( 0.0 );
                 ub.push_back( 1 );
@@ -55,8 +55,8 @@ Flow::Flow( const Instance &_inst ) :
                 if (mf < inst_.m()){
                     // arc for another machine
                     xIdx_[j][m0+1][t][mf+1][t+dur] = names.size();
-                    enter_flow[mf+1][t+dur].push_back(names.size());
-                    exit_flow[m0+1][t].push_back(names.size());
+                    enter_flow[j][mf+1][t+dur].push_back(names.size());
+                    exit_flow[j][m0+1][t].push_back(names.size());
                     for (int tp = t; tp < t+dur; tp++){
                         process[j][m0+1][tp].push_back(names.size());
                     }
@@ -70,8 +70,8 @@ Flow::Flow( const Instance &_inst ) :
                     if (t == inst_.lst(j,m0)-1) continue;
                     // else
                     xIdx_[j][m0+1][t][m0+1][t+1] = names.size();
-                    enter_flow[m0+1][t+1].push_back(names.size());
-                    exit_flow[m0+1][t].push_back(names.size());
+                    enter_flow[j][m0+1][t+1].push_back(names.size());
+                    exit_flow[j][m0+1][t].push_back(names.size());
                     names.push_back( "x("+to_string(j+1)+","+to_string(m0+1)+","+to_string(t)+","+to_string(m0+1)+","+to_string(t+1)+")" );
                     lb.push_back( 0.0 );
                     ub.push_back( 1 );
@@ -79,8 +79,8 @@ Flow::Flow( const Instance &_inst ) :
                     integer.push_back( 1 );
                 } else { // conclusion machine f
                     xIdx_[j][m0+1][t][mf+1][t+dur] = names.size();
-                    enter_flow[mf+1+j][t+dur].push_back(names.size());
-                    exit_flow[m0+1][t].push_back(names.size());
+                    enter_flow[j][mf+1+j][t+dur].push_back(names.size());
+                    exit_flow[j][m0+1][t].push_back(names.size());
                     for (int tp = t; tp < t+dur; tp++){
                         process[j][m0+1][tp].push_back(names.size());
                     }
@@ -114,12 +114,14 @@ Flow::Flow( const Instance &_inst ) :
     lp_add_cols( mip, obj, lb, ub, integer, names );
 
     f.open ("exit_flows.txt");
-    for (int tf=1; tf < inst_.maxTime(); tf++){
-        for (int mf = 0; mf < inst_.m()+1; mf++){
-        
-            f << "machine " << mf << " time " << tf << endl;
-            for (int var : exit_flow[mf][tf]){
-                f << names[var] << endl;
+    for (int j = 0; j < inst_.n(); j++){
+        for (int tf=1; tf < inst_.maxTime(); tf++){
+            for (int mf = 0; mf < inst_.m()+1; mf++){
+            
+                f << "machine " << mf << " time " << tf << endl;
+                for (int var : exit_flow[j][mf][tf]){
+                    f << names[var] << endl;
+                }
             }
         }
     }
@@ -127,12 +129,14 @@ Flow::Flow( const Instance &_inst ) :
     cout << "exit_flows criado" << endl;
 
     f.open ("enter_flows.txt");
-    for (int t0=1; t0 < inst_.maxTime()-1; t0++){
-        for (int m0 = 0; m0 <= inst_.m()+1; m0++){
-        
-            f << "machine " << m0 << " time " << t0 << endl;
-            for (int var : enter_flow[m0][t0]){
-                f << names[var] << endl;
+    for (int j = 0; j < inst_.n(); j++){
+        for (int t0=1; t0 < inst_.maxTime()-1; t0++){
+            for (int m0 = 0; m0 <= inst_.m()+1; m0++){
+            
+                f << "machine " << m0 << " time " << t0 << endl;
+                for (int var : enter_flow[j][m0][t0]){
+                    f << names[var] << endl;
+                }
             }
         }
     }
@@ -160,7 +164,7 @@ Flow::Flow( const Instance &_inst ) :
     for (int j = 0; j < inst_.n(); j++){
         vector< int > idx;
         vector< double > coef;
-        for (int var : exit_flow[0][j]){
+        for (int var : exit_flow[j][0][j]){
             idx.push_back( var );
             coef.push_back( -1.0 );
         }
@@ -173,30 +177,35 @@ Flow::Flow( const Instance &_inst ) :
         vector< int > idx;
         vector< double > coef;
         for (int t = 1; t < inst_.maxTime(); t++){
-            for (int var : enter_flow[inst_.m()+1+j][t]){
+            for (int var : enter_flow[j][inst_.m()+1+j][t]){
                 idx.push_back( var );
                 coef.push_back( 1.0 );
             }
         }
-        lp_add_row( mip, idx, coef, "final_flow("+to_string(j)+")", 'E', 1.0 );
+
+        if (idx.size() != 0){
+            lp_add_row( mip, idx, coef, "final_flow("+to_string(j)+")", 'E', 1.0 );
+        }
     }
     cout << "final flow constraints ok" << endl;
     // flow constraints
-    for ( int t=0 ; (t<inst_.maxTime()) ; ++t ) {
-        for ( int m=1 ; (m<=inst_.m()) ; ++m ) {
-            vector< int > idx;
-            vector< double > coef;
-            for (int var : enter_flow[m][t]){
-                idx.push_back( var );
-                coef.push_back( 1.0 );
-            }
-            for (int var : exit_flow[m][t]){
-                idx.push_back( var );
-                coef.push_back( -1.0 );
-            }
+    for (int j = 0; j < inst_.n(); j++){
+        for ( int t=0 ; (t<inst_.maxTime()) ; ++t ) {
+            for ( int m=1 ; (m<=inst_.m()) ; ++m ) {
+                vector< int > idx;
+                vector< double > coef;
+                for (int var : enter_flow[j][m][t]){
+                    idx.push_back( var );
+                    coef.push_back( 1.0 );
+                }
+                for (int var : exit_flow[j][m][t]){
+                    idx.push_back( var );
+                    coef.push_back( -1.0 );
+                }
 
-            if (idx.size() != 0){
-                lp_add_row( mip, idx, coef, "flow("+to_string(m)+","+to_string(t)+")", 'E', 0.0 );
+                if (idx.size() != 0){
+                    lp_add_row( mip, idx, coef, "flow("+to_string(j+1)+","+to_string(m)+","+to_string(t)+")", 'E', 0.0 );
+                }
             }
         }
     }
@@ -231,15 +240,11 @@ Flow::Flow( const Instance &_inst ) :
         idx.push_back( cIdx_ );
         coef.push_back( 1.0 );
 
-        for ( int t0=0 ; (t0<inst_.maxTime()) ; ++t0 ) {
-
-            for ( int m=0 ; (m<=inst_.m()) ; ++m ) {
-                for ( int tf=0 ; (tf<=inst_.maxTime()) ; ++tf ) {
-                    if (getXidx(j,m,t0,inst_.m()+1,tf) != -1){
-                        idx.push_back( xIdx_[j][m][t0][inst_.m()+1][tf] );
-                        coef.push_back( -tf );
-                    }
-                }
+        for (int t = 1; t < inst_.maxTime(); t++){
+            
+            for (int var : enter_flow[j][inst_.m()+1+j][t]){
+                idx.push_back( var );
+                coef.push_back( -t );
             }
         }
 

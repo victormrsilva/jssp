@@ -6,13 +6,12 @@ using namespace std;
 
 #define str(a) to_string(a)
 
-Instance::Instance( const std::string &fileName, int idx ){
+Instance::Instance( const std::string &fileName, int time ){
     ifstream ifs;
     ifs.open( fileName.c_str() );
 
     string line;
 
-    for ( int ii=0 ; ii<=idx ; ++ii ){
         getline( ifs, line );
         ifs >> n_ >> m_;
 
@@ -24,7 +23,16 @@ Instance::Instance( const std::string &fileName, int idx ){
         lst_ = vector< vector< int > >( n_, vector<int>( m_, 0 ) );
 
         cout << "there are " << n() << " jobs and " << m() << " machines." << endl;
-        t_ = 1; // worse time of completion (all jobs happening simultaniously)
+        bool given_time = false;
+        if (time == 0){
+            t_ = 1; // worse time of completion (all jobs happening simultaniously)
+            given_time = false;
+        } else {
+            t_ = time;
+            given_time = true;
+        }
+            
+        
 
         for (int i=0; i < n_; i++){
             getline( ifs, line);
@@ -33,12 +41,12 @@ Instance::Instance( const std::string &fileName, int idx ){
                 ifs >> machine >> time;
                 machines_[i][j] = machine;
                 times_[i][machine] = time; // para espelhar a formulação matemática do gurobi
-                t_ += time;
+                if (!given_time) t_ += time;
             }
         }
-    }
+    
 
-    t_ = 10;
+    
 
 
     // computing est and lst

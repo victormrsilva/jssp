@@ -231,18 +231,14 @@ Flow::Flow( const Instance &_inst ) :
         idx.push_back( cIdx_ );
         coef.push_back( 1.0 );
 
-        for ( int t=0 ; (t<inst_.maxTime()) ; ++t ) {
+        for ( int t0=0 ; (t0<inst_.maxTime()) ; ++t0 ) {
 
             for ( int m=0 ; (m<=inst_.m()) ; ++m ) {
-                int cf = 1;
-                for( int var : process[j][m][t]){
-                    if (find(idx.begin(), idx.end(), var) != idx.end()){
-                        cf++;
-                        continue;
+                for ( int tf=0 ; (tf<=inst_.maxTime()) ; ++tf ) {
+                    if (getXidx(j,m,t0,inst_.m()+1,tf) != -1){
+                        idx.push_back( xIdx_[j][m][t0][inst_.m()+1][tf] );
+                        coef.push_back( -tf );
                     }
-                    idx.push_back( var );
-                    coef.push_back( -1*cf );
-
                 }
             }
         }

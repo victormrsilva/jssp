@@ -51,7 +51,7 @@ Instance::Instance( const std::string &fileName, int time ){
 
     // computing est and lst
     for ( int j=0 ; (j<n_) ; ++j ){
-        int t=1;
+        int t=0;
         for ( int i=0 ; (i<m_) ; ++i ){
             int mach = machines_[j][i]; // machine in order i for job j
             est_[j][mach] = t;

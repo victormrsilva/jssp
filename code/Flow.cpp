@@ -38,10 +38,10 @@ Flow::Flow( const Instance &_inst ) :
         for ( int m=-1 ; (m < inst_.m()) ; ++m ) {
             if (m == -1){ // máquina inicial
                 
-                xIdx_[j][m+1][1][inst_.machine(j,0)+1][1] = names.size();
+                xIdx_[j][m+1][0][inst_.machine(j,0)+1][0] = names.size();
                 exit_flow[j][0][j].push_back(names.size());
-                enter_flow[j][inst_.machine(j,0)+1][1].push_back(names.size());
-                names.push_back( "x("+to_string(j+1)+",i,1,"+to_string(inst_.machine(j,0)+1)+",1)" );
+                enter_flow[j][inst_.machine(j,0)+1][0].push_back(names.size());
+                names.push_back( "x("+to_string(j+1)+",i,0,"+to_string(inst_.machine(j,0)+1)+",0)" );
                 lb.push_back( 0.0 );
                 ub.push_back( 1 );
                 obj.push_back( 0 );
@@ -55,6 +55,7 @@ Flow::Flow( const Instance &_inst ) :
                 if (mf < inst_.m()){
                     // arc for another machine
                     xIdx_[j][m0+1][t][mf+1][t+dur] = names.size();
+                    //cout << j << " " << m0+1 << " " << t << " " << mf+1 << " " << t+dur << endl;
                     enter_flow[j][mf+1][t+dur].push_back(names.size());
                     exit_flow[j][m0+1][t].push_back(names.size());
                     for (int tp = t; tp < t+dur; tp++){
@@ -72,6 +73,7 @@ Flow::Flow( const Instance &_inst ) :
                     xIdx_[j][m0+1][t][m0+1][t+1] = names.size();
                     enter_flow[j][m0+1][t+1].push_back(names.size());
                     exit_flow[j][m0+1][t].push_back(names.size());
+                    //cout << j << " " << m0+1 << " " << t << " " << m0+1 << " " << t+1 << endl;
                     names.push_back( "x("+to_string(j+1)+","+to_string(m0+1)+","+to_string(t)+","+to_string(m0+1)+","+to_string(t+1)+")" );
                     lb.push_back( 0.0 );
                     ub.push_back( 1 );
@@ -85,6 +87,16 @@ Flow::Flow( const Instance &_inst ) :
                         process[j][m0+1][tp].push_back(names.size());
                     }
                     names.push_back( "x("+to_string(j+1)+","+to_string(m0+1)+","+to_string(t)+",f,"+to_string(t+dur)+")" );
+                    lb.push_back( 0.0 );
+                    ub.push_back( 1 );
+                    obj.push_back( 0 );
+                    integer.push_back( 1 );
+                    
+                    xIdx_[j][m0+1][t][m0+1][t+1] = names.size();
+                    enter_flow[j][m0+1][t+1].push_back(names.size());
+                    exit_flow[j][m0+1][t].push_back(names.size());
+                    //cout << j << " " << m0+1 << " " << t << " " << m0+1 << " " << t+1 << endl;
+                    names.push_back( "x("+to_string(j+1)+","+to_string(m0+1)+","+to_string(t)+","+to_string(m0+1)+","+to_string(t+1)+")" );
                     lb.push_back( 0.0 );
                     ub.push_back( 1 );
                     obj.push_back( 0 );
@@ -115,7 +127,7 @@ Flow::Flow( const Instance &_inst ) :
 
     f.open ("exit_flows.txt");
     for (int j = 0; j < inst_.n(); j++){
-        for (int tf=1; tf < inst_.maxTime(); tf++){
+        for (int tf=0; tf < inst_.maxTime(); tf++){
             for (int mf = 0; mf < inst_.m()+1; mf++){
             
                 f << "machine " << mf << " time " << tf << endl;
@@ -130,7 +142,7 @@ Flow::Flow( const Instance &_inst ) :
 
     f.open ("enter_flows.txt");
     for (int j = 0; j < inst_.n(); j++){
-        for (int t0=1; t0 < inst_.maxTime()-1; t0++){
+        for (int t0=0; t0 < inst_.maxTime()-1; t0++){
             for (int m0 = 0; m0 <= inst_.m()+1; m0++){
             
                 f << "machine " << m0 << " time " << t0 << endl;
@@ -144,7 +156,7 @@ Flow::Flow( const Instance &_inst ) :
     cout << "enter_flows criado" << endl;
 
     f.open ("processing_machines.txt");
-    for (int t0=1; t0 < inst_.maxTime()-1; t0++){
+    for (int t0=0; t0 < inst_.maxTime()-1; t0++){
         for (int m0 = 0; m0 <= inst_.m(); m0++){
         
             f << "machine " << m0 << " time " << t0 << endl;
@@ -251,6 +263,229 @@ Flow::Flow( const Instance &_inst ) :
         lp_add_row( mip, idx, coef, "fin("+to_string(j+1)+")", 'G', 0 );
     }
     cout << "end constraints created" << endl;
+
+// restrições opt
+    vector< int > idx;
+    vector< double > coef;
+
+    idx.push_back( xIdx_[0][1][6][2][6+inst_.time(0,0)] );
+    coef.push_back( 1.0 );
+    lp_add_row( mip, idx, coef, "opt(1,1)", 'E', 1 );
+    idx.clear();
+    coef.clear();
+
+    idx.push_back( xIdx_[0][2][25][4][25+inst_.time(0,1)] );
+    coef.push_back( 1.0 );
+    lp_add_row( mip, idx, coef, "opt(1,2)", 'E', 1 );
+    idx.clear();
+    coef.clear();
+
+    idx.push_back( xIdx_[0][3][5][1][5+inst_.time(0,2)] );
+    coef.push_back( 1.0 );
+    lp_add_row( mip, idx, coef, "opt(1,3)", 'E', 1 );
+    idx.clear();
+    coef.clear();
+
+    idx.push_back( xIdx_[0][4][31][6][31+inst_.time(0,3)] );
+    coef.push_back( 1.0 );
+    lp_add_row( mip, idx, coef, "opt(1,4)", 'E', 1 );
+    idx.clear();
+    coef.clear();
+
+    idx.push_back( xIdx_[0][5][42][7][42+inst_.time(0,4)] );
+    coef.push_back( 1.0 );
+    lp_add_row( mip, idx, coef, "opt(1,5)", 'E', 1 );
+    idx.clear();
+    coef.clear();
+
+    idx.push_back( xIdx_[0][6][38][5][38+inst_.time(0,5)] );
+    coef.push_back( 1.0 );
+    lp_add_row( mip, idx, coef, "opt(1,6)", 'E', 1 );
+    idx.clear();
+    coef.clear();
+
+    idx.push_back( xIdx_[1][1][38][4][38+inst_.time(1,0)] );
+    coef.push_back( 1.0 );
+    lp_add_row( mip, idx, coef, "opt(2,1)", 'E', 1 );
+    idx.clear();
+    coef.clear();
+
+    idx.push_back( xIdx_[1][2][0][3][0+inst_.time(1,1)] );
+    coef.push_back( 1.0 );
+    lp_add_row( mip, idx, coef, "opt(2,2)", 'E', 1 );
+    idx.clear();
+    coef.clear();
+
+    idx.push_back( xIdx_[1][3][8][5][8+inst_.time(1,2)] );
+    coef.push_back( 1.0 );
+    lp_add_row( mip, idx, coef, "opt(2,3)", 'E', 1 );
+    idx.clear();
+    coef.clear();
+
+    idx.push_back( xIdx_[1][4][48][7][48+inst_.time(1,3)] );
+    coef.push_back( 1.0 );
+    lp_add_row( mip, idx, coef, "opt(2,4)", 'E', 1 );
+    idx.clear();
+    coef.clear();
+
+    idx.push_back( xIdx_[1][5][15][6][15+inst_.time(1,4)] );
+    coef.push_back( 1.0 );
+    lp_add_row( mip, idx, coef, "opt(2,5)", 'E', 1 );
+    idx.clear();
+    coef.clear();
+
+    idx.push_back( xIdx_[1][6][28][1][28+inst_.time(1,5)] );
+    coef.push_back( 1.0 );
+    lp_add_row( mip, idx, coef, "opt(2,6)", 'E', 1 );
+    idx.clear();
+    coef.clear();
+
+    idx.push_back( xIdx_[2][1][19][2][19+inst_.time(2,0)] );
+    coef.push_back( 1.0 );
+    lp_add_row( mip, idx, coef, "opt(3,1)", 'E', 1 );
+    idx.clear();
+    coef.clear();
+
+    idx.push_back( xIdx_[2][2][31][5][31+inst_.time(2,1)] );
+    coef.push_back( 1.0 );
+    lp_add_row( mip, idx, coef, "opt(3,2)", 'E', 1 );
+    idx.clear();
+    coef.clear();
+
+    idx.push_back( xIdx_[2][3][0][4][0+inst_.time(2,2)] );
+    coef.push_back( 1.0 );
+    lp_add_row( mip, idx, coef, "opt(3,3)", 'E', 1 );
+    idx.clear();
+    coef.clear();
+
+    idx.push_back( xIdx_[2][4][7][6][7+inst_.time(2,3)] );
+    coef.push_back( 1.0 );
+    lp_add_row( mip, idx, coef, "opt(3,4)", 'E', 1 );
+    idx.clear();
+    coef.clear();
+
+    idx.push_back( xIdx_[2][5][48][7][48+inst_.time(2,4)] );
+    coef.push_back( 1.0 );
+    lp_add_row( mip, idx, coef, "opt(3,5)", 'E', 1 );
+    idx.clear();
+    coef.clear();
+
+    idx.push_back( xIdx_[2][6][11][1][11+inst_.time(2,5)] );
+    coef.push_back( 1.0 );
+    lp_add_row( mip, idx, coef, "opt(3,6)", 'E', 1 );
+    idx.clear();
+    coef.clear();
+
+    idx.push_back( xIdx_[3][1][13][3][13+inst_.time(3,0)] );
+    coef.push_back( 1.0 );
+    lp_add_row( mip, idx, coef, "opt(4,1)", 'E', 1 );
+    idx.clear();
+    coef.clear();
+
+    idx.push_back( xIdx_[3][2][8][1][8+inst_.time(3,1)] );
+    coef.push_back( 1.0 );
+    lp_add_row( mip, idx, coef, "opt(4,2)", 'E', 1 );
+    idx.clear();
+    coef.clear();
+
+    idx.push_back( xIdx_[3][3][22][4][22+inst_.time(3,2)] );
+    coef.push_back( 1.0 );
+    lp_add_row( mip, idx, coef, "opt(4,3)", 'E', 1 );
+    idx.clear();
+    coef.clear();
+
+    idx.push_back( xIdx_[3][4][27][5][27+inst_.time(3,3)] );
+    coef.push_back( 1.0 );
+    lp_add_row( mip, idx, coef, "opt(4,4)", 'E', 1 );
+    idx.clear();
+    coef.clear();
+
+    idx.push_back( xIdx_[3][5][30][6][30+inst_.time(3,4)] );
+    coef.push_back( 1.0 );
+    lp_add_row( mip, idx, coef, "opt(4,5)", 'E', 1 );
+    idx.clear();
+    coef.clear();
+
+    idx.push_back( xIdx_[3][6][46][7][46+inst_.time(3,5)] );
+    coef.push_back( 1.0 );
+    lp_add_row( mip, idx, coef, "opt(4,6)", 'E', 1 );
+    idx.clear();
+    coef.clear();
+
+    idx.push_back( xIdx_[4][1][48][4][48+inst_.time(4,0)] );
+    coef.push_back( 1.0 );
+    lp_add_row( mip, idx, coef, "opt(5,1)", 'E', 1 );
+    idx.clear();
+    coef.clear();
+
+    idx.push_back( xIdx_[4][2][22][5][22+inst_.time(4,1)] );
+    coef.push_back( 1.0 );
+    lp_add_row( mip, idx, coef, "opt(5,2)", 'E', 1 );
+    idx.clear();
+    coef.clear();
+
+    idx.push_back( xIdx_[4][3][13][2][13+inst_.time(4,2)] );
+    coef.push_back( 1.0 );
+    lp_add_row( mip, idx, coef, "opt(5,3)", 'E', 1 );
+    idx.clear();
+    coef.clear();
+
+    idx.push_back( xIdx_[4][4][52][7][52+inst_.time(4,3)] );
+    coef.push_back( 1.0 );
+    lp_add_row( mip, idx, coef, "opt(5,4)", 'E', 1 );
+    idx.clear();
+    coef.clear();
+
+    idx.push_back( xIdx_[4][5][25][6][25+inst_.time(4,4)] );
+    coef.push_back( 1.0 );
+    lp_add_row( mip, idx, coef, "opt(5,5)", 'E', 1 );
+    idx.clear();
+    coef.clear();
+
+    idx.push_back( xIdx_[4][6][41][1][41+inst_.time(4,5)] );
+    coef.push_back( 1.0 );
+    lp_add_row( mip, idx, coef, "opt(5,6)", 'E', 1 );
+    idx.clear();
+    coef.clear();
+
+    idx.push_back( xIdx_[5][1][28][5][28+inst_.time(5,0)] );
+    coef.push_back( 1.0 );
+    lp_add_row( mip, idx, coef, "opt(6,1)", 'E', 1 );
+    idx.clear();
+    coef.clear();
+
+    idx.push_back( xIdx_[5][2][13][4][13+inst_.time(5,1)] );
+    coef.push_back( 1.0 );
+    lp_add_row( mip, idx, coef, "opt(6,2)", 'E', 1 );
+    idx.clear();
+    coef.clear();
+
+    idx.push_back( xIdx_[5][3][54][7][54+inst_.time(5,2)] );
+    coef.push_back( 1.0 );
+    lp_add_row( mip, idx, coef, "opt(6,3)", 'E', 1 );
+    idx.clear();
+    coef.clear();
+
+    idx.push_back( xIdx_[5][4][16][6][16+inst_.time(5,3)] );
+    coef.push_back( 1.0 );
+    lp_add_row( mip, idx, coef, "opt(6,4)", 'E', 1 );
+    idx.clear();
+    coef.clear();
+
+    idx.push_back( xIdx_[5][5][38][3][38+inst_.time(5,4)] );
+    coef.push_back( 1.0 );
+    lp_add_row( mip, idx, coef, "opt(6,5)", 'E', 1 );
+    idx.clear();
+    coef.clear();
+
+    idx.push_back( xIdx_[5][6][19][1][19+inst_.time(5,5)] );
+    coef.push_back( 1.0 );
+    lp_add_row( mip, idx, coef, "opt(6,6)", 'E', 1 );
+    idx.clear();
+    coef.clear();
+
+
+    cout << "optmium constraints ok" << endl;
         
      lp_optimize( mip );
      lp_write_lp( mip, "jssp" );

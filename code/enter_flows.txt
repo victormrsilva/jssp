@@ -1,8 +1,18 @@
+machine 0 time 0
+machine 1 time 0
+machine 2 time 0
+machine 3 time 0
+x(1,i,0,3,0)
+machine 4 time 0
+machine 5 time 0
+machine 6 time 0
+machine 7 time 0
 machine 0 time 1
 machine 1 time 1
+x(1,3,0,1,1)
 machine 2 time 1
 machine 3 time 1
-x(1,i,1,3,1)
+x(1,3,0,3,1)
 machine 4 time 1
 machine 5 time 1
 machine 6 time 1
@@ -10,6 +20,7 @@ machine 7 time 1
 machine 0 time 2
 machine 1 time 2
 x(1,3,1,1,2)
+x(1,1,1,1,2)
 machine 2 time 2
 machine 3 time 2
 x(1,3,1,3,2)
@@ -33,6 +44,7 @@ machine 1 time 4
 x(1,3,3,1,4)
 x(1,1,3,1,4)
 machine 2 time 4
+x(1,1,1,2,4)
 machine 3 time 4
 x(1,3,3,3,4)
 machine 4 time 4
@@ -45,6 +57,7 @@ x(1,3,4,1,5)
 x(1,1,4,1,5)
 machine 2 time 5
 x(1,1,2,2,5)
+x(1,2,4,2,5)
 machine 3 time 5
 x(1,3,4,3,5)
 machine 4 time 5
@@ -113,6 +126,7 @@ x(1,2,9,2,10)
 machine 3 time 10
 x(1,3,9,3,10)
 machine 4 time 10
+x(1,2,4,4,10)
 machine 5 time 10
 machine 6 time 10
 machine 7 time 10
@@ -127,6 +141,7 @@ machine 3 time 11
 x(1,3,10,3,11)
 machine 4 time 11
 x(1,2,5,4,11)
+x(1,4,10,4,11)
 machine 5 time 11
 machine 6 time 11
 machine 7 time 11
@@ -219,6 +234,7 @@ x(1,2,11,4,17)
 x(1,4,16,4,17)
 machine 5 time 17
 machine 6 time 17
+x(1,4,10,6,17)
 machine 7 time 17
 machine 0 time 18
 machine 1 time 18
@@ -235,6 +251,7 @@ x(1,4,17,4,18)
 machine 5 time 18
 machine 6 time 18
 x(1,4,11,6,18)
+x(1,6,17,6,18)
 machine 7 time 18
 machine 0 time 19
 machine 1 time 19
@@ -266,6 +283,7 @@ machine 4 time 20
 x(1,2,14,4,20)
 x(1,4,19,4,20)
 machine 5 time 20
+x(1,6,17,5,20)
 machine 6 time 20
 x(1,4,13,6,20)
 x(1,6,19,6,20)
@@ -284,6 +302,7 @@ x(1,2,15,4,21)
 x(1,4,20,4,21)
 machine 5 time 21
 x(1,6,18,5,21)
+x(1,5,20,5,21)
 machine 6 time 21
 x(1,4,14,6,21)
 x(1,6,20,6,21)
@@ -302,6 +321,7 @@ x(1,2,16,4,22)
 x(1,4,21,4,22)
 machine 5 time 22
 x(1,6,19,5,22)
+x(1,5,21,5,22)
 machine 6 time 22
 x(1,4,15,6,22)
 x(1,6,21,6,22)
@@ -320,6 +340,7 @@ x(1,2,17,4,23)
 x(1,4,22,4,23)
 machine 5 time 23
 x(1,6,20,5,23)
+x(1,5,22,5,23)
 machine 6 time 23
 x(1,4,16,6,23)
 x(1,6,22,6,23)
@@ -338,6 +359,7 @@ x(1,2,18,4,24)
 x(1,4,23,4,24)
 machine 5 time 24
 x(1,6,21,5,24)
+x(1,5,23,5,24)
 machine 6 time 24
 x(1,4,17,6,24)
 x(1,6,23,6,24)
@@ -356,6 +378,7 @@ x(1,2,19,4,25)
 x(1,4,24,4,25)
 machine 5 time 25
 x(1,6,22,5,25)
+x(1,5,24,5,25)
 machine 6 time 25
 x(1,4,18,6,25)
 x(1,6,24,6,25)
@@ -374,10 +397,12 @@ x(1,2,20,4,26)
 x(1,4,25,4,26)
 machine 5 time 26
 x(1,6,23,5,26)
+x(1,5,25,5,26)
 machine 6 time 26
 x(1,4,19,6,26)
 x(1,6,25,6,26)
 machine 7 time 26
+x(1,5,20,f,26)
 machine 0 time 27
 machine 1 time 27
 x(1,3,26,1,27)
@@ -392,6 +417,7 @@ x(1,2,21,4,27)
 x(1,4,26,4,27)
 machine 5 time 27
 x(1,6,24,5,27)
+x(1,5,26,5,27)
 machine 6 time 27
 x(1,4,20,6,27)
 x(1,6,26,6,27)
@@ -411,6 +437,7 @@ x(1,2,22,4,28)
 x(1,4,27,4,28)
 machine 5 time 28
 x(1,6,25,5,28)
+x(1,5,27,5,28)
 machine 6 time 28
 x(1,4,21,6,28)
 x(1,6,27,6,28)
@@ -430,6 +457,7 @@ x(1,2,23,4,29)
 x(1,4,28,4,29)
 machine 5 time 29
 x(1,6,26,5,29)
+x(1,5,28,5,29)
 machine 6 time 29
 x(1,4,22,6,29)
 x(1,6,28,6,29)
@@ -449,6 +477,7 @@ x(1,2,24,4,30)
 x(1,4,29,4,30)
 machine 5 time 30
 x(1,6,27,5,30)
+x(1,5,29,5,30)
 machine 6 time 30
 x(1,4,23,6,30)
 x(1,6,29,6,30)
@@ -468,6 +497,7 @@ x(1,2,25,4,31)
 x(1,4,30,4,31)
 machine 5 time 31
 x(1,6,28,5,31)
+x(1,5,30,5,31)
 machine 6 time 31
 x(1,4,24,6,31)
 x(1,6,30,6,31)
@@ -487,6 +517,7 @@ x(1,2,26,4,32)
 x(1,4,31,4,32)
 machine 5 time 32
 x(1,6,29,5,32)
+x(1,5,31,5,32)
 machine 6 time 32
 x(1,4,25,6,32)
 x(1,6,31,6,32)
@@ -506,6 +537,7 @@ x(1,2,27,4,33)
 x(1,4,32,4,33)
 machine 5 time 33
 x(1,6,30,5,33)
+x(1,5,32,5,33)
 machine 6 time 33
 x(1,4,26,6,33)
 x(1,6,32,6,33)
@@ -524,6 +556,7 @@ x(1,2,28,4,34)
 x(1,4,33,4,34)
 machine 5 time 34
 x(1,6,31,5,34)
+x(1,5,33,5,34)
 machine 6 time 34
 x(1,4,27,6,34)
 x(1,6,33,6,34)
@@ -540,6 +573,7 @@ x(1,2,29,4,35)
 x(1,4,34,4,35)
 machine 5 time 35
 x(1,6,32,5,35)
+x(1,5,34,5,35)
 machine 6 time 35
 x(1,4,28,6,35)
 x(1,6,34,6,35)
@@ -556,6 +590,7 @@ x(1,2,30,4,36)
 x(1,4,35,4,36)
 machine 5 time 36
 x(1,6,33,5,36)
+x(1,5,35,5,36)
 machine 6 time 36
 x(1,4,29,6,36)
 x(1,6,35,6,36)
@@ -572,6 +607,7 @@ x(1,2,31,4,37)
 x(1,4,36,4,37)
 machine 5 time 37
 x(1,6,34,5,37)
+x(1,5,36,5,37)
 machine 6 time 37
 x(1,4,30,6,37)
 x(1,6,36,6,37)
@@ -586,6 +622,7 @@ x(1,2,32,4,38)
 x(1,4,37,4,38)
 machine 5 time 38
 x(1,6,35,5,38)
+x(1,5,37,5,38)
 machine 6 time 38
 x(1,4,31,6,38)
 x(1,6,37,6,38)
@@ -600,6 +637,7 @@ x(1,2,33,4,39)
 x(1,4,38,4,39)
 machine 5 time 39
 x(1,6,36,5,39)
+x(1,5,38,5,39)
 machine 6 time 39
 x(1,4,32,6,39)
 x(1,6,38,6,39)
@@ -614,6 +652,7 @@ x(1,2,34,4,40)
 x(1,4,39,4,40)
 machine 5 time 40
 x(1,6,37,5,40)
+x(1,5,39,5,40)
 machine 6 time 40
 x(1,4,33,6,40)
 x(1,6,39,6,40)
@@ -628,6 +667,7 @@ x(1,2,35,4,41)
 x(1,4,40,4,41)
 machine 5 time 41
 x(1,6,38,5,41)
+x(1,5,40,5,41)
 machine 6 time 41
 x(1,4,34,6,41)
 x(1,6,40,6,41)
@@ -642,6 +682,7 @@ x(1,2,36,4,42)
 x(1,4,41,4,42)
 machine 5 time 42
 x(1,6,39,5,42)
+x(1,5,41,5,42)
 machine 6 time 42
 x(1,4,35,6,42)
 x(1,6,41,6,42)
@@ -656,6 +697,7 @@ x(1,2,37,4,43)
 x(1,4,42,4,43)
 machine 5 time 43
 x(1,6,40,5,43)
+x(1,5,42,5,43)
 machine 6 time 43
 x(1,4,36,6,43)
 x(1,6,42,6,43)
@@ -668,6 +710,7 @@ machine 3 time 44
 machine 4 time 44
 machine 5 time 44
 x(1,6,41,5,44)
+x(1,5,43,5,44)
 machine 6 time 44
 x(1,4,37,6,44)
 x(1,6,43,6,44)
@@ -680,6 +723,7 @@ machine 3 time 45
 machine 4 time 45
 machine 5 time 45
 x(1,6,42,5,45)
+x(1,5,44,5,45)
 machine 6 time 45
 x(1,4,38,6,45)
 x(1,6,44,6,45)
@@ -692,6 +736,7 @@ machine 3 time 46
 machine 4 time 46
 machine 5 time 46
 x(1,6,43,5,46)
+x(1,5,45,5,46)
 machine 6 time 46
 x(1,4,39,6,46)
 x(1,6,45,6,46)
@@ -704,6 +749,7 @@ machine 3 time 47
 machine 4 time 47
 machine 5 time 47
 x(1,6,44,5,47)
+x(1,5,46,5,47)
 machine 6 time 47
 x(1,4,40,6,47)
 x(1,6,46,6,47)
@@ -716,6 +762,7 @@ machine 3 time 48
 machine 4 time 48
 machine 5 time 48
 x(1,6,45,5,48)
+x(1,5,47,5,48)
 machine 6 time 48
 x(1,4,41,6,48)
 x(1,6,47,6,48)
@@ -728,6 +775,7 @@ machine 3 time 49
 machine 4 time 49
 machine 5 time 49
 x(1,6,46,5,49)
+x(1,5,48,5,49)
 machine 6 time 49
 x(1,4,42,6,49)
 x(1,6,48,6,49)
@@ -740,6 +788,7 @@ machine 3 time 50
 machine 4 time 50
 machine 5 time 50
 x(1,6,47,5,50)
+x(1,5,49,5,50)
 machine 6 time 50
 x(1,4,43,6,50)
 x(1,6,49,6,50)
@@ -752,6 +801,7 @@ machine 3 time 51
 machine 4 time 51
 machine 5 time 51
 x(1,6,48,5,51)
+x(1,5,50,5,51)
 machine 6 time 51
 machine 7 time 51
 x(1,5,45,f,51)
@@ -762,6 +812,7 @@ machine 3 time 52
 machine 4 time 52
 machine 5 time 52
 x(1,6,49,5,52)
+x(1,5,51,5,52)
 machine 6 time 52
 machine 7 time 52
 x(1,5,46,f,52)
@@ -772,6 +823,7 @@ machine 3 time 53
 machine 4 time 53
 machine 5 time 53
 x(1,6,50,5,53)
+x(1,5,52,5,53)
 machine 6 time 53
 machine 7 time 53
 x(1,5,47,f,53)
@@ -781,6 +833,7 @@ machine 2 time 54
 machine 3 time 54
 machine 4 time 54
 machine 5 time 54
+x(1,5,53,5,54)
 machine 6 time 54
 machine 7 time 54
 x(1,5,48,f,54)
@@ -820,10 +873,19 @@ machine 5 time 58
 machine 6 time 58
 machine 7 time 58
 x(1,5,52,f,58)
+machine 0 time 0
+machine 1 time 0
+machine 2 time 0
+x(2,i,0,2,0)
+machine 3 time 0
+machine 4 time 0
+machine 5 time 0
+machine 6 time 0
+machine 7 time 0
 machine 0 time 1
 machine 1 time 1
 machine 2 time 1
-x(2,i,1,2,1)
+x(2,2,0,2,1)
 machine 3 time 1
 machine 4 time 1
 machine 5 time 1
@@ -888,6 +950,7 @@ machine 1 time 8
 machine 2 time 8
 x(2,2,7,2,8)
 machine 3 time 8
+x(2,2,0,3,8)
 machine 4 time 8
 machine 5 time 8
 machine 6 time 8
@@ -898,6 +961,7 @@ machine 2 time 9
 x(2,2,8,2,9)
 machine 3 time 9
 x(2,2,1,3,9)
+x(2,3,8,3,9)
 machine 4 time 9
 machine 5 time 9
 machine 6 time 9
@@ -943,6 +1007,7 @@ x(2,2,5,3,13)
 x(2,3,12,3,13)
 machine 4 time 13
 machine 5 time 13
+x(2,3,8,5,13)
 machine 6 time 13
 machine 7 time 13
 machine 0 time 14
@@ -954,6 +1019,7 @@ x(2,3,13,3,14)
 machine 4 time 14
 machine 5 time 14
 x(2,3,9,5,14)
+x(2,5,13,5,14)
 machine 6 time 14
 machine 7 time 14
 machine 0 time 15
@@ -1057,6 +1123,7 @@ machine 5 time 23
 x(2,3,18,5,23)
 x(2,5,22,5,23)
 machine 6 time 23
+x(2,5,13,6,23)
 machine 7 time 23
 machine 0 time 24
 machine 1 time 24
@@ -1068,6 +1135,7 @@ x(2,3,19,5,24)
 x(2,5,23,5,24)
 machine 6 time 24
 x(2,5,14,6,24)
+x(2,6,23,6,24)
 machine 7 time 24
 machine 0 time 25
 machine 1 time 25
@@ -1153,6 +1221,7 @@ x(2,6,31,6,32)
 machine 7 time 32
 machine 0 time 33
 machine 1 time 33
+x(2,6,23,1,33)
 machine 2 time 33
 machine 3 time 33
 machine 4 time 33
@@ -1164,6 +1233,7 @@ machine 7 time 33
 machine 0 time 34
 machine 1 time 34
 x(2,6,24,1,34)
+x(2,1,33,1,34)
 machine 2 time 34
 machine 3 time 34
 machine 4 time 34
@@ -1261,6 +1331,7 @@ x(2,1,42,1,43)
 machine 2 time 43
 machine 3 time 43
 machine 4 time 43
+x(2,1,33,4,43)
 machine 5 time 43
 machine 6 time 43
 machine 7 time 43
@@ -1272,6 +1343,7 @@ machine 2 time 44
 machine 3 time 44
 machine 4 time 44
 x(2,1,34,4,44)
+x(2,4,43,4,44)
 machine 5 time 44
 machine 6 time 44
 machine 7 time 44
@@ -1283,6 +1355,7 @@ machine 2 time 45
 machine 3 time 45
 machine 4 time 45
 x(2,1,35,4,45)
+x(2,4,44,4,45)
 machine 5 time 45
 machine 6 time 45
 machine 7 time 45
@@ -1292,6 +1365,7 @@ machine 2 time 46
 machine 3 time 46
 machine 4 time 46
 x(2,1,36,4,46)
+x(2,4,45,4,46)
 machine 5 time 46
 machine 6 time 46
 machine 7 time 46
@@ -1301,6 +1375,7 @@ machine 2 time 47
 machine 3 time 47
 machine 4 time 47
 x(2,1,37,4,47)
+x(2,4,46,4,47)
 machine 5 time 47
 machine 6 time 47
 machine 7 time 47
@@ -1310,6 +1385,7 @@ machine 2 time 48
 machine 3 time 48
 machine 4 time 48
 x(2,1,38,4,48)
+x(2,4,47,4,48)
 machine 5 time 48
 machine 6 time 48
 machine 7 time 48
@@ -1319,6 +1395,7 @@ machine 2 time 49
 machine 3 time 49
 machine 4 time 49
 x(2,1,39,4,49)
+x(2,4,48,4,49)
 machine 5 time 49
 machine 6 time 49
 machine 7 time 49
@@ -1328,6 +1405,7 @@ machine 2 time 50
 machine 3 time 50
 machine 4 time 50
 x(2,1,40,4,50)
+x(2,4,49,4,50)
 machine 5 time 50
 machine 6 time 50
 machine 7 time 50
@@ -1337,6 +1415,7 @@ machine 2 time 51
 machine 3 time 51
 machine 4 time 51
 x(2,1,41,4,51)
+x(2,4,50,4,51)
 machine 5 time 51
 machine 6 time 51
 machine 7 time 51
@@ -1346,6 +1425,7 @@ machine 2 time 52
 machine 3 time 52
 machine 4 time 52
 x(2,1,42,4,52)
+x(2,4,51,4,52)
 machine 5 time 52
 machine 6 time 52
 machine 7 time 52
@@ -1355,6 +1435,7 @@ machine 2 time 53
 machine 3 time 53
 machine 4 time 53
 x(2,1,43,4,53)
+x(2,4,52,4,53)
 machine 5 time 53
 machine 6 time 53
 machine 7 time 53
@@ -1364,6 +1445,7 @@ machine 2 time 54
 machine 3 time 54
 machine 4 time 54
 x(2,1,44,4,54)
+x(2,4,53,4,54)
 machine 5 time 54
 machine 6 time 54
 machine 7 time 54
@@ -1373,6 +1455,7 @@ machine 2 time 55
 machine 3 time 55
 machine 4 time 55
 x(2,1,45,4,55)
+x(2,4,54,4,55)
 machine 5 time 55
 machine 6 time 55
 machine 7 time 55
@@ -1381,6 +1464,7 @@ machine 1 time 56
 machine 2 time 56
 machine 3 time 56
 machine 4 time 56
+x(2,4,55,4,56)
 machine 5 time 56
 machine 6 time 56
 machine 7 time 56
@@ -1400,11 +1484,20 @@ machine 4 time 58
 machine 5 time 58
 machine 6 time 58
 machine 7 time 58
+machine 0 time 0
+machine 1 time 0
+machine 2 time 0
+machine 3 time 0
+x(3,i,0,3,0)
+machine 4 time 0
+machine 5 time 0
+machine 6 time 0
+machine 7 time 0
 machine 0 time 1
 machine 1 time 1
 machine 2 time 1
 machine 3 time 1
-x(3,i,1,3,1)
+x(3,3,0,3,1)
 machine 4 time 1
 machine 5 time 1
 machine 6 time 1
@@ -1442,6 +1535,7 @@ machine 2 time 5
 machine 3 time 5
 x(3,3,4,3,5)
 machine 4 time 5
+x(3,3,0,4,5)
 machine 5 time 5
 machine 6 time 5
 machine 7 time 5
@@ -1452,6 +1546,7 @@ machine 3 time 6
 x(3,3,5,3,6)
 machine 4 time 6
 x(3,3,1,4,6)
+x(3,4,5,4,6)
 machine 5 time 6
 machine 6 time 6
 machine 7 time 6
@@ -1487,6 +1582,7 @@ x(3,3,4,4,9)
 x(3,4,8,4,9)
 machine 5 time 9
 machine 6 time 9
+x(3,4,5,6,9)
 machine 7 time 9
 machine 0 time 10
 machine 1 time 10
@@ -1499,6 +1595,7 @@ x(3,4,9,4,10)
 machine 5 time 10
 machine 6 time 10
 x(3,4,6,6,10)
+x(3,6,9,6,10)
 machine 7 time 10
 machine 0 time 11
 machine 1 time 11
@@ -1580,6 +1677,7 @@ x(3,6,15,6,16)
 machine 7 time 16
 machine 0 time 17
 machine 1 time 17
+x(3,6,9,1,17)
 machine 2 time 17
 machine 3 time 17
 x(3,3,16,3,17)
@@ -1594,6 +1692,7 @@ machine 7 time 17
 machine 0 time 18
 machine 1 time 18
 x(3,6,10,1,18)
+x(3,1,17,1,18)
 machine 2 time 18
 machine 3 time 18
 x(3,3,17,3,18)
@@ -1715,6 +1814,7 @@ machine 1 time 26
 x(3,6,18,1,26)
 x(3,1,25,1,26)
 machine 2 time 26
+x(3,1,17,2,26)
 machine 3 time 26
 machine 4 time 26
 x(3,3,21,4,26)
@@ -1730,11 +1830,13 @@ x(3,6,19,1,27)
 x(3,1,26,1,27)
 machine 2 time 27
 x(3,1,18,2,27)
+x(3,2,26,2,27)
 machine 3 time 27
 machine 4 time 27
 x(3,3,22,4,27)
 x(3,4,26,4,27)
 machine 5 time 27
+x(3,2,26,5,27)
 machine 6 time 27
 x(3,4,23,6,27)
 x(3,6,26,6,27)
@@ -1752,6 +1854,7 @@ x(3,3,23,4,28)
 x(3,4,27,4,28)
 machine 5 time 28
 x(3,2,27,5,28)
+x(3,5,27,5,28)
 machine 6 time 28
 x(3,4,24,6,28)
 x(3,6,27,6,28)
@@ -1769,6 +1872,7 @@ x(3,3,24,4,29)
 x(3,4,28,4,29)
 machine 5 time 29
 x(3,2,28,5,29)
+x(3,5,28,5,29)
 machine 6 time 29
 x(3,4,25,6,29)
 x(3,6,28,6,29)
@@ -1786,6 +1890,7 @@ x(3,3,25,4,30)
 x(3,4,29,4,30)
 machine 5 time 30
 x(3,2,29,5,30)
+x(3,5,29,5,30)
 machine 6 time 30
 x(3,4,26,6,30)
 x(3,6,29,6,30)
@@ -1801,6 +1906,7 @@ machine 3 time 31
 machine 4 time 31
 machine 5 time 31
 x(3,2,30,5,31)
+x(3,5,30,5,31)
 machine 6 time 31
 x(3,4,27,6,31)
 x(3,6,30,6,31)
@@ -1816,6 +1922,7 @@ machine 3 time 32
 machine 4 time 32
 machine 5 time 32
 x(3,2,31,5,32)
+x(3,5,31,5,32)
 machine 6 time 32
 x(3,4,28,6,32)
 x(3,6,31,6,32)
@@ -1831,6 +1938,7 @@ machine 3 time 33
 machine 4 time 33
 machine 5 time 33
 x(3,2,32,5,33)
+x(3,5,32,5,33)
 machine 6 time 33
 x(3,4,29,6,33)
 x(3,6,32,6,33)
@@ -1846,6 +1954,7 @@ machine 3 time 34
 machine 4 time 34
 machine 5 time 34
 x(3,2,33,5,34)
+x(3,5,33,5,34)
 machine 6 time 34
 x(3,4,30,6,34)
 x(3,6,33,6,34)
@@ -1861,6 +1970,7 @@ machine 3 time 35
 machine 4 time 35
 machine 5 time 35
 x(3,2,34,5,35)
+x(3,5,34,5,35)
 machine 6 time 35
 machine 7 time 35
 machine 0 time 36
@@ -1874,6 +1984,7 @@ machine 3 time 36
 machine 4 time 36
 machine 5 time 36
 x(3,2,35,5,36)
+x(3,5,35,5,36)
 machine 6 time 36
 machine 7 time 36
 machine 0 time 37
@@ -1887,6 +1998,7 @@ machine 3 time 37
 machine 4 time 37
 machine 5 time 37
 x(3,2,36,5,37)
+x(3,5,36,5,37)
 machine 6 time 37
 machine 7 time 37
 machine 0 time 38
@@ -1900,6 +2012,7 @@ machine 3 time 38
 machine 4 time 38
 machine 5 time 38
 x(3,2,37,5,38)
+x(3,5,37,5,38)
 machine 6 time 38
 machine 7 time 38
 machine 0 time 39
@@ -1913,6 +2026,7 @@ machine 3 time 39
 machine 4 time 39
 machine 5 time 39
 x(3,2,38,5,39)
+x(3,5,38,5,39)
 machine 6 time 39
 machine 7 time 39
 machine 0 time 40
@@ -1926,6 +2040,7 @@ machine 3 time 40
 machine 4 time 40
 machine 5 time 40
 x(3,2,39,5,40)
+x(3,5,39,5,40)
 machine 6 time 40
 machine 7 time 40
 machine 0 time 41
@@ -1939,6 +2054,7 @@ machine 3 time 41
 machine 4 time 41
 machine 5 time 41
 x(3,2,40,5,41)
+x(3,5,40,5,41)
 machine 6 time 41
 machine 7 time 41
 machine 0 time 42
@@ -1952,6 +2068,7 @@ machine 3 time 42
 machine 4 time 42
 machine 5 time 42
 x(3,2,41,5,42)
+x(3,5,41,5,42)
 machine 6 time 42
 machine 7 time 42
 machine 0 time 43
@@ -1963,6 +2080,7 @@ machine 3 time 43
 machine 4 time 43
 machine 5 time 43
 x(3,2,42,5,43)
+x(3,5,42,5,43)
 machine 6 time 43
 machine 7 time 43
 machine 0 time 44
@@ -1974,6 +2092,7 @@ machine 3 time 44
 machine 4 time 44
 machine 5 time 44
 x(3,2,43,5,44)
+x(3,5,43,5,44)
 machine 6 time 44
 machine 7 time 44
 machine 0 time 45
@@ -1985,6 +2104,7 @@ machine 3 time 45
 machine 4 time 45
 machine 5 time 45
 x(3,2,44,5,45)
+x(3,5,44,5,45)
 machine 6 time 45
 machine 7 time 45
 machine 0 time 46
@@ -1996,6 +2116,7 @@ machine 3 time 46
 machine 4 time 46
 machine 5 time 46
 x(3,2,45,5,46)
+x(3,5,45,5,46)
 machine 6 time 46
 machine 7 time 46
 machine 0 time 47
@@ -2007,6 +2128,7 @@ machine 3 time 47
 machine 4 time 47
 machine 5 time 47
 x(3,2,46,5,47)
+x(3,5,46,5,47)
 machine 6 time 47
 machine 7 time 47
 machine 0 time 48
@@ -2018,6 +2140,7 @@ machine 3 time 48
 machine 4 time 48
 machine 5 time 48
 x(3,2,47,5,48)
+x(3,5,47,5,48)
 machine 6 time 48
 machine 7 time 48
 machine 0 time 49
@@ -2029,6 +2152,7 @@ machine 3 time 49
 machine 4 time 49
 machine 5 time 49
 x(3,2,48,5,49)
+x(3,5,48,5,49)
 machine 6 time 49
 machine 7 time 49
 machine 0 time 50
@@ -2040,6 +2164,7 @@ machine 3 time 50
 machine 4 time 50
 machine 5 time 50
 x(3,2,49,5,50)
+x(3,5,49,5,50)
 machine 6 time 50
 machine 7 time 50
 machine 0 time 51
@@ -2051,6 +2176,7 @@ machine 3 time 51
 machine 4 time 51
 machine 5 time 51
 x(3,2,50,5,51)
+x(3,5,50,5,51)
 machine 6 time 51
 machine 7 time 51
 machine 0 time 52
@@ -2060,6 +2186,7 @@ machine 3 time 52
 machine 4 time 52
 machine 5 time 52
 x(3,2,51,5,52)
+x(3,5,51,5,52)
 machine 6 time 52
 machine 7 time 52
 machine 0 time 53
@@ -2068,6 +2195,7 @@ machine 2 time 53
 machine 3 time 53
 machine 4 time 53
 machine 5 time 53
+x(3,5,52,5,53)
 machine 6 time 53
 machine 7 time 53
 machine 0 time 54
@@ -2110,10 +2238,19 @@ machine 4 time 58
 machine 5 time 58
 machine 6 time 58
 machine 7 time 58
+machine 0 time 0
+machine 1 time 0
+machine 2 time 0
+x(4,i,0,2,0)
+machine 3 time 0
+machine 4 time 0
+machine 5 time 0
+machine 6 time 0
+machine 7 time 0
 machine 0 time 1
 machine 1 time 1
 machine 2 time 1
-x(4,i,1,2,1)
+x(4,2,0,2,1)
 machine 3 time 1
 machine 4 time 1
 machine 5 time 1
@@ -2148,6 +2285,7 @@ machine 6 time 4
 machine 7 time 4
 machine 0 time 5
 machine 1 time 5
+x(4,2,0,1,5)
 machine 2 time 5
 x(4,2,4,2,5)
 machine 3 time 5
@@ -2158,6 +2296,7 @@ machine 7 time 5
 machine 0 time 6
 machine 1 time 6
 x(4,2,1,1,6)
+x(4,1,5,1,6)
 machine 2 time 6
 x(4,2,5,2,6)
 machine 3 time 6
@@ -2205,6 +2344,7 @@ x(4,1,9,1,10)
 machine 2 time 10
 x(4,2,9,2,10)
 machine 3 time 10
+x(4,1,5,3,10)
 machine 4 time 10
 machine 5 time 10
 machine 6 time 10
@@ -2217,6 +2357,7 @@ machine 2 time 11
 x(4,2,10,2,11)
 machine 3 time 11
 x(4,1,6,3,11)
+x(4,3,10,3,11)
 machine 4 time 11
 machine 5 time 11
 machine 6 time 11
@@ -2270,6 +2411,7 @@ machine 3 time 15
 x(4,1,10,3,15)
 x(4,3,14,3,15)
 machine 4 time 15
+x(4,3,10,4,15)
 machine 5 time 15
 machine 6 time 15
 machine 7 time 15
@@ -2284,6 +2426,7 @@ x(4,1,11,3,16)
 x(4,3,15,3,16)
 machine 4 time 16
 x(4,3,11,4,16)
+x(4,4,15,4,16)
 machine 5 time 16
 machine 6 time 16
 machine 7 time 16
@@ -2315,6 +2458,7 @@ machine 4 time 18
 x(4,3,13,4,18)
 x(4,4,17,4,18)
 machine 5 time 18
+x(4,4,15,5,18)
 machine 6 time 18
 machine 7 time 18
 machine 0 time 19
@@ -2331,6 +2475,7 @@ x(4,3,14,4,19)
 x(4,4,18,4,19)
 machine 5 time 19
 x(4,4,16,5,19)
+x(4,5,18,5,19)
 machine 6 time 19
 machine 7 time 19
 machine 0 time 20
@@ -2449,6 +2594,7 @@ machine 5 time 26
 x(4,4,23,5,26)
 x(4,5,25,5,26)
 machine 6 time 26
+x(4,5,18,6,26)
 machine 7 time 26
 machine 0 time 27
 machine 1 time 27
@@ -2466,6 +2612,7 @@ x(4,4,24,5,27)
 x(4,5,26,5,27)
 machine 6 time 27
 x(4,5,19,6,27)
+x(4,6,26,6,27)
 machine 7 time 27
 machine 0 time 28
 machine 1 time 28
@@ -2483,6 +2630,7 @@ x(4,4,25,5,28)
 x(4,5,27,5,28)
 machine 6 time 28
 x(4,5,20,6,28)
+x(4,6,27,6,28)
 machine 7 time 28
 machine 0 time 29
 machine 1 time 29
@@ -2500,6 +2648,7 @@ x(4,4,26,5,29)
 x(4,5,28,5,29)
 machine 6 time 29
 x(4,5,21,6,29)
+x(4,6,28,6,29)
 machine 7 time 29
 machine 0 time 30
 machine 1 time 30
@@ -2515,6 +2664,7 @@ x(4,4,27,5,30)
 x(4,5,29,5,30)
 machine 6 time 30
 x(4,5,22,6,30)
+x(4,6,29,6,30)
 machine 7 time 30
 machine 0 time 31
 machine 1 time 31
@@ -2530,6 +2680,7 @@ x(4,4,28,5,31)
 x(4,5,30,5,31)
 machine 6 time 31
 x(4,5,23,6,31)
+x(4,6,30,6,31)
 machine 7 time 31
 machine 0 time 32
 machine 1 time 32
@@ -2545,6 +2696,7 @@ x(4,4,29,5,32)
 x(4,5,31,5,32)
 machine 6 time 32
 x(4,5,24,6,32)
+x(4,6,31,6,32)
 machine 7 time 32
 machine 0 time 33
 machine 1 time 33
@@ -2560,6 +2712,7 @@ x(4,4,30,5,33)
 x(4,5,32,5,33)
 machine 6 time 33
 x(4,5,25,6,33)
+x(4,6,32,6,33)
 machine 7 time 33
 machine 0 time 34
 machine 1 time 34
@@ -2575,6 +2728,7 @@ x(4,4,31,5,34)
 x(4,5,33,5,34)
 machine 6 time 34
 x(4,5,26,6,34)
+x(4,6,33,6,34)
 machine 7 time 34
 machine 0 time 35
 machine 1 time 35
@@ -2588,6 +2742,7 @@ x(4,4,32,5,35)
 x(4,5,34,5,35)
 machine 6 time 35
 x(4,5,27,6,35)
+x(4,6,34,6,35)
 machine 7 time 35
 machine 0 time 36
 machine 1 time 36
@@ -2601,6 +2756,7 @@ x(4,4,33,5,36)
 x(4,5,35,5,36)
 machine 6 time 36
 x(4,5,28,6,36)
+x(4,6,35,6,36)
 machine 7 time 36
 machine 0 time 37
 machine 1 time 37
@@ -2614,6 +2770,7 @@ x(4,4,34,5,37)
 x(4,5,36,5,37)
 machine 6 time 37
 x(4,5,29,6,37)
+x(4,6,36,6,37)
 machine 7 time 37
 machine 0 time 38
 machine 1 time 38
@@ -2627,6 +2784,7 @@ x(4,4,35,5,38)
 x(4,5,37,5,38)
 machine 6 time 38
 x(4,5,30,6,38)
+x(4,6,37,6,38)
 machine 7 time 38
 machine 0 time 39
 machine 1 time 39
@@ -2640,6 +2798,7 @@ x(4,4,36,5,39)
 x(4,5,38,5,39)
 machine 6 time 39
 x(4,5,31,6,39)
+x(4,6,38,6,39)
 machine 7 time 39
 machine 0 time 40
 machine 1 time 40
@@ -2651,6 +2810,7 @@ x(4,4,37,5,40)
 x(4,5,39,5,40)
 machine 6 time 40
 x(4,5,32,6,40)
+x(4,6,39,6,40)
 machine 7 time 40
 machine 0 time 41
 machine 1 time 41
@@ -2662,6 +2822,7 @@ x(4,4,38,5,41)
 x(4,5,40,5,41)
 machine 6 time 41
 x(4,5,33,6,41)
+x(4,6,40,6,41)
 machine 7 time 41
 machine 0 time 42
 machine 1 time 42
@@ -2673,6 +2834,7 @@ x(4,4,39,5,42)
 x(4,5,41,5,42)
 machine 6 time 42
 x(4,5,34,6,42)
+x(4,6,41,6,42)
 machine 7 time 42
 machine 0 time 43
 machine 1 time 43
@@ -2682,6 +2844,7 @@ machine 4 time 43
 machine 5 time 43
 machine 6 time 43
 x(4,5,35,6,43)
+x(4,6,42,6,43)
 machine 7 time 43
 machine 0 time 44
 machine 1 time 44
@@ -2691,6 +2854,7 @@ machine 4 time 44
 machine 5 time 44
 machine 6 time 44
 x(4,5,36,6,44)
+x(4,6,43,6,44)
 machine 7 time 44
 machine 0 time 45
 machine 1 time 45
@@ -2700,6 +2864,7 @@ machine 4 time 45
 machine 5 time 45
 machine 6 time 45
 x(4,5,37,6,45)
+x(4,6,44,6,45)
 machine 7 time 45
 machine 0 time 46
 machine 1 time 46
@@ -2709,6 +2874,7 @@ machine 4 time 46
 machine 5 time 46
 machine 6 time 46
 x(4,5,38,6,46)
+x(4,6,45,6,46)
 machine 7 time 46
 machine 0 time 47
 machine 1 time 47
@@ -2718,6 +2884,7 @@ machine 4 time 47
 machine 5 time 47
 machine 6 time 47
 x(4,5,39,6,47)
+x(4,6,46,6,47)
 machine 7 time 47
 machine 0 time 48
 machine 1 time 48
@@ -2727,6 +2894,7 @@ machine 4 time 48
 machine 5 time 48
 machine 6 time 48
 x(4,5,40,6,48)
+x(4,6,47,6,48)
 machine 7 time 48
 machine 0 time 49
 machine 1 time 49
@@ -2736,6 +2904,7 @@ machine 4 time 49
 machine 5 time 49
 machine 6 time 49
 x(4,5,41,6,49)
+x(4,6,48,6,49)
 machine 7 time 49
 machine 0 time 50
 machine 1 time 50
@@ -2745,6 +2914,7 @@ machine 4 time 50
 machine 5 time 50
 machine 6 time 50
 x(4,5,42,6,50)
+x(4,6,49,6,50)
 machine 7 time 50
 machine 0 time 51
 machine 1 time 51
@@ -2753,6 +2923,7 @@ machine 3 time 51
 machine 4 time 51
 machine 5 time 51
 machine 6 time 51
+x(4,6,50,6,51)
 machine 7 time 51
 machine 0 time 52
 machine 1 time 52
@@ -2810,11 +2981,20 @@ machine 4 time 58
 machine 5 time 58
 machine 6 time 58
 machine 7 time 58
+machine 0 time 0
+machine 1 time 0
+machine 2 time 0
+machine 3 time 0
+x(5,i,0,3,0)
+machine 4 time 0
+machine 5 time 0
+machine 6 time 0
+machine 7 time 0
 machine 0 time 1
 machine 1 time 1
 machine 2 time 1
 machine 3 time 1
-x(5,i,1,3,1)
+x(5,3,0,3,1)
 machine 4 time 1
 machine 5 time 1
 machine 6 time 1
@@ -2885,6 +3065,7 @@ machine 7 time 8
 machine 0 time 9
 machine 1 time 9
 machine 2 time 9
+x(5,3,0,2,9)
 machine 3 time 9
 x(5,3,8,3,9)
 machine 4 time 9
@@ -2895,6 +3076,7 @@ machine 0 time 10
 machine 1 time 10
 machine 2 time 10
 x(5,3,1,2,10)
+x(5,2,9,2,10)
 machine 3 time 10
 x(5,3,9,3,10)
 machine 4 time 10
@@ -2921,6 +3103,7 @@ machine 3 time 12
 x(5,3,11,3,12)
 machine 4 time 12
 machine 5 time 12
+x(5,2,9,5,12)
 machine 6 time 12
 machine 7 time 12
 machine 0 time 13
@@ -2933,6 +3116,7 @@ x(5,3,12,3,13)
 machine 4 time 13
 machine 5 time 13
 x(5,2,10,5,13)
+x(5,5,12,5,13)
 machine 6 time 13
 machine 7 time 13
 machine 0 time 14
@@ -2986,6 +3170,7 @@ machine 5 time 17
 x(5,2,14,5,17)
 x(5,5,16,5,17)
 machine 6 time 17
+x(5,5,12,6,17)
 machine 7 time 17
 machine 0 time 18
 machine 1 time 18
@@ -3000,6 +3185,7 @@ x(5,2,15,5,18)
 x(5,5,17,5,18)
 machine 6 time 18
 x(5,5,13,6,18)
+x(5,6,17,6,18)
 machine 7 time 18
 machine 0 time 19
 machine 1 time 19
@@ -3033,6 +3219,7 @@ x(5,6,19,6,20)
 machine 7 time 20
 machine 0 time 21
 machine 1 time 21
+x(5,6,17,1,21)
 machine 2 time 21
 x(5,3,12,2,21)
 x(5,2,20,2,21)
@@ -3049,6 +3236,7 @@ machine 7 time 21
 machine 0 time 22
 machine 1 time 22
 x(5,6,18,1,22)
+x(5,1,21,1,22)
 machine 2 time 22
 x(5,3,13,2,22)
 x(5,2,21,2,22)
@@ -3089,6 +3277,7 @@ x(5,2,23,2,24)
 machine 3 time 24
 x(5,3,23,3,24)
 machine 4 time 24
+x(5,1,21,4,24)
 machine 5 time 24
 x(5,2,21,5,24)
 x(5,5,23,5,24)
@@ -3107,6 +3296,7 @@ machine 3 time 25
 x(5,3,24,3,25)
 machine 4 time 25
 x(5,1,22,4,25)
+x(5,4,24,4,25)
 machine 5 time 25
 x(5,2,22,5,25)
 x(5,5,24,5,25)
@@ -3125,6 +3315,7 @@ machine 3 time 26
 x(5,3,25,3,26)
 machine 4 time 26
 x(5,1,23,4,26)
+x(5,4,25,4,26)
 machine 5 time 26
 x(5,2,23,5,26)
 x(5,5,25,5,26)
@@ -3143,6 +3334,7 @@ machine 3 time 27
 x(5,3,26,3,27)
 machine 4 time 27
 x(5,1,24,4,27)
+x(5,4,26,4,27)
 machine 5 time 27
 x(5,2,24,5,27)
 x(5,5,26,5,27)
@@ -3161,6 +3353,7 @@ machine 3 time 28
 x(5,3,27,3,28)
 machine 4 time 28
 x(5,1,25,4,28)
+x(5,4,27,4,28)
 machine 5 time 28
 x(5,2,25,5,28)
 x(5,5,27,5,28)
@@ -3179,6 +3372,7 @@ machine 3 time 29
 x(5,3,28,3,29)
 machine 4 time 29
 x(5,1,26,4,29)
+x(5,4,28,4,29)
 machine 5 time 29
 x(5,2,26,5,29)
 x(5,5,28,5,29)
@@ -3197,6 +3391,7 @@ machine 3 time 30
 x(5,3,29,3,30)
 machine 4 time 30
 x(5,1,27,4,30)
+x(5,4,29,4,30)
 machine 5 time 30
 x(5,2,27,5,30)
 x(5,5,29,5,30)
@@ -3215,6 +3410,7 @@ machine 3 time 31
 x(5,3,30,3,31)
 machine 4 time 31
 x(5,1,28,4,31)
+x(5,4,30,4,31)
 machine 5 time 31
 x(5,2,28,5,31)
 x(5,5,30,5,31)
@@ -3233,6 +3429,7 @@ machine 3 time 32
 x(5,3,31,3,32)
 machine 4 time 32
 x(5,1,29,4,32)
+x(5,4,31,4,32)
 machine 5 time 32
 x(5,2,29,5,32)
 x(5,5,31,5,32)
@@ -3251,6 +3448,7 @@ machine 3 time 33
 x(5,3,32,3,33)
 machine 4 time 33
 x(5,1,30,4,33)
+x(5,4,32,4,33)
 machine 5 time 33
 x(5,2,30,5,33)
 x(5,5,32,5,33)
@@ -3269,6 +3467,7 @@ machine 3 time 34
 x(5,3,33,3,34)
 machine 4 time 34
 x(5,1,31,4,34)
+x(5,4,33,4,34)
 machine 5 time 34
 x(5,2,31,5,34)
 x(5,5,33,5,34)
@@ -3286,6 +3485,7 @@ x(5,2,34,2,35)
 machine 3 time 35
 machine 4 time 35
 x(5,1,32,4,35)
+x(5,4,34,4,35)
 machine 5 time 35
 x(5,2,32,5,35)
 x(5,5,34,5,35)
@@ -3303,6 +3503,7 @@ x(5,2,35,2,36)
 machine 3 time 36
 machine 4 time 36
 x(5,1,33,4,36)
+x(5,4,35,4,36)
 machine 5 time 36
 x(5,2,33,5,36)
 x(5,5,35,5,36)
@@ -3320,6 +3521,7 @@ x(5,2,36,2,37)
 machine 3 time 37
 machine 4 time 37
 x(5,1,34,4,37)
+x(5,4,36,4,37)
 machine 5 time 37
 x(5,2,34,5,37)
 x(5,5,36,5,37)
@@ -3337,6 +3539,7 @@ x(5,2,37,2,38)
 machine 3 time 38
 machine 4 time 38
 x(5,1,35,4,38)
+x(5,4,37,4,38)
 machine 5 time 38
 x(5,2,35,5,38)
 x(5,5,37,5,38)
@@ -3354,6 +3557,7 @@ x(5,2,38,2,39)
 machine 3 time 39
 machine 4 time 39
 x(5,1,36,4,39)
+x(5,4,38,4,39)
 machine 5 time 39
 x(5,2,36,5,39)
 x(5,5,38,5,39)
@@ -3371,6 +3575,7 @@ x(5,2,39,2,40)
 machine 3 time 40
 machine 4 time 40
 x(5,1,37,4,40)
+x(5,4,39,4,40)
 machine 5 time 40
 x(5,2,37,5,40)
 x(5,5,39,5,40)
@@ -3388,6 +3593,7 @@ x(5,2,40,2,41)
 machine 3 time 41
 machine 4 time 41
 x(5,1,38,4,41)
+x(5,4,40,4,41)
 machine 5 time 41
 x(5,2,38,5,41)
 x(5,5,40,5,41)
@@ -3405,6 +3611,7 @@ x(5,2,41,2,42)
 machine 3 time 42
 machine 4 time 42
 x(5,1,39,4,42)
+x(5,4,41,4,42)
 machine 5 time 42
 x(5,2,39,5,42)
 x(5,5,41,5,42)
@@ -3422,6 +3629,7 @@ x(5,2,42,2,43)
 machine 3 time 43
 machine 4 time 43
 x(5,1,40,4,43)
+x(5,4,42,4,43)
 machine 5 time 43
 x(5,2,40,5,43)
 x(5,5,42,5,43)
@@ -3437,6 +3645,7 @@ machine 2 time 44
 machine 3 time 44
 machine 4 time 44
 x(5,1,41,4,44)
+x(5,4,43,4,44)
 machine 5 time 44
 x(5,2,41,5,44)
 x(5,5,43,5,44)
@@ -3452,6 +3661,7 @@ machine 2 time 45
 machine 3 time 45
 machine 4 time 45
 x(5,1,42,4,45)
+x(5,4,44,4,45)
 machine 5 time 45
 x(5,2,42,5,45)
 x(5,5,44,5,45)
@@ -3467,6 +3677,7 @@ machine 2 time 46
 machine 3 time 46
 machine 4 time 46
 x(5,1,43,4,46)
+x(5,4,45,4,46)
 machine 5 time 46
 x(5,2,43,5,46)
 x(5,5,45,5,46)
@@ -3482,6 +3693,7 @@ machine 2 time 47
 machine 3 time 47
 machine 4 time 47
 x(5,1,44,4,47)
+x(5,4,46,4,47)
 machine 5 time 47
 machine 6 time 47
 x(5,5,42,6,47)
@@ -3495,6 +3707,7 @@ machine 2 time 48
 machine 3 time 48
 machine 4 time 48
 x(5,1,45,4,48)
+x(5,4,47,4,48)
 machine 5 time 48
 machine 6 time 48
 x(5,5,43,6,48)
@@ -3508,6 +3721,7 @@ machine 2 time 49
 machine 3 time 49
 machine 4 time 49
 x(5,1,46,4,49)
+x(5,4,48,4,49)
 machine 5 time 49
 machine 6 time 49
 x(5,5,44,6,49)
@@ -3521,6 +3735,7 @@ machine 2 time 50
 machine 3 time 50
 machine 4 time 50
 x(5,1,47,4,50)
+x(5,4,49,4,50)
 machine 5 time 50
 machine 6 time 50
 x(5,5,45,6,50)
@@ -3534,6 +3749,7 @@ machine 2 time 51
 machine 3 time 51
 machine 4 time 51
 x(5,1,48,4,51)
+x(5,4,50,4,51)
 machine 5 time 51
 machine 6 time 51
 x(5,5,46,6,51)
@@ -3547,6 +3763,7 @@ machine 2 time 52
 machine 3 time 52
 machine 4 time 52
 x(5,1,49,4,52)
+x(5,4,51,4,52)
 machine 5 time 52
 machine 6 time 52
 machine 7 time 52
@@ -3558,6 +3775,7 @@ machine 2 time 53
 machine 3 time 53
 machine 4 time 53
 x(5,1,50,4,53)
+x(5,4,52,4,53)
 machine 5 time 53
 machine 6 time 53
 machine 7 time 53
@@ -3569,6 +3787,7 @@ machine 2 time 54
 machine 3 time 54
 machine 4 time 54
 x(5,1,51,4,54)
+x(5,4,53,4,54)
 machine 5 time 54
 machine 6 time 54
 machine 7 time 54
@@ -3580,6 +3799,7 @@ machine 2 time 55
 machine 3 time 55
 machine 4 time 55
 x(5,1,52,4,55)
+x(5,4,54,4,55)
 machine 5 time 55
 machine 6 time 55
 machine 7 time 55
@@ -3589,6 +3809,7 @@ machine 2 time 56
 machine 3 time 56
 machine 4 time 56
 x(5,1,53,4,56)
+x(5,4,55,4,56)
 machine 5 time 56
 machine 6 time 56
 machine 7 time 56
@@ -3598,6 +3819,7 @@ machine 2 time 57
 machine 3 time 57
 machine 4 time 57
 x(5,1,54,4,57)
+x(5,4,56,4,57)
 machine 5 time 57
 machine 6 time 57
 machine 7 time 57
@@ -3607,13 +3829,23 @@ machine 2 time 58
 machine 3 time 58
 machine 4 time 58
 x(5,1,55,4,58)
+x(5,4,57,4,58)
 machine 5 time 58
 machine 6 time 58
 machine 7 time 58
+machine 0 time 0
+machine 1 time 0
+machine 2 time 0
+x(6,i,0,2,0)
+machine 3 time 0
+machine 4 time 0
+machine 5 time 0
+machine 6 time 0
+machine 7 time 0
 machine 0 time 1
 machine 1 time 1
 machine 2 time 1
-x(6,i,1,2,1)
+x(6,2,0,2,1)
 machine 3 time 1
 machine 4 time 1
 machine 5 time 1
@@ -3634,6 +3866,7 @@ machine 2 time 3
 x(6,2,2,2,3)
 machine 3 time 3
 machine 4 time 3
+x(6,2,0,4,3)
 machine 5 time 3
 machine 6 time 3
 machine 7 time 3
@@ -3644,6 +3877,7 @@ x(6,2,3,2,4)
 machine 3 time 4
 machine 4 time 4
 x(6,2,1,4,4)
+x(6,4,3,4,4)
 machine 5 time 4
 machine 6 time 4
 machine 7 time 4
@@ -3668,6 +3902,7 @@ x(6,2,3,4,6)
 x(6,4,5,4,6)
 machine 5 time 6
 machine 6 time 6
+x(6,4,3,6,6)
 machine 7 time 6
 machine 0 time 7
 machine 1 time 7
@@ -3680,6 +3915,7 @@ x(6,4,6,4,7)
 machine 5 time 7
 machine 6 time 7
 x(6,4,4,6,7)
+x(6,6,6,6,7)
 machine 7 time 7
 machine 0 time 8
 machine 1 time 8
@@ -3774,6 +4010,7 @@ x(6,6,13,6,14)
 machine 7 time 14
 machine 0 time 15
 machine 1 time 15
+x(6,6,6,1,15)
 machine 2 time 15
 x(6,2,14,2,15)
 machine 3 time 15
@@ -3788,6 +4025,7 @@ machine 7 time 15
 machine 0 time 16
 machine 1 time 16
 x(6,6,7,1,16)
+x(6,1,15,1,16)
 machine 2 time 16
 x(6,2,15,2,16)
 machine 3 time 16
@@ -3930,6 +4168,7 @@ machine 4 time 25
 x(6,2,22,4,25)
 x(6,4,24,4,25)
 machine 5 time 25
+x(6,1,15,5,25)
 machine 6 time 25
 x(6,4,22,6,25)
 x(6,6,24,6,25)
@@ -3946,6 +4185,7 @@ x(6,2,23,4,26)
 x(6,4,25,4,26)
 machine 5 time 26
 x(6,1,16,5,26)
+x(6,5,25,5,26)
 machine 6 time 26
 x(6,4,23,6,26)
 x(6,6,25,6,26)
@@ -3991,6 +4231,7 @@ x(6,1,28,1,29)
 machine 2 time 29
 x(6,2,28,2,29)
 machine 3 time 29
+x(6,5,25,3,29)
 machine 4 time 29
 x(6,2,26,4,29)
 x(6,4,28,4,29)
@@ -4008,6 +4249,7 @@ x(6,1,29,1,30)
 machine 2 time 30
 machine 3 time 30
 x(6,5,26,3,30)
+x(6,3,29,3,30)
 machine 4 time 30
 x(6,2,27,4,30)
 x(6,4,29,4,30)
@@ -4025,6 +4267,7 @@ x(6,1,30,1,31)
 machine 2 time 31
 machine 3 time 31
 x(6,5,27,3,31)
+x(6,3,30,3,31)
 machine 4 time 31
 x(6,2,28,4,31)
 x(6,4,30,4,31)
@@ -4042,6 +4285,7 @@ x(6,1,31,1,32)
 machine 2 time 32
 machine 3 time 32
 x(6,5,28,3,32)
+x(6,3,31,3,32)
 machine 4 time 32
 x(6,2,29,4,32)
 x(6,4,31,4,32)
@@ -4059,6 +4303,7 @@ x(6,1,32,1,33)
 machine 2 time 33
 machine 3 time 33
 x(6,5,29,3,33)
+x(6,3,32,3,33)
 machine 4 time 33
 machine 5 time 33
 x(6,1,23,5,33)
@@ -4074,6 +4319,7 @@ x(6,1,33,1,34)
 machine 2 time 34
 machine 3 time 34
 x(6,5,30,3,34)
+x(6,3,33,3,34)
 machine 4 time 34
 machine 5 time 34
 x(6,1,24,5,34)
@@ -4089,6 +4335,7 @@ x(6,1,34,1,35)
 machine 2 time 35
 machine 3 time 35
 x(6,5,31,3,35)
+x(6,3,34,3,35)
 machine 4 time 35
 machine 5 time 35
 x(6,1,25,5,35)
@@ -4104,6 +4351,7 @@ x(6,1,35,1,36)
 machine 2 time 36
 machine 3 time 36
 x(6,5,32,3,36)
+x(6,3,35,3,36)
 machine 4 time 36
 machine 5 time 36
 x(6,1,26,5,36)
@@ -4117,6 +4365,7 @@ x(6,1,36,1,37)
 machine 2 time 37
 machine 3 time 37
 x(6,5,33,3,37)
+x(6,3,36,3,37)
 machine 4 time 37
 machine 5 time 37
 x(6,1,27,5,37)
@@ -4130,6 +4379,7 @@ x(6,1,37,1,38)
 machine 2 time 38
 machine 3 time 38
 x(6,5,34,3,38)
+x(6,3,37,3,38)
 machine 4 time 38
 machine 5 time 38
 x(6,1,28,5,38)
@@ -4143,6 +4393,7 @@ x(6,1,38,1,39)
 machine 2 time 39
 machine 3 time 39
 x(6,5,35,3,39)
+x(6,3,38,3,39)
 machine 4 time 39
 machine 5 time 39
 x(6,1,29,5,39)
@@ -4156,6 +4407,7 @@ x(6,1,39,1,40)
 machine 2 time 40
 machine 3 time 40
 x(6,5,36,3,40)
+x(6,3,39,3,40)
 machine 4 time 40
 machine 5 time 40
 x(6,1,30,5,40)
@@ -4169,6 +4421,7 @@ x(6,1,40,1,41)
 machine 2 time 41
 machine 3 time 41
 x(6,5,37,3,41)
+x(6,3,40,3,41)
 machine 4 time 41
 machine 5 time 41
 x(6,1,31,5,41)
@@ -4182,6 +4435,7 @@ x(6,1,41,1,42)
 machine 2 time 42
 machine 3 time 42
 x(6,5,38,3,42)
+x(6,3,41,3,42)
 machine 4 time 42
 machine 5 time 42
 x(6,1,32,5,42)
@@ -4195,6 +4449,7 @@ x(6,1,42,1,43)
 machine 2 time 43
 machine 3 time 43
 x(6,5,39,3,43)
+x(6,3,42,3,43)
 machine 4 time 43
 machine 5 time 43
 x(6,1,33,5,43)
@@ -4208,6 +4463,7 @@ x(6,1,43,1,44)
 machine 2 time 44
 machine 3 time 44
 x(6,5,40,3,44)
+x(6,3,43,3,44)
 machine 4 time 44
 machine 5 time 44
 x(6,1,34,5,44)
@@ -4219,6 +4475,7 @@ machine 1 time 45
 machine 2 time 45
 machine 3 time 45
 x(6,5,41,3,45)
+x(6,3,44,3,45)
 machine 4 time 45
 machine 5 time 45
 x(6,1,35,5,45)
@@ -4230,6 +4487,7 @@ machine 1 time 46
 machine 2 time 46
 machine 3 time 46
 x(6,5,42,3,46)
+x(6,3,45,3,46)
 machine 4 time 46
 machine 5 time 46
 x(6,1,36,5,46)
@@ -4241,6 +4499,7 @@ machine 1 time 47
 machine 2 time 47
 machine 3 time 47
 x(6,5,43,3,47)
+x(6,3,46,3,47)
 machine 4 time 47
 machine 5 time 47
 x(6,1,37,5,47)
@@ -4252,6 +4511,7 @@ machine 1 time 48
 machine 2 time 48
 machine 3 time 48
 x(6,5,44,3,48)
+x(6,3,47,3,48)
 machine 4 time 48
 machine 5 time 48
 x(6,1,38,5,48)
@@ -4263,6 +4523,7 @@ machine 1 time 49
 machine 2 time 49
 machine 3 time 49
 x(6,5,45,3,49)
+x(6,3,48,3,49)
 machine 4 time 49
 machine 5 time 49
 x(6,1,39,5,49)
@@ -4274,6 +4535,7 @@ machine 1 time 50
 machine 2 time 50
 machine 3 time 50
 x(6,5,46,3,50)
+x(6,3,49,3,50)
 machine 4 time 50
 machine 5 time 50
 x(6,1,40,5,50)
@@ -4285,6 +4547,7 @@ machine 1 time 51
 machine 2 time 51
 machine 3 time 51
 x(6,5,47,3,51)
+x(6,3,50,3,51)
 machine 4 time 51
 machine 5 time 51
 x(6,1,41,5,51)
@@ -4296,6 +4559,7 @@ machine 1 time 52
 machine 2 time 52
 machine 3 time 52
 x(6,5,48,3,52)
+x(6,3,51,3,52)
 machine 4 time 52
 machine 5 time 52
 x(6,1,42,5,52)
@@ -4307,6 +4571,7 @@ machine 1 time 53
 machine 2 time 53
 machine 3 time 53
 x(6,5,49,3,53)
+x(6,3,52,3,53)
 machine 4 time 53
 machine 5 time 53
 x(6,1,43,5,53)
@@ -4318,6 +4583,7 @@ machine 1 time 54
 machine 2 time 54
 machine 3 time 54
 x(6,5,50,3,54)
+x(6,3,53,3,54)
 machine 4 time 54
 machine 5 time 54
 x(6,1,44,5,54)
@@ -4329,6 +4595,7 @@ machine 1 time 55
 machine 2 time 55
 machine 3 time 55
 x(6,5,51,3,55)
+x(6,3,54,3,55)
 machine 4 time 55
 machine 5 time 55
 machine 6 time 55
@@ -4338,6 +4605,7 @@ machine 1 time 56
 machine 2 time 56
 machine 3 time 56
 x(6,5,52,3,56)
+x(6,3,55,3,56)
 machine 4 time 56
 machine 5 time 56
 machine 6 time 56
@@ -4347,6 +4615,7 @@ machine 1 time 57
 machine 2 time 57
 machine 3 time 57
 x(6,5,53,3,57)
+x(6,3,56,3,57)
 machine 4 time 57
 machine 5 time 57
 machine 6 time 57
@@ -4356,6 +4625,7 @@ machine 1 time 58
 machine 2 time 58
 machine 3 time 58
 x(6,5,54,3,58)
+x(6,3,57,3,58)
 machine 4 time 58
 machine 5 time 58
 machine 6 time 58

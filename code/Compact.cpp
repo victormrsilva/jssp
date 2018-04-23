@@ -127,7 +127,8 @@ Compact::Compact( const Instance &_inst ) : inst_(_inst) { // já inicializa a v
     }
 
     lp_optimize( mip );
-    lp_write_lp( mip, "jssp" );
+    lp_write_lp( mip, "jssp_compact" );
+    lp_write_sol(mip, "jssp_compact.sol");
 }
 
 // Compact::Compact( const Instance &_inst ) :

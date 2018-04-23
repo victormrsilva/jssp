@@ -12,7 +12,7 @@ Instance::Instance( const std::string &fileName, int time ){
 
     string line;
 
-        getline( ifs, line );
+        //getline( ifs, line );
         ifs >> n_ >> m_;
 
         times_ = vector< vector< int > >( n_, vector<int>( m_, 0 ) );

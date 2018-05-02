@@ -1,7 +1,7 @@
 #include <string>
 #include <iostream>
 #include "Instance.hpp"
-//#include "Compact.hpp"
+#include "Compact.hpp"
 #include "Flow.hpp"
 
 using namespace std;
@@ -27,7 +27,7 @@ int main( int argc, char **argv )
 
     cout << inst.m() << " " << inst.n() << endl;
 
-    Flow mip( inst );
+    Compact mip( inst );
 
     return EXIT_SUCCESS;
 }

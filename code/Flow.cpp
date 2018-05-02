@@ -487,9 +487,9 @@ Flow::Flow( const Instance &_inst ) :
 
 //     cout << "optmium constraints ok" << endl;
         
-     lp_optimize( mip );
-     lp_write_lp( mip, "jssp" );
-     lp_write_sol(mip, "jssp.sol");
+     //lp_optimize( mip );
+     lp_write_lp( mip, inst_.instanceName().c_str() );
+     //lp_write_sol(mip, "jssp.sol");
 }
 
 Flow::~Flow()

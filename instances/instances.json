@@ -76,8 +76,8 @@
     "machines" : 5,
     "optimum" : 655,
     "path" : "instances/la02"
-  },
   {
+  },
     "name" : "la03",
     "jobs" : 10,
     "machines" : 5,

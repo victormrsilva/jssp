@@ -10,9 +10,11 @@ Instance::Instance( const std::string &fileName, int time ){
     ifstream ifs;
     ifs.open( fileName.c_str() );
 
+    instance_name = fileName.c_str();
+
     string line;
 
-        getline( ifs, line );
+        //getline( ifs, line );
         ifs >> n_ >> m_;
 
         times_ = vector< vector< int > >( n_, vector<int>( m_, 0 ) );
@@ -115,3 +117,6 @@ void Instance::saveCmpl( const string fname ) const {
     out.close();
 }
 
+string Instance::instanceName() const{
+    return instance_name;
+}

@@ -77,6 +77,9 @@ public:
 
     // save the cmpl file
     void saveCmpl( const std::string fname ) const;
+
+    // return instance name
+    std::string instanceName() const;
 private:
     int n_;
     int m_;
@@ -84,6 +87,8 @@ private:
     int t_; // max time
 
     int ub_;
+
+    std::string instance_name;
 
     std::vector< std::vector< int > > times_;
 

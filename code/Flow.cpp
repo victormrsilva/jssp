@@ -125,52 +125,52 @@ Flow::Flow( const Instance &_inst ) :
 
     lp_add_cols( mip, obj, lb, ub, integer, names );
 
-    f.open ("exit_flows.txt");
-    for (int j = 0; j < inst_.n(); j++){
-        for (int tf=0; tf < inst_.maxTime(); tf++){
-            for (int mf = 0; mf < inst_.m()+1; mf++){
+    // f.open ("exit_flows.txt");
+    // for (int j = 0; j < inst_.n(); j++){
+    //     for (int tf=0; tf < inst_.maxTime(); tf++){
+    //         for (int mf = 0; mf < inst_.m()+1; mf++){
             
-                f << "machine " << mf << " time " << tf << endl;
-                for (int var : exit_flow[j][mf][tf]){
-                    f << names[var] << endl;
-                }
-            }
-        }
-    }
-    f.close();
-    cout << "exit_flows criado" << endl;
+    //             f << "machine " << mf << " time " << tf << endl;
+    //             for (int var : exit_flow[j][mf][tf]){
+    //                 f << names[var] << endl;
+    //             }
+    //         }
+    //     }
+    // }
+    // f.close();
+    // cout << "exit_flows criado" << endl;
 
-    f.open ("enter_flows.txt");
-    for (int j = 0; j < inst_.n(); j++){
-        for (int t0=0; t0 < inst_.maxTime()-1; t0++){
-            for (int m0 = 0; m0 <= inst_.m()+1; m0++){
+    // f.open ("enter_flows.txt");
+    // for (int j = 0; j < inst_.n(); j++){
+    //     for (int t0=0; t0 < inst_.maxTime()-1; t0++){
+    //         for (int m0 = 0; m0 <= inst_.m()+1; m0++){
             
-                f << "machine " << m0 << " time " << t0 << endl;
-                for (int var : enter_flow[j][m0][t0]){
-                    f << names[var] << endl;
-                }
-            }
-        }
-    }
-    f.close();
-    cout << "enter_flows criado" << endl;
+    //             f << "machine " << m0 << " time " << t0 << endl;
+    //             for (int var : enter_flow[j][m0][t0]){
+    //                 f << names[var] << endl;
+    //             }
+    //         }
+    //     }
+    // }
+    // f.close();
+    // cout << "enter_flows criado" << endl;
 
-    f.open ("processing_machines.txt");
-    for (int t0=0; t0 < inst_.maxTime()-1; t0++){
-        for (int m0 = 0; m0 <= inst_.m(); m0++){
+    // f.open ("processing_machines.txt");
+    // for (int t0=0; t0 < inst_.maxTime()-1; t0++){
+    //     for (int m0 = 0; m0 <= inst_.m(); m0++){
         
-            f << "machine " << m0 << " time " << t0 << endl;
-            for (int j = 0; j < inst_.n(); j++){
-                for (int var : process[j][m0][t0]){
-                    f << names[var] << endl;
-                }
-            }
-        }
-    }
-    f.close();
-    cout << "processing_machines created" << endl;
-    createCompleteGraphDot();
-    cout << "arquivo dot criado" << endl;
+    //         f << "machine " << m0 << " time " << t0 << endl;
+    //         for (int j = 0; j < inst_.n(); j++){
+    //             for (int var : process[j][m0][t0]){
+    //                 f << names[var] << endl;
+    //             }
+    //         }
+    //     }
+    // }
+    // f.close();
+    // cout << "processing_machines created" << endl;
+    // createCompleteGraphDot();
+    // cout << "arquivo dot criado" << endl;
 
     // initial flow constraint
     for (int j = 0; j < inst_.n(); j++){
@@ -487,9 +487,9 @@ Flow::Flow( const Instance &_inst ) :
 
 //     cout << "optmium constraints ok" << endl;
         
-     lp_optimize( mip );
-     lp_write_lp( mip, "jssp" );
-     lp_write_sol(mip, "jssp.sol");
+     //lp_optimize( mip );
+     lp_write_lp( mip, inst_.instanceName().c_str() );
+     //lp_write_sol(mip, "jssp.sol");
 }
 
 Flow::~Flow()

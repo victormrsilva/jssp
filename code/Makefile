@@ -5,8 +5,8 @@ OPTIONS=-Wall -g3 -DGRB -DDEBUG -std=c++11 -I/opt/gurobi752/linux64/include
 
 all:jssp
 
-jssp:main.o Instance.o lp.o Flow.o 
-	$(CC) $(OPTIONS) main.o Instance.o lp.o Flow.o -L/opt/gurobi752/linux64/lib -lgurobi75 -o jssp 
+jssp:main.o Instance.o lp.o Compact.o 
+	$(CC) $(OPTIONS) main.o Instance.o lp.o Compact.o -L/opt/gurobi752/linux64/lib -lgurobi75 -o jssp 
 #-lasan -lm `pkg-config --libs cbc` 
 
 main.o:main.cpp 

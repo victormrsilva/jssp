@@ -1,6 +1,8 @@
 #include "Instance.hpp"
 #include "lp.hpp"
-#include<map>
+#include <map>
+#include "cgraph/cgraph.h"
+
 class Flow
 {
 public:

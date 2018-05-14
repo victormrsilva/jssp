@@ -1,447 +1,55 @@
-%Jobs set <0..19>
-%Machines set <0..19>
+%Jobs set <0..5>
+%Machines set <0..5>
 
-%order[Jobs,Machines] < 17 2 11 4 12 13 7 0 3 15 18 10 14 8 1 6 19 5 9 16 
-    8 6 14 5 10 2 11 19 13 18 3 4 16 1 0 15 17 12 7 9 
-    4 3 8 17 0 14 1 10 13 6 18 9 11 7 16 5 15 2 12 19 
-    4 10 3 6 18 12 2 15 19 7 13 5 9 14 17 1 8 0 16 11 
-    19 1 5 9 7 16 11 12 14 8 4 2 15 13 17 18 10 0 6 3 
-    13 2 3 7 12 14 8 19 6 16 11 4 0 5 9 17 1 10 15 18 
-    9 5 18 16 12 3 2 10 4 11 1 17 6 13 14 15 8 0 7 19 
-    9 6 1 5 2 7 16 12 13 17 10 18 19 8 15 4 11 14 0 3 
-    7 12 8 0 13 10 9 18 2 17 3 5 6 15 14 1 11 4 19 16 
-    16 7 15 6 18 19 9 11 17 4 10 2 1 0 14 13 3 12 5 8 
-    18 17 12 15 13 4 16 19 7 3 6 10 11 0 1 8 9 5 2 14 
-    9 1 2 11 13 0 12 10 6 5 7 19 3 14 17 4 18 8 15 16 
-    1 15 2 14 4 12 18 19 13 11 5 0 7 17 8 10 16 3 9 6 
-    16 6 17 10 3 12 4 8 14 18 7 0 9 2 15 5 13 19 11 1 
-    4 11 7 6 0 14 17 19 16 10 15 13 2 8 5 9 1 18 12 3 
-    6 5 13 15 2 9 7 0 1 12 19 14 3 8 10 11 4 16 18 17 
-    16 1 8 18 0 17 10 12 7 3 5 4 13 6 2 15 11 9 14 19 
-    18 17 4 2 10 15 1 3 7 12 5 9 8 14 11 6 16 0 13 19 
-    17 13 11 16 7 8 3 5 4 2 14 0 10 6 12 1 19 15 9 18 
-    17 2 0 15 18 3 14 6 7 12 13 16 1 4 10 9 5 19 11 8  >
+%order[Jobs,Machines] < 2 0 1 3 5 4 
+    1 2 4 5 0 3 
+    2 3 5 0 1 4 
+    1 0 2 3 4 5 
+    2 1 4 5 0 3 
+    1 3 5 0 4 2  >
 
-%time[Jobs,Machines] < 14 40 28 11 46 39 38 18 41 39 29 10 19 13 16 21 28 15 30 28 
-    23 27 20 35 27 14 46 31 32 24 44 12 31 22 35 27 26 31 15 23 
-    35 21 36 44 34 32 10 41 43 37 46 38 45 15 34 11 34 32 24 23 
-    30 12 27 41 34 44 10 40 37 34 23 34 46 28 21 13 48 27 40 20 
-    49 14 40 33 12 22 19 45 20 10 31 32 38 35 16 33 38 32 15 22 
-    44 36 37 28 29 48 17 16 10 21 43 44 40 32 37 20 48 31 43 20 
-    28 44 34 16 47 22 22 14 33 13 20 43 39 14 28 44 28 29 33 40 
-    32 11 47 22 30 13 49 22 34 19 19 32 26 47 45 21 27 37 43 41 
-    34 14 30 27 43 31 16 30 41 29 11 24 18 22 26 20 22 25 37 22 
-    25 16 18 27 48 48 13 31 39 33 42 30 14 21 43 15 30 46 47 18 
-    36 38 26 36 36 13 39 22 46 44 34 49 20 20 32 28 24 18 21 35 
-    26 10 41 11 22 11 22 24 17 11 35 10 13 26 34 39 24 11 12 33 
-    26 43 49 21 46 15 26 40 18 41 16 47 29 24 34 28 14 46 31 40 
-    36 48 23 31 20 15 47 32 25 19 16 37 43 34 10 20 14 49 49 33 
-    30 27 39 27 31 38 13 24 42 12 42 42 19 40 24 10 35 19 40 34 
-    30 31 46 41 10 41 39 37 35 48 47 21 16 45 44 40 48 27 38 29 
-    14 30 30 25 48 41 36 27 17 17 15 26 31 48 17 45 32 37 21 40 
-    46 10 47 14 34 23 15 14 11 37 14 40 30 37 23 24 10 36 16 28 
-    44 20 38 30 38 15 29 46 39 16 16 18 33 28 45 34 43 13 40 35 
-    27 10 30 17 14 43 43 45 23 38 42 43 32 13 13 47 48 14 43 22  >
+%time[Jobs,Machines] < 3 6 1 7 6 3 
+    10 8 5 4 10 10 
+    9 1 5 4 7 8 
+    5 5 5 3 8 9 
+    3 3 9 1 5 4 
+    10 3 1 3 4 9  >
 
-MaxTime: 11765
+MaxTime: 60
 Job n, Machine m: est lst
-Job 1, Machine 1: 149 11391
-Job 1, Machine 2: 311 11553
-Job 1, Machine 3: 15 11257
-Job 1, Machine 4: 163 11405
-Job 1, Machine 5: 53 11295
-Job 1, Machine 6: 417 11659
-Job 1, Machine 7: 351 11593
-Job 1, Machine 8: 131 11373
-Job 1, Machine 9: 270 11512
-Job 1, Machine 10: 456 11698
-Job 1, Machine 11: 225 11467
-Job 1, Machine 12: 43 11285
-Job 1, Machine 13: 99 11341
-Job 1, Machine 14: 118 11360
-Job 1, Machine 15: 254 11496
-Job 1, Machine 16: 174 11416
-Job 1, Machine 17: 495 11737
-Job 1, Machine 18: 0 11242
-Job 1, Machine 19: 195 11437
-Job 1, Machine 20: 389 11631
-Job 2, Machine 1: 378 11598
-Job 2, Machine 2: 351 11571
-Job 2, Machine 3: 171 11391
-Job 2, Machine 4: 263 11483
-Job 2, Machine 5: 298 11518
-Job 2, Machine 6: 113 11333
-Job 2, Machine 7: 32 11252
-Job 2, Machine 8: 490 11710
-Job 2, Machine 9: 0 11220
-Job 2, Machine 10: 521 11741
-Job 2, Machine 11: 127 11347
-Job 2, Machine 12: 191 11411
-Job 2, Machine 13: 459 11679
-Job 2, Machine 14: 226 11446
-Job 2, Machine 15: 78 11298
-Job 2, Machine 16: 401 11621
-Job 2, Machine 17: 325 11545
-Job 2, Machine 18: 428 11648
-Job 2, Machine 19: 248 11468
-Job 2, Machine 20: 203 11423
-Job 3, Machine 1: 153 11283
-Job 3, Machine 2: 222 11352
-Job 3, Machine 3: 531 11661
-Job 3, Machine 4: 34 11164
-Job 3, Machine 5: 0 11130
-Job 3, Machine 6: 488 11618
-Job 3, Machine 7: 304 11434
-Job 3, Machine 8: 413 11543
-Job 3, Machine 9: 78 11208
-Job 3, Machine 10: 338 11468
-Job 3, Machine 11: 243 11373
-Job 3, Machine 12: 375 11505
-Job 3, Machine 13: 567 11697
-Job 3, Machine 14: 289 11419
-Job 3, Machine 15: 188 11318
-Job 3, Machine 16: 520 11650
-Job 3, Machine 17: 454 11584
-Job 3, Machine 18: 121 11251
-Job 3, Machine 19: 314 11444
-Job 3, Machine 20: 612 11742
-Job 4, Machine 1: 497 11653
-Job 4, Machine 2: 448 11604
-Job 4, Machine 3: 194 11350
-Job 4, Machine 4: 57 11213
-Job 4, Machine 5: 0 11156
-Job 4, Machine 6: 322 11478
-Job 4, Machine 7: 98 11254
-Job 4, Machine 8: 254 11410
-Job 4, Machine 9: 460 11616
-Job 4, Machine 10: 366 11522
-Job 4, Machine 11: 34 11190
-Job 4, Machine 12: 575 11731
-Job 4, Machine 13: 148 11304
-Job 4, Machine 14: 294 11450
-Job 4, Machine 15: 400 11556
-Job 4, Machine 16: 221 11377
-Job 4, Machine 17: 527 11683
-Job 4, Machine 18: 421 11577
-Job 4, Machine 19: 108 11264
-Job 4, Machine 20: 234 11390
-Job 5, Machine 1: 455 11664
-Job 5, Machine 2: 22 11231
-Job 5, Machine 3: 269 11478
-Job 5, Machine 4: 523 11732
-Job 5, Machine 5: 257 11466
-Job 5, Machine 6: 36 11245
-Job 5, Machine 7: 504 11713
-Job 5, Machine 8: 68 11277
-Job 5, Machine 9: 237 11446
-Job 5, Machine 10: 58 11267
-Job 5, Machine 11: 424 11633
-Job 5, Machine 12: 151 11360
-Job 5, Machine 13: 183 11392
-Job 5, Machine 14: 342 11551
-Job 5, Machine 15: 221 11430
-Job 5, Machine 16: 309 11518
-Job 5, Machine 17: 113 11322
-Job 5, Machine 18: 377 11586
-Job 5, Machine 19: 409 11618
-Job 5, Machine 20: 0 11209
-Job 6, Machine 1: 358 11479
-Job 6, Machine 2: 502 11623
-Job 6, Machine 3: 32 11153
-Job 6, Machine 4: 69 11190
-Job 6, Machine 5: 329 11450
-Job 6, Machine 6: 402 11523
-Job 6, Machine 7: 220 11341
-Job 6, Machine 8: 97 11218
-Job 6, Machine 9: 190 11311
-Job 6, Machine 10: 450 11571
-Job 6, Machine 11: 538 11659
-Job 6, Machine 12: 285 11406
-Job 6, Machine 13: 113 11234
-Job 6, Machine 14: 0 11121
-Job 6, Machine 15: 153 11274
-Job 6, Machine 16: 581 11702
-Job 6, Machine 17: 237 11358
-Job 6, Machine 18: 471 11592
-Job 6, Machine 19: 601 11722
-Job 6, Machine 20: 200 11321
-Job 7, Machine 1: 509 11683
-Job 7, Machine 2: 295 11469
-Job 7, Machine 3: 151 11325
-Job 7, Machine 4: 135 11309
-Job 7, Machine 5: 205 11379
-Job 7, Machine 6: 13 11187
-Job 7, Machine 7: 368 11542
-Job 7, Machine 8: 537 11711
-Job 7, Machine 9: 476 11650
-Job 7, Machine 10: 0 11174
-Job 7, Machine 11: 185 11359
-Job 7, Machine 12: 252 11426
-Job 7, Machine 13: 96 11270
-Job 7, Machine 14: 390 11564
-Job 7, Machine 15: 404 11578
-Job 7, Machine 16: 432 11606
-Job 7, Machine 17: 68 11242
-Job 7, Machine 18: 339 11513
-Job 7, Machine 19: 35 11209
-Job 7, Machine 20: 551 11725
-Job 8, Machine 1: 563 11711
-Job 8, Machine 2: 68 11216
-Job 8, Machine 3: 92 11240
-Job 8, Machine 4: 595 11743
-Job 8, Machine 5: 456 11604
-Job 8, Machine 6: 79 11227
-Job 8, Machine 7: 19 11167
-Job 8, Machine 8: 139 11287
-Job 8, Machine 9: 401 11549
-Job 8, Machine 10: 0 11148
-Job 8, Machine 11: 298 11446
-Job 8, Machine 12: 486 11634
-Job 8, Machine 13: 188 11336
-Job 8, Machine 14: 214 11362
-Job 8, Machine 15: 518 11666
-Job 8, Machine 16: 435 11583
-Job 8, Machine 17: 161 11309
-Job 8, Machine 18: 261 11409
-Job 8, Machine 19: 317 11465
-Job 8, Machine 20: 360 11508
-Job 9, Machine 1: 89 11332
-Job 9, Machine 2: 397 11640
-Job 9, Machine 3: 222 11465
-Job 9, Machine 4: 277 11520
-Job 9, Machine 5: 435 11678
-Job 9, Machine 6: 304 11547
-Job 9, Machine 7: 335 11578
-Job 9, Machine 8: 0 11243
-Job 9, Machine 9: 48 11291
-Job 9, Machine 10: 156 11399
-Job 9, Machine 11: 145 11388
-Job 9, Machine 12: 411 11654
-Job 9, Machine 13: 30 11273
-Job 9, Machine 14: 123 11366
-Job 9, Machine 15: 371 11614
-Job 9, Machine 16: 351 11594
-Job 9, Machine 17: 500 11743
-Job 9, Machine 18: 252 11495
-Job 9, Machine 19: 185 11428
-Job 9, Machine 20: 478 11721
-Job 10, Machine 1: 387 11548
-Job 10, Machine 2: 371 11532
-Job 10, Machine 3: 353 11514
-Job 10, Machine 4: 476 11637
-Job 10, Machine 5: 263 11424
-Job 10, Machine 6: 517 11678
-Job 10, Machine 7: 76 11237
-Job 10, Machine 8: 30 11191
-Job 10, Machine 9: 565 11726
-Job 10, Machine 10: 154 11315
-Job 10, Machine 11: 311 11472
-Job 10, Machine 12: 187 11348
-Job 10, Machine 13: 503 11664
-Job 10, Machine 14: 455 11616
-Job 10, Machine 15: 412 11573
-Job 10, Machine 16: 61 11222
-Job 10, Machine 17: 0 11161
-Job 10, Machine 18: 217 11378
-Job 10, Machine 19: 89 11250
-Job 10, Machine 20: 136 11297
-Job 11, Machine 1: 382 11530
-Job 11, Machine 2: 418 11566
-Job 11, Machine 3: 559 11707
-Job 11, Machine 4: 224 11372
-Job 11, Machine 5: 107 11255
-Job 11, Machine 6: 546 11694
-Job 11, Machine 7: 260 11408
-Job 11, Machine 8: 202 11350
-Job 11, Machine 9: 456 11604
-Job 11, Machine 10: 502 11650
-Job 11, Machine 11: 299 11447
-Job 11, Machine 12: 333 11481
-Job 11, Machine 13: 39 11187
-Job 11, Machine 14: 87 11235
-Job 11, Machine 15: 585 11733
-Job 11, Machine 16: 59 11207
-Job 11, Machine 17: 143 11291
-Job 11, Machine 18: 21 11169
-Job 11, Machine 19: 0 11148
-Job 11, Machine 20: 167 11315
-Job 12, Machine 1: 98 11431
-Job 12, Machine 2: 11 11344
-Job 12, Machine 3: 21 11354
-Job 12, Machine 4: 262 11595
-Job 12, Machine 5: 318 11651
-Job 12, Machine 6: 194 11527
-Job 12, Machine 7: 172 11505
-Job 12, Machine 8: 205 11538
-Job 12, Machine 9: 352 11685
-Job 12, Machine 10: 0 11333
-Job 12, Machine 11: 137 11470
-Job 12, Machine 12: 62 11395
-Job 12, Machine 13: 124 11457
-Job 12, Machine 14: 72 11405
-Job 12, Machine 15: 273 11606
-Job 12, Machine 16: 369 11702
-Job 12, Machine 17: 408 11741
-Job 12, Machine 18: 307 11640
-Job 12, Machine 19: 340 11673
-Job 12, Machine 20: 229 11562
-Job 13, Machine 1: 386 11517
-Job 13, Machine 2: 0 11131
-Job 13, Machine 3: 71 11202
-Job 13, Machine 4: 546 11677
-Job 13, Machine 5: 154 11285
-Job 13, Machine 6: 371 11502
-Job 13, Machine 7: 608 11739
-Job 13, Machine 8: 412 11543
-Job 13, Machine 9: 498 11629
-Job 13, Machine 10: 567 11698
-Job 13, Machine 11: 516 11647
-Job 13, Machine 12: 324 11455
-Job 13, Machine 13: 200 11331
-Job 13, Machine 14: 300 11431
-Job 13, Machine 15: 120 11251
-Job 13, Machine 16: 43 11174
-Job 13, Machine 17: 532 11663
-Job 13, Machine 18: 452 11583
-Job 13, Machine 19: 229 11360
-Job 13, Machine 20: 260 11391
-Job 14, Machine 1: 336 11500
-Job 14, Machine 2: 553 11717
-Job 14, Machine 3: 391 11555
-Job 14, Machine 4: 126 11290
-Job 14, Machine 5: 200 11364
-Job 14, Machine 6: 434 11598
-Job 14, Machine 7: 14 11178
-Job 14, Machine 8: 304 11468
-Job 14, Machine 9: 220 11384
-Job 14, Machine 10: 372 11536
-Job 14, Machine 11: 110 11274
-Job 14, Machine 12: 516 11680
-Job 14, Machine 13: 157 11321
-Job 14, Machine 14: 449 11613
-Job 14, Machine 15: 245 11409
-Job 14, Machine 16: 414 11578
-Job 14, Machine 17: 0 11164
-Job 14, Machine 18: 61 11225
-Job 14, Machine 19: 255 11419
-Job 14, Machine 20: 483 11647
-Job 15, Machine 1: 110 11287
-Job 15, Machine 2: 475 11652
-Job 15, Machine 3: 344 11521
-Job 15, Machine 4: 561 11738
-Job 15, Machine 5: 0 11177
-Job 15, Machine 6: 425 11602
-Job 15, Machine 7: 97 11274
-Job 15, Machine 8: 73 11250
-Job 15, Machine 9: 383 11560
-Job 15, Machine 10: 463 11640
-Job 15, Machine 11: 252 11429
-Job 15, Machine 12: 31 11208
-Job 15, Machine 13: 542 11719
-Job 15, Machine 14: 304 11481
-Job 15, Machine 15: 140 11317
-Job 15, Machine 16: 294 11471
-Job 15, Machine 17: 217 11394
-Job 15, Machine 18: 164 11341
-Job 15, Machine 19: 502 11679
-Job 15, Machine 20: 183 11360
-Job 16, Machine 1: 296 11348
-Job 16, Machine 2: 326 11378
-Job 16, Machine 3: 165 11217
-Job 16, Machine 4: 446 11498
-Job 16, Machine 5: 590 11642
-Job 16, Machine 6: 39 11091
-Job 16, Machine 7: 0 11052
-Job 16, Machine 8: 259 11311
-Job 16, Machine 9: 487 11539
-Job 16, Machine 10: 211 11263
-Job 16, Machine 11: 522 11574
-Job 16, Machine 12: 569 11621
-Job 16, Machine 13: 357 11409
-Job 16, Machine 14: 80 11132
-Job 16, Machine 15: 402 11454
-Job 16, Machine 16: 125 11177
-Job 16, Machine 17: 600 11652
-Job 16, Machine 18: 686 11738
-Job 16, Machine 19: 648 11700
-Job 16, Machine 20: 373 11425
-Job 17, Machine 1: 100 11268
-Job 17, Machine 2: 32 11200
-Job 17, Machine 3: 422 11590
-Job 17, Machine 4: 224 11392
-Job 17, Machine 5: 290 11458
-Job 17, Machine 6: 249 11417
-Job 17, Machine 7: 386 11554
-Job 17, Machine 8: 197 11365
-Job 17, Machine 9: 62 11230
-Job 17, Machine 10: 523 11691
-Job 17, Machine 11: 151 11319
-Job 17, Machine 12: 497 11665
-Job 17, Machine 13: 166 11334
-Job 17, Machine 14: 338 11506
-Job 17, Machine 15: 540 11708
-Job 17, Machine 16: 452 11620
-Job 17, Machine 17: 0 11168
-Job 17, Machine 18: 114 11282
-Job 17, Machine 19: 79 11247
-Job 17, Machine 20: 557 11725
-Job 18, Machine 1: 398 11654
-Job 18, Machine 2: 171 11427
-Job 18, Machine 3: 86 11342
-Job 18, Machine 4: 181 11437
-Job 18, Machine 5: 52 11308
-Job 18, Machine 6: 239 11495
-Job 18, Machine 7: 373 11629
-Job 18, Machine 8: 195 11451
-Job 18, Machine 9: 299 11555
-Job 18, Machine 10: 262 11518
-Job 18, Machine 11: 133 11389
-Job 18, Machine 12: 333 11589
-Job 18, Machine 13: 209 11465
-Job 18, Machine 14: 444 11700
-Job 18, Machine 15: 310 11566
-Job 18, Machine 16: 147 11403
-Job 18, Machine 17: 388 11644
-Job 18, Machine 18: 16 11272
-Job 18, Machine 19: 0 11256
-Job 18, Machine 20: 481 11737
-Job 19, Machine 1: 353 11498
-Job 19, Machine 2: 475 11620
-Job 19, Machine 3: 270 11415
-Job 19, Machine 4: 187 11332
-Job 19, Machine 5: 232 11377
-Job 19, Machine 6: 217 11362
-Job 19, Machine 7: 413 11558
-Job 19, Machine 8: 102 11247
-Job 19, Machine 9: 148 11293
-Job 19, Machine 10: 564 11709
-Job 19, Machine 11: 397 11542
-Job 19, Machine 12: 41 11186
-Job 19, Machine 13: 442 11587
-Job 19, Machine 14: 13 11158
-Job 19, Machine 15: 308 11453
-Job 19, Machine 16: 530 11675
-Job 19, Machine 17: 59 11204
-Job 19, Machine 18: 0 11145
-Job 19, Machine 19: 580 11725
-Job 19, Machine 20: 495 11640
-Job 20, Machine 1: 44 11202
-Job 20, Machine 2: 372 11530
-Job 20, Machine 3: 14 11172
-Job 20, Machine 4: 161 11319
-Job 20, Machine 5: 382 11540
-Job 20, Machine 6: 476 11634
-Job 20, Machine 7: 191 11349
-Job 20, Machine 8: 234 11392
-Job 20, Machine 9: 584 11742
-Job 20, Machine 10: 438 11596
-Job 20, Machine 11: 396 11554
-Job 20, Machine 12: 541 11699
-Job 20, Machine 13: 279 11437
-Job 20, Machine 14: 311 11469
-Job 20, Machine 15: 178 11336
-Job 20, Machine 16: 71 11229
-Job 20, Machine 17: 324 11482
-Job 20, Machine 18: 0 11158
-Job 20, Machine 19: 118 11276
-Job 20, Machine 20: 519 11677
+Job 1, Machine 1: 1 35
+Job 1, Machine 2: 4 38
+Job 1, Machine 3: 0 34
+Job 1, Machine 4: 10 44
+Job 1, Machine 5: 20 54
+Job 1, Machine 6: 17 51
+Job 2, Machine 1: 33 46
+Job 2, Machine 2: 0 13
+Job 2, Machine 3: 8 21
+Job 2, Machine 4: 43 56
+Job 2, Machine 5: 13 26
+Job 2, Machine 6: 23 36
+Job 3, Machine 1: 17 43
+Job 3, Machine 2: 26 52
+Job 3, Machine 3: 0 26
+Job 3, Machine 4: 5 31
+Job 3, Machine 5: 27 53
+Job 3, Machine 6: 9 35
+Job 4, Machine 1: 5 30
+Job 4, Machine 2: 0 25
+Job 4, Machine 3: 10 35
+Job 4, Machine 4: 15 40
+Job 4, Machine 5: 18 43
+Job 4, Machine 6: 26 51
+Job 5, Machine 1: 21 56
+Job 5, Machine 2: 9 44
+Job 5, Machine 3: 0 35
+Job 5, Machine 4: 24 59
+Job 5, Machine 5: 12 47
+Job 5, Machine 6: 17 52
+Job 6, Machine 1: 15 45
+Job 6, Machine 2: 0 30
+Job 6, Machine 3: 29 59
+Job 6, Machine 4: 3 33
+Job 6, Machine 5: 25 55
+Job 6, Machine 6: 6 36

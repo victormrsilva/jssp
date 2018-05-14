@@ -4,6 +4,7 @@
 #include "Compact.hpp"
 #include "Flow.hpp"
 
+
 using namespace std;
 /**
  * @brief initialization: jssp instanceFile time. instanceFile is the name of the instance. time is the time of reference. 0 means no time and thus it will be calculated
@@ -27,7 +28,7 @@ int main( int argc, char **argv )
 
     cout << inst.m() << " " << inst.n() << endl;
 
-    Compact mip( inst );
+    Flow mip( inst );
 
     return EXIT_SUCCESS;
 }

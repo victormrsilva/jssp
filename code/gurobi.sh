@@ -1,0 +1,15 @@
+gurobi_cl ResultFile=compact/abz6.sol TimeLimit=21600 compact/abz6.lp > compact/abz6.out
+gurobi_cl ResultFile=compact/abz8.sol TimeLimit=21600 compact/abz8.lp > compact/abz8.out
+gurobi_cl ResultFile=compact/dmu02.sol TimeLimit=21600 compact/dmu02.lp > compact/dmu02.out
+gurobi_cl ResultFile=compact/dmu41.sol TimeLimit=21600 compact/dmu41.lp > compact/dmu41.out
+gurobi_cl ResultFile=compact/dmu33.sol TimeLimit=21600 compact/dmu33.lp > compact/dmu33.out
+gurobi_cl ResultFile=compact/dmu59.sol TimeLimit=21600 compact/dmu59.lp > compact/dmu59.out
+gurobi_cl ResultFile=compact/ft20.sol TimeLimit=21600 compact/ft20.lp > compact/ft20.out
+gurobi_cl ResultFile=compact/la08.sol TimeLimit=21600 compact/la08.lp > compact/la08.out
+gurobi_cl ResultFile=compact/la31.sol TimeLimit=21600 compact/la31.lp > compact/la31.out
+gurobi_cl ResultFile=compact/swv07.sol TimeLimit=21600 compact/swv07.lp > compact/swv07.out
+gurobi_cl ResultFile=compact/swv16.sol TimeLimit=21600 compact/swv16.lp > compact/swv16.out
+gurobi_cl ResultFile=compact/ta18.sol TimeLimit=21600 compact/ta18.lp > compact/ta18.out
+gurobi_cl ResultFile=compact/ta27.sol TimeLimit=21600 compact/ta27.lp > compact/ta27.out
+gurobi_cl ResultFile=compact/ta41.sol TimeLimit=21600 compact/ta41.lp > compact/ta41.out
+gurobi_cl ResultFile=compact/yn02.sol TimeLimit=21600 compact/yn02.lp > compact/yn02.out

@@ -1,0 +1,15 @@
+./jssp ../instances/abz6 0
+./jssp ../instances/abz8 0
+./jssp ../instances/dmu02 0
+./jssp ../instances/dmu41 0
+./jssp ../instances/dmu33 0
+./jssp ../instances/dmu59 0
+./jssp ../instances/ft20 0
+./jssp ../instances/la08 0
+./jssp ../instances/la31 0
+./jssp ../instances/swv07 0
+./jssp ../instances/swv16 0
+./jssp ../instances/ta18 0
+./jssp ../instances/ta27 0
+./jssp ../instances/ta41 0
+./jssp ../instances/yn02 0

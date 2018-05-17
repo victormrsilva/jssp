@@ -113,7 +113,7 @@ Flow::Flow( const Instance &_inst ) :
     }
     f.close();
     
-    cout << "variáveis criadas" << endl;
+    
 
     // c var
     cIdx_ = names.size();
@@ -124,7 +124,7 @@ Flow::Flow( const Instance &_inst ) :
     integer.push_back( 1 );
 
     lp_add_cols( mip, obj, lb, ub, integer, names );
-
+    cout << "variáveis criadas" << endl;
     // f.open ("exit_flows.txt");
     // for (int j = 0; j < inst_.n(); j++){
     //     for (int tf=0; tf < inst_.maxTime(); tf++){

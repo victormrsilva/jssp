@@ -1,12 +1,37 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <fstream>
+#include <sstream>
+#include <utility>
 
 using namespace std;
 
-vector< vector< int > > times_;
+bool replace(std::string& str, const std::string& from, const std::string& to) {
+    size_t start_pos = str.find(from);
+    if(start_pos == std::string::npos)
+        return false;
+    str.replace(start_pos, from.length(), to);
+    return true;
+}
 
-vector< vector< int > > machines_;
+vector<string> explode(string const & s, char delim)
+{
+    vector<string> result;
+    istringstream iss(s);
+
+    for (string token; getline(iss, token, delim); )
+    {
+        result.push_back(move(token));
+    }
+
+    return result;
+}
+
+vector< vector< int > > times;
+
+vector< vector< int > > machines;
+vector< vector< int > > ordem;
 
 // earliest starting time of job on machine
 vector< vector< int > > est_;
@@ -16,12 +41,13 @@ vector< vector< int > > lst_;
 
 int n,m;
 
-int main(int argc, char* argv){{
+int main(int argc, char** argv){
   if (argc < 3){
-    cout << "format_solution instance_file solution_file new_solution_file"
+    cout << "format_solution instance_file solution_file new_solution_file";
   }
 
   ifstream ifs;
+  ofstream ofs;
   ifs.open( argv[1] );
 
   string line;
@@ -29,8 +55,9 @@ int main(int argc, char* argv){{
   //getline( ifs, line );
   ifs >> n >> m;
 
-  times_ = vector< vector< int > >( n, vector<int>( m, 0 ) );
-  machines_ = vector< vector< int > >( n, vector<int>( m, 0 ) );
+  times = vector< vector< int > >( n, vector<int>( m, 0 ) );
+  machines = vector< vector< int > >( n, vector<int>( m, 0 ) );
+  ordem = vector< vector< int > >( n, vector<int>( m, 0 ) );
 
 
   est_ = vector< vector< int > >( n, vector<int>( m, 0 ) );
@@ -43,32 +70,43 @@ int main(int argc, char* argv){{
       for (int j = 0; j < m; j++){
         int machine,time;
         ifs >> machine >> time;
-        machines_[i][j] = machine;
-        times_[i][machine] = time; // para espelhar a formulação matemática do gurobi
+        machines[i][j] = machine;
+        ordem[i][machine] = j;
+        times[i][machine] = time; // para espelhar a formulação matemática do gurobi
+        //cout << i << " " << j <<" " << machines[i][j] << " " <<  times[i][machine] << " " << ordem[i][machine] << endl;
       }
   }
   
 
-  // computing est and lst
-  for ( int j=0 ; (j<n) ; ++j ){
-      int t=0;
-      for ( int i=0 ; (i<m) ; ++i ){
-        int mach = machines_[j][i]; // machine in order i for job j
-        est_[j][mach] = t;
-        t += times_[j][mach];
-      }
-  }
-
-  for ( int j=0 ; (j<n) ; ++j ){
-      int t=t_;
-      for ( int i=m-1 ; (i>=0) ; --i ){ // start from last
-        int mach = machines_[j][i];
-        t -= times_[j][mach];
-        lst_[j][mach] = t;
-      }
-  }
 
   ifs.close();
 
+  ifs.open( argv[2] );
 
+  ofs.open( argv[3] );
+
+  while (getline(ifs, line)){
+    if (line.find('x') != string::npos){ // encontrou x
+      // quebrar solução. primeiro pegar o valor
+      vector<string> exploded = explode(line,' ');
+      int tempo = stoi(exploded[1]);
+
+      exploded = explode(exploded[0],'(');
+      exploded = explode(exploded[1],')');
+      exploded = explode(exploded[0],',');
+
+      int job = stoi(exploded[0]);
+      int machine = stoi(exploded[1]);
+      int proxima = ordem[job-1][machine-1] + 1;
+      //cout << job << " " << machine << " " << tempo << endl;
+      //cout << " x(" << job << "," << machine << "," << tempo << "," << (proxima == m ? proxima+1 : machines[job-1][proxima]+1 ) << "," << tempo+times[job-1][machine-1] << ")" << endl;
+      string var  = " x(" + to_string(job) + "," + to_string(machine) + "," + to_string(tempo) + "," + (proxima == m ? "f" : to_string(machines[job-1][proxima]+1) ) + "," + to_string(tempo+times[job-1][machine-1]) + ")";
+      //replace( var, ","+to_string(m+1)+",", ",f," );
+      
+      ofs << var << " " << 1 << endl;
+      cout << var << " " << 1 << endl;
+    }
+  }
+    ifs.close();
+    ofs.close();
 }

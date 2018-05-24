@@ -6,6 +6,8 @@
 #include <iostream>
 #include <fstream>
 #include <algorithm>
+#include <time.h>
+
 
 using namespace std;
 
@@ -122,9 +124,12 @@ Flow::Flow( const Instance &_inst ) :
     ub.push_back( DBL_MAX );
     obj.push_back( 1.0 );
     integer.push_back( 1 );
-
+    cout << "Number of variables: " << names.size() << endl;
+    clock_t begin = clock();
     lp_add_cols( mip, obj, lb, ub, integer, names );
-    cout << "variáveis criadas" << endl;
+    clock_t end = clock();
+    double time_spent = ((double)end-begin)/((double)CLOCKS_PER_SEC);
+    cout << "variáveis criadas. Tempo: " << time_spent << endl;
     // f.open ("exit_flows.txt");
     // for (int j = 0; j < inst_.n(); j++){
     //     for (int tf=0; tf < inst_.maxTime(); tf++){

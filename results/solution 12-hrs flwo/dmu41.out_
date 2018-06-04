@@ -1,0 +1,795 @@
+Academic license - for non-commercial use only
+Set parameter TimeLimit to value 43200
+
+Gurobi Optimizer version 8.0.0 build v8.0.0rc0 (linux64)
+Copyright (c) 2018, Gurobi Optimization, LLC
+
+Read LP format model from file dmu41.lp
+Reading time = 47.89 seconds
+: 812421 rows, 1521731 columns, 76277860 nonzeros
+
+Read input file 'flow_dmu41.sol'
+
+Optimize a model with 812421 rows, 1521731 columns and 76277860 nonzeros
+Variable types: 0 continuous, 1521731 integer (1521730 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+03]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+
+MIP start produced solution with objective 3797 (43.67s)
+Loaded MIP start with objective 3797
+Processed MIP start in 44.57 seconds
+
+Presolve removed 0 rows and 0 columns (presolve time = 8s) ...
+Presolve removed 56 rows and 40 columns (presolve time = 11s) ...
+Presolve removed 96 rows and 80 columns (presolve time = 16s) ...
+Presolve removed 96 rows and 80 columns (presolve time = 29s) ...
+Presolve removed 96 rows and 80 columns (presolve time = 30s) ...
+Presolve removed 10016 rows and 10000 columns (presolve time = 38s) ...
+Presolve removed 25446 rows and 25430 columns (presolve time = 45s) ...
+Presolve removed 25969 rows and 25430 columns (presolve time = 50s) ...
+Presolve removed 25969 rows and 25430 columns (presolve time = 56s) ...
+Presolve removed 25969 rows and 25430 columns (presolve time = 60s) ...
+Presolve removed 25969 rows and 25430 columns (presolve time = 65s) ...
+Presolve removed 25969 rows and 25430 columns (presolve time = 70s) ...
+Presolve removed 25969 rows and 25430 columns (presolve time = 75s) ...
+Presolve removed 25969 rows and 25430 columns (presolve time = 80s) ...
+Presolve removed 25969 rows and 25430 columns (presolve time = 85s) ...
+Presolve removed 25969 rows and 25430 columns (presolve time = 90s) ...
+Presolve removed 25970 rows and 25430 columns (presolve time = 96s) ...
+Presolve removed 25970 rows and 25430 columns (presolve time = 110s) ...
+Presolve removed 30540 rows and 30000 columns (presolve time = 117s) ...
+Presolve removed 38644 rows and 38104 columns (presolve time = 124s) ...
+Presolve removed 38644 rows and 38104 columns (presolve time = 125s) ...
+Presolve removed 38644 rows and 38104 columns (presolve time = 133s) ...
+Presolve removed 38644 rows and 38104 columns (presolve time = 146s) ...
+Presolve removed 40540 rows and 40000 columns (presolve time = 154s) ...
+Presolve removed 44981 rows and 44441 columns (presolve time = 160s) ...
+Presolve removed 44981 rows and 44441 columns (presolve time = 165s) ...
+Presolve removed 44981 rows and 44441 columns (presolve time = 182s) ...
+Presolve removed 48149 rows and 47609 columns (presolve time = 197s) ...
+Presolve removed 48149 rows and 47609 columns (presolve time = 200s) ...
+Presolve removed 48149 rows and 47609 columns (presolve time = 219s) ...
+Presolve removed 49733 rows and 49193 columns (presolve time = 233s) ...
+Presolve removed 49733 rows and 49193 columns (presolve time = 236s) ...
+Presolve removed 49733 rows and 49193 columns (presolve time = 241s) ...
+Presolve removed 49733 rows and 49193 columns (presolve time = 255s) ...
+Presolve removed 49733 rows and 49193 columns (presolve time = 255s) ...
+Presolve removed 50499 rows and 49959 columns (presolve time = 269s) ...
+Presolve removed 50499 rows and 49959 columns (presolve time = 272s) ...
+Presolve removed 50575 rows and 49959 columns (presolve time = 277s) ...
+Presolve removed 50575 rows and 49959 columns (presolve time = 316s) ...
+Presolve removed 50642 rows and 50105 columns (presolve time = 344s) ...
+Presolve removed 50642 rows and 50105 columns
+Presolve time: 343.80s
+Presolved: 761779 rows, 1471626 columns, 76043917 nonzeros
+Variable types: 0 continuous, 1471626 integer (1471625 binary)
+
+Deterministic concurrent LP optimizer: primal simplex, dual simplex, and barrier
+Showing barrier log only...
+
+Presolve removed 0 rows and 0 columns (presolve time = 6s) ...
+Presolve removed 59341 rows and 117070 columns (presolve time = 11s) ...
+Presolve removed 59341 rows and 117070 columns (presolve time = 17s) ...
+Presolve removed 59697 rows and 117426 columns (presolve time = 21s) ...
+Presolve removed 60025 rows and 117754 columns (presolve time = 28s) ...
+Presolve removed 60045 rows and 117754 columns (presolve time = 33s) ...
+Presolve removed 60045 rows and 117754 columns (presolve time = 35s) ...
+Presolve removed 60045 rows and 117754 columns
+Presolved: 701734 rows, 1353872 columns, 69922530 nonzeros
+
+Root barrier log...
+
+Elapsed ordering time = 5s
+Elapsed ordering time = 10s
+Elapsed ordering time = 15s
+Elapsed ordering time = 20s
+Elapsed ordering time = 25s
+Elapsed ordering time = 30s
+Elapsed ordering time = 35s
+Elapsed ordering time = 40s
+Elapsed ordering time = 45s
+Elapsed ordering time = 50s
+Elapsed ordering time = 55s
+Elapsed ordering time = 60s
+Elapsed ordering time = 65s
+Elapsed ordering time = 70s
+Elapsed ordering time = 75s
+Elapsed ordering time = 80s
+Elapsed ordering time = 85s
+Elapsed ordering time = 90s
+Elapsed ordering time = 95s
+Elapsed ordering time = 100s
+Elapsed ordering time = 105s
+Elapsed ordering time = 110s
+Elapsed ordering time = 115s
+Elapsed ordering time = 120s
+Elapsed ordering time = 125s
+Elapsed ordering time = 130s
+Elapsed ordering time = 135s
+Elapsed ordering time = 140s
+Elapsed ordering time = 145s
+Elapsed ordering time = 150s
+Elapsed ordering time = 155s
+Elapsed ordering time = 160s
+Elapsed ordering time = 165s
+Elapsed ordering time = 170s
+Elapsed ordering time = 175s
+Elapsed ordering time = 180s
+Elapsed ordering time = 185s
+Elapsed ordering time = 190s
+Elapsed ordering time = 195s
+Elapsed ordering time = 200s
+Elapsed ordering time = 205s
+Elapsed ordering time = 210s
+Elapsed ordering time = 215s
+Elapsed ordering time = 220s
+Elapsed ordering time = 225s
+Elapsed ordering time = 230s
+Elapsed ordering time = 235s
+Elapsed ordering time = 240s
+Elapsed ordering time = 245s
+Elapsed ordering time = 250s
+Elapsed ordering time = 255s
+Elapsed ordering time = 260s
+Elapsed ordering time = 265s
+Elapsed ordering time = 270s
+Elapsed ordering time = 275s
+Elapsed ordering time = 280s
+Elapsed ordering time = 285s
+Elapsed ordering time = 290s
+Elapsed ordering time = 295s
+Elapsed ordering time = 300s
+Elapsed ordering time = 305s
+Elapsed ordering time = 310s
+Elapsed ordering time = 315s
+Elapsed ordering time = 320s
+Elapsed ordering time = 325s
+Elapsed ordering time = 330s
+Elapsed ordering time = 335s
+Elapsed ordering time = 340s
+Elapsed ordering time = 345s
+Elapsed ordering time = 350s
+Elapsed ordering time = 355s
+Elapsed ordering time = 360s
+Elapsed ordering time = 365s
+Elapsed ordering time = 370s
+Elapsed ordering time = 375s
+Elapsed ordering time = 380s
+Elapsed ordering time = 385s
+Elapsed ordering time = 390s
+Elapsed ordering time = 395s
+Elapsed ordering time = 400s
+Elapsed ordering time = 405s
+Elapsed ordering time = 410s
+Elapsed ordering time = 415s
+Elapsed ordering time = 420s
+Elapsed ordering time = 425s
+Elapsed ordering time = 430s
+Elapsed ordering time = 435s
+Elapsed ordering time = 440s
+Elapsed ordering time = 445s
+Elapsed ordering time = 450s
+Elapsed ordering time = 455s
+Elapsed ordering time = 460s
+Elapsed ordering time = 465s
+Elapsed ordering time = 470s
+Elapsed ordering time = 475s
+Elapsed ordering time = 480s
+Elapsed ordering time = 485s
+Elapsed ordering time = 490s
+Elapsed ordering time = 495s
+Elapsed ordering time = 500s
+Elapsed ordering time = 505s
+Elapsed ordering time = 510s
+Elapsed ordering time = 515s
+Elapsed ordering time = 520s
+Elapsed ordering time = 525s
+Elapsed ordering time = 530s
+Elapsed ordering time = 535s
+Elapsed ordering time = 540s
+Elapsed ordering time = 545s
+Elapsed ordering time = 550s
+Elapsed ordering time = 555s
+Elapsed ordering time = 560s
+Elapsed ordering time = 565s
+Elapsed ordering time = 570s
+Elapsed ordering time = 575s
+Elapsed ordering time = 580s
+Elapsed ordering time = 585s
+Elapsed ordering time = 590s
+Elapsed ordering time = 595s
+Elapsed ordering time = 600s
+Elapsed ordering time = 605s
+Elapsed ordering time = 610s
+Elapsed ordering time = 615s
+Elapsed ordering time = 620s
+Elapsed ordering time = 625s
+Elapsed ordering time = 630s
+Elapsed ordering time = 635s
+Elapsed ordering time = 640s
+Elapsed ordering time = 645s
+Elapsed ordering time = 650s
+Elapsed ordering time = 655s
+Elapsed ordering time = 660s
+Elapsed ordering time = 665s
+Elapsed ordering time = 670s
+Elapsed ordering time = 675s
+Elapsed ordering time = 680s
+Elapsed ordering time = 685s
+Elapsed ordering time = 690s
+Elapsed ordering time = 695s
+Elapsed ordering time = 700s
+Elapsed ordering time = 705s
+Elapsed ordering time = 710s
+Elapsed ordering time = 715s
+Elapsed ordering time = 720s
+Elapsed ordering time = 725s
+Elapsed ordering time = 730s
+Elapsed ordering time = 735s
+Elapsed ordering time = 740s
+Elapsed ordering time = 745s
+Elapsed ordering time = 750s
+Elapsed ordering time = 755s
+Elapsed ordering time = 760s
+Elapsed ordering time = 765s
+Elapsed ordering time = 770s
+Elapsed ordering time = 775s
+Elapsed ordering time = 780s
+Elapsed ordering time = 785s
+Elapsed ordering time = 790s
+Elapsed ordering time = 795s
+Elapsed ordering time = 811s
+Elapsed ordering time = 816s
+Elapsed ordering time = 820s
+Elapsed ordering time = 826s
+Elapsed ordering time = 830s
+Elapsed ordering time = 835s
+Elapsed ordering time = 840s
+Elapsed ordering time = 845s
+Elapsed ordering time = 850s
+Elapsed ordering time = 855s
+Elapsed ordering time = 860s
+Elapsed ordering time = 865s
+Elapsed ordering time = 870s
+Elapsed ordering time = 875s
+Elapsed ordering time = 880s
+Elapsed ordering time = 885s
+Elapsed ordering time = 890s
+Elapsed ordering time = 895s
+Elapsed ordering time = 900s
+Elapsed ordering time = 905s
+Elapsed ordering time = 910s
+Elapsed ordering time = 915s
+Elapsed ordering time = 920s
+Elapsed ordering time = 925s
+Elapsed ordering time = 930s
+Elapsed ordering time = 935s
+Elapsed ordering time = 940s
+Elapsed ordering time = 945s
+Elapsed ordering time = 950s
+Elapsed ordering time = 955s
+Elapsed ordering time = 960s
+Elapsed ordering time = 965s
+Elapsed ordering time = 970s
+Elapsed ordering time = 975s
+Elapsed ordering time = 980s
+Elapsed ordering time = 985s
+Elapsed ordering time = 990s
+Elapsed ordering time = 995s
+Elapsed ordering time = 1000s
+Elapsed ordering time = 1005s
+Elapsed ordering time = 1010s
+Elapsed ordering time = 1015s
+Elapsed ordering time = 1020s
+Elapsed ordering time = 1025s
+Elapsed ordering time = 1030s
+Elapsed ordering time = 1035s
+Elapsed ordering time = 1040s
+Elapsed ordering time = 1045s
+Elapsed ordering time = 1050s
+Elapsed ordering time = 1055s
+Elapsed ordering time = 1060s
+Elapsed ordering time = 1065s
+Elapsed ordering time = 1070s
+Elapsed ordering time = 1075s
+Elapsed ordering time = 1080s
+Elapsed ordering time = 1085s
+Elapsed ordering time = 1090s
+Elapsed ordering time = 1095s
+Elapsed ordering time = 1100s
+Elapsed ordering time = 1105s
+Elapsed ordering time = 1110s
+Elapsed ordering time = 1115s
+Elapsed ordering time = 1120s
+Elapsed ordering time = 1125s
+Elapsed ordering time = 1130s
+Elapsed ordering time = 1135s
+Elapsed ordering time = 1140s
+Elapsed ordering time = 1145s
+Elapsed ordering time = 1150s
+Elapsed ordering time = 1155s
+Elapsed ordering time = 1160s
+Elapsed ordering time = 1165s
+Elapsed ordering time = 1170s
+Elapsed ordering time = 1175s
+Elapsed ordering time = 1180s
+Elapsed ordering time = 1185s
+Elapsed ordering time = 1190s
+Elapsed ordering time = 1195s
+Elapsed ordering time = 1200s
+Elapsed ordering time = 1205s
+Elapsed ordering time = 1210s
+Elapsed ordering time = 1215s
+Elapsed ordering time = 1220s
+Elapsed ordering time = 1225s
+Elapsed ordering time = 1230s
+Elapsed ordering time = 1235s
+Elapsed ordering time = 1240s
+Elapsed ordering time = 1245s
+Elapsed ordering time = 1250s
+Elapsed ordering time = 1255s
+Elapsed ordering time = 1260s
+Elapsed ordering time = 1265s
+Elapsed ordering time = 1270s
+Elapsed ordering time = 1275s
+Elapsed ordering time = 1280s
+Elapsed ordering time = 1285s
+Elapsed ordering time = 1290s
+Elapsed ordering time = 1295s
+Elapsed ordering time = 1300s
+Elapsed ordering time = 1305s
+Elapsed ordering time = 1310s
+Elapsed ordering time = 1315s
+Elapsed ordering time = 1320s
+Elapsed ordering time = 1325s
+Elapsed ordering time = 1330s
+Elapsed ordering time = 1335s
+Elapsed ordering time = 1340s
+Elapsed ordering time = 1345s
+Elapsed ordering time = 1350s
+Elapsed ordering time = 1355s
+Elapsed ordering time = 1360s
+Elapsed ordering time = 1365s
+Elapsed ordering time = 1370s
+Elapsed ordering time = 1375s
+Elapsed ordering time = 1380s
+Elapsed ordering time = 1385s
+Elapsed ordering time = 1390s
+Elapsed ordering time = 1395s
+Elapsed ordering time = 1400s
+Elapsed ordering time = 1405s
+Elapsed ordering time = 1410s
+Elapsed ordering time = 1415s
+Elapsed ordering time = 1420s
+Elapsed ordering time = 1425s
+Elapsed ordering time = 1430s
+Elapsed ordering time = 1435s
+Elapsed ordering time = 1440s
+Elapsed ordering time = 1445s
+Elapsed ordering time = 1450s
+Elapsed ordering time = 1455s
+Elapsed ordering time = 1460s
+Elapsed ordering time = 1465s
+Elapsed ordering time = 1470s
+Elapsed ordering time = 1475s
+Elapsed ordering time = 1480s
+Elapsed ordering time = 1485s
+Elapsed ordering time = 1490s
+Elapsed ordering time = 1495s
+Elapsed ordering time = 1500s
+Elapsed ordering time = 1505s
+Elapsed ordering time = 1510s
+Elapsed ordering time = 1515s
+Elapsed ordering time = 1520s
+Elapsed ordering time = 1525s
+Elapsed ordering time = 1530s
+Elapsed ordering time = 1535s
+Elapsed ordering time = 1540s
+Elapsed ordering time = 1545s
+Elapsed ordering time = 1550s
+Elapsed ordering time = 1555s
+Elapsed ordering time = 1560s
+Elapsed ordering time = 1565s
+Elapsed ordering time = 1570s
+Elapsed ordering time = 1575s
+Elapsed ordering time = 1580s
+Elapsed ordering time = 1585s
+Elapsed ordering time = 1590s
+Elapsed ordering time = 1595s
+Elapsed ordering time = 1600s
+Elapsed ordering time = 1605s
+Elapsed ordering time = 1610s
+Elapsed ordering time = 1615s
+Elapsed ordering time = 1620s
+Elapsed ordering time = 1625s
+Elapsed ordering time = 1630s
+Elapsed ordering time = 1635s
+Elapsed ordering time = 1640s
+Elapsed ordering time = 1645s
+Elapsed ordering time = 1650s
+Elapsed ordering time = 1655s
+Elapsed ordering time = 1660s
+Elapsed ordering time = 1665s
+Elapsed ordering time = 1670s
+Elapsed ordering time = 1675s
+Elapsed ordering time = 1680s
+Elapsed ordering time = 1685s
+Elapsed ordering time = 1690s
+Elapsed ordering time = 1695s
+Elapsed ordering time = 1700s
+Elapsed ordering time = 1705s
+Elapsed ordering time = 1710s
+Elapsed ordering time = 1715s
+Elapsed ordering time = 1720s
+Elapsed ordering time = 1725s
+Elapsed ordering time = 1730s
+Elapsed ordering time = 1735s
+Elapsed ordering time = 1740s
+Elapsed ordering time = 1745s
+Elapsed ordering time = 1750s
+Elapsed ordering time = 1755s
+Elapsed ordering time = 1760s
+Elapsed ordering time = 1765s
+Elapsed ordering time = 1770s
+Elapsed ordering time = 1775s
+Elapsed ordering time = 1780s
+Elapsed ordering time = 1785s
+Elapsed ordering time = 1790s
+Elapsed ordering time = 1795s
+Elapsed ordering time = 1800s
+Elapsed ordering time = 1805s
+Elapsed ordering time = 1810s
+Elapsed ordering time = 1815s
+Elapsed ordering time = 1820s
+Elapsed ordering time = 1825s
+Elapsed ordering time = 1830s
+Elapsed ordering time = 1835s
+Elapsed ordering time = 1840s
+Elapsed ordering time = 1845s
+Elapsed ordering time = 1850s
+Elapsed ordering time = 1855s
+Elapsed ordering time = 1860s
+Elapsed ordering time = 1865s
+Elapsed ordering time = 1870s
+Elapsed ordering time = 1875s
+Elapsed ordering time = 1880s
+Elapsed ordering time = 1885s
+Elapsed ordering time = 1890s
+Elapsed ordering time = 1895s
+Elapsed ordering time = 1900s
+Elapsed ordering time = 1905s
+Elapsed ordering time = 1910s
+Elapsed ordering time = 1915s
+Elapsed ordering time = 1920s
+Elapsed ordering time = 1925s
+Elapsed ordering time = 1930s
+Elapsed ordering time = 1935s
+Elapsed ordering time = 1940s
+Ordering time: 1948.75s
+
+Barrier statistics:
+ AA' NZ     : 1.351e+08
+ Factor NZ  : 1.460e+09 (roughly 13.0 GBytes of memory)
+ Factor Ops : 1.746e+13 (roughly 600 seconds per iteration)
+ Threads    : 6
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   7.66847264e+03 -1.21623227e+07  1.83e+05 1.02e-01  1.06e+03  2881s
+   1   4.50584670e+03 -1.28523500e+07  2.43e+04 2.40e-02  1.52e+02  3311s
+   2   3.84613885e+03 -1.15842364e+07  1.73e+03 6.31e-11  1.46e+01  3751s
+   3   3.82274334e+03 -6.87899557e+06  9.22e+02 3.46e-11  7.03e+00  4197s
+   4   3.80653699e+03 -3.63445441e+06  3.64e+02 5.26e-11  2.85e+00  4650s
+   5   3.80153592e+03 -1.86864798e+06  1.92e+02 5.11e-11  1.37e+00  5077s
+   6   3.79836600e+03 -1.12415145e+06  8.22e+01 3.23e-11  6.77e-01  5510s
+   7   3.79717677e+03 -6.87116931e+05  4.13e+01 4.58e-11  3.75e-01  5948s
+   8   3.79666517e+03 -4.17118108e+05  2.38e+01 1.99e-11  2.20e-01  6381s
+   9   3.79631911e+03 -2.74218571e+05  1.19e+01 1.45e-11  1.36e-01  6831s
+  10   3.79615413e+03 -1.76522632e+05  6.29e+00 9.31e-12  8.50e-02  7274s
+  11   3.79605067e+03 -8.71601861e+04  3.19e+00 6.05e-12  4.29e-02  7731s
+  12   3.79597718e+03 -5.26750478e+04  1.64e+00 4.55e-12  2.54e-02  8163s
+  13   3.79555277e+03 -3.90209029e+04  7.27e-01 3.63e-12  1.77e-02  8597s
+  14   3.72239122e+03 -3.25394533e+04  4.49e-01 2.30e-12  1.44e-02  9027s
+  15   3.56011125e+03 -1.78851577e+04  2.11e-01 1.49e-12  8.20e-03  9462s
+  16   3.38236427e+03 -8.83422764e+03  7.17e-02 1.28e-12  4.52e-03  9892s
+  17   3.20196688e+03 -2.27693526e+03  2.35e-02 8.10e-13  2.00e-03  10342s
+  18   3.08975310e+03 -3.97697540e+02  1.14e-02 4.62e-13  1.27e-03  10771s
+  19   3.00342409e+03  4.20491282e+02  8.32e-03 3.41e-13  9.40e-04  11203s
+  20   2.97769266e+03  6.17353032e+02  7.67e-03 4.38e-13  8.58e-04  11630s
+  21   2.72521393e+03  1.31257510e+03  3.19e-03 2.84e-13  5.13e-04  12064s
+  22   2.61258346e+03  1.64802310e+03  1.97e-03 2.10e-13  3.50e-04  12492s
+  23   2.48857700e+03  2.18731118e+03  7.69e-04 2.84e-13  1.09e-04  12960s
+  24   2.42157253e+03  2.29023013e+03  3.10e-04 3.53e-13  4.77e-05  13420s
+  25   2.38679446e+03  2.33549354e+03  1.10e-04 1.78e-13  1.86e-05  13871s
+  26   2.37828527e+03  2.34445846e+03  7.18e-05 2.37e-13  1.23e-05  14305s
+  27   2.36583013e+03  2.35610317e+03  1.66e-05 3.71e-13  3.53e-06  14774s
+  28   2.36281407e+03  2.35784778e+03  6.63e-06 2.65e-13  1.80e-06  15225s
+  29   2.36177232e+03  2.35906007e+03  3.66e-06 2.43e-13  9.84e-07  15670s
+  30   2.36115608e+03  2.35987212e+03  1.91e-06 2.38e-13  4.66e-07  16117s
+  31   2.36067104e+03  2.36018442e+03  5.92e-07 2.43e-13  1.77e-07  16575s
+  32   2.36054973e+03  2.36031044e+03  2.97e-07 2.84e-13  8.68e-08  17013s
+  33   2.36045156e+03  2.36040493e+03  6.46e-08 2.77e-13  1.69e-08  17491s
+  34   2.36043336e+03  2.36041327e+03  2.73e-08 4.53e-13  7.29e-09  17935s
+  35   2.36042669e+03  2.36041572e+03  1.50e-08 2.69e-13  3.98e-09  18366s
+  36   2.36042008e+03  2.36041924e+03  2.45e-09 2.61e-13  3.03e-10  18844s
+  37   2.36041984e+03  2.36041931e+03  1.66e-07 2.69e-13  1.92e-10  19287s
+  38   2.36041969e+03  2.36041939e+03  9.85e-08 3.26e-13  1.09e-10  19733s
+  39   2.36041959e+03  2.36041942e+03  5.92e-08 2.04e-13  6.29e-11  20175s
+  40   2.36041957e+03  2.36041942e+03  5.15e-08 2.58e-13  5.39e-11  20612s
+  41   2.36041952e+03  2.36041943e+03  2.56e-08 1.68e-13  3.25e-11  21048s
+  42   2.36041950e+03  2.36041944e+03  1.75e-08 1.70e-13  2.17e-11  21485s
+  43   2.36041949e+03  2.36041944e+03  2.50e-08 2.91e-13  1.89e-11  21921s
+  44   2.36041948e+03  2.36041944e+03  2.42e-08 2.49e-13  1.25e-11  22359s
+  45   2.36041947e+03  2.36041944e+03  3.23e-07 3.21e-13  8.40e-12  22795s
+
+Barrier solved model in 45 iterations and 22795.01 seconds
+Optimal objective 2.36041947e+03
+
+
+Root crossover log...
+
+  220111 variables added to crossover basis                    22825s
+  220651 variables added to crossover basis                    22830s
+  220971 variables added to crossover basis                    22835s
+  221211 variables added to crossover basis                    22840s
+  221441 variables added to crossover basis                    22845s
+  221641 variables added to crossover basis                    22850s
+  221781 variables added to crossover basis                    22855s
+  221931 variables added to crossover basis                    22860s
+  222081 variables added to crossover basis                    22865s
+  222211 variables added to crossover basis                    22870s
+  222331 variables added to crossover basis                    22875s
+  222461 variables added to crossover basis                    22880s
+  222571 variables added to crossover basis                    22885s
+  222691 variables added to crossover basis                    22890s
+  222811 variables added to crossover basis                    22895s
+  222931 variables added to crossover basis                    22900s
+  223051 variables added to crossover basis                    22905s
+  223161 variables added to crossover basis                    22910s
+  223271 variables added to crossover basis                    22915s
+  223381 variables added to crossover basis                    22920s
+  223491 variables added to crossover basis                    22925s
+  223611 variables added to crossover basis                    22930s
+  223711 variables added to crossover basis                    22935s
+  223801 variables added to crossover basis                    22940s
+  223901 variables added to crossover basis                    22945s
+  224151 variables added to crossover basis                    22950s
+  224221 variables added to crossover basis                    22955s
+  224301 variables added to crossover basis                    22960s
+  224371 variables added to crossover basis                    22965s
+  224441 variables added to crossover basis                    22970s
+  224501 variables added to crossover basis                    22975s
+  224571 variables added to crossover basis                    22981s
+  224631 variables added to crossover basis                    22986s
+  224681 variables added to crossover basis                    22990s
+  224751 variables added to crossover basis                    22996s
+  224811 variables added to crossover basis                    23000s
+  224921 variables added to crossover basis                    23005s
+  224981 variables added to crossover basis                    23010s
+  225061 variables added to crossover basis                    23015s
+  225151 variables added to crossover basis                    23020s
+  225221 variables added to crossover basis                    23025s
+  225281 variables added to crossover basis                    23031s
+  225341 variables added to crossover basis                    23035s
+  225461 variables added to crossover basis                    23040s
+  225581 variables added to crossover basis                    23045s
+  225711 variables added to crossover basis                    23051s
+  225811 variables added to crossover basis                    23056s
+  225861 variables added to crossover basis                    23060s
+  225911 variables added to crossover basis                    23065s
+  225971 variables added to crossover basis                    23070s
+  226051 variables added to crossover basis                    23075s
+  226111 variables added to crossover basis                    23080s
+  226181 variables added to crossover basis                    23086s
+  226231 variables added to crossover basis                    23091s
+  226271 variables added to crossover basis                    23095s
+  226321 variables added to crossover basis                    23101s
+  226371 variables added to crossover basis                    23106s
+  226421 variables added to crossover basis                    23111s
+  226461 variables added to crossover basis                    23115s
+  226511 variables added to crossover basis                    23121s
+  226551 variables added to crossover basis                    23125s
+  226601 variables added to crossover basis                    23131s
+  226651 variables added to crossover basis                    23136s
+  226701 variables added to crossover basis                    23141s
+  226751 variables added to crossover basis                    23145s
+  226831 variables added to crossover basis                    23150s
+  226911 variables added to crossover basis                    23156s
+  226971 variables added to crossover basis                    23160s
+  227031 variables added to crossover basis                    23165s
+  227091 variables added to crossover basis                    23170s
+  227161 variables added to crossover basis                    23175s
+  227221 variables added to crossover basis                    23180s
+  227281 variables added to crossover basis                    23185s
+  227351 variables added to crossover basis                    23190s
+  227441 variables added to crossover basis                    23195s
+  227531 variables added to crossover basis                    23200s
+  227621 variables added to crossover basis                    23205s
+  227701 variables added to crossover basis                    23210s
+  227791 variables added to crossover basis                    23216s
+  227871 variables added to crossover basis                    23220s
+  227961 variables added to crossover basis                    23225s
+  228051 variables added to crossover basis                    23231s
+  228131 variables added to crossover basis                    23235s
+  228221 variables added to crossover basis                    23240s
+  228301 variables added to crossover basis                    23245s
+  228391 variables added to crossover basis                    23250s
+  228481 variables added to crossover basis                    23255s
+  228561 variables added to crossover basis                    23260s
+  228651 variables added to crossover basis                    23265s
+  228731 variables added to crossover basis                    23270s
+  228811 variables added to crossover basis                    23275s
+  228891 variables added to crossover basis                    23280s
+  228981 variables added to crossover basis                    23285s
+  229061 variables added to crossover basis                    23290s
+  229151 variables added to crossover basis                    23296s
+  229241 variables added to crossover basis                    23300s
+  229311 variables added to crossover basis                    23305s
+  229381 variables added to crossover basis                    23310s
+
+  472319 DPushes remaining with DInf 6.9451570e+03             23324s
+   73443 DPushes remaining with DInf 5.1547075e+03             25227s
+   22148 DPushes remaining with DInf 4.9787024e+03             26470s
+    7791 DPushes remaining with DInf 5.2245632e+03             27038s
+    7773 DPushes remaining with DInf 5.7453471e+03             27051s
+    7429 DPushes remaining with DInf 2.0698103e+04             27137s
+    7131 DPushes remaining with DInf 2.7493308e+04             27226s
+    6850 DPushes remaining with DInf 4.7817496e+04             27317s
+    6603 DPushes remaining with DInf 7.0253339e+04             27408s
+    5862 DPushes remaining with DInf 6.1975320e+04             27494s
+    5192 DPushes remaining with DInf 7.0092958e+04             27581s
+    4622 DPushes remaining with DInf 2.1895405e+05             27671s
+    4122 DPushes remaining with DInf 1.1856587e+05             27766s
+    3652 DPushes remaining with DInf 1.2695004e+05             27859s
+    3162 DPushes remaining with DInf 1.4389506e+05             27955s
+    2662 DPushes remaining with DInf 2.6426390e+05             28051s
+    2172 DPushes remaining with DInf 2.2701791e+05             28150s
+    1672 DPushes remaining with DInf 3.0328486e+05             28245s
+    1172 DPushes remaining with DInf 3.0457090e+05             28345s
+     712 DPushes remaining with DInf 3.1354751e+05             28441s
+     292 DPushes remaining with DInf 2.9422294e+05             28533s
+       6 DPushes remaining with DInf 2.4812445e+05             28601s
+       1 DPushes remaining with DInf 2.4812416e+05             28622s
+       0 DPushes remaining with DInf 2.4812416e+05             28640s
+
+   78247 PPushes remaining with PInf 4.3611273e-02             28641s
+   78246 PPushes remaining with PInf 4.3925727e-02             28661s
+   56073 PPushes remaining with PInf 3.8045056e+00             29039s
+   52113 PPushes remaining with PInf 5.8460199e+00             29096s
+   51057 PPushes remaining with PInf 6.1249203e+00             29155s
+   48539 PPushes remaining with PInf 6.5855312e+00             29221s
+   44703 PPushes remaining with PInf 7.3250509e+00             29302s
+   41496 PPushes remaining with PInf 7.9802203e+00             29367s
+   36434 PPushes remaining with PInf 1.9417945e+01             29457s
+   32468 PPushes remaining with PInf 1.0496161e+02             29540s
+   29961 PPushes remaining with PInf 3.1822146e+03             29624s
+   28647 PPushes remaining with PInf 3.1456001e+03             29674s
+   27146 PPushes remaining with PInf 3.1287559e+03             29781s
+   25073 PPushes remaining with PInf 7.3355018e+03             29917s
+   23649 PPushes remaining with PInf 7.3129037e+03             29973s
+   21963 PPushes remaining with PInf 7.1272713e+03             30043s
+   20406 PPushes remaining with PInf 7.0621012e+03             30109s
+   18855 PPushes remaining with PInf 7.0313109e+03             30256s
+   17133 PPushes remaining with PInf 6.9389044e+03             30424s
+   15027 PPushes remaining with PInf 6.9226261e+03             30640s
+   13930 PPushes remaining with PInf 6.8607653e+03             30737s
+   12444 PPushes remaining with PInf 6.8127042e+03             30840s
+   11932 PPushes remaining with PInf 6.7161897e+03             30934s
+    9977 PPushes remaining with PInf 6.6689804e+03             31153s
+    8425 PPushes remaining with PInf 6.6317468e+03             31335s
+    7686 PPushes remaining with PInf 6.5632652e+03             31443s
+    6748 PPushes remaining with PInf 6.5499536e+03             31566s
+    5862 PPushes remaining with PInf 6.4858485e+03             31715s
+    4794 PPushes remaining with PInf 6.4582000e+03             31882s
+    3485 PPushes remaining with PInf 6.4118860e+03             32079s
+    1875 PPushes remaining with PInf 6.3982846e+03             32271s
+    1510 PPushes remaining with PInf 6.3845574e+03             32346s
+     908 PPushes remaining with PInf 6.3389094e+03             32475s
+     539 PPushes remaining with PInf 6.1066891e+03             32575s
+     427 PPushes remaining with PInf 5.9962113e+03             32643s
+     107 PPushes remaining with PInf 5.9055436e+03             32728s
+       0 PPushes remaining with PInf 5.8293664e+03             32783s
+
+  Push phase complete: Pinf 5.8293664e+03, Dinf 3.1210859e+06  32784s
+
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+  550407    2.3593085e+03   0.000000e+00   3.121086e+06  32822s
+  550577    2.3593085e+03   0.000000e+00   3.138942e+06  32996s
+  550727    2.3593085e+03   0.000000e+00   7.062789e+06  33161s
+  550877    2.3593085e+03   0.000000e+00   4.019902e+06  33317s
+  551027    2.3593085e+03   0.000000e+00   1.870563e+06  33473s
+  551177    2.3593085e+03   0.000000e+00   9.552387e+06  33640s
+  551337    2.3593085e+03   0.000000e+00   5.781385e+06  33816s
+  551487    2.3593084e+03   0.000000e+00   7.853829e+06  33979s
+  551627    2.3593084e+03   0.000000e+00   5.193711e+06  34132s
+  551767    2.3593083e+03   0.000000e+00   3.846915e+06  34287s
+  551897    2.3593083e+03   0.000000e+00   4.537973e+06  34435s
+  552027    2.3593082e+03   0.000000e+00   6.708768e+06  34578s
+  552157    2.3593082e+03   0.000000e+00   5.583847e+06  34721s
+  552287    2.3593080e+03   0.000000e+00   3.710115e+06  34858s
+  552407    2.3593080e+03   0.000000e+00   5.239455e+06  35000s
+  552537    2.3593079e+03   0.000000e+00   3.989690e+06  35152s
+  552657    2.3593078e+03   0.000000e+00   2.020656e+06  35297s
+  552777    2.3593077e+03   0.000000e+00   2.444910e+06  35434s
+  552897    2.3593076e+03   0.000000e+00   4.318593e+07  35577s
+  553017    2.3593075e+03   0.000000e+00   5.191413e+06  35723s
+  553137    2.3593074e+03   0.000000e+00   1.406844e+07  35863s
+  553257    2.3593072e+03   0.000000e+00   3.368081e+06  36004s
+  553377    2.3593072e+03   0.000000e+00   4.983901e+06  36135s
+  553497    2.3593070e+03   0.000000e+00   4.404834e+06  36270s
+  553617    2.3593069e+03   0.000000e+00   4.827582e+06  36411s
+  553737    2.3593066e+03   0.000000e+00   2.368167e+06  36557s
+  553847    2.3593066e+03   0.000000e+00   6.047951e+06  36695s
+  553967    2.3593064e+03   0.000000e+00   8.107588e+06  36837s
+  554087    2.3593063e+03   0.000000e+00   8.134160e+06  36980s
+  554207    2.3593061e+03   0.000000e+00   4.813947e+06  37119s
+  554327    2.3593060e+03   0.000000e+00   6.708745e+06  37261s
+  554447    2.3593059e+03   0.000000e+00   3.470906e+06  37403s
+  554557    2.3593058e+03   0.000000e+00   6.618078e+06  37533s
+  554677    2.3593058e+03   0.000000e+00   3.353548e+06  37668s
+  554787    2.3593057e+03   0.000000e+00   3.892721e+06  37801s
+  554897    2.3593056e+03   0.000000e+00   4.558644e+06  37928s
+  555017    2.3593056e+03   0.000000e+00   1.080955e+07  38068s
+  555127    2.3593055e+03   0.000000e+00   3.064488e+06  38200s
+  555247    2.3593054e+03   0.000000e+00   2.876182e+06  38336s
+  555367    2.3593054e+03   0.000000e+00   4.406592e+06  38476s
+  555487    2.3593053e+03   0.000000e+00   5.548697e+06  38613s
+  555597    2.3593052e+03   0.000000e+00   2.896874e+06  38748s
+  555707    2.3593052e+03   0.000000e+00   2.757888e+06  38881s
+  555817    2.3593051e+03   0.000000e+00   3.414658e+06  39011s
+  555937    2.3593051e+03   0.000000e+00   1.494096e+07  39152s
+  556057    2.3593050e+03   0.000000e+00   9.637021e+06  39288s
+  556177    2.3593050e+03   0.000000e+00   2.168961e+06  39423s
+  556287    2.3593049e+03   0.000000e+00   3.246162e+06  39556s
+  556407    2.3593049e+03   0.000000e+00   4.182054e+06  39691s
+  556517    2.3593048e+03   0.000000e+00   3.393611e+06  39818s
+  556637    2.3593048e+03   0.000000e+00   5.526547e+06  39956s
+  556757    2.3593047e+03   0.000000e+00   2.689890e+06  40095s
+  556877    2.3593046e+03   0.000000e+00   2.273459e+06  40225s
+  556997    2.3593046e+03   0.000000e+00   4.650281e+06  40366s
+  557117    2.3593046e+03   0.000000e+00   2.440932e+06  40499s
+  557237    2.3593046e+03   1.000001e-06   2.639904e+10  40630s
+  557357    2.3593045e+03   0.000000e+00   3.082372e+06  40768s
+  557467    2.3593045e+03   1.000004e-06   2.332150e+10  40899s
+  557587    2.3593044e+03   0.000000e+00   5.305795e+06  41042s
+  557707    2.3593044e+03   0.000000e+00   2.080394e+06  41179s
+  557827    2.3593044e+03   0.000000e+00   8.487866e+06  41315s
+  557947    2.3593042e+03   0.000000e+00   3.323012e+06  41453s
+  558057    2.3593042e+03   0.000000e+00   6.941404e+06  41588s
+  558177    2.3593042e+03   0.000000e+00   9.571162e+06  41715s
+  558287    2.3593041e+03   0.000000e+00   4.516212e+06  41842s
+  558407    2.3593041e+03   0.000000e+00   3.487105e+06  41974s
+  558527    2.3593041e+03   0.000000e+00   2.559768e+07  42108s
+  558647    2.3593040e+03   0.000000e+00   3.068179e+06  42241s
+  558757    2.3593040e+03   0.000000e+00   4.892649e+06  42372s
+  558877    2.3593040e+03   0.000000e+00   2.484060e+07  42508s
+  558997    2.3593039e+03   0.000000e+00   8.425315e+06  42639s
+  559117    2.3593039e+03   0.000000e+00   3.213137e+06  42771s
+  559247    2.3593039e+03   0.000000e+00   1.124308e+07  42900s
+  559367    2.3593038e+03   0.000000e+00   4.435648e+06  43035s
+  559487    2.3593037e+03   0.000000e+00   3.692428e+06  43171s
+
+
+Root relaxation: time limit, 559519 iterations, 42804.46 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0          -    0      3797.00000 1842.00000  51.5%     - 43200s
+
+Explored 0 nodes (559519 simplex iterations) in 43201.34 seconds
+Thread count was 16 (of 16 available processors)
+
+Solution count 1: 3797 
+
+Time limit reached
+Best objective 3.797000000000e+03, best bound 1.842000000000e+03, gap 51.4880%
+
+Wrote result file 'dmu41.sol'
+

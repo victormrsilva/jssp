@@ -1,0 +1,1 @@
+gurobi.sh: line 5: 29172 Morto                   gurobi_cl InputFile=flow_dmu59.sol TimeLimit=43200 ResultFile=dmu59.sol dmu59.lp > dmu59.out

@@ -1,15 +1,13 @@
-gurobi_cl ResultFile=compact/abz6.sol TimeLimit=21600 compact/abz6.lp > compact/abz6.out
-gurobi_cl ResultFile=compact/abz8.sol TimeLimit=21600 compact/abz8.lp > compact/abz8.out
-gurobi_cl ResultFile=compact/dmu02.sol TimeLimit=21600 compact/dmu02.lp > compact/dmu02.out
-gurobi_cl ResultFile=compact/dmu41.sol TimeLimit=21600 compact/dmu41.lp > compact/dmu41.out
-gurobi_cl ResultFile=compact/dmu33.sol TimeLimit=21600 compact/dmu33.lp > compact/dmu33.out
-gurobi_cl ResultFile=compact/dmu59.sol TimeLimit=21600 compact/dmu59.lp > compact/dmu59.out
-gurobi_cl ResultFile=compact/ft20.sol TimeLimit=21600 compact/ft20.lp > compact/ft20.out
-gurobi_cl ResultFile=compact/la08.sol TimeLimit=21600 compact/la08.lp > compact/la08.out
-gurobi_cl ResultFile=compact/la31.sol TimeLimit=21600 compact/la31.lp > compact/la31.out
-gurobi_cl ResultFile=compact/swv07.sol TimeLimit=21600 compact/swv07.lp > compact/swv07.out
-gurobi_cl ResultFile=compact/swv16.sol TimeLimit=21600 compact/swv16.lp > compact/swv16.out
-gurobi_cl ResultFile=compact/ta18.sol TimeLimit=21600 compact/ta18.lp > compact/ta18.out
-gurobi_cl ResultFile=compact/ta27.sol TimeLimit=21600 compact/ta27.lp > compact/ta27.out
-gurobi_cl ResultFile=compact/ta41.sol TimeLimit=21600 compact/ta41.lp > compact/ta41.out
-gurobi_cl ResultFile=compact/yn02.sol TimeLimit=21600 compact/yn02.lp > compact/yn02.out
+gurobi_cl InputFile=flow_abz8.sol  TimeLimit=43200 ResultFile=abz8.sol abz8.lp > abz8.out
+gurobi_cl InputFile=flow_dmu02.sol TimeLimit=43200 ResultFile=dmu02.sol dmu02.lp > dmu02.out
+gurobi_cl InputFile=flow_dmu33.sol TimeLimit=43200 ResultFile=dmu33.sol dmu33.lp > dmu33.out
+gurobi_cl InputFile=flow_dmu41.sol TimeLimit=43200 ResultFile=dmu41.sol dmu41.lp > dmu41.out
+gurobi_cl InputFile=flow_dmu59.sol TimeLimit=43200 ResultFile=dmu59.sol dmu59.lp > dmu59.out
+gurobi_cl InputFile=flow_ft20.sol  TimeLimit=43200 ResultFile=ft20.sol ft20.lp > ft20.out
+gurobi_cl InputFile=flow_la31.sol  TimeLimit=43200 ResultFile=la31.sol la31.lp > la31.out
+gurobi_cl InputFile=flow_swv07.sol TimeLimit=43200 ResultFile=swv07.sol swv07.lp > swv07.out
+gurobi_cl InputFile=flow_swv16.sol TimeLimit=43200 ResultFile=swv16.sol swv16.lp > swv16.out
+gurobi_cl InputFile=flow_ta18.sol  TimeLimit=43200 ResultFile=ta18.sol ta18.lp > ta18.out
+gurobi_cl InputFile=flow_ta27.sol  TimeLimit=43200 ResultFile=ta27.sol ta27.lp > ta27.out
+gurobi_cl InputFile=flow_ta41.sol  TimeLimit=43200 ResultFile=ta41.sol ta41.lp > ta41.out
+gurobi_cl InputFile=flow_yn02.sol  TimeLimit=43200 ResultFile=yn02.sol yn02.lp > yn02.out

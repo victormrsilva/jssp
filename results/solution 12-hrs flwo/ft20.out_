@@ -1,0 +1,105 @@
+Academic license - for non-commercial use only
+Set parameter TimeLimit to value 43200
+
+Gurobi Optimizer version 8.0.0 build v8.0.0rc0 (linux64)
+Copyright (c) 2018, Gurobi Optimization, LLC
+
+Read LP format model from file ft20.lp
+Reading time = 3.54 seconds
+: 110869 rows, 208851 columns, 5690236 nonzeros
+
+Read input file 'flow_ft20.sol'
+
+Optimize a model with 110869 rows, 208851 columns and 5690236 nonzeros
+Variable types: 0 continuous, 208851 integer (208850 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+
+MIP start produced solution with objective 1165 (3.31s)
+Loaded MIP start with objective 1165
+Processed MIP start in 3.33 seconds
+
+Presolve removed 10637 rows and 10499 columns (presolve time = 5s) ...
+Presolve removed 15851 rows and 15714 columns (presolve time = 11s) ...
+Presolve removed 18458 rows and 18320 columns (presolve time = 16s) ...
+Presolve removed 20138 rows and 20000 columns (presolve time = 20s) ...
+Presolve removed 20722 rows and 20584 columns (presolve time = 25s) ...
+Presolve removed 20876 rows and 20738 columns (presolve time = 32s) ...
+Presolve removed 20899 rows and 20784 columns (presolve time = 35s) ...
+Presolve removed 20899 rows and 20784 columns
+Presolve time: 35.30s
+Presolved: 89970 rows, 188067 columns, 5603255 nonzeros
+Variable types: 0 continuous, 188067 integer (188066 binary)
+
+Deterministic concurrent LP optimizer: primal simplex, dual simplex, and barrier
+Showing barrier log only...
+
+Presolve removed 11538 rows and 24405 columns
+Presolved: 78432 rows, 163662 columns, 4877970 nonzeros
+
+Root barrier log...
+
+Elapsed ordering time = 5s
+Elapsed ordering time = 10s
+Elapsed ordering time = 15s
+Ordering time: 17.10s
+
+Barrier statistics:
+ AA' NZ     : 7.989e+06
+ Factor NZ  : 3.081e+07 (roughly 350 MBytes of memory)
+ Factor Ops : 3.673e+10 (roughly 1 second per iteration)
+ Threads    : 6
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   2.00441877e+03 -1.09861833e+06  2.89e+04 1.55e-01  2.56e+02    64s
+   1   1.93610139e+03 -1.09550540e+06  1.35e+04 2.59e+00  1.22e+02    65s
+   2   1.26948358e+03 -1.03707926e+06  1.91e+03 1.27e-12  1.95e+01    67s
+   3   1.21043936e+03 -6.62503554e+05  8.24e+02 1.75e-12  7.83e+00    69s
+   4   1.17687405e+03 -4.46452079e+05  2.28e+02 1.48e-12  2.78e+00    70s
+   5   1.17033356e+03 -3.09117268e+05  1.12e+02 1.49e-12  1.58e+00    72s
+   6   1.16690029e+03 -1.94972645e+05  5.17e+01 1.37e-12  8.69e-01    74s
+   7   1.16559211e+03 -1.26331372e+05  2.85e+01 3.63e-12  5.29e-01    76s
+   8   1.16466130e+03 -7.83666657e+04  1.21e+01 1.60e-12  3.06e-01    79s
+   9   1.16442768e+03 -5.38886695e+04  8.08e+00 1.72e-12  2.09e-01    81s
+  10   1.16432949e+03 -4.29363684e+04  6.38e+00 1.65e-12  1.66e-01    83s
+  11   1.16428026e+03 -3.47522445e+04  5.53e+00 3.01e-12  1.37e-01    84s
+  12   1.16418229e+03 -2.54726261e+04  3.92e+00 1.96e-12  1.01e-01    86s
+  13   1.16405105e+03 -2.15049053e+04  2.09e+00 2.22e-12  7.97e-02    88s
+  14   1.16398379e+03 -1.47820821e+04  1.57e+00 2.87e-12  5.68e-02    90s
+  15   1.16361658e+03 -1.23930805e+04  1.05e+00 3.62e-12  4.71e-02    92s
+  16   1.16271343e+03 -1.01782007e+04  8.59e-01 4.06e-12  3.94e-02    93s
+  17   1.15039557e+03 -8.81350842e+03  7.16e-01 6.87e-12  3.46e-02    95s
+  18   1.13586403e+03 -7.76987938e+03  6.25e-01 1.15e-11  3.12e-02    97s
+  19   1.13446921e+03 -7.23436451e+03  6.15e-01 1.91e-11  3.04e-02    99s
+  20   1.13217091e+03 -5.05812951e+03  5.99e-01 8.32e-11  2.85e-02   101s
+  21   1.13162504e+03  8.26846337e+02  5.95e-01 3.24e-10  2.79e-02   103s
+  22   1.13079268e+03  1.05790570e+04  5.90e-01 5.53e-10  2.76e-02   105s
+
+Barrier performed 22 iterations in 104.63 seconds
+Objective cutoff exceeded
+
+Concurrent spin time: 6.79s
+
+Solved with barrier
+
+Root relaxation: cutoff, 0 iterations, 72.25 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0     cutoff    0      1165.00000 1165.00000  0.00%     -  111s
+
+Explored 0 nodes (0 simplex iterations) in 111.55 seconds
+Thread count was 16 (of 16 available processors)
+
+Solution count 1: 1165 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.165000000000e+03, best bound 1.165000000000e+03, gap 0.0000%
+
+Wrote result file 'ft20.sol'
+

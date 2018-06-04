@@ -1,8 +1,9 @@
 #include <string>
 #include <iostream>
-#include "Instance.hpp"
-#include "Compact.hpp"
-#include "Flow.hpp"
+#include "src/Instance.hpp"
+#include "src/Compact.hpp"
+#include "src/Flow.hpp"
+#include "src/Kondili.hpp"
 
 
 using namespace std;
@@ -14,11 +15,19 @@ using namespace std;
  * @param argv 
  * @return int 
  */
+
+constexpr unsigned int str2int(const char* str, int h = 0){
+    return !str[h] ? 5381 : (str2int(str, h+1) * 33) ^ str[h];
+}
+
 int main( int argc, char **argv )
 {
-    if (argc<3)
+    if (argc < 4)
     {
-        cerr << "jssp instanceFile instanceNum" << endl;
+        cerr << "jssp instanceFile instanceNum formulation" << endl;
+        cerr << "formulation: " << endl;
+        cerr << "F for Flow " << endl;
+        cerr << "C for Compact (BigM) " << endl;
         exit(EXIT_FAILURE);
     }
 
@@ -28,7 +37,19 @@ int main( int argc, char **argv )
 
     cout << inst.m() << " " << inst.n() << endl;
 
-    Flow mip( inst );
+    string option = string(argv[3]);
+
+    if (option == "F"){
+        Flow mip( inst );
+    }
+    if (option == "C"){
+        Compact mip( inst );
+    }
+
+    if (option == "K"){
+        Kondili mip( inst );
+    }
+    
 
     return EXIT_SUCCESS;
 }

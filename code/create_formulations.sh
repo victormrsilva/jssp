@@ -1,7 +1,7 @@
 #./jssp ../instances/abz8 800
-./jssp ../instances/dmu02 3100
-./jssp ../instances/dmu41 4000
-./jssp ../instances/dmu33 6847
+#./jssp ../instances/dmu02 3100
+#./jssp ../instances/dmu41 4000
+#./jssp ../instances/dmu33 6847 -- não rodou
 ./jssp ../instances/dmu59 6100
 ./jssp ../instances/ft20 1300
 ./jssp ../instances/la31 2000

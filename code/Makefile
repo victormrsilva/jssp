@@ -5,8 +5,8 @@ OPTIONS=-Wall -g3  -DGRB -std=c++11 -I/opt/gurobi752/linux64/include
 
 all:jssp
 
-jssp:main.o Instance.o lp.o Flow.o Compact.o Kondili.o
-	$(CC) $(OPTIONS) main.o Instance.o lp.o Flow.o Compact.o Kondili.o -L/opt/gurobi800/linux64/lib -lgurobi80 -o jssp 
+jssp:main.o Instance.o lp.o Flow.o Compact.o Kondili.o Fernando.o
+	$(CC) $(OPTIONS) main.o Instance.o lp.o Flow.o Compact.o Kondili.o Fernando.o -L/opt/gurobi800/linux64/lib -lgurobi80 -o jssp 
 #-lasan -lm `pkg-config --libs cbc` 
 
 main.o:main.cpp 
@@ -23,6 +23,9 @@ Compact.o:src/Compact.cpp src/Compact.hpp Instance.o lp.o
 
 Kondili.o:src/Kondili.cpp src/Kondili.hpp Instance.o lp.o
 	$(CC) $(OPTIONS) -c src/Kondili.cpp -o Kondili.o
+
+Fernando.o:src/Fernando.cpp src/Fernando.hpp Instance.o lp.o
+	$(CC) $(OPTIONS) -c src/Fernando.cpp -o Fernando.o
 
 Flow.o:src/Flow.cpp src/Flow.hpp Instance.o lp.o
 	$(CC) $(OPTIONS) -c src/Flow.cpp -o Flow.o

@@ -4,6 +4,7 @@
 #include "src/Compact.hpp"
 #include "src/Flow.hpp"
 #include "src/Kondili.hpp"
+#include "src/Fernando.hpp"
 
 
 using namespace std;
@@ -24,10 +25,12 @@ int main( int argc, char **argv )
 {
     if (argc < 4)
     {
-        cerr << "jssp instanceFile instanceNum formulation" << endl;
+        cerr << "jssp instanceFile timeLimit formulation" << endl;
         cerr << "formulation: " << endl;
         cerr << "F for Flow " << endl;
         cerr << "C for Compact (BigM) " << endl;
+        cerr << "K for Kondilli " << endl;
+        cerr << "Fe for Fernadno " << endl;
         exit(EXIT_FAILURE);
     }
 
@@ -48,6 +51,11 @@ int main( int argc, char **argv )
 
     if (option == "K"){
         Kondili mip( inst );
+    }
+
+    if (option == "Fe"){
+        cout << "Fernando formulation selected" << endl;
+        Fernando mip( inst );
     }
     
 

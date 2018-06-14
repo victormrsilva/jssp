@@ -633,6 +633,35 @@ void lp_write_lp(LinearProgram *lp, const char *fileName)
     }
 }
 
+void lp_write_mps(LinearProgram *lp, const char *fileName)
+{
+    assert(lp != NULL);
+    assert( fileName != NULL );
+    assert( strlen(fileName) );
+
+#ifdef GRB
+    if (lp->tmpRows>0)
+    {
+        int grbError;
+        grbError = GRBupdatemodel(lp->lp);
+        lp_check_for_grb_error( LPgrbDefaultEnv, grbError, __FILE__, __LINE__ );
+        
+        lp->tmpRows = 0;
+    }
+    
+    char fName[256];
+    strcpy( fName, fileName );
+    if ( strstr(fName, ".mps")==0 )
+        strcat( fName, ".mps" );
+    
+    int grbError = GRBwrite( lp->lp, fName );
+    lp_check_for_grb_error( LPgrbDefaultEnv, grbError, __FILE__, __LINE__ );
+    
+    return;
+#endif
+
+}
+
 void lp_set_direction(LinearProgram *lp, const char direction)
 {
     assert(lp != NULL);

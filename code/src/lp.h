@@ -66,6 +66,7 @@ typedef LinearProgram * LinearProgramPtr;
 void lp_read( LinearProgram *lp, const char *fileName );
 void lp_write_lp( LinearProgram *lp, const char *fileName );
 void lp_write_sol( LinearProgram *lp, const char *fileName );
+void lp_write_mps( LinearProgram *lp, const char *fileName );
 void lp_load_mip_start(LinearProgram *lp, int count, const char **colNames, const double *colValues);
 /* uses indices */
 void lp_load_mip_starti( LinearProgram *lp, int count, const int *colIndexes, const double *colValues );

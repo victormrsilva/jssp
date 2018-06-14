@@ -4,6 +4,7 @@
 #include <string>
 #include <cfloat>
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 Fernando::Fernando( const Instance &_inst ) : inst_(_inst) { // já inicializa a variável privada _inst com o valor passado por referencia
@@ -49,6 +50,13 @@ Fernando::Fernando( const Instance &_inst ) : inst_(_inst) { // já inicializa a
         }
 
     }
+
+    ofstream f;
+    f.open ("variables.txt");
+    for (string name : names){
+        f << name << endl;
+    }
+    f.close();
 
     // c var
     cIdx_ = names.size();
@@ -131,13 +139,14 @@ Fernando::Fernando( const Instance &_inst ) : inst_(_inst) { // já inicializa a
                     int h_anterior = inst_.machine(j,i-1); // first machine
 
                     if (t - inst_.time(j,h_anterior) > 0){
-                        idx.push_back( xIdx_[i][j][t - inst_.time(j,i)] );
+                        idx.push_back( xIdx_[h_anterior][j][t - inst_.time(j,h_anterior)] );
                         coef.push_back( 1.0 );
                     }
                 }
-
-                idx.push_back( eIdx_[h][j][t-1] );
-                coef.push_back( 1.0 );
+                if (t > 1){
+                    idx.push_back( eIdx_[h][j][t-1] );
+                    coef.push_back( 1.0 );
+                }
 
                 idx.push_back( xIdx_[h][j][t] );
                 coef.push_back( -1.0 );
@@ -162,12 +171,14 @@ Fernando::Fernando( const Instance &_inst ) : inst_(_inst) { // já inicializa a
                 int h_anterior = inst_.machine(j,i-1); // first machine
 
                 if (t - inst_.time(j,h_anterior) > 0){
-                    idx.push_back( xIdx_[i][j][t - inst_.time(j,i)] );
+                    idx.push_back( xIdx_[h_anterior][j][t - inst_.time(j,h_anterior)] );
                     coef.push_back( 1.0 );
                 }
 
-                idx.push_back( eIdx_[h][j][t-1] );
-                coef.push_back( 1.0 );
+                if (t > 1){
+                    idx.push_back( eIdx_[h][j][t-1] );
+                    coef.push_back( 1.0 );
+                }
 
                 idx.push_back( xIdx_[h][j][t] );
                 coef.push_back( -1.0 );
@@ -201,6 +212,7 @@ Fernando::Fernando( const Instance &_inst ) : inst_(_inst) { // já inicializa a
 
     lp_optimize( mip );
     lp_write_lp( mip, inst_.instanceName().c_str() );
+    lp_write_mps( mip, inst_.instanceName().c_str() );
     lp_write_sol(mip, "jssp_Fernando.sol");
 }
 

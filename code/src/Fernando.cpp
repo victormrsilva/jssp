@@ -161,37 +161,50 @@ Fernando::Fernando( const Instance &_inst ) : inst_(_inst) { // já inicializa a
     }
     cout << "restriction 31 added" << endl;
 
-    for (int i = 1; i < inst_.m(); i++){
+    // for (int i = 1; i < inst_.m(); i++){
+    //     for (int j = 0; j < inst_.n(); j++){
+    //         for (int t = 1; t <= inst_.maxTime(); t++){
+    //             vector< int > idx;
+    //             vector< double > coef;
+
+    //             int h = inst_.machine(j,i); // first machine
+    //             int h_anterior = inst_.machine(j,i-1); // first machine
+
+    //             if (t - inst_.time(j,h_anterior) > 0){
+    //                 idx.push_back( xIdx_[h_anterior][j][t - inst_.time(j,h_anterior)] );
+    //                 coef.push_back( 1.0 );
+    //             }
+
+    //             if (t > 1){
+    //                 idx.push_back( eIdx_[h][j][t-1] );
+    //                 coef.push_back( 1.0 );
+    //             }
+
+    //             idx.push_back( xIdx_[h][j][t] );
+    //             coef.push_back( -1.0 );
+    //             // adiciona restrição.
+    //             idx.push_back( eIdx_[h][j][t] );
+    //             coef.push_back( -1.0 );
+
+    //             lp_add_row( mip, idx, coef, "32("+to_string(i+1)+","+to_string(j+1)+","+to_string(t)+")", 'E', 0 );
+
+    //         }
+    //     }
+    // }
+    // cout << "restriction 32 added" << endl;
+
+    for (int i = 0; i < inst_.m(); i++){
         for (int j = 0; j < inst_.n(); j++){
-            for (int t = 1; t <= inst_.maxTime(); t++){
-                vector< int > idx;
-                vector< double > coef;
-
-                int h = inst_.machine(j,i); // first machine
-                int h_anterior = inst_.machine(j,i-1); // first machine
-
-                if (t - inst_.time(j,h_anterior) > 0){
-                    idx.push_back( xIdx_[h_anterior][j][t - inst_.time(j,h_anterior)] );
-                    coef.push_back( 1.0 );
-                }
-
-                if (t > 1){
-                    idx.push_back( eIdx_[h][j][t-1] );
-                    coef.push_back( 1.0 );
-                }
-
-                idx.push_back( xIdx_[h][j][t] );
-                coef.push_back( -1.0 );
-                // adiciona restrição.
-                idx.push_back( eIdx_[h][j][t] );
-                coef.push_back( -1.0 );
-
-                lp_add_row( mip, idx, coef, "32("+to_string(i+1)+","+to_string(j+1)+","+to_string(t)+")", 'E', 0 );
-
+            vector< int > idx;
+            vector< double > coef;
+            for (int t = inst_.est(j,i); t <= inst_.lst(j,i); t++){
+                idx.push_back( xIdx_[i][j][t] );
+                coef.push_back( 1.0 );
             }
+            lp_add_row( mip, idx, coef, "execution("+to_string(i+1)+","+to_string(j+1)+")", 'E', 1.0 );
         }
     }
-    cout << "restriction 32 added" << endl;
+    cout << "force execution of job constraints created" << endl;
 
     for (int j = 0; j < inst_.n(); j++){
         vector< int > idx;

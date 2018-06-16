@@ -1179,3 +1179,144 @@ Solution count 6: 7 8 9 ... 24
 
 Optimal solution found (tolerance 1.00e-04)
 Best objective 7.000000000000e+00, best bound 7.000000000000e+00, gap 0.0000%
+
+Gurobi 8.0.0 (linux64) logging started Fri Jun 15 23:14:03 2018
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.0.0 build v8.0.0rc0 (linux64)
+Copyright (c) 2018, Gurobi Optimization, LLC
+
+Read LP format model from file ft03.lp
+Reading time = 0.00 seconds
+: 143 rows, 184 columns, 544 nonzeros
+Optimize a model with 143 rows, 184 columns and 544 nonzeros
+Variable types: 0 continuous, 184 integer (183 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Found heuristic solution: objective 12.0000000
+Presolve removed 71 rows and 85 columns
+Presolve time: 0.01s
+Presolved: 72 rows, 99 columns, 334 nonzeros
+Variable types: 0 continuous, 99 integer (98 binary)
+
+Root relaxation: objective 6.090909e+00, 62 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    6.09091    0   19   12.00000    6.09091  49.2%     -    0s
+H    0     0                      10.0000000    6.09091  39.1%     -    0s
+H    0     0                       8.0000000    6.09091  23.9%     -    0s
+H    0     0                       7.0000000    6.09091  13.0%     -    0s
+
+Cutting planes:
+  Clique: 2
+  Zero half: 1
+
+Explored 1 nodes (68 simplex iterations) in 0.04 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 4: 7 8 10 12 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.000000000000e+00, best bound 7.000000000000e+00, gap 0.0000%
+
+Wrote result file 'flow.sol'
+
+
+Gurobi 8.0.0 (linux64) logging started Fri Jun 15 23:57:21 2018
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.0.0 build v8.0.0rc0 (linux64)
+Copyright (c) 2018, Gurobi Optimization, LLC
+
+Read LP format model from file ft03.lp
+Reading time = 0.00 seconds
+: 150 rows, 316 columns, 862 nonzeros
+
+Read input file 'jssp.sol'
+
+Optimize a model with 150 rows, 316 columns and 862 nonzeros
+Variable types: 0 continuous, 316 integer (315 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+
+MIP start did not produce a new incumbent solution
+
+Presolve removed 37 rows and 116 columns
+Presolve time: 0.00s
+Presolved: 113 rows, 200 columns, 649 nonzeros
+Variable types: 0 continuous, 200 integer (199 binary)
+Found heuristic solution: objective 10.0000000
+Found heuristic solution: objective 8.0000000
+
+Root relaxation: infeasible, 110 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 infeasible    0         8.00000    8.00000  0.00%     -    0s
+
+Explored 0 nodes (110 simplex iterations) in 0.03 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 2: 8 10 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 8.000000000000e+00, best bound 8.000000000000e+00, gap 0.0000%
+
+Gurobi 8.0.0 (linux64) logging started Fri Jun 15 23:57:45 2018
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.0.0 build v8.0.0rc0 (linux64)
+Copyright (c) 2018, Gurobi Optimization, LLC
+
+Read LP format model from file ft03.lp
+Reading time = 0.00 seconds
+: 150 rows, 316 columns, 862 nonzeros
+
+Read input file 'jssp.sol'
+
+Optimize a model with 150 rows, 316 columns and 862 nonzeros
+Variable types: 0 continuous, 316 integer (315 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+
+MIP start did not produce a new incumbent solution
+
+Presolve removed 37 rows and 116 columns
+Presolve time: 0.00s
+Presolved: 113 rows, 200 columns, 649 nonzeros
+Variable types: 0 continuous, 200 integer (199 binary)
+Found heuristic solution: objective 10.0000000
+Found heuristic solution: objective 8.0000000
+
+Root relaxation: infeasible, 110 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 infeasible    0         8.00000    8.00000  0.00%     -    0s
+
+Explored 0 nodes (110 simplex iterations) in 0.03 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 2: 8 10 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 8.000000000000e+00, best bound 8.000000000000e+00, gap 0.0000%
+
+Wrote result file 'jssp_Fernando.sol'
+

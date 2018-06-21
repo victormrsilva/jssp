@@ -1,13 +1,9 @@
-#./jssp ../instances/abz8 800
-#./jssp ../instances/dmu02 3100
-#./jssp ../instances/dmu41 4000
-#./jssp ../instances/dmu33 6847 -- não rodou
-./jssp ../instances/dmu59 6100
-./jssp ../instances/ft20 1300
-./jssp ../instances/la31 2000
-./jssp ../instances/swv07 2000
-./jssp ../instances/swv16 3300
-./jssp ../instances/ta18 1800
-./jssp ../instances/ta27 2000
-./jssp ../instances/ta41 2600
-./jssp ../instances/yn02 1100
+./jssp ../instances/abz5 1300 0 C
+./jssp ../instances/abz7 680 0 C
+./jssp ../instances/abz8 700 0 C
+./jssp ../instances/abz9 700 0 C
+./jssp ../instances/ft20 1200 0 C
+./jssp ../instances/la02 680 0 C
+./jssp ../instances/la07 920 0 C
+./jssp ../instances/la09 980 0 C
+./jssp ../instances/la11 1250 0 C

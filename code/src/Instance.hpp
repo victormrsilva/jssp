@@ -30,7 +30,7 @@ public:
      * @param idx number of lines in instance
      * 
      */
-    Instance( const std::string &fileName, int idx = 0 );
+    Instance( const std::string &fileName, int idx = 0, int execute = 0 );
 
     /**
      * @brief return number of jobs
@@ -81,6 +81,9 @@ public:
 
     // return instance name
     std::string instanceName() const;
+
+    // return if will be executed
+    int execute() const; 
 private:
     int n_;
     int m_;
@@ -88,6 +91,8 @@ private:
     int t_; // max time
 
     int ub_;
+
+    int execute_;
 
     std::string instance_name;
 

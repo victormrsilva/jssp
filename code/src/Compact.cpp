@@ -126,9 +126,14 @@ Compact::Compact( const Instance &_inst ) : inst_(_inst) { // já inicializa a v
         lp_add_row( mip, idx, coef, "fin("+to_string(j+1)+")", 'G', inst_.time( j, inst_.machine(j, inst_.m()-1)) );
     }
 
-    lp_optimize( mip );
+    
     lp_write_lp( mip, inst_.instanceName().c_str() );
-    //lp_write_sol(mip, "jssp_compact.sol");
+    lp_write_mps( mip, inst_.instanceName().c_str() );
+
+    if (inst_.execute()){
+        lp_optimize( mip );
+        lp_write_sol(mip, "jssp_compact.sol");
+    }
 }
 
 

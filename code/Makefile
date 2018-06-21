@@ -1,5 +1,5 @@
 CC=g++
-OPTIONS=-Wall -g3  -DGRB -std=c++11 -I/opt/gurobi752/linux64/include 
+OPTIONS=-Wall -g3 -DGRB -std=c++11 -I/opt/gurobi800/linux64/include 
 #-I/opt/gurobi752/linux64/include -L/opt/gurobi752/linux64/lib/ -lgurobi_c++ -lgurobi75 -lm `pkg-config --cflags cbc`
 #-I/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include/ `pkg-config --cflags cbc`
 

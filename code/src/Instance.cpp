@@ -6,11 +6,13 @@ using namespace std;
 
 #define str(a) to_string(a)
 
-Instance::Instance( const std::string &fileName, int time ){
+Instance::Instance( const std::string &fileName, int time , int execute){
     ifstream ifs;
     ifs.open( fileName.c_str() );
 
     instance_name = fileName.c_str();
+
+    execute_ = execute;
 
     string line;
 
@@ -71,6 +73,10 @@ Instance::Instance( const std::string &fileName, int time ){
     }
 
     ifs.close();
+}
+
+int Instance::execute() const {
+    return execute_;
 }
 
 void Instance::saveCmpl( const string fname ) const {

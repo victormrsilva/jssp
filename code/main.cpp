@@ -23,9 +23,11 @@ constexpr unsigned int str2int(const char* str, int h = 0){
 
 int main( int argc, char **argv )
 {
-    if (argc < 4)
+    if (argc < 5)
     {
-        cerr << "jssp instanceFile timeLimit formulation" << endl;
+        cerr << "jssp instanceFile timeLimit execute formulation" << endl;
+        cerr << "timeLimit: a integer with limited time of execution. -1 will be maximum time needed" << endl;
+        cerr << "execute: 1 for execute the lp. 0 only generates lp" << endl;
         cerr << "formulation: " << endl;
         cerr << "F for Flow " << endl;
         cerr << "C for Compact (BigM) " << endl;
@@ -34,13 +36,13 @@ int main( int argc, char **argv )
         exit(EXIT_FAILURE);
     }
 
-    Instance inst( string(argv[1]), atoi(argv[2]) );
+    Instance inst( string(argv[1]), atoi(argv[2]), atoi(argv[3]) );
 
     inst.saveCmpl("jssp.cdat");
 
     cout << inst.m() << " " << inst.n() << endl;
 
-    string option = string(argv[3]);
+    string option = string(argv[4]);
 
     if (option == "F"){
         Flow mip( inst );

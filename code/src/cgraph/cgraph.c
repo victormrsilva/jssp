@@ -17,7 +17,7 @@
 
 #define MAX_NAME_SIZE 64
 
-#define MIN_CLIQUE_ROW 300 /* mininum size for a row to be considered a clique row */
+#define MIN_CLIQUE_ROW 256 /* mininum size for a row to be considered a clique row */
 
 struct _CGraph
 {

@@ -1,0 +1,4158 @@
+Academic license - for non-commercial use only
+Set parameter TimeLimit to value 7200
+Set parameter TuneTimeLimit to value 86400
+
+grbtune version 8.0.0 build v8.0.0rc0 (linux64)
+Copyright (c) 2018, Gurobi Optimization, LLC
+
+Read LP format model from file flow/abz8.lp
+Reading time = 2.96 seconds
+: 138062 rows, 252161 columns, 3673364 nonzeros
+
+Solving model using baseline parameter set with TimeLimit=7200s
+
+Solving model ...
+Optimize a model with 138062 rows, 252161 columns and 3673364 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 8e+02]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+
+Concurrent LP optimizer: dual simplex and barrier
+Showing barrier log only...
+
+Presolve removed 8252 rows and 8213 columns
+Presolve time: 3.90s
+Presolved: 129810 rows, 243948 columns, 3657265 nonzeros
+
+Elapsed ordering time = 5s
+Elapsed ordering time = 10s
+Elapsed ordering time = 15s
+Elapsed ordering time = 20s
+Elapsed ordering time = 25s
+Elapsed ordering time = 30s
+Elapsed ordering time = 35s
+Elapsed ordering time = 41s
+Elapsed ordering time = 45s
+Elapsed ordering time = 50s
+Elapsed ordering time = 55s
+Elapsed ordering time = 60s
+Ordering time: 60.35s
+
+Barrier statistics:
+ AA' NZ     : 6.611e+06
+ Factor NZ  : 1.091e+08 (roughly 1.0 GBytes of memory)
+ Factor Ops : 5.347e+11 (roughly 40 seconds per iteration)
+ Threads    : 1
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   2.28767914e+03 -1.19015698e+04  1.63e+04 0.00e+00  2.14e+00   118s
+   1   4.45146578e+02 -1.16836830e+04  1.11e+03 1.08e-03  1.66e-01   174s
+   2   7.91183486e+02 -7.28460784e+03  1.34e+02 1.93e-14  3.17e-02   227s
+   3   7.44272167e+02 -2.40859886e+03  3.63e+01 1.60e-14  9.85e-03   286s
+   4   6.91856310e+02 -6.32824415e+02  1.31e+01 1.43e-14  3.75e-03   344s
+   5   5.98456452e+02  1.89553798e+02  3.15e+00 1.34e-14  1.04e-03   410s
+   6   5.54234430e+02  3.73485427e+02  9.83e-01 1.69e-14  4.21e-04   473s
+   7   5.41137725e+02  4.35309765e+02  5.62e-01 1.09e-14  2.43e-04   538s
+   8   5.34428968e+02  4.63399562e+02  3.69e-01 1.49e-14  1.61e-04   600s
+   9   5.30995212e+02  4.83873665e+02  2.77e-01 7.23e-15  1.08e-04   662s
+  10   5.27802538e+02  4.99632145e+02  1.96e-01 8.47e-15  6.64e-05   728s
+  11   5.24282455e+02  5.08540172e+02  1.12e-01 1.15e-14  3.74e-05   795s
+  12   5.21274681e+02  5.15802830e+02  4.12e-02 8.60e-15  1.32e-05   865s
+  13   5.20476126e+02  5.16878683e+02  2.73e-02 8.49e-15  8.71e-06   926s
+  14   5.19651462e+02  5.17977363e+02  1.28e-02 9.16e-15  4.06e-06   981s
+  15   5.19407468e+02  5.18197046e+02  9.00e-03 9.85e-15  2.93e-06  1035s
+  16   5.19079048e+02  5.18500083e+02  3.98e-03 7.98e-15  1.38e-06  1093s
+  17   5.18875766e+02  5.18757044e+02  9.08e-04 1.21e-14  2.89e-07  1160s
+  18   5.18835897e+02  5.18780273e+02  4.23e-04 9.18e-15  1.36e-07  1216s
+  19   5.18802296e+02  5.18794050e+02  3.75e-05 9.49e-15  1.87e-08  1280s
+  20   5.18799343e+02  5.18796019e+02  1.50e-05 7.33e-15  7.52e-09  1337s
+  21   5.18798367e+02  5.18796493e+02  7.83e-06 9.13e-15  4.21e-09  1393s
+  22   5.18797627e+02  5.18796873e+02  2.61e-06 9.39e-15  1.66e-09  1450s
+  23   5.18797333e+02  5.18797152e+02  5.77e-07 9.35e-15  3.98e-10  1508s
+  24   5.18797293e+02  5.18797214e+02  3.07e-07 7.68e-15  1.78e-10  1564s
+  25   5.18797256e+02  5.18797238e+02  7.46e-08 1.39e-14  4.00e-11  1624s
+  26   5.18797248e+02  5.18797242e+02  3.18e-08 8.40e-15  1.42e-11  1680s
+  27   5.18797244e+02  5.18797244e+02  2.35e-08 1.27e-14  7.00e-13  1736s
+
+Barrier solved model in 27 iterations and 1735.94 seconds
+Optimal objective 5.18797244e+02
+
+Crossover log...
+
+   47310 variables added to crossover basis                     1740s
+   48610 variables added to crossover basis                     1745s
+
+   81082 DPushes remaining with DInf 4.7115483e+01              1746s
+   17307 DPushes remaining with DInf 2.4952694e+01              1797s
+    5517 DPushes remaining with DInf 1.7130092e+01              1835s
+    1609 DPushes remaining with DInf 1.3820722e+01              1855s
+     564 DPushes remaining with DInf 1.2910780e+01              1861s
+      63 DPushes remaining with DInf 1.4755298e+02              1871s
+       0 DPushes remaining with DInf 1.5616097e+02              1876s
+
+    8604 PPushes remaining with PInf 7.9758601e-05              1876s
+       0 PPushes remaining with PInf 0.0000000e+00              1919s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 3.9285905e+01   1919s
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+   89666    5.1879724e+02   0.000000e+00   3.928590e+01   1920s
+   90096    5.1879724e+02   0.000000e+00   2.529623e+01   1928s
+   90506    5.1879724e+02   0.000000e+00   1.667846e+02   1938s
+   90866    5.1879724e+02   0.000000e+00   3.021739e+01   1947s
+   91226    5.1879724e+02   0.000000e+00   3.867155e+01   1957s
+   91456    5.1879724e+02   0.000000e+00   2.374368e+02   1967s
+   91666    5.1879724e+02   0.000000e+00   5.800994e+01   1977s
+   91886    5.1879724e+02   0.000000e+00   1.627737e+01   1988s
+   92106    5.1879724e+02   0.000000e+00   2.798235e+02   1998s
+   92346    5.1879724e+02   0.000000e+00   2.409753e+00   2008s
+   92576    5.1879724e+02   0.000000e+00   5.540741e+00   2018s
+   92816    5.1879724e+02   0.000000e+00   1.557661e-01   2028s
+   93069    5.1879724e+02   6.849050e-04   0.000000e+00   2038s
+   93076    5.1879724e+02   0.000000e+00   2.020828e-05   2046s
+Extra 2 simplex iterations after uncrush
+   93078    5.1879724e+02   0.000000e+00   0.000000e+00   2048s
+
+Solved with barrier
+Solved in 93078 iterations and 2047.56 seconds
+Optimal objective  5.187972438e+02
+
+
+-------------------------------------------------------------------------------
+Begin tuning (baseline runtime 2047.60s)...
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 2...
+
+	Method 2
+
+Solving model ... runtime 1497.93s
+
+Improvement found:
+  baseline: runtime 2047.60s
+  improved: runtime 1497.93s
+Total elapsed tuning time 3546s (82854s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 3...
+
+	Method 1
+
+Solving model ... runtime 1872.49s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 1497.93s
+Total elapsed tuning time 5418s (80982s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 4...
+
+	Method 0
+
+Solving model ... runtime 1872.45s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 1497.93s
+Total elapsed tuning time 7291s (79109s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 5...
+
+	Method 2
+	Aggregate 0
+
+Solving model ... runtime 978.76s
+
+Improvement found:
+  baseline: runtime 2047.60s
+  improved: runtime 978.76s
+Total elapsed tuning time 8269s (78131s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 6...
+
+	Method 0
+	Presolve 1
+
+Solving model ... runtime 1223.46s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 978.76s
+Total elapsed tuning time 9493s (76907s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 7...
+
+	Method 2
+	Presolve 1
+
+Solving model ... runtime 1223.52s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 978.76s
+Total elapsed tuning time 10716s (75684s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 8...
+
+	Aggregate 0
+
+Solving model ... runtime 1255.30s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 978.76s
+Total elapsed tuning time 11972s (74428s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 9...
+
+	Method 0
+	Aggregate 0
+
+Solving model ... runtime 1223.47s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 978.76s
+Total elapsed tuning time 13195s (73205s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 10...
+
+	Method 2
+	Aggregate 0
+	PreDual 1
+
+Solving model ... runtime 1290.98s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 978.76s
+Total elapsed tuning time 14486s (71914s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 11...
+
+	Method 2
+	Aggregate 0
+	PrePasses 8
+
+Solving model ... runtime 1226.79s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 978.76s
+Total elapsed tuning time 15713s (70687s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 12...
+
+	Method 2
+	Aggregate 0
+	PrePasses 2
+
+Solving model ... runtime 1005.78s
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 978.76s
+Total elapsed tuning time 16719s (69681s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 13...
+
+	Method 2
+	Aggregate 0
+	Presolve 1
+
+Solving model ... runtime 1106.81s
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 978.76s
+Total elapsed tuning time 17825s (68575s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 14...
+
+	Method 2
+	Presolve 0
+
+Solving model ... runtime 1223.46s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 978.76s
+Total elapsed tuning time 19049s (67351s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 15...
+
+	Method 1
+	PreDepRow 0
+
+Solving model ... runtime 1223.47s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 978.76s
+Total elapsed tuning time 20272s (66128s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 16...
+
+	Method 0
+	Aggregate 0
+	PrePasses 2
+
+Solving model ... runtime 1223.46s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 978.76s
+Total elapsed tuning time 21496s (64904s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 17...
+
+	Method 2
+	Aggregate 0
+	NumericFocus 2
+	Presolve 1
+
+Solving model ... runtime 1238.39s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 978.76s
+Total elapsed tuning time 22734s (63666s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 18...
+
+	Presolve 0
+
+Solving model ... runtime 1223.48s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 978.76s
+Total elapsed tuning time 23958s (62442s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 19...
+
+	Method 2
+	Aggregate 0
+	NumericFocus 3
+
+Solving model ... runtime 1223.47s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 978.76s
+Total elapsed tuning time 25181s (61219s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 20...
+
+	Presolve 1
+
+Solving model ... runtime 1223.50s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 978.76s
+Total elapsed tuning time 26405s (59995s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 21...
+
+	SimplexPricing 0
+	Aggregate 0
+
+Solving model ... runtime 1223.55s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 978.76s
+Total elapsed tuning time 27628s (58772s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 22...
+
+	AggFill 10
+
+Solving model ... runtime 1223.51s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 978.76s
+Total elapsed tuning time 28852s (57548s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 23...
+
+	Method 2
+	Aggregate 0
+	Presolve 2
+
+Solving model ... runtime 689.57s
+
+Improvement found:
+  baseline: runtime 2047.60s
+  improved: runtime 689.57s
+Total elapsed tuning time 29541s (56859s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 24...
+
+	PreDual 0
+
+Solving model ... runtime 877.67s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 689.57s
+Total elapsed tuning time 30419s (55981s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 25...
+
+	Method 2
+	Aggregate 0
+	PrePasses 2
+	Presolve 2
+
+Solving model ... runtime 687.39s
+
+Improvement found:
+  baseline: runtime 2047.60s
+  improved: runtime 687.39s
+Total elapsed tuning time 31106s (55294s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 26...
+
+	Method 2
+	Presolve 2
+
+Solving model ... runtime 653.09s
+
+Improvement found:
+  baseline: runtime 2047.60s
+  improved: runtime 653.09s
+Total elapsed tuning time 31760s (54640s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 27...
+
+	NormAdjust 2
+
+Solving model ... runtime 818.74s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 653.09s
+Total elapsed tuning time 32578s (53822s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 28...
+
+	Presolve 2
+
+Solving model ... runtime 839.84s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 653.09s
+Total elapsed tuning time 33418s (52982s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 29...
+
+	Method 1
+	PrePasses 1
+
+Solving model ... runtime 816.36s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 653.09s
+Total elapsed tuning time 34234s (52166s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 30...
+
+	AggFill 5
+	PreDual 0
+
+Solving model ... runtime 824.98s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 653.09s
+Total elapsed tuning time 35059s (51341s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 31...
+
+	Method 2
+	PrePasses 3
+	Presolve 1
+
+Solving model ... runtime 780.39s
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 653.09s
+Total elapsed tuning time 35840s (50560s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 32...
+
+	Method 2
+	PrePasses 2
+	Presolve 2
+
+Solving model ... runtime 655.21s
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 653.09s
+Total elapsed tuning time 36495s (49905s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 33...
+
+	Method 2
+	PrePasses 1
+
+Solving model ... runtime 812.59s
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 653.09s
+Total elapsed tuning time 37308s (49092s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 34...
+
+	Method 2
+	PrePasses 5
+	Presolve 2
+
+Solving model ... runtime 651.25s
+
+Improvement found:
+  baseline: runtime 2047.60s
+  improved: runtime 651.25s
+Total elapsed tuning time 37959s (48441s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 35...
+
+	PrePasses 8
+	Presolve 1
+
+Solving model ... runtime 841.36s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 38800s (47600s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 36...
+
+	Method 1
+	Presolve 0
+
+Solving model ... runtime 814.16s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 39614s (46786s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 37...
+
+	Method 2
+	PreDepRow 1
+
+Solving model ... runtime 759.48s
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 40374s (46026s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 38...
+
+	Method 2
+	AggFill 1000
+	Presolve 2
+
+Solving model ... runtime 814.09s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 41188s (45212s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 39...
+
+	NormAdjust 2
+	Presolve 2
+
+Solving model ... runtime 824.04s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 42012s (44388s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 40...
+
+	Method 0
+	Presolve 0
+
+Solving model ... runtime 814.06s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 42826s (43574s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 41...
+
+	NormAdjust 3
+
+Solving model ... runtime 835.42s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 43662s (42738s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 42...
+
+	Method 0
+	Presolve 2
+
+Solving model ... runtime 814.06s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 44476s (41924s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 43...
+
+	Method 2
+	PrePasses 5
+
+Solving model ... runtime 758.36s
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 45234s (41166s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 44...
+
+	Method 0
+	SimplexPricing 0
+	Presolve 1
+
+Solving model ... runtime 814.06s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 46048s (40352s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 45...
+
+	NormAdjust 1
+	Presolve 2
+
+Solving model ... runtime 826.82s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 46875s (39525s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 46...
+
+	Method 1
+	PrePasses 5
+
+Solving model ... runtime 814.08s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 47689s (38711s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 47...
+
+	Method 2
+	PreDual 1
+	Presolve 2
+
+Solving model ... runtime 903.85s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 48593s (37807s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 48...
+
+	PrePasses 5
+
+Solving model ... runtime 822.67s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 49415s (36985s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 49...
+
+	NormAdjust 3
+	Presolve 0
+
+Solving model ... runtime 824.26s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 50240s (36160s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 50...
+
+	Method 2
+	PrePasses 8
+	Presolve 2
+
+Solving model ... runtime 652.19s
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 50892s (35508s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 51...
+
+	PreDepRow 0
+	Presolve 2
+
+Solving model ... runtime 823.47s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 51715s (34685s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 52...
+
+	Method 2
+	PreDepRow 0
+
+Solving model ... runtime 780.40s
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 52496s (33904s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 53...
+
+	Method 1
+	Presolve 2
+
+Solving model ... runtime 814.08s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 53310s (33090s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 54...
+
+	PrePasses 2
+	Presolve 2
+
+Solving model ... runtime 820.18s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 54130s (32270s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 55...
+
+	Method 2
+	PrePasses 1
+	Presolve 2
+
+Solving model ... runtime 806.10s
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 54936s (31464s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 56...
+
+	Method 2
+	PreDual 1
+	PrePasses 3
+	Presolve 2
+
+Solving model ... runtime 904.76s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 55841s (30559s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 57...
+
+	Method 2
+	PrePasses 2
+	Presolve 1
+
+Solving model ... runtime 782.19s
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 56623s (29777s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 58...
+
+	Method 2
+	PrePasses 5
+	Presolve 1
+
+Solving model ... runtime 778.67s
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 57402s (28998s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 59...
+
+	Method 2
+	PrePasses 3
+	Presolve 2
+
+Solving model ... runtime 654.81s
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 58057s (28343s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 60...
+
+	Method 2
+	NumericFocus 1
+	Presolve 2
+
+Solving model ... runtime 814.40s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 58871s (27529s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 61...
+
+	Method 0
+	PreDual 0
+
+Solving model ... runtime 814.08s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 59685s (26715s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 62...
+
+	PrePasses 1
+	Presolve 2
+
+Solving model ... runtime 832.81s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 60518s (25882s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 63...
+
+	Method 2
+	PrePasses 8
+
+Solving model ... runtime 757.91s
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 61276s (25124s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 64...
+
+	Method 1
+	Presolve 1
+
+Solving model ... runtime 814.07s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 62090s (24310s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 65...
+
+	Method 2
+	PrePasses 2
+
+Solving model ... runtime 757.25s
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 62847s (23553s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 66...
+
+	PrePasses 1
+
+Solving model ... runtime 838.17s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 63685s (22715s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 67...
+
+	Method 1
+	NormAdjust 0
+	Presolve 1
+
+Solving model ... runtime 814.07s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 64499s (21901s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 68...
+
+	Method 2
+	NumericFocus 2
+	Presolve 1
+
+Solving model ... runtime 820.31s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 65320s (21080s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 69...
+
+	NormAdjust 0
+
+Solving model ... runtime 820.06s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 66140s (20260s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 70...
+
+	Method 2
+	NumericFocus 3
+	Presolve 1
+
+Solving model ... runtime 824.79s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 66965s (19435s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 71...
+
+	Method 2
+	NumericFocus 2
+	Presolve 0
+
+Solving model ... runtime 839.37s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 67804s (18596s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 72...
+
+	PrePasses 1
+	Presolve 1
+
+Solving model ... runtime 825.26s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 68629s (17771s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 73...
+
+	Method 2
+	AggFill 0
+	PrePasses 3
+	Presolve 2
+
+Solving model ... runtime 734.87s
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 69364s (17036s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 74...
+
+	Method 2
+	NumericFocus 2
+	Presolve 2
+
+Solving model ... runtime 832.61s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 70197s (16203s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 75...
+
+	AggFill 0
+
+Solving model ... runtime 825.25s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 71022s (15378s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 76...
+
+	NormAdjust 2
+	PrePasses 8
+	Presolve 2
+
+Solving model ... runtime 822.70s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 71845s (14555s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 77...
+
+	Method 0
+	NumericFocus 3
+	Presolve 1
+
+Solving model ... runtime 814.09s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 72659s (13741s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 78...
+
+	NormAdjust 0
+	Presolve 1
+
+Solving model ... runtime 837.14s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 73496s (12904s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 79...
+
+	Method 2
+	NumericFocus 2
+	PrePasses 2
+	Presolve 2
+
+Solving model ... runtime 825.88s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 74322s (12078s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 80...
+
+	Method 1
+	AggFill 5
+
+Solving model ... runtime 814.07s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 75136s (11264s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 81...
+
+	SimplexPricing 2
+
+Solving model ... runtime 824.64s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 75961s (10439s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 82...
+
+	Method 2
+	AggFill 100
+	PrePasses 5
+
+Solving model ... runtime 688.90s
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 76649s (9751s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 83...
+
+	SimplexPricing 1
+	Presolve 0
+
+Solving model ... runtime 840.53s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 77490s (8910s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 84...
+
+	Method 0
+	AggFill 100
+	Presolve 2
+
+Solving model ... runtime 814.06s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 78304s (8096s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 85...
+
+	Method 0
+	Aggregate 0
+	Presolve 2
+
+Solving model ... runtime 814.08s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 79118s (7282s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 86...
+
+	NormAdjust 3
+	Presolve 1
+
+Solving model ... runtime 830.63s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 79949s (6451s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 87...
+
+	SimplexPricing 3
+
+Solving model ... runtime 834.54s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 80783s (5617s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 88...
+
+	Aggregate 0
+	Presolve 1
+
+Solving model ... runtime 823.58s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 81607s (4793s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 89...
+
+	PrePasses 8
+
+Solving model ... runtime 823.86s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 82431s (3969s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 90...
+
+	PrePasses 2
+
+Solving model ... runtime 831.16s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 83262s (3138s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 91...
+
+	Method 2
+	NumericFocus 1
+	Presolve 1
+
+Solving model ... runtime 814.07s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 84076s (2324s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 92...
+
+	Method 2
+	AggFill 1000
+
+Solving model ... runtime 814.08s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 84890s (1510s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 93...
+
+	PrePasses 5
+	Presolve 2
+
+Solving model ... runtime 842.72s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 85733s (667s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 94...
+
+	NumericFocus 3
+
+Solving model ... 
+
+Tune time limit reached.
+
+-------------------------------------------------------------------------------
+
+Tested 93 parameter sets in 86427.22s
+
+Baseline parameter set: runtime 2047.60s
+
+Improved parameter set 1 (runtime 651.25s):
+
+	Method 2
+	PrePasses 5
+	Presolve 2
+
+Improved parameter set 2 (runtime 653.09s):
+
+	Method 2
+	Presolve 2
+
+Improved parameter set 3 (runtime 1497.93s):
+
+	Method 2
+
+Wrote parameter files: flow/tune_abz1.prm through flow/tune_abz3.prm
+Wrote log files: flow/tune_abz1.log through flow/tune_abz3.log
+-------------------------------------------------------------------
+
+Testing candidate parameter set 97...
+
+	NumericFocus 3
+	PreDepRow 0
+
+Solving model ... runtime 825.39s+
+
+Progress so far:
+  baseline: runtime 1071.77s
+  best:     runtime 613.22s
+Total elapsed tuning time 74651s (11749s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 98...
+
+	Method 0
+	PrePasses 2
+
+Solving model ... runtime 766.60s+
+
+Progress so far:
+  baseline: runtime 1071.77s
+  best:     runtime 613.22s
+Total elapsed tuning time 75418s (10982s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 99...
+
+	Method 0
+	PrePasses 1
+	Presolve 1
+
+Solving model ... runtime 766.53s+
+
+Progress so far:
+  baseline: runtime 1071.77s
+  best:     runtime 613.22s
+Total elapsed tuning time 76184s (10216s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 100...
+
+	NormAdjust 2
+	Presolve 0
+
+Solving model ... runtime 771.29s+
+
+Progress so far:
+  baseline: runtime 1071.77s
+  best:     runtime 613.22s
+Total elapsed tuning time 76956s (9444s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 101...
+
+	Method 0
+	PrePasses 8
+	Presolve 2
+
+Solving model ... runtime 766.53s+
+
+Progress so far:
+  baseline: runtime 1071.77s
+  best:     runtime 613.22s
+Total elapsed tuning time 77722s (8678s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 102...
+
+	Method 0
+	PrePasses 5
+
+Solving model ... runtime 766.55s+
+
+Progress so far:
+  baseline: runtime 1071.77s
+  best:     runtime 613.22s
+Total elapsed tuning time 78489s (7911s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 103...
+
+	NumericFocus 2
+	Presolve 0
+
+Solving model ... runtime 790.80s+
+
+Progress so far:
+  baseline: runtime 1071.77s
+  best:     runtime 613.22s
+Total elapsed tuning time 79280s (7120s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 104...
+
+	Method 1
+	Presolve 2
+
+Solving model ... runtime 766.53s+
+
+Progress so far:
+  baseline: runtime 1071.77s
+  best:     runtime 613.22s
+Total elapsed tuning time 80046s (6354s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 105...
+
+	Method 1
+	NormAdjust 1
+	PrePasses 2
+
+Solving model ... runtime 766.67s+
+
+Progress so far:
+  baseline: runtime 1071.77s
+  best:     runtime 613.22s
+Total elapsed tuning time 80813s (5587s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 106...
+
+	SimplexPricing 1
+	Presolve 1
+
+Solving model ... runtime 767.60s+
+
+Progress so far:
+  baseline: runtime 1071.77s
+  best:     runtime 613.22s
+Total elapsed tuning time 81580s (4820s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 107...
+
+	NormAdjust 1
+
+Solving model ... runtime 769.32s+
+
+Progress so far:
+  baseline: runtime 1071.77s
+  best:     runtime 613.22s
+Total elapsed tuning time 82350s (4050s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 108...
+
+	PrePasses 8
+	Presolve 2
+
+Solving model ... runtime 770.55s+
+
+Progress so far:
+  baseline: runtime 1071.77s
+  best:     runtime 613.22s
+Total elapsed tuning time 83120s (3280s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 109...
+
+	PrePasses 2
+	Presolve 2
+
+Solving model ... runtime 813.62s+
+
+Progress so far:
+  baseline: runtime 1071.77s
+  best:     runtime 613.22s
+Total elapsed tuning time 83934s (2466s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 110...
+
+	PrePasses 3
+
+Solving model ... runtime 794.77s+
+
+Progress so far:
+  baseline: runtime 1071.77s
+  best:     runtime 613.22s
+Total elapsed tuning time 84729s (1671s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 111...
+
+	PreDual 0
+	PrePasses 8
+	Presolve 2
+
+Solving model ... runtime 818.30s+
+
+Progress so far:
+  baseline: runtime 1071.77s
+  best:     runtime 613.22s
+Total elapsed tuning time 85547s (853s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 112...
+
+	Method 0
+	PrePasses 8
+
+Solving model ... runtime 766.55s+
+
+Progress so far:
+  baseline: runtime 1071.77s
+  best:     runtime 613.22s
+Total elapsed tuning time 86313s (87s remaining)
+
+-------------------------------------------------------------------------------
+
+Tested 112 parameter sets in 86313.49s
+
+Baseline parameter set: runtime 1071.77s
+
+Improved parameter set 1 (runtime 613.22s):
+
+	Method 2
+	Aggregate 0
+	Presolve 1
+
+Improved parameter set 2 (runtime 620.73s):
+
+	Method 2
+	Presolve 1
+
+Improved parameter set 3 (runtime 754.18s):
+
+	Method 2
+
+Wrote parameter files: tune1.prm through tune3.prm
+Wrote log files: tune1.log through tune3.log
+olve 1
+
+Solving model ... runtime 774.07s+
+
+Progress so far:
+  baseline: runtime 1071.77s
+  best:     runtime 613.22s
+Total elapsed tuning time 73051s (13349s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 96...
+
+	AggFill 0
+	Presolve 1
+
+Solving model ... runtime 775.05s+
+
+Progress so far:
+  baseline: runtime 1071.77s
+  best:     runtime 613.22s
+Total elapsed tuning time 73826s (12574s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 97...
+
+	NumericFocus 3
+	PreDepRow 0
+
+Solving model ... runtime 1223.52s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 978.76s
+Total elapsed tuning time 10716s (75684s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 8...
+
+	Aggregate 0
+
+Solving model ... runtime 825.39s+
+
+Progress so far:
+  baseline: runtime 1071.77s
+  best:     runtime 613.22s
+Total elapsed tuning time 74651s (11749s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 98...
+
+	Method 0
+	PrePasses 2
+
+Solving model ... runtime 766.60s+
+
+Progress so far:
+  baseline: runtime 1071.77s
+  best:     runtime 613.22s
+Total elapsed tuning time 75418s (10982s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 99...
+
+	Method 0
+	PrePasses 1
+	Presolve 1
+
+Solving model ... runtime 1255.30s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 978.76s
+Total elapsed tuning time 11972s (74428s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 9...
+
+	Method 0
+	Aggregate 0
+
+Solving model ... runtime 766.53s+
+
+Progress so far:
+  baseline: runtime 1071.77s
+  best:     runtime 613.22s
+Total elapsed tuning time 76184s (10216s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 100...
+
+	NormAdjust 2
+	Presolve 0
+
+Solving model ... runtime 1223.47s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 978.76s
+Total elapsed tuning time 13195s (73205s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 10...
+
+	Method 2
+	Aggregate 0
+	PreDual 1
+
+Solving model ... runtime 771.29s+
+
+Progress so far:
+  baseline: runtime 1071.77s
+  best:     runtime 613.22s
+Total elapsed tuning time 76956s (9444s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 101...
+
+	Method 0
+	PrePasses 8
+	Presolve 2
+
+Solving model ... runtime 766.53s+
+
+Progress so far:
+  baseline: runtime 1071.77s
+  best:     runtime 613.22s
+Total elapsed tuning time 77722s (8678s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 102...
+
+	Method 0
+	PrePasses 5
+
+Solving model ... runtime 1290.98s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 978.76s
+Total elapsed tuning time 14486s (71914s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 11...
+
+	Method 2
+	Aggregate 0
+	PrePasses 8
+
+Solving model ... runtime 766.55s+
+
+Progress so far:
+  baseline: runtime 1071.77s
+  best:     runtime 613.22s
+Total elapsed tuning time 78489s (7911s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 103...
+
+	NumericFocus 2
+	Presolve 0
+
+Solving model ... runtime 1226.79s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 978.76s
+Total elapsed tuning time 15713s (70687s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 12...
+
+	Method 2
+	Aggregate 0
+	PrePasses 2
+
+Solving model ... runtime 790.80s+
+
+Progress so far:
+  baseline: runtime 1071.77s
+  best:     runtime 613.22s
+Total elapsed tuning time 79280s (7120s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 104...
+
+	Method 1
+	Presolve 2
+
+Solving model ... runtime 766.53s+
+
+Progress so far:
+  baseline: runtime 1071.77s
+  best:     runtime 613.22s
+Total elapsed tuning time 80046s (6354s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 105...
+
+	Method 1
+	NormAdjust 1
+	PrePasses 2
+
+Solving model ... runtime 1005.78s
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 978.76s
+Total elapsed tuning time 16719s (69681s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 13...
+
+	Method 2
+	Aggregate 0
+	Presolve 1
+
+Solving model ... runtime 766.67s+
+
+Progress so far:
+  baseline: runtime 1071.77s
+  best:     runtime 613.22s
+Total elapsed tuning time 80813s (5587s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 106...
+
+	SimplexPricing 1
+	Presolve 1
+
+Solving model ... runtime 1106.81s
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 978.76s
+Total elapsed tuning time 17825s (68575s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 14...
+
+	Method 2
+	Presolve 0
+
+Solving model ... runtime 767.60s+
+
+Progress so far:
+  baseline: runtime 1071.77s
+  best:     runtime 613.22s
+Total elapsed tuning time 81580s (4820s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 107...
+
+	NormAdjust 1
+
+Solving model ... runtime 769.32s+
+
+Progress so far:
+  baseline: runtime 1071.77s
+  best:     runtime 613.22s
+Total elapsed tuning time 82350s (4050s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 108...
+
+	PrePasses 8
+	Presolve 2
+
+Solving model ... runtime 1223.46s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 978.76s
+Total elapsed tuning time 19049s (67351s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 15...
+
+	Method 1
+	PreDepRow 0
+
+Solving model ... runtime 770.55s+
+
+Progress so far:
+  baseline: runtime 1071.77s
+  best:     runtime 613.22s
+Total elapsed tuning time 83120s (3280s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 109...
+
+	PrePasses 2
+	Presolve 2
+
+Solving model ... runtime 1223.47s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 978.76s
+Total elapsed tuning time 20272s (66128s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 16...
+
+	Method 0
+	Aggregate 0
+	PrePasses 2
+
+Solving model ... runtime 813.62s+
+
+Progress so far:
+  baseline: runtime 1071.77s
+  best:     runtime 613.22s
+Total elapsed tuning time 83934s (2466s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 110...
+
+	PrePasses 3
+
+Solving model ... runtime 794.77s+
+
+Progress so far:
+  baseline: runtime 1071.77s
+  best:     runtime 613.22s
+Total elapsed tuning time 84729s (1671s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 111...
+
+	PreDual 0
+	PrePasses 8
+	Presolve 2
+
+Solving model ... runtime 1223.46s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 978.76s
+Total elapsed tuning time 21496s (64904s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 17...
+
+	Method 2
+	Aggregate 0
+	NumericFocus 2
+	Presolve 1
+
+Solving model ... runtime 818.30s+
+
+Progress so far:
+  baseline: runtime 1071.77s
+  best:     runtime 613.22s
+Total elapsed tuning time 85547s (853s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 112...
+
+	Method 0
+	PrePasses 8
+
+Solving model ... runtime 1238.39s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 978.76s
+Total elapsed tuning time 22734s (63666s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 18...
+
+	Presolve 0
+
+Solving model ... runtime 766.55s+
+
+Progress so far:
+  baseline: runtime 1071.77s
+  best:     runtime 613.22s
+Total elapsed tuning time 86313s (87s remaining)
+
+-------------------------------------------------------------------------------
+
+Tested 112 parameter sets in 86313.49s
+
+Baseline parameter set: runtime 1071.77s
+
+Improved parameter set 1 (runtime 613.22s):
+
+	Method 2
+	Aggregate 0
+	Presolve 1
+
+Improved parameter set 2 (runtime 620.73s):
+
+	Method 2
+	Presolve 1
+
+Improved parameter set 3 (runtime 754.18s):
+
+	Method 2
+
+runtime 1223.48s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 978.76s
+Total elapsed tuning time 23958s (62442s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 19...
+
+	Method 2
+	Aggregate 0
+	NumericFocus 3
+
+Solving model ... runtime 1223.47s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 978.76s
+Total elapsed tuning time 25181s (61219s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 20...
+
+	Presolve 1
+
+Solving model ... runtime 1223.50s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 978.76s
+Total elapsed tuning time 26405s (59995s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 21...
+
+	SimplexPricing 0
+	Aggregate 0
+
+Solving model ... runtime 1223.55s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 978.76s
+Total elapsed tuning time 27628s (58772s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 22...
+
+	AggFill 10
+
+Solving model ... runtime 1223.51s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 978.76s
+Total elapsed tuning time 28852s (57548s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 23...
+
+	Method 2
+	Aggregate 0
+	Presolve 2
+
+Solving model ... runtime 689.57s
+
+Improvement found:
+  baseline: runtime 2047.60s
+  improved: runtime 689.57s
+Total elapsed tuning time 29541s (56859s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 24...
+
+	PreDual 0
+
+Solving model ... runtime 877.67s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 689.57s
+Total elapsed tuning time 30419s (55981s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 25...
+
+	Method 2
+	Aggregate 0
+	PrePasses 2
+	Presolve 2
+
+Solving model ... runtime 687.39s
+
+Improvement found:
+  baseline: runtime 2047.60s
+  improved: runtime 687.39s
+Total elapsed tuning time 31106s (55294s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 26...
+
+	Method 2
+	Presolve 2
+
+Solving model ... runtime 653.09s
+
+Improvement found:
+  baseline: runtime 2047.60s
+  improved: runtime 653.09s
+Total elapsed tuning time 31760s (54640s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 27...
+
+	NormAdjust 2
+
+Solving model ... runtime 818.74s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 653.09s
+Total elapsed tuning time 32578s (53822s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 28...
+
+	Presolve 2
+
+Solving model ... runtime 839.84s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 653.09s
+Total elapsed tuning time 33418s (52982s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 29...
+
+	Method 1
+	PrePasses 1
+
+Solving model ... runtime 816.36s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 653.09s
+Total elapsed tuning time 34234s (52166s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 30...
+
+	AggFill 5
+	PreDual 0
+
+Solving model ... runtime 824.98s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 653.09s
+Total elapsed tuning time 35059s (51341s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 31...
+
+	Method 2
+	PrePasses 3
+	Presolve 1
+
+Solving model ... runtime 780.39s
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 653.09s
+Total elapsed tuning time 35840s (50560s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 32...
+
+	Method 2
+	PrePasses 2
+	Presolve 2
+
+Solving model ... runtime 655.21s
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 653.09s
+Total elapsed tuning time 36495s (49905s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 33...
+
+	Method 2
+	PrePasses 1
+
+Solving model ... runtime 812.59s
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 653.09s
+Total elapsed tuning time 37308s (49092s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 34...
+
+	Method 2
+	PrePasses 5
+	Presolve 2
+
+Solving model ... runtime 651.25s
+
+Improvement found:
+  baseline: runtime 2047.60s
+  improved: runtime 651.25s
+Total elapsed tuning time 37959s (48441s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 35...
+
+	PrePasses 8
+	Presolve 1
+
+Solving model ... runtime 841.36s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 38800s (47600s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 36...
+
+	Method 1
+	Presolve 0
+
+Solving model ... runtime 814.16s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 39614s (46786s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 37...
+
+	Method 2
+	PreDepRow 1
+
+Solving model ... runtime 759.48s
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 40374s (46026s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 38...
+
+	Method 2
+	AggFill 1000
+	Presolve 2
+
+Solving model ... runtime 814.09s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 41188s (45212s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 39...
+
+	NormAdjust 2
+	Presolve 2
+
+Solving model ... runtime 824.04s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 42012s (44388s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 40...
+
+	Method 0
+	Presolve 0
+
+Solving model ... runtime 814.06s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 42826s (43574s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 41...
+
+	NormAdjust 3
+
+Solving model ... runtime 835.42s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 43662s (42738s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 42...
+
+	Method 0
+	Presolve 2
+
+Solving model ... runtime 814.06s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 44476s (41924s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 43...
+
+	Method 2
+	PrePasses 5
+
+Solving model ... runtime 758.36s
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 45234s (41166s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 44...
+
+	Method 0
+	SimplexPricing 0
+	Presolve 1
+
+Solving model ... runtime 814.06s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 46048s (40352s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 45...
+
+	NormAdjust 1
+	Presolve 2
+
+Solving model ... runtime 826.82s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 46875s (39525s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 46...
+
+	Method 1
+	PrePasses 5
+
+Solving model ... runtime 814.08s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 47689s (38711s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 47...
+
+	Method 2
+	PreDual 1
+	Presolve 2
+
+Solving model ... runtime 903.85s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 48593s (37807s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 48...
+
+	PrePasses 5
+
+Solving model ... runtime 822.67s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 49415s (36985s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 49...
+
+	NormAdjust 3
+	Presolve 0
+
+Solving model ... runtime 824.26s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 50240s (36160s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 50...
+
+	Method 2
+	PrePasses 8
+	Presolve 2
+
+Solving model ... runtime 652.19s
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 50892s (35508s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 51...
+
+	PreDepRow 0
+	Presolve 2
+
+Solving model ... runtime 823.47s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 51715s (34685s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 52...
+
+	Method 2
+	PreDepRow 0
+
+Solving model ... runtime 780.40s
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 52496s (33904s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 53...
+
+	Method 1
+	Presolve 2
+
+Solving model ... runtime 814.08s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 53310s (33090s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 54...
+
+	PrePasses 2
+	Presolve 2
+
+Solving model ... runtime 820.18s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 54130s (32270s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 55...
+
+	Method 2
+	PrePasses 1
+	Presolve 2
+
+Solving model ... runtime 806.10s
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 54936s (31464s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 56...
+
+	Method 2
+	PreDual 1
+	PrePasses 3
+	Presolve 2
+
+Solving model ... runtime 904.76s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 55841s (30559s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 57...
+
+	Method 2
+	PrePasses 2
+	Presolve 1
+
+Solving model ... runtime 782.19s
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 56623s (29777s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 58...
+
+	Method 2
+	PrePasses 5
+	Presolve 1
+
+Solving model ... runtime 778.67s
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 57402s (28998s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 59...
+
+	Method 2
+	PrePasses 3
+	Presolve 2
+
+Solving model ... runtime 654.81s
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 58057s (28343s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 60...
+
+	Method 2
+	NumericFocus 1
+	Presolve 2
+
+Solving model ... runtime 814.40s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 58871s (27529s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 61...
+
+	Method 0
+	PreDual 0
+
+Solving model ... runtime 814.08s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 59685s (26715s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 62...
+
+	PrePasses 1
+	Presolve 2
+
+Solving model ... runtime 832.81s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 60518s (25882s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 63...
+
+	Method 2
+	PrePasses 8
+
+Solving model ... runtime 757.91s
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 61276s (25124s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 64...
+
+	Method 1
+	Presolve 1
+
+Solving model ... runtime 814.07s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 62090s (24310s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 65...
+
+	Method 2
+	PrePasses 2
+
+Solving model ... runtime 757.25s
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 62847s (23553s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 66...
+
+	PrePasses 1
+
+Solving model ... runtime 838.17s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 63685s (22715s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 67...
+
+	Method 1
+	NormAdjust 0
+	Presolve 1
+
+Solving model ... runtime 814.07s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 64499s (21901s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 68...
+
+	Method 2
+	NumericFocus 2
+	Presolve 1
+
+Solving model ... runtime 820.31s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 65320s (21080s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 69...
+
+	NormAdjust 0
+
+Solving model ... runtime 820.06s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 66140s (20260s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 70...
+
+	Method 2
+	NumericFocus 3
+	Presolve 1
+
+Solving model ... runtime 824.79s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 66965s (19435s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 71...
+
+	Method 2
+	NumericFocus 2
+	Presolve 0
+
+Solving model ... runtime 839.37s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 67804s (18596s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 72...
+
+	PrePasses 1
+	Presolve 1
+
+Solving model ... runtime 825.26s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 68629s (17771s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 73...
+
+	Method 2
+	AggFill 0
+	PrePasses 3
+	Presolve 2
+
+Solving model ... runtime 734.87s
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 69364s (17036s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 74...
+
+	Method 2
+	NumericFocus 2
+	Presolve 2
+
+Solving model ... runtime 832.61s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 70197s (16203s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 75...
+
+	AggFill 0
+
+Solving model ... runtime 825.25s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 71022s (15378s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 76...
+
+	NormAdjust 2
+	PrePasses 8
+	Presolve 2
+
+Solving model ... runtime 822.70s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 71845s (14555s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 77...
+
+	Method 0
+	NumericFocus 3
+	Presolve 1
+
+Solving model ... runtime 814.09s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 72659s (13741s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 78...
+
+	NormAdjust 0
+	Presolve 1
+
+Solving model ... runtime 837.14s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 73496s (12904s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 79...
+
+	Method 2
+	NumericFocus 2
+	PrePasses 2
+	Presolve 2
+
+Solving model ... runtime 825.88s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 74322s (12078s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 80...
+
+	Method 1
+	AggFill 5
+
+Solving model ... runtime 814.07s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 75136s (11264s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 81...
+
+	SimplexPricing 2
+
+Solving model ... runtime 824.64s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 75961s (10439s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 82...
+
+	Method 2
+	AggFill 100
+	PrePasses 5
+
+Solving model ... runtime 688.90s
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 76649s (9751s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 83...
+
+	SimplexPricing 1
+	Presolve 0
+
+Solving model ... runtime 840.53s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 77490s (8910s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 84...
+
+	Method 0
+	AggFill 100
+	Presolve 2
+
+Solving model ... runtime 814.06s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 78304s (8096s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 85...
+
+	Method 0
+	Aggregate 0
+	Presolve 2
+
+Solving model ... runtime 814.08s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 79118s (7282s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 86...
+
+	NormAdjust 3
+	Presolve 1
+
+Solving model ... runtime 830.63s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 79949s (6451s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 87...
+
+	SimplexPricing 3
+
+Solving model ... runtime 834.54s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 80783s (5617s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 88...
+
+	Aggregate 0
+	Presolve 1
+
+Solving model ... runtime 823.58s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 81607s (4793s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 89...
+
+	PrePasses 8
+
+Solving model ... runtime 823.86s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 82431s (3969s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 90...
+
+	PrePasses 2
+
+Solving model ... runtime 831.16s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 83262s (3138s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 91...
+
+	Method 2
+	NumericFocus 1
+	Presolve 1
+
+Solving model ... runtime 814.07s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 84076s (2324s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 92...
+
+	Method 2
+	AggFill 1000
+
+Solving model ... runtime 814.08s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 84890s (1510s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 93...
+
+	PrePasses 5
+	Presolve 2
+
+Solving model ... runtime 842.72s+
+
+Progress so far:
+  baseline: runtime 2047.60s
+  best:     runtime 651.25s
+Total elapsed tuning time 85733s (667s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 94...
+
+	NumericFocus 3
+
+Solving model ... 
+
+Tune time limit reached.
+
+-------------------------------------------------------------------------------
+
+Tested 93 parameter sets in 86427.22s
+
+Baseline parameter set: runtime 2047.60s
+
+Improved parameter set 1 (runtime 651.25s):
+
+	Method 2
+	PrePasses 5
+	Presolve 2
+
+Improved parameter set 2 (runtime 653.09s):
+
+	Method 2
+	Presolve 2
+
+Improved parameter set 3 (runtime 1497.93s):
+
+	Method 2
+
+
+Gurobi 8.0.0 (linux64, grbtune) logging started Sat Jul 14 18:46:20 2018
+
+Academic license - for non-commercial use only
+Set parameter TimeLimit to value 14400
+Set parameter TuneTimeLimit to value 172800
+
+grbtune version 8.0.0 build v8.0.0rc0 (linux64)
+Copyright (c) 2018, Gurobi Optimization, LLC
+
+Read LP format model from file flow/abz8.lp
+Reading time = 1.76 seconds
+: 138062 rows, 252161 columns, 3673364 nonzeros
+Read LP format model from file flow/dmu02.lp
+Reading time = 24.69 seconds
+: 526528 rows, 961001 columns, 48104168 nonzeros
+Read LP format model from file flow/dmu41.lp
+Reading time = 40.40 seconds
+: 812421 rows, 1521731 columns, 76277860 nonzeros
+
+Solving models using baseline parameter set with TimeLimit=14400s
+
+Solving model_000 ...
+Optimize a model with 138062 rows, 252161 columns and 3673364 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 8e+02]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+
+Concurrent LP optimizer: dual simplex and barrier
+Showing barrier log only...
+
+Presolve removed 8252 rows and 8213 columns
+Presolve time: 1.98s
+Presolved: 129810 rows, 243948 columns, 3657265 nonzeros
+
+Elapsed ordering time = 5s
+Elapsed ordering time = 10s
+Elapsed ordering time = 15s
+Elapsed ordering time = 20s
+Elapsed ordering time = 21s
+Elapsed ordering time = 25s
+Elapsed ordering time = 30s
+Ordering time: 32.33s
+
+Barrier statistics:
+ AA' NZ     : 6.611e+06
+ Factor NZ  : 1.091e+08 (roughly 1.0 GBytes of memory)
+ Factor Ops : 5.347e+11 (roughly 20 seconds per iteration)
+ Threads    : 1
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   2.28767914e+03 -1.19015698e+04  1.63e+04 0.00e+00  2.14e+00    66s
+   1   4.45146578e+02 -1.16836830e+04  1.11e+03 1.08e-03  1.66e-01    97s
+   2   7.91183486e+02 -7.28460784e+03  1.34e+02 1.93e-14  3.17e-02   128s
+   3   7.44272167e+02 -2.40859886e+03  3.63e+01 1.60e-14  9.85e-03   161s
+   4   6.91856310e+02 -6.32824415e+02  1.31e+01 1.43e-14  3.75e-03   191s
+   5   5.98456452e+02  1.89553798e+02  3.15e+00 1.34e-14  1.04e-03   222s
+   6   5.54234430e+02  3.73485427e+02  9.83e-01 1.69e-14  4.21e-04   253s
+   7   5.41137725e+02  4.35309765e+02  5.62e-01 1.09e-14  2.43e-04   284s
+   8   5.34428968e+02  4.63399562e+02  3.69e-01 1.49e-14  1.61e-04   314s
+   9   5.30995212e+02  4.83873665e+02  2.77e-01 7.23e-15  1.08e-04   344s
+  10   5.27802538e+02  4.99632145e+02  1.96e-01 8.47e-15  6.64e-05   376s
+  11   5.24282455e+02  5.08540172e+02  1.12e-01 1.15e-14  3.74e-05   408s
+  12   5.21274681e+02  5.15802830e+02  4.12e-02 8.60e-15  1.32e-05   441s
+  13   5.20476126e+02  5.16878683e+02  2.73e-02 8.49e-15  8.71e-06   472s
+  14   5.19651462e+02  5.17977363e+02  1.28e-02 9.16e-15  4.06e-06   504s
+  15   5.19407468e+02  5.18197046e+02  9.00e-03 9.85e-15  2.93e-06   533s
+  16   5.19079048e+02  5.18500083e+02  3.98e-03 7.98e-15  1.38e-06   564s
+  17   5.18875766e+02  5.18757044e+02  9.08e-04 1.21e-14  2.89e-07   599s
+  18   5.18835897e+02  5.18780273e+02  4.23e-04 9.18e-15  1.36e-07   630s
+  19   5.18802296e+02  5.18794050e+02  3.75e-05 9.49e-15  1.87e-08   663s
+  20   5.18799343e+02  5.18796019e+02  1.50e-05 7.33e-15  7.52e-09   695s
+  21   5.18798367e+02  5.18796493e+02  7.83e-06 9.13e-15  4.21e-09   725s
+  22   5.18797627e+02  5.18796873e+02  2.61e-06 9.39e-15  1.66e-09   756s
+  23   5.18797333e+02  5.18797152e+02  5.77e-07 9.35e-15  3.98e-10   787s
+  24   5.18797293e+02  5.18797214e+02  3.07e-07 7.68e-15  1.78e-10   817s
+  25   5.18797256e+02  5.18797238e+02  7.46e-08 1.39e-14  4.00e-11   849s
+  26   5.18797248e+02  5.18797242e+02  3.18e-08 8.40e-15  1.42e-11   880s
+  27   5.18797244e+02  5.18797244e+02  2.35e-08 1.27e-14  7.00e-13   912s
+
+Barrier solved model in 27 iterations and 911.62 seconds
+Optimal objective 5.18797244e+02
+
+Crossover log...
+
+   47400 variables added to crossover basis                      915s
+
+   81082 DPushes remaining with DInf 4.7115483e+01               920s
+   17307 DPushes remaining with DInf 2.4952694e+01               955s
+    5517 DPushes remaining with DInf 1.7130092e+01               979s
+    1609 DPushes remaining with DInf 1.3820722e+01               991s
+     272 DPushes remaining with DInf 1.2967435e+01               996s
+      63 DPushes remaining with DInf 1.4755298e+02              1000s
+       0 DPushes remaining with DInf 1.5616097e+02              1003s
+
+    8604 PPushes remaining with PInf 7.9758601e-05              1003s
+       0 PPushes remaining with PInf 0.0000000e+00              1026s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 3.9285905e+01   1026s
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+   89666    5.1879724e+02   0.000000e+00   3.928590e+01   1027s
+   90096    5.1879724e+02   0.000000e+00   2.529623e+01   1031s
+   90506    5.1879724e+02   0.000000e+00   1.667846e+02   1036s
+   90866    5.1879724e+02   0.000000e+00   3.021739e+01   1041s
+   91226    5.1879724e+02   0.000000e+00   3.867155e+01   1046s
+   91456    5.1879724e+02   0.000000e+00   2.374368e+02   1052s
+   91666    5.1879724e+02   0.000000e+00   5.800994e+01   1057s
+   91886    5.1879724e+02   0.000000e+00   1.627737e+01   1063s
+   92106    5.1879724e+02   0.000000e+00   2.798235e+02   1068s
+   92346    5.1879724e+02   0.000000e+00   2.409753e+00   1074s
+   92576    5.1879724e+02   0.000000e+00   5.540741e+00   1079s
+   92816    5.1879724e+02   0.000000e+00   1.557661e-01   1084s
+   93069    5.1879724e+02   6.849050e-04   0.000000e+00   1090s
+Extra 2 simplex iterations after uncrush
+   93078    5.1879724e+02   0.000000e+00   0.000000e+00   1095s
+
+Solved with barrier
+Solved in 93078 iterations and 1095.21 seconds
+Optimal objective  5.187972438e+02
+
+Solving model_001 ...
+Optimize a model with 526528 rows, 961001 columns and 48104168 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+03]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+
+Concurrent LP optimizer: dual simplex and barrier
+Showing barrier log only...
+
+Presolve removed 59 rows and 40 columns (presolve time = 6s) ...
+Presolve removed 16122 rows and 16103 columns (presolve time = 10s) ...
+Presolve removed 31117 rows and 31098 columns (presolve time = 19s) ...
+Presolve removed 31137 rows and 31099 columns (presolve time = 22s) ...
+Presolve removed 31137 rows and 31099 columns (presolve time = 25s) ...
+Presolve removed 31137 rows and 31099 columns
+Presolve time: 26.18s
+Presolved: 495391 rows, 929902 columns, 48042211 nonzeros
+
+Elapsed ordering time = 5s
+Elapsed ordering time = 10s
+Elapsed ordering time = 15s
+Elapsed ordering time = 20s
+Elapsed ordering time = 25s
+Elapsed ordering time = 30s
+Elapsed ordering time = 35s
+Elapsed ordering time = 40s
+Elapsed ordering time = 45s
+Elapsed ordering time = 50s
+Elapsed ordering time = 55s
+Elapsed ordering time = 60s
+Elapsed ordering time = 65s
+Elapsed ordering time = 70s
+Elapsed ordering time = 75s
+Elapsed ordering time = 80s
+Elapsed ordering time = 85s
+Elapsed ordering time = 90s
+Elapsed ordering time = 95s
+Elapsed ordering time = 100s
+Elapsed ordering time = 105s
+Elapsed ordering time = 110s
+Elapsed ordering time = 115s
+Elapsed ordering time = 120s
+Elapsed ordering time = 125s
+Elapsed ordering time = 130s
+Elapsed ordering time = 135s
+Elapsed ordering time = 140s
+Elapsed ordering time = 145s
+Elapsed ordering time = 150s
+Elapsed ordering time = 155s
+Elapsed ordering time = 160s
+Elapsed ordering time = 165s
+Elapsed ordering time = 170s
+Elapsed ordering time = 175s
+Elapsed ordering time = 180s
+Elapsed ordering time = 185s
+Elapsed ordering time = 190s
+Elapsed ordering time = 195s
+Elapsed ordering time = 200s
+Elapsed ordering time = 205s
+Elapsed ordering time = 210s
+Elapsed ordering time = 215s
+Elapsed ordering time = 220s
+Elapsed ordering time = 225s
+Elapsed ordering time = 230s
+Elapsed ordering time = 235s
+Elapsed ordering time = 240s
+Elapsed ordering time = 245s
+Elapsed ordering time = 250s
+Elapsed ordering time = 255s
+Elapsed ordering time = 260s
+Elapsed ordering time = 265s
+Elapsed ordering time = 270s
+Elapsed ordering time = 275s
+Elapsed ordering time = 280s
+Elapsed ordering time = 285s
+Elapsed ordering time = 290s
+Elapsed ordering time = 295s
+Elapsed ordering time = 300s
+Elapsed ordering time = 305s
+Elapsed ordering time = 310s
+Elapsed ordering time = 315s
+Elapsed ordering time = 320s
+Elapsed ordering time = 325s
+Elapsed ordering time = 330s
+Elapsed ordering time = 335s
+Elapsed ordering time = 340s
+Elapsed ordering time = 347s
+Elapsed ordering time = 351s
+Elapsed ordering time = 355s
+Elapsed ordering time = 360s
+Elapsed ordering time = 365s
+Elapsed ordering time = 370s
+Elapsed ordering time = 375s
+Elapsed ordering time = 380s
+Elapsed ordering time = 385s
+Elapsed ordering time = 390s
+Elapsed ordering time = 395s
+Elapsed ordering time = 400s
+Elapsed ordering time = 405s
+Elapsed ordering time = 410s
+Elapsed ordering time = 415s
+Elapsed ordering time = 420s
+Elapsed ordering time = 425s
+Elapsed ordering time = 430s
+Elapsed ordering time = 435s
+Elapsed ordering time = 440s
+Elapsed ordering time = 445s
+Elapsed ordering time = 450s
+Elapsed ordering time = 455s
+Elapsed ordering time = 460s
+Elapsed ordering time = 465s
+Elapsed ordering time = 470s
+Elapsed ordering time = 475s
+Elapsed ordering time = 480s
+Elapsed ordering time = 485s
+Elapsed ordering time = 490s
+Elapsed ordering time = 495s
+Elapsed ordering time = 500s
+Elapsed ordering time = 505s
+Elapsed ordering time = 510s
+Elapsed ordering time = 515s
+Elapsed ordering time = 520s
+Elapsed ordering time = 525s
+Elapsed ordering time = 530s
+Elapsed ordering time = 535s
+Elapsed ordering time = 540s
+Elapsed ordering time = 545s
+Elapsed ordering time = 550s
+Elapsed ordering time = 555s
+Elapsed ordering time = 560s
+Elapsed ordering time = 565s
+Elapsed ordering time = 570s
+Elapsed ordering time = 575s
+Elapsed ordering time = 580s
+Elapsed ordering time = 585s
+Elapsed ordering time = 590s
+Elapsed ordering time = 595s
+Elapsed ordering time = 600s
+Elapsed ordering time = 605s
+Elapsed ordering time = 610s
+Elapsed ordering time = 615s
+Elapsed ordering time = 620s
+Elapsed ordering time = 625s
+Elapsed ordering time = 630s
+Elapsed ordering time = 635s
+Elapsed ordering time = 640s
+Elapsed ordering time = 645s
+Elapsed ordering time = 650s
+Elapsed ordering time = 655s
+Elapsed ordering time = 660s
+Elapsed ordering time = 665s
+Elapsed ordering time = 670s
+Elapsed ordering time = 675s
+Elapsed ordering time = 680s
+Elapsed ordering time = 685s
+Elapsed ordering time = 690s
+Elapsed ordering time = 698s
+Elapsed ordering time = 701s
+Elapsed ordering time = 705s
+Elapsed ordering time = 710s
+Elapsed ordering time = 715s
+Elapsed ordering time = 720s
+Elapsed ordering time = 725s
+Elapsed ordering time = 730s
+Elapsed ordering time = 735s
+Elapsed ordering time = 740s
+Elapsed ordering time = 745s
+Elapsed ordering time = 750s
+Elapsed ordering time = 755s
+Elapsed ordering time = 760s
+Elapsed ordering time = 765s
+Elapsed ordering time = 770s
+Elapsed ordering time = 775s
+Elapsed ordering time = 780s
+Elapsed ordering time = 785s
+Elapsed ordering time = 790s
+Elapsed ordering time = 795s
+Elapsed ordering time = 800s
+Elapsed ordering time = 805s
+Elapsed ordering time = 810s
+Elapsed ordering time = 815s
+Elapsed ordering time = 820s
+Elapsed ordering time = 825s
+Elapsed ordering time = 830s
+Elapsed ordering time = 835s
+Elapsed ordering time = 840s
+Elapsed ordering time = 845s
+Elapsed ordering time = 850s
+Elapsed ordering time = 855s
+Elapsed ordering time = 860s
+Elapsed ordering time = 865s
+Elapsed ordering time = 870s
+Elapsed ordering time = 875s
+Elapsed ordering time = 880s
+Elapsed ordering time = 885s
+Elapsed ordering time = 890s
+Elapsed ordering time = 895s
+Elapsed ordering time = 900s
+Elapsed ordering time = 905s
+Elapsed ordering time = 910s
+Elapsed ordering time = 915s
+Elapsed ordering time = 920s
+Elapsed ordering time = 925s
+Elapsed ordering time = 930s
+Elapsed ordering time = 935s
+Elapsed ordering time = 940s
+Elapsed ordering time = 945s
+Elapsed ordering time = 950s
+Elapsed ordering time = 955s
+Elapsed ordering time = 960s
+Elapsed ordering time = 965s
+Elapsed ordering time = 970s
+Elapsed ordering time = 975s
+Elapsed ordering time = 980s
+Elapsed ordering time = 985s
+Elapsed ordering time = 990s
+Elapsed ordering time = 995s
+Elapsed ordering time = 1000s
+Elapsed ordering time = 1005s
+Elapsed ordering time = 1010s
+Elapsed ordering time = 1015s
+Elapsed ordering time = 1020s
+Elapsed ordering time = 1025s
+Elapsed ordering time = 1030s
+Elapsed ordering time = 1035s
+Elapsed ordering time = 1040s
+Elapsed ordering time = 1045s
+Elapsed ordering time = 1050s
+Elapsed ordering time = 1055s
+Elapsed ordering time = 1064s
+Elapsed ordering time = 1066s
+Elapsed ordering time = 1070s
+Elapsed ordering time = 1075s
+Elapsed ordering time = 1080s
+Elapsed ordering time = 1085s
+Elapsed ordering time = 1090s
+Elapsed ordering time = 1095s
+Elapsed ordering time = 1100s
+Elapsed ordering time = 1105s
+Elapsed ordering time = 1110s
+Elapsed ordering time = 1115s
+Elapsed ordering time = 1120s
+Elapsed ordering time = 1125s
+Elapsed ordering time = 1130s
+Elapsed ordering time = 1135s
+Elapsed ordering time = 1140s
+Elapsed ordering time = 1145s
+Elapsed ordering time = 1150s
+Elapsed ordering time = 1155s
+Elapsed ordering time = 1160s
+Elapsed ordering time = 1165s
+Elapsed ordering time = 1170s
+Elapsed ordering time = 1175s
+Elapsed ordering time = 1180s
+Elapsed ordering time = 1185s
+Elapsed ordering time = 1190s
+Elapsed ordering time = 1195s
+Elapsed ordering time = 1200s
+Elapsed ordering time = 1205s
+Elapsed ordering time = 1210s
+Elapsed ordering time = 1215s
+Elapsed ordering time = 1220s
+Elapsed ordering time = 1225s
+Elapsed ordering time = 1230s
+Elapsed ordering time = 1235s
+Elapsed ordering time = 1240s
+Elapsed ordering time = 1245s
+Elapsed ordering time = 1250s
+Elapsed ordering time = 1255s
+Elapsed ordering time = 1260s
+Elapsed ordering time = 1265s
+Elapsed ordering time = 1270s
+Elapsed ordering time = 1275s
+Elapsed ordering time = 1280s
+Elapsed ordering time = 1285s
+Elapsed ordering time = 1290s
+Elapsed ordering time = 1295s
+Elapsed ordering time = 1300s
+Elapsed ordering time = 1305s
+Elapsed ordering time = 1310s
+Elapsed ordering time = 1315s
+Elapsed ordering time = 1320s
+Elapsed ordering time = 1325s
+Elapsed ordering time = 1330s
+Elapsed ordering time = 1335s
+Elapsed ordering time = 1340s
+Elapsed ordering time = 1345s
+Elapsed ordering time = 1350s
+Elapsed ordering time = 1355s
+Elapsed ordering time = 1360s
+Elapsed ordering time = 1365s
+Elapsed ordering time = 1370s
+Elapsed ordering time = 1375s
+Elapsed ordering time = 1380s
+Elapsed ordering time = 1385s
+Elapsed ordering time = 1390s
+Elapsed ordering time = 1395s
+Elapsed ordering time = 1400s
+Elapsed ordering time = 1405s
+Elapsed ordering time = 1410s
+Ordering time: 1414.30s
+
+Barrier statistics:
+ AA' NZ     : 9.509e+07
+ Factor NZ  : 1.513e+09 (roughly 13.0 GBytes of memory)
+ Factor Ops : 2.950e+13 (roughly 1000 seconds per iteration)
+ Threads    : 1
+
+Barrier performed 0 iterations in 1480.69 seconds
+Error termination
+
+
+Stopped in 0 iterations and 14400.17 seconds
+Out of memory
+
+Solving model_002 ...
+Optimize a model with 812421 rows, 1521731 columns and 76277860 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+03]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+
+Concurrent LP optimizer: dual simplex and barrier
+Showing barrier log only...
+
+Presolve removed 0 rows and 0 columns (presolve time = 5s) ...
+Presolve removed 56 rows and 40 columns (presolve time = 10s) ...
+Presolve removed 10016 rows and 10000 columns (presolve time = 18s) ...
+Presolve removed 44482 rows and 44466 columns (presolve time = 20s) ...
+Presolve removed 49231 rows and 49215 columns (presolve time = 36s) ...
+Presolve removed 49251 rows and 49215 columns (presolve time = 41s) ...
+Presolve removed 49251 rows and 49215 columns (presolve time = 46s) ...
+Presolve removed 49251 rows and 49215 columns
+Presolve time: 48.34s
+Presolved: 763170 rows, 1472516 columns, 76179661 nonzeros
+
+Elapsed ordering time = 5s
+Elapsed ordering time = 10s
+Elapsed ordering time = 15s
+Elapsed ordering time = 20s
+Elapsed ordering time = 25s
+Elapsed ordering time = 30s
+Elapsed ordering time = 35s
+Elapsed ordering time = 40s
+Elapsed ordering time = 45s
+Elapsed ordering time = 50s
+Elapsed ordering time = 55s
+Elapsed ordering time = 60s
+Elapsed ordering time = 65s
+Elapsed ordering time = 70s
+Elapsed ordering time = 75s
+Elapsed ordering time = 80s
+Elapsed ordering time = 85s
+Elapsed ordering time = 90s
+Elapsed ordering time = 95s
+Elapsed ordering time = 100s
+Elapsed ordering time = 105s
+Elapsed ordering time = 110s
+Elapsed ordering time = 115s
+Elapsed ordering time = 120s
+Elapsed ordering time = 125s
+Elapsed ordering time = 130s
+Elapsed ordering time = 135s
+Elapsed ordering time = 140s
+Elapsed ordering time = 145s
+Elapsed ordering time = 150s
+Elapsed ordering time = 155s
+Elapsed ordering time = 160s
+Elapsed ordering time = 165s
+Elapsed ordering time = 170s
+Elapsed ordering time = 175s
+Elapsed ordering time = 180s
+Elapsed ordering time = 185s
+Elapsed ordering time = 190s
+Elapsed ordering time = 195s
+Elapsed ordering time = 200s
+Elapsed ordering time = 205s
+Elapsed ordering time = 210s
+Elapsed ordering time = 215s
+Elapsed ordering time = 220s
+Elapsed ordering time = 225s
+Elapsed ordering time = 230s
+Elapsed ordering time = 235s
+Elapsed ordering time = 240s
+Elapsed ordering time = 245s
+Elapsed ordering time = 250s
+Elapsed ordering time = 255s
+Elapsed ordering time = 260s
+Elapsed ordering time = 265s
+Elapsed ordering time = 270s
+Elapsed ordering time = 275s
+Elapsed ordering time = 280s
+Elapsed ordering time = 285s
+Elapsed ordering time = 290s
+Elapsed ordering time = 295s
+Elapsed ordering time = 300s
+Elapsed ordering time = 305s
+Elapsed ordering time = 310s
+Elapsed ordering time = 315s
+Elapsed ordering time = 320s
+Elapsed ordering time = 325s
+Elapsed ordering time = 330s
+Elapsed ordering time = 335s
+Elapsed ordering time = 340s
+Elapsed ordering time = 345s
+Elapsed ordering time = 350s
+Elapsed ordering time = 355s
+Elapsed ordering time = 360s
+Elapsed ordering time = 365s
+Elapsed ordering time = 370s
+Elapsed ordering time = 375s
+Elapsed ordering time = 380s
+Elapsed ordering time = 385s
+Elapsed ordering time = 390s
+Elapsed ordering time = 395s
+Elapsed ordering time = 400s
+Elapsed ordering time = 405s
+Elapsed ordering time = 410s
+Elapsed ordering time = 415s
+Elapsed ordering time = 420s
+Elapsed ordering time = 425s
+Elapsed ordering time = 430s
+Elapsed ordering time = 435s
+Elapsed ordering time = 440s
+Elapsed ordering time = 445s
+Elapsed ordering time = 450s
+Elapsed ordering time = 455s
+Elapsed ordering time = 460s
+Elapsed ordering time = 465s
+Elapsed ordering time = 470s
+Elapsed ordering time = 475s
+Elapsed ordering time = 480s
+Elapsed ordering time = 485s
+Elapsed ordering time = 490s
+Elapsed ordering time = 495s
+Elapsed ordering time = 500s
+Elapsed ordering time = 505s
+Elapsed ordering time = 510s
+Elapsed ordering time = 515s
+Elapsed ordering time = 520s
+Elapsed ordering time = 525s
+Elapsed ordering time = 530s
+Elapsed ordering time = 535s
+Elapsed ordering time = 540s
+Elapsed ordering time = 545s
+Elapsed ordering time = 550s
+Elapsed ordering time = 555s
+Elapsed ordering time = 560s
+Elapsed ordering time = 565s
+Elapsed ordering time = 570s
+Elapsed ordering time = 575s
+Elapsed ordering time = 580s
+Elapsed ordering time = 585s
+Elapsed ordering time = 590s
+Elapsed ordering time = 595s
+Elapsed ordering time = 600s
+Elapsed ordering time = 605s
+Elapsed ordering time = 610s
+Elapsed ordering time = 615s
+Elapsed ordering time = 620s
+Elapsed ordering time = 625s
+Elapsed ordering time = 630s
+Elapsed ordering time = 635s
+Elapsed ordering time = 640s
+Elapsed ordering time = 645s
+Elapsed ordering time = 650s
+Elapsed ordering time = 655s
+Elapsed ordering time = 660s
+Elapsed ordering time = 665s
+Elapsed ordering time = 670s
+Elapsed ordering time = 675s
+Elapsed ordering time = 680s
+Elapsed ordering time = 685s
+Elapsed ordering time = 690s
+Elapsed ordering time = 695s
+Elapsed ordering time = 700s
+Elapsed ordering time = 705s
+Elapsed ordering time = 710s
+Elapsed ordering time = 715s
+Elapsed ordering time = 720s
+Elapsed ordering time = 725s
+Elapsed ordering time = 730s
+Elapsed ordering time = 735s
+Elapsed ordering time = 740s
+Elapsed ordering time = 745s
+Elapsed ordering time = 750s
+Elapsed ordering time = 755s
+Elapsed ordering time = 760s
+Elapsed ordering time = 765s
+Elapsed ordering time = 770s
+Elapsed ordering time = 775s
+Elapsed ordering time = 780s
+Elapsed ordering time = 785s
+Elapsed ordering time = 790s
+Elapsed ordering time = 795s
+Elapsed ordering time = 800s
+Elapsed ordering time = 805s
+Elapsed ordering time = 810s
+Elapsed ordering time = 815s
+Elapsed ordering time = 820s
+Elapsed ordering time = 825s
+Elapsed ordering time = 830s
+Elapsed ordering time = 835s
+Elapsed ordering time = 840s
+Elapsed ordering time = 845s
+Elapsed ordering time = 850s
+Elapsed ordering time = 855s
+Elapsed ordering time = 860s
+Elapsed ordering time = 865s
+Elapsed ordering time = 870s
+Elapsed ordering time = 884s
+Elapsed ordering time = 888s
+Elapsed ordering time = 892s
+Elapsed ordering time = 895s
+Elapsed ordering time = 900s
+Elapsed ordering time = 905s
+Elapsed ordering time = 910s
+Elapsed ordering time = 915s
+Elapsed ordering time = 920s
+Elapsed ordering time = 925s
+Elapsed ordering time = 930s
+Elapsed ordering time = 935s
+Elapsed ordering time = 940s
+Elapsed ordering time = 945s
+Elapsed ordering time = 950s
+Elapsed ordering time = 955s
+Elapsed ordering time = 960s
+Elapsed ordering time = 965s
+Elapsed ordering time = 970s
+Elapsed ordering time = 975s
+Elapsed ordering time = 980s
+Elapsed ordering time = 985s
+Elapsed ordering time = 990s
+Elapsed ordering time = 995s
+Elapsed ordering time = 1000s
+Elapsed ordering time = 1005s
+Elapsed ordering time = 1010s
+Elapsed ordering time = 1015s
+Elapsed ordering time = 1020s
+Elapsed ordering time = 1025s
+Elapsed ordering time = 1030s
+Elapsed ordering time = 1035s
+Elapsed ordering time = 1040s
+Elapsed ordering time = 1045s
+Elapsed ordering time = 1050s
+Elapsed ordering time = 1055s
+Elapsed ordering time = 1060s
+Elapsed ordering time = 1065s
+Elapsed ordering time = 1070s
+Elapsed ordering time = 1075s
+Elapsed ordering time = 1080s
+Elapsed ordering time = 1085s
+Elapsed ordering time = 1090s
+Elapsed ordering time = 1095s
+Elapsed ordering time = 1100s
+Elapsed ordering time = 1105s
+Elapsed ordering time = 1110s
+Elapsed ordering time = 1115s
+Elapsed ordering time = 1120s
+Elapsed ordering time = 1125s
+Elapsed ordering time = 1130s
+Elapsed ordering time = 1135s
+Elapsed ordering time = 1140s
+Elapsed ordering time = 1145s
+Elapsed ordering time = 1150s
+Elapsed ordering time = 1155s
+Elapsed ordering time = 1160s
+Elapsed ordering time = 1165s
+Elapsed ordering time = 1170s
+Elapsed ordering time = 1175s
+Elapsed ordering time = 1180s
+Elapsed ordering time = 1185s
+Elapsed ordering time = 1190s
+Elapsed ordering time = 1195s
+Elapsed ordering time = 1200s
+Elapsed ordering time = 1205s
+Elapsed ordering time = 1210s
+Elapsed ordering time = 1215s
+Elapsed ordering time = 1220s
+Elapsed ordering time = 1225s
+Elapsed ordering time = 1230s
+Elapsed ordering time = 1235s
+Elapsed ordering time = 1240s
+Elapsed ordering time = 1245s
+Elapsed ordering time = 1250s
+Elapsed ordering time = 1255s
+Elapsed ordering time = 1260s
+Elapsed ordering time = 1265s
+Elapsed ordering time = 1270s
+Elapsed ordering time = 1275s
+Elapsed ordering time = 1280s
+Elapsed ordering time = 1285s
+Elapsed ordering time = 1290s
+Elapsed ordering time = 1295s
+Elapsed ordering time = 1300s
+Elapsed ordering time = 1305s
+Elapsed ordering time = 1310s
+Elapsed ordering time = 1315s
+Elapsed ordering time = 1320s
+Elapsed ordering time = 1325s
+Elapsed ordering time = 1330s
+Elapsed ordering time = 1335s
+Elapsed ordering time = 1340s
+Elapsed ordering time = 1345s
+Elapsed ordering time = 1350s
+Elapsed ordering time = 1355s
+Elapsed ordering time = 1360s
+Elapsed ordering time = 1365s
+Elapsed ordering time = 1370s
+Elapsed ordering time = 1375s
+Elapsed ordering time = 1380s
+Elapsed ordering time = 1385s
+Elapsed ordering time = 1390s
+Elapsed ordering time = 1395s
+Elapsed ordering time = 1400s
+Elapsed ordering time = 1405s
+Elapsed ordering time = 1410s
+Elapsed ordering time = 1415s
+Elapsed ordering time = 1420s
+Elapsed ordering time = 1425s
+Elapsed ordering time = 1430s
+Elapsed ordering time = 1435s
+Elapsed ordering time = 1440s
+Elapsed ordering time = 1445s
+Elapsed ordering time = 1450s
+Elapsed ordering time = 1455s
+Elapsed ordering time = 1460s
+Elapsed ordering time = 1465s
+Elapsed ordering time = 1470s
+Elapsed ordering time = 1475s
+Elapsed ordering time = 1480s
+Elapsed ordering time = 1485s
+Elapsed ordering time = 1490s
+Elapsed ordering time = 1495s
+Elapsed ordering time = 1500s
+Elapsed ordering time = 1505s
+Elapsed ordering time = 1510s
+Elapsed ordering time = 1515s
+Elapsed ordering time = 1520s
+Elapsed ordering time = 1525s
+Elapsed ordering time = 1530s
+Elapsed ordering time = 1535s
+Elapsed ordering time = 1540s
+Elapsed ordering time = 1545s
+Elapsed ordering time = 1550s
+Elapsed ordering time = 1555s
+Elapsed ordering time = 1560s
+Elapsed ordering time = 1565s
+Elapsed ordering time = 1570s
+Elapsed ordering time = 1575s
+Elapsed ordering time = 1580s
+Elapsed ordering time = 1585s
+Elapsed ordering time = 1590s
+Elapsed ordering time = 1595s
+Elapsed ordering time = 1600s
+Elapsed ordering time = 1605s
+Elapsed ordering time = 1610s
+Elapsed ordering time = 1615s
+Elapsed ordering time = 1620s
+Elapsed ordering time = 1625s
+Elapsed ordering time = 1630s
+Elapsed ordering time = 1635s
+Elapsed ordering time = 1640s
+Elapsed ordering time = 1645s
+Elapsed ordering time = 1650s
+Elapsed ordering time = 1655s
+Elapsed ordering time = 1660s
+Elapsed ordering time = 1665s
+Elapsed ordering time = 1670s
+Elapsed ordering time = 1675s
+Elapsed ordering time = 1680s
+Elapsed ordering time = 1685s
+Elapsed ordering time = 1690s
+Elapsed ordering time = 1695s
+Elapsed ordering time = 1700s
+Elapsed ordering time = 1705s
+Elapsed ordering time = 1710s
+Elapsed ordering time = 1715s
+Elapsed ordering time = 1720s
+Elapsed ordering time = 1725s
+Elapsed ordering time = 1730s
+Elapsed ordering time = 1735s
+Elapsed ordering time = 1740s
+Elapsed ordering time = 1745s
+Elapsed ordering time = 1750s
+Elapsed ordering time = 1755s
+Elapsed ordering time = 1760s
+Elapsed ordering time = 1765s
+Elapsed ordering time = 1770s
+Elapsed ordering time = 1775s
+Ordering time: 1775.65s
+
+Barrier statistics:
+ AA' NZ     : 1.472e+08
+ Factor NZ  : 1.600e+09 (roughly 14.0 GBytes of memory)
+ Factor Ops : 1.936e+13 (roughly 800 seconds per iteration)
+ Threads    : 1
+
+Barrier performed 0 iterations in 1895.61 seconds
+Error termination
+
+
+Stopped in 0 iterations and 14400.11 seconds
+Out of memory
+
+
+-------------------------------------------------------------------------------
+Begin tuning (baseline mean runtime 9965.08s)...
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 2...
+
+	Method 2
+
+Solving model_000 ... runtime 1105.64s
+Solving model_001 ... runtime 14400.89s
+Solving model_002 ... runtime 14400.37s
+
+Total elapsed tuning time 59826s (112974s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 3...
+
+	Method 1
+
+Solving model_000 ... runtime 1115.69s
+Solving model_001 ... runtime 14400.34s
+Solving model_002 ... runtime 14400.43s
+
+Total elapsed tuning time 89752s (83048s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 4...
+
+	Method 0
+
+Solving model_000 ... runtime 1111.85s
+Solving model_001 ... runtime 14400.74s
+Solving model_002 ... runtime 14400.74s
+
+Total elapsed tuning time 119683s (53117s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 5...
+
+	NormAdjust 3
+
+Solving model_000 ... runtime 1098.97s
+Solving model_001 ... runtime 14400.25s
+Solving model_002 ... runtime 14400.46s
+
+Total elapsed tuning time 149592s (23208s remaining)
+
+-------------------------------------------------------------------------------
+
+Testing candidate parameter set 6...
+
+	Aggregate 0
+
+Solving model_000 ... runtime 1104.24s
+Solving model_001 ... runtime 14400.23s
+Solving model_002 ... 
+
+Tune time limit reached.
+
+-------------------------------------------------------------------------------
+
+Tested 5 parameter sets in 172804.30s
+
+Baseline parameter set: mean runtime 9965.08s
+
+-------------------------------------------------------------------------------
+
+Tested 5 parameter sets in 172804.30s
+Unable to improve on baseline parameter set.
+

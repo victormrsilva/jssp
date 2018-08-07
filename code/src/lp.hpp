@@ -4,7 +4,7 @@
 
 extern "C"
 {
-#include "lp.h"
+#include "cgraph/lp.h"
 }
 
 #include <vector>
@@ -31,4 +31,13 @@ void lp_add_cols( LinearProgram *lp,
         std::vector< std::string > names );
 
 void lp_add_row( LinearProgram *lp, std::vector< int > idx, std::vector< double > coef, const std::string name, char sense, const double rhs );
+
+void lp_remove_rows( LinearProgram *lp, std::vector< int > idx);
+
+double lp_xIdx(LinearProgram *lp, int idx);
+
+char* lp_varName(LinearProgram *lp, int idx);
+
+void lp_as_integer(LinearProgram *lp);
+
 

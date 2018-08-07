@@ -47,7 +47,7 @@ Flow::Flow( const Instance &_inst ) :
                 lb.push_back( 0.0 );
                 ub.push_back( 1 );
                 obj.push_back( 0 );
-                integer.push_back( 1 );
+                integer.push_back( 0 );
                 continue;
             }
             int m0 = inst_.machine(j,m);
@@ -67,7 +67,7 @@ Flow::Flow( const Instance &_inst ) :
                     lb.push_back( 0.0 );
                     ub.push_back( 1 );
                     obj.push_back( 0 );
-                    integer.push_back( 1 );
+                    integer.push_back( 0 );
                     // arc for same machine (waiting) 
                     // can only be made in the last moment possible
                     if (t == inst_.lst(j,m0)-1) continue;
@@ -80,7 +80,7 @@ Flow::Flow( const Instance &_inst ) :
                     lb.push_back( 0.0 );
                     ub.push_back( 1 );
                     obj.push_back( 0 );
-                    integer.push_back( 1 );
+                    integer.push_back( 0 );
                 } else { // conclusion machine f
                     xIdx_[j][m0+1][t][mf+1][t+dur] = names.size();
                     enter_flow[j][mf+1+j][t+dur].push_back(names.size());
@@ -92,7 +92,7 @@ Flow::Flow( const Instance &_inst ) :
                     lb.push_back( 0.0 );
                     ub.push_back( 1 );
                     obj.push_back( 0 );
-                    integer.push_back( 1 );
+                    integer.push_back( 0 );
 
                     xIdx_[j][m0+1][t][m0+1][t+1] = names.size();
                     enter_flow[j][m0+1][t+1].push_back(names.size());
@@ -102,7 +102,7 @@ Flow::Flow( const Instance &_inst ) :
                     lb.push_back( 0.0 );
                     ub.push_back( 1 );
                     obj.push_back( 0 );
-                    integer.push_back( 1 );
+                    integer.push_back( 0 );
                 }
             }
         }
@@ -123,7 +123,7 @@ Flow::Flow( const Instance &_inst ) :
     lb.push_back( 0.0 );
     ub.push_back( DBL_MAX );
     obj.push_back( 1.0 );
-    integer.push_back( 1 );
+    integer.push_back( 0 );
     cout << "Number of variables: " << names.size() << endl;
     clock_t begin = clock();
     lp_add_cols( mip, obj, lb, ub, integer, names );

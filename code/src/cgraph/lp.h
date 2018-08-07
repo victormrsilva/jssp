@@ -63,7 +63,7 @@ void lp_save_mip_start( LinearProgram *lp, const char *fileName );
 void lp_mipstart_debug( LinearProgram *lp );
 
 /* for debugging purposes: fixes mipstart variables
- * one by one and optimizes (if initial solution is invalid at
+ * one by one and optimizes (if initial solution is invalid at 
  * some point an infeasible LP will appear) */
 void lp_fix_mipstart( LinearProgram *lp );
 
@@ -71,7 +71,7 @@ void lp_fix_mipstart( LinearProgram *lp );
 /* Model creation, modification and destruction */
 LinearProgram *lp_create();
 LinearProgram *lp_clone( LinearProgram *lp );
-void lp_add_row( LinearProgram *lp, const int nz, const int *indexes, const double *coefs, const char *name, const char sense, const double rhs );
+void lp_add_row( LinearProgram *lp, const int nz, int *indexes, double *coefs, const char *name, char sense, const double rhs );
 void lp_add_rows( LinearProgram *lp, int nRows, int *starts, int *idx, double *coef, char *sense, double *rhs, const char **names );
 void lp_remove_row( LinearProgram *lp, int idxRow );
 void lp_remove_rows( LinearProgram *lp, int nRows, int *rows );
@@ -175,13 +175,12 @@ void lp_set_parallel( LinearProgram *lp, char onOff );
 
 
 /* Model query */
-char lp_is_mip( const LinearProgram *lp );
+char lp_is_mip( LinearProgram *lp );
 char lp_is_integer( const LinearProgram *lp, const int j );
 char lp_is_binary( const LinearProgram *lp, const int j );
-int lp_num_binary_cols( const LinearProgram *lp );
-void lp_cols_by_type( LinearProgram *lp, int *binaries, int *integers, int *continuous );
+void lp_cols_by_type( const LinearProgram *lp, int *binaries, int *integers, int *continuous );
 int lp_cols( const LinearProgram *lp );
-int lp_rows( const LinearProgram *lp );
+int lp_rows(const  LinearProgram *lp );
 int lp_nz( const LinearProgram *lp );
 int lp_row( const LinearProgram *lp, int row, int *idx, double *coef );
 int lp_col( const LinearProgram *lp, int col, int *idx, double *coef );
@@ -208,11 +207,10 @@ void lp_set_callback( LinearProgram *lp, lp_cb callback, void *data );
 // global flag indicating if variable/row names will be stored, can save some memory when off
 void lp_set_store_names( char store );
 
-#include "cgraph.h"
-#include "cut.h"
-/* cuts based on conflict graphs */
-int lp_generate_clique_cuts(LinearProgram *lp, const CGraph *cg, CutPool *cutPool, int argc, const char **argv);
-int lp_generate_odd_hole_cuts(LinearProgram *lp, const CGraph *cg, CutPool *cutPool);
-int lp_generate_knapsack_cuts(LinearProgram *lp, const CGraph *cg, CutPool *cutPool, int argc, const char **argv);
+int lp_num_binary_cols( const LinearProgram *lp );
+
+char* lp_col_types( const LinearProgram *lp);
+void lp_write_mps( LinearProgram *lp, const char *fileName );
+char** lp_string_vchar(const std::vector< std::string >& strv);
 
 #endif

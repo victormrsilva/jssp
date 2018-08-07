@@ -58,129 +58,129 @@ double fractionalPart( const double x )
     return MIN( nextInteger-x, x-previousInteger );
 }
 
-KnapsackSeparation *knapsack_sep_create(const OsiSolverInterface &si)
-{
-    KnapsackSeparation *ksep = new KnapsackSeparation;
+// KnapsackSeparation *knapsack_sep_create(const OsiSolverInterface &si)
+// {
+//     KnapsackSeparation *ksep = new KnapsackSeparation;
 
-    const int nRows = si.getNumRows(), nCols = si.getNumCols();
-    const char *rowSense = si.getRowSense();
-    const double *rhs = si.getRightHandSide();
-    const CoinPackedMatrix *M = si.getMatrixByRow();
+//     const int nRows = si.getNumRows(), nCols = si.getNumCols();
+//     const char *rowSense = si.getRowSense();
+//     const double *rhs = si.getRightHandSide();
+//     const CoinPackedMatrix *M = si.getMatrixByRow();
 
-    int i, j, nz = 0;
+//     int i, j, nz = 0;
 
-    ksep->nCols = nCols;
-    ksep->nRows = 0;
-    ksep->cg = NULL;
-    ksep->maxRC = KSEP_DEF_MAX_RC;
-    ksep->maxItBK = KSEP_DEF_MAX_IT_BK;
+//     ksep->nCols = nCols;
+//     ksep->nRows = 0;
+//     ksep->cg = NULL;
+//     ksep->maxRC = KSEP_DEF_MAX_RC;
+//     ksep->maxItBK = KSEP_DEF_MAX_IT_BK;
 
-    ksep->knpRowIdxs = new int*[nRows];
-    ksep->knpRowIdxs[0] = new int[si.getNumElements()];
-    ksep->knpRowCoefs = new double*[nRows];
-    ksep->knpRowCoefs[0] = new double[si.getNumElements()];
-    ksep->isComplement = new char*[nRows];
-    ksep->isComplement[0] = new char[si.getNumElements()];
-    ksep->rowHasCompVars = new char[nRows];
-    ksep->nz = new int[nRows]();
-    ksep->rhs = new double[nRows];
-    ksep->maxCoef = new double[nRows];
-    ksep->totalWeight = new double[nRows];
+//     ksep->knpRowIdxs = new int*[nRows];
+//     ksep->knpRowIdxs[0] = new int[si.getNumElements()];
+//     ksep->knpRowCoefs = new double*[nRows];
+//     ksep->knpRowCoefs[0] = new double[si.getNumElements()];
+//     ksep->isComplement = new char*[nRows];
+//     ksep->isComplement[0] = new char[si.getNumElements()];
+//     ksep->rowHasCompVars = new char[nRows];
+//     ksep->nz = new int[nRows]();
+//     ksep->rhs = new double[nRows];
+//     ksep->maxCoef = new double[nRows];
+//     ksep->totalWeight = new double[nRows];
 
-    for(i = 0; i < nRows; i++)
-    {
-        const CoinShallowPackedVector &row = M->getVector(i);
-        const int nzRow = row.getNumElements();
-        const int *idxRow = row.getIndices();
-        const double *coefRow = row.getElements();
-        const char sense = rowSense[i];
-        char onlyBin = True;
+//     for(i = 0; i < nRows; i++)
+//     {
+//         const CoinShallowPackedVector &row = M->getVector(i);
+//         const int nzRow = row.getNumElements();
+//         const int *idxRow = row.getIndices();
+//         const double *coefRow = row.getElements();
+//         const char sense = rowSense[i];
+//         char onlyBin = True;
 
-        if(nzRow < 2 || sense != 'L')
-            continue;
+//         if(nzRow < 2 || sense != 'L')
+//             continue;
 
-        ksep->rhs[ksep->nRows] = rhs[i];
-        ksep->nz[ksep->nRows] = nzRow;
-        ksep->rowHasCompVars[ksep->nRows] = 0;
-        ksep->maxCoef[ksep->nRows] = fabs(coefRow[0]);
-        ksep->totalWeight[ksep->nRows] = 0.0;
+//         ksep->rhs[ksep->nRows] = rhs[i];
+//         ksep->nz[ksep->nRows] = nzRow;
+//         ksep->rowHasCompVars[ksep->nRows] = 0;
+//         ksep->maxCoef[ksep->nRows] = fabs(coefRow[0]);
+//         ksep->totalWeight[ksep->nRows] = 0.0;
 
-        double minCoef = DBL_MAX, sumCoef = 0.0, maxFrac = 0.0;
+//         double minCoef = DBL_MAX, sumCoef = 0.0, maxFrac = 0.0;
 
-        for(j = 0; j < nzRow; j++)
-        {
-            if(!si.isBinary(idxRow[j]))
-            {
-                onlyBin = False;
-                break;
-            }
+//         for(j = 0; j < nzRow; j++)
+//         {
+//             if(!si.isBinary(idxRow[j]))
+//             {
+//                 onlyBin = False;
+//                 break;
+//             }
 
-            ksep->knpRowIdxs[0][nz] = idxRow[j];
+//             ksep->knpRowIdxs[0][nz] = idxRow[j];
 
-            if(coefRow[j] <= -EPS)
-            {
-                ksep->knpRowCoefs[0][nz] = fabs(coefRow[j]);
-                ksep->isComplement[0][nz] = 1;
-                ksep->rhs[ksep->nRows] += ksep->knpRowCoefs[0][nz];
-                ksep->rowHasCompVars[ksep->nRows] = 1;
-            }
-            else
-            {
-                ksep->knpRowCoefs[0][nz] = coefRow[j];
-                ksep->isComplement[0][nz] = 0;
-            }
+//             if(coefRow[j] <= -EPS)
+//             {
+//                 ksep->knpRowCoefs[0][nz] = fabs(coefRow[j]);
+//                 ksep->isComplement[0][nz] = 1;
+//                 ksep->rhs[ksep->nRows] += ksep->knpRowCoefs[0][nz];
+//                 ksep->rowHasCompVars[ksep->nRows] = 1;
+//             }
+//             else
+//             {
+//                 ksep->knpRowCoefs[0][nz] = coefRow[j];
+//                 ksep->isComplement[0][nz] = 0;
+//             }
 
-            minCoef = MIN(minCoef, ksep->knpRowCoefs[0][nz]);
-            ksep->maxCoef[ksep->nRows] = MAX(ksep->maxCoef[ksep->nRows], ksep->knpRowCoefs[0][nz]);
-            ksep->totalWeight[ksep->nRows] += ksep->knpRowCoefs[0][nz];
-            sumCoef += ksep->knpRowCoefs[0][nz];
-            maxFrac = MAX(maxFrac, fractionalPart(ksep->knpRowCoefs[0][nz]));
-            nz++;
-        }
+//             minCoef = MIN(minCoef, ksep->knpRowCoefs[0][nz]);
+//             ksep->maxCoef[ksep->nRows] = MAX(ksep->maxCoef[ksep->nRows], ksep->knpRowCoefs[0][nz]);
+//             ksep->totalWeight[ksep->nRows] += ksep->knpRowCoefs[0][nz];
+//             sumCoef += ksep->knpRowCoefs[0][nz];
+//             maxFrac = MAX(maxFrac, fractionalPart(ksep->knpRowCoefs[0][nz]));
+//             nz++;
+//         }
 
-        maxFrac = MAX(maxFrac, fractionalPart(ksep->rhs[ksep->nRows]));
+//         maxFrac = MAX(maxFrac, fractionalPart(ksep->rhs[ksep->nRows]));
 
-        int nEntries, capacity;
-        if(maxFrac > 1e-5)
-        	capacity = ((int)(floor(ksep->maxCoef[ksep->nRows] * 1000.0)))
-        		     + ((int)(ceil(ksep->rhs[ksep->nRows] * 1000.0)));
-        else
-        	capacity = ((int)(ksep->maxCoef[ksep->nRows])) + ((int)(ksep->rhs[ksep->nRows]));
-        nEntries = (ksep->nz[ksep->nRows] + 1) * (capacity + 1);
+//         int nEntries, capacity;
+//         if(maxFrac > 1e-5)
+//         	capacity = ((int)(floor(ksep->maxCoef[ksep->nRows] * 1000.0)))
+//         		     + ((int)(ceil(ksep->rhs[ksep->nRows] * 1000.0)));
+//         else
+//         	capacity = ((int)(ksep->maxCoef[ksep->nRows])) + ((int)(ksep->rhs[ksep->nRows]));
+//         nEntries = (ksep->nz[ksep->nRows] + 1) * (capacity + 1);
 
-        if( !onlyBin || nEntries > CAPACITY_LIMIT || nEntries <= 0 || ksep->rhs[ksep->nRows] <= 1.0||
-        	sumCoef <= ksep->rhs[ksep->nRows] || minCoef > ksep->rhs[ksep->nRows] )
-        {
-            nz = nz - j;
-            continue;
-        }
+//         if( !onlyBin || nEntries > CAPACITY_LIMIT || nEntries <= 0 || ksep->rhs[ksep->nRows] <= 1.0||
+//         	sumCoef <= ksep->rhs[ksep->nRows] || minCoef > ksep->rhs[ksep->nRows] )
+//         {
+//             nz = nz - j;
+//             continue;
+//         }
 
-        /* se existem coeficientes fracionários, transforma para inteiros */
-        if(maxFrac > 1e-5)
-        {
-            ksep->totalWeight[ksep->nRows] = 0.0;
-            for(j = 1; j <= ksep->nz[ksep->nRows]; j++)
-            {
-                ksep->knpRowCoefs[0][nz-j] = floor(ksep->knpRowCoefs[0][nz-j] * 1000.0);
-                assert(ksep->knpRowCoefs[0][nz-j] > 0);
-                ksep->maxCoef[ksep->nRows] = MAX(ksep->maxCoef[ksep->nRows], ksep->knpRowCoefs[0][nz-j]);
-                ksep->totalWeight[ksep->nRows] += ksep->knpRowCoefs[0][nz-j];
-            }
-            ksep->rhs[ksep->nRows] = ceil(ksep->rhs[ksep->nRows] * 1000.0);
-        }
+//         /* se existem coeficientes fracionários, transforma para inteiros */
+//         if(maxFrac > 1e-5)
+//         {
+//             ksep->totalWeight[ksep->nRows] = 0.0;
+//             for(j = 1; j <= ksep->nz[ksep->nRows]; j++)
+//             {
+//                 ksep->knpRowCoefs[0][nz-j] = floor(ksep->knpRowCoefs[0][nz-j] * 1000.0);
+//                 assert(ksep->knpRowCoefs[0][nz-j] > 0);
+//                 ksep->maxCoef[ksep->nRows] = MAX(ksep->maxCoef[ksep->nRows], ksep->knpRowCoefs[0][nz-j]);
+//                 ksep->totalWeight[ksep->nRows] += ksep->knpRowCoefs[0][nz-j];
+//             }
+//             ksep->rhs[ksep->nRows] = ceil(ksep->rhs[ksep->nRows] * 1000.0);
+//         }
 
-        ksep->nRows++;
-    }
+//         ksep->nRows++;
+//     }
 
-    for(i = 1; i < ksep->nRows; i++)
-    {
-        ksep->knpRowIdxs[i] = ksep->knpRowIdxs[i-1] + ksep->nz[i-1];
-        ksep->knpRowCoefs[i] = ksep->knpRowCoefs[i-1] + ksep->nz[i-1];
-        ksep->isComplement[i] = ksep->isComplement[i-1] + ksep->nz[i-1];
-    }
+//     for(i = 1; i < ksep->nRows; i++)
+//     {
+//         ksep->knpRowIdxs[i] = ksep->knpRowIdxs[i-1] + ksep->nz[i-1];
+//         ksep->knpRowCoefs[i] = ksep->knpRowCoefs[i-1] + ksep->nz[i-1];
+//         ksep->isComplement[i] = ksep->isComplement[i-1] + ksep->nz[i-1];
+//     }
 
-    return ksep;
-}
+//     return ksep;
+// }
 
 KnapsackSeparation* knapsack_sep_create(const LinearProgram *lp)
 {

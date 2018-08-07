@@ -1,0 +1,42 @@
+#ifndef FLOW_HPP
+#define FLOW_HPP
+
+#include "Instance.hpp"
+#include "Callback.cpp"
+#include "lp.hpp"
+#include "gurobi_c++.h"
+#include <map>
+#include "cgraph/cgraph.h"
+
+class Flow
+{
+public:
+    Flow( const Instance &_inst );
+
+    void optimize();
+
+    virtual ~Flow();
+private:
+    const Instance &inst_;
+
+    GRBVar cIdx_;
+    //LinearProgram *mip;
+    GRBEnv *env;
+    std::vector< std::vector< std::map< int, std::map< int, std::map< int, GRBVar > > > > > xIdx_; // índice dos arcos (y,m0,t0,mf,tf)
+   // std::vector < std::string > x11_color_;
+
+    // void create_x11();
+    void createCompleteGraphDot();
+
+      // set of entering flows
+    std::vector<std::vector<std::vector<std::vector<GRBVar>>>> enter_flow;
+    // set of exiting flows
+    std::vector<std::vector<std::vector<std::vector<GRBVar>>>> exit_flow;
+    // proccessing jobs flows
+    std::vector<std::vector<std::vector<std::vector<GRBVar>>>> process;
+
+    
+
+
+};
+#endif

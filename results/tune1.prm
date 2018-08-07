@@ -1,0 +1,4 @@
+TimeLimit  7200
+Method  2
+Aggregate  0
+Presolve  1

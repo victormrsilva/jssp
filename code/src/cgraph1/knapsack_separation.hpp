@@ -8,7 +8,7 @@ extern "C"
     #include "lp.h"
 }
 
-#include <OsiSolverInterface.hpp>
+//#include <OsiSolverInterface.hpp>
 
 typedef struct _KnapsackSeparation KnapsackSeparation;
 

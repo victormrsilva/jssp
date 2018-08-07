@@ -1,0 +1,101 @@
+Academic license - for non-commercial use only
+Set parameter TimeLimit to value 7200
+
+Gurobi Optimizer version 8.0.0 build v8.0.0rc0 (linux64)
+Copyright (c) 2018, Gurobi Optimization, LLC
+
+Read LP format model from file compact/la02.lp
+Reading time = 0.00 seconds
+: 950 rows, 551 columns, 2800 nonzeros
+Optimize a model with 950 rows, 551 columns and 2800 nonzeros
+Variable types: 0 continuous, 551 integer (500 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+03]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+01, 3e+03]
+Presolve removed 0 rows and 50 columns
+Presolve time: 0.01s
+Presolved: 950 rows, 501 columns, 2800 nonzeros
+Variable types: 0 continuous, 501 integer (450 binary)
+
+Root relaxation: objective 4.040000e+02, 299 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  404.00000    0   84          -  404.00000      -     -    0s
+     0     0  404.00000    0  118          -  404.00000      -     -    0s
+     0     0  404.00000    0  124          -  404.00000      -     -    0s
+     0     0  404.00000    0  131          -  404.00000      -     -    0s
+     0     0  404.00000    0   39          -  404.00000      -     -    0s
+     0     0  404.00000    0   68          -  404.00000      -     -    0s
+     0     0  404.35082    0  110          -  404.35082      -     -    0s
+     0     0  414.38501    0  102          -  414.38501      -     -    0s
+     0     0  416.30955    0   95          -  416.30955      -     -    0s
+     0     0  416.30955    0  101          -  416.30955      -     -    0s
+     0     0  417.80319    0  115          -  417.80319      -     -    0s
+     0     0  417.85446    0  114          -  417.85446      -     -    0s
+     0     0  417.85446    0  114          -  417.85446      -     -    0s
+     0     0  419.12647    0  135          -  419.12647      -     -    0s
+     0     0  419.25890    0  121          -  419.25890      -     -    0s
+     0     0  419.67550    0  112          -  419.67550      -     -    0s
+     0     0  419.79439    0  112          -  419.79439      -     -    0s
+     0     0  419.79474    0  125          -  419.79474      -     -    0s
+     0     0  422.36607    0  102          -  422.36607      -     -    0s
+     0     0  422.36607    0   33          -  422.36607      -     -    0s
+     0     0  422.36607    0   92          -  422.36607      -     -    0s
+     0     0  422.36607    0   92          -  422.36607      -     -    0s
+     0     0  422.37426    0   92          -  422.37426      -     -    0s
+     0     0  422.41530    0   93          -  422.41530      -     -    0s
+     0     0  422.41530    0   94          -  422.41530      -     -    0s
+     0     0  423.05232    0   97          -  423.05232      -     -    0s
+     0     0  425.21231    0   97          -  425.21231      -     -    0s
+     0     0  425.21231    0   97          -  425.21231      -     -    0s
+     0     0  430.86686    0  105          -  430.86686      -     -    0s
+     0     0  430.86686    0   91          -  430.86686      -     -    0s
+     0     0  431.22134    0  107          -  431.22134      -     -    0s
+     0     0  431.22134    0  110          -  431.22134      -     -    0s
+     0     0  431.22134    0  107          -  431.22134      -     -    0s
+     0     0  431.22134    0  116          -  431.22134      -     -    0s
+     0     0  431.22134    0  106          -  431.22134      -     -    0s
+     0     0  432.00000    0   42          -  432.00000      -     -    0s
+     0     0  432.00000    0   42          -  432.00000      -     -    0s
+H    0     0                     855.0000000  432.00000  49.5%     -    0s
+H    0     0                     815.0000000  432.00000  47.0%     -    0s
+H    0     0                     740.0000000  432.00000  41.6%     -    0s
+     0     2  432.00000    0   42  740.00000  432.00000  41.6%     -    0s
+*  144    85              49     720.0000000  466.00000  35.3%  10.5    0s
+*  268   167              40     693.0000000  466.00000  32.8%   8.7    0s
+*  389   185              39     687.0000000  466.00000  32.2%   8.4    1s
+*  394   184              41     676.0000000  466.00000  31.1%   8.4    1s
+* 1287   478              20     674.0000000  473.04843  29.8%   9.8    1s
+H 1659   609                     672.0000000  482.00000  28.3%  17.8    2s
+H 1672   576                     665.0000000  482.00000  27.5%  17.9    2s
+* 1736   549              23     663.0000000  482.00000  27.3%  18.5    2s
+* 1860   503              32     662.0000000  482.00000  27.2%  20.1    2s
+* 1869   473              36     656.0000000  482.00000  26.5%  20.0    2s
+* 2034   425              25     655.0000000  482.00000  26.4%  21.6    3s
+  3457   263  585.00000   30   40  655.00000  538.00000  17.9%  25.4    5s
+
+Cutting planes:
+  Learned: 1
+  Gomory: 11
+  Cover: 1
+  Implied bound: 11
+  Projected implied bound: 2
+  Clique: 4
+  MIR: 82
+  Flow cover: 215
+  Zero half: 1
+
+Explored 4290 nodes (117004 simplex iterations) in 5.80 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 10: 655 656 662 ... 693
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 6.550000000000e+02, best bound 6.550000000000e+02, gap 0.0000%
+
+Wrote result file 'compact_la02.sol'
+

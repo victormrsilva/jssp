@@ -1,0 +1,81 @@
+clique_merge.o: src/cgraph/clique_merge.c src/cgraph/clique_merge.h \
+ src/cgraph/cgraph.h src/cgraph/lp.h src/cgraph/cut.h src/cgraph/macros.h \
+ src/cgraph/clique_extender.h src/cgraph/vint_set.h src/cgraph/clique.h \
+ src/cgraph/memory.h
+spaths.o: src/cgraph/spaths.c src/cgraph/digraph.h src/cgraph/memory.h \
+ src/cgraph/spaths.h src/cgraph/node_heap.h src/cgraph/vectormgm.h \
+ src/cgraph/strutils.h
+vint_queue.o: src/cgraph/vint_queue.c src/cgraph/vint_queue.h \
+ src/cgraph/memory.h
+node_heap.o: src/cgraph/node_heap.c src/cgraph/memory.h \
+ src/cgraph/node_heap.h
+vint_set.o: src/cgraph/vint_set.c src/cgraph/memory.h src/cgraph/macros.h \
+ src/cgraph/vint_set.h
+clique.o: src/cgraph/clique.c src/cgraph/clique.h src/cgraph/cgraph.h \
+ src/cgraph/vint_set.h src/cgraph/vectormgm.h src/cgraph/memory.h \
+ src/cgraph/macros.h src/cgraph/strutils.h
+clique_extender.o: src/cgraph/clique_extender.c src/cgraph/cgraph.h \
+ src/cgraph/memory.h src/cgraph/clique.h src/cgraph/vint_set.h \
+ src/cgraph/clique_extender.h src/cgraph/vectormgm.h src/cgraph/macros.h \
+ src/cgraph/bron_kerbosch.h
+cgraph.o: src/cgraph/cgraph.c src/cgraph/cgraph.h src/cgraph/memory.h \
+ src/cgraph/vint_set.h src/cgraph/vectormgm.h src/cgraph/clique.h \
+ src/cgraph/macros.h
+oddhs.o: src/cgraph/oddhs.c src/cgraph/spaths.h src/cgraph/oddhs.h \
+ src/cgraph/cgraph.h src/cgraph/clique.h src/cgraph/vint_set.h \
+ src/cgraph/memory.h src/cgraph/macros.h src/cgraph/node_heap.h \
+ src/cgraph/vectormgm.h
+vectormgm.o: src/cgraph/vectormgm.c src/cgraph/memory.h
+clique_separation.o: src/cgraph/clique_separation.c \
+ src/cgraph/clique_separation.h src/cgraph/cgraph.h src/cgraph/clique.h \
+ src/cgraph/vint_set.h src/cgraph/clique_extender.h src/cgraph/memory.h \
+ src/cgraph/vectormgm.h src/cgraph/macros.h src/cgraph/bron_kerbosch.h \
+ src/cgraph/vint_queue.h src/cgraph/strutils.h
+memory.o: src/cgraph/memory.c src/cgraph/memory.h
+strutils.o: src/cgraph/strutils.c src/cgraph/macros.h \
+ src/cgraph/strutils.h
+mrgclq.o: src/cgraph/mrgclq.c src/cgraph/clique_merge.h \
+ src/cgraph/cgraph.h src/cgraph/lp.h src/cgraph/cut.h \
+ src/cgraph/build_cgraph.h
+cut.o: src/cgraph/cut.c src/cgraph/cut.h src/cgraph/memory.h \
+ src/cgraph/macros.h
+Flow_cuts.o: src/Flow_cuts.cpp src/Flow_cuts.hpp src/Instance.hpp \
+ src/Callback.cpp /opt/gurobi800/linux64/include/gurobi_c++.h \
+ /opt/gurobi800/linux64/include/gurobi_c.h src/lp.hpp src/lp.h \
+ src/cgraph/cgraph.h src/cgraph/lp.h src/cgraph/strutils.h \
+ src/cgraph/build_cgraph.h src/cgraph/cgraph.h
+Fernando.o: src/Fernando.cpp src/Fernando.hpp src/Instance.hpp src/lp.hpp \
+ src/lp.h
+Compact.o: src/Compact.cpp src/Compact.hpp src/Instance.hpp src/lp.hpp \
+ src/lp.h
+Callback.o: src/Callback.cpp src/Flow_cuts.hpp src/Instance.hpp \
+ src/Callback.cpp src/lp.hpp src/lp.h \
+ /opt/gurobi800/linux64/include/gurobi_c++.h \
+ /opt/gurobi800/linux64/include/gurobi_c.h src/cgraph/cgraph.h
+lp.o: src/lp.cpp src/lp.h /opt/gurobi800/linux64/include/gurobi_c.h
+Kondili.o: src/Kondili.cpp src/Kondili.hpp src/Instance.hpp src/lp.hpp \
+ src/lp.h
+Instance.o: src/Instance.cpp src/Instance.hpp
+knapsack_separation.o: src/cgraph/knapsack_separation.cpp \
+ src/cgraph/knapsack_separation.hpp src/cgraph/cut.h src/cgraph/cgraph.h \
+ src/cgraph/lp.h src/cgraph/macros.h src/cgraph/clique.h \
+ src/cgraph/vint_set.h src/cgraph/bron_kerbosch.h src/cgraph/strutils.h
+BKVertex.o: src/cgraph/BKVertex.cpp src/cgraph/BKVertex.hpp
+lp.o: src/cgraph/lp.cpp src/cgraph/lp.h src/cgraph/cgraph.h \
+ src/cgraph/cut.h /opt/gurobi800/linux64/include/gurobi_c.h \
+ src/cgraph/clique_separation.h src/cgraph/clique.h src/cgraph/vint_set.h \
+ src/cgraph/clique_extender.h src/cgraph/oddhs.h \
+ src/cgraph/knapsack_separation.hpp
+BKGraph.o: src/cgraph/BKGraph.cpp src/cgraph/BKGraph.hpp \
+ src/cgraph/BKVertex.hpp src/cgraph/cgraph.h src/cgraph/clique.h \
+ src/cgraph/vint_set.h src/cgraph/memory.h
+main.o: src/cgraph/main.cpp src/cgraph/lp.h src/cgraph/cgraph.h \
+ src/cgraph/cut.h src/cgraph/strutils.h src/cgraph/build_cgraph.h
+build_cgraph.o: src/cgraph/build_cgraph.cpp src/cgraph/memory.h \
+ src/cgraph/node_heap.h src/cgraph/build_cgraph.h src/cgraph/cgraph.h \
+ src/cgraph/lp.h src/cgraph/cut.h
+bron_kerbosch.o: src/cgraph/bron_kerbosch.cpp src/cgraph/BKGraph.hpp \
+ src/cgraph/BKVertex.hpp src/cgraph/cgraph.h src/cgraph/clique.h \
+ src/cgraph/vint_set.h src/cgraph/memory.h src/cgraph/bron_kerbosch.h
+create_timeline.o: create_timeline.cpp
+format_solution.o: format_solution.cpp

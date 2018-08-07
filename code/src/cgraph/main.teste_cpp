@@ -1,0 +1,32 @@
+#include <iostream>
+#include <cstdio>
+#include <cassert>
+#include <cstdlib>
+#include <cstring>
+#include <omp.h>
+#include <set>
+#include <cmath>
+
+extern "C"
+{
+    #include "lp.h"
+    #include "build_cgraph.h"
+}
+
+using namespace std;
+
+int main( int argc, const char **argv )
+{
+   clock_t start = clock();
+    LinearProgram *lp = lp_create();
+
+    lp_read(lp, argv[1]);
+    CGraph *cgraph = build_cgraph_lp(lp);
+
+    cgraph_print_summary(cgraph, "test_cgraph");
+
+    lp_free(&lp);
+    cgraph_free(&cgraph);
+
+    return 0;
+}

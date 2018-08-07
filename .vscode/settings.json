@@ -32,6 +32,9 @@
         "tuple": "cpp",
         "utility": "cpp",
         "deque": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "unordered_map": "cpp",
+        "functional": "cpp",
+        "numeric": "cpp"
     }
 }

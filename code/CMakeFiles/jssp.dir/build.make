@@ -369,9 +369,153 @@ CMakeFiles/jssp.dir/src/cgraph/node_heap.c.o.provides: CMakeFiles/jssp.dir/src/c
 CMakeFiles/jssp.dir/src/cgraph/node_heap.c.o.provides.build: CMakeFiles/jssp.dir/src/cgraph/node_heap.c.o
 
 
+CMakeFiles/jssp.dir/src/cgraph/BKGraph.cpp.o: CMakeFiles/jssp.dir/flags.make
+CMakeFiles/jssp.dir/src/cgraph/BKGraph.cpp.o: src/cgraph/BKGraph.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/victor/git-version/jssp/code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/jssp.dir/src/cgraph/BKGraph.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/jssp.dir/src/cgraph/BKGraph.cpp.o -c /home/victor/git-version/jssp/code/src/cgraph/BKGraph.cpp
+
+CMakeFiles/jssp.dir/src/cgraph/BKGraph.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/jssp.dir/src/cgraph/BKGraph.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/victor/git-version/jssp/code/src/cgraph/BKGraph.cpp > CMakeFiles/jssp.dir/src/cgraph/BKGraph.cpp.i
+
+CMakeFiles/jssp.dir/src/cgraph/BKGraph.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/jssp.dir/src/cgraph/BKGraph.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/victor/git-version/jssp/code/src/cgraph/BKGraph.cpp -o CMakeFiles/jssp.dir/src/cgraph/BKGraph.cpp.s
+
+CMakeFiles/jssp.dir/src/cgraph/BKGraph.cpp.o.requires:
+
+.PHONY : CMakeFiles/jssp.dir/src/cgraph/BKGraph.cpp.o.requires
+
+CMakeFiles/jssp.dir/src/cgraph/BKGraph.cpp.o.provides: CMakeFiles/jssp.dir/src/cgraph/BKGraph.cpp.o.requires
+	$(MAKE) -f CMakeFiles/jssp.dir/build.make CMakeFiles/jssp.dir/src/cgraph/BKGraph.cpp.o.provides.build
+.PHONY : CMakeFiles/jssp.dir/src/cgraph/BKGraph.cpp.o.provides
+
+CMakeFiles/jssp.dir/src/cgraph/BKGraph.cpp.o.provides.build: CMakeFiles/jssp.dir/src/cgraph/BKGraph.cpp.o
+
+
+CMakeFiles/jssp.dir/src/cgraph/BKVertex.cpp.o: CMakeFiles/jssp.dir/flags.make
+CMakeFiles/jssp.dir/src/cgraph/BKVertex.cpp.o: src/cgraph/BKVertex.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/victor/git-version/jssp/code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/jssp.dir/src/cgraph/BKVertex.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/jssp.dir/src/cgraph/BKVertex.cpp.o -c /home/victor/git-version/jssp/code/src/cgraph/BKVertex.cpp
+
+CMakeFiles/jssp.dir/src/cgraph/BKVertex.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/jssp.dir/src/cgraph/BKVertex.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/victor/git-version/jssp/code/src/cgraph/BKVertex.cpp > CMakeFiles/jssp.dir/src/cgraph/BKVertex.cpp.i
+
+CMakeFiles/jssp.dir/src/cgraph/BKVertex.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/jssp.dir/src/cgraph/BKVertex.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/victor/git-version/jssp/code/src/cgraph/BKVertex.cpp -o CMakeFiles/jssp.dir/src/cgraph/BKVertex.cpp.s
+
+CMakeFiles/jssp.dir/src/cgraph/BKVertex.cpp.o.requires:
+
+.PHONY : CMakeFiles/jssp.dir/src/cgraph/BKVertex.cpp.o.requires
+
+CMakeFiles/jssp.dir/src/cgraph/BKVertex.cpp.o.provides: CMakeFiles/jssp.dir/src/cgraph/BKVertex.cpp.o.requires
+	$(MAKE) -f CMakeFiles/jssp.dir/build.make CMakeFiles/jssp.dir/src/cgraph/BKVertex.cpp.o.provides.build
+.PHONY : CMakeFiles/jssp.dir/src/cgraph/BKVertex.cpp.o.provides
+
+CMakeFiles/jssp.dir/src/cgraph/BKVertex.cpp.o.provides.build: CMakeFiles/jssp.dir/src/cgraph/BKVertex.cpp.o
+
+
+CMakeFiles/jssp.dir/src/cgraph/bron_kerbosch.cpp.o: CMakeFiles/jssp.dir/flags.make
+CMakeFiles/jssp.dir/src/cgraph/bron_kerbosch.cpp.o: src/cgraph/bron_kerbosch.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/victor/git-version/jssp/code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/jssp.dir/src/cgraph/bron_kerbosch.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/jssp.dir/src/cgraph/bron_kerbosch.cpp.o -c /home/victor/git-version/jssp/code/src/cgraph/bron_kerbosch.cpp
+
+CMakeFiles/jssp.dir/src/cgraph/bron_kerbosch.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/jssp.dir/src/cgraph/bron_kerbosch.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/victor/git-version/jssp/code/src/cgraph/bron_kerbosch.cpp > CMakeFiles/jssp.dir/src/cgraph/bron_kerbosch.cpp.i
+
+CMakeFiles/jssp.dir/src/cgraph/bron_kerbosch.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/jssp.dir/src/cgraph/bron_kerbosch.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/victor/git-version/jssp/code/src/cgraph/bron_kerbosch.cpp -o CMakeFiles/jssp.dir/src/cgraph/bron_kerbosch.cpp.s
+
+CMakeFiles/jssp.dir/src/cgraph/bron_kerbosch.cpp.o.requires:
+
+.PHONY : CMakeFiles/jssp.dir/src/cgraph/bron_kerbosch.cpp.o.requires
+
+CMakeFiles/jssp.dir/src/cgraph/bron_kerbosch.cpp.o.provides: CMakeFiles/jssp.dir/src/cgraph/bron_kerbosch.cpp.o.requires
+	$(MAKE) -f CMakeFiles/jssp.dir/build.make CMakeFiles/jssp.dir/src/cgraph/bron_kerbosch.cpp.o.provides.build
+.PHONY : CMakeFiles/jssp.dir/src/cgraph/bron_kerbosch.cpp.o.provides
+
+CMakeFiles/jssp.dir/src/cgraph/bron_kerbosch.cpp.o.provides.build: CMakeFiles/jssp.dir/src/cgraph/bron_kerbosch.cpp.o
+
+
+CMakeFiles/jssp.dir/src/cgraph/clique_extender.c.o: CMakeFiles/jssp.dir/flags.make
+CMakeFiles/jssp.dir/src/cgraph/clique_extender.c.o: src/cgraph/clique_extender.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/victor/git-version/jssp/code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/jssp.dir/src/cgraph/clique_extender.c.o"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/jssp.dir/src/cgraph/clique_extender.c.o   -c /home/victor/git-version/jssp/code/src/cgraph/clique_extender.c
+
+CMakeFiles/jssp.dir/src/cgraph/clique_extender.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/jssp.dir/src/cgraph/clique_extender.c.i"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/victor/git-version/jssp/code/src/cgraph/clique_extender.c > CMakeFiles/jssp.dir/src/cgraph/clique_extender.c.i
+
+CMakeFiles/jssp.dir/src/cgraph/clique_extender.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/jssp.dir/src/cgraph/clique_extender.c.s"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/victor/git-version/jssp/code/src/cgraph/clique_extender.c -o CMakeFiles/jssp.dir/src/cgraph/clique_extender.c.s
+
+CMakeFiles/jssp.dir/src/cgraph/clique_extender.c.o.requires:
+
+.PHONY : CMakeFiles/jssp.dir/src/cgraph/clique_extender.c.o.requires
+
+CMakeFiles/jssp.dir/src/cgraph/clique_extender.c.o.provides: CMakeFiles/jssp.dir/src/cgraph/clique_extender.c.o.requires
+	$(MAKE) -f CMakeFiles/jssp.dir/build.make CMakeFiles/jssp.dir/src/cgraph/clique_extender.c.o.provides.build
+.PHONY : CMakeFiles/jssp.dir/src/cgraph/clique_extender.c.o.provides
+
+CMakeFiles/jssp.dir/src/cgraph/clique_extender.c.o.provides.build: CMakeFiles/jssp.dir/src/cgraph/clique_extender.c.o
+
+
+CMakeFiles/jssp.dir/src/cgraph/clique_merge.c.o: CMakeFiles/jssp.dir/flags.make
+CMakeFiles/jssp.dir/src/cgraph/clique_merge.c.o: src/cgraph/clique_merge.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/victor/git-version/jssp/code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/jssp.dir/src/cgraph/clique_merge.c.o"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/jssp.dir/src/cgraph/clique_merge.c.o   -c /home/victor/git-version/jssp/code/src/cgraph/clique_merge.c
+
+CMakeFiles/jssp.dir/src/cgraph/clique_merge.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/jssp.dir/src/cgraph/clique_merge.c.i"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/victor/git-version/jssp/code/src/cgraph/clique_merge.c > CMakeFiles/jssp.dir/src/cgraph/clique_merge.c.i
+
+CMakeFiles/jssp.dir/src/cgraph/clique_merge.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/jssp.dir/src/cgraph/clique_merge.c.s"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/victor/git-version/jssp/code/src/cgraph/clique_merge.c -o CMakeFiles/jssp.dir/src/cgraph/clique_merge.c.s
+
+CMakeFiles/jssp.dir/src/cgraph/clique_merge.c.o.requires:
+
+.PHONY : CMakeFiles/jssp.dir/src/cgraph/clique_merge.c.o.requires
+
+CMakeFiles/jssp.dir/src/cgraph/clique_merge.c.o.provides: CMakeFiles/jssp.dir/src/cgraph/clique_merge.c.o.requires
+	$(MAKE) -f CMakeFiles/jssp.dir/build.make CMakeFiles/jssp.dir/src/cgraph/clique_merge.c.o.provides.build
+.PHONY : CMakeFiles/jssp.dir/src/cgraph/clique_merge.c.o.provides
+
+CMakeFiles/jssp.dir/src/cgraph/clique_merge.c.o.provides.build: CMakeFiles/jssp.dir/src/cgraph/clique_merge.c.o
+
+
+CMakeFiles/jssp.dir/src/cgraph/clique_separation.c.o: CMakeFiles/jssp.dir/flags.make
+CMakeFiles/jssp.dir/src/cgraph/clique_separation.c.o: src/cgraph/clique_separation.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/victor/git-version/jssp/code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/jssp.dir/src/cgraph/clique_separation.c.o"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/jssp.dir/src/cgraph/clique_separation.c.o   -c /home/victor/git-version/jssp/code/src/cgraph/clique_separation.c
+
+CMakeFiles/jssp.dir/src/cgraph/clique_separation.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/jssp.dir/src/cgraph/clique_separation.c.i"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/victor/git-version/jssp/code/src/cgraph/clique_separation.c > CMakeFiles/jssp.dir/src/cgraph/clique_separation.c.i
+
+CMakeFiles/jssp.dir/src/cgraph/clique_separation.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/jssp.dir/src/cgraph/clique_separation.c.s"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/victor/git-version/jssp/code/src/cgraph/clique_separation.c -o CMakeFiles/jssp.dir/src/cgraph/clique_separation.c.s
+
+CMakeFiles/jssp.dir/src/cgraph/clique_separation.c.o.requires:
+
+.PHONY : CMakeFiles/jssp.dir/src/cgraph/clique_separation.c.o.requires
+
+CMakeFiles/jssp.dir/src/cgraph/clique_separation.c.o.provides: CMakeFiles/jssp.dir/src/cgraph/clique_separation.c.o.requires
+	$(MAKE) -f CMakeFiles/jssp.dir/build.make CMakeFiles/jssp.dir/src/cgraph/clique_separation.c.o.provides.build
+.PHONY : CMakeFiles/jssp.dir/src/cgraph/clique_separation.c.o.provides
+
+CMakeFiles/jssp.dir/src/cgraph/clique_separation.c.o.provides.build: CMakeFiles/jssp.dir/src/cgraph/clique_separation.c.o
+
+
 CMakeFiles/jssp.dir/src/cgraph/strutils.c.o: CMakeFiles/jssp.dir/flags.make
 CMakeFiles/jssp.dir/src/cgraph/strutils.c.o: src/cgraph/strutils.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/victor/git-version/jssp/code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/jssp.dir/src/cgraph/strutils.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/victor/git-version/jssp/code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/jssp.dir/src/cgraph/strutils.c.o"
 	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/jssp.dir/src/cgraph/strutils.c.o   -c /home/victor/git-version/jssp/code/src/cgraph/strutils.c
 
 CMakeFiles/jssp.dir/src/cgraph/strutils.c.i: cmake_force
@@ -395,7 +539,7 @@ CMakeFiles/jssp.dir/src/cgraph/strutils.c.o.provides.build: CMakeFiles/jssp.dir/
 
 CMakeFiles/jssp.dir/src/cgraph/vectormgm.c.o: CMakeFiles/jssp.dir/flags.make
 CMakeFiles/jssp.dir/src/cgraph/vectormgm.c.o: src/cgraph/vectormgm.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/victor/git-version/jssp/code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/jssp.dir/src/cgraph/vectormgm.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/victor/git-version/jssp/code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/jssp.dir/src/cgraph/vectormgm.c.o"
 	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/jssp.dir/src/cgraph/vectormgm.c.o   -c /home/victor/git-version/jssp/code/src/cgraph/vectormgm.c
 
 CMakeFiles/jssp.dir/src/cgraph/vectormgm.c.i: cmake_force
@@ -419,7 +563,7 @@ CMakeFiles/jssp.dir/src/cgraph/vectormgm.c.o.provides.build: CMakeFiles/jssp.dir
 
 CMakeFiles/jssp.dir/src/cgraph/vint_set.c.o: CMakeFiles/jssp.dir/flags.make
 CMakeFiles/jssp.dir/src/cgraph/vint_set.c.o: src/cgraph/vint_set.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/victor/git-version/jssp/code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/jssp.dir/src/cgraph/vint_set.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/victor/git-version/jssp/code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/jssp.dir/src/cgraph/vint_set.c.o"
 	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/jssp.dir/src/cgraph/vint_set.c.o   -c /home/victor/git-version/jssp/code/src/cgraph/vint_set.c
 
 CMakeFiles/jssp.dir/src/cgraph/vint_set.c.i: cmake_force
@@ -441,6 +585,30 @@ CMakeFiles/jssp.dir/src/cgraph/vint_set.c.o.provides: CMakeFiles/jssp.dir/src/cg
 CMakeFiles/jssp.dir/src/cgraph/vint_set.c.o.provides.build: CMakeFiles/jssp.dir/src/cgraph/vint_set.c.o
 
 
+CMakeFiles/jssp.dir/src/cgraph/vint_queue.c.o: CMakeFiles/jssp.dir/flags.make
+CMakeFiles/jssp.dir/src/cgraph/vint_queue.c.o: src/cgraph/vint_queue.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/victor/git-version/jssp/code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/jssp.dir/src/cgraph/vint_queue.c.o"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/jssp.dir/src/cgraph/vint_queue.c.o   -c /home/victor/git-version/jssp/code/src/cgraph/vint_queue.c
+
+CMakeFiles/jssp.dir/src/cgraph/vint_queue.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/jssp.dir/src/cgraph/vint_queue.c.i"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/victor/git-version/jssp/code/src/cgraph/vint_queue.c > CMakeFiles/jssp.dir/src/cgraph/vint_queue.c.i
+
+CMakeFiles/jssp.dir/src/cgraph/vint_queue.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/jssp.dir/src/cgraph/vint_queue.c.s"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/victor/git-version/jssp/code/src/cgraph/vint_queue.c -o CMakeFiles/jssp.dir/src/cgraph/vint_queue.c.s
+
+CMakeFiles/jssp.dir/src/cgraph/vint_queue.c.o.requires:
+
+.PHONY : CMakeFiles/jssp.dir/src/cgraph/vint_queue.c.o.requires
+
+CMakeFiles/jssp.dir/src/cgraph/vint_queue.c.o.provides: CMakeFiles/jssp.dir/src/cgraph/vint_queue.c.o.requires
+	$(MAKE) -f CMakeFiles/jssp.dir/build.make CMakeFiles/jssp.dir/src/cgraph/vint_queue.c.o.provides.build
+.PHONY : CMakeFiles/jssp.dir/src/cgraph/vint_queue.c.o.provides
+
+CMakeFiles/jssp.dir/src/cgraph/vint_queue.c.o.provides.build: CMakeFiles/jssp.dir/src/cgraph/vint_queue.c.o
+
+
 # Object files for target jssp
 jssp_OBJECTS = \
 "CMakeFiles/jssp.dir/main.cpp.o" \
@@ -456,9 +624,16 @@ jssp_OBJECTS = \
 "CMakeFiles/jssp.dir/src/cgraph/lp.cpp.o" \
 "CMakeFiles/jssp.dir/src/cgraph/memory.c.o" \
 "CMakeFiles/jssp.dir/src/cgraph/node_heap.c.o" \
+"CMakeFiles/jssp.dir/src/cgraph/BKGraph.cpp.o" \
+"CMakeFiles/jssp.dir/src/cgraph/BKVertex.cpp.o" \
+"CMakeFiles/jssp.dir/src/cgraph/bron_kerbosch.cpp.o" \
+"CMakeFiles/jssp.dir/src/cgraph/clique_extender.c.o" \
+"CMakeFiles/jssp.dir/src/cgraph/clique_merge.c.o" \
+"CMakeFiles/jssp.dir/src/cgraph/clique_separation.c.o" \
 "CMakeFiles/jssp.dir/src/cgraph/strutils.c.o" \
 "CMakeFiles/jssp.dir/src/cgraph/vectormgm.c.o" \
-"CMakeFiles/jssp.dir/src/cgraph/vint_set.c.o"
+"CMakeFiles/jssp.dir/src/cgraph/vint_set.c.o" \
+"CMakeFiles/jssp.dir/src/cgraph/vint_queue.c.o"
 
 # External object files for target jssp
 jssp_EXTERNAL_OBJECTS =
@@ -476,12 +651,19 @@ jssp: CMakeFiles/jssp.dir/src/cgraph/clique.c.o
 jssp: CMakeFiles/jssp.dir/src/cgraph/lp.cpp.o
 jssp: CMakeFiles/jssp.dir/src/cgraph/memory.c.o
 jssp: CMakeFiles/jssp.dir/src/cgraph/node_heap.c.o
+jssp: CMakeFiles/jssp.dir/src/cgraph/BKGraph.cpp.o
+jssp: CMakeFiles/jssp.dir/src/cgraph/BKVertex.cpp.o
+jssp: CMakeFiles/jssp.dir/src/cgraph/bron_kerbosch.cpp.o
+jssp: CMakeFiles/jssp.dir/src/cgraph/clique_extender.c.o
+jssp: CMakeFiles/jssp.dir/src/cgraph/clique_merge.c.o
+jssp: CMakeFiles/jssp.dir/src/cgraph/clique_separation.c.o
 jssp: CMakeFiles/jssp.dir/src/cgraph/strutils.c.o
 jssp: CMakeFiles/jssp.dir/src/cgraph/vectormgm.c.o
 jssp: CMakeFiles/jssp.dir/src/cgraph/vint_set.c.o
+jssp: CMakeFiles/jssp.dir/src/cgraph/vint_queue.c.o
 jssp: CMakeFiles/jssp.dir/build.make
 jssp: CMakeFiles/jssp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/victor/git-version/jssp/code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable jssp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/victor/git-version/jssp/code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Linking CXX executable jssp"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/jssp.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -502,9 +684,16 @@ CMakeFiles/jssp.dir/requires: CMakeFiles/jssp.dir/src/cgraph/clique.c.o.requires
 CMakeFiles/jssp.dir/requires: CMakeFiles/jssp.dir/src/cgraph/lp.cpp.o.requires
 CMakeFiles/jssp.dir/requires: CMakeFiles/jssp.dir/src/cgraph/memory.c.o.requires
 CMakeFiles/jssp.dir/requires: CMakeFiles/jssp.dir/src/cgraph/node_heap.c.o.requires
+CMakeFiles/jssp.dir/requires: CMakeFiles/jssp.dir/src/cgraph/BKGraph.cpp.o.requires
+CMakeFiles/jssp.dir/requires: CMakeFiles/jssp.dir/src/cgraph/BKVertex.cpp.o.requires
+CMakeFiles/jssp.dir/requires: CMakeFiles/jssp.dir/src/cgraph/bron_kerbosch.cpp.o.requires
+CMakeFiles/jssp.dir/requires: CMakeFiles/jssp.dir/src/cgraph/clique_extender.c.o.requires
+CMakeFiles/jssp.dir/requires: CMakeFiles/jssp.dir/src/cgraph/clique_merge.c.o.requires
+CMakeFiles/jssp.dir/requires: CMakeFiles/jssp.dir/src/cgraph/clique_separation.c.o.requires
 CMakeFiles/jssp.dir/requires: CMakeFiles/jssp.dir/src/cgraph/strutils.c.o.requires
 CMakeFiles/jssp.dir/requires: CMakeFiles/jssp.dir/src/cgraph/vectormgm.c.o.requires
 CMakeFiles/jssp.dir/requires: CMakeFiles/jssp.dir/src/cgraph/vint_set.c.o.requires
+CMakeFiles/jssp.dir/requires: CMakeFiles/jssp.dir/src/cgraph/vint_queue.c.o.requires
 
 .PHONY : CMakeFiles/jssp.dir/requires
 

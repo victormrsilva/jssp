@@ -366,11 +366,137 @@ Flow::Flow( const Instance &_inst ) :
         //} while (!pare);
         } while (bnd_anterior != c);
         getchar();
+
+
+        /* variáveis em conflito
+            1 = as variáveis x(j,m(i),t',m(i+1),t'+d) e x(j,m(i),t',m(i),t'+1) com t' > t, ou seja, as variáveis que ainda podem processar e as de espera nos tempos
+            2 = as variáveis x(j,m(i-1), t',m(i),t+d) com t'+d > t
+            3 = as variáveis de processamento para a máquina i no tempo t
+        */
+
+       CGraph *cgraph = cgraph_create(names.size()*2);
+
+        vector<int> conflitos;
+        cgraph_add_node_conflicts(cgraph,cIdx_,&conflitos[0],conflitos.size());
+        vector<int> indices_conflitos;
+        for (int m = 0; m < inst_.m(); m++){
+            for (int j = 0; j < inst_.n(); j++){
+                int m0 = inst_.machine(j,m);
+                int mf = (m == inst_.m()-1 ? inst_.m() : inst_.machine(j,m+1));
+                int dur = inst_.time(j,m0); // duration time for machine m0 in job j
+                for (int t = inst_.est(j,m0); t < inst_.lst(j,m0); t++){
+                    cout << j << " " << m0 << " " << t << " " << mf << " " << t+dur << endl;
+                    int idx = xIdx_[j][m0+1][t][mf+1][t+dur];
+                    // cout << idx << endl;
+                    indices_conflitos.push_back(idx);
+                    conflitos.clear();
+                    cout << "variavel: " <<idx << " " << names[idx] << endl;
+                    // caso 1
+                    // cout << "caso 1: " << names[idx] << endl;
+                    for (int tf = inst_.est(j,m0); tf < inst_.lst(j,m0); tf++){ 
+                        if (t == tf) continue;
+                        // cout << names[xIdx_[j][m0+1][tf-1][m0+1][tf]] << " " << names[xIdx_[j][m0+1][tf][mf+1][tf+dur]] << " ";
+                        // conflitos.push_back(xIdx_[j][m0+1][tf-1][m0+1][tf]);
+                        conflitos.push_back(xIdx_[j][m0+1][tf][mf+1][tf+dur]);
+                    }
+                    // cout << endl;
+                    // caso 2
+                    // cout << "caso 2: " << endl;
+                    if (m != 0){
+
+                        int m_anterior = inst_.machine(j,m-1);
+                        int dur_anterior =  inst_.time(j,m_anterior);
+                        if (t-dur_anterior >= inst_.time(j,m_anterior)){
+                            for (int tf = t-dur_anterior+1; tf < t; tf++){
+                                // cout << names[xIdx_[j][m_anterior+1][tf][m0+1][tf+dur_anterior]] << " ";
+                                conflitos.push_back(xIdx_[j][m_anterior+1][tf][m0+1][tf+dur_anterior]);
+                            }
+                        }
+                    }
+                    // caso 3
+                    // cout << endl;
+                    // cout << "caso 3: " << endl;
+                    for (int j_ = 0; j_ < inst_.n(); j_++){
+                        for( int var : process[j_][m0+1][t]){
+                            if (var == idx) continue;
+                            // cout << names[var] << " ";
+                            conflitos.push_back(var);
+                        }
+                    }
+                    // cout << endl << endl;
+
+                    // mostra conflitos
+                    // cout << "todos os conflitos: " << endl;
+                    // cout << names[idx] << " = ";
+                    // for (int var : conflitos){
+                    //     cout << names[var] << " ";
+                    // }
+                    // cout << endl;
+                    
+                    cgraph_add_node_conflicts(cgraph,idx,&conflitos[0],conflitos.size());
+                    // idx = xIdx_[j][m0+1][t][m0+1][t+1];
+                    // conflitos.clear();
+                    // cgraph_add_node_conflicts(cgraph,idx,&conflitos[0],conflitos.size());
+                    cout << "conflitos adicionados no cgraph" << endl;
+                    //getchar();
+                }
+            }
+        }
+
+        cout << indices_conflitos.size() << endl;
+
+        double *x = lp_x(mip);
+        double *rc = lp_reduced_cost(mip);
+
+        for (int i = 0; i < names.size(); i++){
+            cout << names[i] << " " << i << " " << x[i] << " " << rc[i] << endl;
+        }
+
+        vector<double> x_conflitos,rc_conflitos;
+        for (int idx : indices_conflitos){
+            x_conflitos.push_back(x[idx]);
+            rc_conflitos.push_back(rc[idx]);
+        }
+        // delete[] x;
+        // delete[] rc;
+        CliqueSeparation *clique_sep = clq_sep_create(cgraph);
+        cout << "clique_sep ok" << endl;
+        clq_sep_set_verbose(clique_sep,'T');
+        clq_sep_set_rc(clique_sep,rc);//&rc_conflitos[0]);
+        cout << "clique_sep_set_rc ok" << endl;
+        getchar();
+        clq_sep_separate(clique_sep,x);//&x_conflitos[0]);
+        cout << "clique_separate ok" << endl;
+        getchar();
+        const CliqueSet *cliques = clq_sep_get_cliques(clique_sep);
+        clq_set_print(cliques);
+        getchar();
+        int qtd_cliques = clq_set_number_of_cliques(cliques);
+        cout << "qtd de cliques" << qtd_cliques << endl;
+        for (int i = 0; i < qtd_cliques; i++){
+            const IntSet *clq = clq_set_get_clique(cliques,i);
+            cout << "clique " << i << " tamanho " << clq->size << endl;
+            cout << "elementos: ";
+            for (int j = 0; j < clq->size; j++){
+                cout << clq->elements[j] << " " << names[indices_conflitos[clq->elements[j]]];
+            }
+            cout << endl;
+            getchar();
+        }
+        getchar();
+
+
         lp_as_integer(mip);
-        CGraph *cgraph = build_cgraph_lp(mip);
-        cgraph_print_summary(cgraph, "test_cgraph");
+
+
+        
+        //CGraph *cgraph = build_cgraph_lp(mip);
+        //cgraph_print_summary(cgraph, "test_cgraph");
         lp_write_lp(mip,"teste.lp");        
         lp_optimize(mip);
+
+
+
         //lp_write_lp(mip,"teste_cb.lp");
         lp_write_sol(mip,"teste_cb.sol");
         delete[] idxs;
@@ -398,6 +524,7 @@ Flow::~Flow()
 //     x11_color.push_back("brown");
 //     x11_color.push_back("orange");
 // }
+
 
 void Flow::createCompleteGraphDot(){
     ofstream f;

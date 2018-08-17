@@ -47,6 +47,8 @@
 #define LPCB_CUTS 0
 #define LPCB_HEUR 1
 
+
+
 typedef struct _LinearProgram LinearProgram;
 typedef LinearProgram * LinearProgramPtr;
 
@@ -211,6 +213,6 @@ int lp_num_binary_cols( const LinearProgram *lp );
 
 char* lp_col_types( const LinearProgram *lp);
 void lp_write_mps( LinearProgram *lp, const char *fileName );
-char** lp_string_vchar(const std::vector< std::string >& strv);
+//char** lp_string_vchar(const std::vector< std::string >& strv);
 
 #endif

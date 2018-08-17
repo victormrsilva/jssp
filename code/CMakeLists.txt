@@ -15,6 +15,8 @@ add_executable(jssp main.cpp src/Compact.cpp src/Compact.hpp src/Fernando.cpp sr
                src/Instance.cpp src/Instance.hpp src/Kondili.cpp src/Kondili.hpp src/lp.hpp src/Callback.cpp src/Callback.hpp 
                src/cgraph/build_cgraph.cpp src/cgraph/build_cgraph.h src/cgraph/cgraph.c src/cgraph/cgraph.h src/cgraph/clique.c src/cgraph/clique.h 
                src/cgraph/lp.cpp src/cgraph/lp.h src/cgraph/macros.h src/cgraph/memory.c src/cgraph/memory.h src/cgraph/node_heap.c src/cgraph/node_heap.h 
-               src/cgraph/strutils.c src/cgraph/strutils.h src/cgraph/vectormgm.c src/cgraph/vectormgm.h src/cgraph/vint_set.c src/cgraph/vint_set.h)
+               src/cgraph/BKGraph.cpp src/cgraph/BKGraph.hpp src/cgraph/BKVertex.hpp src/cgraph/BKVertex.cpp src/cgraph/bron_kerbosch.cpp src/cgraph/bron_kerbosch.h 
+               src/cgraph/clique_extender.c src/cgraph/clique_extender.h src/cgraph/clique_merge.h src/cgraph/clique_merge.c src/cgraph/clique_separation.c src/cgraph/clique_separation.h 
+               src/cgraph/strutils.c src/cgraph/strutils.h src/cgraph/vectormgm.c src/cgraph/vectormgm.h src/cgraph/vint_set.c src/cgraph/vint_set.h src/cgraph/vint_queue.c src/cgraph/vint_queue.h)
 
 target_link_libraries(jssp ${LP_LINK_FLAGS})

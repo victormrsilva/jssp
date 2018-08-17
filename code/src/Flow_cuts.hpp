@@ -8,6 +8,7 @@
 #include <map>
 extern "C"{
 #include "cgraph/cgraph.h"
+#include "cgraph/clique_separation.h"
 }
 
 class Flow

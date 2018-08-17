@@ -35,6 +35,7 @@
         "vector": "cpp",
         "unordered_map": "cpp",
         "functional": "cpp",
-        "numeric": "cpp"
+        "numeric": "cpp",
+        "clique_separation.h": "c"
     }
 }

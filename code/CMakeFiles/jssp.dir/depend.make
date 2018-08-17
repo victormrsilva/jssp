@@ -18,6 +18,39 @@ CMakeFiles/jssp.dir/src/cgraph/clique.c.o: src/cgraph/strutils.h
 CMakeFiles/jssp.dir/src/cgraph/clique.c.o: src/cgraph/vectormgm.h
 CMakeFiles/jssp.dir/src/cgraph/clique.c.o: src/cgraph/vint_set.h
 
+CMakeFiles/jssp.dir/src/cgraph/clique_extender.c.o: src/cgraph/bron_kerbosch.h
+CMakeFiles/jssp.dir/src/cgraph/clique_extender.c.o: src/cgraph/cgraph.h
+CMakeFiles/jssp.dir/src/cgraph/clique_extender.c.o: src/cgraph/clique.h
+CMakeFiles/jssp.dir/src/cgraph/clique_extender.c.o: src/cgraph/clique_extender.c
+CMakeFiles/jssp.dir/src/cgraph/clique_extender.c.o: src/cgraph/clique_extender.h
+CMakeFiles/jssp.dir/src/cgraph/clique_extender.c.o: src/cgraph/macros.h
+CMakeFiles/jssp.dir/src/cgraph/clique_extender.c.o: src/cgraph/memory.h
+CMakeFiles/jssp.dir/src/cgraph/clique_extender.c.o: src/cgraph/vectormgm.h
+CMakeFiles/jssp.dir/src/cgraph/clique_extender.c.o: src/cgraph/vint_set.h
+
+CMakeFiles/jssp.dir/src/cgraph/clique_merge.c.o: src/cgraph/cgraph.h
+CMakeFiles/jssp.dir/src/cgraph/clique_merge.c.o: src/cgraph/clique.h
+CMakeFiles/jssp.dir/src/cgraph/clique_merge.c.o: src/cgraph/clique_extender.h
+CMakeFiles/jssp.dir/src/cgraph/clique_merge.c.o: src/cgraph/clique_merge.c
+CMakeFiles/jssp.dir/src/cgraph/clique_merge.c.o: src/cgraph/clique_merge.h
+CMakeFiles/jssp.dir/src/cgraph/clique_merge.c.o: src/cgraph/lp.h
+CMakeFiles/jssp.dir/src/cgraph/clique_merge.c.o: src/cgraph/macros.h
+CMakeFiles/jssp.dir/src/cgraph/clique_merge.c.o: src/cgraph/memory.h
+CMakeFiles/jssp.dir/src/cgraph/clique_merge.c.o: src/cgraph/vint_set.h
+
+CMakeFiles/jssp.dir/src/cgraph/clique_separation.c.o: src/cgraph/bron_kerbosch.h
+CMakeFiles/jssp.dir/src/cgraph/clique_separation.c.o: src/cgraph/cgraph.h
+CMakeFiles/jssp.dir/src/cgraph/clique_separation.c.o: src/cgraph/clique.h
+CMakeFiles/jssp.dir/src/cgraph/clique_separation.c.o: src/cgraph/clique_extender.h
+CMakeFiles/jssp.dir/src/cgraph/clique_separation.c.o: src/cgraph/clique_separation.c
+CMakeFiles/jssp.dir/src/cgraph/clique_separation.c.o: src/cgraph/clique_separation.h
+CMakeFiles/jssp.dir/src/cgraph/clique_separation.c.o: src/cgraph/macros.h
+CMakeFiles/jssp.dir/src/cgraph/clique_separation.c.o: src/cgraph/memory.h
+CMakeFiles/jssp.dir/src/cgraph/clique_separation.c.o: src/cgraph/strutils.h
+CMakeFiles/jssp.dir/src/cgraph/clique_separation.c.o: src/cgraph/vectormgm.h
+CMakeFiles/jssp.dir/src/cgraph/clique_separation.c.o: src/cgraph/vint_queue.h
+CMakeFiles/jssp.dir/src/cgraph/clique_separation.c.o: src/cgraph/vint_set.h
+
 CMakeFiles/jssp.dir/src/cgraph/memory.c.o: src/cgraph/memory.c
 CMakeFiles/jssp.dir/src/cgraph/memory.c.o: src/cgraph/memory.h
 
@@ -31,6 +64,10 @@ CMakeFiles/jssp.dir/src/cgraph/strutils.c.o: src/cgraph/strutils.h
 
 CMakeFiles/jssp.dir/src/cgraph/vectormgm.c.o: src/cgraph/memory.h
 CMakeFiles/jssp.dir/src/cgraph/vectormgm.c.o: src/cgraph/vectormgm.c
+
+CMakeFiles/jssp.dir/src/cgraph/vint_queue.c.o: src/cgraph/memory.h
+CMakeFiles/jssp.dir/src/cgraph/vint_queue.c.o: src/cgraph/vint_queue.c
+CMakeFiles/jssp.dir/src/cgraph/vint_queue.c.o: src/cgraph/vint_queue.h
 
 CMakeFiles/jssp.dir/src/cgraph/vint_set.c.o: src/cgraph/macros.h
 CMakeFiles/jssp.dir/src/cgraph/vint_set.c.o: src/cgraph/memory.h
@@ -51,7 +88,11 @@ CMakeFiles/jssp.dir/src/Callback.cpp.o: src/Callback.cpp
 CMakeFiles/jssp.dir/src/Callback.cpp.o: src/Flow_cuts.hpp
 CMakeFiles/jssp.dir/src/Callback.cpp.o: src/Instance.hpp
 CMakeFiles/jssp.dir/src/Callback.cpp.o: src/cgraph/cgraph.h
+CMakeFiles/jssp.dir/src/Callback.cpp.o: src/cgraph/clique.h
+CMakeFiles/jssp.dir/src/Callback.cpp.o: src/cgraph/clique_extender.h
+CMakeFiles/jssp.dir/src/Callback.cpp.o: src/cgraph/clique_separation.h
 CMakeFiles/jssp.dir/src/Callback.cpp.o: src/cgraph/lp.h
+CMakeFiles/jssp.dir/src/Callback.cpp.o: src/cgraph/vint_set.h
 CMakeFiles/jssp.dir/src/Callback.cpp.o: src/gurobi_c++.h
 CMakeFiles/jssp.dir/src/Callback.cpp.o: src/gurobi_c.h
 CMakeFiles/jssp.dir/src/Callback.cpp.o: src/lp.hpp
@@ -74,8 +115,12 @@ CMakeFiles/jssp.dir/src/Flow_cuts.cpp.o: src/Flow_cuts.hpp
 CMakeFiles/jssp.dir/src/Flow_cuts.cpp.o: src/Instance.hpp
 CMakeFiles/jssp.dir/src/Flow_cuts.cpp.o: src/cgraph/build_cgraph.h
 CMakeFiles/jssp.dir/src/Flow_cuts.cpp.o: src/cgraph/cgraph.h
+CMakeFiles/jssp.dir/src/Flow_cuts.cpp.o: src/cgraph/clique.h
+CMakeFiles/jssp.dir/src/Flow_cuts.cpp.o: src/cgraph/clique_extender.h
+CMakeFiles/jssp.dir/src/Flow_cuts.cpp.o: src/cgraph/clique_separation.h
 CMakeFiles/jssp.dir/src/Flow_cuts.cpp.o: src/cgraph/lp.h
 CMakeFiles/jssp.dir/src/Flow_cuts.cpp.o: src/cgraph/strutils.h
+CMakeFiles/jssp.dir/src/Flow_cuts.cpp.o: src/cgraph/vint_set.h
 CMakeFiles/jssp.dir/src/Flow_cuts.cpp.o: src/gurobi_c++.h
 CMakeFiles/jssp.dir/src/Flow_cuts.cpp.o: src/gurobi_c.h
 CMakeFiles/jssp.dir/src/Flow_cuts.cpp.o: src/lp.hpp
@@ -88,6 +133,26 @@ CMakeFiles/jssp.dir/src/Kondili.cpp.o: src/Kondili.cpp
 CMakeFiles/jssp.dir/src/Kondili.cpp.o: src/Kondili.hpp
 CMakeFiles/jssp.dir/src/Kondili.cpp.o: src/cgraph/lp.h
 CMakeFiles/jssp.dir/src/Kondili.cpp.o: src/lp.hpp
+
+CMakeFiles/jssp.dir/src/cgraph/BKGraph.cpp.o: src/cgraph/BKGraph.cpp
+CMakeFiles/jssp.dir/src/cgraph/BKGraph.cpp.o: src/cgraph/BKGraph.hpp
+CMakeFiles/jssp.dir/src/cgraph/BKGraph.cpp.o: src/cgraph/BKVertex.hpp
+CMakeFiles/jssp.dir/src/cgraph/BKGraph.cpp.o: src/cgraph/cgraph.h
+CMakeFiles/jssp.dir/src/cgraph/BKGraph.cpp.o: src/cgraph/clique.h
+CMakeFiles/jssp.dir/src/cgraph/BKGraph.cpp.o: src/cgraph/memory.h
+CMakeFiles/jssp.dir/src/cgraph/BKGraph.cpp.o: src/cgraph/vint_set.h
+
+CMakeFiles/jssp.dir/src/cgraph/BKVertex.cpp.o: src/cgraph/BKVertex.cpp
+CMakeFiles/jssp.dir/src/cgraph/BKVertex.cpp.o: src/cgraph/BKVertex.hpp
+
+CMakeFiles/jssp.dir/src/cgraph/bron_kerbosch.cpp.o: src/cgraph/BKGraph.hpp
+CMakeFiles/jssp.dir/src/cgraph/bron_kerbosch.cpp.o: src/cgraph/BKVertex.hpp
+CMakeFiles/jssp.dir/src/cgraph/bron_kerbosch.cpp.o: src/cgraph/bron_kerbosch.cpp
+CMakeFiles/jssp.dir/src/cgraph/bron_kerbosch.cpp.o: src/cgraph/bron_kerbosch.h
+CMakeFiles/jssp.dir/src/cgraph/bron_kerbosch.cpp.o: src/cgraph/cgraph.h
+CMakeFiles/jssp.dir/src/cgraph/bron_kerbosch.cpp.o: src/cgraph/clique.h
+CMakeFiles/jssp.dir/src/cgraph/bron_kerbosch.cpp.o: src/cgraph/memory.h
+CMakeFiles/jssp.dir/src/cgraph/bron_kerbosch.cpp.o: src/cgraph/vint_set.h
 
 CMakeFiles/jssp.dir/src/cgraph/build_cgraph.cpp.o: src/cgraph/build_cgraph.cpp
 CMakeFiles/jssp.dir/src/cgraph/build_cgraph.cpp.o: src/cgraph/build_cgraph.h

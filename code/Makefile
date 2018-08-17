@@ -312,6 +312,87 @@ src/Kondili.cpp.s:
 	$(MAKE) -f CMakeFiles/jssp.dir/build.make CMakeFiles/jssp.dir/src/Kondili.cpp.s
 .PHONY : src/Kondili.cpp.s
 
+src/cgraph/BKGraph.o: src/cgraph/BKGraph.cpp.o
+
+.PHONY : src/cgraph/BKGraph.o
+
+# target to build an object file
+src/cgraph/BKGraph.cpp.o:
+	$(MAKE) -f CMakeFiles/jssp.dir/build.make CMakeFiles/jssp.dir/src/cgraph/BKGraph.cpp.o
+.PHONY : src/cgraph/BKGraph.cpp.o
+
+src/cgraph/BKGraph.i: src/cgraph/BKGraph.cpp.i
+
+.PHONY : src/cgraph/BKGraph.i
+
+# target to preprocess a source file
+src/cgraph/BKGraph.cpp.i:
+	$(MAKE) -f CMakeFiles/jssp.dir/build.make CMakeFiles/jssp.dir/src/cgraph/BKGraph.cpp.i
+.PHONY : src/cgraph/BKGraph.cpp.i
+
+src/cgraph/BKGraph.s: src/cgraph/BKGraph.cpp.s
+
+.PHONY : src/cgraph/BKGraph.s
+
+# target to generate assembly for a file
+src/cgraph/BKGraph.cpp.s:
+	$(MAKE) -f CMakeFiles/jssp.dir/build.make CMakeFiles/jssp.dir/src/cgraph/BKGraph.cpp.s
+.PHONY : src/cgraph/BKGraph.cpp.s
+
+src/cgraph/BKVertex.o: src/cgraph/BKVertex.cpp.o
+
+.PHONY : src/cgraph/BKVertex.o
+
+# target to build an object file
+src/cgraph/BKVertex.cpp.o:
+	$(MAKE) -f CMakeFiles/jssp.dir/build.make CMakeFiles/jssp.dir/src/cgraph/BKVertex.cpp.o
+.PHONY : src/cgraph/BKVertex.cpp.o
+
+src/cgraph/BKVertex.i: src/cgraph/BKVertex.cpp.i
+
+.PHONY : src/cgraph/BKVertex.i
+
+# target to preprocess a source file
+src/cgraph/BKVertex.cpp.i:
+	$(MAKE) -f CMakeFiles/jssp.dir/build.make CMakeFiles/jssp.dir/src/cgraph/BKVertex.cpp.i
+.PHONY : src/cgraph/BKVertex.cpp.i
+
+src/cgraph/BKVertex.s: src/cgraph/BKVertex.cpp.s
+
+.PHONY : src/cgraph/BKVertex.s
+
+# target to generate assembly for a file
+src/cgraph/BKVertex.cpp.s:
+	$(MAKE) -f CMakeFiles/jssp.dir/build.make CMakeFiles/jssp.dir/src/cgraph/BKVertex.cpp.s
+.PHONY : src/cgraph/BKVertex.cpp.s
+
+src/cgraph/bron_kerbosch.o: src/cgraph/bron_kerbosch.cpp.o
+
+.PHONY : src/cgraph/bron_kerbosch.o
+
+# target to build an object file
+src/cgraph/bron_kerbosch.cpp.o:
+	$(MAKE) -f CMakeFiles/jssp.dir/build.make CMakeFiles/jssp.dir/src/cgraph/bron_kerbosch.cpp.o
+.PHONY : src/cgraph/bron_kerbosch.cpp.o
+
+src/cgraph/bron_kerbosch.i: src/cgraph/bron_kerbosch.cpp.i
+
+.PHONY : src/cgraph/bron_kerbosch.i
+
+# target to preprocess a source file
+src/cgraph/bron_kerbosch.cpp.i:
+	$(MAKE) -f CMakeFiles/jssp.dir/build.make CMakeFiles/jssp.dir/src/cgraph/bron_kerbosch.cpp.i
+.PHONY : src/cgraph/bron_kerbosch.cpp.i
+
+src/cgraph/bron_kerbosch.s: src/cgraph/bron_kerbosch.cpp.s
+
+.PHONY : src/cgraph/bron_kerbosch.s
+
+# target to generate assembly for a file
+src/cgraph/bron_kerbosch.cpp.s:
+	$(MAKE) -f CMakeFiles/jssp.dir/build.make CMakeFiles/jssp.dir/src/cgraph/bron_kerbosch.cpp.s
+.PHONY : src/cgraph/bron_kerbosch.cpp.s
+
 src/cgraph/build_cgraph.o: src/cgraph/build_cgraph.cpp.o
 
 .PHONY : src/cgraph/build_cgraph.o
@@ -392,6 +473,87 @@ src/cgraph/clique.s: src/cgraph/clique.c.s
 src/cgraph/clique.c.s:
 	$(MAKE) -f CMakeFiles/jssp.dir/build.make CMakeFiles/jssp.dir/src/cgraph/clique.c.s
 .PHONY : src/cgraph/clique.c.s
+
+src/cgraph/clique_extender.o: src/cgraph/clique_extender.c.o
+
+.PHONY : src/cgraph/clique_extender.o
+
+# target to build an object file
+src/cgraph/clique_extender.c.o:
+	$(MAKE) -f CMakeFiles/jssp.dir/build.make CMakeFiles/jssp.dir/src/cgraph/clique_extender.c.o
+.PHONY : src/cgraph/clique_extender.c.o
+
+src/cgraph/clique_extender.i: src/cgraph/clique_extender.c.i
+
+.PHONY : src/cgraph/clique_extender.i
+
+# target to preprocess a source file
+src/cgraph/clique_extender.c.i:
+	$(MAKE) -f CMakeFiles/jssp.dir/build.make CMakeFiles/jssp.dir/src/cgraph/clique_extender.c.i
+.PHONY : src/cgraph/clique_extender.c.i
+
+src/cgraph/clique_extender.s: src/cgraph/clique_extender.c.s
+
+.PHONY : src/cgraph/clique_extender.s
+
+# target to generate assembly for a file
+src/cgraph/clique_extender.c.s:
+	$(MAKE) -f CMakeFiles/jssp.dir/build.make CMakeFiles/jssp.dir/src/cgraph/clique_extender.c.s
+.PHONY : src/cgraph/clique_extender.c.s
+
+src/cgraph/clique_merge.o: src/cgraph/clique_merge.c.o
+
+.PHONY : src/cgraph/clique_merge.o
+
+# target to build an object file
+src/cgraph/clique_merge.c.o:
+	$(MAKE) -f CMakeFiles/jssp.dir/build.make CMakeFiles/jssp.dir/src/cgraph/clique_merge.c.o
+.PHONY : src/cgraph/clique_merge.c.o
+
+src/cgraph/clique_merge.i: src/cgraph/clique_merge.c.i
+
+.PHONY : src/cgraph/clique_merge.i
+
+# target to preprocess a source file
+src/cgraph/clique_merge.c.i:
+	$(MAKE) -f CMakeFiles/jssp.dir/build.make CMakeFiles/jssp.dir/src/cgraph/clique_merge.c.i
+.PHONY : src/cgraph/clique_merge.c.i
+
+src/cgraph/clique_merge.s: src/cgraph/clique_merge.c.s
+
+.PHONY : src/cgraph/clique_merge.s
+
+# target to generate assembly for a file
+src/cgraph/clique_merge.c.s:
+	$(MAKE) -f CMakeFiles/jssp.dir/build.make CMakeFiles/jssp.dir/src/cgraph/clique_merge.c.s
+.PHONY : src/cgraph/clique_merge.c.s
+
+src/cgraph/clique_separation.o: src/cgraph/clique_separation.c.o
+
+.PHONY : src/cgraph/clique_separation.o
+
+# target to build an object file
+src/cgraph/clique_separation.c.o:
+	$(MAKE) -f CMakeFiles/jssp.dir/build.make CMakeFiles/jssp.dir/src/cgraph/clique_separation.c.o
+.PHONY : src/cgraph/clique_separation.c.o
+
+src/cgraph/clique_separation.i: src/cgraph/clique_separation.c.i
+
+.PHONY : src/cgraph/clique_separation.i
+
+# target to preprocess a source file
+src/cgraph/clique_separation.c.i:
+	$(MAKE) -f CMakeFiles/jssp.dir/build.make CMakeFiles/jssp.dir/src/cgraph/clique_separation.c.i
+.PHONY : src/cgraph/clique_separation.c.i
+
+src/cgraph/clique_separation.s: src/cgraph/clique_separation.c.s
+
+.PHONY : src/cgraph/clique_separation.s
+
+# target to generate assembly for a file
+src/cgraph/clique_separation.c.s:
+	$(MAKE) -f CMakeFiles/jssp.dir/build.make CMakeFiles/jssp.dir/src/cgraph/clique_separation.c.s
+.PHONY : src/cgraph/clique_separation.c.s
 
 src/cgraph/lp.o: src/cgraph/lp.cpp.o
 
@@ -528,6 +690,33 @@ src/cgraph/vectormgm.c.s:
 	$(MAKE) -f CMakeFiles/jssp.dir/build.make CMakeFiles/jssp.dir/src/cgraph/vectormgm.c.s
 .PHONY : src/cgraph/vectormgm.c.s
 
+src/cgraph/vint_queue.o: src/cgraph/vint_queue.c.o
+
+.PHONY : src/cgraph/vint_queue.o
+
+# target to build an object file
+src/cgraph/vint_queue.c.o:
+	$(MAKE) -f CMakeFiles/jssp.dir/build.make CMakeFiles/jssp.dir/src/cgraph/vint_queue.c.o
+.PHONY : src/cgraph/vint_queue.c.o
+
+src/cgraph/vint_queue.i: src/cgraph/vint_queue.c.i
+
+.PHONY : src/cgraph/vint_queue.i
+
+# target to preprocess a source file
+src/cgraph/vint_queue.c.i:
+	$(MAKE) -f CMakeFiles/jssp.dir/build.make CMakeFiles/jssp.dir/src/cgraph/vint_queue.c.i
+.PHONY : src/cgraph/vint_queue.c.i
+
+src/cgraph/vint_queue.s: src/cgraph/vint_queue.c.s
+
+.PHONY : src/cgraph/vint_queue.s
+
+# target to generate assembly for a file
+src/cgraph/vint_queue.c.s:
+	$(MAKE) -f CMakeFiles/jssp.dir/build.make CMakeFiles/jssp.dir/src/cgraph/vint_queue.c.s
+.PHONY : src/cgraph/vint_queue.c.s
+
 src/cgraph/vint_set.o: src/cgraph/vint_set.c.o
 
 .PHONY : src/cgraph/vint_set.o
@@ -585,6 +774,15 @@ help:
 	@echo "... src/Kondili.o"
 	@echo "... src/Kondili.i"
 	@echo "... src/Kondili.s"
+	@echo "... src/cgraph/BKGraph.o"
+	@echo "... src/cgraph/BKGraph.i"
+	@echo "... src/cgraph/BKGraph.s"
+	@echo "... src/cgraph/BKVertex.o"
+	@echo "... src/cgraph/BKVertex.i"
+	@echo "... src/cgraph/BKVertex.s"
+	@echo "... src/cgraph/bron_kerbosch.o"
+	@echo "... src/cgraph/bron_kerbosch.i"
+	@echo "... src/cgraph/bron_kerbosch.s"
 	@echo "... src/cgraph/build_cgraph.o"
 	@echo "... src/cgraph/build_cgraph.i"
 	@echo "... src/cgraph/build_cgraph.s"
@@ -594,6 +792,15 @@ help:
 	@echo "... src/cgraph/clique.o"
 	@echo "... src/cgraph/clique.i"
 	@echo "... src/cgraph/clique.s"
+	@echo "... src/cgraph/clique_extender.o"
+	@echo "... src/cgraph/clique_extender.i"
+	@echo "... src/cgraph/clique_extender.s"
+	@echo "... src/cgraph/clique_merge.o"
+	@echo "... src/cgraph/clique_merge.i"
+	@echo "... src/cgraph/clique_merge.s"
+	@echo "... src/cgraph/clique_separation.o"
+	@echo "... src/cgraph/clique_separation.i"
+	@echo "... src/cgraph/clique_separation.s"
 	@echo "... src/cgraph/lp.o"
 	@echo "... src/cgraph/lp.i"
 	@echo "... src/cgraph/lp.s"
@@ -609,6 +816,9 @@ help:
 	@echo "... src/cgraph/vectormgm.o"
 	@echo "... src/cgraph/vectormgm.i"
 	@echo "... src/cgraph/vectormgm.s"
+	@echo "... src/cgraph/vint_queue.o"
+	@echo "... src/cgraph/vint_queue.i"
+	@echo "... src/cgraph/vint_queue.s"
 	@echo "... src/cgraph/vint_set.o"
 	@echo "... src/cgraph/vint_set.i"
 	@echo "... src/cgraph/vint_set.s"

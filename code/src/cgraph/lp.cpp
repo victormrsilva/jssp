@@ -5183,7 +5183,7 @@ void lp_write_mps(LinearProgram *lp, const char *fileName)
 
 }
 
-char** lp_string_vchar(const std::vector< std::string >& strv)
+char** lp_string_vchar(const vector< string >& strv)
 {
     if ( strv.size() == 0 )
         return nullptr;

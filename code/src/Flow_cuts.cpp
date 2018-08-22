@@ -47,13 +47,13 @@ Flow::Flow( const Instance &_inst ) :
             if (m == -1){ // máquina inicial
                 
                 xIdx_[j][m+1][0][inst_.machine(j,0)+1][0] = names.size();
-                exit_flow[j][0][j].push_back(names.size());
-                enter_flow[j][inst_.machine(j,0)+1][0].push_back(names.size());
-                names.push_back( "x("+to_string(j+1)+",i,0,"+to_string(inst_.machine(j,0)+1)+",0)" );
-                lb.push_back( 0.0 );
-                ub.push_back( 1 );
-                obj.push_back( 0 );
-                integer.push_back( 0 );
+                exit_flow[j][0][j].emplace_back(names.size());
+                enter_flow[j][inst_.machine(j,0)+1][0].emplace_back(names.size());
+                names.emplace_back( "x("+to_string(j+1)+",i,0,"+to_string(inst_.machine(j,0)+1)+",0)" );
+                lb.emplace_back( 0.0 );
+                ub.emplace_back( 1 );
+                obj.emplace_back( 0 );
+                integer.emplace_back( 0 );
                 continue;
             }
             int m0 = inst_.machine(j,m);
@@ -64,51 +64,51 @@ Flow::Flow( const Instance &_inst ) :
                     // arc for another machine
                     xIdx_[j][m0+1][t][mf+1][t+dur] = names.size();
                     //cout << j << " " << m0+1 << " " << t << " " << mf+1 << " " << t+dur << endl;
-                    enter_flow[j][mf+1][t+dur].push_back(names.size());
-                    exit_flow[j][m0+1][t].push_back(names.size());
+                    enter_flow[j][mf+1][t+dur].emplace_back(names.size());
+                    exit_flow[j][m0+1][t].emplace_back(names.size());
                     for (int tp = t; tp < t+dur; tp++){
-                        process[j][m0+1][tp].push_back(names.size());
+                        process[j][m0+1][tp].emplace_back(names.size());
                     }
-                    names.push_back( "x("+to_string(j+1)+","+to_string(m0+1)+","+to_string(t)+","+to_string(mf+1)+","+to_string(t+dur)+")" );
-                    lb.push_back( 0.0 );
-                    ub.push_back( 1 );
-                    obj.push_back( 0 );
-                    integer.push_back( 0 );
+                    names.emplace_back( "x("+to_string(j+1)+","+to_string(m0+1)+","+to_string(t)+","+to_string(mf+1)+","+to_string(t+dur)+")" );
+                    lb.emplace_back( 0.0 );
+                    ub.emplace_back( 1 );
+                    obj.emplace_back( 0 );
+                    integer.emplace_back( 0 );
                     // arc for same machine (waiting) 
                     // can only be made in the last moment possible
                     if (t == inst_.lst(j,m0)-1) continue;
                     // else
                     xIdx_[j][m0+1][t][m0+1][t+1] = names.size();
-                    enter_flow[j][m0+1][t+1].push_back(names.size());
-                    exit_flow[j][m0+1][t].push_back(names.size());
+                    enter_flow[j][m0+1][t+1].emplace_back(names.size());
+                    exit_flow[j][m0+1][t].emplace_back(names.size());
                     //cout << j << " " << m0+1 << " " << t << " " << m0+1 << " " << t+1 << endl;
-                    names.push_back( "x("+to_string(j+1)+","+to_string(m0+1)+","+to_string(t)+","+to_string(m0+1)+","+to_string(t+1)+")" );
-                    lb.push_back( 0.0 );
-                    ub.push_back( 1 );
-                    obj.push_back( 0 );
-                    integer.push_back( 0 );
+                    names.emplace_back( "x("+to_string(j+1)+","+to_string(m0+1)+","+to_string(t)+","+to_string(m0+1)+","+to_string(t+1)+")" );
+                    lb.emplace_back( 0.0 );
+                    ub.emplace_back( 1 );
+                    obj.emplace_back( 0 );
+                    integer.emplace_back( 0 );
                 } else { // conclusion machine f
                     xIdx_[j][m0+1][t][mf+1][t+dur] = names.size();
-                    enter_flow[j][mf+1+j][t+dur].push_back(names.size());
-                    exit_flow[j][m0+1][t].push_back(names.size());
+                    enter_flow[j][mf+1+j][t+dur].emplace_back(names.size());
+                    exit_flow[j][m0+1][t].emplace_back(names.size());
                     for (int tp = t; tp < t+dur; tp++){
-                        process[j][m0+1][tp].push_back(names.size());
+                        process[j][m0+1][tp].emplace_back(names.size());
                     }
-                    names.push_back( "x("+to_string(j+1)+","+to_string(m0+1)+","+to_string(t)+",f,"+to_string(t+dur)+")" );
-                    lb.push_back( 0.0 );
-                    ub.push_back( 1 );
-                    obj.push_back( 0 );
-                    integer.push_back( 0 );
+                    names.emplace_back( "x("+to_string(j+1)+","+to_string(m0+1)+","+to_string(t)+",f,"+to_string(t+dur)+")" );
+                    lb.emplace_back( 0.0 );
+                    ub.emplace_back( 1 );
+                    obj.emplace_back( 0 );
+                    integer.emplace_back( 0 );
 
                     xIdx_[j][m0+1][t][m0+1][t+1] = names.size();
-                    enter_flow[j][m0+1][t+1].push_back(names.size());
-                    exit_flow[j][m0+1][t].push_back(names.size());
+                    enter_flow[j][m0+1][t+1].emplace_back(names.size());
+                    exit_flow[j][m0+1][t].emplace_back(names.size());
                     //cout << j << " " << m0+1 << " " << t << " " << m0+1 << " " << t+1 << endl;
-                    names.push_back( "x("+to_string(j+1)+","+to_string(m0+1)+","+to_string(t)+","+to_string(m0+1)+","+to_string(t+1)+")" );
-                    lb.push_back( 0.0 );
-                    ub.push_back( 1 );
-                    obj.push_back( 0 );
-                    integer.push_back( 0 );
+                    names.emplace_back( "x("+to_string(j+1)+","+to_string(m0+1)+","+to_string(t)+","+to_string(m0+1)+","+to_string(t+1)+")" );
+                    lb.emplace_back( 0.0 );
+                    ub.emplace_back( 1 );
+                    obj.emplace_back( 0 );
+                    integer.emplace_back( 0 );
                 }
             }
         }
@@ -125,11 +125,11 @@ Flow::Flow( const Instance &_inst ) :
 
     // c var
     cIdx_ = names.size();
-    names.push_back("C");
-    lb.push_back( 0.0 );
-    ub.push_back( DBL_MAX );
-    obj.push_back( 1.0 );
-    integer.push_back( 0 );
+    names.emplace_back("C");
+    lb.emplace_back( 0.0 );
+    ub.emplace_back( DBL_MAX );
+    obj.emplace_back( 1.0 );
+    integer.emplace_back( 0 );
     cout << "Number of variables: " << names.size() << endl;
     clock_t begin = clock();
     lp_add_cols( mip, obj, lb, ub, integer, names );
@@ -190,12 +190,12 @@ Flow::Flow( const Instance &_inst ) :
         vector< int > idx;
         vector< double > coef;
         for (int var : exit_flow[j][0][j]){
-            idx.push_back( var );
-            coef.push_back( -1.0 );
+            idx.emplace_back( var );
+            coef.emplace_back( -1.0 );
         }
         lp_add_row( mip, idx, coef, "init_flow("+to_string(j)+")", 'E', -1.0 );
-        init_flow.push_back(constr_names.size());
-        constr_names.push_back( "init_flow("+to_string(j)+")");
+        init_flow.emplace_back(constr_names.size());
+        constr_names.emplace_back( "init_flow("+to_string(j)+")");
     }
     cout << "initial flow constraints ok" << endl;
 
@@ -207,15 +207,15 @@ Flow::Flow( const Instance &_inst ) :
         vector< double > coef;
         for (int t = 1; t < inst_.maxTime(); t++){
             for (int var : enter_flow[j][inst_.m()+1+j][t]){
-                idx.push_back( var );
-                coef.push_back( 1.0 );
+                idx.emplace_back( var );
+                coef.emplace_back( 1.0 );
             }
         }
 
         if (idx.size() != 0){
             lp_add_row( mip, idx, coef, "final_flow("+to_string(j)+")", 'E', 1.0 );
-            final_flow.push_back(constr_names.size());
-            constr_names.push_back( "final_flow("+to_string(j)+")");
+            final_flow.emplace_back(constr_names.size());
+            constr_names.emplace_back( "final_flow("+to_string(j)+")");
         }
     }
     cout << "final flow constraints ok" << endl;
@@ -227,18 +227,18 @@ Flow::Flow( const Instance &_inst ) :
                 vector< int > idx;
                 vector< double > coef;
                 for (int var : enter_flow[j][m][t]){
-                    idx.push_back( var );
-                    coef.push_back( 1.0 );
+                    idx.emplace_back( var );
+                    coef.emplace_back( 1.0 );
                 }
                 for (int var : exit_flow[j][m][t]){
-                    idx.push_back( var );
-                    coef.push_back( -1.0 );
+                    idx.emplace_back( var );
+                    coef.emplace_back( -1.0 );
                 }
 
                 if (idx.size() != 0){
                     lp_add_row( mip, idx, coef, "flow("+to_string(j+1)+","+to_string(m)+","+to_string(t)+")", 'E', 0.0 );
-                    flow.push_back(constr_names.size());
-                    constr_names.push_back("flow("+to_string(j+1)+","+to_string(m)+","+to_string(t)+")");
+                    flow.emplace_back(constr_names.size());
+                    constr_names.emplace_back("flow("+to_string(j+1)+","+to_string(m)+","+to_string(t)+")");
                 }
             }
         }
@@ -254,15 +254,15 @@ Flow::Flow( const Instance &_inst ) :
             vector< double > coef;
             for (int j = 0; j < inst_.n(); j++){
                 for( int var : process[j][m][t]){
-                    idx.push_back( var );
-                    coef.push_back( 1.0 );
+                    idx.emplace_back( var );
+                    coef.emplace_back( 1.0 );
 
                 }
             }
             if (idx.size() != 0){
                 lp_add_row( mip, idx, coef, "processing("+to_string(m) + ","+to_string(t) + ")", 'L', 1.0 );        
-                processing.push_back(constr_names.size());
-                constr_names.push_back("processing("+to_string(m) + ","+to_string(t) + ")");
+                processing.emplace_back(constr_names.size());
+                constr_names.emplace_back("processing("+to_string(m) + ","+to_string(t) + ")");
             }
         }
         
@@ -275,20 +275,20 @@ Flow::Flow( const Instance &_inst ) :
         vector< int > idx;
         vector< double > coef;
 
-        idx.push_back( cIdx_ );
-        coef.push_back( 1.0 );
+        idx.emplace_back( cIdx_ );
+        coef.emplace_back( 1.0 );
 
         for (int t = 1; t < inst_.maxTime(); t++){
             
             for (int var : enter_flow[j][inst_.m()+1+j][t]){
-                idx.push_back( var );
-                coef.push_back( -t );
+                idx.emplace_back( var );
+                coef.emplace_back( -t );
             }
         }
 
         lp_add_row( mip, idx, coef, "fim("+to_string(j+1)+")", 'G', 0 );
-        fim.push_back(constr_names.size());
-        constr_names.push_back("fim("+to_string(j+1)+")");
+        fim.emplace_back(constr_names.size());
+        constr_names.emplace_back("fim("+to_string(j+1)+")");
     }
     cout << "end constraints created" << endl;
 
@@ -316,8 +316,8 @@ Flow::Flow( const Instance &_inst ) :
             for (int j = 0; j < inst_.n(); j++){
                 vector< int > idx;
                 vector< double > coef;
-                idx.push_back( cIdx_ );
-                coef.push_back( 1.0 );
+                idx.emplace_back( cIdx_ );
+                coef.emplace_back( 1.0 );
                 int idxRow = fim[j];
                 //cout << "idxRow " << idxRow << endl;
                 const int nElements = lp_row(mip, idxRow, idxs, coefs);
@@ -340,8 +340,8 @@ Flow::Flow( const Instance &_inst ) :
                 for (int t = 1; t < inst_.maxTime(); t++){
                     for (int var : enter_flow[j][inst_.m()+1+j][t]){
                         //int coeficiente = max(t,c);
-                        idx.push_back( var );
-                        coef.push_back( -max(t,c) );
+                        idx.emplace_back( var );
+                        coef.emplace_back( -max(t,c) );
                         //double x = var.get(GRB_DoubleAttr_X);
                         //cout << coef << " * " << x << " ";
                         //expr -= max(t,c)*var;
@@ -355,7 +355,7 @@ Flow::Flow( const Instance &_inst ) :
                 lp_remove_row(mip,fim[j]);
                 lp_add_row( mip, idx, coef, "fim("+to_string(j+1)+")", 'G', 0 );
                 // fim[j] = constr_names.size();
-                // constr_names.push_back("fim("+to_string(j+1)+")");
+                // constr_names.emplace_back("fim("+to_string(j+1)+")");
                 if (violado < limite){
                     //getchar();
                     pare = true;
@@ -374,10 +374,10 @@ Flow::Flow( const Instance &_inst ) :
             3 = as variáveis de processamento para a máquina i no tempo t
         */
 
-       CGraph *cgraph = cgraph_create(names.size()*2);
+       CGraph *cgraph = cgraph_create(names.size()*2); // todos os vértices de menos o c
 
         vector<int> conflitos;
-        cgraph_add_node_conflicts(cgraph,cIdx_,&conflitos[0],conflitos.size());
+        //cgraph_add_node_conflicts(cgraph,cIdx_,&conflitos[0],conflitos.size());
         vector<int> indices_conflitos;
         for (int m = 0; m < inst_.m(); m++){
             for (int j = 0; j < inst_.n(); j++){
@@ -388,7 +388,7 @@ Flow::Flow( const Instance &_inst ) :
                     cout << j << " " << m0 << " " << t << " " << mf << " " << t+dur << endl;
                     int idx = xIdx_[j][m0+1][t][mf+1][t+dur];
                     // cout << idx << endl;
-                    indices_conflitos.push_back(idx);
+                    indices_conflitos.emplace_back(idx);
                     conflitos.clear();
                     cout << "variavel: " <<idx << " " << names[idx] << endl;
                     // caso 1
@@ -396,8 +396,8 @@ Flow::Flow( const Instance &_inst ) :
                     for (int tf = inst_.est(j,m0); tf < inst_.lst(j,m0); tf++){ 
                         if (t == tf) continue;
                         // cout << names[xIdx_[j][m0+1][tf-1][m0+1][tf]] << " " << names[xIdx_[j][m0+1][tf][mf+1][tf+dur]] << " ";
-                        // conflitos.push_back(xIdx_[j][m0+1][tf-1][m0+1][tf]);
-                        conflitos.push_back(xIdx_[j][m0+1][tf][mf+1][tf+dur]);
+                        // conflitos.emplace_back(xIdx_[j][m0+1][tf-1][m0+1][tf]);
+                        conflitos.emplace_back(xIdx_[j][m0+1][tf][mf+1][tf+dur]);
                     }
                     // cout << endl;
                     // caso 2
@@ -409,7 +409,7 @@ Flow::Flow( const Instance &_inst ) :
                         if (t-dur_anterior >= inst_.time(j,m_anterior)){
                             for (int tf = t-dur_anterior+1; tf < t; tf++){
                                 // cout << names[xIdx_[j][m_anterior+1][tf][m0+1][tf+dur_anterior]] << " ";
-                                conflitos.push_back(xIdx_[j][m_anterior+1][tf][m0+1][tf+dur_anterior]);
+                                conflitos.emplace_back(xIdx_[j][m_anterior+1][tf][m0+1][tf+dur_anterior]);
                             }
                         }
                     }
@@ -420,7 +420,7 @@ Flow::Flow( const Instance &_inst ) :
                         for( int var : process[j_][m0+1][t]){
                             if (var == idx) continue;
                             // cout << names[var] << " ";
-                            conflitos.push_back(var);
+                            conflitos.emplace_back(var);
                         }
                     }
                     // cout << endl << endl;
@@ -442,7 +442,7 @@ Flow::Flow( const Instance &_inst ) :
                 }
             }
         }
-
+        cgraph_save(cgraph,"cgraph.txt");
         cout << indices_conflitos.size() << endl;
 
         double *x = lp_x(mip);
@@ -452,20 +452,28 @@ Flow::Flow( const Instance &_inst ) :
             cout << names[i] << " " << i << " " << x[i] << " " << rc[i] << endl;
         }
 
-        vector<double> x_conflitos,rc_conflitos;
-        for (int idx : indices_conflitos){
-            x_conflitos.push_back(x[idx]);
-            rc_conflitos.push_back(rc[idx]);
+        for (int i : indices_conflitos){
+            cout << i << " ";
         }
-        // delete[] x;
-        // delete[] rc;
+
+        cout << endl;
+        vector<double> x_conflitos = vector<double>(names.size()*2);
+        vector<double> rc_conflitos = vector<double>(names.size()*2);;
+        for (int i; i < names.size(); i++){
+            x_conflitos[i] = x[i];
+            x_conflitos[i+names.size()] = 1-x[i];
+            rc_conflitos[i] = rc[i];
+            rc_conflitos[i+names.size()] = (-1)*rc[i];
+        }
+        delete[] x;
+        delete[] rc;
         CliqueSeparation *clique_sep = clq_sep_create(cgraph);
         cout << "clique_sep ok" << endl;
         clq_sep_set_verbose(clique_sep,'T');
-        clq_sep_set_rc(clique_sep,rc);//&rc_conflitos[0]);
+        clq_sep_set_rc(clique_sep,&rc_conflitos[0]);//&rc_conflitos[0]);
         cout << "clique_sep_set_rc ok" << endl;
         getchar();
-        clq_sep_separate(clique_sep,x);//&x_conflitos[0]);
+        clq_sep_separate(clique_sep,&x_conflitos[0]);//&x_conflitos[0]);
         cout << "clique_separate ok" << endl;
         getchar();
         const CliqueSet *cliques = clq_sep_get_cliques(clique_sep);
@@ -510,19 +518,19 @@ Flow::~Flow()
 }
 
 // void Flow::create_x11(){
-//     x11_color.push_back("black");
-//     x11_color.push_back("magenta");
-//     x11_color.push_back("grey");
-//     x11_color.push_back("gold");
-//     x11_color.push_back("blue");
-//     x11_color.push_back("green");
-//     x11_color.push_back("yellow");
-//     x11_color.push_back("red");
-//     x11_color.push_back("cyan");
-//     x11_color.push_back("crimson");
-//     x11_color.push_back("chocolate");
-//     x11_color.push_back("brown");
-//     x11_color.push_back("orange");
+//     x11_color.emplace_back("black");
+//     x11_color.emplace_back("magenta");
+//     x11_color.emplace_back("grey");
+//     x11_color.emplace_back("gold");
+//     x11_color.emplace_back("blue");
+//     x11_color.emplace_back("green");
+//     x11_color.emplace_back("yellow");
+//     x11_color.emplace_back("red");
+//     x11_color.emplace_back("cyan");
+//     x11_color.emplace_back("crimson");
+//     x11_color.emplace_back("chocolate");
+//     x11_color.emplace_back("brown");
+//     x11_color.emplace_back("orange");
 // }
 
 

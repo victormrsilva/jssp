@@ -81,16 +81,16 @@ Fernando::Fernando( const Instance &_inst ) : inst_(_inst) { // já inicializa a
         for (int j = 0; j < inst_.n(); j++){
             if (inst_.machine(j,0) == i) { // se for a primeira máquina
                 idx.push_back( xIdx_[i][j][0] );
-                coef.push_back( -1.0 );
+                coef.push_back( 1.0 );
             }
             // adiciona restrição.
         }
         idx.push_back( fIdx_[i][0] );
-        coef.push_back( -1.0 );
+        coef.push_back( 1.0 );
 
-        lp_add_row( mip, idx, coef, "inicio(m"+to_string(i+1)+",t"+to_string(1)+")", 'E', -1 );
+        lp_add_row( mip, idx, coef, "inicio_maquina(m"+to_string(i+1)+",t"+to_string(1)+")", 'E', 1 );
     }
-    cout << "restriction 28 added" << endl;
+    cout << "restriction inicio_maquina added" << endl;
     // restriction 29
     for (int i = 0; i < inst_.m(); i++){
         for (int t = 1; t < inst_.maxTime(); t++){
@@ -115,28 +115,28 @@ Fernando::Fernando( const Instance &_inst ) : inst_(_inst) { // já inicializa a
             idx.push_back( fIdx_[i][t] );
             coef.push_back( -1.0 );
 
-            lp_add_row( mip, idx, coef, "c29("+to_string(i+1)+","+to_string(t+1)+")", 'E', 0 );
+            lp_add_row( mip, idx, coef, "fluxo_maquina("+to_string(i+1)+","+to_string(t+1)+")", 'E', 0 );
         }
 
     }
-    cout << "restriction 29 added" << endl;
+    cout << "restriction fluxo_maquina added" << endl;
 
     for (int j = 0; j < inst_.n(); j++){
         vector< int > idx;
         vector< double > coef;
 
         int h = inst_.machine(j,0); // first machine
-
+        cout << h << " " << j << endl;
         idx.push_back( xIdx_[h][j][0] );
         coef.push_back( -1.0 );
         // adiciona restrição.
         idx.push_back( eIdx_[h][j][0] );
         coef.push_back( -1.0 );
-
-        lp_add_row( mip, idx, coef, "espera_ini(m"+to_string(h)+",j"+to_string(j+1)+",t"+to_string(1)+")", 'E', -1 );
+        
+        lp_add_row( mip, idx, coef, "inicio_espera(m"+to_string(h)+",j"+to_string(j+1)+",t"+to_string(1)+")", 'E', -1 );
 
     }
-    cout << "restriction 30 added" << endl;
+    cout << "restriction inicio_espera added" << endl;
 
     for (int i = 0; i < inst_.m(); i++){
         for (int j = 0; j < inst_.n(); j++){
@@ -167,12 +167,12 @@ Fernando::Fernando( const Instance &_inst ) : inst_(_inst) { // já inicializa a
                 idx.push_back( eIdx_[h][j][t] );
                 coef.push_back( -1.0 );
 
-                lp_add_row( mip, idx, coef, "execute_wait("+to_string(h+1)+","+to_string(j+1)+","+to_string(t+1)+")", 'E', 0 );
+                lp_add_row( mip, idx, coef, "fluxo_espera("+to_string(h+1)+","+to_string(j+1)+","+to_string(t+1)+")", 'E', 0 );
 
             }
         }
     }
-    cout << "restriction 31 added" << endl;
+    cout << "restriction fluxo_espera added" << endl;
 
     // for (int i = 1; i < inst_.m(); i++){
     //     for (int j = 0; j < inst_.n(); j++){
@@ -223,10 +223,10 @@ Fernando::Fernando( const Instance &_inst ) : inst_(_inst) { // já inicializa a
                 idx.push_back( xIdx_[h_anterior][j][tp] );
                 coef.push_back( 1.0 );
             }
-            lp_add_row( mip, idx, coef, "final_execute("+to_string(h+1)+","+to_string(j+1)+")", 'E', 0.0 );
+            lp_add_row( mip, idx, coef, "ultimo_tempo("+to_string(h+1)+","+to_string(j+1)+")", 'E', 0.0 );
         }
     }
-    cout << "final_execute constraints created" << endl;
+    cout << "ultimo_tempo constraints created" << endl;
 
     for (int j = 0; j < inst_.n(); j++){
         vector< int > idx;
@@ -243,7 +243,7 @@ Fernando::Fernando( const Instance &_inst ) : inst_(_inst) { // já inicializa a
 
         lp_add_row( mip, idx, coef, "makespan("+to_string(j+1)+")", 'G', 0 );
     }
-    cout << "end constraints created" << endl;
+    cout << "makespan constraints created" << endl;
 
     lp_write_lp( mip, inst_.instanceName().c_str() );
     lp_write_mps( mip, inst_.instanceName().c_str() );

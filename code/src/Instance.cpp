@@ -16,38 +16,39 @@ Instance::Instance( const std::string &fileName, int time , int execute){
 
     string line;
 
-        //getline( ifs, line );
-        ifs >> n_ >> m_;
+    //getline( ifs, line );
+    n_ = m_ = 0;
+    ifs >> n_ >> m_;
 
-        times_ = vector< vector< int > >( n_, vector<int>( m_, 0 ) );
-        machines_ = vector< vector< int > >( n_, vector<int>( m_, 0 ) );
+    times_ = vector< vector< int > >( n_, vector<int>( m_, 0 ) );
+    machines_ = vector< vector< int > >( n_, vector<int>( m_, 0 ) );
 
 
-        est_ = vector< vector< int > >( n_, vector<int>( m_, 0 ) );
-        lst_ = vector< vector< int > >( n_, vector<int>( m_, 0 ) );
+    est_ = vector< vector< int > >( n_, vector<int>( m_, 0 ) );
+    lst_ = vector< vector< int > >( n_, vector<int>( m_, 0 ) );
 
-        cout << "there are " << n() << " jobs and " << m() << " machines." << endl;
-        bool given_time = false;
-        if (time == 0){
-            t_ = 1; // worse time of completion (all jobs happening simultaniously)
-            given_time = false;
-        } else {
-            t_ = time;
-            given_time = true;
-        }
-            
+    cout << "there are " << n() << " jobs and " << m() << " machines." << endl;
+    bool given_time = false;
+    if (time == 0){
+        t_ = 1; // worse time of completion (all jobs happening simultaniously)
+        given_time = false;
+    } else {
+        t_ = time;
+        given_time = true;
+    }
         
+    
 
-        for (int i=0; i < n_; i++){
-            getline( ifs, line);
-            for (int j = 0; j < m_; j++){
-                int machine,time;
-                ifs >> machine >> time;
-                machines_[i][j] = machine;
-                times_[i][machine] = time; // para espelhar a formulação matemática do gurobi
-                if (!given_time) t_ += time;
-            }
+    for (int i=0; i < n_; i++){
+        getline( ifs, line);
+        for (int j = 0; j < m_; j++){
+            int machine,time;
+            ifs >> machine >> time;
+            machines_[i][j] = machine;
+            times_[i][machine] = time; // para espelhar a formulação matemática do gurobi
+            if (!given_time) t_ += time;
         }
+    }
     
 
     

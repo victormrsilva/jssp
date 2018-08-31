@@ -1,10 +1,14 @@
 #include <string>
 #include <iostream>
+#include <fstream>
+#include <algorithm> 
+#include <numeric>
 #include "src/Instance.hpp"
 #include "src/Compact.hpp"
-#include "src/Flow.hpp"
+#include "src/Flow_cuts.hpp"
 #include "src/Kondili.hpp"
 #include "src/Fernando.hpp"
+#include "src/Gera.hpp"
 
 
 using namespace std;
@@ -19,6 +23,26 @@ using namespace std;
 
 constexpr unsigned int str2int(const char* str, int h = 0){
     return !str[h] ? 5381 : (str2int(str, h+1) * 33) ^ str[h];
+}
+
+int RandomNumber () { return (std::rand()%10)+1; }
+
+void geraInstancias( string filename, int tamanho){
+    vector<int> machines(tamanho);
+    vector<int> time(tamanho);
+    iota(machines.begin(),machines.end(),0);
+    ofstream out(filename);
+    
+    out << tamanho << " " << tamanho << endl;
+    for (int j = 0; j < tamanho; j++){
+        random_shuffle ( machines.begin(), machines.end() );
+        generate(time.begin(), time.end(), RandomNumber);
+        for (int k = 0; k < tamanho; k++){
+            out << machines[k] << " " << time[k] << " " ;
+        }
+        out << endl;
+    }
+    out.close();
 }
 
 int main( int argc, char **argv )
@@ -36,14 +60,34 @@ int main( int argc, char **argv )
         exit(EXIT_FAILURE);
     }
 
-    Instance inst( string(argv[1]), atoi(argv[2]), atoi(argv[3]) );
 
-    inst.saveCmpl("jssp.cdat");
 
-    cout << inst.m() << " " << inst.n() << endl;
+    
 
     string option = string(argv[4]);
 
+    if (option == "G"){
+        double maximo = 0;
+        int max = 0;
+        for (int i = 0; i < 50; i++){
+            string filename = "vi"+to_string(i);
+            geraInstancias(filename,4);
+            Instance inst(filename,90,1);
+            Gera mip( inst );
+            double valor = mip.execute();
+            if (valor > maximo){
+                maximo = valor;
+                max = i;
+            }
+            //getchar();
+        }
+        cout << "Maximo: " << max << " " << maximo << endl;
+        return EXIT_SUCCESS;
+    }
+    Instance inst( string(argv[1]), atoi(argv[2]), atoi(argv[3]) );
+
+    inst.saveCmpl("jssp.cdat");
+    cout << inst.m() << " " << inst.n() << endl;
     if (option == "F"){
         Flow mip( inst );
     }

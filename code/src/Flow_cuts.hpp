@@ -2,7 +2,7 @@
 #define FLOW_HPP
 
 #include "Instance.hpp"
-#include "Callback.cpp"
+//#include "Callback.hpp"
 #include "lp.hpp"
 #include "gurobi_c++.h"
 #include <map>
@@ -16,7 +16,7 @@ class Flow
 public:
     Flow( const Instance &_inst );
 
-    void optimize();
+    
 
     virtual ~Flow();
 private:
@@ -29,6 +29,15 @@ private:
 
     // void create_x11();
     void createCompleteGraphDot();
+
+    
+
+    void optimize();
+
+    void cliques(int *idxs,double *coefs);
+
+    std::vector< int > fim;
+    std::vector< std::string > names;
 
       // set of entering flows
     std::vector<std::vector<std::vector<std::vector<int>>>> enter_flow;

@@ -24,7 +24,7 @@ Fernando::Fernando( const Instance &_inst ) : inst_(_inst) { // já inicializa a
 
     // criação das variáveis x
     for (int i = 0; i < inst_.m(); i++){
-        for (int t = 0; t < inst_.maxTime(); t++){
+        for (int t = 0; t <= inst_.maxTime(); t++){
             fIdx_[i][t] = names.size(); 
             names.push_back("f("+to_string(i+1)+","+to_string(t+1)+")"); // nome dessa variável
             lb.push_back(0.0);
@@ -36,7 +36,7 @@ Fernando::Fernando( const Instance &_inst ) : inst_(_inst) { // já inicializa a
 
                 if (t >= inst_.est(j,i) && t <= inst_.lst(j,i)){
                     xIdx_[i][j][t] = names.size(); 
-                    names.push_back("x("+to_string(i+1)+","+to_string(j+1)+","+to_string(t+1)+")"); // nome dessa variável
+                    names.push_back("x("+to_string(j+1)+","+to_string(i+1)+","+to_string(t)+")"); // nome dessa variável
                     lb.push_back(0.0);
                     ub.push_back(1.0);
                     obj.push_back(0.0);
@@ -44,7 +44,7 @@ Fernando::Fernando( const Instance &_inst ) : inst_(_inst) { // já inicializa a
 
                 
                     eIdx_[i][j][t] = names.size(); 
-                    names.push_back("e("+to_string(i+1)+","+to_string(j+1)+","+to_string(t+1)+")"); // nome dessa variável
+                    names.push_back("e("+to_string(j+1)+","+to_string(i+1)+","+to_string(t)+")"); // nome dessa variável
                     lb.push_back(0.0);
                     ub.push_back(1.0);
                     obj.push_back(0.0);
@@ -93,7 +93,7 @@ Fernando::Fernando( const Instance &_inst ) : inst_(_inst) { // já inicializa a
     cout << "restriction inicio_maquina added" << endl;
     // restriction 29
     for (int i = 0; i < inst_.m(); i++){
-        for (int t = 1; t < inst_.maxTime(); t++){
+        for (int t = 1; t <= inst_.maxTime(); t++){
             vector< int > idx;
             vector< double > coef;
 
@@ -142,7 +142,7 @@ Fernando::Fernando( const Instance &_inst ) : inst_(_inst) { // já inicializa a
         for (int j = 0; j < inst_.n(); j++){
             int h = inst_.machine(j,i); // first machine
 
-            for (int t = inst_.est(j,h); t < inst_.lst(j,h); t++){
+            for (int t = inst_.est(j,h); t <= inst_.lst(j,h); t++){
                 if (t == 0) continue;
                 vector< int > idx;
                 vector< double > coef;
@@ -245,8 +245,8 @@ Fernando::Fernando( const Instance &_inst ) : inst_(_inst) { // já inicializa a
     }
     cout << "makespan constraints created" << endl;
 
-    lp_write_lp( mip, inst_.instanceName().c_str() );
-    lp_write_mps( mip, inst_.instanceName().c_str() );
+    lp_write_lp( mip, (inst_.instanceName() + "_machine").c_str() );
+    //lp_write_mps( mip, inst_.instanceName().c_str() );
     if (inst_.execute()){
         lp_optimize( mip );
         lp_write_sol(mip, "jssp_Fernando.sol");

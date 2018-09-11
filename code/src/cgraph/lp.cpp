@@ -3239,7 +3239,7 @@ void lp_check_for_cpx_error(CPXENVptr env, int errorCode, const char *sourceFile
 void lp_check_for_grb_error(GRBenv* env, int errorCode, const char *sourceFile, int sourceLine)
 {
     if (errorCode) {
-        fprintf(stderr, "Gurobi Error: %s\n", GRBgeterrormsg( LPgrbDefaultEnv ) );
+        fprintf(stderr, "Gurobi Error: %d - %s\n", errorCode, GRBgeterrormsg( LPgrbDefaultEnv ) );
         fprintf(stderr, "Inside LP Library - %s:%d\n\n", sourceFile, sourceLine);
         abort();
     }
@@ -5125,12 +5125,7 @@ char* lp_col_types( const LinearProgram *lp)
 }
 
 double lp_xIdx(LinearProgram *lp, int idx){
-    double value = -INFINITY;
-    #ifdef GRB
-        int grbError = GRBgetdblattrelement(lp->lp, "X", idx, &value);
-        lp_check_for_grb_error( LPgrbDefaultEnv, grbError, __FILE__, __LINE__ );
-    #endif
-    return value;
+    return (*(lp->_x))[idx];
 }
 
 char* lp_varName(LinearProgram *lp, int idx){

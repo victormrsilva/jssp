@@ -1,10 +1,12 @@
-./jssp ../instances/abz7 670 F
-./jssp ../instances/abz8 680 F
-./jssp ../instances/abz9 680 F
-./jssp ../instances/ft20 1200 F
-./jssp ../instances/la02 670 F
-./jssp ../instances/la07 910 F
-./jssp ../instances/la09 1000 F
-./jssp ../instances/la11 1300 F 
-./jssp ../instances/la21 1100 F  
-./jssp ../instances/la33 1300 F
+./jssp ../instances/abz7 670 0 F
+./jssp ../instances/abz8 680 0 F 
+./jssp ../instances/la02 670 0 F
+./jssp ../instances/la07 910 0 F
+./jssp ../instances/la09 1000 0 F
+./jssp ../instances/la21 1100 0 F  
+./jssp ../instances/abz7 670 0 Fe
+./jssp ../instances/abz8 680 0 Fe 
+./jssp ../instances/la02 670 0 Fe
+./jssp ../instances/la07 910 0 Fe
+./jssp ../instances/la09 1000 0 Fe
+./jssp ../instances/la21 1100 0 Fe 

@@ -31,15 +31,15 @@ int Flow::teto(double v)
 Flow::Flow(const Instance &_inst) : inst_(_inst),
                                     mip(lp_create()),
                                     xIdx_(vector<vector<map<int, map<int, map<int, int>>>>>(inst_.n(), vector<map<int, map<int, map<int, int>>>>(inst_.m() + 1))),
-                                    enter_flow(vector<vector<vector<vector<int>>>>(inst_.n(), vector<vector<vector<int>>>(inst_.m() + 2 + inst_.n(), vector<vector<int>>(inst_.maxTime())))),
-                                    exit_flow(vector<vector<vector<vector<int>>>>(inst_.n(), vector<vector<vector<int>>>(inst_.m() + 1, vector<vector<int>>(inst_.maxTime())))),
-                                    process(vector<vector<vector<vector<int>>>>(inst_.n(), (vector<vector<vector<int>>>(inst_.m() + 1, vector<vector<int>>(inst_.maxTime())))))
+                                    enter_flow(vector<vector<vector<vector<int>>>>(inst_.n(), vector<vector<vector<int>>>(inst_.m() + 2 + inst_.n(), vector<vector<int>>(inst_.maxTime()+1)))),
+                                    exit_flow(vector<vector<vector<vector<int>>>>(inst_.n(), vector<vector<vector<int>>>(inst_.m() + 1, vector<vector<int>>(inst_.maxTime()+1)))),
+                                    process(vector<vector<vector<vector<int>>>>(inst_.n(), (vector<vector<vector<int>>>(inst_.m() + 1, vector<vector<int>>(inst_.maxTime()+1)))))
 {
     vector<double> lb;
     vector<double> ub;
     vector<double> obj;
     vector<char> integer;
-    cout << "teste " << endl;
+    
     // creating x vars
     for (int j = 0; (j < inst_.n()); ++j)
     {
@@ -54,13 +54,13 @@ Flow::Flow(const Instance &_inst) : inst_(_inst),
                 lb.emplace_back(0.0);
                 ub.emplace_back(1);
                 obj.emplace_back(0);
-                integer.emplace_back(0);
+                integer.emplace_back(1);
                 continue;
             }
             int m0 = inst_.machine(j, m);
             int mf = (m == inst_.m() - 1 ? inst_.m() : inst_.machine(j, m + 1));
             int dur = inst_.time(j, m0); // duration time for machine m0 in job j
-            for (int t = inst_.est(j, m0); t < inst_.lst(j, m0); t++)
+            for (int t = inst_.est(j, m0); t <= inst_.lst(j, m0); t++)
             {
                 if (mf < inst_.m())
                 {
@@ -73,25 +73,27 @@ Flow::Flow(const Instance &_inst) : inst_(_inst),
                     {
                         process[j][m0 + 1][tp].emplace_back(names.size());
                     }
-                    names.emplace_back("x(" + to_string(j + 1) + "," + to_string(m0 + 1) + "," + to_string(t) + "," + to_string(mf + 1) + "," + to_string(t + dur) + ")");
+                    //names.emplace_back("x(" + to_string(j + 1) + "," + to_string(m0 + 1) + "," + to_string(t) + "," + to_string(mf + 1) + "," + to_string(t + dur) + ")");
+                    names.emplace_back("x(" + to_string(j + 1) + "," + to_string(m0 + 1) + "," + to_string(t) + ")");
                     lb.emplace_back(0.0);
                     ub.emplace_back(1);
                     obj.emplace_back(0);
-                    integer.emplace_back(0);
+                    integer.emplace_back(1);
                     // arc for same machine (waiting)
                     // can only be made in the last moment possible
-                    if (t == inst_.lst(j, m0) - 1)
+                    if (t == inst_.lst(j, m0))
                         continue;
                     // else
                     xIdx_[j][m0 + 1][t][m0 + 1][t + 1] = names.size();
                     enter_flow[j][m0 + 1][t + 1].emplace_back(names.size());
                     exit_flow[j][m0 + 1][t].emplace_back(names.size());
                     //cout << j << " " << m0+1 << " " << t << " " << m0+1 << " " << t+1 << endl;
-                    names.emplace_back("x(" + to_string(j + 1) + "," + to_string(m0 + 1) + "," + to_string(t) + "," + to_string(m0 + 1) + "," + to_string(t + 1) + ")");
+                    names.emplace_back("e(" + to_string(j + 1) + "," + to_string(m0 + 1) + "," + to_string(t) + ")");
+                    // names.emplace_back("x(" + to_string(j + 1) + "," + to_string(m0 + 1) + "," + to_string(t) + "," + to_string(m0 + 1) + "," + to_string(t + 1) + ")");
                     lb.emplace_back(0.0);
                     ub.emplace_back(1);
                     obj.emplace_back(0);
-                    integer.emplace_back(0);
+                    integer.emplace_back(1);
                 }
                 else
                 { // conclusion machine f
@@ -102,21 +104,21 @@ Flow::Flow(const Instance &_inst) : inst_(_inst),
                     {
                         process[j][m0 + 1][tp].emplace_back(names.size());
                     }
-                    names.emplace_back("x(" + to_string(j + 1) + "," + to_string(m0 + 1) + "," + to_string(t) + ",f," + to_string(t + dur) + ")");
+                    names.emplace_back("x(" + to_string(j + 1) + "," + to_string(m0 + 1) + "," + to_string(t)  + ")");
                     lb.emplace_back(0.0);
                     ub.emplace_back(1);
                     obj.emplace_back(0);
-                    integer.emplace_back(0);
+                    integer.emplace_back(1);
 
                     xIdx_[j][m0 + 1][t][m0 + 1][t + 1] = names.size();
                     enter_flow[j][m0 + 1][t + 1].emplace_back(names.size());
                     exit_flow[j][m0 + 1][t].emplace_back(names.size());
                     //cout << j << " " << m0+1 << " " << t << " " << m0+1 << " " << t+1 << endl;
-                    names.emplace_back("x(" + to_string(j + 1) + "," + to_string(m0 + 1) + "," + to_string(t) + "," + to_string(m0 + 1) + "," + to_string(t + 1) + ")");
+                    names.emplace_back("e(" + to_string(j + 1) + "," + to_string(m0 + 1) + "," + to_string(t) + ")");
                     lb.emplace_back(0.0);
                     ub.emplace_back(1);
                     obj.emplace_back(0);
-                    integer.emplace_back(0);
+                    integer.emplace_back(1);
                 }
             }
         }
@@ -134,9 +136,9 @@ Flow::Flow(const Instance &_inst) : inst_(_inst),
     cIdx_ = names.size();
     names.emplace_back("C");
     lb.emplace_back(0.0);
-    ub.emplace_back(inst_.maxTime());
+    ub.emplace_back(inst_.maxTime()+1);
     obj.emplace_back(1.0);
-    integer.emplace_back(0);
+    integer.emplace_back(1);
     cout << "Number of variables: " << names.size() << endl;
     clock_t begin = clock();
     lp_add_cols(mip, obj, lb, ub, integer, names);
@@ -215,7 +217,7 @@ Flow::Flow(const Instance &_inst) : inst_(_inst),
     {
         vector<int> idx;
         vector<double> coef;
-        for (int t = 1; t < inst_.maxTime(); t++)
+        for (int t = 1; t <= inst_.maxTime(); t++)
         {
             for (int var : enter_flow[j][inst_.m() + 1 + j][t])
             {
@@ -236,7 +238,7 @@ Flow::Flow(const Instance &_inst) : inst_(_inst),
     vector<int> flow;
     for (int j = 0; j < inst_.n(); j++)
     {
-        for (int t = 0; (t < inst_.maxTime()); ++t)
+        for (int t = 0; (t <= inst_.maxTime()); ++t)
         {
             for (int m = 1; (m <= inst_.m()); ++m)
             {
@@ -266,7 +268,7 @@ Flow::Flow(const Instance &_inst) : inst_(_inst),
 
     // processing restriction
     vector<int> processing;
-    for (int t = 0; (t < inst_.maxTime()); ++t)
+    for (int t = 0; (t <= inst_.maxTime()); ++t)
     {
 
         for (int m = 0; (m <= inst_.m()); ++m)
@@ -300,7 +302,7 @@ Flow::Flow(const Instance &_inst) : inst_(_inst),
         idx.emplace_back(cIdx_);
         coef.emplace_back(1.0);
 
-        for (int t = 1; t < inst_.maxTime(); t++){
+        for (int t = 1; t <= inst_.maxTime(); t++){
 
             for (int var : enter_flow[j][inst_.m() + 1 + j][t]){
                 idx.emplace_back(var);
@@ -314,9 +316,12 @@ Flow::Flow(const Instance &_inst) : inst_(_inst),
     }
     cout << "end constraints created" << endl;
 
-    lp_write_lp(mip, "teste.lp"); //inst_.instanceName().c_str() );
-    //lp_write_mps( mip, inst_.instanceName().c_str() );
+    lp_write_lp(mip, (inst_.instanceName() + "_flow").c_str()); //inst_.instanceName().c_str() );
+    //lp_optimize(mip);
+    //lp_write_sol(mip, "jssp_Flow.sol");
 
+    //lp_write_mps( mip, inst_.instanceName().c_str() );
+//    lp_optimize_as_continuous(mip);
     if (inst_.execute()){
         optimize();
     }
@@ -343,7 +348,7 @@ void Flow::cliques(int *idxs,double *coefs)
                     int m0 = inst_.machine(j, m);
                     int mf = (m == inst_.m() - 1 ? inst_.m() : inst_.machine(j, m + 1));
                     int dur = inst_.time(j, m0); // duration time for machine m0 in job j
-                    for (int t = inst_.est(j, m0); t < inst_.lst(j, m0); t++)
+                    for (int t = inst_.est(j, m0); t <= inst_.lst(j, m0); t++)
                     {
                         //cout << j << " " << m0 << " " << t << " " << mf << " " << t+dur << endl;
                         int idx = xIdx_[j][m0 + 1][t][mf + 1][t + dur];
@@ -371,20 +376,31 @@ void Flow::cliques(int *idxs,double *coefs)
                         file_conflitos << "caso 2: " << endl;
                         if (m != 0)
                         {
-
-                            int m_anterior = inst_.machine(j, m - 1);
-                            int dur_anterior = inst_.time(j, m_anterior);
-                            if (t - dur_anterior >= inst_.time(j, m_anterior))
-                            {
-                                for (int tf = t - dur_anterior + 1; tf < t; tf++)
+                            vector<pair<int,int>> analisar;
+                            analisar.emplace_back(make_pair(m,t));
+                            while (!analisar.empty()){
+                                pair<int,int> maquina_tempo = analisar.back();
+                                analisar.pop_back();
+                                if (maquina_tempo.first == 0) continue; // primeira máquina
+                                int m_anterior = inst_.machine(j, maquina_tempo.first - 1);
+                                int t0 = maquina_tempo.second;
+                                int dur_anterior = inst_.time(j, m_anterior);
+                                if (t0 - dur_anterior >= inst_.time(j, m_anterior))
                                 {
-                                    //cout << j << " " << m_anterior << " " << tf << " " << m0 << " " << tf+dur_anterior << " " << inst_.lst(j,m_anterior) << endl;
-                                    if (tf >= inst_.lst(j, m_anterior))
-                                        continue;
+                                    for (int tf = t0 - dur_anterior + 1; tf < t0; tf++)
+                                    {
+                                        cout << "job: " << j+1 << " m_atual: " << maquina_tempo.first+1 << " t_atual: " << t0 << " m_anterior: " << m_anterior+1 << " dur: " << dur_anterior << " t0: " << tf << endl;
+                                        cout << names[xIdx_[j][m_anterior + 1][tf][m0 + 1][tf + dur_anterior]] << endl;
+                                        if (tf >= inst_.lst(j, m_anterior))
+                                            continue;
 
-                                    file_conflitos << names[xIdx_[j][m_anterior + 1][tf][m0 + 1][tf + dur_anterior]] << " ";
-                                    conflitos.emplace_back(xIdx_[j][m_anterior + 1][tf][m0 + 1][tf + dur_anterior]);
-                                    //getchar();
+                                        file_conflitos << names[xIdx_[j][m_anterior + 1][tf][m0 + 1][tf + dur_anterior]] << " ";
+                                        conflitos.emplace_back(xIdx_[j][m_anterior + 1][tf][m0 + 1][tf + dur_anterior]);
+                                        analisar.emplace_back(make_pair(maquina_tempo.first-1,tf));
+                                        
+                                    }
+                                    cout << analisar.size() << endl;
+                                    getchar();
                                 }
                             }
                         }
@@ -429,7 +445,7 @@ void Flow::cliques(int *idxs,double *coefs)
             double *x = lp_x(mip);
             double *rc = lp_reduced_cost(mip);
 
-            for (int i = 0; i < names.size(); i++)
+            for (unsigned int i = 0; i < names.size(); i++)
             {
                 if (x[i] != 0 || rc[i] != 0)
                     cout << names[i] << " " << i << " " << x[i] << " " << rc[i] << endl;
@@ -439,7 +455,7 @@ void Flow::cliques(int *idxs,double *coefs)
             vector<double> x_conflitos = vector<double>(names.size() * 2);
             vector<double> rc_conflitos = vector<double>(names.size() * 2);
 
-            for (int i = 0; i < names.size(); i++)
+            for (unsigned int i = 0; i < names.size(); i++)
             {
                 x_conflitos[i] = x[i];
                 x_conflitos[i + names.size()] = 1 - x[i];
@@ -521,7 +537,7 @@ void Flow::createCompleteGraphDot()
             mach = "f";
         else
             mach = to_string(m);
-        for (int t = 0; t < inst_.maxTime(); t++)
+        for (int t = 0; t <= inst_.maxTime(); t++)
         {
             f << "\"" << mach << "," << t + 1 << "\" [shape=box];" << endl;
         }
@@ -539,7 +555,7 @@ void Flow::createCompleteGraphDot()
             int m0 = inst_.machine(j, m);
             int mf = (m == inst_.m() - 1 ? inst_.m() : inst_.machine(j, m + 1));
             int dur = inst_.time(j, m0); // duration time for machine m0 in job j
-            for (int t = inst_.est(j, m0); t < inst_.lst(j, m0); t++)
+            for (int t = inst_.est(j, m0); t <= inst_.lst(j, m0); t++)
             {
                 if (mf < inst_.m())
                 {
@@ -547,7 +563,7 @@ void Flow::createCompleteGraphDot()
                     f << "\"" << m0 + 1 << "," << t << "\" -> \"" << mf + 1 << "," << t + dur << "\" [ label=\"x(" << j + 1 << "," << m0 + 1 << "," << t << "," << mf + 1 << "," << t + dur << ")\" ]" << endl;
                     // arc for same machine (waiting)
                     //can only be made in the last moment possible
-                    if (t == inst_.lst(j, m0) - 1)
+                    if (t == inst_.lst(j, m0))
                         continue;
                     // else
                     f << "\"" << m0 + 1 << "," << t << "\" -> \"" << m0 + 1 << "," << t + 1 << "\" [ label=\"x(" << j + 1 << "," << m0 + 1 << "," << t << "," << m0 + 1 << "," << t + 1 << ")\" ]" << endl;
@@ -581,7 +597,7 @@ void Flow::createCompleteGraphDot()
     f << "{rank=same;"
       << " \"i,1\" }" << endl;
 
-    for (int t = 0; t < inst_.maxTime(); t++)
+    for (int t = 0; t <= inst_.maxTime(); t++)
     {
         f << "{rank=same;";
         for (int m = 1; m <= inst_.m() + 1; m++)
@@ -626,6 +642,7 @@ void Flow::optimize(){
             bnd_anterior = c;
             lp_optimize_as_continuous(mip);
             lp_write_lp(mip, "teste_cb.lp");
+            lp_write_sol(mip, "solution.sol");
             bnd = lp_obj_value(mip);
             c = teto(bnd);
             // remove colunas de fim
@@ -651,7 +668,7 @@ void Flow::optimize(){
                     sol += c2 * x;
                 }
 
-                for (int t = 1; t < inst_.maxTime(); t++){
+                for (int t = 1; t <= inst_.maxTime(); t++){
                     for (int var : enter_flow[j][inst_.m() + 1 + j][t]){
                         //int coeficiente = max(t,c);
                         idx.emplace_back(var);
@@ -665,9 +682,9 @@ void Flow::optimize(){
                 lp_add_row(mip, idx, coef, "fim(" + to_string(j + 1) + ")", 'G', 0);
             }
             lp_write_lp(mip, "teste_cb.lp");
-            getchar();
+            //getchar();
         } while (bnd_anterior != c);
-        getchar();
+        //getchar();
 
         if (clique)
         {
@@ -682,7 +699,7 @@ void Flow::optimize(){
     //CGraph *cgraph = build_cgraph_lp(mip);
     //cgraph_print_summary(cgraph, "test_cgraph");
     lp_write_lp(mip, "teste.lp");
-    getchar();
+    //getchar();
     lp_optimize(mip);
 
     //lp_write_lp(mip,"teste_cb.lp");

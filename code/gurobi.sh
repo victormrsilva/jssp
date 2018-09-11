@@ -1,13 +1,12 @@
-gurobi_cl InputFile=flow_abz8.sol  TimeLimit=43200 ResultFile=abz8.sol abz8.lp > abz8.out
-gurobi_cl InputFile=flow_dmu02.sol TimeLimit=43200 ResultFile=dmu02.sol dmu02.lp > dmu02.out
-gurobi_cl InputFile=flow_dmu33.sol TimeLimit=43200 ResultFile=dmu33.sol dmu33.lp > dmu33.out
-gurobi_cl InputFile=flow_dmu41.sol TimeLimit=43200 ResultFile=dmu41.sol dmu41.lp > dmu41.out
-gurobi_cl InputFile=flow_dmu59.sol TimeLimit=43200 ResultFile=dmu59.sol dmu59.lp > dmu59.out
-gurobi_cl InputFile=flow_ft20.sol  TimeLimit=43200 ResultFile=ft20.sol ft20.lp > ft20.out
-gurobi_cl InputFile=flow_la31.sol  TimeLimit=43200 ResultFile=la31.sol la31.lp > la31.out
-gurobi_cl InputFile=flow_swv07.sol TimeLimit=43200 ResultFile=swv07.sol swv07.lp > swv07.out
-gurobi_cl InputFile=flow_swv16.sol TimeLimit=43200 ResultFile=swv16.sol swv16.lp > swv16.out
-gurobi_cl InputFile=flow_ta18.sol  TimeLimit=43200 ResultFile=ta18.sol ta18.lp > ta18.out
-gurobi_cl InputFile=flow_ta27.sol  TimeLimit=43200 ResultFile=ta27.sol ta27.lp > ta27.out
-gurobi_cl InputFile=flow_ta41.sol  TimeLimit=43200 ResultFile=ta41.sol ta41.lp > ta41.out
-gurobi_cl InputFile=flow_yn02.sol  TimeLimit=43200 ResultFile=yn02.sol yn02.lp > yn02.out
+gurobi_cl TimeLimit=7200 ResultFile=abz7_flow.sol abz7_flow.lp > abz7_flow.out
+gurobi_cl TimeLimit=7200 ResultFile=abz8_flow.sol abz8_flow.lp > abz8_flow.out
+gurobi_cl TimeLimit=7200 ResultFile=la02_flow.sol la02_flow.lp > la02_flow.out
+gurobi_cl TimeLimit=7200 ResultFile=la07_flow.sol la07_flow.lp > la07_flow.out
+gurobi_cl TimeLimit=7200 ResultFile=la09_flow.sol la09_flow.lp > la09_flow.out
+gurobi_cl TimeLimit=7200 ResultFile=la21_flow.sol la21_flow.lp > la21_flow.out
+gurobi_cl TimeLimit=7200 ResultFile=abz7_machine.sol abz7_machine.lp > abz7_machine.out
+gurobi_cl TimeLimit=7200 ResultFile=abz8_machine.sol abz8_machine.lp > abz8_machine.out
+gurobi_cl TimeLimit=7200 ResultFile=la02_machine.sol la02_machine.lp > la02_machine.out
+gurobi_cl TimeLimit=7200 ResultFile=la07_machine.sol la07_machine.lp > la07_machine.out
+gurobi_cl TimeLimit=7200 ResultFile=la09_machine.sol la09_machine.lp > la09_machine.out
+gurobi_cl TimeLimit=7200 ResultFile=la21_machine.sol la21_machine.lp > la21_machine.out

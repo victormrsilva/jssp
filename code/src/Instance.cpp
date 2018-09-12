@@ -21,6 +21,7 @@ Instance::Instance( const std::string &fileName, int time , int execute){
     ifs >> n_ >> m_;
 
     times_ = vector< vector< int > >( n_, vector<int>( m_, 0 ) );
+    distances_ = vector< vector< vector < int > > >( n_, vector< vector <int> >( m_, vector<int>(m_,0)) );
     machines_ = vector< vector< int > >( n_, vector<int>( m_, 0 ) );
 
 
@@ -30,7 +31,7 @@ Instance::Instance( const std::string &fileName, int time , int execute){
     cout << "there are " << n() << " jobs and " << m() << " machines." << endl;
     bool given_time = false;
     if (time == 0){
-        t_ = 1; // worse time of completion (all jobs happening simultaniously)
+        t_ = 0; // worse time of completion (all jobs happening simultaniously)
         given_time = false;
     } else {
         t_ = time;
@@ -51,7 +52,20 @@ Instance::Instance( const std::string &fileName, int time , int execute){
     }
     
 
-    
+    // computing distance
+    for ( int j=0 ; (j<n_) ; ++j ){
+        for ( int i=0 ; (i<m_) ; ++i ){
+            int machine_a = machines_[j][i];
+            for ( int k=i+1 ; (k<m_) ; ++k ){
+                int machine_b = machines_[j][k];
+                int dur = times_[j][machines_[j][i]];
+                for (int aux = i+1; aux < k; aux++){
+                    dur += times_[j][machines_[j][aux]];
+                }
+                distances_[j][machine_a][machine_b] += dur ;
+            }
+        }
+    }    
 
 
     // computing est and lst
@@ -86,27 +100,27 @@ void Instance::saveCmpl( const string fname ) const {
     out << "%Jobs set <0.."+str(n()-1)+">" << endl;;
     out << "%Machines set <0.."+str(m()-1)+">" << endl << endl;
 
-    out << "%order[Jobs,Machines] < ";
+    out << "%order[Jobs,Machines] < " << endl;
 
     for ( int j=0 ; (j<n()) ; ++j )
     {
         for ( int i=0 ; (i<m()) ; ++i )
-            out << machine( j, i ) << " ";
+            out << machine( j, i )+1 << " ";
         if (j<n()-1) 
-            out << endl << "    ";
+            out << endl;
         else
             out << " >" << endl;
     }
     out << endl;
 
-    out << "%time[Jobs,Machines] < ";
+    out << "%time[Jobs,Machines] < " << endl;
 
     for ( int j=0 ; (j<n()) ; ++j )
     {
         for ( int i=0 ; (i<m()) ; ++i )
             out << time( j, i ) << " ";
         if (j<n()-1) 
-            out << endl << "    ";
+            out << endl;
         else
             out << " >" << endl;
     }
@@ -118,8 +132,15 @@ void Instance::saveCmpl( const string fname ) const {
             out << "Job " << j+1 << ", Machine " << i+1 <<": " << est(j,i) << " " << lst(j,i) << endl;
         }
     }
-
-
+    out << endl;
+    out << "Job n, Machine i -> Machine j: distance" << endl;
+    for ( int j=0 ; (j<n()) ; ++j )    {
+        for ( int i=0 ; (i<m()) ; ++i ){
+            for ( int k=i+1 ; (k<m()) ; ++k ){
+                out << "Job " << j+1 << ", Machine " << machines_[j][i]+1 <<" -> Machine " << machines_[j][k]+1 << ": " << distance(j,machines_[j][i], machines_[j][k])  << endl;
+            }
+        }
+    }
 
     out.close();
 }

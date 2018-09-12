@@ -63,6 +63,7 @@ public:
      * @return int 
      */
     int machine( int j, int i ) const { return machines_[j][i]; }
+    int distance( int j, int i, int k ) const { return distances_[j][i][k]; }
 
     // known upper bound
     int ub() const { return ub_; }
@@ -97,6 +98,7 @@ private:
     std::string instance_name;
 
     std::vector< std::vector< int > > times_;
+    std::vector< std::vector< std::vector <int > > > distances_;
 
     std::vector< std::vector< int > > machines_;
 

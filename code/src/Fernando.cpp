@@ -245,8 +245,9 @@ Fernando::Fernando( const Instance &_inst ) : inst_(_inst) { // já inicializa a
     }
     cout << "makespan constraints created" << endl;
 
-    lp_write_lp( mip, (inst_.instanceName() + "_machine").c_str() );
+    //lp_write_lp( mip, (inst_.instanceName() + "_machine").c_str() );
     //lp_write_mps( mip, inst_.instanceName().c_str() );
+    lp_optimize_as_continuous(mip);
     if (inst_.execute()){
         lp_optimize( mip );
         lp_write_sol(mip, "jssp_Fernando.sol");

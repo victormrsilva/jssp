@@ -8,6 +8,7 @@
 #include <fstream>
 #include <algorithm>
 #include <time.h>
+#include <unordered_set>
 
 #include <string.h>
 
@@ -18,7 +19,27 @@ extern "C"
 #include "cgraph/build_cgraph.h"
 }
 
+struct pair_hash
+{
+    template <class T1, class T2>
+    std::size_t operator () (std::pair<T1, T2> const &pair) const
+    {
+        std::size_t h1 = std::hash<T1>()(pair.first);
+        std::size_t h2 = std::hash<T2>()(pair.second);
+
+        return h1 ^ h2;
+    }
+};
+
 using namespace std;
+
+template<class T> bool Flow::insere_unico(vector<T> &vector, T elemento){
+    for (T i : vector){
+        if (i == elemento)
+            return false;
+    }
+    return true;
+}
 
 int Flow::teto(double v)
 {
@@ -316,12 +337,12 @@ Flow::Flow(const Instance &_inst) : inst_(_inst),
     }
     cout << "end constraints created" << endl;
 
-    lp_write_lp(mip, (inst_.instanceName() + "_flow").c_str()); //inst_.instanceName().c_str() );
+    //lp_write_lp(mip, (inst_.instanceName() + "_flow").c_str()); //inst_.instanceName().c_str() );
     //lp_optimize(mip);
     //lp_write_sol(mip, "jssp_Flow.sol");
 
     //lp_write_mps( mip, inst_.instanceName().c_str() );
-//    lp_optimize_as_continuous(mip);
+    lp_optimize_as_continuous(mip);
     if (inst_.execute()){
         optimize();
     }
@@ -338,7 +359,7 @@ void Flow::cliques(int *idxs,double *coefs)
             CGraph *cgraph = cgraph_create(names.size() * 2); // todos os vértices de menos o c
             ofstream file_conflitos("conflitos.txt");
 
-            vector<int> conflitos;
+            unordered_set<int> conflitos;
             //cgraph_add_node_conflicts(cgraph,cIdx_,&conflitos[0],conflitos.size());
             vector<int> indices_conflitos;
             for (int m = 0; m < inst_.m(); m++)
@@ -362,13 +383,13 @@ void Flow::cliques(int *idxs,double *coefs)
                         {
                             if (t == tf)
                                 continue;
-                            if (tf > inst_.est(j, m0))
-                            {
-                                file_conflitos << names[xIdx_[j][m0 + 1][tf - 1][m0 + 1][tf]] << " ";
-                                conflitos.emplace_back(xIdx_[j][m0 + 1][tf - 1][m0 + 1][tf]);
-                            }
+                            // if (tf > inst_.est(j, m0))
+                            // {
+                            //     file_conflitos << names[xIdx_[j][m0 + 1][tf - 1][m0 + 1][tf]] << " ";
+                            //     conflitos.insert(xIdx_[j][m0 + 1][tf - 1][m0 + 1][tf]);
+                            // }
                             file_conflitos << names[xIdx_[j][m0 + 1][tf][mf + 1][tf + dur]] << " ";
-                            conflitos.emplace_back(xIdx_[j][m0 + 1][tf][mf + 1][tf + dur]);
+                            conflitos.insert(xIdx_[j][m0 + 1][tf][mf + 1][tf + dur]);
                         }
                         file_conflitos << endl;
 
@@ -376,12 +397,13 @@ void Flow::cliques(int *idxs,double *coefs)
                         file_conflitos << "caso 2: " << endl;
                         if (m != 0)
                         {
-                            vector<pair<int,int>> analisar;
-                            analisar.emplace_back(make_pair(m,t));
+                            unordered_set<pair<int,int>,pair_hash> analisar;
+                            analisar.emplace(make_pair(m,t));
                             while (!analisar.empty()){
-                                pair<int,int> maquina_tempo = analisar.back();
-                                analisar.pop_back();
+                                pair<int,int> maquina_tempo = *analisar.begin();
+                                analisar.erase(analisar.begin());
                                 if (maquina_tempo.first == 0) continue; // primeira máquina
+                                int m_atual = inst_.machine(j,maquina_tempo.first);
                                 int m_anterior = inst_.machine(j, maquina_tempo.first - 1);
                                 int t0 = maquina_tempo.second;
                                 int dur_anterior = inst_.time(j, m_anterior);
@@ -389,21 +411,23 @@ void Flow::cliques(int *idxs,double *coefs)
                                 {
                                     for (int tf = t0 - dur_anterior + 1; tf < t0; tf++)
                                     {
-                                        cout << "job: " << j+1 << " m_atual: " << maquina_tempo.first+1 << " t_atual: " << t0 << " m_anterior: " << m_anterior+1 << " dur: " << dur_anterior << " t0: " << tf << endl;
-                                        cout << names[xIdx_[j][m_anterior + 1][tf][m0 + 1][tf + dur_anterior]] << endl;
+                                        cout << "job: " << j+1 << " m_atual: " << m_atual+1 << " t_atual: " << t0 << " m_anterior: " << m_anterior+1 << " dur: " << dur_anterior << " t0: " << tf << endl;
                                         if (tf >= inst_.lst(j, m_anterior))
                                             continue;
-
-                                        file_conflitos << names[xIdx_[j][m_anterior + 1][tf][m0 + 1][tf + dur_anterior]] << " ";
-                                        conflitos.emplace_back(xIdx_[j][m_anterior + 1][tf][m0 + 1][tf + dur_anterior]);
-                                        analisar.emplace_back(make_pair(maquina_tempo.first-1,tf));
+                                        cout << names[xIdx_[j][m_anterior + 1][tf][m_atual + 1][tf + dur_anterior]] << endl;
+                                        auto i = conflitos.emplace(xIdx_[j][m_anterior + 1][tf][m_atual + 1][tf + dur_anterior]);
+                                        if (i.second){ // conseguiu inserir{
+                                            file_conflitos << names[xIdx_[j][m_anterior + 1][tf][m_atual + 1][tf + dur_anterior]] << " ";
+                                        }
+                                        analisar.emplace(make_pair(maquina_tempo.first-1,tf));
                                         
                                     }
                                     cout << analisar.size() << endl;
-                                    getchar();
+                                    //getchar();
                                 }
                             }
                         }
+                        
                         // caso 3
                         file_conflitos << endl;
                         file_conflitos << "caso 3: " << endl;
@@ -414,22 +438,21 @@ void Flow::cliques(int *idxs,double *coefs)
                                 if (var == idx)
                                     continue;
                                 file_conflitos << names[var] << " ";
-                                conflitos.emplace_back(var);
+                                conflitos.insert(var);
                             }
                         }
-                        file_conflitos << endl
-                                        << endl;
+                        file_conflitos << endl;
 
                         // mostra conflitos
                         file_conflitos << "todos os conflitos: " << endl;
                         file_conflitos << names[idx] << " = ";
-                        for (int var : conflitos)
+                        vector<int> conflicts(conflitos.begin(),conflitos.end());
+                        for (int var : conflicts)
                         {
                             file_conflitos << names[var] << " ";
                         }
-                        file_conflitos << endl;
-
-                        cgraph_add_node_conflicts(cgraph, idx, &conflitos[0], conflitos.size());
+                        file_conflitos << endl << endl;
+                        cgraph_add_node_conflicts(cgraph, idx, &conflicts[0], conflicts.size());
                         // idx = xIdx_[j][m0+1][t][m0+1][t+1];
                         // conflitos.clear();
                         // cgraph_add_node_conflicts(cgraph,idx,&conflitos[0],conflitos.size());

@@ -1,4 +1,4 @@
-Optimal (within gap tolerance) - objective value 55 - solution time 0
+Optimal (within gap tolerance) - objective value 55 - solution time 1
 0 x(1,i,0,3,0) 1 0
 1 x(1,3,0) 1 0
 2 e(1,3,0) 0 0

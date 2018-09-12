@@ -30,7 +30,8 @@ private:
     // void create_x11();
     void createCompleteGraphDot();
 
-    
+    template<class T> bool insere_unico(std::vector<T> &vector, T elemento);
+
 
     void optimize();
 

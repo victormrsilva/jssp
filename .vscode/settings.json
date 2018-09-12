@@ -36,6 +36,7 @@
         "unordered_map": "cpp",
         "functional": "cpp",
         "numeric": "cpp",
-        "clique_separation.h": "c"
+        "clique_separation.h": "c",
+        "unordered_set": "cpp"
     }
 }

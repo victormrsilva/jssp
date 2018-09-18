@@ -113,7 +113,14 @@ CMakeFiles/jssp.dir/src/Compact.cpp.o: src/lp.hpp
 CMakeFiles/jssp.dir/src/Fernando.cpp.o: src/Fernando.cpp
 CMakeFiles/jssp.dir/src/Fernando.cpp.o: src/Fernando.hpp
 CMakeFiles/jssp.dir/src/Fernando.cpp.o: src/Instance.hpp
+CMakeFiles/jssp.dir/src/Fernando.cpp.o: src/cgraph/build_cgraph.h
+CMakeFiles/jssp.dir/src/Fernando.cpp.o: src/cgraph/cgraph.h
+CMakeFiles/jssp.dir/src/Fernando.cpp.o: src/cgraph/clique.h
+CMakeFiles/jssp.dir/src/Fernando.cpp.o: src/cgraph/clique_extender.h
+CMakeFiles/jssp.dir/src/Fernando.cpp.o: src/cgraph/clique_separation.h
 CMakeFiles/jssp.dir/src/Fernando.cpp.o: src/cgraph/lp.h
+CMakeFiles/jssp.dir/src/Fernando.cpp.o: src/cgraph/strutils.h
+CMakeFiles/jssp.dir/src/Fernando.cpp.o: src/cgraph/vint_set.h
 CMakeFiles/jssp.dir/src/Fernando.cpp.o: src/lp.hpp
 
 CMakeFiles/jssp.dir/src/Flow_cuts.cpp.o: src/Flow_cuts.cpp

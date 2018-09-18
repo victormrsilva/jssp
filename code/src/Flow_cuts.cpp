@@ -342,7 +342,7 @@ Flow::Flow(const Instance &_inst) : inst_(_inst),
     //lp_write_sol(mip, "jssp_Flow.sol");
 
     //lp_write_mps( mip, inst_.instanceName().c_str() );
-    lp_optimize_as_continuous(mip);
+    //lp_optimize_as_continuous(mip);
     if (inst_.execute()){
         optimize();
     }
@@ -653,62 +653,37 @@ void Flow::createCompleteGraphDot()
 
 void Flow::optimize(){
     bool continuo = true;
-    bool clique = true;
+    bool clique = false;
     if (continuo){
         const int nCols = lp_cols(mip);
         int *idxs = new int[nCols];
         double *coefs = new double[nCols];
-        int bnd_anterior = 0;
-        double bnd = 9;
-        int c = 9;
-        do {
-            bnd_anterior = c;
-            lp_optimize_as_continuous(mip);
+        double lb = 0;
+        double ub = inst_.maxTime();
+        double bnd = 0;
+        int c = 0;
+        int iteracoes = 0;
+        while (fabs(ub-lb) > 1e-06) {
+            iteracoes++;
+            bnd = lifting(c,&idxs[0],&coefs[0]);
             lp_write_lp(mip, "teste_cb.lp");
             lp_write_sol(mip, "solution.sol");
-            bnd = lp_obj_value(mip);
-            c = teto(bnd);
+            cout << "lb: " << lb << " ub: " << ub << " c: " << c << " bnd: " << bnd << endl;
+            if (c == teto(bnd)){
+                ub = bnd;
+            } else {
+                lb = bnd;
+            }
+            c = teto((ub-lb)/2 + lb);
+            cout << " c: " << c << endl;
+            getchar();
             // remove colunas de fim
             //            lp_remove_rows(mip,fim);
-            for (int j = 0; j < inst_.n(); j++){
-                vector<int> idx;
-                vector<double> coef;
-                idx.emplace_back(cIdx_);
-                coef.emplace_back(1.0);
-                int idxRow = fim[j];
-                //cout << "idxRow " << idxRow << endl;
-                const int nElements = lp_row(mip, idxRow, idxs, coefs);
-                double sol = 0;
 
-                for (int i = 0; i < nElements; i++){
-                    char *nome = lp_varName(mip, idxs[i]);
-                    if (strcmp(nome, "C") == 0)
-                        continue;
-                    double x = lp_xIdx(mip, idxs[i]);
-                    //lp_row_name(mip,idxs[i], nome);
-                    int c2 = max(-1 * (int)coefs[i], c);
-                    //cout << coefs[i] << " " << c2 << " " <<  idxs[i] << " " << nome << " " << x << " " << c2*x <<endl;
-                    sol += c2 * x;
-                }
-
-                for (int t = 1; t <= inst_.maxTime(); t++){
-                    for (int var : enter_flow[j][inst_.m() + 1 + j][t]){
-                        //int coeficiente = max(t,c);
-                        idx.emplace_back(var);
-                        coef.emplace_back(-max(t, c));
-                    }
-                }
-                double violado = sol - c;
-                cout << endl
-                        << "C: " << c << " soma: " << sol << " soma - C: " << violado << endl;
-                lp_remove_row(mip, fim[j]);
-                lp_add_row(mip, idx, coef, "fim(" + to_string(j + 1) + ")", 'G', 0);
-            }
-            lp_write_lp(mip, "teste_cb.lp");
             //getchar();
-        } while (bnd_anterior != c);
-        //getchar();
-
+        };
+        cout << "Quantidade de iterações: " << iteracoes << endl;
+        getchar();
         if (clique)
         {
             cliques(idxs,coefs);
@@ -727,4 +702,45 @@ void Flow::optimize(){
 
     //lp_write_lp(mip,"teste_cb.lp");
     lp_write_sol(mip, "teste_cb.sol");
+}
+
+double Flow::lifting(int c, int *idxs, double *coefs){
+    for (int j = 0; j < inst_.n(); j++){
+        vector<int> idx;
+        vector<double> coef;
+        idx.emplace_back(cIdx_);
+        coef.emplace_back(1.0);
+        int idxRow = fim[j];
+        cout << "idxRow " << idxRow << endl;
+        const int nElements = lp_row(mip, idxRow, idxs, coefs);
+        double sol = 0;
+
+        for (int i = 0; i < nElements; i++){
+            char *nome = lp_varName(mip, idxs[i]);
+            if (strcmp(nome, "C") == 0)
+                continue;
+            double x = lp_xIdx(mip, idxs[i]);
+            //lp_row_name(mip,idxs[i], nome);
+            int c2 = max(-1 * (int)coefs[i], c);
+            cout << coefs[i] << " " << c2 << " " <<  idxs[i] << " " << nome << " " << x << " " << c2*x <<endl;
+            sol += c2 * x;
+        }
+
+        for (int t = 1; t <= inst_.maxTime(); t++){
+            for (int var : enter_flow[j][inst_.m() + 1 + j][t]){
+                //int coeficiente = max(t,c);
+                idx.emplace_back(var);
+                coef.emplace_back(-max(t, c));
+            }
+        }
+        double violado = sol - c;
+        cout << endl
+        << "C: " << c << " soma: " << sol << " soma - C: " << violado << endl;
+        lp_remove_row(mip, fim[j]);
+        lp_add_row(mip, idx, coef, "fim(" + to_string(j + 1) + ")", 'G', 0);
+    }
+    lp_write_lp(mip, "teste_cb.lp");
+    
+    lp_optimize_as_continuous(mip);
+    return lp_obj_value(mip);
 }

@@ -114,7 +114,14 @@ CMakeFiles/jssp.dir/src/Fernando.cpp.o
  /home/victor/git/jssp/code/src/Fernando.cpp
  /home/victor/git/jssp/code/src/Fernando.hpp
  /home/victor/git/jssp/code/src/Instance.hpp
+ /home/victor/git/jssp/code/src/cgraph/build_cgraph.h
+ /home/victor/git/jssp/code/src/cgraph/cgraph.h
+ /home/victor/git/jssp/code/src/cgraph/clique.h
+ /home/victor/git/jssp/code/src/cgraph/clique_extender.h
+ /home/victor/git/jssp/code/src/cgraph/clique_separation.h
  /home/victor/git/jssp/code/src/cgraph/lp.h
+ /home/victor/git/jssp/code/src/cgraph/strutils.h
+ /home/victor/git/jssp/code/src/cgraph/vint_set.h
  /home/victor/git/jssp/code/src/lp.hpp
 CMakeFiles/jssp.dir/src/Flow_cuts.cpp.o
  /home/victor/git/jssp/code/src/Flow_cuts.cpp

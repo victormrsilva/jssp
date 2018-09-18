@@ -47,6 +47,8 @@ private:
     // proccessing jobs flows
     std::vector<std::vector<std::vector<std::vector<int>>>> process;
 
+    double lifting(int c, int *idxs, double *coefs);
+
     int getXidx(int j, int m0, int t0, int mf, int tf) const;
     int teto(double v);
 

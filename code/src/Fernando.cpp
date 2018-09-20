@@ -515,48 +515,23 @@ void Fernando::cliques(int *idxs,double *coefs)
 void Fernando::optimize(){
     bool continuo = true;
     bool clique = false;
+    bool binario = true;
     if (continuo){
-        clock_t begin = clock();
         const int nCols = lp_cols(mip);
         int *idxs = new int[nCols];
         double *coefs = new double[nCols];
-        lp_optimize_as_continuous(mip);
-        int lb = lp_obj_value(mip);
-        int ub = inst_.maxTime();
-        double bnd = 0;
-        double c = ((ub-lb)/2 + lb);
-        int iteracoes = 0;
-        cout << "lb: " << lb << " ub: " << ub << " c: " << c << " bnd: " << bnd << " fabs: " << fabs(lb-bnd) << endl; //<< " floor(bnd):" << floor(bnd) << endl;
-        //getchar();
-        while (fabs(ub-lb) > 1) {
-            iteracoes++;
-            c = ((ub-lb)/2 + lb);
-            bnd = lifting(teto(c),&idxs[0],&coefs[0]);
-            //lp_optimize_as_continuous(mip);
-            lp_write_lp(mip, "teste_cb.lp");
-            lp_write_sol(mip, "solution.sol");
-            cout << "antes: lb: " << lb << " ub: " << ub << " c: " << c << " bnd: " << bnd << " teto(bnd): " << teto(bnd) << " fabs: " << fabs(c-bnd)  << " fabs: " << fabs(teto(bnd)-c) << endl; //<< " floor(bnd):" << floor(bnd) << endl;
-            if (fabs(c-bnd) <= 1e-06) { //lb == floor(bnd)){
-                ub = teto(c);
-            } else {
-                lb = teto(c);
-            }
-            cout << "depois: lb: " << lb << " ub: " << ub << " c: " << c << " bnd: " << bnd << " fabs: " << fabs(c-bnd) << endl; //<< " floor(bnd):" << floor(bnd) << endl;
-            //getchar();
-            // remove colunas de fim
-            //            lp_remove_rows(mip,fim);
-
-            //getchar();
-        };
-        clock_t end = clock();
-        cout << "Quantidade de iterações: " << iteracoes << " lb: " << lb << " ub " << ub <<endl;
-        double time_spent = ((double)end - begin) / ((double)CLOCKS_PER_SEC);
-        cout << "Tempo gasto no lifting: " << time_spent << endl;
+        if (binario){
+            lifting_binario(idxs,coefs);
+        } else {
+            lifting_linear(idxs,coefs);
+        }
         //getchar();
         if (clique)
         {
             cliques(idxs,coefs);
         }
+        delete []idxs;
+        delete []coefs;
     }
 
     lp_as_integer(mip);
@@ -611,6 +586,72 @@ double Fernando::lifting(int c, int *idxs, double *coefs){
     
     lp_optimize_as_continuous(mip);
     return lp_obj_value(mip);
+}
+void Fernando::lifting_binario(int *idxs, double *coefs){
+    clock_t begin = clock();
+    lp_optimize_as_continuous(mip);
+    int lb = lp_obj_value(mip);
+    int ub = inst_.maxTime();
+    double bnd = 0;
+    double c = ((ub-lb)/2 + lb);
+    int iteracoes = 0;
+    cout << "lb: " << lb << " ub: " << ub << " c: " << c << " bnd: " << bnd << " fabs: " << fabs(lb-bnd) << endl; //<< " floor(bnd):" << floor(bnd) << endl;
+    //getchar();
+    while (fabs(ub-lb) > 1) {
+        iteracoes++;
+        c = ((ub-lb)/2 + lb);
+        bnd = lifting(teto(c),&idxs[0],&coefs[0]);
+        //lp_optimize_as_continuous(mip);
+        //lp_write_lp(mip, "teste_cb.lp");
+        //lp_write_sol(mip, "solution.sol");
+        cout << "antes: lb: " << lb << " ub: " << ub << " c: " << c << " bnd: " << bnd << " teto(bnd): " << teto(bnd) << " fabs: " << fabs(c-bnd)  << " fabs: " << fabs(teto(bnd)-c) << endl; //<< " floor(bnd):" << floor(bnd) << endl;
+        if (fabs(c-bnd) <= 1e-06) { //lb == floor(bnd)){
+            ub = teto(c);
+        } else {
+            lb = teto(c);
+        }
+        cout << "depois: lb: " << lb << " ub: " << ub << " c: " << c << " bnd: " << bnd << " fabs: " << fabs(c-bnd) << endl; //<< " floor(bnd):" << floor(bnd) << endl;
+        //getchar();
+        // remove colunas de fim
+        //            lp_remove_rows(mip,fim);
+
+        //getchar();
+    };
+    clock_t end = clock();
+    cout << "Quantidade de iterações binario: " << iteracoes << " lb: " << lb << " ub " << ub <<endl;
+    double time_spent = ((double)end - begin) / ((double)CLOCKS_PER_SEC);
+    cout << "Tempo gasto no lifting binario: " << time_spent << endl;
+    string filename = inst_.instanceName()+"_packing_lift_bin";
+    lp_write_lp(mip, (filename+".lp").c_str());
+    lp_write_sol(mip, (filename+".sol").c_str());
+
+}
+
+void Fernando::lifting_linear(int *idxs, double *coefs){
+    clock_t begin = clock();
+    int iteracoes = 0;
+    lp_optimize_as_continuous(mip);
+    double bnd = lp_obj_value(mip);
+    int c_anterior = 0;
+    int c = teto(bnd);
+
+    while (fabs(c_anterior - c) > 1e-04 && c_anterior < c) {
+        iteracoes++;
+        c_anterior = c;
+        bnd = lifting(c,idxs,coefs);
+        c = teto(bnd);
+        //lp_write_lp(mip, "teste_cb.lp");
+        //lp_write_sol(mip, "solution.sol");
+        cout << "c_anterior: " << c_anterior << " c: " << c << " bnd: " << bnd << " (int)bnd: " << (int)bnd<< endl;
+        //getchar();
+    } 
+    clock_t end = clock();
+    cout << "Quantidade de iterações linear: " << iteracoes  <<endl;
+    double time_spent = ((double)end - begin) / ((double)CLOCKS_PER_SEC);
+    cout << "Tempo gasto no lifting linear: " << time_spent << endl;
+    string filename = inst_.instanceName()+"_machine_lift_lin";
+    lp_write_lp(mip, (filename+".lp").c_str());
+    lp_write_sol(mip, (filename+".sol").c_str());
 }
 
 // void Fernando::optimize(){

@@ -213,6 +213,8 @@ int lp_num_binary_cols( const LinearProgram *lp );
 
 char* lp_col_types( const LinearProgram *lp);
 void lp_write_mps( LinearProgram *lp, const char *fileName );
+
+int lp_get_constr_by_name(LinearProgram *lp, const char *name);
 //char** lp_string_vchar(const std::vector< std::string >& strv);
 
 #endif

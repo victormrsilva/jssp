@@ -5220,3 +5220,14 @@ void lp_add_row( LinearProgram *lp, std::vector< int > idx, std::vector< double 
 {
     lp_add_row( lp, idx.size(), &idx[0], &coef[0], name.c_str(), sense, rhs );
 }
+
+int lp_get_constr_by_name(LinearProgram *lp, const char *name)
+{
+    int idx = -1;
+    #ifdef GRB
+        
+        int grbError = GRBgetconstrbyname ( lp->lp, name, &idx);
+        lp_check_for_grb_error( LPgrbDefaultEnv, grbError, __FILE__, __LINE__ );
+    #endif
+    return idx;
+}

@@ -43,7 +43,7 @@ template<class T> bool Flow::insere_unico(vector<T> &vector, T elemento){
 
 int Flow::teto(double v)
 {
-    if (fabs(v - floor(v + 0.5)) <= 1e-6)
+    if (fabs(v - floor(v + 0.5)) <= 1e-06)
         return v;
     else
         return ceil(v);
@@ -658,31 +658,35 @@ void Flow::optimize(){
         const int nCols = lp_cols(mip);
         int *idxs = new int[nCols];
         double *coefs = new double[nCols];
-        double lb = 0;
-        double ub = inst_.maxTime();
+        lp_optimize_as_continuous(mip);
+        int lb = 654;
+        int ub = inst_.maxTime();
         double bnd = 0;
-        int c = 0;
+        double c = ((ub-lb)/2 + lb);
         int iteracoes = 0;
-        while (fabs(ub-lb) > 1e-06) {
+        cout << "lb: " << lb << " ub: " << ub << " c: " << c << " bnd: " << bnd << " fabs: " << fabs(lb-bnd) << endl; //<< " floor(bnd):" << floor(bnd) << endl;
+        //getchar();
+        while (fabs(ub-lb) > 1) {
             iteracoes++;
-            bnd = lifting(c,&idxs[0],&coefs[0]);
+            c = ((ub-lb)/2 + lb);
+            bnd = lifting(teto(c),&idxs[0],&coefs[0]);
+            //lp_optimize_as_continuous(mip);
             lp_write_lp(mip, "teste_cb.lp");
             lp_write_sol(mip, "solution.sol");
-            cout << "lb: " << lb << " ub: " << ub << " c: " << c << " bnd: " << bnd << endl;
-            if (c == teto(bnd)){
-                ub = bnd;
+            cout << "antes: lb: " << lb << " ub: " << ub << " c: " << c << " bnd: " << bnd << " teto(bnd): " << teto(bnd) << " fabs: " << fabs(c-bnd)  << " fabs: " << fabs(teto(bnd)-c) << endl; //<< " floor(bnd):" << floor(bnd) << endl;
+            if (fabs(c-bnd) <= 1e-06) { //lb == floor(bnd)){
+                ub = teto(c);
             } else {
-                lb = bnd;
+                lb = teto(c);
             }
-            c = teto((ub-lb)/2 + lb);
-            cout << " c: " << c << endl;
+            cout << "depois: lb: " << lb << " ub: " << ub << " c: " << c << " bnd: " << bnd << " fabs: " << fabs(c-bnd) << endl; //<< " floor(bnd):" << floor(bnd) << endl;
             getchar();
             // remove colunas de fim
             //            lp_remove_rows(mip,fim);
 
             //getchar();
         };
-        cout << "Quantidade de iterações: " << iteracoes << endl;
+        cout << "Quantidade de iterações: " << iteracoes << " lb: " << lb << " ub " << ub <<endl;
         getchar();
         if (clique)
         {
@@ -711,7 +715,7 @@ double Flow::lifting(int c, int *idxs, double *coefs){
         idx.emplace_back(cIdx_);
         coef.emplace_back(1.0);
         int idxRow = fim[j];
-        cout << "idxRow " << idxRow << endl;
+        cout << "idxRow " << idxRow << " name: " << endl;
         const int nElements = lp_row(mip, idxRow, idxs, coefs);
         double sol = 0;
 
@@ -722,7 +726,7 @@ double Flow::lifting(int c, int *idxs, double *coefs){
             double x = lp_xIdx(mip, idxs[i]);
             //lp_row_name(mip,idxs[i], nome);
             int c2 = max(-1 * (int)coefs[i], c);
-            cout << coefs[i] << " " << c2 << " " <<  idxs[i] << " " << nome << " " << x << " " << c2*x <<endl;
+            //cout << coefs[i] << " " << c2 << " " <<  idxs[i] << " " << nome << " " << x << " " << c2*x <<endl;
             sol += c2 * x;
         }
 

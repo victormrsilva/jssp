@@ -28,6 +28,8 @@ private:
     std::vector<std::vector<std::vector<std::vector<int>>>> process;
     std::vector<std::vector<std::vector<std::vector<int>>>> enter_flow;
 
+    double lifting(int c, int *idxs, double *coefs);
+
     int cIdx_;
     LinearProgram *mip;
     int teto(double v);

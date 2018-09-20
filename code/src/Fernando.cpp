@@ -513,78 +513,46 @@ void Fernando::cliques(int *idxs,double *coefs)
 }
 
 void Fernando::optimize(){
-    clock_t begin = clock();
     bool continuo = true;
     bool clique = false;
     if (continuo){
+        clock_t begin = clock();
         const int nCols = lp_cols(mip);
         int *idxs = new int[nCols];
         double *coefs = new double[nCols];
-        int lb = 0;
+        lp_optimize_as_continuous(mip);
+        int lb = lp_obj_value(mip);
         int ub = inst_.maxTime();
         double bnd = 0;
-        int c = 0;
+        double c = ((ub-lb)/2 + lb);
         int iteracoes = 0;
-        do {
+        cout << "lb: " << lb << " ub: " << ub << " c: " << c << " bnd: " << bnd << " fabs: " << fabs(lb-bnd) << endl; //<< " floor(bnd):" << floor(bnd) << endl;
+        //getchar();
+        while (fabs(ub-lb) > 1) {
             iteracoes++;
-            cout << "lb: " << lb << " ub: " << ub << " c: " << c << " iteração: " << iteracoes << endl;
-            lp_optimize_as_continuous(mip);
+            c = ((ub-lb)/2 + lb);
+            bnd = lifting(teto(c),&idxs[0],&coefs[0]);
+            //lp_optimize_as_continuous(mip);
             lp_write_lp(mip, "teste_cb.lp");
             lp_write_sol(mip, "solution.sol");
-            bnd = lp_obj_value(mip);
+            cout << "antes: lb: " << lb << " ub: " << ub << " c: " << c << " bnd: " << bnd << " teto(bnd): " << teto(bnd) << " fabs: " << fabs(c-bnd)  << " fabs: " << fabs(teto(bnd)-c) << endl; //<< " floor(bnd):" << floor(bnd) << endl;
+            if (fabs(c-bnd) <= 1e-06) { //lb == floor(bnd)){
+                ub = teto(c);
+            } else {
+                lb = teto(c);
+            }
+            cout << "depois: lb: " << lb << " ub: " << ub << " c: " << c << " bnd: " << bnd << " fabs: " << fabs(c-bnd) << endl; //<< " floor(bnd):" << floor(bnd) << endl;
             //getchar();
             // remove colunas de fim
             //            lp_remove_rows(mip,fim);
-            for (int j = 0; j < inst_.n(); j++){
-                vector<int> idx;
-                vector<double> coef;
-                idx.emplace_back(cIdx_);
-                coef.emplace_back(1.0);
-                int idxRow = fim[j];
-                //cout << "idxRow " << idxRow << endl;
-                const int nElements = lp_row(mip, idxRow, idxs, coefs);
-                double sol = 0;
 
-                for (int i = 0; i < nElements; i++){
-                    char *nome = lp_varName(mip, idxs[i]);
-                    if (strcmp(nome, "C") == 0)
-                        continue;
-                    double x = lp_xIdx(mip, idxs[i]);
-                    //lp_row_name(mip,idxs[i], nome);
-                    int c2 = max(-1 * (int)coefs[i], c);
-                    //cout << coefs[i] << " " << c2 << " " <<  idxs[i] << " " << nome << " " << x << " " << c2*x <<endl;
-                    sol += c2 * x;
-                }
-
-                int h = inst_.machine(j,inst_.m()-1);
-                for (int t = inst_.est(j,h); t <= inst_.lst(j,h); t++){
-            
-                    idx.push_back(xIdx_[h][j][t]);
-                    coef.push_back(-max(t+inst_.time(j,h),c));
-                }   
-
-                double violado = sol - c;
-                cout << endl;
-                cout << "C: " << c << " soma: " << sol << " soma - C: " << violado << endl;
-                lp_remove_row(mip, fim[j]);
-                lp_add_row(mip, idx, coef, "fim(" + to_string(j + 1) + ")", 'G', 0);
-            }
-            
-            if (c == teto(bnd)){
-                ub = teto(bnd);
-            } else {
-                lb = teto(bnd);
-            }
-            c = teto((ub-lb)/2 + lb);
-            cout << "lb: " << lb << " ub: " << ub << " c: " << c << " bnd: " << teto(bnd) << endl;
-            lp_write_lp(mip, "teste_cb.lp");
-            getchar();
-        } while (ub != lb);
-        cout << "Quantidade de iterações: " << iteracoes << endl;
+            //getchar();
+        };
         clock_t end = clock();
+        cout << "Quantidade de iterações: " << iteracoes << " lb: " << lb << " ub " << ub <<endl;
         double time_spent = ((double)end - begin) / ((double)CLOCKS_PER_SEC);
         cout << "Tempo gasto no lifting: " << time_spent << endl;
-        getchar();
+        //getchar();
         if (clique)
         {
             cliques(idxs,coefs);
@@ -597,13 +565,146 @@ void Fernando::optimize(){
 
     //CGraph *cgraph = build_cgraph_lp(mip);
     //cgraph_print_summary(cgraph, "test_cgraph");
-    lp_write_lp(mip, "teste.lp");
+    string filename = inst_.instanceName()+"_machine";
+    lp_write_lp(mip, (filename+".lp").c_str());
     //getchar();
-    lp_optimize(mip);
+    //lp_optimize(mip);
 
     //lp_write_lp(mip,"teste_cb.lp");
-    lp_write_sol(mip, "teste_cb.sol");
+    lp_write_sol(mip, (filename+".sol").c_str());
 }
+
+double Fernando::lifting(int c, int *idxs, double *coefs){
+    for (int j = 0; j < inst_.n(); j++){
+        vector<int> idx;
+        vector<double> coef;
+        idx.emplace_back(cIdx_);
+        coef.emplace_back(1.0);
+        int idxRow = fim[j];
+        cout << "idxRow " << idxRow << " name: " << endl;
+        const int nElements = lp_row(mip, idxRow, idxs, coefs);
+        double sol = 0;
+
+        for (int i = 0; i < nElements; i++){
+            char *nome = lp_varName(mip, idxs[i]);
+            if (strcmp(nome, "C") == 0)
+                continue;
+            double x = lp_xIdx(mip, idxs[i]);
+            //lp_row_name(mip,idxs[i], nome);
+            int c2 = max(-1 * (int)coefs[i], c);
+            //cout << coefs[i] << " " << c2 << " " <<  idxs[i] << " " << nome << " " << x << " " << c2*x <<endl;
+            sol += c2 * x;
+        }
+        int h = inst_.machine(j,inst_.m()-1);
+        for (int t = inst_.est(j,h); t <= inst_.lst(j,h); t++){
+    
+            idx.push_back(xIdx_[h][j][t]);
+            coef.push_back(-max(t+inst_.time(j,h),c));
+        }
+        double violado = sol - c;
+        cout << endl;
+        cout << "C: " << c << " soma: " << sol << " soma - C: " << violado << endl;
+        lp_remove_row(mip, fim[j]);
+        lp_add_row(mip, idx, coef, "fim(" + to_string(j + 1) + ")", 'G', 0);
+    }
+    lp_write_lp(mip, "teste_cb.lp");
+    
+    lp_optimize_as_continuous(mip);
+    return lp_obj_value(mip);
+}
+
+// void Fernando::optimize(){
+//     clock_t begin = clock();
+//     bool continuo = true;
+//     bool clique = false;
+//     if (continuo){
+//         const int nCols = lp_cols(mip);
+//         int *idxs = new int[nCols];
+//         double *coefs = new double[nCols];
+//         int lb = 0;
+//         int ub = inst_.maxTime();
+//         double bnd = 0;
+//         int c = 0;
+//         int iteracoes = 0;
+//         do {
+//             iteracoes++;
+//             cout << "lb: " << lb << " ub: " << ub << " c: " << c << " iteração: " << iteracoes << endl;
+//             lp_optimize_as_continuous(mip);
+//             lp_write_lp(mip, "teste_cb.lp");
+//             lp_write_sol(mip, "solution.sol");
+//             bnd = lp_obj_value(mip);
+//             //getchar();
+//             // remove colunas de fim
+//             //            lp_remove_rows(mip,fim);
+//             for (int j = 0; j < inst_.n(); j++){
+//                 vector<int> idx;
+//                 vector<double> coef;
+//                 idx.emplace_back(cIdx_);
+//                 coef.emplace_back(1.0);
+//                 int idxRow = fim[j];
+//                 //cout << "idxRow " << idxRow << endl;
+//                 const int nElements = lp_row(mip, idxRow, idxs, coefs);
+//                 double sol = 0;
+
+//                 for (int i = 0; i < nElements; i++){
+//                     char *nome = lp_varName(mip, idxs[i]);
+//                     if (strcmp(nome, "C") == 0)
+//                         continue;
+//                     double x = lp_xIdx(mip, idxs[i]);
+//                     //lp_row_name(mip,idxs[i], nome);
+//                     int c2 = max(-1 * (int)coefs[i], c);
+//                     //cout << coefs[i] << " " << c2 << " " <<  idxs[i] << " " << nome << " " << x << " " << c2*x <<endl;
+//                     sol += c2 * x;
+//                 }
+
+//                 int h = inst_.machine(j,inst_.m()-1);
+//                 for (int t = inst_.est(j,h); t <= inst_.lst(j,h); t++){
+            
+//                     idx.push_back(xIdx_[h][j][t]);
+//                     coef.push_back(-max(t+inst_.time(j,h),c));
+//                 }   
+
+//                 double violado = sol - c;
+//                 cout << endl;
+//                 cout << "C: " << c << " soma: " << sol << " soma - C: " << violado << endl;
+//                 lp_remove_row(mip, fim[j]);
+//                 lp_add_row(mip, idx, coef, "fim(" + to_string(j + 1) + ")", 'G', 0);
+//             }
+            
+//             if (c == teto(bnd)){
+//                 ub = teto(bnd);
+//             } else {
+//                 lb = teto(bnd);
+//             }
+//             c = teto((ub-lb)/2 + lb);
+//             cout << "lb: " << lb << " ub: " << ub << " c: " << c << " bnd: " << teto(bnd) << endl;
+//             lp_write_lp(mip, "teste_cb.lp");
+//             getchar();
+//         } while (ub != lb);
+//         cout << "Quantidade de iterações: " << iteracoes << endl;
+//         clock_t end = clock();
+//         double time_spent = ((double)end - begin) / ((double)CLOCKS_PER_SEC);
+//         cout << "Tempo gasto no lifting: " << time_spent << endl;
+//         getchar();
+//         if (clique)
+//         {
+//             cliques(idxs,coefs);
+//         }
+//     }
+
+//     lp_as_integer(mip);
+
+//     //Callback cb = Callback(mip,inst_,xIdx_,process);
+
+//     //CGraph *cgraph = build_cgraph_lp(mip);
+//     //cgraph_print_summary(cgraph, "test_cgraph");
+//     lp_write_lp(mip, "teste.lp");
+//     //getchar();
+//     lp_optimize(mip);
+
+//     //lp_write_lp(mip,"teste_cb.lp");
+//     lp_write_sol(mip, "teste_cb.sol");
+// }
 
 Fernando::~Fernando()
 {

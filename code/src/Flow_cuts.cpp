@@ -655,11 +655,12 @@ void Flow::optimize(){
     bool continuo = true;
     bool clique = false;
     if (continuo){
+        clock_t begin = clock();
         const int nCols = lp_cols(mip);
         int *idxs = new int[nCols];
         double *coefs = new double[nCols];
         lp_optimize_as_continuous(mip);
-        int lb = 654;
+        int lb = lp_obj_value(mip);
         int ub = inst_.maxTime();
         double bnd = 0;
         double c = ((ub-lb)/2 + lb);
@@ -680,14 +681,17 @@ void Flow::optimize(){
                 lb = teto(c);
             }
             cout << "depois: lb: " << lb << " ub: " << ub << " c: " << c << " bnd: " << bnd << " fabs: " << fabs(c-bnd) << endl; //<< " floor(bnd):" << floor(bnd) << endl;
-            getchar();
+            //getchar();
             // remove colunas de fim
             //            lp_remove_rows(mip,fim);
 
             //getchar();
         };
+        clock_t end = clock();
         cout << "Quantidade de iterações: " << iteracoes << " lb: " << lb << " ub " << ub <<endl;
-        getchar();
+        double time_spent = ((double)end - begin) / ((double)CLOCKS_PER_SEC);
+        cout << "Tempo gasto no lifting: " << time_spent << endl;
+        //getchar();
         if (clique)
         {
             cliques(idxs,coefs);
@@ -700,12 +704,13 @@ void Flow::optimize(){
 
     //CGraph *cgraph = build_cgraph_lp(mip);
     //cgraph_print_summary(cgraph, "test_cgraph");
-    lp_write_lp(mip, "teste.lp");
+    string filename = inst_.instanceName()+"_packing";
+    lp_write_lp(mip, (filename+".lp").c_str());
     //getchar();
-    lp_optimize(mip);
+    //lp_optimize(mip);
 
     //lp_write_lp(mip,"teste_cb.lp");
-    lp_write_sol(mip, "teste_cb.sol");
+    lp_write_sol(mip, (filename+".sol").c_str());
 }
 
 double Flow::lifting(int c, int *idxs, double *coefs){
@@ -738,8 +743,8 @@ double Flow::lifting(int c, int *idxs, double *coefs){
             }
         }
         double violado = sol - c;
-        cout << endl
-        << "C: " << c << " soma: " << sol << " soma - C: " << violado << endl;
+        cout << endl;
+        cout << "C: " << c << " soma: " << sol << " soma - C: " << violado << endl;
         lp_remove_row(mip, fim[j]);
         lp_add_row(mip, idx, coef, "fim(" + to_string(j + 1) + ")", 'G', 0);
     }

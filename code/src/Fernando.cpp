@@ -34,8 +34,12 @@ using namespace std;
 
 int Fernando::teto(double v)
 {
-    if (fabs(v - floor(v + 0.5)) <= 1e-6)
-        return v;
+    int compara = floor(v + 0.5);
+    if (fabs(v - compara) <= 1e-04)
+        if ( (int)v < compara)
+            return compara;
+        else
+            return v;
     else
         return ceil(v);
 }
@@ -105,7 +109,7 @@ process(vector<vector<vector<vector<int>>>>(inst_.n(), (vector<vector<vector<int
     cIdx_ = names.size();
     names.push_back("C");
     lb.push_back( 0.0 );
-    ub.push_back( DBL_MAX );
+    ub.push_back( inst_.maxTime() );
     obj.push_back( 1.0 );
     integer.push_back( 1 );
 
@@ -604,8 +608,8 @@ void Fernando::lifting_binario(int *idxs, double *coefs){
         //lp_optimize_as_continuous(mip);
         //lp_write_lp(mip, "teste_cb.lp");
         //lp_write_sol(mip, "solution.sol");
-        cout << "antes: lb: " << lb << " ub: " << ub << " c: " << c << " bnd: " << bnd << " teto(bnd): " << teto(bnd) << " fabs: " << fabs(c-bnd)  << " fabs: " << fabs(teto(bnd)-c) << endl; //<< " floor(bnd):" << floor(bnd) << endl;
-        if (fabs(c-bnd) <= 1e-06) { //lb == floor(bnd)){
+        cout << "antes: lb: " << lb << " ub: " << ub << " c: " << c << " bnd: " << bnd << " teto(bnd): " << teto(bnd) << " teto(c): " << teto(c)   << endl; //<< " floor(bnd):" << floor(bnd) << endl;
+        if (teto(c) == teto(bnd)) { //
             ub = teto(c);
         } else {
             lb = teto(c);
@@ -632,17 +636,17 @@ void Fernando::lifting_linear(int *idxs, double *coefs){
     int iteracoes = 0;
     lp_optimize_as_continuous(mip);
     double bnd = lp_obj_value(mip);
-    int c_anterior = 0;
+    double bnd_anterior = 0;
     int c = teto(bnd);
 
-    while (fabs(c_anterior - c) > 1e-04 && c_anterior < c) {
+    while (fabs(bnd - bnd_anterior) > 1e-06) {
         iteracoes++;
-        c_anterior = c;
+        bnd_anterior = bnd;
         bnd = lifting(c,idxs,coefs);
         c = teto(bnd);
         //lp_write_lp(mip, "teste_cb.lp");
         //lp_write_sol(mip, "solution.sol");
-        cout << "c_anterior: " << c_anterior << " c: " << c << " bnd: " << bnd << " (int)bnd: " << (int)bnd<< endl;
+        cout <<  " c: " << c << " bnd_anterior: " << bnd_anterior << " bnd: " << bnd << endl;
         //getchar();
     } 
     clock_t end = clock();

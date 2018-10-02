@@ -1,14 +1,13 @@
 #include "Fernando.hpp"
 
 #include <vector>
-#include <string>
 #include <cfloat>
+#include <cmath>
 #include <iostream>
 #include <fstream>
 #include <algorithm>
-#include <unordered_set>
-#include <cmath>
 #include <time.h>
+#include <unordered_set>
 
 #include <string.h>
 
@@ -348,18 +347,83 @@ process(vector<vector<vector<vector<int>>>>(inst_.n(), (vector<vector<vector<int
 
 void Fernando::cliques(int *idxs,double *coefs)
 {
-        /* variáveis em conflito
-            1 = as variáveis x(j,m(i),t',m(i+1),t'+d) e x(j,m(i),t',m(i),t'+1) com t' > t, ou seja, as variáveis que ainda podem processar e as de espera nos tempos
-            2 = as variáveis x(j,m(i-1), t',m(i),t+d) com t'+d > t
-            3 = as variáveis de processamento para a máquina i no tempo t
-        */
+    clock_t begin = clock();
+    double *x = lp_x(mip);
+    double *rc = lp_reduced_cost(mip);
 
-            CGraph *cgraph = cgraph_create(names.size() * 2); // todos os vértices de menos o c
-            ofstream file_conflitos("conflitos.txt");
+    // for (unsigned int i = 0; i < names.size(); i++)
+    // {
+    //     if (x[i] != 0 || rc[i] != 0)
+    //         cout << names[i] << " " << i << " " << x[i] << " " << rc[i] << endl;
+    // }
 
-            unordered_set<int> conflitos;
-            //cgraph_add_node_conflicts(cgraph,cIdx_,&conflitos[0],conflitos.size());
-            vector<int> indices_conflitos;
+    // cout << endl;
+    vector<double> x_conflitos = vector<double>(names.size() * 2);
+    vector<double> rc_conflitos = vector<double>(names.size() * 2);
+
+    for (unsigned int i = 0; i < names.size(); i++)
+    {
+        x_conflitos[i] = x[i];
+        x_conflitos[i + names.size()] = 1 - x[i];
+        rc_conflitos[i] = rc[i];
+        rc_conflitos[i + names.size()] = (-1) * rc[i];
+    }
+
+    CliqueSeparation *clique_sep = clq_sep_create(cgraph);
+    cout << "clique_sep ok" << endl;
+    clq_sep_set_verbose(clique_sep, 'T');
+    clq_sep_set_rc(clique_sep, &rc_conflitos[0]); //&rc_conflitos[0]);
+    cout << "clique_sep_set_rc ok" << endl;
+    //getchar();
+    clq_sep_separate(clique_sep, &x_conflitos[0]); //&x_conflitos[0]);
+    cout << "clique_separate ok" << endl;
+    //getchar();
+    const CliqueSet *cliques = clq_sep_get_cliques(clique_sep);
+    clq_set_print(cliques);
+    //getchar();
+    int qtd_cliques = clq_set_number_of_cliques(cliques);
+    ofstream file_cliques("cliques.txt");
+    file_cliques << "qtd de cliques: " << qtd_cliques << endl;
+
+    for (int i = 0; i < qtd_cliques; i++)
+    {
+        vector< int > idx;
+        vector< double > coef;
+
+        const IntSet *clq = clq_set_get_clique(cliques, i);
+        file_cliques << "clique " << i << " tamanho " << clq->size << endl;
+        file_cliques << "elementos: ";
+        for (int j = 0; j < clq->size; j++)
+        {
+            idx.push_back( clq->elements[j] );
+            coef.push_back( 1.0 );
+            file_cliques << names[clq->elements[j]] << "[" << clq->elements[j] << "], " ;
+        }
+        file_cliques << endl;
+        lp_add_row( mip, idx, coef, "cortes("+to_string(qtd_cortes)+")", 'L', 1 );
+        qtd_cortes++;
+    }
+    file_cliques.close();
+    string filename = inst_.instanceName()+"_cortes";
+    lp_write_lp(mip, (filename+".lp").c_str());
+    clock_t end = clock();
+    cout << "cuts added: " << qtd_cliques << " time for adding on lp: " << (double) (end-begin)/CLOCKS_PER_SEC << endl;
+    //getchar();
+}
+void Fernando::cgraph_creation()
+{
+    /* variáveis em conflito
+    1 = as variáveis x(j,m(i),t',m(i+1),t'+d) e x(j,m(i),t',m(i),t'+1) com t' > t, ou seja, as variáveis que ainda podem processar e as de espera nos tempos
+    2 = as variáveis x(j,m(i-1), t',m(i),t+d) com t'+d > t
+    3 = as variáveis de processamento para a máquina i no tempo t*/
+
+    clock_t begin = clock();
+    cgraph = cgraph_create(names.size() * 2); // todos os vértices de menos o c
+    ofstream file_conflitos("conflitos.txt");
+
+    unordered_set<int> conflitos;
+    //cgraph_add_node_conflicts(cgraph,cIdx_,&conflitos[0],conflitos.size());
+    vector<int> indices_conflitos;
             for (int m = 0; m < inst_.m(); m++)
             {
                 for (int j = 0; j < inst_.n(); j++)
@@ -459,61 +523,12 @@ void Fernando::cliques(int *idxs,double *coefs)
                     }
                 }
             }
-            file_conflitos.close();
-            cgraph_save(cgraph, "cgraph.txt");
-            cout << indices_conflitos.size() << endl;
-
-            double *x = lp_x(mip);
-            double *rc = lp_reduced_cost(mip);
-
-            for (unsigned int i = 0; i < names.size(); i++)
-            {
-                if (x[i] != 0 || rc[i] != 0)
-                    cout << names[i] << " " << i << " " << x[i] << " " << rc[i] << endl;
-            }
-
-            cout << endl;
-            vector<double> x_conflitos = vector<double>(names.size() * 2);
-            vector<double> rc_conflitos = vector<double>(names.size() * 2);
-
-            for (unsigned int i = 0; i < names.size(); i++)
-            {
-                x_conflitos[i] = x[i];
-                x_conflitos[i + names.size()] = 1 - x[i];
-                rc_conflitos[i] = rc[i];
-                rc_conflitos[i + names.size()] = (-1) * rc[i];
-            }
-
-            CliqueSeparation *clique_sep = clq_sep_create(cgraph);
-            cout << "clique_sep ok" << endl;
-            clq_sep_set_verbose(clique_sep, 'T');
-            clq_sep_set_rc(clique_sep, &rc_conflitos[0]); //&rc_conflitos[0]);
-            cout << "clique_sep_set_rc ok" << endl;
-            getchar();
-            clq_sep_separate(clique_sep, &x_conflitos[0]); //&x_conflitos[0]);
-            cout << "clique_separate ok" << endl;
-            getchar();
-            const CliqueSet *cliques = clq_sep_get_cliques(clique_sep);
-            clq_set_print(cliques);
-            getchar();
-            int qtd_cliques = clq_set_number_of_cliques(cliques);
-            ofstream file_cliques("cliques.txt");
-            file_cliques << "qtd de cliques: " << qtd_cliques << endl;
-
-            for (int i = 0; i < qtd_cliques; i++)
-            {
-                const IntSet *clq = clq_set_get_clique(cliques, i);
-                file_cliques << "clique " << i << " tamanho " << clq->size << endl;
-                file_cliques << "elementos: ";
-                for (int j = 0; j < clq->size; j++)
-                {
-                    file_cliques << names[clq->elements[j]] << "[" << clq->elements[j] << "], " ;
-                }
-                file_cliques << endl;
-            }
-            file_cliques.close();
-            delete []idxs;
-            delete []coefs;
+    
+    file_conflitos.close();
+    clock_t end = clock();
+    cout << "cgraph creation time: " << (double) (end-begin)/CLOCKS_PER_SEC << endl;
+    cgraph_save(cgraph, "cgraph.txt");
+    //cout << indices_conflitos.size() << endl;
 }
 
 void Fernando::optimize(){

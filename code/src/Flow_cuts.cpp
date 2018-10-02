@@ -354,174 +354,190 @@ Flow::Flow(const Instance &_inst) : inst_(_inst),
     }
 }
 
-void Flow::cliques(int *idxs,double *coefs)
+void Flow::cgraph_creation()
 {
-        /* variáveis em conflito
-            1 = as variáveis x(j,m(i),t',m(i+1),t'+d) e x(j,m(i),t',m(i),t'+1) com t' > t, ou seja, as variáveis que ainda podem processar e as de espera nos tempos
-            2 = as variáveis x(j,m(i-1), t',m(i),t+d) com t'+d > t
-            3 = as variáveis de processamento para a máquina i no tempo t
-        */
+    /* variáveis em conflito
+    1 = as variáveis x(j,m(i),t',m(i+1),t'+d) e x(j,m(i),t',m(i),t'+1) com t' > t, ou seja, as variáveis que ainda podem processar e as de espera nos tempos
+    2 = as variáveis x(j,m(i-1), t',m(i),t+d) com t'+d > t
+    3 = as variáveis de processamento para a máquina i no tempo t*/
 
-            CGraph *cgraph = cgraph_create(names.size() * 2); // todos os vértices de menos o c
-            ofstream file_conflitos("conflitos.txt");
+    clock_t begin = clock();
+    cgraph = cgraph_create(names.size() * 2); // todos os vértices de menos o c
+    ofstream file_conflitos("conflitos.txt");
 
-            unordered_set<int> conflitos;
-            //cgraph_add_node_conflicts(cgraph,cIdx_,&conflitos[0],conflitos.size());
-            vector<int> indices_conflitos;
-            for (int m = 0; m < inst_.m(); m++)
+    unordered_set<int> conflitos;
+    //cgraph_add_node_conflicts(cgraph,cIdx_,&conflitos[0],conflitos.size());
+    vector<int> indices_conflitos;
+    for (int m = 0; m < inst_.m(); m++)
+    {
+        for (int j = 0; j < inst_.n(); j++)
+        {
+            int m0 = inst_.machine(j, m);
+            int mf = (m == inst_.m() - 1 ? inst_.m() : inst_.machine(j, m + 1));
+            int dur = inst_.time(j, m0); // duration time for machine m0 in job j
+            for (int t = inst_.est(j, m0); t <= inst_.lst(j, m0); t++)
             {
-                for (int j = 0; j < inst_.n(); j++)
+                //cout << j << " " << m0 << " " << t << " " << mf << " " << t+dur << endl;
+                int idx = xIdx_[j][m0 + 1][t][mf + 1][t + dur];
+                // cout << idx << endl;
+                indices_conflitos.emplace_back(idx);
+                conflitos.clear();
+                // file_conflitos << "variavel: " << idx << " " << names[idx] << endl;
+                // caso 1
+                // file_conflitos << "caso 1: " << endl;
+                for (int tf = inst_.est(j, m0); tf < inst_.lst(j, m0); tf++)
                 {
-                    int m0 = inst_.machine(j, m);
-                    int mf = (m == inst_.m() - 1 ? inst_.m() : inst_.machine(j, m + 1));
-                    int dur = inst_.time(j, m0); // duration time for machine m0 in job j
-                    for (int t = inst_.est(j, m0); t <= inst_.lst(j, m0); t++)
-                    {
-                        //cout << j << " " << m0 << " " << t << " " << mf << " " << t+dur << endl;
-                        int idx = xIdx_[j][m0 + 1][t][mf + 1][t + dur];
-                        // cout << idx << endl;
-                        indices_conflitos.emplace_back(idx);
-                        conflitos.clear();
-                        file_conflitos << "variavel: " << idx << " " << names[idx] << endl;
-                        // caso 1
-                        file_conflitos << "caso 1: " << endl;
-                        for (int tf = inst_.est(j, m0); tf < inst_.lst(j, m0); tf++)
-                        {
-                            if (t == tf)
-                                continue;
-                            // if (tf > inst_.est(j, m0))
-                            // {
-                            //     file_conflitos << names[xIdx_[j][m0 + 1][tf - 1][m0 + 1][tf]] << " ";
-                            //     conflitos.insert(xIdx_[j][m0 + 1][tf - 1][m0 + 1][tf]);
-                            // }
-                            file_conflitos << names[xIdx_[j][m0 + 1][tf][mf + 1][tf + dur]] << " ";
-                            conflitos.insert(xIdx_[j][m0 + 1][tf][mf + 1][tf + dur]);
-                        }
-                        file_conflitos << endl;
+                    if (t == tf)
+                        continue;
+                    // if (tf > inst_.est(j, m0))
+                    // {
+                    //     file_conflitos << names[xIdx_[j][m0 + 1][tf - 1][m0 + 1][tf]] << " ";
+                    //     conflitos.insert(xIdx_[j][m0 + 1][tf - 1][m0 + 1][tf]);
+                    // }
+                    // file_conflitos << names[xIdx_[j][m0 + 1][tf][mf + 1][tf + dur]] << " ";
+                    conflitos.insert(xIdx_[j][m0 + 1][tf][mf + 1][tf + dur]);
+                }
+                // file_conflitos << endl;
 
-                        // caso 2
-                        file_conflitos << "caso 2: " << endl;
-                        if (m != 0)
+                // caso 2
+                // file_conflitos << "caso 2: " << endl;
+                if (m != 0)
+                {
+                    unordered_set<pair<int,int>,pair_hash> analisar;
+                    analisar.emplace(make_pair(m,t));
+                    while (!analisar.empty()){
+                        pair<int,int> maquina_tempo = *analisar.begin();
+                        analisar.erase(analisar.begin());
+                        if (maquina_tempo.first == 0) continue; // primeira máquina
+                        int m_atual = inst_.machine(j,maquina_tempo.first);
+                        int m_anterior = inst_.machine(j, maquina_tempo.first - 1);
+                        int t0 = maquina_tempo.second;
+                        int dur_anterior = inst_.time(j, m_anterior);
+                        if (t0 - dur_anterior >= inst_.time(j, m_anterior))
                         {
-                            unordered_set<pair<int,int>,pair_hash> analisar;
-                            analisar.emplace(make_pair(m,t));
-                            while (!analisar.empty()){
-                                pair<int,int> maquina_tempo = *analisar.begin();
-                                analisar.erase(analisar.begin());
-                                if (maquina_tempo.first == 0) continue; // primeira máquina
-                                int m_atual = inst_.machine(j,maquina_tempo.first);
-                                int m_anterior = inst_.machine(j, maquina_tempo.first - 1);
-                                int t0 = maquina_tempo.second;
-                                int dur_anterior = inst_.time(j, m_anterior);
-                                if (t0 - dur_anterior >= inst_.time(j, m_anterior))
-                                {
-                                    for (int tf = t0 - dur_anterior + 1; tf < t0; tf++)
-                                    {
-                                        cout << "job: " << j+1 << " m_atual: " << m_atual+1 << " t_atual: " << t0 << " m_anterior: " << m_anterior+1 << " dur: " << dur_anterior << " t0: " << tf << endl;
-                                        if (tf >= inst_.lst(j, m_anterior))
-                                            continue;
-                                        cout << names[xIdx_[j][m_anterior + 1][tf][m_atual + 1][tf + dur_anterior]] << endl;
-                                        auto i = conflitos.emplace(xIdx_[j][m_anterior + 1][tf][m_atual + 1][tf + dur_anterior]);
-                                        if (i.second){ // conseguiu inserir{
-                                            file_conflitos << names[xIdx_[j][m_anterior + 1][tf][m_atual + 1][tf + dur_anterior]] << " ";
-                                        }
-                                        analisar.emplace(make_pair(maquina_tempo.first-1,tf));
-                                        
-                                    }
-                                    cout << analisar.size() << endl;
-                                    //getchar();
-                                }
-                            }
-                        }
-                        
-                        // caso 3
-                        file_conflitos << endl;
-                        file_conflitos << "caso 3: " << endl;
-                        for (int j_ = 0; j_ < inst_.n(); j_++)
-                        {
-                            for (int var : process[j_][m0 + 1][t])
+                            for (int tf = t0 - dur_anterior + 1; tf < t0; tf++)
                             {
-                                if (var == idx)
+                                //cout << "job: " << j+1 << " m_atual: " << m_atual+1 << " t_atual: " << t0 << " m_anterior: " << m_anterior+1 << " dur: " << dur_anterior << " t0: " << tf << endl;
+                                if (tf >= inst_.lst(j, m_anterior))
                                     continue;
-                                file_conflitos << names[var] << " ";
-                                conflitos.insert(var);
+                                //cout << names[xIdx_[j][m_anterior + 1][tf][m_atual + 1][tf + dur_anterior]] << endl;
+                                auto i = conflitos.emplace(xIdx_[j][m_anterior + 1][tf][m_atual + 1][tf + dur_anterior]);
+                                // if (i.second){ // conseguiu inserir{
+                                //     file_conflitos << names[xIdx_[j][m_anterior + 1][tf][m_atual + 1][tf + dur_anterior]] << " ";
+                                // }
+                                analisar.emplace(make_pair(maquina_tempo.first-1,tf));
+                                
                             }
+                            //cout << analisar.size() << endl;
+                            //getchar();
                         }
-                        file_conflitos << endl;
-
-                        // mostra conflitos
-                        file_conflitos << "todos os conflitos: " << endl;
-                        file_conflitos << names[idx] << " = ";
-                        vector<int> conflicts(conflitos.begin(),conflitos.end());
-                        for (int var : conflicts)
-                        {
-                            file_conflitos << names[var] << " ";
-                        }
-                        file_conflitos << endl << endl;
-                        cgraph_add_node_conflicts(cgraph, idx, &conflicts[0], conflicts.size());
-                        // idx = xIdx_[j][m0+1][t][m0+1][t+1];
-                        // conflitos.clear();
-                        // cgraph_add_node_conflicts(cgraph,idx,&conflitos[0],conflitos.size());
-                        //cout << "conflitos adicionados no cgraph" << endl;
-                        //getchar();
                     }
                 }
-            }
-            file_conflitos.close();
-            cgraph_save(cgraph, "cgraph.txt");
-            cout << indices_conflitos.size() << endl;
-
-            double *x = lp_x(mip);
-            double *rc = lp_reduced_cost(mip);
-
-            for (unsigned int i = 0; i < names.size(); i++)
-            {
-                if (x[i] != 0 || rc[i] != 0)
-                    cout << names[i] << " " << i << " " << x[i] << " " << rc[i] << endl;
-            }
-
-            cout << endl;
-            vector<double> x_conflitos = vector<double>(names.size() * 2);
-            vector<double> rc_conflitos = vector<double>(names.size() * 2);
-
-            for (unsigned int i = 0; i < names.size(); i++)
-            {
-                x_conflitos[i] = x[i];
-                x_conflitos[i + names.size()] = 1 - x[i];
-                rc_conflitos[i] = rc[i];
-                rc_conflitos[i + names.size()] = (-1) * rc[i];
-            }
-
-            CliqueSeparation *clique_sep = clq_sep_create(cgraph);
-            cout << "clique_sep ok" << endl;
-            clq_sep_set_verbose(clique_sep, 'T');
-            clq_sep_set_rc(clique_sep, &rc_conflitos[0]); //&rc_conflitos[0]);
-            cout << "clique_sep_set_rc ok" << endl;
-            getchar();
-            clq_sep_separate(clique_sep, &x_conflitos[0]); //&x_conflitos[0]);
-            cout << "clique_separate ok" << endl;
-            getchar();
-            const CliqueSet *cliques = clq_sep_get_cliques(clique_sep);
-            clq_set_print(cliques);
-            getchar();
-            int qtd_cliques = clq_set_number_of_cliques(cliques);
-            ofstream file_cliques("cliques.txt");
-            file_cliques << "qtd de cliques: " << qtd_cliques << endl;
-
-            for (int i = 0; i < qtd_cliques; i++)
-            {
-                const IntSet *clq = clq_set_get_clique(cliques, i);
-                file_cliques << "clique " << i << " tamanho " << clq->size << endl;
-                file_cliques << "elementos: ";
-                for (int j = 0; j < clq->size; j++)
+                
+                // caso 3
+                // file_conflitos << endl;
+                // file_conflitos << "caso 3: " << endl;
+                for (int j_ = 0; j_ < inst_.n(); j_++)
                 {
-                    file_cliques << names[clq->elements[j]] << "[" << clq->elements[j] << "], " ;
+                    for (int var : process[j_][m0 + 1][t])
+                    {
+                        if (var == idx)
+                            continue;
+                        //file_conflitos << names[var] << " ";
+                        conflitos.insert(var);
+                    }
                 }
-                file_cliques << endl;
+                file_conflitos << endl;
+
+                // mostra conflitos
+                //file_conflitos << "todos os conflitos: " << endl;
+                //file_conflitos << names[idx] << " = ";
+                vector<int> conflicts(conflitos.begin(),conflitos.end());
+                // for (int var : conflicts)
+                // {
+                //     file_conflitos << names[var] << " ";
+                // }
+                file_conflitos << endl << endl;
+                cgraph_add_node_conflicts(cgraph, idx, &conflicts[0], conflicts.size());
+                // idx = xIdx_[j][m0+1][t][m0+1][t+1];
+                // conflitos.clear();
+                // cgraph_add_node_conflicts(cgraph,idx,&conflitos[0],conflitos.size());
+                //cout << "conflitos adicionados no cgraph" << endl;
+                //getchar();
             }
-            file_cliques.close();
-            delete []idxs;
-            delete []coefs;
+        }
+    }
+    file_conflitos.close();
+    clock_t end = clock();
+    cout << "cgraph creation time: " << (double) (end-begin)/CLOCKS_PER_SEC << endl;
+    cgraph_save(cgraph, "cgraph.txt");
+    //cout << indices_conflitos.size() << endl;
+}
+
+void Flow::cliques(int *idxs,double *coefs)
+{
+    clock_t begin = clock();
+    double *x = lp_x(mip);
+    double *rc = lp_reduced_cost(mip);
+
+    // for (unsigned int i = 0; i < names.size(); i++)
+    // {
+    //     if (x[i] != 0 || rc[i] != 0)
+    //         cout << names[i] << " " << i << " " << x[i] << " " << rc[i] << endl;
+    // }
+
+    // cout << endl;
+    vector<double> x_conflitos = vector<double>(names.size() * 2);
+    vector<double> rc_conflitos = vector<double>(names.size() * 2);
+
+    for (unsigned int i = 0; i < names.size(); i++)
+    {
+        x_conflitos[i] = x[i];
+        x_conflitos[i + names.size()] = 1 - x[i];
+        rc_conflitos[i] = rc[i];
+        rc_conflitos[i + names.size()] = (-1) * rc[i];
+    }
+
+    CliqueSeparation *clique_sep = clq_sep_create(cgraph);
+    cout << "clique_sep ok" << endl;
+    clq_sep_set_verbose(clique_sep, 'T');
+    clq_sep_set_rc(clique_sep, &rc_conflitos[0]); //&rc_conflitos[0]);
+    cout << "clique_sep_set_rc ok" << endl;
+    //getchar();
+    clq_sep_separate(clique_sep, &x_conflitos[0]); //&x_conflitos[0]);
+    cout << "clique_separate ok" << endl;
+    //getchar();
+    const CliqueSet *cliques = clq_sep_get_cliques(clique_sep);
+    clq_set_print(cliques);
+    //getchar();
+    int qtd_cliques = clq_set_number_of_cliques(cliques);
+    ofstream file_cliques("cliques.txt");
+    file_cliques << "qtd de cliques: " << qtd_cliques << endl;
+
+    for (int i = 0; i < qtd_cliques; i++)
+    {
+        vector< int > idx;
+        vector< double > coef;
+
+        const IntSet *clq = clq_set_get_clique(cliques, i);
+        file_cliques << "clique " << i << " tamanho " << clq->size << endl;
+        file_cliques << "elementos: ";
+        for (int j = 0; j < clq->size; j++)
+        {
+            idx.push_back( clq->elements[j] );
+            coef.push_back( 1.0 );
+            file_cliques << names[clq->elements[j]] << "[" << clq->elements[j] << "], " ;
+        }
+        file_cliques << endl;
+        lp_add_row( mip, idx, coef, "cortes("+to_string(qtd_cortes)+")", 'L', 1 );
+        qtd_cortes++;
+    }
+    file_cliques.close();
+    string filename = inst_.instanceName()+"_cortes";
+    lp_write_lp(mip, (filename+".lp").c_str());
+    clock_t end = clock();
+    cout << "cuts added: " << qtd_cliques << " time for adding on lp: " << (double) (end-begin)/CLOCKS_PER_SEC << endl;
+    //getchar();
 }
 
 Flow::~Flow()
@@ -552,8 +568,8 @@ void Flow::createCompleteGraphDot()
 
     f << "digraph complete {" << endl;
     //f << "ratio = \"auto\" ;" << endl;
-    f << "rankdir=LR;" << endl
-      << endl;
+    f << "rankdir=LR;" << endl;
+    f << endl;
     for (int m = 0; m <= inst_.m() + 1; m++)
     {
         if (m == 0)
@@ -659,7 +675,6 @@ void Flow::createCompleteGraphDot()
 
 void Flow::optimize(){
     bool continuo = true;
-    bool clique = false;
     bool binario = true;
     if (continuo){
         const int nCols = lp_cols(mip);
@@ -671,10 +686,6 @@ void Flow::optimize(){
             lifting_linear(idxs,coefs);
         }
         //getchar();
-        if (clique)
-        {
-            cliques(idxs,coefs);
-        }
         delete []idxs;
         delete []coefs;
     }
@@ -700,7 +711,7 @@ double Flow::lifting(int c, int *idxs, double *coefs){
         vector<double> coef;
         idx.emplace_back(cIdx_);
         coef.emplace_back(1.0);
-        int idxRow = fim[j];
+        int idxRow = lp_get_constr_by_name(mip,("fim("+to_string(j+1)+")").c_str());//fim[j];
         const int nElements = lp_row(mip, idxRow, idxs, coefs);
         double sol = 0;
 
@@ -725,16 +736,22 @@ double Flow::lifting(int c, int *idxs, double *coefs){
         double violado = sol - c;
         cout << endl;
         cout << "C: " << c << " soma: " << sol << " soma - C: " << violado << endl;
-        lp_remove_row(mip, fim[j]);
+        lp_remove_row(mip, idxRow);
         lp_add_row(mip, idx, coef, "fim(" + to_string(j + 1) + ")", 'G', 0);
+        lp_write_lp(mip, "teste_cb.lp");
+        //getchar();
     }
-    //lp_write_lp(mip, "teste_cb.lp");
+    lp_write_lp(mip, "teste_cb.lp");
     
     lp_optimize_as_continuous(mip);
     return lp_obj_value(mip);
 }
 
 void Flow::lifting_binario(int *idxs, double *coefs){
+    bool clique = true;
+    if (clique){
+        cgraph_creation();
+    }
     clock_t begin = clock();
     lp_optimize_as_continuous(mip);
     int lb = lp_obj_value(mip);
@@ -745,6 +762,10 @@ void Flow::lifting_binario(int *idxs, double *coefs){
     cout << "lb: " << lb << " ub: " << ub << " c: " << c << " bnd: " << bnd << " fabs: " << fabs(lb-bnd) << endl; //<< " floor(bnd):" << floor(bnd) << endl;
     //getchar();
     while (fabs(ub-lb) > 1) {
+        if (clique)
+        {
+            cliques(idxs,coefs);
+        }
         iteracoes++;
         c = ((ub-lb)/2 + lb);
         bnd = lifting(teto(c),&idxs[0],&coefs[0]);
@@ -775,6 +796,10 @@ void Flow::lifting_binario(int *idxs, double *coefs){
 }
 
 void Flow::lifting_linear(int *idxs, double *coefs){
+    bool clique = true;
+    if (clique){
+        cgraph_creation();
+    }
     clock_t begin = clock();
     int iteracoes = 0;
     lp_optimize_as_continuous(mip);
@@ -783,6 +808,10 @@ void Flow::lifting_linear(int *idxs, double *coefs){
     int c = teto(bnd);
 
     while (fabs(bnd - bnd_anterior) > 1e-06) {
+        if (clique)
+        {
+            cliques(idxs,coefs);
+        }
         iteracoes++;
         bnd_anterior = bnd;
         bnd = lifting(c,idxs,coefs);

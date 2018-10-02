@@ -27,15 +27,20 @@ private:
     std::vector< std::vector< std::map< int, std::map< int, std::map< int, int > > > > > xIdx_; // índice dos arcos (y,m0,t0,mf,tf)
     // std::vector < std::string > x11_color_;
 
+    int qtd_cortes = 0;
+
     // void create_x11();
     void createCompleteGraphDot();
 
     template<class T> bool insere_unico(std::vector<T> &vector, T elemento);
 
+    CGraph *cgraph;
 
     void optimize();
 
     void cliques(int *idxs,double *coefs);
+
+    void cgraph_creation();
 
     std::vector< int > fim;
     std::vector< std::string > names;

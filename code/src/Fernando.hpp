@@ -10,9 +10,6 @@ class Fernando{
 public:
     Fernando( const Instance &_inst );
 
-    void optimize();
-
-    void cliques(int *idxs,double *coefs);
 
     virtual ~Fernando();
 private:
@@ -31,8 +28,15 @@ private:
     double lifting(int c, int *idxs, double *coefs);
     void lifting_linear(int *idxs, double *coefs);
     void lifting_binario(int *idxs, double *coefs);
-
+    int qtd_cortes = 0;
     int cIdx_;
     LinearProgram *mip;
     int teto(double v);
+    CGraph *cgraph;
+
+    void optimize();
+
+    void cliques(int *idxs,double *coefs);
+
+    void cgraph_creation();
 };

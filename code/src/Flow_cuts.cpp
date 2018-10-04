@@ -320,6 +320,17 @@ Flow::Flow(const Instance &_inst) : inst_(_inst),
     }
     cout << "processing constraints created" << endl;
 
+    for (int m = 0; m < inst_.m(); m++){
+        for (int j = 0; j < inst_.n(); j++){
+            int m0 = inst_.machine(j, m);
+            int mf = (m == inst_.m() - 1 ? inst_.m() : inst_.machine(j, m + 1));
+            int dur = inst_.time(j, m0); // duration time for machine m0 in job j
+            for (int t = inst_.est(j, m0); t <= inst_.lst(j, m0); t++){
+                
+            }
+        }
+    }
+
     // restrições fim
 
     for (int j = 0; j < inst_.n(); j++){
@@ -470,7 +481,7 @@ void Flow::cgraph_creation()
     file_conflitos.close();
     clock_t end = clock();
     cout << "cgraph creation time: " << (double) (end-begin)/CLOCKS_PER_SEC << endl;
-    cgraph_save(cgraph, "cgraph.txt");
+    //cgraph_save(cgraph, "cgraph.txt");
     //cout << indices_conflitos.size() << endl;
 }
 
@@ -508,11 +519,11 @@ void Flow::cliques(int *idxs,double *coefs)
     cout << "clique_separate ok" << endl;
     //getchar();
     const CliqueSet *cliques = clq_sep_get_cliques(clique_sep);
-    clq_set_print(cliques);
+    //clq_set_print(cliques);
     //getchar();
     int qtd_cliques = clq_set_number_of_cliques(cliques);
-    ofstream file_cliques("cliques.txt");
-    file_cliques << "qtd de cliques: " << qtd_cliques << endl;
+    //ofstream file_cliques("cliques.txt");
+    //file_cliques << "qtd de cliques: " << qtd_cliques << endl;
 
     for (int i = 0; i < qtd_cliques; i++)
     {
@@ -520,19 +531,19 @@ void Flow::cliques(int *idxs,double *coefs)
         vector< double > coef;
 
         const IntSet *clq = clq_set_get_clique(cliques, i);
-        file_cliques << "clique " << i << " tamanho " << clq->size << endl;
-        file_cliques << "elementos: ";
+        //file_cliques << "clique " << i << " tamanho " << clq->size << endl;
+        //file_cliques << "elementos: ";
         for (int j = 0; j < clq->size; j++)
         {
             idx.push_back( clq->elements[j] );
             coef.push_back( 1.0 );
-            file_cliques << names[clq->elements[j]] << "[" << clq->elements[j] << "], " ;
+            //file_cliques << names[clq->elements[j]] << "[" << clq->elements[j] << "], " ;
         }
-        file_cliques << endl;
+        //file_cliques << endl;
         lp_add_row( mip, idx, coef, "cortes("+to_string(qtd_cortes)+")", 'L', 1 );
         qtd_cortes++;
     }
-    file_cliques.close();
+    //file_cliques.close();
     string filename = inst_.instanceName()+"_cortes";
     lp_write_lp(mip, (filename+".lp").c_str());
     clock_t end = clock();
@@ -639,8 +650,7 @@ void Flow::createCompleteGraphDot()
     //     }
     // }
 
-    f << "{rank=same;"
-      << " \"i,1\" }" << endl;
+    f << "{rank=same;" << " \"i,1\" }" << endl;
 
     for (int t = 0; t <= inst_.maxTime(); t++)
     {

@@ -1,181 +1,149 @@
-%Jobs set <0..9>
-%Machines set <0..4>
+%Jobs set <0..5>
+%Machines set <0..5>
 
 %order[Jobs,Machines] < 
-1 4 2 5 3 
-5 3 1 2 4 
-2 3 5 1 4 
-3 2 5 1 4 
-5 1 4 3 2 
-2 1 5 4 3 
-5 2 4 1 3 
-2 1 3 4 5 
-5 1 3 2 4 
-5 3 2 4 1  >
+3 1 2 4 6 5 
+2 3 5 6 1 4 
+3 4 6 1 2 5 
+2 1 3 4 5 6 
+3 2 5 6 1 4 
+2 4 6 1 5 3  >
 
 %time[Jobs,Machines] < 
-20 31 17 87 76 
-24 18 32 81 25 
-58 72 23 99 28 
-45 76 86 90 97 
-42 46 17 48 27 
-98 67 62 27 48 
-80 12 50 19 28 
-94 63 98 50 80 
-75 41 50 55 14 
-61 37 18 79 72  >
+3 6 1 7 6 3 
+10 8 5 4 10 10 
+9 1 5 4 7 8 
+5 5 5 3 8 9 
+3 3 9 1 5 4 
+10 3 1 3 4 9  >
 
-MaxTime: 665
+MaxTime: 60
 Job n, Machine m: est lst
-Job 1, Machine 1: 0 434
-Job 1, Machine 2: 107 541
-Job 1, Machine 3: 214 648
-Job 1, Machine 4: 20 454
-Job 1, Machine 5: 138 572
-Job 2, Machine 1: 57 542
-Job 2, Machine 2: 81 566
-Job 2, Machine 3: 25 510
-Job 2, Machine 4: 99 584
-Job 2, Machine 5: 0 485
-Job 3, Machine 1: 123 508
-Job 3, Machine 2: 0 385
-Job 3, Machine 3: 72 457
-Job 3, Machine 4: 181 566
-Job 3, Machine 5: 95 480
-Job 4, Machine 1: 259 530
-Job 4, Machine 2: 86 357
-Job 4, Machine 3: 0 271
-Job 4, Machine 4: 304 575
-Job 4, Machine 5: 162 433
-Job 5, Machine 1: 27 512
-Job 5, Machine 2: 134 619
-Job 5, Machine 3: 117 602
-Job 5, Machine 4: 69 554
-Job 5, Machine 5: 0 485
-Job 6, Machine 1: 67 430
-Job 6, Machine 2: 0 363
-Job 6, Machine 3: 240 603
-Job 6, Machine 4: 213 576
-Job 6, Machine 5: 165 528
-Job 7, Machine 1: 59 535
-Job 7, Machine 2: 28 504
-Job 7, Machine 3: 139 615
-Job 7, Machine 4: 40 516
-Job 7, Machine 5: 0 476
-Job 8, Machine 1: 63 343
-Job 8, Machine 2: 0 280
-Job 8, Machine 3: 157 437
-Job 8, Machine 4: 255 535
-Job 8, Machine 5: 305 585
-Job 9, Machine 1: 14 444
-Job 9, Machine 2: 139 569
-Job 9, Machine 3: 89 519
-Job 9, Machine 4: 180 610
-Job 9, Machine 5: 0 430
-Job 10, Machine 1: 206 604
-Job 10, Machine 2: 90 488
-Job 10, Machine 3: 72 470
-Job 10, Machine 4: 127 525
-Job 10, Machine 5: 0 398
+Job 1, Machine 1: 1 35
+Job 1, Machine 2: 4 38
+Job 1, Machine 3: 0 34
+Job 1, Machine 4: 10 44
+Job 1, Machine 5: 20 54
+Job 1, Machine 6: 17 51
+Job 2, Machine 1: 33 46
+Job 2, Machine 2: 0 13
+Job 2, Machine 3: 8 21
+Job 2, Machine 4: 43 56
+Job 2, Machine 5: 13 26
+Job 2, Machine 6: 23 36
+Job 3, Machine 1: 17 43
+Job 3, Machine 2: 26 52
+Job 3, Machine 3: 0 26
+Job 3, Machine 4: 5 31
+Job 3, Machine 5: 27 53
+Job 3, Machine 6: 9 35
+Job 4, Machine 1: 5 30
+Job 4, Machine 2: 0 25
+Job 4, Machine 3: 10 35
+Job 4, Machine 4: 15 40
+Job 4, Machine 5: 18 43
+Job 4, Machine 6: 26 51
+Job 5, Machine 1: 21 56
+Job 5, Machine 2: 9 44
+Job 5, Machine 3: 0 35
+Job 5, Machine 4: 24 59
+Job 5, Machine 5: 12 47
+Job 5, Machine 6: 17 52
+Job 6, Machine 1: 15 45
+Job 6, Machine 2: 0 30
+Job 6, Machine 3: 29 59
+Job 6, Machine 4: 3 33
+Job 6, Machine 5: 25 55
+Job 6, Machine 6: 6 36
 
 Job n, Machine i -> Machine j: distance
-Job 1, Machine 1 -> Machine 4: 20
-Job 1, Machine 1 -> Machine 2: 107
-Job 1, Machine 1 -> Machine 5: 138
-Job 1, Machine 1 -> Machine 3: 214
-Job 1, Machine 4 -> Machine 2: 87
-Job 1, Machine 4 -> Machine 5: 118
-Job 1, Machine 4 -> Machine 3: 194
-Job 1, Machine 2 -> Machine 5: 31
-Job 1, Machine 2 -> Machine 3: 107
-Job 1, Machine 5 -> Machine 3: 76
-Job 2, Machine 5 -> Machine 3: 25
-Job 2, Machine 5 -> Machine 1: 57
-Job 2, Machine 5 -> Machine 2: 81
-Job 2, Machine 5 -> Machine 4: 99
-Job 2, Machine 3 -> Machine 1: 32
-Job 2, Machine 3 -> Machine 2: 56
-Job 2, Machine 3 -> Machine 4: 74
-Job 2, Machine 1 -> Machine 2: 24
-Job 2, Machine 1 -> Machine 4: 42
-Job 2, Machine 2 -> Machine 4: 18
-Job 3, Machine 2 -> Machine 3: 72
-Job 3, Machine 2 -> Machine 5: 95
-Job 3, Machine 2 -> Machine 1: 123
-Job 3, Machine 2 -> Machine 4: 181
-Job 3, Machine 3 -> Machine 5: 23
-Job 3, Machine 3 -> Machine 1: 51
-Job 3, Machine 3 -> Machine 4: 109
-Job 3, Machine 5 -> Machine 1: 28
-Job 3, Machine 5 -> Machine 4: 86
-Job 3, Machine 1 -> Machine 4: 58
-Job 4, Machine 3 -> Machine 2: 86
-Job 4, Machine 3 -> Machine 5: 162
-Job 4, Machine 3 -> Machine 1: 259
-Job 4, Machine 3 -> Machine 4: 304
-Job 4, Machine 2 -> Machine 5: 76
-Job 4, Machine 2 -> Machine 1: 173
-Job 4, Machine 2 -> Machine 4: 218
-Job 4, Machine 5 -> Machine 1: 97
-Job 4, Machine 5 -> Machine 4: 142
-Job 4, Machine 1 -> Machine 4: 45
-Job 5, Machine 5 -> Machine 1: 27
-Job 5, Machine 5 -> Machine 4: 69
-Job 5, Machine 5 -> Machine 3: 117
-Job 5, Machine 5 -> Machine 2: 134
-Job 5, Machine 1 -> Machine 4: 42
-Job 5, Machine 1 -> Machine 3: 90
-Job 5, Machine 1 -> Machine 2: 107
-Job 5, Machine 4 -> Machine 3: 48
-Job 5, Machine 4 -> Machine 2: 65
-Job 5, Machine 3 -> Machine 2: 17
-Job 6, Machine 2 -> Machine 1: 67
-Job 6, Machine 2 -> Machine 5: 165
-Job 6, Machine 2 -> Machine 4: 213
-Job 6, Machine 2 -> Machine 3: 240
-Job 6, Machine 1 -> Machine 5: 98
-Job 6, Machine 1 -> Machine 4: 146
-Job 6, Machine 1 -> Machine 3: 173
-Job 6, Machine 5 -> Machine 4: 48
-Job 6, Machine 5 -> Machine 3: 75
-Job 6, Machine 4 -> Machine 3: 27
-Job 7, Machine 5 -> Machine 2: 28
-Job 7, Machine 5 -> Machine 4: 40
-Job 7, Machine 5 -> Machine 1: 59
-Job 7, Machine 5 -> Machine 3: 139
-Job 7, Machine 2 -> Machine 4: 12
-Job 7, Machine 2 -> Machine 1: 31
-Job 7, Machine 2 -> Machine 3: 111
-Job 7, Machine 4 -> Machine 1: 19
-Job 7, Machine 4 -> Machine 3: 99
-Job 7, Machine 1 -> Machine 3: 80
-Job 8, Machine 2 -> Machine 1: 63
-Job 8, Machine 2 -> Machine 3: 157
-Job 8, Machine 2 -> Machine 4: 255
-Job 8, Machine 2 -> Machine 5: 305
-Job 8, Machine 1 -> Machine 3: 94
-Job 8, Machine 1 -> Machine 4: 192
-Job 8, Machine 1 -> Machine 5: 242
-Job 8, Machine 3 -> Machine 4: 98
-Job 8, Machine 3 -> Machine 5: 148
-Job 8, Machine 4 -> Machine 5: 50
-Job 9, Machine 5 -> Machine 1: 14
-Job 9, Machine 5 -> Machine 3: 89
-Job 9, Machine 5 -> Machine 2: 139
-Job 9, Machine 5 -> Machine 4: 180
-Job 9, Machine 1 -> Machine 3: 75
-Job 9, Machine 1 -> Machine 2: 125
-Job 9, Machine 1 -> Machine 4: 166
-Job 9, Machine 3 -> Machine 2: 50
-Job 9, Machine 3 -> Machine 4: 91
-Job 9, Machine 2 -> Machine 4: 41
-Job 10, Machine 5 -> Machine 3: 72
-Job 10, Machine 5 -> Machine 2: 90
-Job 10, Machine 5 -> Machine 4: 127
-Job 10, Machine 5 -> Machine 1: 206
-Job 10, Machine 3 -> Machine 2: 18
-Job 10, Machine 3 -> Machine 4: 55
-Job 10, Machine 3 -> Machine 1: 134
-Job 10, Machine 2 -> Machine 4: 37
-Job 10, Machine 2 -> Machine 1: 116
-Job 10, Machine 4 -> Machine 1: 79
+Job 1, Machine 3 -> Machine 1: 1
+Job 1, Machine 3 -> Machine 2: 4
+Job 1, Machine 3 -> Machine 4: 10
+Job 1, Machine 3 -> Machine 6: 17
+Job 1, Machine 3 -> Machine 5: 20
+Job 1, Machine 1 -> Machine 2: 3
+Job 1, Machine 1 -> Machine 4: 9
+Job 1, Machine 1 -> Machine 6: 16
+Job 1, Machine 1 -> Machine 5: 19
+Job 1, Machine 2 -> Machine 4: 6
+Job 1, Machine 2 -> Machine 6: 13
+Job 1, Machine 2 -> Machine 5: 16
+Job 1, Machine 4 -> Machine 6: 7
+Job 1, Machine 4 -> Machine 5: 10
+Job 1, Machine 6 -> Machine 5: 3
+Job 2, Machine 2 -> Machine 3: 8
+Job 2, Machine 2 -> Machine 5: 13
+Job 2, Machine 2 -> Machine 6: 23
+Job 2, Machine 2 -> Machine 1: 33
+Job 2, Machine 2 -> Machine 4: 43
+Job 2, Machine 3 -> Machine 5: 5
+Job 2, Machine 3 -> Machine 6: 15
+Job 2, Machine 3 -> Machine 1: 25
+Job 2, Machine 3 -> Machine 4: 35
+Job 2, Machine 5 -> Machine 6: 10
+Job 2, Machine 5 -> Machine 1: 20
+Job 2, Machine 5 -> Machine 4: 30
+Job 2, Machine 6 -> Machine 1: 10
+Job 2, Machine 6 -> Machine 4: 20
+Job 2, Machine 1 -> Machine 4: 10
+Job 3, Machine 3 -> Machine 4: 5
+Job 3, Machine 3 -> Machine 6: 9
+Job 3, Machine 3 -> Machine 1: 17
+Job 3, Machine 3 -> Machine 2: 26
+Job 3, Machine 3 -> Machine 5: 27
+Job 3, Machine 4 -> Machine 6: 4
+Job 3, Machine 4 -> Machine 1: 12
+Job 3, Machine 4 -> Machine 2: 21
+Job 3, Machine 4 -> Machine 5: 22
+Job 3, Machine 6 -> Machine 1: 8
+Job 3, Machine 6 -> Machine 2: 17
+Job 3, Machine 6 -> Machine 5: 18
+Job 3, Machine 1 -> Machine 2: 9
+Job 3, Machine 1 -> Machine 5: 10
+Job 3, Machine 2 -> Machine 5: 1
+Job 4, Machine 2 -> Machine 1: 5
+Job 4, Machine 2 -> Machine 3: 10
+Job 4, Machine 2 -> Machine 4: 15
+Job 4, Machine 2 -> Machine 5: 18
+Job 4, Machine 2 -> Machine 6: 26
+Job 4, Machine 1 -> Machine 3: 5
+Job 4, Machine 1 -> Machine 4: 10
+Job 4, Machine 1 -> Machine 5: 13
+Job 4, Machine 1 -> Machine 6: 21
+Job 4, Machine 3 -> Machine 4: 5
+Job 4, Machine 3 -> Machine 5: 8
+Job 4, Machine 3 -> Machine 6: 16
+Job 4, Machine 4 -> Machine 5: 3
+Job 4, Machine 4 -> Machine 6: 11
+Job 4, Machine 5 -> Machine 6: 8
+Job 5, Machine 3 -> Machine 2: 9
+Job 5, Machine 3 -> Machine 5: 12
+Job 5, Machine 3 -> Machine 6: 17
+Job 5, Machine 3 -> Machine 1: 21
+Job 5, Machine 3 -> Machine 4: 24
+Job 5, Machine 2 -> Machine 5: 3
+Job 5, Machine 2 -> Machine 6: 8
+Job 5, Machine 2 -> Machine 1: 12
+Job 5, Machine 2 -> Machine 4: 15
+Job 5, Machine 5 -> Machine 6: 5
+Job 5, Machine 5 -> Machine 1: 9
+Job 5, Machine 5 -> Machine 4: 12
+Job 5, Machine 6 -> Machine 1: 4
+Job 5, Machine 6 -> Machine 4: 7
+Job 5, Machine 1 -> Machine 4: 3
+Job 6, Machine 2 -> Machine 4: 3
+Job 6, Machine 2 -> Machine 6: 6
+Job 6, Machine 2 -> Machine 1: 15
+Job 6, Machine 2 -> Machine 5: 25
+Job 6, Machine 2 -> Machine 3: 29
+Job 6, Machine 4 -> Machine 6: 3
+Job 6, Machine 4 -> Machine 1: 12
+Job 6, Machine 4 -> Machine 5: 22
+Job 6, Machine 4 -> Machine 3: 26
+Job 6, Machine 6 -> Machine 1: 9
+Job 6, Machine 6 -> Machine 5: 19
+Job 6, Machine 6 -> Machine 3: 23
+Job 6, Machine 1 -> Machine 5: 10
+Job 6, Machine 1 -> Machine 3: 14
+Job 6, Machine 5 -> Machine 3: 4

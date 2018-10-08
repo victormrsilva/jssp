@@ -56,7 +56,7 @@ int main( int argc, char **argv )
         cerr << "F for Flow " << endl;
         cerr << "C for Compact (BigM) " << endl;
         cerr << "K for Kondilli " << endl;
-        cerr << "Fe for Fernadno " << endl;
+        cerr << "Fe for Fernando " << endl;
         exit(EXIT_FAILURE);
     }
 

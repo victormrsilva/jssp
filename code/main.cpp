@@ -25,7 +25,7 @@ constexpr unsigned int str2int(const char* str, int h = 0){
     return !str[h] ? 5381 : (str2int(str, h+1) * 33) ^ str[h];
 }
 
-int RandomNumber () { return (std::rand()%10)+1; }
+int RandomNumber () { return (std::rand()%5)+1; }
 
 void geraInstancias( string filename, int tamanho){
     vector<int> machines(tamanho);
@@ -71,7 +71,7 @@ int main( int argc, char **argv )
         int max = 0;
         for (int i = 0; i < 50; i++){
             string filename = "vi"+to_string(i);
-            geraInstancias(filename,4);
+            geraInstancias(filename,3);
             Instance inst(filename,90,1);
             Gera mip( inst );
             double valor = mip.execute();

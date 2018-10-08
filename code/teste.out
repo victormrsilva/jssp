@@ -1,0 +1,2954 @@
+there are 3 jobs and 3 machines.
+Academic license - for non-commercial use only
+Number of variables: 1450
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 1004 rows, 1450 columns and 5399 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 259 rows and 249 columns
+Presolve time: 0.01s
+Presolved: 745 rows, 1201 columns, 4935 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   3.081250e+01   0.000000e+00      0s
+      44    1.1111111e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 44 iterations and 0.01 seconds
+Optimal objective  1.111111111e+01
+Continuo = 11.1111
+Optimize a model with 1004 rows, 1450 columns and 5399 nonzeros
+Variable types: 0 continuous, 1450 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 276 rows and 263 columns
+Presolve time: 0.04s
+Presolved: 728 rows, 1187 columns, 4840 nonzeros
+Variable types: 0 continuous, 1187 integer (1186 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 88.0000000
+Found heuristic solution: objective 63.0000000
+Found heuristic solution: objective 12.0000000
+
+Root relaxation: infeasible, 10 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 infeasible    0        12.00000   12.00000  0.00%     -    0s
+
+Explored 0 nodes (10 simplex iterations) in 0.05 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 4: 12 63 88 89 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.200000000000e+01, best bound 1.200000000000e+01, gap 0.0000%
+Inteiro = 12
+Diferença = 0.888889
+there are 3 jobs and 3 machines.
+Number of variables: 1462
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 1003 rows, 1462 columns and 5275 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 260 rows and 253 columns
+Presolve time: 0.01s
+Presolved: 743 rows, 1209 columns, 4807 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   8.400000e+01   0.000000e+00      0s
+     104    1.2104167e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 104 iterations and 0.01 seconds
+Optimal objective  1.210416667e+01
+Continuo = 12.1042
+Optimize a model with 1003 rows, 1462 columns and 5275 nonzeros
+Variable types: 0 continuous, 1462 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 266 rows and 261 columns
+Presolve time: 0.03s
+Presolved: 737 rows, 1201 columns, 4720 nonzeros
+Variable types: 0 continuous, 1201 integer (1200 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 88.0000000
+Found heuristic solution: objective 63.0000000
+Found heuristic solution: objective 14.0000000
+
+Root relaxation: infeasible, 37 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 infeasible    0        14.00000   14.00000  0.00%     -    0s
+
+Explored 0 nodes (37 simplex iterations) in 0.04 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 4: 14 63 88 89 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.400000000000e+01, best bound 1.400000000000e+01, gap 0.0000%
+Inteiro = 14
+Diferença = 1.89583
+there are 3 jobs and 3 machines.
+Number of variables: 1432
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 994 rows, 1432 columns and 5557 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 255 rows and 248 columns
+Presolve time: 0.01s
+Presolved: 739 rows, 1184 columns, 5105 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   3.081250e+01   0.000000e+00      0s
+      87    1.2933333e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 87 iterations and 0.01 seconds
+Optimal objective  1.293333333e+01
+Continuo = 12.9333
+Optimize a model with 994 rows, 1432 columns and 5557 nonzeros
+Variable types: 0 continuous, 1432 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 275 rows and 261 columns
+Presolve time: 0.03s
+Presolved: 719 rows, 1171 columns, 4991 nonzeros
+Variable types: 0 continuous, 1171 integer (1170 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 88.0000000
+Found heuristic solution: objective 66.0000000
+Found heuristic solution: objective 14.0000000
+
+Root relaxation: infeasible, 22 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 infeasible    0        14.00000   14.00000  0.00%     -    0s
+
+Explored 0 nodes (22 simplex iterations) in 0.04 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 4: 14 66 88 89 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.400000000000e+01, best bound 1.400000000000e+01, gap 0.0000%
+Inteiro = 14
+Diferença = 1.06667
+there are 3 jobs and 3 machines.
+Number of variables: 1516
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 1032 rows, 1516 columns and 4717 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 267 rows and 260 columns
+Presolve time: 0.01s
+Presolved: 765 rows, 1256 columns, 4217 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   3.650000e+01   0.000000e+00      0s
+     100    8.3750000e+00   0.000000e+00   0.000000e+00      0s
+
+Solved in 100 iterations and 0.01 seconds
+Optimal objective  8.375000000e+00
+Continuo = 8.375
+Optimize a model with 1032 rows, 1516 columns and 4717 nonzeros
+Variable types: 0 continuous, 1516 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 272 rows and 266 columns
+Presolve time: 0.03s
+Presolved: 760 rows, 1250 columns, 4178 nonzeros
+Variable types: 0 continuous, 1250 integer (1249 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 88.0000000
+Found heuristic solution: objective 63.0000000
+Found heuristic solution: objective 11.0000000
+Found heuristic solution: objective 10.0000000
+
+Root relaxation: infeasible, 44 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 infeasible    0        10.00000   10.00000  0.00%     -    0s
+
+Explored 0 nodes (44 simplex iterations) in 0.04 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 5: 10 11 63 ... 89
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.000000000000e+01, best bound 1.000000000000e+01, gap 0.0000%
+Inteiro = 10
+Diferença = 1.625
+there are 3 jobs and 3 machines.
+Number of variables: 1432
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 987 rows, 1432 columns and 5569 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 251 rows and 245 columns
+Presolve time: 0.01s
+Presolved: 736 rows, 1187 columns, 5105 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   6.812500e+01   0.000000e+00      0s
+     104    1.4217949e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 104 iterations and 0.01 seconds
+Optimal objective  1.421794872e+01
+Continuo = 14.2179
+Optimize a model with 987 rows, 1432 columns and 5569 nonzeros
+Variable types: 0 continuous, 1432 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 268 rows and 257 columns
+Presolve time: 0.04s
+Presolved: 719 rows, 1175 columns, 5014 nonzeros
+Variable types: 0 continuous, 1175 integer (1174 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 88.0000000
+Found heuristic solution: objective 65.0000000
+Found heuristic solution: objective 21.0000000
+Found heuristic solution: objective 20.0000000
+
+Root relaxation: objective 1.445902e+01, 112 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   14.45902    0   40   20.00000   14.45902  27.7%     -    0s
+H    0     0                      17.0000000   14.45902  14.9%     -    0s
+     0     0     cutoff    0        17.00000   17.00000  0.00%     -    0s
+     0     0     cutoff    0        17.00000   17.00000  0.00%     -    0s
+
+Cutting planes:
+  Clique: 1
+  Zero half: 4
+
+Explored 1 nodes (138 simplex iterations) in 0.07 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 6: 17 20 21 ... 89
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.700000000000e+01, best bound 1.700000000000e+01, gap 0.0000%
+Inteiro = 17
+Diferença = 2.78205
+there are 3 jobs and 3 machines.
+Number of variables: 1426
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 991 rows, 1426 columns and 5627 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 258 rows and 246 columns
+Presolve time: 0.01s
+Presolved: 733 rows, 1180 columns, 5162 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   3.625000e+01   0.000000e+00      0s
+      68    1.3476471e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 68 iterations and 0.01 seconds
+Optimal objective  1.347647059e+01
+Continuo = 13.4765
+Optimize a model with 991 rows, 1426 columns and 5627 nonzeros
+Variable types: 0 continuous, 1426 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 277 rows and 262 columns
+Presolve time: 0.04s
+Presolved: 714 rows, 1164 columns, 5076 nonzeros
+Variable types: 0 continuous, 1164 integer (1163 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 88.0000000
+Found heuristic solution: objective 65.0000000
+Found heuristic solution: objective 20.0000000
+Found heuristic solution: objective 19.0000000
+
+Root relaxation: objective 1.393750e+01, 88 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   14.22222    0   22   19.00000   14.22222  25.1%     -    0s
+H    0     0                      17.0000000   14.22222  16.3%     -    0s
+H    0     0                      16.0000000   14.22222  11.1%     -    0s
+     0     0     cutoff    0        16.00000   16.00000  0.00%     -    0s
+     0     0     cutoff    0        16.00000   16.00000  0.00%     -    0s
+
+Cutting planes:
+  Clique: 1
+
+Explored 1 nodes (113 simplex iterations) in 0.06 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 7: 16 17 19 ... 89
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.600000000000e+01, best bound 1.600000000000e+01, gap 0.0000%
+Inteiro = 16
+Diferença = 2.52353
+there are 3 jobs and 3 machines.
+Number of variables: 1408
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 977 rows, 1408 columns and 5793 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 250 rows and 243 columns
+Presolve time: 0.01s
+Presolved: 727 rows, 1165 columns, 5348 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   8.412500e+01   0.000000e+00      0s
+     101    1.4693694e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 101 iterations and 0.01 seconds
+Optimal objective  1.469369369e+01
+Continuo = 14.6937
+Optimize a model with 977 rows, 1408 columns and 5793 nonzeros
+Variable types: 0 continuous, 1408 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 268 rows and 250 columns
+Presolve time: 0.04s
+Presolved: 709 rows, 1158 columns, 5245 nonzeros
+Variable types: 0 continuous, 1158 integer (1157 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 88.0000000
+Found heuristic solution: objective 65.0000000
+Found heuristic solution: objective 22.0000000
+Found heuristic solution: objective 21.0000000
+
+Root relaxation: objective 1.477249e+01, 149 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   15.18182    0   43   21.00000   15.18182  27.7%     -    0s
+H    0     0                      20.0000000   15.18182  24.1%     -    0s
+H    0     0                      19.0000000   15.18182  20.1%     -    0s
+     0     0     cutoff    0        19.00000   19.00000  0.00%     -    0s
+     0     0     cutoff    0        19.00000   19.00000  0.00%     -    0s
+
+Cutting planes:
+  Gomory: 1
+  Clique: 4
+  Zero half: 4
+
+Explored 1 nodes (220 simplex iterations) in 0.07 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 7: 19 20 21 ... 89
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.900000000000e+01, best bound 1.900000000000e+01, gap 0.0000%
+Inteiro = 19
+Diferença = 4.30631
+there are 3 jobs and 3 machines.
+Number of variables: 1444
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 1000 rows, 1444 columns and 5409 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 260 rows and 250 columns
+Presolve time: 0.01s
+Presolved: 740 rows, 1194 columns, 4945 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   6.262500e+01   0.000000e+00      0s
+      13    1.5000000e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 13 iterations and 0.01 seconds
+Optimal objective  1.500000000e+01
+Continuo = 15
+Optimize a model with 1000 rows, 1444 columns and 5409 nonzeros
+Variable types: 0 continuous, 1444 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 275 rows and 265 columns
+Presolve time: 0.04s
+Presolved: 725 rows, 1179 columns, 4826 nonzeros
+Variable types: 0 continuous, 1179 integer (1178 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 88.0000000
+Found heuristic solution: objective 64.0000000
+Found heuristic solution: objective 15.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.04 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 4: 15 64 88 89 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.500000000000e+01, best bound 1.500000000000e+01, gap 0.0000%
+Inteiro = 15
+Diferença = 0
+there are 3 jobs and 3 machines.
+Number of variables: 1462
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 1010 rows, 1462 columns and 5283 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 260 rows and 252 columns
+Presolve time: 0.01s
+Presolved: 750 rows, 1210 columns, 4810 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   3.081250e+01   0.000000e+00      0s
+      65    1.1000000e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 65 iterations and 0.01 seconds
+Optimal objective  1.100000000e+01
+Continuo = 11
+Optimize a model with 1010 rows, 1462 columns and 5283 nonzeros
+Variable types: 0 continuous, 1462 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 275 rows and 263 columns
+Presolve time: 0.03s
+Presolved: 735 rows, 1199 columns, 4734 nonzeros
+Variable types: 0 continuous, 1199 integer (1198 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 88.0000000
+Found heuristic solution: objective 64.0000000
+Found heuristic solution: objective 17.0000000
+Found heuristic solution: objective 16.0000000
+
+Root relaxation: objective 1.109091e+01, 95 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   11.30769    0   27   16.00000   11.30769  29.3%     -    0s
+H    0     0                      12.0000000   11.30769  5.77%     -    0s
+
+Explored 1 nodes (121 simplex iterations) in 0.05 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 6: 12 16 17 ... 89
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.200000000000e+01, best bound 1.200000000000e+01, gap 0.0000%
+Inteiro = 12
+Diferença = 1
+there are 3 jobs and 3 machines.
+Number of variables: 1408
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 983 rows, 1408 columns and 5781 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 252 rows and 244 columns
+Presolve time: 0.01s
+Presolved: 731 rows, 1164 columns, 5343 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   5.212500e+01   0.000000e+00      0s
+      27    1.4000000e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 27 iterations and 0.01 seconds
+Optimal objective  1.400000000e+01
+Continuo = 14
+Optimize a model with 983 rows, 1408 columns and 5781 nonzeros
+Variable types: 0 continuous, 1408 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 278 rows and 257 columns
+Presolve time: 0.04s
+Presolved: 705 rows, 1151 columns, 5191 nonzeros
+Variable types: 0 continuous, 1151 integer (1150 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 88.0000000
+Found heuristic solution: objective 67.0000000
+Found heuristic solution: objective 17.0000000
+
+Root relaxation: objective 1.500000e+01, 36 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0      15.0000000   15.00000  0.00%     -    0s
+
+Explored 0 nodes (36 simplex iterations) in 0.04 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 5: 15 17 67 ... 89
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.500000000000e+01, best bound 1.500000000000e+01, gap 0.0000%
+Inteiro = 15
+Diferença = 1
+there are 3 jobs and 3 machines.
+Number of variables: 1462
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 1002 rows, 1462 columns and 5263 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 257 rows and 251 columns
+Presolve time: 0.01s
+Presolved: 745 rows, 1211 columns, 4789 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   4.662500e+01   0.000000e+00      0s
+     102    1.2557214e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 102 iterations and 0.01 seconds
+Optimal objective  1.255721393e+01
+Continuo = 12.5572
+Optimize a model with 1002 rows, 1462 columns and 5263 nonzeros
+Variable types: 0 continuous, 1462 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 259 rows and 253 columns
+Presolve time: 0.03s
+Presolved: 743 rows, 1209 columns, 4753 nonzeros
+Variable types: 0 continuous, 1209 integer (1208 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 88.0000000
+Found heuristic solution: objective 64.0000000
+Found heuristic solution: objective 19.0000000
+
+Root relaxation: objective 1.274648e+01, 121 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   13.12500    0   35   19.00000   13.12500  30.9%     -    0s
+H    0     0                      18.0000000   13.12500  27.1%     -    0s
+     0     0   14.00000    0   29   18.00000   14.00000  22.2%     -    0s
+H    0     0                      17.0000000   14.00000  17.6%     -    0s
+     0     0   14.72727    0   30   17.00000   14.72727  13.4%     -    0s
+H    0     0                      16.0000000   14.72727  7.95%     -    0s
+     0     0 infeasible    0        16.00000   16.00000  0.00%     -    0s
+     0     0 infeasible    0        16.00000   16.00000  0.00%     -    0s
+
+Cutting planes:
+  Gomory: 1
+  Implied bound: 1
+  Clique: 1
+
+Explored 1 nodes (458 simplex iterations) in 0.15 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 7: 16 17 18 ... 89
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.600000000000e+01, best bound 1.600000000000e+01, gap 0.0000%
+Inteiro = 16
+Diferença = 3.44279
+there are 3 jobs and 3 machines.
+Number of variables: 1450
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 999 rows, 1450 columns and 5397 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 259 rows and 248 columns
+Presolve time: 0.01s
+Presolved: 740 rows, 1202 columns, 4929 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   6.562500e+01   0.000000e+00      0s
+      97    1.2376471e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 97 iterations and 0.01 seconds
+Optimal objective  1.237647059e+01
+Continuo = 12.3765
+Optimize a model with 999 rows, 1450 columns and 5397 nonzeros
+Variable types: 0 continuous, 1450 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 267 rows and 253 columns
+Presolve time: 0.03s
+Presolved: 732 rows, 1197 columns, 4864 nonzeros
+Variable types: 0 continuous, 1197 integer (1196 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 16.0000000
+Found heuristic solution: objective 15.0000000
+
+Root relaxation: objective 1.400000e+01, 69 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0      14.0000000   14.00000  0.00%     -    0s
+
+Explored 0 nodes (69 simplex iterations) in 0.04 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 4: 14 15 16 89 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.400000000000e+01, best bound 1.400000000000e+01, gap 0.0000%
+Inteiro = 14
+Diferença = 1.62353
+there are 3 jobs and 3 machines.
+Number of variables: 1474
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 1015 rows, 1474 columns and 5161 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 269 rows and 254 columns
+Presolve time: 0.01s
+Presolved: 746 rows, 1220 columns, 4673 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   2.512500e+01   0.000000e+00      0s
+      91    1.1125000e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 91 iterations and 0.01 seconds
+Optimal objective  1.112500000e+01
+Continuo = 11.125
+Optimize a model with 1015 rows, 1474 columns and 5161 nonzeros
+Variable types: 0 continuous, 1474 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 283 rows and 275 columns
+Presolve time: 0.05s
+Presolved: 732 rows, 1199 columns, 4582 nonzeros
+Variable types: 0 continuous, 1199 integer (1198 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 88.0000000
+Found heuristic solution: objective 64.0000000
+Found heuristic solution: objective 18.0000000
+Found heuristic solution: objective 17.0000000
+
+Root relaxation: objective 1.157895e+01, 100 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   11.57895    0   26   17.00000   11.57895  31.9%     -    0s
+H    0     0                      14.0000000   11.57895  17.3%     -    0s
+     0     0 infeasible    0        14.00000   14.00000  0.00%     -    0s
+     0     0 infeasible    0        14.00000   14.00000  0.00%     -    0s
+
+Cutting planes:
+  Clique: 1
+  Zero half: 2
+
+Explored 1 nodes (136 simplex iterations) in 0.08 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 6: 14 17 18 ... 89
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.400000000000e+01, best bound 1.400000000000e+01, gap 0.0000%
+Inteiro = 14
+Diferença = 2.875
+there are 3 jobs and 3 machines.
+Number of variables: 1420
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 986 rows, 1420 columns and 5683 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 256 rows and 246 columns
+Presolve time: 0.01s
+Presolved: 730 rows, 1174 columns, 5234 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   1.001250e+02   0.000000e+00      0s
+     103    1.4545455e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 103 iterations and 0.01 seconds
+Optimal objective  1.454545455e+01
+Continuo = 14.5455
+Optimize a model with 986 rows, 1420 columns and 5683 nonzeros
+Variable types: 0 continuous, 1420 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 282 rows and 266 columns
+Presolve time: 0.04s
+Presolved: 704 rows, 1154 columns, 5080 nonzeros
+Variable types: 0 continuous, 1154 integer (1153 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 88.0000000
+Found heuristic solution: objective 65.0000000
+Found heuristic solution: objective 19.0000000
+Found heuristic solution: objective 18.0000000
+
+Root relaxation: objective 1.700000e+01, 71 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0      17.0000000   17.00000  0.00%     -    0s
+
+Explored 0 nodes (71 simplex iterations) in 0.05 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 6: 17 18 19 ... 89
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.700000000000e+01, best bound 1.700000000000e+01, gap 0.0000%
+Inteiro = 17
+Diferença = 2.45455
+there are 3 jobs and 3 machines.
+Number of variables: 1444
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 991 rows, 1444 columns and 5457 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 255 rows and 247 columns
+Presolve time: 0.01s
+Presolved: 736 rows, 1197 columns, 4993 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   1.480000e+02   0.000000e+00      0s
+      87    1.3200000e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 87 iterations and 0.01 seconds
+Optimal objective  1.320000000e+01
+Continuo = 13.2
+Optimize a model with 991 rows, 1444 columns and 5457 nonzeros
+Variable types: 0 continuous, 1444 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 265 rows and 251 columns
+Presolve time: 0.05s
+Presolved: 726 rows, 1193 columns, 4909 nonzeros
+Variable types: 0 continuous, 1193 integer (1192 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 63.0000000
+Found heuristic solution: objective 16.0000000
+
+Root relaxation: infeasible, 38 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 infeasible    0        16.00000   16.00000  0.00%     -    0s
+
+Explored 0 nodes (38 simplex iterations) in 0.06 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 3: 16 63 89 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.600000000000e+01, best bound 1.600000000000e+01, gap 0.0000%
+Inteiro = 16
+Diferença = 2.8
+there are 3 jobs and 3 machines.
+Number of variables: 1414
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 982 rows, 1414 columns and 5739 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 250 rows and 244 columns
+Presolve time: 0.01s
+Presolved: 732 rows, 1170 columns, 5292 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   6.812500e+01   0.000000e+00      0s
+      99    1.5539683e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 99 iterations and 0.01 seconds
+Optimal objective  1.553968254e+01
+Continuo = 15.5397
+Optimize a model with 982 rows, 1414 columns and 5739 nonzeros
+Variable types: 0 continuous, 1414 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 284 rows and 270 columns
+Presolve time: 0.05s
+Presolved: 698 rows, 1144 columns, 5122 nonzeros
+Variable types: 0 continuous, 1144 integer (1143 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 88.0000000
+Found heuristic solution: objective 65.0000000
+Found heuristic solution: objective 21.0000000
+
+Root relaxation: objective 1.613725e+01, 102 iterations, 0.01 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   16.41176    0   29   21.00000   16.41176  21.8%     -    0s
+H    0     0                      19.0000000   16.41176  13.6%     -    0s
+     0     0 infeasible    0        19.00000   19.00000  0.00%     -    0s
+     0     0 infeasible    0        19.00000   19.00000  0.00%     -    0s
+
+Cutting planes:
+  Clique: 1
+
+Explored 1 nodes (123 simplex iterations) in 0.08 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 5: 19 21 65 ... 89
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.900000000000e+01, best bound 1.900000000000e+01, gap 0.0000%
+Inteiro = 19
+Diferença = 3.46032
+there are 3 jobs and 3 machines.
+Number of variables: 1474
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 1012 rows, 1474 columns and 5149 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 264 rows and 255 columns
+Presolve time: 0.00s
+Presolved: 748 rows, 1219 columns, 4670 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   2.050000e+01   0.000000e+00      0s
+      75    1.1625000e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 75 iterations and 0.01 seconds
+Optimal objective  1.162500000e+01
+Continuo = 11.625
+Optimize a model with 1012 rows, 1474 columns and 5149 nonzeros
+Variable types: 0 continuous, 1474 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 271 rows and 264 columns
+Presolve time: 0.04s
+Presolved: 741 rows, 1210 columns, 4589 nonzeros
+Variable types: 0 continuous, 1210 integer (1209 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 88.0000000
+Found heuristic solution: objective 64.0000000
+Found heuristic solution: objective 14.0000000
+
+Root relaxation: objective 1.200000e+01, 54 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0      12.0000000   12.00000  0.00%     -    0s
+
+Explored 0 nodes (54 simplex iterations) in 0.05 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 5: 12 14 64 ... 89
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.200000000000e+01, best bound 1.200000000000e+01, gap 0.0000%
+Inteiro = 12
+Diferença = 0.375
+there are 3 jobs and 3 machines.
+Number of variables: 1444
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 991 rows, 1444 columns and 5457 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 256 rows and 250 columns
+Presolve time: 0.01s
+Presolved: 735 rows, 1194 columns, 5002 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   1.160000e+02   0.000000e+00      0s
+     110    1.3311881e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 110 iterations and 0.01 seconds
+Optimal objective  1.331188119e+01
+Continuo = 13.3119
+Optimize a model with 991 rows, 1444 columns and 5457 nonzeros
+Variable types: 0 continuous, 1444 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 263 rows and 253 columns
+Presolve time: 0.04s
+Presolved: 728 rows, 1191 columns, 4917 nonzeros
+Variable types: 0 continuous, 1191 integer (1190 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 88.0000000
+Found heuristic solution: objective 63.0000000
+Found heuristic solution: objective 17.0000000
+
+Root relaxation: objective 1.407692e+01, 116 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0      16.0000000   16.00000  0.00%     -    0s
+
+Explored 0 nodes (143 simplex iterations) in 0.06 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 5: 16 17 63 ... 89
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.600000000000e+01, best bound 1.600000000000e+01, gap 0.0000%
+Inteiro = 16
+Diferença = 2.68812
+there are 3 jobs and 3 machines.
+Number of variables: 1432
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 987 rows, 1432 columns and 5561 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 256 rows and 248 columns
+Presolve time: 0.00s
+Presolved: 731 rows, 1184 columns, 5110 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   4.750000e+01   0.000000e+00      0s
+      85    1.3906061e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 85 iterations and 0.01 seconds
+Optimal objective  1.390606061e+01
+Continuo = 13.9061
+Optimize a model with 987 rows, 1432 columns and 5561 nonzeros
+Variable types: 0 continuous, 1432 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 265 rows and 255 columns
+Presolve time: 0.03s
+Presolved: 722 rows, 1177 columns, 5024 nonzeros
+Variable types: 0 continuous, 1177 integer (1176 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 59.0000000
+Found heuristic solution: objective 35.0000000
+Found heuristic solution: objective 21.0000000
+Found heuristic solution: objective 20.0000000
+
+Root relaxation: objective 1.453191e+01, 132 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   15.20000    0   25   20.00000   15.20000  24.0%     -    0s
+H    0     0                      17.0000000   15.20000  10.6%     -    0s
+     0     0     cutoff    0        17.00000   17.00000  0.00%     -    0s
+     0     0     cutoff    0        17.00000   17.00000  0.00%     -    0s
+
+Cutting planes:
+  Clique: 2
+
+Explored 1 nodes (171 simplex iterations) in 0.06 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 6: 17 20 21 ... 89
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.700000000000e+01, best bound 1.700000000000e+01, gap 0.0000%
+Inteiro = 17
+Diferença = 3.09394
+there are 3 jobs and 3 machines.
+Number of variables: 1462
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 1008 rows, 1462 columns and 5283 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 258 rows and 253 columns
+Presolve time: 0.00s
+Presolved: 750 rows, 1209 columns, 4817 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   4.662500e+01   0.000000e+00      0s
+      90    1.2714286e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 90 iterations and 0.01 seconds
+Optimal objective  1.271428571e+01
+Continuo = 12.7143
+Optimize a model with 1008 rows, 1462 columns and 5283 nonzeros
+Variable types: 0 continuous, 1462 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 282 rows and 267 columns
+Presolve time: 0.03s
+Presolved: 726 rows, 1195 columns, 4692 nonzeros
+Variable types: 0 continuous, 1195 integer (1194 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 86.0000000
+Found heuristic solution: objective 85.0000000
+
+Root relaxation: objective 1.286777e+01, 121 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   12.86777    0   21   85.00000   12.86777  84.9%     -    0s
+H    0     0                      17.0000000   12.86777  24.3%     -    0s
+     0     0     cutoff    0        17.00000   17.00000  0.00%     -    0s
+     0     0     cutoff    0        17.00000   17.00000  0.00%     -    0s
+
+Explored 1 nodes (161 simplex iterations) in 0.07 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 4: 17 85 86 89 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.700000000000e+01, best bound 1.700000000000e+01, gap 0.0000%
+Inteiro = 17
+Diferença = 4.28571
+there are 3 jobs and 3 machines.
+Number of variables: 1438
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 995 rows, 1438 columns and 5503 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 255 rows and 249 columns
+Presolve time: 0.01s
+Presolved: 740 rows, 1189 columns, 5051 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   9.456250e+01   0.000000e+00      0s
+      88    1.3989899e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 88 iterations and 0.01 seconds
+Optimal objective  1.398989899e+01
+Continuo = 13.9899
+Optimize a model with 995 rows, 1438 columns and 5503 nonzeros
+Variable types: 0 continuous, 1438 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 283 rows and 268 columns
+Presolve time: 0.04s
+Presolved: 712 rows, 1170 columns, 4922 nonzeros
+Variable types: 0 continuous, 1170 integer (1169 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 88.0000000
+Found heuristic solution: objective 64.0000000
+Found heuristic solution: objective 17.0000000
+
+Root relaxation: objective 1.600000e+01, 73 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0      16.0000000   16.00000  0.00%     -    0s
+
+Explored 0 nodes (73 simplex iterations) in 0.05 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 5: 16 17 64 ... 89
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.600000000000e+01, best bound 1.600000000000e+01, gap 0.0000%
+Inteiro = 16
+Diferença = 2.0101
+there are 3 jobs and 3 machines.
+Number of variables: 1450
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 1002 rows, 1450 columns and 5389 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 258 rows and 248 columns
+Presolve time: 0.01s
+Presolved: 744 rows, 1202 columns, 4920 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   6.256250e+01   0.000000e+00      0s
+      57    1.2888889e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 57 iterations and 0.01 seconds
+Optimal objective  1.288888889e+01
+Continuo = 12.8889
+Optimize a model with 1002 rows, 1450 columns and 5389 nonzeros
+Variable types: 0 continuous, 1450 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 275 rows and 264 columns
+Presolve time: 0.04s
+Presolved: 727 rows, 1186 columns, 4828 nonzeros
+Variable types: 0 continuous, 1186 integer (1185 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 88.0000000
+Found heuristic solution: objective 87.0000000
+Found heuristic solution: objective 86.0000000
+
+Root relaxation: objective 1.325000e+01, 104 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   13.25000    0   17   86.00000   13.25000  84.6%     -    0s
+H    0     0                      14.0000000   13.25000  5.36%     -    0s
+
+Explored 1 nodes (154 simplex iterations) in 0.06 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 5: 14 86 87 ... 89
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.400000000000e+01, best bound 1.400000000000e+01, gap 0.0000%
+Inteiro = 14
+Diferença = 1.11111
+there are 3 jobs and 3 machines.
+Number of variables: 1468
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 1007 rows, 1468 columns and 5207 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 257 rows and 251 columns
+Presolve time: 0.01s
+Presolved: 750 rows, 1217 columns, 4733 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   4.962500e+01   0.000000e+00      0s
+     136    1.1577778e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 136 iterations and 0.01 seconds
+Optimal objective  1.157777778e+01
+Continuo = 11.5778
+Optimize a model with 1007 rows, 1468 columns and 5207 nonzeros
+Variable types: 0 continuous, 1468 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 257 rows and 254 columns
+Presolve time: 0.03s
+Presolved: 750 rows, 1214 columns, 4706 nonzeros
+Variable types: 0 continuous, 1214 integer (1213 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 51.0000000
+Found heuristic solution: objective 32.0000000
+Found heuristic solution: objective 14.0000000
+
+Root relaxation: objective 1.250000e+01, 85 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0      13.0000000   13.00000  0.00%     -    0s
+
+Explored 0 nodes (101 simplex iterations) in 0.05 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 5: 13 14 32 ... 89
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.300000000000e+01, best bound 1.300000000000e+01, gap 0.0000%
+Inteiro = 13
+Diferença = 1.42222
+there are 3 jobs and 3 machines.
+Number of variables: 1456
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 1003 rows, 1456 columns and 5319 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 258 rows and 251 columns
+Presolve time: 0.00s
+Presolved: 745 rows, 1205 columns, 4855 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   7.862500e+01   0.000000e+00      0s
+      62    1.1518519e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 62 iterations and 0.01 seconds
+Optimal objective  1.151851852e+01
+Continuo = 11.5185
+Optimize a model with 1003 rows, 1456 columns and 5319 nonzeros
+Variable types: 0 continuous, 1456 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 259 rows and 250 columns
+Presolve time: 0.04s
+Presolved: 744 rows, 1206 columns, 4800 nonzeros
+Variable types: 0 continuous, 1206 integer (1205 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 88.0000000
+Found heuristic solution: objective 64.0000000
+Found heuristic solution: objective 13.0000000
+
+Root relaxation: infeasible, 18 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 infeasible    0        13.00000   13.00000  0.00%     -    0s
+
+Explored 0 nodes (18 simplex iterations) in 0.04 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 4: 13 64 88 89 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.300000000000e+01, best bound 1.300000000000e+01, gap 0.0000%
+Inteiro = 13
+Diferença = 1.48148
+there are 3 jobs and 3 machines.
+Number of variables: 1432
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 995 rows, 1432 columns and 5541 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 258 rows and 247 columns
+Presolve time: 0.01s
+Presolved: 737 rows, 1185 columns, 5086 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   9.450000e+01   0.000000e+00      0s
+      49    1.4555556e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 49 iterations and 0.01 seconds
+Optimal objective  1.455555556e+01
+Continuo = 14.5556
+Optimize a model with 995 rows, 1432 columns and 5541 nonzeros
+Variable types: 0 continuous, 1432 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 286 rows and 269 columns
+Presolve time: 0.04s
+Presolved: 709 rows, 1163 columns, 4934 nonzeros
+Variable types: 0 continuous, 1163 integer (1162 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 88.0000000
+Found heuristic solution: objective 65.0000000
+Found heuristic solution: objective 19.0000000
+
+Root relaxation: objective 1.500000e+01, 43 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0      15.0000000   15.00000  0.00%     -    0s
+
+Explored 0 nodes (43 simplex iterations) in 0.05 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 5: 15 19 65 ... 89
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.500000000000e+01, best bound 1.500000000000e+01, gap 0.0000%
+Inteiro = 15
+Diferença = 0.444444
+there are 3 jobs and 3 machines.
+Number of variables: 1480
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 1014 rows, 1480 columns and 5083 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 264 rows and 254 columns
+Presolve time: 0.01s
+Presolved: 750 rows, 1226 columns, 4605 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   5.706250e+01   0.000000e+00      0s
+      74    1.1769231e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 74 iterations and 0.01 seconds
+Optimal objective  1.176923077e+01
+Continuo = 11.7692
+Optimize a model with 1014 rows, 1480 columns and 5083 nonzeros
+Variable types: 0 continuous, 1480 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 266 rows and 256 columns
+Presolve time: 0.04s
+Presolved: 748 rows, 1224 columns, 4558 nonzeros
+Variable types: 0 continuous, 1224 integer (1223 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 88.0000000
+Found heuristic solution: objective 62.0000000
+Found heuristic solution: objective 13.0000000
+
+Root relaxation: infeasible, 35 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 infeasible    0        13.00000   13.00000  0.00%     -    0s
+
+Explored 0 nodes (35 simplex iterations) in 0.05 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 4: 13 62 88 89 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.300000000000e+01, best bound 1.300000000000e+01, gap 0.0000%
+Inteiro = 13
+Diferença = 1.23077
+there are 3 jobs and 3 machines.
+Number of variables: 1432
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 989 rows, 1432 columns and 5571 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 254 rows and 247 columns
+Presolve time: 0.00s
+Presolved: 735 rows, 1185 columns, 5110 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   8.412500e+01   0.000000e+00      0s
+      97    1.3651163e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 97 iterations and 0.01 seconds
+Optimal objective  1.365116279e+01
+Continuo = 13.6512
+Optimize a model with 989 rows, 1432 columns and 5571 nonzeros
+Variable types: 0 continuous, 1432 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 276 rows and 264 columns
+Presolve time: 0.04s
+Presolved: 713 rows, 1168 columns, 4997 nonzeros
+Variable types: 0 continuous, 1168 integer (1167 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 88.0000000
+Found heuristic solution: objective 65.0000000
+Found heuristic solution: objective 18.0000000
+
+Root relaxation: objective 1.400000e+01, 73 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0      17.0000000   17.00000  0.00%     -    0s
+
+Explored 0 nodes (115 simplex iterations) in 0.05 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 5: 17 18 65 ... 89
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.700000000000e+01, best bound 1.700000000000e+01, gap 0.0000%
+Inteiro = 17
+Diferença = 3.34884
+there are 3 jobs and 3 machines.
+Number of variables: 1426
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 991 rows, 1426 columns and 5625 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 256 rows and 245 columns
+Presolve time: 0.01s
+Presolved: 735 rows, 1181 columns, 5168 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   3.625000e+01   0.000000e+00      0s
+      88    1.3724138e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 88 iterations and 0.01 seconds
+Optimal objective  1.372413793e+01
+Continuo = 13.7241
+Optimize a model with 991 rows, 1426 columns and 5625 nonzeros
+Variable types: 0 continuous, 1426 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 292 rows and 281 columns
+Presolve time: 0.05s
+Presolved: 699 rows, 1145 columns, 4977 nonzeros
+Variable types: 0 continuous, 1145 integer (1144 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 88.0000000
+Found heuristic solution: objective 66.0000000
+Found heuristic solution: objective 23.0000000
+Found heuristic solution: objective 22.0000000
+
+Root relaxation: objective 1.386047e+01, 74 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   13.86047    0   29   22.00000   13.86047  37.0%     -    0s
+H    0     0                      17.0000000   13.86047  18.5%     -    0s
+H    0     0                      16.0000000   13.86047  13.4%     -    0s
+     0     0     cutoff    0        16.00000   16.00000  0.00%     -    0s
+     0     0     cutoff    0        16.00000   16.00000  0.00%     -    0s
+
+Cutting planes:
+  Clique: 1
+  Zero half: 1
+
+Explored 1 nodes (94 simplex iterations) in 0.07 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 7: 16 17 22 ... 89
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.600000000000e+01, best bound 1.600000000000e+01, gap 0.0000%
+Inteiro = 16
+Diferença = 2.27586
+there are 3 jobs and 3 machines.
+Number of variables: 1444
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 995 rows, 1444 columns and 5439 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 257 rows and 250 columns
+Presolve time: 0.00s
+Presolved: 738 rows, 1194 columns, 4983 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   7.862500e+01   0.000000e+00      0s
+     110    1.3101852e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 110 iterations and 0.01 seconds
+Optimal objective  1.310185185e+01
+Continuo = 13.1019
+Optimize a model with 995 rows, 1444 columns and 5439 nonzeros
+Variable types: 0 continuous, 1444 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 260 rows and 251 columns
+Presolve time: 0.03s
+Presolved: 735 rows, 1193 columns, 4909 nonzeros
+Variable types: 0 continuous, 1193 integer (1192 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 88.0000000
+Found heuristic solution: objective 65.0000000
+Found heuristic solution: objective 15.0000000
+
+Root relaxation: infeasible, 37 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 infeasible    0        15.00000   15.00000  0.00%     -    0s
+
+Explored 0 nodes (37 simplex iterations) in 0.04 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 4: 15 65 88 89 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.500000000000e+01, best bound 1.500000000000e+01, gap 0.0000%
+Inteiro = 15
+Diferença = 1.89815
+there are 3 jobs and 3 machines.
+Number of variables: 1450
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 1000 rows, 1450 columns and 5391 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 256 rows and 250 columns
+Presolve time: 0.01s
+Presolved: 744 rows, 1200 columns, 4933 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   2.062500e+01   0.000000e+00      0s
+     115    1.2606061e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 115 iterations and 0.02 seconds
+Optimal objective  1.260606061e+01
+Continuo = 12.6061
+Optimize a model with 1000 rows, 1450 columns and 5391 nonzeros
+Variable types: 0 continuous, 1450 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 262 rows and 250 columns
+Presolve time: 0.03s
+Presolved: 738 rows, 1200 columns, 4860 nonzeros
+Variable types: 0 continuous, 1200 integer (1199 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 88.0000000
+Found heuristic solution: objective 16.0000000
+Found heuristic solution: objective 15.0000000
+
+Root relaxation: objective 1.300000e+01, 55 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+H    0     0                      13.0000000   12.00000  7.69%     -    0s
+     0     0          -    0        13.00000   13.00000  0.00%     -    0s
+
+Explored 0 nodes (62 simplex iterations) in 0.05 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 5: 13 15 16 ... 89
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.300000000000e+01, best bound 1.300000000000e+01, gap 0.0000%
+Inteiro = 13
+Diferença = 0.393939
+there are 3 jobs and 3 machines.
+Number of variables: 1402
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 965 rows, 1402 columns and 5845 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 248 rows and 242 columns
+Presolve time: 0.01s
+Presolved: 717 rows, 1160 columns, 5407 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   1.800000e+02   0.000000e+00      0s
+      77    1.6550595e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 77 iterations and 0.01 seconds
+Optimal objective  1.655059524e+01
+Continuo = 16.5506
+Optimize a model with 965 rows, 1402 columns and 5845 nonzeros
+Variable types: 0 continuous, 1402 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 267 rows and 253 columns
+Presolve time: 0.04s
+Presolved: 698 rows, 1149 columns, 5265 nonzeros
+Variable types: 0 continuous, 1149 integer (1148 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 21.0000000
+
+Root relaxation: infeasible, 53 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 infeasible    0        21.00000   21.00000  0.00%     -    0s
+
+Explored 0 nodes (53 simplex iterations) in 0.04 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 2: 21 89 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.100000000000e+01, best bound 2.100000000000e+01, gap 0.0000%
+Inteiro = 21
+Diferença = 4.4494
+there are 3 jobs and 3 machines.
+Number of variables: 1390
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 972 rows, 1390 columns and 5939 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 249 rows and 241 columns
+Presolve time: 0.01s
+Presolved: 723 rows, 1149 columns, 5513 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   5.212500e+01   0.000000e+00      0s
+      41    1.6500000e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 41 iterations and 0.01 seconds
+Optimal objective  1.650000000e+01
+Continuo = 16.5
+Optimize a model with 972 rows, 1390 columns and 5939 nonzeros
+Variable types: 0 continuous, 1390 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 322 rows and 326 columns
+Presolve time: 0.07s
+Presolved: 650 rows, 1064 columns, 5017 nonzeros
+Variable types: 0 continuous, 1064 integer (1063 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 88.0000000
+Found heuristic solution: objective 68.0000000
+Found heuristic solution: objective 18.0000000
+
+Root relaxation: infeasible, 4 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 infeasible    0        18.00000   18.00000  0.00%     -    0s
+
+Explored 0 nodes (4 simplex iterations) in 0.08 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 4: 18 68 88 89 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.800000000000e+01, best bound 1.800000000000e+01, gap 0.0000%
+Inteiro = 18
+Diferença = 1.5
+there are 3 jobs and 3 machines.
+Number of variables: 1450
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 1000 rows, 1450 columns and 5397 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 254 rows and 248 columns
+Presolve time: 0.00s
+Presolved: 746 rows, 1202 columns, 4935 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   4.662500e+01   0.000000e+00      0s
+      66    1.1500000e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 66 iterations and 0.01 seconds
+Optimal objective  1.150000000e+01
+Continuo = 11.5
+Optimize a model with 1000 rows, 1450 columns and 5397 nonzeros
+Variable types: 0 continuous, 1450 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 273 rows and 261 columns
+Presolve time: 0.04s
+Presolved: 727 rows, 1189 columns, 4842 nonzeros
+Variable types: 0 continuous, 1189 integer (1188 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 88.0000000
+Found heuristic solution: objective 64.0000000
+Found heuristic solution: objective 63.0000000
+
+Root relaxation: objective 1.180000e+01, 118 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   11.80000    0   15   63.00000   11.80000  81.3%     -    0s
+H    0     0                      12.0000000   11.80000  1.67%     -    0s
+
+Explored 1 nodes (164 simplex iterations) in 0.06 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 5: 12 63 64 ... 89
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.200000000000e+01, best bound 1.200000000000e+01, gap 0.0000%
+Inteiro = 12
+Diferença = 0.5
+there are 3 jobs and 3 machines.
+Number of variables: 1468
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 1012 rows, 1468 columns and 5219 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 263 rows and 250 columns
+Presolve time: 0.00s
+Presolved: 749 rows, 1218 columns, 4737 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   4.106250e+01   0.000000e+00      0s
+      77    1.1857143e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 77 iterations and 0.01 seconds
+Optimal objective  1.185714286e+01
+Continuo = 11.8571
+Optimize a model with 1012 rows, 1468 columns and 5219 nonzeros
+Variable types: 0 continuous, 1468 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 273 rows and 257 columns
+Presolve time: 0.04s
+Presolved: 739 rows, 1211 columns, 4676 nonzeros
+Variable types: 0 continuous, 1211 integer (1210 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 19.0000000
+Found heuristic solution: objective 18.0000000
+
+Root relaxation: objective 1.250000e+01, 71 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   12.50000    0   25   18.00000   12.50000  30.6%     -    0s
+H    0     0                      14.0000000   12.50000  10.7%     -    0s
+
+Cutting planes:
+  Clique: 1
+
+Explored 1 nodes (85 simplex iterations) in 0.06 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 4: 14 18 19 89 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.400000000000e+01, best bound 1.400000000000e+01, gap 0.0000%
+Inteiro = 14
+Diferença = 2.14286
+there are 3 jobs and 3 machines.
+Number of variables: 1456
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 1004 rows, 1456 columns and 5325 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 257 rows and 251 columns
+Presolve time: 0.00s
+Presolved: 747 rows, 1205 columns, 4863 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   4.662500e+01   0.000000e+00      0s
+      98    1.2250000e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 98 iterations and 0.01 seconds
+Optimal objective  1.225000000e+01
+Continuo = 12.25
+Optimize a model with 1004 rows, 1456 columns and 5325 nonzeros
+Variable types: 0 continuous, 1456 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 268 rows and 258 columns
+Presolve time: 0.04s
+Presolved: 736 rows, 1198 columns, 4774 nonzeros
+Variable types: 0 continuous, 1198 integer (1197 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 88.0000000
+Found heuristic solution: objective 64.0000000
+Found heuristic solution: objective 15.0000000
+Found heuristic solution: objective 14.0000000
+
+Root relaxation: objective 1.300000e+01, 42 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0      13.0000000   13.00000  0.00%     -    0s
+
+Explored 0 nodes (42 simplex iterations) in 0.05 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 6: 13 14 15 ... 89
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.300000000000e+01, best bound 1.300000000000e+01, gap 0.0000%
+Inteiro = 13
+Diferença = 0.75
+there are 3 jobs and 3 machines.
+Number of variables: 1480
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 1015 rows, 1480 columns and 5093 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 259 rows and 252 columns
+Presolve time: 0.01s
+Presolved: 756 rows, 1228 columns, 4608 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   2.056250e+01   0.000000e+00      0s
+      49    1.0500000e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 49 iterations and 0.01 seconds
+Optimal objective  1.050000000e+01
+Continuo = 10.5
+Optimize a model with 1015 rows, 1480 columns and 5093 nonzeros
+Variable types: 0 continuous, 1480 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 272 rows and 265 columns
+Presolve time: 0.04s
+Presolved: 743 rows, 1215 columns, 4543 nonzeros
+Variable types: 0 continuous, 1215 integer (1214 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 88.0000000
+Found heuristic solution: objective 64.0000000
+Found heuristic solution: objective 12.0000000
+Found heuristic solution: objective 11.0000000
+
+Root relaxation: infeasible, 5 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 infeasible    0        11.00000   11.00000  0.00%     -    0s
+
+Explored 0 nodes (5 simplex iterations) in 0.05 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 5: 11 12 64 ... 89
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.100000000000e+01, best bound 1.100000000000e+01, gap 0.0000%
+Inteiro = 11
+Diferença = 0.5
+there are 3 jobs and 3 machines.
+Number of variables: 1438
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 990 rows, 1438 columns and 5515 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 260 rows and 248 columns
+Presolve time: 0.00s
+Presolved: 730 rows, 1190 columns, 5059 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   5.600000e+01   0.000000e+00      0s
+      61    1.4866667e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 61 iterations and 0.01 seconds
+Optimal objective  1.486666667e+01
+Continuo = 14.8667
+Optimize a model with 990 rows, 1438 columns and 5515 nonzeros
+Variable types: 0 continuous, 1438 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 273 rows and 261 columns
+Presolve time: 0.03s
+Presolved: 717 rows, 1177 columns, 4938 nonzeros
+Variable types: 0 continuous, 1177 integer (1176 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 83.0000000
+Found heuristic solution: objective 82.0000000
+
+Root relaxation: objective 1.515385e+01, 133 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   15.15385    0   25   82.00000   15.15385  81.5%     -    0s
+H    0     0                      20.0000000   15.15385  24.2%     -    0s
+H    0     0                      19.0000000   15.15385  20.2%     -    0s
+
+Explored 1 nodes (171 simplex iterations) in 0.06 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 5: 19 20 82 ... 89
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.900000000000e+01, best bound 1.900000000000e+01, gap 0.0000%
+Inteiro = 19
+Diferença = 4.13333
+there are 3 jobs and 3 machines.
+Number of variables: 1450
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 1004 rows, 1450 columns and 5397 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 259 rows and 249 columns
+Presolve time: 0.00s
+Presolved: 745 rows, 1201 columns, 4933 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   3.081250e+01   0.000000e+00      0s
+      92    1.2558824e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 92 iterations and 0.01 seconds
+Optimal objective  1.255882353e+01
+Continuo = 12.5588
+Optimize a model with 1004 rows, 1450 columns and 5397 nonzeros
+Variable types: 0 continuous, 1450 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 282 rows and 269 columns
+Presolve time: 0.05s
+Presolved: 722 rows, 1181 columns, 4815 nonzeros
+Variable types: 0 continuous, 1181 integer (1180 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 64.0000000
+Found heuristic solution: objective 16.0000000
+Found heuristic solution: objective 15.0000000
+
+Root relaxation: infeasible, 36 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 infeasible    0        15.00000   15.00000  0.00%     -    0s
+
+Explored 0 nodes (36 simplex iterations) in 0.05 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 4: 15 16 64 89 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.500000000000e+01, best bound 1.500000000000e+01, gap 0.0000%
+Inteiro = 15
+Diferença = 2.44118
+there are 3 jobs and 3 machines.
+Number of variables: 1444
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 990 rows, 1444 columns and 5455 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 254 rows and 248 columns
+Presolve time: 0.01s
+Presolved: 736 rows, 1196 columns, 4999 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   4.662500e+01   0.000000e+00      0s
+     160    1.3517241e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 160 iterations and 0.01 seconds
+Optimal objective  1.351724138e+01
+Continuo = 13.5172
+Optimize a model with 990 rows, 1444 columns and 5455 nonzeros
+Variable types: 0 continuous, 1444 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 266 rows and 258 columns
+Presolve time: 0.04s
+Presolved: 724 rows, 1186 columns, 4907 nonzeros
+Variable types: 0 continuous, 1186 integer (1185 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 17.0000000
+
+Root relaxation: infeasible, 103 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 infeasible    0        17.00000   17.00000  0.00%     -    0s
+
+Explored 0 nodes (103 simplex iterations) in 0.05 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 2: 17 89 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.700000000000e+01, best bound 1.700000000000e+01, gap 0.0000%
+Inteiro = 17
+Diferença = 3.48276
+there are 3 jobs and 3 machines.
+Number of variables: 1432
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 990 rows, 1432 columns and 5573 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 255 rows and 246 columns
+Presolve time: 0.01s
+Presolved: 735 rows, 1186 columns, 5124 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   1.001250e+02   0.000000e+00      0s
+     112    1.3384615e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 112 iterations and 0.01 seconds
+Optimal objective  1.338461538e+01
+Continuo = 13.3846
+Optimize a model with 990 rows, 1432 columns and 5573 nonzeros
+Variable types: 0 continuous, 1432 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 266 rows and 249 columns
+Presolve time: 0.04s
+Presolved: 724 rows, 1183 columns, 5043 nonzeros
+Variable types: 0 continuous, 1183 integer (1182 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 88.0000000
+Found heuristic solution: objective 19.0000000
+Found heuristic solution: objective 18.0000000
+
+Root relaxation: objective 1.386207e+01, 86 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   14.33333    0   20   18.00000   14.33333  20.4%     -    0s
+H    0     0                      15.0000000   14.33333  4.44%     -    0s
+
+Explored 1 nodes (123 simplex iterations) in 0.07 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 5: 15 18 19 ... 89
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.500000000000e+01, best bound 1.500000000000e+01, gap 0.0000%
+Inteiro = 15
+Diferença = 1.61538
+there are 3 jobs and 3 machines.
+Number of variables: 1426
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 982 rows, 1426 columns and 5609 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 251 rows and 245 columns
+Presolve time: 0.00s
+Presolved: 731 rows, 1181 columns, 5159 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   7.862500e+01   0.000000e+00      0s
+     129    1.5395161e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 129 iterations and 0.01 seconds
+Optimal objective  1.539516129e+01
+Continuo = 15.3952
+Optimize a model with 982 rows, 1426 columns and 5609 nonzeros
+Variable types: 0 continuous, 1426 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 269 rows and 259 columns
+Presolve time: 0.04s
+Presolved: 713 rows, 1167 columns, 5041 nonzeros
+Variable types: 0 continuous, 1167 integer (1166 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 88.0000000
+Found heuristic solution: objective 66.0000000
+Found heuristic solution: objective 25.0000000
+Found heuristic solution: objective 24.0000000
+
+Root relaxation: objective 1.565000e+01, 161 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   15.65000    0   40   24.00000   15.65000  34.8%     -    0s
+H    0     0                      23.0000000   15.65000  32.0%     -    0s
+H    0     0                      22.0000000   15.65000  28.9%     -    0s
+     0     0   16.00000    0   45   22.00000   16.00000  27.3%     -    0s
+     0     0   17.00000    0   36   22.00000   17.00000  22.7%     -    0s
+H    0     0                      21.0000000   17.00000  19.0%     -    0s
+H    0     0                      20.0000000   17.00000  15.0%     -    0s
+     0     0 infeasible    0        20.00000   20.00000  0.00%     -    0s
+
+Cutting planes:
+  Gomory: 2
+  Clique: 2
+  Zero half: 6
+
+Explored 1 nodes (655 simplex iterations) in 0.19 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 9: 20 21 22 ... 89
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.000000000000e+01, best bound 2.000000000000e+01, gap 0.0000%
+Inteiro = 20
+Diferença = 4.60484
+there are 3 jobs and 3 machines.
+Number of variables: 1498
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 1022 rows, 1498 columns and 4913 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 264 rows and 257 columns
+Presolve time: 0.00s
+Presolved: 758 rows, 1241 columns, 4424 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   8.400000e+01   0.000000e+00      0s
+      49    8.6857143e+00   0.000000e+00   0.000000e+00      0s
+
+Solved in 49 iterations and 0.01 seconds
+Optimal objective  8.685714286e+00
+Continuo = 8.68571
+Optimize a model with 1022 rows, 1498 columns and 4913 nonzeros
+Variable types: 0 continuous, 1498 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 268 rows and 262 columns
+Presolve time: 0.03s
+Presolved: 754 rows, 1236 columns, 4385 nonzeros
+Variable types: 0 continuous, 1236 integer (1235 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 88.0000000
+Found heuristic solution: objective 63.0000000
+Found heuristic solution: objective 10.0000000
+
+Root relaxation: infeasible, 24 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 infeasible    0        10.00000   10.00000  0.00%     -    0s
+
+Explored 0 nodes (24 simplex iterations) in 0.04 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 4: 10 63 88 89 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.000000000000e+01, best bound 1.000000000000e+01, gap 0.0000%
+Inteiro = 10
+Diferença = 1.31429
+there are 3 jobs and 3 machines.
+Number of variables: 1468
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 1009 rows, 1468 columns and 5203 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 261 rows and 254 columns
+Presolve time: 0.01s
+Presolved: 748 rows, 1214 columns, 4730 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   4.112500e+01   0.000000e+00      0s
+      72    1.2000000e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 72 iterations and 0.01 seconds
+Optimal objective  1.200000000e+01
+Continuo = 12
+Optimize a model with 1009 rows, 1468 columns and 5203 nonzeros
+Variable types: 0 continuous, 1468 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 263 rows and 253 columns
+Presolve time: 0.04s
+Presolved: 746 rows, 1215 columns, 4669 nonzeros
+Variable types: 0 continuous, 1215 integer (1214 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 88.0000000
+Found heuristic solution: objective 62.0000000
+Found heuristic solution: objective 16.0000000
+
+Root relaxation: objective 1.260000e+01, 84 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   12.60000    0   23   16.00000   12.60000  21.3%     -    0s
+H    0     0                      13.0000000   12.60000  3.08%     -    0s
+
+Explored 1 nodes (106 simplex iterations) in 0.06 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 5: 13 16 62 ... 89
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.300000000000e+01, best bound 1.300000000000e+01, gap 0.0000%
+Inteiro = 13
+Diferença = 1
+there are 3 jobs and 3 machines.
+Number of variables: 1438
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 997 rows, 1438 columns and 5511 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 257 rows and 249 columns
+Presolve time: 0.01s
+Presolved: 740 rows, 1189 columns, 5053 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   5.212500e+01   0.000000e+00      0s
+      71    1.3103175e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 71 iterations and 0.01 seconds
+Optimal objective  1.310317460e+01
+Continuo = 13.1032
+Optimize a model with 997 rows, 1438 columns and 5511 nonzeros
+Variable types: 0 continuous, 1438 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 280 rows and 262 columns
+Presolve time: 0.04s
+Presolved: 717 rows, 1176 columns, 4905 nonzeros
+Variable types: 0 continuous, 1176 integer (1175 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 17.0000000
+
+Root relaxation: objective 1.600000e+01, 45 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0      16.0000000   16.00000  0.00%     -    0s
+
+Explored 0 nodes (45 simplex iterations) in 0.05 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 3: 16 17 89 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.600000000000e+01, best bound 1.600000000000e+01, gap 0.0000%
+Inteiro = 16
+Diferença = 2.89683
+there are 3 jobs and 3 machines.
+Number of variables: 1480
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 1017 rows, 1480 columns and 5069 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 261 rows and 255 columns
+Presolve time: 0.01s
+Presolved: 756 rows, 1225 columns, 4578 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   4.106250e+01   0.000000e+00      0s
+      65    1.2138889e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 65 iterations and 0.01 seconds
+Optimal objective  1.213888889e+01
+Continuo = 12.1389
+Optimize a model with 1017 rows, 1480 columns and 5069 nonzeros
+Variable types: 0 continuous, 1480 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 264 rows and 257 columns
+Presolve time: 0.04s
+Presolved: 753 rows, 1223 columns, 4528 nonzeros
+Variable types: 0 continuous, 1223 integer (1222 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 88.0000000
+Found heuristic solution: objective 14.0000000
+Found heuristic solution: objective 13.0000000
+
+Root relaxation: infeasible, 1 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 infeasible    0        13.00000   13.00000  0.00%     -    0s
+
+Explored 0 nodes (1 simplex iterations) in 0.05 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 4: 13 14 88 89 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.300000000000e+01, best bound 1.300000000000e+01, gap 0.0000%
+Inteiro = 13
+Diferença = 0.861111
+there are 3 jobs and 3 machines.
+Number of variables: 1426
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 986 rows, 1426 columns and 5625 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 254 rows and 247 columns
+Presolve time: 0.01s
+Presolved: 732 rows, 1179 columns, 5179 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   8.512500e+01   0.000000e+00      0s
+      97    1.4074074e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 97 iterations and 0.01 seconds
+Optimal objective  1.407407407e+01
+Continuo = 14.0741
+Optimize a model with 986 rows, 1426 columns and 5625 nonzeros
+Variable types: 0 continuous, 1426 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 265 rows and 252 columns
+Presolve time: 0.04s
+Presolved: 721 rows, 1174 columns, 5082 nonzeros
+Variable types: 0 continuous, 1174 integer (1173 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 88.0000000
+Found heuristic solution: objective 65.0000000
+Found heuristic solution: objective 19.0000000
+Found heuristic solution: objective 18.0000000
+
+Root relaxation: objective 1.440000e+01, 97 iterations, 0.01 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0      17.0000000   17.00000  0.00%     -    0s
+
+Explored 0 nodes (128 simplex iterations) in 0.07 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 6: 17 18 19 ... 89
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.700000000000e+01, best bound 1.700000000000e+01, gap 0.0000%
+Inteiro = 17
+Diferença = 2.92593
+there are 3 jobs and 3 machines.
+Number of variables: 1438
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 992 rows, 1438 columns and 5491 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 260 rows and 249 columns
+Presolve time: 0.01s
+Presolved: 732 rows, 1189 columns, 5033 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   4.662500e+01   0.000000e+00      0s
+     102    1.4800000e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 102 iterations and 0.01 seconds
+Optimal objective  1.480000000e+01
+Continuo = 14.8
+Optimize a model with 992 rows, 1438 columns and 5491 nonzeros
+Variable types: 0 continuous, 1438 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 269 rows and 260 columns
+Presolve time: 0.04s
+Presolved: 723 rows, 1178 columns, 4933 nonzeros
+Variable types: 0 continuous, 1178 integer (1177 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 88.0000000
+Found heuristic solution: objective 66.0000000
+Found heuristic solution: objective 23.0000000
+Found heuristic solution: objective 22.0000000
+
+Root relaxation: objective 1.539259e+01, 110 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   15.39259    0   35   22.00000   15.39259  30.0%     -    0s
+H    0     0                      18.0000000   15.39259  14.5%     -    0s
+*    0     0               0      17.0000000   17.00000  0.00%     -    0s
+     0     0          -    0        17.00000   17.00000  0.00%     -    0s
+
+Cutting planes:
+  Clique: 2
+
+Explored 1 nodes (136 simplex iterations) in 0.08 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 7: 17 18 22 ... 89
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.700000000000e+01, best bound 1.700000000000e+01, gap 0.0000%
+Inteiro = 17
+Diferença = 2.2
+there are 3 jobs and 3 machines.
+Number of variables: 1474
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 1006 rows, 1474 columns and 5157 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 258 rows and 252 columns
+Presolve time: 0.00s
+Presolved: 748 rows, 1222 columns, 4681 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   8.400000e+01   0.000000e+00      0s
+     137    1.1454545e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 137 iterations and 0.01 seconds
+Optimal objective  1.145454545e+01
+Continuo = 11.4545
+Optimize a model with 1006 rows, 1474 columns and 5157 nonzeros
+Variable types: 0 continuous, 1474 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 262 rows and 254 columns
+Presolve time: 0.03s
+Presolved: 744 rows, 1220 columns, 4632 nonzeros
+Variable types: 0 continuous, 1220 integer (1219 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 88.0000000
+Found heuristic solution: objective 63.0000000
+Found heuristic solution: objective 17.0000000
+Found heuristic solution: objective 16.0000000
+
+Root relaxation: objective 1.184375e+01, 108 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   11.84375    0   34   16.00000   11.84375  26.0%     -    0s
+H    0     0                      15.0000000   11.84375  21.0%     -    0s
+H    0     0                      14.0000000   11.84375  15.4%     -    0s
+     0     0 infeasible    0        14.00000   14.00000  0.00%     -    0s
+     0     0 infeasible    0        14.00000   14.00000  0.00%     -    0s
+
+Cutting planes:
+  Clique: 7
+  Zero half: 1
+
+Explored 1 nodes (113 simplex iterations) in 0.06 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 7: 14 15 16 ... 89
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.400000000000e+01, best bound 1.400000000000e+01, gap 0.0000%
+Inteiro = 14
+Diferença = 2.54545
+there are 3 jobs and 3 machines.
+Number of variables: 1492
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 1025 rows, 1492 columns and 4975 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 264 rows and 256 columns
+Presolve time: 0.00s
+Presolved: 761 rows, 1236 columns, 4483 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   3.656250e+01   0.000000e+00      0s
+      85    8.6666667e+00   0.000000e+00   0.000000e+00      0s
+
+Solved in 85 iterations and 0.01 seconds
+Optimal objective  8.666666667e+00
+Continuo = 8.66667
+Optimize a model with 1025 rows, 1492 columns and 4975 nonzeros
+Variable types: 0 continuous, 1492 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 272 rows and 263 columns
+Presolve time: 0.04s
+Presolved: 753 rows, 1229 columns, 4434 nonzeros
+Variable types: 0 continuous, 1229 integer (1228 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 83.0000000
+Found heuristic solution: objective 65.0000000
+Found heuristic solution: objective 12.0000000
+Found heuristic solution: objective 11.0000000
+
+Root relaxation: objective 9.000000e+00, 27 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0       9.0000000    9.00000  0.00%     -    0s
+
+Explored 0 nodes (27 simplex iterations) in 0.05 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 6: 9 11 12 ... 89
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 9.000000000000e+00, best bound 9.000000000000e+00, gap 0.0000%
+Inteiro = 9
+Diferença = 0.333333
+there are 3 jobs and 3 machines.
+Number of variables: 1480
+variáveis criadas. Tempo: 0
+initial Gera constraints ok
+final Gera constraints ok
+Gera constraints created
+processing constraints created
+end constraints created
+Optimize a model with 1015 rows, 1480 columns and 5099 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 261 rows and 254 columns
+Presolve time: 0.01s
+Presolved: 754 rows, 1226 columns, 4621 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   5.706250e+01   0.000000e+00      0s
+      80    1.0454545e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 80 iterations and 0.01 seconds
+Optimal objective  1.045454545e+01
+Continuo = 10.4545
+Optimize a model with 1015 rows, 1480 columns and 5099 nonzeros
+Variable types: 0 continuous, 1480 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 9e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 274 rows and 262 columns
+Presolve time: 0.04s
+Presolved: 741 rows, 1218 columns, 4550 nonzeros
+Variable types: 0 continuous, 1218 integer (1217 binary)
+Found heuristic solution: objective 89.0000000
+Found heuristic solution: objective 88.0000000
+Found heuristic solution: objective 63.0000000
+Found heuristic solution: objective 14.0000000
+Found heuristic solution: objective 13.0000000
+
+Root relaxation: objective 1.200000e+01, 28 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0      12.0000000   12.00000  0.00%     -    0s
+
+Explored 0 nodes (28 simplex iterations) in 0.05 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 6: 12 13 14 ... 89
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.200000000000e+01, best bound 1.200000000000e+01, gap 0.0000%
+Inteiro = 12
+Diferença = 1.54545
+Maximo: 40 4.60484

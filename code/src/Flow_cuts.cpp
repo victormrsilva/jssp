@@ -354,7 +354,7 @@ Flow::Flow(const Instance &_inst) : inst_(_inst),
     }
     cout << "end constraints created" << endl;
 
-    lp_write_lp(mip, (inst_.instanceName() + "_packing.lp").c_str()); //inst_.instanceName().c_str() );
+    lp_write_lp(mip, (inst_.instanceName() + "_packing_original.lp").c_str()); //inst_.instanceName().c_str() );
     //lp_optimize(mip);
     //lp_write_sol(mip, "jssp_Flow.sol");
 
@@ -448,16 +448,16 @@ void Flow::cgraph_creation()
                 // caso 3
                 // file_conflitos << endl;
                 // file_conflitos << "caso 3: " << endl;
-                for (int j_ = 0; j_ < inst_.n(); j_++)
-                {
-                    for (int var : process[j_][m0 + 1][t])
-                    {
-                        if (var == idx)
-                            continue;
-                        //file_conflitos << names[var] << " ";
-                        conflitos.insert(var);
-                    }
-                }
+                // for (int j_ = 0; j_ < inst_.n(); j_++)
+                // {
+                //     for (int var : process[j_][m0 + 1][t])
+                //     {
+                //         if (var == idx)
+                //             continue;
+                //         //file_conflitos << names[var] << " ";
+                //         conflitos.insert(var);
+                //     }
+                // }
                 //file_conflitos << endl;
 
                 // mostra conflitos
@@ -549,7 +549,6 @@ void Flow::cliques(int *idxs,double *coefs)
     clock_t end = clock();
     cout << "cuts added: " << qtd_cliques << " time for adding on lp: " << (double) (end-begin)/CLOCKS_PER_SEC << endl;
     cout << "file cliques.txt created. LP " << filename << " created for this iteration. Press enter to continue" << endl;
-    getchar();
 
 }
 
@@ -711,7 +710,7 @@ void Flow::optimize(){
     string filename = inst_.instanceName()+"_packing";
     lp_write_lp(mip, (filename+".lp").c_str());
     //getchar();
-    //lp_optimize(mip);
+    lp_optimize(mip);
 
     //lp_write_lp(mip,"teste_cb.lp");
     lp_write_sol(mip, (filename+".sol").c_str());
@@ -754,11 +753,13 @@ double Flow::lifting(int c, int *idxs, double *coefs){
         //getchar();
     
     }
-    string filename = inst_.instanceName()+"lifting";
+    string filename = inst_.instanceName()+"_lifting";
     lp_write_lp(mip, (filename+".lp").c_str());
     
     lp_optimize_as_continuous(mip);
     lp_write_sol(mip,(filename+".sol").c_str());
+    cout << "Lifting solved for c = " << c << ". Files " << filename+".lp" << " e " << filename+".sol" << " successfully created." << endl;
+    getchar();
     return lp_obj_value(mip);
 }
 

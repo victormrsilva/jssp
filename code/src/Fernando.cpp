@@ -198,8 +198,8 @@ process(vector<vector<vector<vector<int>>>>(inst_.n(), (vector<vector<vector<int
             idx.push_back( fIdx_[i][t] );
             coef.push_back( -1.0 );
 
-            lp_add_row( mip, idx, coef, "fluxo_maquina("+to_string(i+1)+","+to_string(t+1)+")", 'E', 0 );
-            constr_names.emplace_back("fluxo_maquina("+to_string(i+1)+","+to_string(t+1)+")");
+            lp_add_row( mip, idx, coef, "fluxo_maquina("+to_string(i+1)+","+to_string(t)+")", 'E', 0 );
+            constr_names.emplace_back("fluxo_maquina("+to_string(i+1)+","+to_string(t)+")");
         }
 
     }
@@ -252,8 +252,8 @@ process(vector<vector<vector<vector<int>>>>(inst_.n(), (vector<vector<vector<int
                 idx.push_back( eIdx_[h][j][t] );
                 coef.push_back( -1.0 );
 
-                lp_add_row( mip, idx, coef, "fluxo_espera("+to_string(h+1)+","+to_string(j+1)+","+to_string(t+1)+")", 'E', 0 );
-                constr_names.emplace_back("fluxo_espera("+to_string(h+1)+","+to_string(j+1)+","+to_string(t+1)+")");
+                lp_add_row( mip, idx, coef, "fluxo_espera("+to_string(h+1)+","+to_string(j+1)+","+to_string(t)+")", 'E', 0 );
+                constr_names.emplace_back("fluxo_espera("+to_string(h+1)+","+to_string(j+1)+","+to_string(t)+")");
             }
         }
     }
@@ -291,6 +291,24 @@ process(vector<vector<vector<vector<int>>>>(inst_.n(), (vector<vector<vector<int
     //     }
     // }
     // cout << "restriction 32 added" << endl;
+
+    for (int i = 0; i < inst_.m(); i++){
+        for (int j = 0; j < inst_.n(); j++){
+            for (int t = inst_.est(j,i); t <= inst_.lst(j,i); t++){
+                cout << j << " " << i << " " << t << endl;
+                vector< int > idx;
+                vector< double > coef;
+                idx.push_back(fIdx_[i][t]);
+                coef.push_back(-1.0);
+                for (int tf = t; tf <= inst_.lst(j,i); tf++){
+                    idx.push_back(xIdx_[i][j][tf]);
+                    coef.push_back(1.0);
+                }
+                lp_add_row( mip, idx, coef, "right_task("+to_string(j+1)+","+to_string(i+1)+","+to_string(t)+")", 'L', 0.0 );
+                constr_names.emplace_back("right_task("+to_string(j+1)+","+to_string(i+1)+","+to_string(t)+")");
+            }
+        }
+    }
 
     for (int i = 0; i < inst_.m(); i++){
         for (int j = 0; j < inst_.n(); j++){
@@ -333,7 +351,7 @@ process(vector<vector<vector<vector<int>>>>(inst_.n(), (vector<vector<vector<int
     }
     cout << "makespan constraints created" << endl;
 
-    lp_write_lp( mip, (inst_.instanceName() + "_machine.lp").c_str() );
+    lp_write_lp( mip, (inst_.instanceName() + "_machine_original.lp").c_str() );
     //lp_write_mps( mip, inst_.instanceName().c_str() );
     //lp_optimize_as_continuous(mip);
     if (inst_.execute()){
@@ -345,7 +363,7 @@ process(vector<vector<vector<vector<int>>>>(inst_.n(), (vector<vector<vector<int
     // }
 }
 
-void Fernando::cliques(int *idxs,double *coefs)
+int Fernando::cliques(int *idxs,double *coefs)
 {
     clock_t begin = clock();
     double *x = lp_x(mip);
@@ -409,7 +427,7 @@ void Fernando::cliques(int *idxs,double *coefs)
     clock_t end = clock();
     cout << "cuts added: " << qtd_cliques << " time for adding on lp: " << (double) (end-begin)/CLOCKS_PER_SEC << endl;
     cout << "file cliques.txt created. LP " << filename << " created for this iteration. Press enter to continue" << endl;
-    getchar();
+    return qtd_cliques;
 }
 void Fernando::cgraph_creation()
 {
@@ -420,7 +438,7 @@ void Fernando::cgraph_creation()
 
     clock_t begin = clock();
     cgraph = cgraph_create(names.size() * 2); // todos os vértices de menos o c
-    //ofstream file_conflitos("conflitos.txt");
+    ofstream file_conflitos("conflitos.txt");
 
     unordered_set<int> conflitos;
     //cgraph_add_node_conflicts(cgraph,cIdx_,&conflitos[0],conflitos.size());
@@ -439,9 +457,9 @@ void Fernando::cgraph_creation()
                         // cout << idx << endl;
                         indices_conflitos.emplace_back(idx);
                         conflitos.clear();
-                        //file_conflitos << "variavel: " << idx << " " << names[idx] << endl;
+                        file_conflitos << "variavel: " << idx << " " << names[idx] << endl;
                         // caso 1
-                        //file_conflitos << "caso 1: " << endl;
+                        file_conflitos << "caso 1: " << endl;
                         for (int tf = inst_.est(j, m0); tf < inst_.lst(j, m0); tf++)
                         {
                             if (t == tf)
@@ -451,13 +469,12 @@ void Fernando::cgraph_creation()
                             //     file_conflitos << names[xIdx_[j][m0 + 1][tf - 1][m0 + 1][tf]] << " ";
                             //     conflitos.insert(xIdx_[j][m0 + 1][tf - 1][m0 + 1][tf]);
                             // }
-                            //file_conflitos << names[xIdx_[m0][j][tf]] << " ";
+                            file_conflitos << names[xIdx_[m0][j][tf]] << " ";
                             conflitos.insert(xIdx_[m0][j][tf]);
                         }
-                        //file_conflitos << endl;
 
                         // caso 2
-                        //file_conflitos << "caso 2: " << endl;
+                        file_conflitos << endl << "caso 2: " << endl;
                         if (m != 0)
                         {
                             unordered_set<pair<int,int>,pair_hash> analisar;
@@ -478,10 +495,10 @@ void Fernando::cgraph_creation()
                                         if (tf >= inst_.lst(j, m_anterior))
                                             continue;
                                         //cout << names[xIdx_[m_anterior][j][tf]] << endl;
-                                        // auto i = conflitos.emplace(xIdx_[m_anterior][j][tf]);
-                                        // if (i.second){ // conseguiu inserir{
-                                        //     file_conflitos << names[xIdx_[m_anterior][j][tf]] << " ";
-                                        // }
+                                        auto i = conflitos.emplace(xIdx_[m_anterior][j][tf]);
+                                        if (i.second){ // conseguiu inserir{
+                                            file_conflitos << names[xIdx_[m_anterior][j][tf]] << " ";
+                                        }
                                         analisar.emplace(make_pair(maquina_tempo.first-1,tf));
                                         
                                     }
@@ -492,8 +509,7 @@ void Fernando::cgraph_creation()
                         }
                         
                         // caso 3
-                        // file_conflitos << endl;
-                        // file_conflitos << "caso 3: " << endl;
+                        file_conflitos << endl << "caso 3: " << endl;
                         for (int j_ = 0; j_ < inst_.n(); j_++)
                         {
                             for (int var : process[j_][m0][t])
@@ -504,17 +520,46 @@ void Fernando::cgraph_creation()
                                 conflitos.insert(var);
                             }
                         }
-                        //file_conflitos << endl;
 
+                        // caso 4
+                        file_conflitos << endl << "caso 4: " << endl;
+                        if (m != 0)
+                        {
+                            unordered_set<pair<int,int>,pair_hash> analisar;
+                            //cout << "analisar j: " << j+1 << " maquina: " << inst_.machine(j,m-1)+1 << " tempo: " << t-inst_.time(j, inst_.machine(j,m-1)) << " maquina atual: " << inst_.machine(j,m)+1 << " tempo atual: " << t << endl;
+                            analisar.emplace(make_pair(m-1,t-inst_.time(j, inst_.machine(j,m-1))));
+                            while (!analisar.empty()){
+                                pair<int,int> maquina_tempo = *analisar.begin();
+                                analisar.erase(analisar.begin());
+                                if (maquina_tempo.first == -1) continue; // primeira máquina
+                                int t0 = maquina_tempo.second;
+                                int m0 = inst_.machine(j,maquina_tempo.first);
+                                int mf = inst_.machine(j,maquina_tempo.first-1);
+                                //cout << "j:" << j+1 << " m: " << m << " t: " << t << " m0: " << m0+1 << " mf: " << mf+1 << " t0: " << t0 << " tf: " << t0-inst_.time(j,mf) << endl;
+                                //cout << maquina_tempo.first-1 << " " << t0-inst_.time(j,mf) << endl;
+                                for (int tf = t0 + 1 ; tf <= inst_.lst(j,m0); tf++)
+                                {
+                                    //cout << names[xIdx_[m0][j][tf]] << endl;
+                                    auto i = conflitos.emplace(xIdx_[m0][j][tf]);
+                                    if (i.second){ // conseguiu inserir{
+                                        file_conflitos << names[xIdx_[m0][j][tf]] << " ";
+                                    }
+                                }
+                                
+                                analisar.emplace(make_pair(maquina_tempo.first-1,t0-inst_.time(j,mf)));
+                                //cout << analisar.size() << endl;
+                                //getchar();
+                            }
+                        }
                         // mostra conflitos
-                        // file_conflitos << "todos os conflitos: " << endl;
-                        // file_conflitos << names[idx] << " = ";
+                        file_conflitos << endl << "todos os conflitos: " << endl;
+                        file_conflitos << names[idx] << " = ";
                         vector<int> conflicts(conflitos.begin(),conflitos.end());
-                        // for (int var : conflicts)
-                        // {
-                        //     file_conflitos << names[var] << " ";
-                        // }
-                        // file_conflitos << endl << endl;
+                        for (int var : conflicts)
+                        {
+                            file_conflitos << names[var] << " ";
+                        }
+                        file_conflitos << endl << endl;
                         cgraph_add_node_conflicts(cgraph, idx, &conflicts[0], conflicts.size());
                         // idx = xIdx_[j][m0+1][t][m0+1][t+1];
                         // conflitos.clear();
@@ -525,7 +570,7 @@ void Fernando::cgraph_creation()
                 }
             }
     
-    // file_conflitos.close();
+    file_conflitos.close();
     clock_t end = clock();
     cout << "cgraph creation time: " << (double) (end-begin)/CLOCKS_PER_SEC << endl;
     //cgraph_save(cgraph, "cgraph.txt");
@@ -555,7 +600,7 @@ void Fernando::optimize(){
 
     //CGraph *cgraph = build_cgraph_lp(mip);
     //cgraph_print_summary(cgraph, "test_cgraph");
-    string filename = inst_.instanceName()+"_packing";
+    string filename = inst_.instanceName()+"_machine";
     lp_write_lp(mip, (filename+".lp").c_str());
     //getchar();
     lp_optimize(mip);
@@ -565,6 +610,7 @@ void Fernando::optimize(){
 }
 
 double Fernando::lifting(int c, int *idxs, double *coefs){
+    string filename = inst_.instanceName()+"_lifting";
     for (int j = 0; j < inst_.n(); j++){
         vector<int> idx;
         vector<double> coef;
@@ -596,13 +642,13 @@ double Fernando::lifting(int c, int *idxs, double *coefs){
         cout << "C: " << c << " soma: " << sol << " soma - C: " << violado << endl;
         lp_remove_row(mip, idxRow);
         lp_add_row(mip, idx, coef, "fim(" + to_string(j + 1) + ")", 'G', 0);
-        lp_write_lp(mip, "teste_cb.lp");
     }
-    string filename = inst_.instanceName()+"lifting";
     lp_write_lp(mip, (filename+".lp").c_str());
     
     lp_optimize_as_continuous(mip);
     lp_write_sol(mip,(filename+".sol").c_str());
+    cout << "Lifting solved for c = " << c << ". Files " << filename+".lp" << " e " << filename+".sol" << " successfully created." << endl;
+    getchar();
     return lp_obj_value(mip);
 }
 
@@ -611,23 +657,29 @@ void Fernando::lifting_binario(int *idxs, double *coefs){
     if (clique){
         cgraph_creation();
     }
+    ofstream saida(inst_.instanceName()+"_solution.csv");
+    saida << "iteracao;lb;ub;c;cortes;valor;tempo" << endl;
     clock_t begin = clock();
     lp_optimize_as_continuous(mip);
     int lb = lp_obj_value(mip);
     int ub = inst_.maxTime();
+    saida << "0;0;" << ub << ";0;" << lp_obj_value(mip) <<";"<<lp_solution_time(mip)<<endl;
     double bnd = 0;
     double c = ((ub-lb)/2 + lb);
     int iteracoes = 0;
     cout << "lb: " << lb << " ub: " << ub << " c: " << c << " bnd: " << bnd << " fabs: " << fabs(lb-bnd) << endl; //<< " floor(bnd):" << floor(bnd) << endl;
     //getchar();
     while (fabs(ub-lb) > 1) {
-        if (clique)
-        {
-            cliques(idxs,coefs);
-        }
         iteracoes++;
         c = ((ub-lb)/2 + lb);
+        saida << iteracoes << ";" << lb << ";" << ub << ";" <<teto(c) << ";";
+        if (clique)
+        {
+            saida << cliques(idxs,coefs) << ";";
+        }
+        
         bnd = lifting(teto(c),&idxs[0],&coefs[0]);
+        saida << bnd << ";" << lp_solution_time(mip) << endl;
         //lp_optimize_as_continuous(mip);
         //lp_write_lp(mip, "teste_cb.lp");
         //lp_write_sol(mip, "solution.sol");
@@ -644,11 +696,14 @@ void Fernando::lifting_binario(int *idxs, double *coefs){
 
         //getchar();
     };
+    
     clock_t end = clock();
     cout << "Quantidade de iterações binario: " << iteracoes << " lb: " << lb << " ub " << ub <<endl;
+    saida << iteracoes << ";" << lb << ";" << ub << ";" << teto(c) << ";-;-" << endl;
+    saida.close();
     double time_spent = ((double)end - begin) / ((double)CLOCKS_PER_SEC);
     cout << "Tempo gasto no lifting binario: " << time_spent << endl;
-    string filename = inst_.instanceName()+"_packing_lift_bin";
+    string filename = inst_.instanceName()+"_machine_lift_bin";
     lp_write_lp(mip, (filename+".lp").c_str());
     lp_write_sol(mip, (filename+".sol").c_str());
 
@@ -689,240 +744,6 @@ void Fernando::lifting_linear(int *idxs, double *coefs){
     lp_write_sol(mip, (filename+".sol").c_str());
 }
 
-// void Fernando::optimize(){
-//     bool continuo = true;
-//     bool clique = false;
-//     bool binario = true;
-//     if (continuo){
-//         const int nCols = lp_cols(mip);
-//         int *idxs = new int[nCols];
-//         double *coefs = new double[nCols];
-//         if (binario){
-//             lifting_binario(idxs,coefs);
-//         } else {
-//             lifting_linear(idxs,coefs);
-//         }
-//         //getchar();
-//         if (clique)
-//         {
-//             cliques(idxs,coefs);
-//         }
-//         delete []idxs;
-//         delete []coefs;
-//     }
-
-//     lp_as_integer(mip);
-
-//     //Callback cb = Callback(mip,inst_,xIdx_,process);
-
-//     //CGraph *cgraph = build_cgraph_lp(mip);
-//     //cgraph_print_summary(cgraph, "test_cgraph");
-//     string filename = inst_.instanceName()+"_machine";
-//     lp_write_lp(mip, (filename+".lp").c_str());
-//     //getchar();
-//     //lp_optimize(mip);
-
-//     //lp_write_lp(mip,"teste_cb.lp");
-//     lp_write_sol(mip, (filename+".sol").c_str());
-// }
-
-// double Fernando::lifting(int c, int *idxs, double *coefs){
-//     for (int j = 0; j < inst_.n(); j++){
-//         vector<int> idx;
-//         vector<double> coef;
-//         idx.emplace_back(cIdx_);
-//         coef.emplace_back(1.0);
-//         int idxRow = fim[j];
-//         cout << "idxRow " << idxRow << " name: " << endl;
-//         const int nElements = lp_row(mip, idxRow, idxs, coefs);
-//         double sol = 0;
-
-//         for (int i = 0; i < nElements; i++){
-//             char *nome = lp_varName(mip, idxs[i]);
-//             if (strcmp(nome, "C") == 0)
-//                 continue;
-//             double x = lp_xIdx(mip, idxs[i]);
-//             //lp_row_name(mip,idxs[i], nome);
-//             int c2 = max(-1 * (int)coefs[i], c);
-//             //cout << coefs[i] << " " << c2 << " " <<  idxs[i] << " " << nome << " " << x << " " << c2*x <<endl;
-//             sol += c2 * x;
-//         }
-//         int h = inst_.machine(j,inst_.m()-1);
-//         for (int t = inst_.est(j,h); t <= inst_.lst(j,h); t++){
-    
-//             idx.push_back(xIdx_[h][j][t]);
-//             coef.push_back(-max(t+inst_.time(j,h),c));
-//         }
-//         double violado = sol - c;
-//         cout << endl;
-//         cout << "C: " << c << " soma: " << sol << " soma - C: " << violado << endl;
-//         lp_remove_row(mip, fim[j]);
-//         lp_add_row(mip, idx, coef, "fim(" + to_string(j + 1) + ")", 'G', 0);
-//     }
-//     lp_write_lp(mip, "teste_cb.lp");
-    
-//     lp_optimize_as_continuous(mip);
-//     return lp_obj_value(mip);
-// }
-// void Fernando::lifting_binario(int *idxs, double *coefs){
-//     clock_t begin = clock();
-//     lp_optimize_as_continuous(mip);
-//     int lb = lp_obj_value(mip);
-//     int ub = inst_.maxTime();
-//     double bnd = 0;
-//     double c = ((ub-lb)/2 + lb);
-//     int iteracoes = 0;
-//     cout << "lb: " << lb << " ub: " << ub << " c: " << c << " bnd: " << bnd << " fabs: " << fabs(lb-bnd) << endl; //<< " floor(bnd):" << floor(bnd) << endl;
-//     //getchar();
-//     while (fabs(ub-lb) > 1) {
-//         iteracoes++;
-//         c = ((ub-lb)/2 + lb);
-//         bnd = lifting(teto(c),&idxs[0],&coefs[0]);
-//         //lp_optimize_as_continuous(mip);
-//         //lp_write_lp(mip, "teste_cb.lp");
-//         //lp_write_sol(mip, "solution.sol");
-//         cout << "antes: lb: " << lb << " ub: " << ub << " c: " << c << " bnd: " << bnd << " teto(bnd): " << teto(bnd) << " teto(c): " << teto(c)   << endl; //<< " floor(bnd):" << floor(bnd) << endl;
-//         if (teto(c) == teto(bnd)) { //
-//             ub = teto(c);
-//         } else {
-//             lb = teto(c);
-//         }
-//         cout << "depois: lb: " << lb << " ub: " << ub << " c: " << c << " bnd: " << bnd << " fabs: " << fabs(c-bnd) << endl; //<< " floor(bnd):" << floor(bnd) << endl;
-//         //getchar();
-//         // remove colunas de fim
-//         //            lp_remove_rows(mip,fim);
-
-//         //getchar();
-//     };
-//     clock_t end = clock();
-//     cout << "Quantidade de iterações binario: " << iteracoes << " lb: " << lb << " ub " << ub <<endl;
-//     double time_spent = ((double)end - begin) / ((double)CLOCKS_PER_SEC);
-//     cout << "Tempo gasto no lifting binario: " << time_spent << endl;
-//     string filename = inst_.instanceName()+"_packing_lift_bin";
-//     lp_write_lp(mip, (filename+".lp").c_str());
-//     lp_write_sol(mip, (filename+".sol").c_str());
-
-// }
-
-// void Fernando::lifting_linear(int *idxs, double *coefs){
-//     clock_t begin = clock();
-//     int iteracoes = 0;
-//     lp_optimize_as_continuous(mip);
-//     double bnd = lp_obj_value(mip);
-//     double bnd_anterior = 0;
-//     int c = teto(bnd);
-
-//     while (fabs(bnd - bnd_anterior) > 1e-06) {
-//         iteracoes++;
-//         bnd_anterior = bnd;
-//         bnd = lifting(c,idxs,coefs);
-//         c = teto(bnd);
-//         //lp_write_lp(mip, "teste_cb.lp");
-//         //lp_write_sol(mip, "solution.sol");
-//         cout <<  " c: " << c << " bnd_anterior: " << bnd_anterior << " bnd: " << bnd << endl;
-//         //getchar();
-//     } 
-//     clock_t end = clock();
-//     cout << "Quantidade de iterações linear: " << iteracoes  <<endl;
-//     double time_spent = ((double)end - begin) / ((double)CLOCKS_PER_SEC);
-//     cout << "Tempo gasto no lifting linear: " << time_spent << endl;
-//     string filename = inst_.instanceName()+"_machine_lift_lin";
-//     lp_write_lp(mip, (filename+".lp").c_str());
-//     lp_write_sol(mip, (filename+".sol").c_str());
-// }
-
-// void Fernando::optimize(){
-//     clock_t begin = clock();
-//     bool continuo = true;
-//     bool clique = false;
-//     if (continuo){
-//         const int nCols = lp_cols(mip);
-//         int *idxs = new int[nCols];
-//         double *coefs = new double[nCols];
-//         int lb = 0;
-//         int ub = inst_.maxTime();
-//         double bnd = 0;
-//         int c = 0;
-//         int iteracoes = 0;
-//         do {
-//             iteracoes++;
-//             cout << "lb: " << lb << " ub: " << ub << " c: " << c << " iteração: " << iteracoes << endl;
-//             lp_optimize_as_continuous(mip);
-//             lp_write_lp(mip, "teste_cb.lp");
-//             lp_write_sol(mip, "solution.sol");
-//             bnd = lp_obj_value(mip);
-//             //getchar();
-//             // remove colunas de fim
-//             //            lp_remove_rows(mip,fim);
-//             for (int j = 0; j < inst_.n(); j++){
-//                 vector<int> idx;
-//                 vector<double> coef;
-//                 idx.emplace_back(cIdx_);
-//                 coef.emplace_back(1.0);
-//                 int idxRow = fim[j];
-//                 //cout << "idxRow " << idxRow << endl;
-//                 const int nElements = lp_row(mip, idxRow, idxs, coefs);
-//                 double sol = 0;
-
-//                 for (int i = 0; i < nElements; i++){
-//                     char *nome = lp_varName(mip, idxs[i]);
-//                     if (strcmp(nome, "C") == 0)
-//                         continue;
-//                     double x = lp_xIdx(mip, idxs[i]);
-//                     //lp_row_name(mip,idxs[i], nome);
-//                     int c2 = max(-1 * (int)coefs[i], c);
-//                     //cout << coefs[i] << " " << c2 << " " <<  idxs[i] << " " << nome << " " << x << " " << c2*x <<endl;
-//                     sol += c2 * x;
-//                 }
-
-//                 int h = inst_.machine(j,inst_.m()-1);
-//                 for (int t = inst_.est(j,h); t <= inst_.lst(j,h); t++){
-            
-//                     idx.push_back(xIdx_[h][j][t]);
-//                     coef.push_back(-max(t+inst_.time(j,h),c));
-//                 }   
-
-//                 double violado = sol - c;
-//                 cout << endl;
-//                 cout << "C: " << c << " soma: " << sol << " soma - C: " << violado << endl;
-//                 lp_remove_row(mip, fim[j]);
-//                 lp_add_row(mip, idx, coef, "fim(" + to_string(j + 1) + ")", 'G', 0);
-//             }
-            
-//             if (c == teto(bnd)){
-//                 ub = teto(bnd);
-//             } else {
-//                 lb = teto(bnd);
-//             }
-//             c = teto((ub-lb)/2 + lb);
-//             cout << "lb: " << lb << " ub: " << ub << " c: " << c << " bnd: " << teto(bnd) << endl;
-//             lp_write_lp(mip, "teste_cb.lp");
-//             getchar();
-//         } while (ub != lb);
-//         cout << "Quantidade de iterações: " << iteracoes << endl;
-//         clock_t end = clock();
-//         double time_spent = ((double)end - begin) / ((double)CLOCKS_PER_SEC);
-//         cout << "Tempo gasto no lifting: " << time_spent << endl;
-//         getchar();
-//         if (clique)
-//         {
-//             cliques(idxs,coefs);
-//         }
-//     }
-
-//     lp_as_integer(mip);
-
-//     //Callback cb = Callback(mip,inst_,xIdx_,process);
-
-//     //CGraph *cgraph = build_cgraph_lp(mip);
-//     //cgraph_print_summary(cgraph, "test_cgraph");
-//     lp_write_lp(mip, "teste.lp");
-//     //getchar();
-//     lp_optimize(mip);
-
-//     //lp_write_lp(mip,"teste_cb.lp");
-//     lp_write_sol(mip, "teste_cb.sol");
-// }
 
 Fernando::~Fernando()
 {

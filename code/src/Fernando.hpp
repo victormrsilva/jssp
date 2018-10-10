@@ -36,7 +36,7 @@ private:
 
     void optimize();
 
-    void cliques(int *idxs,double *coefs);
+    int cliques(int *idxs,double *coefs);
 
     void cgraph_creation();
 };

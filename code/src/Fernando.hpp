@@ -25,15 +25,17 @@ private:
     std::vector<std::vector<std::vector<std::vector<int>>>> process;
     std::vector<std::vector<std::vector<std::vector<int>>>> enter_flow;
 
-    double lifting(int c, int *idxs, double *coefs);
+    double lifting(double c, int *idxs, double *coefs);
     void lifting_linear(int *idxs, double *coefs);
     void lifting_binario(int *idxs, double *coefs);
     int qtd_cortes = 0;
     int cIdx_;
     LinearProgram *mip;
-    int teto(double v);
+    double teto(double v);
     CGraph *cgraph;
-
+    bool clique = false;
+    bool continuo = true;
+    bool binario = true;
     void optimize();
 
     int cliques(int *idxs,double *coefs);

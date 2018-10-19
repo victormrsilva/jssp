@@ -128,9 +128,9 @@ Subject To
  fluxo_maquina(3,23): x(2,3,20) + f(3,22) - f(3,23) = 0
  fluxo_maquina(3,24): x(2,3,21) + f(3,23) - f(3,24) = 0
  fluxo_maquina(3,25): x(2,3,22) + f(3,24) - f(3,25) = 0
- inicio_espera(m1,j1,t1): - x(1,2,0) - e(1,2,0) = -1
- inicio_espera(m1,j2,t1): - x(2,2,0) - e(2,2,0) = -1
- inicio_espera(m1,j3,t1): - x(3,2,0) - e(3,2,0) = -1
+ inicio_espera(m1,j1,t1): x(1,2,0) + e(1,2,0) = 1
+ inicio_espera(m1,j2,t1): x(2,2,0) + e(2,2,0) = 1
+ inicio_espera(m1,j3,t1): x(3,2,0) + e(3,2,0) = 1
  fluxo_espera(2,1,1): e(1,2,0) - x(1,2,1) - e(1,2,1) = 0
  fluxo_espera(2,1,2): e(1,2,1) - x(1,2,2) - e(1,2,2) = 0
  fluxo_espera(2,1,3): e(1,2,2) - x(1,2,3) - e(1,2,3) = 0

@@ -38,7 +38,7 @@ private:
 
     void optimize();
 
-    void cliques(int *idxs,double *coefs);
+    int cliques(int *idxs,double *coefs);
 
     void cgraph_creation();
 
@@ -52,13 +52,17 @@ private:
     // proccessing jobs flows
     std::vector<std::vector<std::vector<std::vector<int>>>> process;
 
-    double lifting(int c, int *idxs, double *coefs);
+    double lifting(double c, int *idxs, double *coefs);
     
     void lifting_linear(int *idxs, double *coefs);
     void lifting_binario(int *idxs, double *coefs);
 
     int getXidx(int j, int m0, int t0, int mf, int tf) const;
-    int teto(double v);
+    double teto(double v);
+
+    bool clique = false;
+    bool continuo = true;
+    bool binario = true;
 
 };
 #endif

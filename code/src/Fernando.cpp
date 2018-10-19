@@ -31,16 +31,12 @@ struct pair_hash
 };
 using namespace std;
 
-int Fernando::teto(double v)
+double Fernando::teto(double v)
 {
-    int compara = floor(v + 0.5);
-    if (fabs(v - compara) <= 1e-04)
-        if ( (int)v < compara)
-            return compara;
-        else
-            return v;
-    else
-        return ceil(v);
+    //cout << v << endl;
+    if ( fabs(v-(ceil(v)))<=1e-10 )
+        return v;
+    return ceil(v);
 }
 
 Fernando::Fernando( const Instance &_inst ) : inst_(_inst),
@@ -212,12 +208,12 @@ process(vector<vector<vector<vector<int>>>>(inst_.n(), (vector<vector<vector<int
         int h = inst_.machine(j,0); // first machine
         cout << h << " " << j << endl;
         idx.push_back( xIdx_[h][j][0] );
-        coef.push_back( -1.0 );
+        coef.push_back( 1.0 );
         // adiciona restrição.
         idx.push_back( eIdx_[h][j][0] );
-        coef.push_back( -1.0 );
+        coef.push_back( 1.0 );
         
-        lp_add_row( mip, idx, coef, "inicio_espera(m"+to_string(h)+",j"+to_string(j+1)+",t"+to_string(1)+")", 'E', -1 );
+        lp_add_row( mip, idx, coef, "inicio_espera(m"+to_string(h)+",j"+to_string(j+1)+",t"+to_string(1)+")", 'E', 1 );
         constr_names.emplace_back("inicio_espera(m"+to_string(h)+",j"+to_string(j+1)+",t"+to_string(1)+")");
 
     }
@@ -292,23 +288,23 @@ process(vector<vector<vector<vector<int>>>>(inst_.n(), (vector<vector<vector<int
     // }
     // cout << "restriction 32 added" << endl;
 
-    for (int i = 0; i < inst_.m(); i++){
-        for (int j = 0; j < inst_.n(); j++){
-            for (int t = inst_.est(j,i); t <= inst_.lst(j,i); t++){
-                cout << j << " " << i << " " << t << endl;
-                vector< int > idx;
-                vector< double > coef;
-                idx.push_back(fIdx_[i][t]);
-                coef.push_back(-1.0);
-                for (int tf = t; tf <= inst_.lst(j,i); tf++){
-                    idx.push_back(xIdx_[i][j][tf]);
-                    coef.push_back(1.0);
-                }
-                lp_add_row( mip, idx, coef, "right_task("+to_string(j+1)+","+to_string(i+1)+","+to_string(t)+")", 'L', 0.0 );
-                constr_names.emplace_back("right_task("+to_string(j+1)+","+to_string(i+1)+","+to_string(t)+")");
-            }
-        }
-    }
+    // for (int i = 0; i < inst_.m(); i++){
+    //     for (int j = 0; j < inst_.n(); j++){
+    //         for (int t = inst_.est(j,i); t <= inst_.lst(j,i); t++){
+    //             //cout << j << " " << i << " " << t << endl;
+    //             vector< int > idx;
+    //             vector< double > coef;
+    //             idx.push_back(fIdx_[i][t]);
+    //             coef.push_back(1.0);
+    //             for (int tf = t; tf <= inst_.lst(j,i); tf++){
+    //                 idx.push_back(xIdx_[i][j][tf]);
+    //                 coef.push_back(1.0);
+    //             }
+    //             lp_add_row( mip, idx, coef, "left_align("+to_string(j+1)+","+to_string(i+1)+","+to_string(t)+")", 'L', 1.0 );
+    //             constr_names.emplace_back("left_align("+to_string(j+1)+","+to_string(i+1)+","+to_string(t)+")");
+    //         }
+    //     }
+    // }
 
     for (int i = 0; i < inst_.m(); i++){
         for (int j = 0; j < inst_.n(); j++){
@@ -578,8 +574,7 @@ void Fernando::cgraph_creation()
 }
 
 void Fernando::optimize(){
-    bool continuo = true;
-    bool binario = true;
+
     if (continuo){
         const int nCols = lp_cols(mip);
         int *idxs = new int[nCols];
@@ -593,7 +588,7 @@ void Fernando::optimize(){
         delete []idxs;
         delete []coefs;
     }
-
+    getchar();
     lp_as_integer(mip);
 
     //Callback cb = Callback(mip,inst_,xIdx_,process);
@@ -609,7 +604,7 @@ void Fernando::optimize(){
     lp_write_sol(mip, (filename+".sol").c_str());
 }
 
-double Fernando::lifting(int c, int *idxs, double *coefs){
+double Fernando::lifting(double c, int *idxs, double *coefs){
     string filename = inst_.instanceName()+"_lifting";
     for (int j = 0; j < inst_.n(); j++){
         vector<int> idx;
@@ -620,56 +615,63 @@ double Fernando::lifting(int c, int *idxs, double *coefs){
         //cout << "idxRow " << idxRow << " name: " << endl;
         const int nElements = lp_row(mip, idxRow, idxs, coefs);
         double sol = 0;
-
+        double aux = 0;
         for (int i = 0; i < nElements; i++){
             char *nome = lp_varName(mip, idxs[i]);
             if (strcmp(nome, "C") == 0)
                 continue;
             double x = lp_xIdx(mip, idxs[i]);
             //lp_row_name(mip,idxs[i], nome);
-            int c2 = max(-1 * (int)coefs[i], c);
+            if ((-1 * coefs[i]) > c )
+                aux = -1 * coefs[i];
+            else 
+                aux = c;
             //cout << coefs[i] << " " << c2 << " " <<  idxs[i] << " " << nome << " " << x << " " << c2*x <<endl;
-            sol += c2 * x;
+            sol += aux * x;
         }
         int h = inst_.machine(j,inst_.m()-1);
         for (int t = inst_.est(j,h); t <= inst_.lst(j,h); t++){
     
             idx.push_back(xIdx_[h][j][t]);
-            coef.push_back(-max(t+inst_.time(j,h),c));
+            if ((fabs(t+inst_.time(j,h)) - c ) > 1e-6)
+                aux = t+inst_.time(j,h);
+            else 
+                aux = c;
+            coef.push_back(-aux);
         }
         double violado = sol - c;
         cout << endl;
         cout << "C: " << c << " soma: " << sol << " soma - C: " << violado << endl;
         lp_remove_row(mip, idxRow);
         lp_add_row(mip, idx, coef, "fim(" + to_string(j + 1) + ")", 'G', 0);
+        lp_write_lp(mip, "teste_cb.lp");
     }
     lp_write_lp(mip, (filename+".lp").c_str());
     
     lp_optimize_as_continuous(mip);
     lp_write_sol(mip,(filename+".sol").c_str());
     cout << "Lifting solved for c = " << c << ". Files " << filename+".lp" << " e " << filename+".sol" << " successfully created." << endl;
-    getchar();
+    //getchar();
     return lp_obj_value(mip);
 }
 
 void Fernando::lifting_binario(int *idxs, double *coefs){
-    bool clique = true;
     if (clique){
         cgraph_creation();
     }
-    ofstream saida(inst_.instanceName()+"_solution.csv");
+    ofstream saida(inst_.instanceName()+"_solution_binario_machine.csv");
     saida << "iteracao;lb;ub;c;cortes;valor;tempo" << endl;
     clock_t begin = clock();
     lp_optimize_as_continuous(mip);
-    int lb = lp_obj_value(mip);
-    int ub = inst_.maxTime();
+    double lb = teto(lp_obj_value(mip));
+    double ub = inst_.maxTime();
     saida << "0;0;" << ub << ";0;" << lp_obj_value(mip) <<";"<<lp_solution_time(mip)<<endl;
     double bnd = 0;
     double c = ((ub-lb)/2 + lb);
     int iteracoes = 0;
     cout << "lb: " << lb << " ub: " << ub << " c: " << c << " bnd: " << bnd << " fabs: " << fabs(lb-bnd) << endl; //<< " floor(bnd):" << floor(bnd) << endl;
     //getchar();
-    while (fabs(ub-lb) > 1) {
+    while (fabs(ub-lb) > 1e-6) {
         iteracoes++;
         c = ((ub-lb)/2 + lb);
         saida << iteracoes << ";" << lb << ";" << ub << ";" <<teto(c) << ";";
@@ -684,12 +686,26 @@ void Fernando::lifting_binario(int *idxs, double *coefs){
         //lp_write_lp(mip, "teste_cb.lp");
         //lp_write_sol(mip, "solution.sol");
         cout << "antes: lb: " << lb << " ub: " << ub << " c: " << c << " bnd: " << bnd << " teto(bnd): " << teto(bnd) << " teto(c): " << teto(c)   << endl; //<< " floor(bnd):" << floor(bnd) << endl;
-        if (teto(c) == teto(bnd)) { //
+        if (fabs(teto(c) - bnd) < 1e-6) { //
             ub = teto(c);
         } else {
             lb = teto(c);
         }
-        cout << "depois: lb: " << lb << " ub: " << ub << " c: " << c << " bnd: " << bnd << " fabs: " << fabs(c-bnd) << endl; //<< " floor(bnd):" << floor(bnd) << endl;
+        cout << "depois: lb: " << lb << " ub: " << ub << " teto(c): " << teto(c) << " bnd: " << bnd << " fabs: " << fabs(c-bnd) << endl; //<< " floor(bnd):" << floor(bnd) << endl;
+        
+        if (fabs(ub - lb) <= 1){
+            cout << "antes: lb: " << lb << " ub: " << ub << " teto(c): " << teto(c) << " bnd: " << bnd << " fabs: " << fabs(c-bnd) << endl; //<< " floor(bnd):" << floor(bnd) << endl;
+            c = ((ub-lb)/2 + lb);
+            c = teto(c);
+            bnd = lifting(teto(c),&idxs[0],&coefs[0]);
+            if (fabs(c - bnd) < 1e-6) { //
+                lb = c;
+            } else {
+                ub = c;
+            }
+            cout << "depois: lb: " << lb << " ub: " << ub << " teto(c): " << teto(c) << " bnd: " << bnd << " fabs: " << fabs(c-bnd) << endl; //<< " floor(bnd):" << floor(bnd) << endl;
+        }
+
         //getchar();
         // remove colunas de fim
         //            lp_remove_rows(mip,fim);
@@ -710,7 +726,6 @@ void Fernando::lifting_binario(int *idxs, double *coefs){
 }
 
 void Fernando::lifting_linear(int *idxs, double *coefs){
-    bool clique = true;
     if (clique){
         cgraph_creation();
     }
@@ -719,9 +734,9 @@ void Fernando::lifting_linear(int *idxs, double *coefs){
     lp_optimize_as_continuous(mip);
     double bnd = lp_obj_value(mip);
     double bnd_anterior = 0;
-    int c = teto(bnd);
+    double c = teto(bnd);
 
-    while (fabs(bnd - bnd_anterior) > 1e-06) {
+    while (fabs(bnd - teto(bnd_anterior)) > 1e-06) {
         if (clique)
         {
             cliques(idxs,coefs);

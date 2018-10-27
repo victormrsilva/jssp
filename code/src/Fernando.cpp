@@ -109,7 +109,7 @@ process(vector<vector<vector<vector<int>>>>(inst_.n(), (vector<vector<vector<int
     integer.push_back( 1 );
 
     ofstream f;
-    f.open ("variables.txt");
+    f.open ("variables_pack.txt");
     for (string name : names){
         f << name << endl;
     }
@@ -130,19 +130,65 @@ process(vector<vector<vector<vector<int>>>>(inst_.n(), (vector<vector<vector<int
     // f.close();
     //cout << "enter_flows criado" << endl;
 
-    // f.open ("processing_machines.txt");
-    // for (int t0=0; t0 < inst_.maxTime()-1; t0++){
-    //     for (int m0 = 0; m0 < inst_.m(); m0++){
+    variables_pack = vector<unordered_set<int>>(names.size());
+    cout << variables_pack.size() << endl;
+    
+    for (int m0 = 0; m0 < inst_.m(); m0++){
+        for (int j = 0; j < inst_.n(); j++){
+            for (int t=inst_.est(j,m0); t <= inst_.lst(j,m0); t++){
+                int dur = inst_.time(j,m0);
+                int var = xIdx_[m0][j][t];
+                cout << names[var] << " ";
+                for (int t0 = t - inst_.time(j,m0) + 1; t0 < t+dur; t0++){
+                    if (t0 < inst_.est(j,m0) || t0 > inst_.lst(j,m0)) continue;
+                    cout << "[" << j+1 << "," << m0+1 << "," << t0 << "," << inst_.est(j,m0) << "," << inst_.lst(j,m0) << "] ";
+                    cout << names[xIdx_[m0][j][t0]] << " ";
+                    variables_pack[var].insert(xIdx_[m0][j][t0]);
+                }
+                
+                for (int j_aux = 0; j_aux < inst_.n(); j_aux++){
+                    if (j_aux == j) continue;
+                    int dur_aux = inst_.time(j_aux,m0);
+                    int qtd_movimentos = dur - dur_aux ;
+                    while (qtd_movimentos >= 0){
+                        int tempo = t-qtd_movimentos;
+                        if (tempo >= inst_.est(j_aux,m0) && tempo <= inst_.lst(j_aux,m0)){
+                            cout << "[" << j_aux+1 << "," << m0+1 << "," << tempo << "," << inst_.est(j_aux,m0) << "," << inst_.lst(j_aux,m0) << "] ";
+                            cout << names[xIdx_[m0][j_aux][tempo]] << " ";
+                            variables_pack[var].insert(xIdx_[m0][j_aux][tempo]);
+                        }
+                        qtd_movimentos--;
+                    }
 
-    //         f << "machine " << m0+1 << " time " << t0 << endl;
-    //         for (int j = 0; j < inst_.n(); j++){
-    //             for (int var : process[j][m0][t0]){
-    //                 f << names[var] << endl;
-    //             }
-    //         }
-    //     }
-    // }
-    // f.close();
+                }
+                cout << endl;
+            }
+        }
+    }
+
+    f.open("cuts.txt");
+    for (int i = 0; i < variables_pack.size(); i++){
+        f << names[i] << " = ";
+        for (int v : variables_pack[i]){
+            f << names[v] << " ";
+        }
+        f << endl;
+    }
+    f.close();
+    getchar();
+    f.open ("processing_machines.txt");
+    for (int t0=0; t0 < inst_.maxTime()-1; t0++){
+        for (int m0 = 0; m0 < inst_.m(); m0++){
+
+            f << "machine " << m0+1 << " time " << t0 << endl;
+            for (int j = 0; j < inst_.n(); j++){
+                for (int var : process[j][m0][t0]){
+                    f << names[var] << endl;
+                }
+            }
+        }
+    }
+    f.close();
     // cout << "processing_machines created" << endl;
 
     // adiciona colunas ao solver
@@ -359,6 +405,44 @@ process(vector<vector<vector<vector<int>>>>(inst_.n(), (vector<vector<vector<int
     // }
 }
 
+int Fernando::manual_cuts(){
+    double *x = lp_x(mip);
+    ofstream f;
+    f.open("cuts_manual.txt");
+    int qtd = 0;
+    for (int i = 0; i < variables_pack.size(); i++){
+        f << names[i] << "(" << x[i] << ") ";
+        double soma = x[i]; // inicia a soma para ver se há violação
+        for (int var : variables_pack[i]){
+            f << names[var] << "(" << x[var] << ") ";
+            soma = soma + x[var];
+        }
+        f << soma << endl;
+        
+        if (soma > 1.001){ // houve violação então vamos adicionar os cortes
+            cout << soma << endl;
+            vector< int > idx;
+            vector< double > coef;
+            idx.emplace_back(i);
+            coef.emplace_back(1.0);
+            for (int var : variables_pack[i]){
+                idx.emplace_back(var);
+                coef.emplace_back(1.0);
+            }
+            if (idx.size() > 1){
+                qtd_manual_cuts++;
+                qtd++;
+                lp_add_row( mip, idx, coef, "manual_cut("+to_string(qtd_manual_cuts)+")", 'L', 1 );
+            }
+        }
+    }
+    f.close();
+    string filename = inst_.instanceName()+"_cortes";
+    lp_write_lp(mip, (filename+".lp").c_str());
+    getchar();
+    return qtd;
+}
+
 int Fernando::cliques(int *idxs,double *coefs)
 {
     clock_t begin = clock();
@@ -374,11 +458,11 @@ int Fernando::cliques(int *idxs,double *coefs)
     // cout << endl;
     vector<double> x_conflitos = vector<double>(names.size() * 2);
     vector<double> rc_conflitos = vector<double>(names.size() * 2);
-
+    double delta = 1e-6;
     for (unsigned int i = 0; i < names.size(); i++)
     {
-        x_conflitos[i] = x[i];
-        x_conflitos[i + names.size()] = 1 - x[i];
+        x_conflitos[i] = (x[i] == 0 ? delta : x[i]);
+        x_conflitos[i + names.size()] = 1 - (x[i] == 0 ? delta : x[i]);
         rc_conflitos[i] = rc[i];
         rc_conflitos[i + names.size()] = (-1) * rc[i];
     }
@@ -677,7 +761,8 @@ void Fernando::lifting_binario(int *idxs, double *coefs){
         saida << iteracoes << ";" << lb << ";" << ub << ";" <<teto(c) << ";";
         if (clique)
         {
-            saida << cliques(idxs,coefs) << ";";
+            manual_cuts();
+            //saida << cliques(idxs,coefs) << ";";
         }
         
         bnd = lifting(teto(c),&idxs[0],&coefs[0]);
@@ -734,19 +819,26 @@ void Fernando::lifting_linear(int *idxs, double *coefs){
     lp_optimize_as_continuous(mip);
     double bnd = lp_obj_value(mip);
     double bnd_anterior = 0;
-    double c = teto(bnd);
-
+    double c = 0;
+    ofstream saida(inst_.instanceName()+"_solution_linear_machine.csv");
+    saida << "iteracao;bnd;c;cortes;tempo" << endl;
+    saida << "0;" << bnd << ";0;0;"<<lp_solution_time(mip)<<endl;
     while (fabs(bnd - teto(bnd_anterior)) > 1e-06) {
+        iteracoes++;
+        int cortes = 0;
         if (clique)
         {
-            cliques(idxs,coefs);
+            cortes = manual_cuts();
+            //cortes = cortes + cliques(idxs,coefs);
         }
-        iteracoes++;
+        
         bnd_anterior = bnd;
-        bnd = lifting(c,idxs,coefs);
         c = teto(bnd);
+        bnd = lifting(c,idxs,coefs);
+        
         //lp_write_lp(mip, "teste_cb.lp");
         //lp_write_sol(mip, "solution.sol");
+        saida << iteracoes << ";" << bnd << ";" << c << ";" << cortes << ";" << lp_solution_time(mip)<<endl;
         cout <<  " c: " << c << " bnd_anterior: " << bnd_anterior << " bnd: " << bnd << endl;
         //getchar();
     } 

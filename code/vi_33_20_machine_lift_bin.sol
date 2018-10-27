@@ -1,4 +1,4 @@
-Optimal (within gap tolerance) - objective value 19 - solution time 0
+Optimal (within gap tolerance) - objective value 19 - solution time 1
 0 f(1,0) 1 0
 1 x(1,2,0) 0 0
 2 e(1,2,0) 1 0

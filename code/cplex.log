@@ -5535,3 +5535,104 @@ Non-minimal conflict: 3032 linear constraint(s)
                         11 upper bound(s)
 Conflict computation time =   33.38 sec.  Iterations = 3762
 Deterministic time = 9928.04 ticks  (297.44 ticks/sec)
+
+Log started (V12.8.0.0) Sun Oct 21 12:41:19 2018
+
+
+Log started (V12.8.0.0) Sun Oct 21 12:41:38 2018
+
+
+Problem 'vi_33_20_cortes.lp' read.
+Read time = 0.02 sec. (0.05 ticks)
+No conflict exists.
+Infeasibility row 'ultimo_tempo(1,2)':  0  = -1.
+Presolve time = 0.00 sec. (0.16 ticks)
+
+Root node processing (before b&c):
+  Real time             =    0.00 sec. (0.25 ticks)
+Parallel b&c, 4 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.00 sec. (0.25 ticks)
+
+
+MIP - Integer infeasible.
+Current MIP best bound =  0.0000000000e+00 (gap is infinite)
+Solution time =    0.00 sec.  Iterations = 0  Nodes = 0
+Deterministic time = 0.25 ticks  (252.65 ticks/sec)
+
+No conflict exists.
+
+Problem 'vi_33_20_cortes.lp' read.
+Read time = 0.02 sec. (0.03 ticks)
+Tried aggregator 2 times.
+MIP Presolve eliminated 16 rows and 7 columns.
+Aggregator did 57 substitutions.
+Reduced MIP has 155 rows, 282 columns, and 838 nonzeros.
+Reduced MIP has 281 binaries, 1 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (0.78 ticks)
+Found incumbent of value 25.000000 after 0.00 sec. (1.76 ticks)
+Probing fixed 3 vars, tightened 0 bounds.
+Probing time = 0.00 sec. (0.93 ticks)
+Tried aggregator 1 time.
+MIP Presolve eliminated 0 rows and 3 columns.
+Reduced MIP has 155 rows, 279 columns, and 835 nonzeros.
+Reduced MIP has 278 binaries, 1 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (0.55 ticks)
+Probing time = 0.00 sec. (0.85 ticks)
+Clique table members: 758.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 4 threads.
+Root relaxation solution time = 0.00 sec. (2.07 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                           25.0000        0.0000           100.00%
+*     0+    0                           23.0000        0.0000           100.00%
+      0     0       15.3952    78       23.0000       15.3952      176   33.06%
+      0     0       16.0000    99       23.0000      Cuts: 20      264   30.43%
+      0     0       16.6178    90       23.0000      Cuts: 30      346   27.75%
+      0     0       16.9462    87       23.0000      Cuts: 28      383   26.32%
+      0     0       17.0419    85       23.0000      Cuts: 21      415   25.90%
+      0     0       17.0786    97       23.0000  ZeroHalf: 25      435   25.75%
+      0     0       17.0883    99       23.0000      Cuts: 33      469   25.70%
+      0     0       17.1078   113       23.0000  ZeroHalf: 26      505   25.62%
+      0     0       17.1186   107       23.0000  ZeroHalf: 28      534   25.57%
+      0     0       17.1355   117       23.0000      Cuts: 18      563   25.50%
+      0     0       17.1543   122       23.0000  ZeroHalf: 19      600   25.42%
+      0     0       17.1583   120       23.0000      Cuts: 15      627   25.40%
+      0     0       17.1665   111       23.0000   ZeroHalf: 9      654   25.36%
+      0     0       17.1770   119       23.0000  ZeroHalf: 12      695   25.32%
+      0     0       17.1816   116       23.0000  ZeroHalf: 10      719   25.30%
+      0     0       17.1824   119       23.0000   ZeroHalf: 7      742   25.29%
+      0     0       17.1867   125       23.0000      Cuts: 14      768   25.28%
+      0     0       17.1918   126       23.0000   ZeroHalf: 7      790   25.25%
+      0     0       17.1945   127       23.0000  ZeroHalf: 12      818   25.24%
+*     0+    0                           20.0000       17.1945            14.03%
+      0     0        cutoff             20.0000       20.0000      818    0.00%
+Elapsed time = 0.19 sec. (91.96 ticks, tree = 0.01 MB, solutions = 3)
+
+Clique cuts applied:  1
+Mixed integer rounding cuts applied:  4
+Zero-half cuts applied:  9
+Gomory fractional cuts applied:  1
+
+Root node processing (before b&c):
+  Real time             =    0.19 sec. (91.99 ticks)
+Parallel b&c, 4 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.19 sec. (91.99 ticks)
+
+Solution pool: 3 solutions saved.
+
+MIP - Integer optimal solution:  Objective =  2.0000000000e+01
+Solution time =    0.20 sec.  Iterations = 818  Nodes = 0
+Deterministic time = 91.99 ticks  (453.14 ticks/sec)
+

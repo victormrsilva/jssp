@@ -1,6 +1,6 @@
 #include "Instance.hpp"
 #include "lp.hpp"
-
+#include <unordered_set>
 extern "C"{
 #include "cgraph/cgraph.h"
 #include "cgraph/clique_separation.h"
@@ -28,14 +28,18 @@ private:
     double lifting(double c, int *idxs, double *coefs);
     void lifting_linear(int *idxs, double *coefs);
     void lifting_binario(int *idxs, double *coefs);
+    int manual_cuts();
+    int qtd_manual_cuts = 0;
+    std::vector<std::unordered_set<int>> variables_pack;
+
     int qtd_cortes = 0;
     int cIdx_;
     LinearProgram *mip;
     double teto(double v);
     CGraph *cgraph;
-    bool clique = false;
+    bool clique = true;
     bool continuo = true;
-    bool binario = true;
+    bool binario = false;
     void optimize();
 
     int cliques(int *idxs,double *coefs);

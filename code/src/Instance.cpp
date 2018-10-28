@@ -21,6 +21,7 @@ Instance::Instance( const std::string &fileName, int time , int execute){
     ifs >> n_ >> m_;
 
     times_ = vector< vector< int > >( n_, vector<int>( m_, 0 ) );
+    minimum_time_ =  vector< int >( m_, __INT_MAX__);
     distances_ = vector< vector< vector < int > > >( n_, vector< vector <int> >( m_, vector<int>(m_,0)) );
     machines_ = vector< vector< int > >( n_, vector<int>( m_, 0 ) );
 
@@ -47,6 +48,9 @@ Instance::Instance( const std::string &fileName, int time , int execute){
             ifs >> machine >> time;
             machines_[i][j] = machine;
             times_[i][machine] = time; // para espelhar a formulação matemática do gurobi
+            if (time < minimum_time_[machine]){
+                minimum_time_[machine] = time;
+            }
             if (!given_time) t_ += time;
         }
     }
@@ -140,6 +144,11 @@ void Instance::saveCmpl( const string fname ) const {
                 out << "Job " << j+1 << ", Machine " << machines_[j][i]+1 <<" -> Machine " << machines_[j][k]+1 << ": " << distance(j,machines_[j][i], machines_[j][k])  << endl;
             }
         }
+    }
+    out << endl;
+    out << "Machine i: minimum_time " << endl;
+    for ( int j=0 ; (j<n()) ; ++j )    {
+        out << "Machine " << j+1 << ": " << minimum_time_[j] << endl;
     }
 
     out.close();

@@ -30,7 +30,7 @@ private:
     void lifting_binario(int *idxs, double *coefs);
     int manual_cuts();
     int qtd_manual_cuts = 0;
-    std::vector<std::unordered_set<int>> variables_pack;
+    std::vector<std::vector<int>> variables_pack;
 
     int qtd_cortes = 0;
     int cIdx_;

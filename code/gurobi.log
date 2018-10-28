@@ -935,3 +935,704 @@ Solution count 1: 23
 
 Optimal solution found (tolerance 1.00e-04)
 Best objective 2.300000000000e+01, best bound 2.300000000000e+01, gap 0.0000%
+
+Gurobi 8.0.0 (linux64) logging started Sun Oct 28 00:10:59 2018
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.0.0 build v8.0.0rc0 (linux64)
+Copyright (c) 2018, Gurobi Optimization, LLC
+
+Read LP format model from file vi_33_20_machine_lift_lin.lp
+Reading time = 0.01 seconds
+: 267 rows, 355 columns, 1501 nonzeros
+Optimize a model with 267 rows, 355 columns and 1501 nonzeros
+Variable types: 0 continuous, 355 integer (354 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 2e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 77 rows and 85 columns
+Presolve time: 0.02s
+Presolved: 190 rows, 270 columns, 1310 nonzeros
+Variable types: 0 continuous, 270 integer (269 binary)
+Found heuristic solution: objective 25.0000000
+Found heuristic solution: objective 21.0000000
+
+Root relaxation: infeasible, 8 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 infeasible    0        21.00000   21.00000  0.00%     -    0s
+
+Explored 0 nodes (8 simplex iterations) in 0.06 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 2: 21 25 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.100000000000e+01, best bound 2.100000000000e+01, gap 0.0000%
+
+Gurobi 8.0.0 (linux64) logging started Sun Oct 28 00:13:30 2018
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.0.0 build v8.0.0rc0 (linux64)
+Copyright (c) 2018, Gurobi Optimization, LLC
+
+Read LP format model from file vi_33_20_lifting.lp
+Reading time = 0.00 seconds
+: 266 rows, 355 columns, 1488 nonzeros
+Optimize a model with 266 rows, 355 columns and 1488 nonzeros
+Variable types: 0 continuous, 355 integer (354 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 2e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 77 rows and 85 columns
+Presolve time: 0.02s
+Presolved: 189 rows, 270 columns, 1295 nonzeros
+Variable types: 0 continuous, 270 integer (269 binary)
+Found heuristic solution: objective 25.0000000
+Found heuristic solution: objective 24.0000000
+Found heuristic solution: objective 23.0000000
+
+Root relaxation: objective 2.026667e+01, 321 iterations, 0.01 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   20.33333    0   64   23.00000   20.33333  11.6%     -    0s
+H    0     0                      21.0000000   20.33333  3.17%     -    0s
+     0     0   21.00000    0   84   21.00000   21.00000  0.00%     -    0s
+
+Cutting planes:
+  Gomory: 1
+  Clique: 4
+  Zero half: 8
+
+Explored 1 nodes (475 simplex iterations) in 0.09 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 4: 21 23 24 25 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.100000000000e+01, best bound 2.100000000000e+01, gap 0.0000%
+
+Gurobi 8.0.0 (linux64) logging started Sun Oct 28 00:14:04 2018
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.0.0 build v8.0.0rc0 (linux64)
+Copyright (c) 2018, Gurobi Optimization, LLC
+
+Read LP format model from file vi_33_20_lifting.lp
+Reading time = 0.00 seconds
+: 263 rows, 355 columns, 1456 nonzeros
+Optimize a model with 263 rows, 355 columns and 1456 nonzeros
+Variable types: 0 continuous, 355 integer (354 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 2e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 78 rows and 86 columns
+Presolve time: 0.02s
+Presolved: 185 rows, 269 columns, 1262 nonzeros
+Variable types: 0 continuous, 269 integer (268 binary)
+Found heuristic solution: objective 25.0000000
+Found heuristic solution: objective 23.0000000
+
+Root relaxation: objective 2.026667e+01, 378 iterations, 0.01 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   20.33333    0   62   23.00000   20.33333  11.6%     -    0s
+H    0     0                      21.0000000   20.33333  3.17%     -    0s
+
+Explored 1 nodes (450 simplex iterations) in 0.10 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 3: 21 23 25 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.100000000000e+01, best bound 2.100000000000e+01, gap 0.0000%
+
+Gurobi 8.0.0 (linux64) logging started Sun Oct 28 00:14:08 2018
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.0.0 build v8.0.0rc0 (linux64)
+Copyright (c) 2018, Gurobi Optimization, LLC
+
+Read LP format model from file vi_33_20_lifting.lp
+Reading time = 0.00 seconds
+: 262 rows, 355 columns, 1442 nonzeros
+Optimize a model with 262 rows, 355 columns and 1442 nonzeros
+Variable types: 0 continuous, 355 integer (354 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 2e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 78 rows and 86 columns
+Presolve time: 0.02s
+Presolved: 184 rows, 269 columns, 1245 nonzeros
+Variable types: 0 continuous, 269 integer (268 binary)
+Found heuristic solution: objective 25.0000000
+Found heuristic solution: objective 23.0000000
+
+Root relaxation: objective 2.020000e+01, 372 iterations, 0.01 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   20.33333    0   67   23.00000   20.33333  11.6%     -    0s
+H    0     0                      21.0000000   20.33333  3.17%     -    0s
+
+Explored 1 nodes (448 simplex iterations) in 0.06 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 3: 21 23 25 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.100000000000e+01, best bound 2.100000000000e+01, gap 0.0000%
+
+Gurobi 8.0.0 (linux64) logging started Sun Oct 28 00:14:11 2018
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.0.0 build v8.0.0rc0 (linux64)
+Copyright (c) 2018, Gurobi Optimization, LLC
+
+Read LP format model from file vi_33_20_lifting.lp
+Reading time = 0.00 seconds
+: 261 rows, 355 columns, 1432 nonzeros
+Optimize a model with 261 rows, 355 columns and 1432 nonzeros
+Variable types: 0 continuous, 355 integer (354 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 2e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 79 rows and 87 columns
+Presolve time: 0.02s
+Presolved: 182 rows, 268 columns, 1233 nonzeros
+Variable types: 0 continuous, 268 integer (267 binary)
+Found heuristic solution: objective 25.0000000
+Found heuristic solution: objective 23.0000000
+
+Root relaxation: objective 2.020000e+01, 296 iterations, 0.01 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   20.33333    0   79   23.00000   20.33333  11.6%     -    0s
+H    0     0                      21.0000000   20.33333  3.17%     -    0s
+
+Explored 1 nodes (428 simplex iterations) in 0.07 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 3: 21 23 25 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.100000000000e+01, best bound 2.100000000000e+01, gap 0.0000%
+
+Gurobi 8.0.0 (linux64) logging started Sun Oct 28 00:14:13 2018
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.0.0 build v8.0.0rc0 (linux64)
+Copyright (c) 2018, Gurobi Optimization, LLC
+
+Read LP format model from file vi_33_20_lifting.lp
+Reading time = 0.01 seconds
+: 260 rows, 355 columns, 1423 nonzeros
+Optimize a model with 260 rows, 355 columns and 1423 nonzeros
+Variable types: 0 continuous, 355 integer (354 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 2e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 79 rows and 87 columns
+Presolve time: 0.02s
+Presolved: 181 rows, 268 columns, 1224 nonzeros
+Variable types: 0 continuous, 268 integer (267 binary)
+Found heuristic solution: objective 25.0000000
+Found heuristic solution: objective 23.0000000
+
+Root relaxation: objective 2.020000e+01, 314 iterations, 0.01 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   20.33333    0   71   23.00000   20.33333  11.6%     -    0s
+     0     0   21.00000    0   49   23.00000   21.00000  8.70%     -    0s
+H    0     0                      21.0000000   21.00000  0.00%     -    0s
+
+Cutting planes:
+  Gomory: 1
+  Clique: 1
+  Zero half: 1
+
+Explored 1 nodes (438 simplex iterations) in 0.07 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 3: 21 23 25 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.100000000000e+01, best bound 2.100000000000e+01, gap 0.0000%
+
+Gurobi 8.0.0 (linux64) logging started Sun Oct 28 00:14:16 2018
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.0.0 build v8.0.0rc0 (linux64)
+Copyright (c) 2018, Gurobi Optimization, LLC
+
+Read LP format model from file vi_33_20_lifting.lp
+Reading time = 0.00 seconds
+: 259 rows, 355 columns, 1408 nonzeros
+Optimize a model with 259 rows, 355 columns and 1408 nonzeros
+Variable types: 0 continuous, 355 integer (354 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 2e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 79 rows and 87 columns
+Presolve time: 0.02s
+Presolved: 180 rows, 268 columns, 1209 nonzeros
+Variable types: 0 continuous, 268 integer (267 binary)
+Found heuristic solution: objective 25.0000000
+Found heuristic solution: objective 23.0000000
+
+Root relaxation: objective 2.020000e+01, 335 iterations, 0.01 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   20.33333    0   76   23.00000   20.33333  11.6%     -    0s
+H    0     0                      21.0000000   20.33333  3.17%     -    0s
+
+Explored 1 nodes (425 simplex iterations) in 0.06 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 3: 21 23 25 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.100000000000e+01, best bound 2.100000000000e+01, gap 0.0000%
+
+Gurobi 8.0.0 (linux64) logging started Sun Oct 28 00:14:18 2018
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.0.0 build v8.0.0rc0 (linux64)
+Copyright (c) 2018, Gurobi Optimization, LLC
+
+Read LP format model from file vi_33_20_lifting.lp
+Reading time = 0.00 seconds
+: 258 rows, 355 columns, 1394 nonzeros
+Optimize a model with 258 rows, 355 columns and 1394 nonzeros
+Variable types: 0 continuous, 355 integer (354 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 2e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 79 rows and 87 columns
+Presolve time: 0.02s
+Presolved: 179 rows, 268 columns, 1193 nonzeros
+Variable types: 0 continuous, 268 integer (267 binary)
+Found heuristic solution: objective 25.0000000
+Found heuristic solution: objective 23.0000000
+
+Root relaxation: objective 2.020000e+01, 362 iterations, 0.01 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   20.33333    0   68   23.00000   20.33333  11.6%     -    0s
+     0     0   21.00000    0   86   23.00000   21.00000  8.70%     -    0s
+H    0     0                      21.0000000   21.00000  0.00%     -    0s
+
+Cutting planes:
+  Gomory: 1
+  Zero half: 3
+
+Explored 1 nodes (486 simplex iterations) in 0.11 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 3: 21 23 25 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.100000000000e+01, best bound 2.100000000000e+01, gap 0.0000%
+
+Gurobi 8.0.0 (linux64) logging started Sun Oct 28 00:14:22 2018
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.0.0 build v8.0.0rc0 (linux64)
+Copyright (c) 2018, Gurobi Optimization, LLC
+
+Read LP format model from file vi_33_20_lifting.lp
+Reading time = 0.00 seconds
+: 257 rows, 355 columns, 1380 nonzeros
+Optimize a model with 257 rows, 355 columns and 1380 nonzeros
+Variable types: 0 continuous, 355 integer (354 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 2e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 79 rows and 87 columns
+Presolve time: 0.02s
+Presolved: 178 rows, 268 columns, 1180 nonzeros
+Variable types: 0 continuous, 268 integer (267 binary)
+Found heuristic solution: objective 25.0000000
+Found heuristic solution: objective 23.0000000
+
+Root relaxation: objective 2.020000e+01, 371 iterations, 0.01 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   20.25000    0   92   23.00000   20.25000  12.0%     -    0s
+H    0     0                      22.0000000   20.25000  7.95%     -    0s
+H    0     0                      21.0000000   20.25000  3.57%     -    0s
+     0     0   21.00000    0   75   21.00000   21.00000  0.00%     -    0s
+
+Cutting planes:
+  Gomory: 1
+  Clique: 4
+  Zero half: 8
+
+Explored 1 nodes (503 simplex iterations) in 0.12 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 4: 21 22 23 25 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.100000000000e+01, best bound 2.100000000000e+01, gap 0.0000%
+
+Gurobi 8.0.0 (linux64) logging started Sun Oct 28 00:14:27 2018
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.0.0 build v8.0.0rc0 (linux64)
+Copyright (c) 2018, Gurobi Optimization, LLC
+
+Read LP format model from file vi_33_20_lifting.lp
+Reading time = 0.00 seconds
+: 253 rows, 355 columns, 1328 nonzeros
+Optimize a model with 253 rows, 355 columns and 1328 nonzeros
+Variable types: 0 continuous, 355 integer (354 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 2e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 79 rows and 86 columns
+Presolve time: 0.01s
+Presolved: 174 rows, 269 columns, 1135 nonzeros
+Variable types: 0 continuous, 269 integer (268 binary)
+Found heuristic solution: objective 25.0000000
+Found heuristic solution: objective 24.0000000
+Found heuristic solution: objective 23.0000000
+
+Root relaxation: objective 2.020000e+01, 323 iterations, 0.01 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   20.25000    0   93   23.00000   20.25000  12.0%     -    0s
+H    0     0                      21.0000000   20.25000  3.57%     -    0s
+
+Cutting planes:
+  Clique: 2
+  Zero half: 3
+
+Explored 1 nodes (418 simplex iterations) in 0.13 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 4: 21 23 24 25 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.100000000000e+01, best bound 2.100000000000e+01, gap 0.0000%
+
+Gurobi 8.0.0 (linux64) logging started Sun Oct 28 00:14:31 2018
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.0.0 build v8.0.0rc0 (linux64)
+Copyright (c) 2018, Gurobi Optimization, LLC
+
+Read LP format model from file vi_33_20_lifting.lp
+Reading time = 0.01 seconds
+: 250 rows, 355 columns, 1281 nonzeros
+Optimize a model with 250 rows, 355 columns and 1281 nonzeros
+Variable types: 0 continuous, 355 integer (354 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 2e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 79 rows and 86 columns
+Presolve time: 0.02s
+Presolved: 171 rows, 269 columns, 1091 nonzeros
+Variable types: 0 continuous, 269 integer (268 binary)
+Found heuristic solution: objective 24.0000000
+Found heuristic solution: objective 23.0000000
+Found heuristic solution: objective 22.0000000
+
+Root relaxation: objective 2.025000e+01, 320 iterations, 0.01 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   20.33333    0   66   22.00000   20.33333  7.58%     -    0s
+*    0     0               0      21.0000000   21.00000  0.00%     -    0s
+     0     0          -    0        21.00000   21.00000  0.00%     -    0s
+
+Cutting planes:
+  Zero half: 8
+
+Explored 1 nodes (453 simplex iterations) in 0.12 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 4: 21 22 23 24 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.100000000000e+01, best bound 2.100000000000e+01, gap 0.0000%
+
+Gurobi 8.0.0 (linux64) logging started Sun Oct 28 00:14:35 2018
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.0.0 build v8.0.0rc0 (linux64)
+Copyright (c) 2018, Gurobi Optimization, LLC
+
+Read LP format model from file vi_33_20_lifting.lp
+Reading time = 0.01 seconds
+: 247 rows, 355 columns, 1250 nonzeros
+Optimize a model with 247 rows, 355 columns and 1250 nonzeros
+Variable types: 0 continuous, 355 integer (354 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 2e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 79 rows and 86 columns
+Presolve time: 0.01s
+Presolved: 168 rows, 269 columns, 1060 nonzeros
+Variable types: 0 continuous, 269 integer (268 binary)
+Found heuristic solution: objective 24.0000000
+Found heuristic solution: objective 23.0000000
+
+Root relaxation: objective 2.020000e+01, 335 iterations, 0.01 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   20.20000    0   87   23.00000   20.20000  12.2%     -    0s
+H    0     0                      22.0000000   20.20000  8.18%     -    0s
+*    0     0               0      21.0000000   21.00000  0.00%     -    0s
+
+Cutting planes:
+  Gomory: 2
+  Clique: 10
+  Zero half: 3
+
+Explored 1 nodes (459 simplex iterations) in 0.11 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 4: 21 22 23 24 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.100000000000e+01, best bound 2.100000000000e+01, gap 0.0000%
+
+Gurobi 8.0.0 (linux64) logging started Sun Oct 28 00:14:38 2018
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.0.0 build v8.0.0rc0 (linux64)
+Copyright (c) 2018, Gurobi Optimization, LLC
+
+Read LP format model from file vi_33_20_lifting.lp
+Reading time = 0.00 seconds
+: 245 rows, 355 columns, 1223 nonzeros
+Optimize a model with 245 rows, 355 columns and 1223 nonzeros
+Variable types: 0 continuous, 355 integer (354 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 2e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 79 rows and 86 columns
+Presolve time: 0.01s
+Presolved: 166 rows, 269 columns, 1033 nonzeros
+Variable types: 0 continuous, 269 integer (268 binary)
+Found heuristic solution: objective 24.0000000
+Found heuristic solution: objective 23.0000000
+
+Root relaxation: objective 2.000000e+01, 298 iterations, 0.01 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0      20.0000000   20.00000  0.00%     -    0s
+
+Explored 0 nodes (330 simplex iterations) in 0.07 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 3: 20 23 24 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.000000000000e+01, best bound 2.000000000000e+01, gap 0.0000%
+
+Gurobi 8.0.0 (linux64) logging started Sun Oct 28 00:14:49 2018
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.0.0 build v8.0.0rc0 (linux64)
+Copyright (c) 2018, Gurobi Optimization, LLC
+
+Read LP format model from file vi_33_20_lifting.lp
+Reading time = 0.00 seconds
+: 246 rows, 355 columns, 1236 nonzeros
+Optimize a model with 246 rows, 355 columns and 1236 nonzeros
+Variable types: 0 continuous, 355 integer (354 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 2e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 79 rows and 86 columns
+Presolve time: 0.01s
+Presolved: 167 rows, 269 columns, 1046 nonzeros
+Variable types: 0 continuous, 269 integer (268 binary)
+Found heuristic solution: objective 24.0000000
+Found heuristic solution: objective 23.0000000
+
+Root relaxation: objective 2.000000e+01, 320 iterations, 0.01 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+H    0     0                      20.0000000    0.00000   100%     -    0s
+     0     0          -    0        20.00000   20.00000  0.00%     -    0s
+
+Explored 0 nodes (526 simplex iterations) in 0.06 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 3: 20 23 24 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.000000000000e+01, best bound 2.000000000000e+01, gap 0.0000%
+
+Gurobi 8.0.0 (linux64) logging started Sun Oct 28 00:14:56 2018
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.0.0 build v8.0.0rc0 (linux64)
+Copyright (c) 2018, Gurobi Optimization, LLC
+
+Read LP format model from file vi_33_20_lifting.lp
+Reading time = 0.00 seconds
+: 246 rows, 355 columns, 1237 nonzeros
+Optimize a model with 246 rows, 355 columns and 1237 nonzeros
+Variable types: 0 continuous, 355 integer (354 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 2e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 79 rows and 86 columns
+Presolve time: 0.01s
+Presolved: 167 rows, 269 columns, 1047 nonzeros
+Variable types: 0 continuous, 269 integer (268 binary)
+Found heuristic solution: objective 24.0000000
+Found heuristic solution: objective 23.0000000
+
+Root relaxation: objective 2.020000e+01, 339 iterations, 0.01 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   20.20000    0   90   23.00000   20.20000  12.2%     -    0s
+H    0     0                      22.0000000   20.20000  8.18%     -    0s
+*    0     0               0      21.0000000   21.00000  0.00%     -    0s
+
+Cutting planes:
+  Gomory: 2
+  Clique: 8
+  StrongCG: 1
+  Zero half: 5
+
+Explored 1 nodes (456 simplex iterations) in 0.10 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 4: 21 22 23 24 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.100000000000e+01, best bound 2.100000000000e+01, gap 0.0000%
+
+Gurobi 8.0.0 (linux64) logging started Sun Oct 28 01:20:24 2018
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.0.0 build v8.0.0rc0 (linux64)
+Copyright (c) 2018, Gurobi Optimization, LLC
+
+Read LP format model from file vi_33_20_lifting.lp
+Reading time = 0.01 seconds
+: 266 rows, 355 columns, 1488 nonzeros
+
+Read input file 'sol.sol'
+
+Optimize a model with 266 rows, 355 columns and 1488 nonzeros
+Variable types: 0 continuous, 355 integer (354 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 2e+01]
+  RHS range        [1e+00, 1e+00]
+
+MIP start did not produce a new incumbent solution
+MIP start violates constraint manual_cut(4) by 1.000000000
+
+Presolve removed 77 rows and 85 columns
+Presolve time: 0.03s
+Presolved: 189 rows, 270 columns, 1295 nonzeros
+Variable types: 0 continuous, 270 integer (269 binary)
+Found heuristic solution: objective 25.0000000
+Found heuristic solution: objective 24.0000000
+Found heuristic solution: objective 23.0000000
+
+Root relaxation: objective 2.026667e+01, 321 iterations, 0.01 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   20.33333    0   64   23.00000   20.33333  11.6%     -    0s
+Another try with MIP start
+H    0     0                      21.0000000   20.33333  3.17%     -    0s
+     0     0   21.00000    0   84   21.00000   21.00000  0.00%     -    0s
+
+Cutting planes:
+  Gomory: 1
+  Clique: 4
+  Zero half: 8
+
+Explored 1 nodes (475 simplex iterations) in 0.17 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 4: 21 23 24 25 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.100000000000e+01, best bound 2.100000000000e+01, gap 0.0000%

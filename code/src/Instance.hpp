@@ -77,6 +77,9 @@ public:
     // latest starting job of job on machine i
     int lst( int j, int i ) const { return lst_[j][i]; }
 
+    // minimum processing time of machine i
+    int minimumTime( int i ) const { return minimum_time_[i]; }
+
     // save the cmpl file
     void saveCmpl( const std::string fname ) const;
 
@@ -107,6 +110,9 @@ private:
 
     // latest starting job of job on machine
     std::vector< std::vector< int > > lst_;
+
+    // minimum processing time of machines
+    std::vector<int> minimum_time_;
 };
 
 #endif

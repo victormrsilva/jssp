@@ -33,3 +33,8 @@ Job 2, Machine 1 -> Machine 3: 4
 Job 3, Machine 2 -> Machine 3: 3
 Job 3, Machine 2 -> Machine 1: 4
 Job 3, Machine 3 -> Machine 1: 1
+
+Machine i: minimum_time 
+Machine 1: 3
+Machine 2: 3
+Machine 3: 1

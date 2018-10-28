@@ -130,7 +130,7 @@ process(vector<vector<vector<vector<int>>>>(inst_.n(), (vector<vector<vector<int
     // f.close();
     //cout << "enter_flows criado" << endl;
 
-    variables_pack = vector<unordered_set<int>>(names.size());
+    variables_pack = vector<vector<int>>(names.size());
     cout << variables_pack.size() << endl;
     
     for (int m0 = 0; m0 < inst_.m(); m0++){
@@ -139,27 +139,39 @@ process(vector<vector<vector<vector<int>>>>(inst_.n(), (vector<vector<vector<int
                 int dur = inst_.time(j,m0);
                 int var = xIdx_[m0][j][t];
                 cout << names[var] << " ";
-                for (int t0 = t - inst_.time(j,m0) + 1; t0 < t+dur; t0++){
-                    if (t0 < inst_.est(j,m0) || t0 > inst_.lst(j,m0)) continue;
+                for (int t0 = t - inst_.time(j,m0) + 1; t0 < t+inst_.minimumTime(j); t0++){
+                    if (t0 < inst_.est(j,m0) || t0 > inst_.lst(j,m0) || t0 == t) continue;
                     cout << "[" << j+1 << "," << m0+1 << "," << t0 << "," << inst_.est(j,m0) << "," << inst_.lst(j,m0) << "] ";
                     cout << names[xIdx_[m0][j][t0]] << " ";
-                    variables_pack[var].insert(xIdx_[m0][j][t0]);
+                    variables_pack[var].emplace_back(xIdx_[m0][j][t0]);
                 }
                 
                 for (int j_aux = 0; j_aux < inst_.n(); j_aux++){
                     if (j_aux == j) continue;
                     int dur_aux = inst_.time(j_aux,m0);
-                    int qtd_movimentos = dur - dur_aux ;
-                    while (qtd_movimentos >= 0){
-                        int tempo = t-qtd_movimentos;
-                        if (tempo >= inst_.est(j_aux,m0) && tempo <= inst_.lst(j_aux,m0)){
-                            cout << "[" << j_aux+1 << "," << m0+1 << "," << tempo << "," << inst_.est(j_aux,m0) << "," << inst_.lst(j_aux,m0) << "] ";
-                            cout << names[xIdx_[m0][j_aux][tempo]] << " ";
-                            variables_pack[var].insert(xIdx_[m0][j_aux][tempo]);
+                    int qtd_movimentos = inst_.minimumTime(j) - dur_aux ;
+                    if (qtd_movimentos >= 0){
+                        while (qtd_movimentos >= 0){
+                            int tempo = t+qtd_movimentos;
+                            if (tempo >= inst_.est(j_aux,m0) && tempo <= inst_.lst(j_aux,m0)){
+                                cout << "[" << j_aux+1 << "," << m0+1 << "," << tempo << "," << inst_.est(j_aux,m0) << "," << inst_.lst(j_aux,m0) << "] ";
+                                cout << names[xIdx_[m0][j_aux][tempo]] << " ";
+                                variables_pack[var].emplace_back(xIdx_[m0][j_aux][tempo]);
+                            }
+                            qtd_movimentos--;
                         }
-                        qtd_movimentos--;
                     }
-
+                    else {
+                        while (qtd_movimentos <= 0){
+                            int tempo = t+qtd_movimentos;
+                            if (tempo >= inst_.est(j_aux,m0) && tempo <= inst_.lst(j_aux,m0)){
+                                cout << "[" << j_aux+1 << "," << m0+1 << "," << tempo << "," << inst_.est(j_aux,m0) << "," << inst_.lst(j_aux,m0) << "] ";
+                                cout << names[xIdx_[m0][j_aux][tempo]] << " ";
+                                variables_pack[var].emplace_back(xIdx_[m0][j_aux][tempo]);
+                            }
+                            qtd_movimentos++;
+                        }
+                    }
                 }
                 cout << endl;
             }
@@ -829,7 +841,7 @@ void Fernando::lifting_linear(int *idxs, double *coefs){
         if (clique)
         {
             cortes = manual_cuts();
-            //cortes = cortes + cliques(idxs,coefs);
+            cortes = cortes + cliques(idxs,coefs);
         }
         
         bnd_anterior = bnd;
@@ -840,7 +852,7 @@ void Fernando::lifting_linear(int *idxs, double *coefs){
         //lp_write_sol(mip, "solution.sol");
         saida << iteracoes << ";" << bnd << ";" << c << ";" << cortes << ";" << lp_solution_time(mip)<<endl;
         cout <<  " c: " << c << " bnd_anterior: " << bnd_anterior << " bnd: " << bnd << endl;
-        //getchar();
+        getchar();
     } 
     clock_t end = clock();
     cout << "Quantidade de iterações linear: " << iteracoes  <<endl;

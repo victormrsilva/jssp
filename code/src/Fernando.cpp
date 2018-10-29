@@ -525,8 +525,9 @@ void Fernando::cgraph_creation()
 {
     /* variáveis em conflito
     1 = as variáveis x(j,m(i),t',m(i+1),t'+d) e x(j,m(i),t',m(i),t'+1) com t' > t, ou seja, as variáveis que ainda podem processar e as de espera nos tempos
-    2 = as variáveis x(j,m(i-1), t',m(i),t+d) com t'+d > t
-    3 = as variáveis de processamento para a máquina i no tempo t*/
+    2 = as variáveis x(j,m(i-1), t') com t' entre t-t(j,m(i-1)) e est(j,m(i-1))
+    3 = as variáveis de processamento para a máquina i no tempo t
+    4 = as variáveis x(j,m(i+1),t'), com t' < t+d t*/
 
     clock_t begin = clock();
     cgraph = cgraph_create(names.size() * 2); // todos os vértices de menos o c
@@ -570,55 +571,7 @@ void Fernando::cgraph_creation()
                         if (m != 0)
                         {
                             unordered_set<pair<int,int>,pair_hash> analisar;
-                            analisar.emplace(make_pair(m,t));
-                            while (!analisar.empty()){
-                                pair<int,int> maquina_tempo = *analisar.begin();
-                                analisar.erase(analisar.begin());
-                                if (maquina_tempo.first == 0) continue; // primeira máquina
-                                int m_atual = inst_.machine(j,maquina_tempo.first);
-                                int m_anterior = inst_.machine(j, maquina_tempo.first - 1);
-                                int t0 = maquina_tempo.second;
-                                int dur_anterior = inst_.time(j, m_anterior);
-                                if (t0 - dur_anterior >= inst_.time(j, m_anterior))
-                                {
-                                    for (int tf = t0 - dur_anterior + 1; tf < t0; tf++)
-                                    {
-                                        //cout << "job: " << j+1 << " m_atual: " << m_atual+1 << " t_atual: " << t0 << " m_anterior: " << m_anterior+1 << " dur: " << dur_anterior << " t0: " << tf << endl;
-                                        if (tf >= inst_.lst(j, m_anterior))
-                                            continue;
-                                        //cout << names[xIdx_[m_anterior][j][tf]] << endl;
-                                        auto i = conflitos.emplace(xIdx_[m_anterior][j][tf]);
-                                        if (i.second){ // conseguiu inserir{
-                                            file_conflitos << names[xIdx_[m_anterior][j][tf]] << " ";
-                                        }
-                                        analisar.emplace(make_pair(maquina_tempo.first-1,tf));
-                                        
-                                    }
-                                    //cout << analisar.size() << endl;
-                                    //getchar();
-                                }
-                            }
-                        }
-                        
-                        // caso 3
-                        file_conflitos << endl << "caso 3: " << endl;
-                        for (int j_ = 0; j_ < inst_.n(); j_++)
-                        {
-                            for (int var : process[j_][m0][t])
-                            {
-                                if (var == idx)
-                                    continue;
-                                //file_conflitos << names[var] << " ";
-                                conflitos.insert(var);
-                            }
-                        }
-
-                        // caso 4
-                        file_conflitos << endl << "caso 4: " << endl;
-                        if (m != 0)
-                        {
-                            unordered_set<pair<int,int>,pair_hash> analisar;
-                            //cout << "analisar j: " << j+1 << " maquina: " << inst_.machine(j,m-1)+1 << " tempo: " << t-inst_.time(j, inst_.machine(j,m-1)) << " maquina atual: " << inst_.machine(j,m)+1 << " tempo atual: " << t << endl;
+                            cout << "analisar j: " << j+1 << " maquina: " << inst_.machine(j,m-1)+1 << " tempo: " << t-inst_.time(j, inst_.machine(j,m-1)) << " maquina atual: " << inst_.machine(j,m)+1 << " tempo atual: " << t << endl;
                             analisar.emplace(make_pair(m-1,t-inst_.time(j, inst_.machine(j,m-1))));
                             while (!analisar.empty()){
                                 pair<int,int> maquina_tempo = *analisar.begin();
@@ -627,7 +580,8 @@ void Fernando::cgraph_creation()
                                 int t0 = maquina_tempo.second;
                                 int m0 = inst_.machine(j,maquina_tempo.first);
                                 int mf = inst_.machine(j,maquina_tempo.first-1);
-                                //cout << "j:" << j+1 << " m: " << m << " t: " << t << " m0: " << m0+1 << " mf: " << mf+1 << " t0: " << t0 << " tf: " << t0-inst_.time(j,mf) << endl;
+                                
+                                cout << "j:" << j+1 << " m: " << m << " t: " << t << " m0: " << m0+1 << " mf: " << mf+1 << " t0: " << t0 << " tf: " << t0-inst_.time(j,mf) << endl;
                                 //cout << maquina_tempo.first-1 << " " << t0-inst_.time(j,mf) << endl;
                                 for (int tf = t0 + 1 ; tf <= inst_.lst(j,m0); tf++)
                                 {
@@ -643,6 +597,42 @@ void Fernando::cgraph_creation()
                                 //getchar();
                             }
                         }
+
+                        // caso 3
+                        file_conflitos << endl << "caso 3: " << endl;
+                        for (int j_ = 0; j_ < inst_.n(); j_++)
+                        {
+                            for (int var : process[j_][m0][t])
+                            {
+                                if (var == idx)
+                                    continue;
+                                file_conflitos << names[var] << " ";
+                                conflitos.insert(var);
+                            }
+                        }
+
+                        // caso 4
+                        file_conflitos << endl << "caso 4: " << endl;
+
+                        for (int j = 0; j < inst_.n(); j++){
+                            for (int i = 0; m  < inst_.m(); i++){
+                                int m0 = inst_.machine(j,i);
+                                for (int t0 = inst_.est(j,m0); t0 <= inst_.lst(j,m0); t0++){
+                                    for (int k = i+1; k < inst_.m(); k++){
+                                        int mf = inst_.machine(j,k);
+                                        int m_anterior = inst_.machine(j,k-1);
+                                        for (int tf = inst_.est(j,mf); tf < t0+inst_.time(j,m_anterior); tf++){
+                                            cout << m0 << " " << t0 << " " << mf << " " << tf << " " << t0+inst_.time(j,m_anterior) << endl;
+                                            int var = xIdx_[mf][j][tf];
+                                            conflitos.insert(var);
+                                            file_conflitos << names[var] << " ";
+                                            cout << names[var] << endl;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        
                         // mostra conflitos
                         file_conflitos << endl << "todos os conflitos: " << endl;
                         file_conflitos << names[idx] << " = ";
@@ -840,7 +830,7 @@ void Fernando::lifting_linear(int *idxs, double *coefs){
         int cortes = 0;
         if (clique)
         {
-            cortes = manual_cuts();
+            //cortes = manual_cuts();
             cortes = cortes + cliques(idxs,coefs);
         }
         

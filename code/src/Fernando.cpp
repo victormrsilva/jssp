@@ -614,24 +614,21 @@ void Fernando::cgraph_creation()
                         // caso 4
                         file_conflitos << endl << "caso 4: " << endl;
 
-                        for (int j = 0; j < inst_.n(); j++){
-                            for (int i = 0; m  < inst_.m(); i++){
-                                int m0 = inst_.machine(j,i);
-                                for (int t0 = inst_.est(j,m0); t0 <= inst_.lst(j,m0); t0++){
-                                    for (int k = i+1; k < inst_.m(); k++){
-                                        int mf = inst_.machine(j,k);
-                                        int m_anterior = inst_.machine(j,k-1);
-                                        for (int tf = inst_.est(j,mf); tf < t0+inst_.time(j,m_anterior); tf++){
-                                            cout << m0 << " " << t0 << " " << mf << " " << tf << " " << t0+inst_.time(j,m_anterior) << endl;
-                                            int var = xIdx_[mf][j][tf];
-                                            conflitos.insert(var);
-                                            file_conflitos << names[var] << " ";
-                                            cout << names[var] << endl;
-                                        }
-                                    }
-                                }
+
+                        for (int k = m+1; k < inst_.m(); k++){
+                            int m0 = inst_.machine(j,m);
+                            int mf = inst_.machine(j,k);
+                            int m_anterior = inst_.machine(j,k-1);
+                            //cout << "j" << j << " m0: " << m0+1 << " t0: " << t0 << " mf: " << mf+1 << " k: " << k << " distance: " << inst_.distance(j,m0,mf) << " est(mf): " << inst_.est(j,mf) << endl;
+                            for (int tf = inst_.est(j,mf); tf < t+inst_.distance(j,m0,mf); tf++){
+                                //cout << m0+1 << " " << t0 << " " << mf+1 << " " << tf << " " << t0+inst_.time(j,m_anterior) << endl;
+                                int var = xIdx_[mf][j][tf];
+                                conflitos.insert(var);
+                                file_conflitos << names[var] << " ";
+                                //cout << names[var] << endl;
                             }
                         }
+                                    //getchar();
                         
                         // mostra conflitos
                         file_conflitos << endl << "todos os conflitos: " << endl;
@@ -655,6 +652,7 @@ void Fernando::cgraph_creation()
     file_conflitos.close();
     clock_t end = clock();
     cout << "cgraph creation time: " << (double) (end-begin)/CLOCKS_PER_SEC << endl;
+    getchar();
     //cgraph_save(cgraph, "cgraph.txt");
     //cout << indices_conflitos.size() << endl;
 }
@@ -830,7 +828,7 @@ void Fernando::lifting_linear(int *idxs, double *coefs){
         int cortes = 0;
         if (clique)
         {
-            //cortes = manual_cuts();
+            cortes = manual_cuts();
             cortes = cortes + cliques(idxs,coefs);
         }
         

@@ -130,63 +130,96 @@ process(vector<vector<vector<vector<int>>>>(inst_.n(), (vector<vector<vector<int
     // f.close();
     //cout << "enter_flows criado" << endl;
 
-    variables_pack = vector<vector<int>>(names.size());
-    cout << variables_pack.size() << endl;
+    variables_pack = vector<vector<int>>();
+    //cout << variables_pack.size() << endl;
     
     for (int m0 = 0; m0 < inst_.m(); m0++){
         for (int j = 0; j < inst_.n(); j++){
             for (int t=inst_.est(j,m0); t <= inst_.lst(j,m0); t++){
-                int dur = inst_.time(j,m0);
                 int var = xIdx_[m0][j][t];
-                cout << names[var] << " ";
-                for (int t0 = t - inst_.time(j,m0) + 1; t0 < t+inst_.minimumTime(j); t0++){
-                    if (t0 < inst_.est(j,m0) || t0 > inst_.lst(j,m0) || t0 == t) continue;
-                    cout << "[" << j+1 << "," << m0+1 << "," << t0 << "," << inst_.est(j,m0) << "," << inst_.lst(j,m0) << "] ";
-                    cout << names[xIdx_[m0][j][t0]] << " ";
-                    variables_pack[var].emplace_back(xIdx_[m0][j][t0]);
-                }
-                
-                for (int j_aux = 0; j_aux < inst_.n(); j_aux++){
-                    if (j_aux == j) continue;
-                    int dur_aux = inst_.time(j_aux,m0);
-                    int qtd_movimentos = inst_.minimumTime(j) - dur_aux ;
-                    if (qtd_movimentos >= 0){
-                        while (qtd_movimentos >= 0){
-                            int tempo = t+qtd_movimentos;
-                            if (tempo >= inst_.est(j_aux,m0) && tempo <= inst_.lst(j_aux,m0)){
-                                cout << "[" << j_aux+1 << "," << m0+1 << "," << tempo << "," << inst_.est(j_aux,m0) << "," << inst_.lst(j_aux,m0) << "] ";
-                                cout << names[xIdx_[m0][j_aux][tempo]] << " ";
-                                variables_pack[var].emplace_back(xIdx_[m0][j_aux][tempo]);
-                            }
-                            qtd_movimentos--;
+                for (int min = 1; min <= inst_.minimumTime(m0); min++){
+                    variables_pack.emplace_back();
+                    int pos = variables_pack.size()-1;
+                    cout << min << " " << names[var] << " ";
+                    variables_pack[pos].emplace_back(var);
+                    for (int t0 = t - inst_.time(j,m0) + 1; t0 < t+min; t0++){
+                        if (t0 >= inst_.est(j,m0) && t0 <= inst_.lst(j,m0)){
+                            if (xIdx_[m0][j][t0] == var) continue;
+                            cout << "[" << j+1 << "," << m0+1 << "," << t0 << "," << t+inst_.minimumTime(m0) << "," << inst_.est(j,m0) << "," << inst_.lst(j,m0) << "] ";
+                            cout << names[xIdx_[m0][j][t0]] << " ";
+                            variables_pack[pos].emplace_back(xIdx_[m0][j][t0]);
                         }
                     }
-                    else {
+                    //cout << endl;
+                    for (int j_aux = 0; j_aux < inst_.n(); j_aux++){
+                        if (j_aux == j) continue;
+                        int dur = inst_.time(j_aux,m0);
+                        int qtd_movimentos = min - dur ;
                         while (qtd_movimentos <= 0){
                             int tempo = t+qtd_movimentos;
                             if (tempo >= inst_.est(j_aux,m0) && tempo <= inst_.lst(j_aux,m0)){
                                 cout << "[" << j_aux+1 << "," << m0+1 << "," << tempo << "," << inst_.est(j_aux,m0) << "," << inst_.lst(j_aux,m0) << "] ";
                                 cout << names[xIdx_[m0][j_aux][tempo]] << " ";
-                                variables_pack[var].emplace_back(xIdx_[m0][j_aux][tempo]);
+                                variables_pack[pos].emplace_back(xIdx_[m0][j_aux][tempo]);
                             }
                             qtd_movimentos++;
+                        }                        
+                    }
+                    cout << endl;
+                }
+
+                for (int min = 2; min <= inst_.time(j,m0); min++){
+                    variables_pack.emplace_back();
+                    int pos = variables_pack.size()-1;
+                    cout << min << " " << names[var] << " ";
+                    for (int j_aux = 0; j_aux < inst_.n(); j_aux++){
+                        int qtd_movimentos = min - inst_.time(j_aux,m0);
+                        //cout << qtd_movimentos << endl;
+                        if (qtd_movimentos <= 0) {
+                            while (qtd_movimentos <= 0){
+                                int tempo = t+qtd_movimentos;
+                                qtd_movimentos++;
+                                //cout << tempo << endl;
+                                if (xIdx_[m0][j][tempo] == var) continue;
+                                if (tempo >= inst_.est(j_aux,m0) && tempo <= inst_.lst(j_aux,m0)){
+                                    //cout << "[" << j_aux+1 << "," << m0+1 << "," << tempo << "," << inst_.est(j_aux,m0) << "," << inst_.lst(j_aux,m0) << "] ";
+                                    cout << names[xIdx_[m0][j_aux][tempo]] << " ";
+                                    variables_pack[pos].emplace_back(xIdx_[m0][j_aux][tempo]);
+                                }
+                                
+                            }
+                        }
+                        else {
+                            while (qtd_movimentos >= 0){
+                                int tempo = t+qtd_movimentos;
+                                qtd_movimentos--;
+                                if (xIdx_[m0][j][tempo] == var) continue;
+                                if (tempo >= inst_.est(j_aux,m0) && tempo <= inst_.lst(j_aux,m0)){
+                                    //cout << "[" << j_aux+1 << "," << m0+1 << "," << tempo << "," << inst_.est(j_aux,m0) << "," << inst_.lst(j_aux,m0) << "] ";
+                                    cout << names[xIdx_[m0][j_aux][tempo]] << " ";
+                                    variables_pack[pos].emplace_back(xIdx_[m0][j_aux][tempo]);
+                                }
+                                
+                            }
                         }
                     }
+                    cout << endl;
                 }
-                cout << endl;
             }
         }
     }
 
     f.open("cuts.txt");
-    for (int i = 0; i < variables_pack.size(); i++){
-        f << names[i] << " = ";
-        for (int v : variables_pack[i]){
+    for (vector<int> vars : variables_pack){
+        for (int v : vars){
+            //cout << vars.size() << " " << v << " " ;
             f << names[v] << " ";
         }
+        //cout << endl;
         f << endl;
     }
     f.close();
+    cout << "arquivo criado" << endl;
     getchar();
     f.open ("processing_machines.txt");
     for (int t0=0; t0 < inst_.maxTime()-1; t0++){
@@ -264,7 +297,7 @@ process(vector<vector<vector<vector<int>>>>(inst_.n(), (vector<vector<vector<int
         vector< double > coef;
 
         int h = inst_.machine(j,0); // first machine
-        cout << h << " " << j << endl;
+        //cout << h << " " << j << endl;
         idx.push_back( xIdx_[h][j][0] );
         coef.push_back( 1.0 );
         // adiciona restrição.
@@ -423,8 +456,8 @@ int Fernando::manual_cuts(){
     f.open("cuts_manual.txt");
     int qtd = 0;
     for (int i = 0; i < variables_pack.size(); i++){
-        f << names[i] << "(" << x[i] << ") ";
-        double soma = x[i]; // inicia a soma para ver se há violação
+        //f << names[i] << "(" << x[i] << ") ";
+        double soma = 0; // inicia a soma para ver se há violação
         for (int var : variables_pack[i]){
             f << names[var] << "(" << x[var] << ") ";
             soma = soma + x[var];
@@ -432,11 +465,9 @@ int Fernando::manual_cuts(){
         f << soma << endl;
         
         if (soma > 1.001){ // houve violação então vamos adicionar os cortes
-            cout << soma << endl;
+            //cout << soma << endl;
             vector< int > idx;
             vector< double > coef;
-            idx.emplace_back(i);
-            coef.emplace_back(1.0);
             for (int var : variables_pack[i]){
                 idx.emplace_back(var);
                 coef.emplace_back(1.0);
@@ -451,7 +482,7 @@ int Fernando::manual_cuts(){
     f.close();
     string filename = inst_.instanceName()+"_cortes";
     lp_write_lp(mip, (filename+".lp").c_str());
-    getchar();
+    //getchar();
     return qtd;
 }
 
@@ -478,9 +509,9 @@ int Fernando::cliques(int *idxs,double *coefs)
         rc_conflitos[i] = rc[i];
         rc_conflitos[i + names.size()] = (-1) * rc[i];
     }
-
+    cout << "clique_sep";
     CliqueSeparation *clique_sep = clq_sep_create(cgraph);
-    cout << "clique_sep ok" << endl;
+    cout << " ok" << endl;
     clq_sep_set_verbose(clique_sep, 'T');
     clq_sep_set_rc(clique_sep, &rc_conflitos[0]); //&rc_conflitos[0]);
     cout << "clique_sep_set_rc ok" << endl;
@@ -571,7 +602,7 @@ void Fernando::cgraph_creation()
                         if (m != 0)
                         {
                             unordered_set<pair<int,int>,pair_hash> analisar;
-                            cout << "analisar j: " << j+1 << " maquina: " << inst_.machine(j,m-1)+1 << " tempo: " << t-inst_.time(j, inst_.machine(j,m-1)) << " maquina atual: " << inst_.machine(j,m)+1 << " tempo atual: " << t << endl;
+                            //cout << "analisar j: " << j+1 << " maquina: " << inst_.machine(j,m-1)+1 << " tempo: " << t-inst_.time(j, inst_.machine(j,m-1)) << " maquina atual: " << inst_.machine(j,m)+1 << " tempo atual: " << t << endl;
                             analisar.emplace(make_pair(m-1,t-inst_.time(j, inst_.machine(j,m-1))));
                             while (!analisar.empty()){
                                 pair<int,int> maquina_tempo = *analisar.begin();
@@ -581,7 +612,7 @@ void Fernando::cgraph_creation()
                                 int m0 = inst_.machine(j,maquina_tempo.first);
                                 int mf = inst_.machine(j,maquina_tempo.first-1);
                                 
-                                cout << "j:" << j+1 << " m: " << m << " t: " << t << " m0: " << m0+1 << " mf: " << mf+1 << " t0: " << t0 << " tf: " << t0-inst_.time(j,mf) << endl;
+                                //cout << "j:" << j+1 << " m: " << m << " t: " << t << " m0: " << m0+1 << " mf: " << mf+1 << " t0: " << t0 << " tf: " << t0-inst_.time(j,mf) << endl;
                                 //cout << maquina_tempo.first-1 << " " << t0-inst_.time(j,mf) << endl;
                                 for (int tf = t0 + 1 ; tf <= inst_.lst(j,m0); tf++)
                                 {
@@ -672,7 +703,7 @@ void Fernando::optimize(){
         delete []idxs;
         delete []coefs;
     }
-    getchar();
+    //getchar();
     lp_as_integer(mip);
 
     //Callback cb = Callback(mip,inst_,xIdx_,process);
@@ -682,7 +713,7 @@ void Fernando::optimize(){
     string filename = inst_.instanceName()+"_machine";
     lp_write_lp(mip, (filename+".lp").c_str());
     //getchar();
-    lp_optimize(mip);
+    //lp_optimize(mip);
 
     //lp_write_lp(mip,"teste_cb.lp");
     lp_write_sol(mip, (filename+".sol").c_str());
@@ -757,16 +788,17 @@ void Fernando::lifting_binario(int *idxs, double *coefs){
     //getchar();
     while (fabs(ub-lb) > 1e-6) {
         iteracoes++;
+        int cortes = 0;
         c = ((ub-lb)/2 + lb);
-        saida << iteracoes << ";" << lb << ";" << ub << ";" <<teto(c) << ";";
+        
         if (clique)
         {
-            manual_cuts();
+            cortes = manual_cuts();
             //saida << cliques(idxs,coefs) << ";";
         }
         
         bnd = lifting(teto(c),&idxs[0],&coefs[0]);
-        saida << bnd << ";" << lp_solution_time(mip) << endl;
+        saida << iteracoes << ";" << lb << ";" << ub << ";" <<teto(c) << ";" << cortes <<"," << bnd << ";" << lp_solution_time(mip) << endl;
         //lp_optimize_as_continuous(mip);
         //lp_write_lp(mip, "teste_cb.lp");
         //lp_write_sol(mip, "solution.sol");
@@ -823,13 +855,29 @@ void Fernando::lifting_linear(int *idxs, double *coefs){
     ofstream saida(inst_.instanceName()+"_solution_linear_machine.csv");
     saida << "iteracao;bnd;c;cortes;tempo" << endl;
     saida << "0;" << bnd << ";0;0;"<<lp_solution_time(mip)<<endl;
+    int cuts = 1;
+    getchar();
+    while (cuts != 0) {
+        cout << "do" << endl;
+        lp_write_lp(mip,"teste.lp");
+        lp_optimize_as_continuous(mip);
+        cout << "do1" << endl;
+        cuts = manual_cuts();
+        cout << "cortes manuais: " << cuts << endl;
+        getchar();
+        if (cuts == 0){
+            cuts = cliques(idxs,coefs);
+            cout << "cortes cliques: " << cuts << endl;
+            getchar();
+        }
+    };
     while (fabs(bnd - teto(bnd_anterior)) > 1e-06) {
         iteracoes++;
         int cortes = 0;
         if (clique)
         {
             cortes = manual_cuts();
-            cortes = cortes + cliques(idxs,coefs);
+            //cortes = cortes + cliques(idxs,coefs);
         }
         
         bnd_anterior = bnd;
@@ -840,7 +888,7 @@ void Fernando::lifting_linear(int *idxs, double *coefs){
         //lp_write_sol(mip, "solution.sol");
         saida << iteracoes << ";" << bnd << ";" << c << ";" << cortes << ";" << lp_solution_time(mip)<<endl;
         cout <<  " c: " << c << " bnd_anterior: " << bnd_anterior << " bnd: " << bnd << endl;
-        getchar();
+        //getchar();
     } 
     clock_t end = clock();
     cout << "Quantidade de iterações linear: " << iteracoes  <<endl;

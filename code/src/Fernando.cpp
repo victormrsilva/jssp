@@ -137,10 +137,11 @@ process(vector<vector<vector<vector<int>>>>(inst_.n(), (vector<vector<vector<int
         for (int j = 0; j < inst_.n(); j++){
             for (int t=inst_.est(j,m0); t <= inst_.lst(j,m0); t++){
                 int var = xIdx_[m0][j][t];
-                for (int min = 1; min <= inst_.minimumTime(m0); min++){
+                // t1
+                for (int min = 1; min <= inst_.time(j,m0); min++){
                     variables_pack.emplace_back();
                     int pos = variables_pack.size()-1;
-                    cout << min << " " << names[var] << " ";
+                    cout << "t1: " << min << " " << names[var] << " ";
                     variables_pack[pos].emplace_back(var);
                     for (int t0 = t - inst_.time(j,m0) + 1; t0 < t+min; t0++){
                         if (t0 >= inst_.est(j,m0) && t0 <= inst_.lst(j,m0)){
@@ -163,15 +164,16 @@ process(vector<vector<vector<vector<int>>>>(inst_.n(), (vector<vector<vector<int
                                 variables_pack[pos].emplace_back(xIdx_[m0][j_aux][tempo]);
                             }
                             qtd_movimentos++;
-                        }                        
+                        }
                     }
                     cout << endl;
                 }
-
+                // t2
                 for (int min = 2; min <= inst_.time(j,m0); min++){
                     variables_pack.emplace_back();
                     int pos = variables_pack.size()-1;
-                    cout << min << " " << names[var] << " ";
+                    cout << "t2: " << min << " " << names[var] << " ";
+                    variables_pack[pos].emplace_back(var);
                     for (int j_aux = 0; j_aux < inst_.n(); j_aux++){
                         int qtd_movimentos = min - inst_.time(j_aux,m0);
                         //cout << qtd_movimentos << endl;
@@ -180,8 +182,9 @@ process(vector<vector<vector<vector<int>>>>(inst_.n(), (vector<vector<vector<int
                                 int tempo = t+qtd_movimentos;
                                 qtd_movimentos++;
                                 //cout << tempo << endl;
-                                if (xIdx_[m0][j][tempo] == var) continue;
+                                if (xIdx_[m0][j_aux][tempo] == var) continue;
                                 if (tempo >= inst_.est(j_aux,m0) && tempo <= inst_.lst(j_aux,m0)){
+                                    //cout << qtd_movimentos+1 << " " << tempo << " ";
                                     //cout << "[" << j_aux+1 << "," << m0+1 << "," << tempo << "," << inst_.est(j_aux,m0) << "," << inst_.lst(j_aux,m0) << "] ";
                                     cout << names[xIdx_[m0][j_aux][tempo]] << " ";
                                     variables_pack[pos].emplace_back(xIdx_[m0][j_aux][tempo]);
@@ -192,9 +195,10 @@ process(vector<vector<vector<vector<int>>>>(inst_.n(), (vector<vector<vector<int
                         else {
                             while (qtd_movimentos >= 0){
                                 int tempo = t+qtd_movimentos;
-                                qtd_movimentos--;
-                                if (xIdx_[m0][j][tempo] == var) continue;
+                                qtd_movimentos--;                                
+                                if (xIdx_[m0][j_aux][tempo] == var) continue;
                                 if (tempo >= inst_.est(j_aux,m0) && tempo <= inst_.lst(j_aux,m0)){
+                                    //cout << qtd_movimentos << " " << tempo << " ";
                                     //cout << "[" << j_aux+1 << "," << m0+1 << "," << tempo << "," << inst_.est(j_aux,m0) << "," << inst_.lst(j_aux,m0) << "] ";
                                     cout << names[xIdx_[m0][j_aux][tempo]] << " ";
                                     variables_pack[pos].emplace_back(xIdx_[m0][j_aux][tempo]);
@@ -204,6 +208,24 @@ process(vector<vector<vector<vector<int>>>>(inst_.n(), (vector<vector<vector<int
                         }
                     }
                     cout << endl;
+                }
+                // t3
+                for (int j_aux = 0; j_aux < inst_.n(); j_aux++){
+                    if (j == j_aux) continue;
+                    if (inst_.time(j,m0) >= inst_.time(j_aux,m0)){
+                        variables_pack.emplace_back();
+                        int pos = variables_pack.size()-1;
+                        cout << "t3: " << names[var] << " ";
+                        variables_pack[pos].emplace_back(var);
+                        for (int t0 = t - inst_.time(j_aux,m0) + 1; t0 < t+inst_.time(j,m0); t0++){
+                            if (t0 >= inst_.est(j_aux,m0) && t0 <= inst_.lst(j_aux,m0)){
+                                cout << "[" << j_aux+1 << "," << m0+1 << "," << t0 << "," << t+inst_.minimumTime(m0) << "," << inst_.est(j_aux,m0) << "," << inst_.lst(j_aux,m0) << "] ";
+                                cout << names[xIdx_[m0][j_aux][t0]] << " ";
+                                variables_pack[pos].emplace_back(xIdx_[m0][j_aux][t0]);
+                            }
+                        }
+                        cout << endl;
+                    }
                 }
             }
         }

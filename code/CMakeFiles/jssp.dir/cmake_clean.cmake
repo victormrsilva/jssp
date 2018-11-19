@@ -23,6 +23,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/jssp.dir/src/cgraph/vectormgm.c.o"
   "CMakeFiles/jssp.dir/src/cgraph/vint_set.c.o"
   "CMakeFiles/jssp.dir/src/cgraph/vint_queue.c.o"
+  "CMakeFiles/jssp.dir/src/cgraph/spaths.c.o"
+  "CMakeFiles/jssp.dir/src/cgraph/oddhs.c.o"
+  "CMakeFiles/jssp.dir/src/cgraph/cut.c.o"
   "jssp.pdb"
   "jssp"
 )

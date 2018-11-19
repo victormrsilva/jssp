@@ -5231,3 +5231,152 @@ int lp_get_constr_by_name(LinearProgram *lp, const char *name)
     #endif
     return idx;
 }
+
+extern "C" {
+#include "clique_separation.h"
+#include "oddhs.h"
+}
+void fill_x(LinearProgram *lp, double *x)
+{
+    int numCols = lp_cols(lp);
+    const double *colSol = lp_x(lp);
+
+    for(int i = 0; i < numCols; i++)
+    {
+        x[i] = colSol[i];
+        x[i + numCols] = 1.0 - colSol[i];
+    }
+}
+
+void fill_rc(const LinearProgram *lp, double *rc)
+{
+    int numCols = lp_cols(lp);
+    const double* origRCost = lp_reduced_cost(lp);
+
+    for(int i = 0; i < numCols; i++)
+    {
+        rc[i] = origRCost[i];
+        rc[i+numCols] = -origRCost[i];
+    }
+}
+
+int lp_generate_odd_hole_cuts(LinearProgram *lp, const CGraph *cg, CutPool *cutPool)
+{
+    const int numCols = lp_cols(lp);
+    double *x = new double[numCols*2];
+    double *rc = new double[numCols*2];
+    int *idx = new int[numCols*2];
+    int *idxMap = new int[numCols*2];
+    double *coef = new double[numCols*2];
+    OddHoleSep *oddhs = oddhs_create();
+    int cutsBefore = cut_pool_size(cutPool);
+
+    assert(numCols == cgraph_size(cg)/2);
+
+    fill_x(lp, x);
+    const double* origRCost = lp_reduced_cost(lp);
+
+    for(int i = 0; i < numCols; i++)
+    {
+        rc[i] = origRCost[i];
+        rc[i+numCols] = -origRCost[i];
+    }
+    oddhs_search_odd_holes(oddhs, numCols*2, x, rc, cg);
+
+    /* adding odd holes */
+    for(int j = 0; j < oddhs_get_odd_hole_count(oddhs); j++)
+    {
+        const int *oddEl = oddhs_get_odd_hole(oddhs, j);
+        const int oddSize = oddhs_get_odd_hole(oddhs, j + 1) - oddEl;
+        double viol = oddhs_viol(oddSize, oddEl, x);
+
+        if(viol < ODDH_SEP_DEF_MIN_VIOL)
+            continue;
+
+        const int centerSize = oddhs_get_nwc_doh(oddhs, j);
+        const int *centerIdx = oddhs_get_wc_doh(oddhs, j);
+
+        const int cutSize = oddSize + centerSize;
+        double rhs = oddhs_rhs( oddSize );
+        int realSize = 0;
+
+        std::fill(coef, coef + cutSize, 0.0);
+        std::fill(idxMap, idxMap + numCols, -1);
+
+        for(int k = 0; k < oddSize; k++)
+        {
+            if(oddEl[k] < numCols)
+            {
+                if(idxMap[oddEl[k]] == -1)
+                {
+                    idxMap[oddEl[k]] = realSize;
+                    idx[realSize] = oddEl[k];
+                    coef[realSize] = 1.0;
+                    realSize++;
+                }
+                else
+                    coef[idxMap[oddEl[k]]] += 1.0;
+            }
+            else
+            {
+                if(idxMap[oddEl[k]-numCols] == -1)
+                {
+                    idxMap[oddEl[k]-numCols] = realSize;
+                    idx[realSize] = oddEl[k] - numCols;
+                    coef[realSize] = -1.0;
+                    realSize++;
+                }
+                else
+                    coef[idxMap[oddEl[k]-numCols]] -= 1.0;
+                rhs = rhs - 1.0;
+            }
+        }
+
+        if(centerSize)
+        {
+            const double oldRhs = rhs;
+            for(int k = 0; k < centerSize; k++)
+            {
+                if(centerIdx[k] < numCols)
+                {
+                    if(idxMap[centerIdx[k]] == -1)
+                    {
+                        idxMap[centerIdx[k]] = realSize;
+                        idx[realSize] = centerIdx[k];
+                        coef[realSize] = oldRhs;
+                        realSize++;
+                    }
+                    else
+                        coef[idxMap[centerIdx[k]]] += oldRhs;
+                }
+                else
+                {
+                    rhs = rhs - oldRhs;
+
+                    if(idxMap[centerIdx[k]-numCols] == -1)
+                    {
+                        idxMap[centerIdx[k]-numCols] = realSize;
+                        idx[realSize] = centerIdx[k] - numCols;
+                        coef[realSize] = -1.0 * oldRhs;
+                        realSize++;
+                    }
+                    else
+                        coef[idxMap[centerIdx[k]-numCols]] -= oldRhs;
+                }
+            }
+        }
+
+        Cut *cut = cut_create(idx, coef, realSize, rhs, lp_x(lp));
+        if(!cut_pool_insert(cutPool, cut))
+            cut_free(&cut);
+    }
+
+    oddhs_free( &oddhs );
+    delete[] x;
+    delete[] rc;
+    delete[] idx;
+    delete[] idxMap;
+    delete[] coef;
+
+    return (cut_pool_size(cutPool) - cutsBefore);
+}

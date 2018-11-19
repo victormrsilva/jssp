@@ -47,7 +47,8 @@
 #define LPCB_CUTS 0
 #define LPCB_HEUR 1
 
-
+#include "cut.h"
+#include "cgraph.h"
 
 typedef struct _LinearProgram LinearProgram;
 typedef LinearProgram * LinearProgramPtr;
@@ -216,5 +217,9 @@ void lp_write_mps( LinearProgram *lp, const char *fileName );
 
 int lp_get_constr_by_name(LinearProgram *lp, const char *name);
 //char** lp_string_vchar(const std::vector< std::string >& strv);
+
+void fill_x(LinearProgram *lp, double *x);
+void fill_rc(LinearProgram *lp, double *rc);
+int lp_generate_odd_hole_cuts(LinearProgram *lp, const CGraph *cg, CutPool *cutPool);
 
 #endif

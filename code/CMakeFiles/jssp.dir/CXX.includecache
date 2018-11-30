@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/victor/git/jssp/code/src/Fernando.cpp
+/home/victor/git-version/jssp/code/src/Fernando.cpp
 Fernando.hpp
-/home/victor/git/jssp/code/src/Fernando.hpp
+/home/victor/git-version/jssp/code/src/Fernando.hpp
 vector
 -
 cfloat
@@ -28,79 +28,79 @@ unordered_set
 string.h
 -
 cgraph/lp.h
-/home/victor/git/jssp/code/src/cgraph/lp.h
+/home/victor/git-version/jssp/code/src/cgraph/lp.h
 cgraph/strutils.h
-/home/victor/git/jssp/code/src/cgraph/strutils.h
+/home/victor/git-version/jssp/code/src/cgraph/strutils.h
 cgraph/build_cgraph.h
-/home/victor/git/jssp/code/src/cgraph/build_cgraph.h
+/home/victor/git-version/jssp/code/src/cgraph/build_cgraph.h
 
-/home/victor/git/jssp/code/src/Fernando.hpp
+/home/victor/git-version/jssp/code/src/Fernando.hpp
 Instance.hpp
-/home/victor/git/jssp/code/src/Instance.hpp
+/home/victor/git-version/jssp/code/src/Instance.hpp
 lp.hpp
-/home/victor/git/jssp/code/src/lp.hpp
+/home/victor/git-version/jssp/code/src/lp.hpp
 unordered_set
 -
 cgraph/cgraph.h
-/home/victor/git/jssp/code/src/cgraph/cgraph.h
+/home/victor/git-version/jssp/code/src/cgraph/cgraph.h
 cgraph/clique_separation.h
-/home/victor/git/jssp/code/src/cgraph/clique_separation.h
+/home/victor/git-version/jssp/code/src/cgraph/clique_separation.h
 
-/home/victor/git/jssp/code/src/Instance.hpp
+/home/victor/git-version/jssp/code/src/Instance.hpp
 string
 -
 vector
 -
 
-/home/victor/git/jssp/code/src/cgraph/build_cgraph.h
+/home/victor/git-version/jssp/code/src/cgraph/build_cgraph.h
 cgraph.h
-/home/victor/git/jssp/code/src/cgraph/cgraph.h
+/home/victor/git-version/jssp/code/src/cgraph/cgraph.h
 
-/home/victor/git/jssp/code/src/cgraph/cgraph.h
+/home/victor/git-version/jssp/code/src/cgraph/cgraph.h
 
-/home/victor/git/jssp/code/src/cgraph/clique.h
+/home/victor/git-version/jssp/code/src/cgraph/clique.h
 cgraph.h
-/home/victor/git/jssp/code/src/cgraph/cgraph.h
+/home/victor/git-version/jssp/code/src/cgraph/cgraph.h
 vint_set.h
-/home/victor/git/jssp/code/src/cgraph/vint_set.h
+/home/victor/git-version/jssp/code/src/cgraph/vint_set.h
 
-/home/victor/git/jssp/code/src/cgraph/clique_extender.h
+/home/victor/git-version/jssp/code/src/cgraph/clique_extender.h
 cgraph.h
-/home/victor/git/jssp/code/src/cgraph/cgraph.h
+/home/victor/git-version/jssp/code/src/cgraph/cgraph.h
 vint_set.h
-/home/victor/git/jssp/code/src/cgraph/vint_set.h
+/home/victor/git-version/jssp/code/src/cgraph/vint_set.h
 clique.h
-/home/victor/git/jssp/code/src/cgraph/clique.h
+/home/victor/git-version/jssp/code/src/cgraph/clique.h
 
-/home/victor/git/jssp/code/src/cgraph/clique_separation.h
+/home/victor/git-version/jssp/code/src/cgraph/clique_separation.h
 cgraph.h
-/home/victor/git/jssp/code/src/cgraph/cgraph.h
+/home/victor/git-version/jssp/code/src/cgraph/cgraph.h
 clique.h
-/home/victor/git/jssp/code/src/cgraph/clique.h
+/home/victor/git-version/jssp/code/src/cgraph/clique.h
 clique_extender.h
-/home/victor/git/jssp/code/src/cgraph/clique_extender.h
+/home/victor/git-version/jssp/code/src/cgraph/clique_extender.h
 
-/home/victor/git/jssp/code/src/cgraph/cut.h
+/home/victor/git-version/jssp/code/src/cgraph/cut.h
 
-/home/victor/git/jssp/code/src/cgraph/lp.h
+/home/victor/git-version/jssp/code/src/cgraph/lp.h
 cut.h
-/home/victor/git/jssp/code/src/cgraph/cut.h
+/home/victor/git-version/jssp/code/src/cgraph/cut.h
 cgraph.h
-/home/victor/git/jssp/code/src/cgraph/cgraph.h
+/home/victor/git-version/jssp/code/src/cgraph/cgraph.h
 
-/home/victor/git/jssp/code/src/cgraph/strutils.h
+/home/victor/git-version/jssp/code/src/cgraph/strutils.h
 string.h
 -
 ctype.h
 -
 
-/home/victor/git/jssp/code/src/cgraph/vint_set.h
+/home/victor/git-version/jssp/code/src/cgraph/vint_set.h
 stddef.h
 -
 
-/home/victor/git/jssp/code/src/lp.hpp
+/home/victor/git-version/jssp/code/src/lp.hpp
 cgraph/lp.h
-/home/victor/git/jssp/code/src/cgraph/lp.h
+/home/victor/git-version/jssp/code/src/cgraph/lp.h
 vector
 -
 string

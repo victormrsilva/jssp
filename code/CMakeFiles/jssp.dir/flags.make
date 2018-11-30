@@ -9,7 +9,7 @@ C_DEFINES =
 
 C_INCLUDES = 
 
-CXX_FLAGS =   -Wall -g3  -DGRB -I/opt/gurobi800/linux64/include   -std=gnu++1y
+CXX_FLAGS =   -Wall -g3  -DGRB -I/opt/gurobi810/linux64/include   -std=gnu++1y
 
 CXX_DEFINES = 
 

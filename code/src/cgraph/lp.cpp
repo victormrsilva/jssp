@@ -5240,11 +5240,11 @@ void fill_x(LinearProgram *lp, double *x)
 {
     int numCols = lp_cols(lp);
     const double *colSol = lp_x(lp);
-
+    double delta = 1e-6;
     for(int i = 0; i < numCols; i++)
     {
-        x[i] = colSol[i];
-        x[i + numCols] = 1.0 - colSol[i];
+        x[i] = (colSol[i] == 0 ? delta : colSol[i]);
+        x[i + numCols] = 1.0 - (colSol[i] == 0 ? delta : colSol[i]);
     }
 }
 
@@ -5275,11 +5275,11 @@ int lp_generate_odd_hole_cuts(LinearProgram *lp, const CGraph *cg, CutPool *cutP
 
     fill_x(lp, x);
     const double* origRCost = lp_reduced_cost(lp);
-
+    double delta = 1e-6;
     for(int i = 0; i < numCols; i++)
     {
-        rc[i] = origRCost[i];
-        rc[i+numCols] = -origRCost[i];
+        rc[i] = (origRCost[i] == 0 ? delta : origRCost[i]);
+        rc[i+numCols] = -(origRCost[i] == 0 ? delta : origRCost[i]);
     }
     oddhs_search_odd_holes(oddhs, numCols*2, x, rc, cg);
 

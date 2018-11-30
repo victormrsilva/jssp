@@ -59,7 +59,7 @@ RM = /usr/local/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/victor/git/jssp/code
+CMAKE_SOURCE_DIR = /home/victor/git-version/jssp/code
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/victor/git/jssp/code

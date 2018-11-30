@@ -314,17 +314,17 @@ process(vector<vector<vector<vector<int>>>>(inst_.n(), (vector<vector<vector<int
         }
     }
     cout << variables_pack.size() << endl;
-    // f.open("cuts.txt");
-    // for (vector<int> vars : variables_pack){
-    //     for (int v : vars){
-    //         //cout << vars.size() << " " << v << " " ;
-    //         f << names[v] << " ";
-    //     }
-    //     //cout << endl;
-    //     f << endl;
-    // }
-    // f.close();
-    // cout << "arquivo criado" << endl;
+    f.open("cuts.txt");
+    for (vector<int> vars : variables_pack){
+        for (int v : vars){
+            //cout << vars.size() << " " << v << " " ;
+            f << names[v] << " ";
+        }
+        //cout << endl;
+        f << endl;
+    }
+    f.close();
+    cout << "arquivo criado" << endl;
     //getchar();
     // f.open ("processing_machines.txt");
     // for (int t0=0; t0 < inst_.maxTime()-1; t0++){
@@ -665,15 +665,22 @@ int Fernando::oddHoles(){
     CutPool *cutPool = cut_pool_create(numCols);
 
     int oddCuts = lp_generate_odd_hole_cuts(mip, cgraph, cutPool);
+    ofstream f("oddholes.txt");
+    f << "Oddholes encontrados: " << oddCuts << endl;
     for(int j = 0; j < oddCuts; j++)
     {
         string name = "oddHole("+to_string(j)+")";
         const Cut *cut = cut_pool_get_cut(cutPool, j);
+        for (int i = 0; i < cut_size(cut); i++){
+            f << names[cut_get_idxs(cut)[i]] << " ";
+        }
+        f << " < " << cut_get_rhs(cut) << endl;
         lp_add_row(mip, cut_size(cut), cut_get_idxs(cut), cut_get_coefs(cut), name.c_str(), 'L', cut_get_rhs(cut));
-        
+        f.close();
     }
 
-        cut_pool_free(&cutPool);
+    cut_pool_free(&cutPool);
+    return oddCuts;
 }
 void Fernando::cgraph_creation()
 {
@@ -966,9 +973,9 @@ void Fernando::lifting_binario(int *idxs, double *coefs){
 }
 
 void Fernando::lifting_linear(int *idxs, double *coefs){
-    // if (clique){
-    //     cgraph_creation();
-    // }
+    if (clique){
+        cgraph_creation();
+    }
     clock_t begin = clock();
     int iteracoes = 0;
     lp_optimize_as_continuous(mip);
@@ -978,21 +985,21 @@ void Fernando::lifting_linear(int *idxs, double *coefs){
     ofstream saida(inst_.instanceName()+"_solution_linear_machine.csv");
     saida << "iteracao;bnd;c;cortes;tempo" << endl;
     saida << "0;" << bnd << ";0;0;"<<lp_solution_time(mip)<<endl;
-    // int cuts = 1;
+    int cuts = 1;
     // getchar();
     // while (cuts != 0) {
     //     cout << "do" << endl;
     //     lp_write_lp(mip,"teste.lp");
     //     lp_optimize_as_continuous(mip);
     //     cout << "do1" << endl;
-    //     cuts = manual_cuts();
-    //     cout << "cortes manuais: " << cuts << endl;
+    //     cuts = oddHoles();
+    //     cout << "oddholes: " << cuts << endl;
     //     getchar();
-    //     if (cuts == 0){
-    //         cuts = cliques(idxs,coefs);
-    //         cout << "cortes cliques: " << cuts << endl;
-    //         getchar();
-    //     }
+    //     // if (cuts == 0){
+    //     //     cuts = cliques(idxs,coefs);
+    //     //     cout << "cortes cliques: " << cuts << endl;
+    //     //     getchar();
+    //     // }
     // };
     while (fabs(bnd - teto(bnd_anterior)) > 1e-06) {
         iteracoes++;
@@ -1000,6 +1007,8 @@ void Fernando::lifting_linear(int *idxs, double *coefs){
         if (clique)
         {
             cortes = manual_cuts();
+            //cortes = oddHoles();
+            //cout << "oddHoles: " << cortes << endl;
             //cortes = cortes + cliques(idxs,coefs);
         }
         

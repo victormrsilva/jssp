@@ -6,6 +6,8 @@ extern "C"{
 #include "cgraph/clique_separation.h"
 }
 
+#ifndef HASH_H
+#define HASH_H
 namespace std {
     template <>
     struct hash<std::vector<int>> {
@@ -19,7 +21,7 @@ namespace std {
         }
     };
 }
-
+#endif
 
 
 class Fernando{

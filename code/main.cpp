@@ -6,7 +6,8 @@
 #include <time.h>
 #include "src/Instance.hpp"
 #include "src/Compact.hpp"
-#include "src/Flow_cuts.hpp"
+#include "src/Flow_testes.hpp"
+#include "src/Flow.hpp"
 #include "src/Kondili.hpp"
 #include "src/Fernando.hpp"
 #include "src/Gera.hpp"
@@ -59,6 +60,7 @@ int main( int argc, char **argv )
         cerr << "C for Compact (BigM) " << endl;
         cerr << "K for Kondilli " << endl;
         cerr << "Fe for Fernando " << endl;
+        cerr << "T for tests " << endl;
         exit(EXIT_FAILURE);
     }
 
@@ -105,6 +107,12 @@ int main( int argc, char **argv )
     if (option == "Fe"){
         cout << "Fernando formulation selected" << endl;
         Fernando mip( inst );
+    }
+
+    if (option == "T"){
+        cout << "Test formulation selected" << endl;
+        Flow_testes mip( inst );
+        mip.teste_elimina_variavel();
     }
     
 

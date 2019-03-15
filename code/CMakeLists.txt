@@ -12,8 +12,8 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}  -Wall -g3  ${LP_COMPILE_FLAGS}")
 set(LP_LINK_FLAGS "-L/opt/gurobi810/linux64/lib -lgurobi81 -lgurobi_c++")
 #set(LP_LINK_FLAGS "-L/opt/cbc-default/lib/ -lCbcSolver -lCbc -lCgl -lOsiClp -lClpSolver -lClp -lOsi -lCoinUtils -lcoinlapack -lcoinblas -lbz2 -lz -lgfortran -lgomp -lquadmath -ldl -lpthread")
 #src/Flow.cpp src/Flow.hpp src/lp.cpp src/lp.h
-add_executable(jssp main.cpp src/Gera.cpp src/Gera.hpp src/Compact.cpp src/Compact.hpp src/Fernando.cpp src/Fernando.hpp  src/Flow_cuts.cpp src/Flow_cuts.hpp 
-               src/Instance.cpp src/Instance.hpp src/Kondili.cpp src/Kondili.hpp src/lp.hpp src/Callback.cpp src/Callback.hpp 
+add_executable(jssp main.cpp src/Gera.cpp src/Gera.hpp src/Compact.cpp src/Compact.hpp src/Fernando.cpp src/Fernando.hpp  src/Flow_testes.cpp src/Flow_testes.hpp 
+               src/Instance.cpp src/Instance.hpp src/Kondili.cpp src/Kondili.hpp src/lp.hpp src/Callback.cpp src/Callback.hpp   src/Flow.cpp src/Flow.hpp
                src/cgraph/build_cgraph.cpp src/cgraph/build_cgraph.h src/cgraph/cgraph.c src/cgraph/cgraph.h src/cgraph/clique.c src/cgraph/clique.h 
                src/cgraph/lp.cpp src/cgraph/lp.h src/cgraph/macros.h src/cgraph/memory.c src/cgraph/memory.h src/cgraph/node_heap.c src/cgraph/node_heap.h 
                src/cgraph/BKGraph.cpp src/cgraph/BKGraph.hpp src/cgraph/BKVertex.hpp src/cgraph/BKVertex.cpp src/cgraph/bron_kerbosch.cpp src/cgraph/bron_kerbosch.h 

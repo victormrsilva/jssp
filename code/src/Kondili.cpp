@@ -10,7 +10,7 @@ Kondili::Kondili( const Instance &_inst ) : inst_(_inst) { // já inicializa a v
     mip = lp_create();
 
     // variáveis de decisão
-    xIdx_ = vector<vector<vector<int>>>(inst_.n(),vector<vector<int>>(inst_.m(),vector<int>(inst_.maxTime())));
+    xIdx_ = vector<vector<vector<int>>>(inst_.m(),vector<vector<int>>(inst_.n(),vector<int>(inst_.maxTime())));
     
 
     vector< string > names; // nome das variáveis
@@ -121,8 +121,10 @@ Kondili::Kondili( const Instance &_inst ) : inst_(_inst) { // já inicializa a v
     lp_write_lp( mip, inst_.instanceName().c_str() );
     lp_write_mps( mip, inst_.instanceName().c_str() );
     if (inst_.execute()){
-        lp_optimize( mip );
-        lp_write_sol(mip, "jssp_Kondili.sol");
+        lp_optimize_as_continuous( mip );
+        string filename = inst_.instanceName()+"_kondilli";
+        lp_write_lp(mip, (filename+".lp").c_str());
+        lp_write_sol(mip, (filename+".sol").c_str());
     }
 }
 

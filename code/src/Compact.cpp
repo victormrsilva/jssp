@@ -131,8 +131,9 @@ Compact::Compact( const Instance &_inst ) : inst_(_inst) { // já inicializa a v
     lp_write_mps( mip, inst_.instanceName().c_str() );
 
     if (inst_.execute()){
-        lp_optimize( mip );
-        lp_write_sol(mip, "jssp_compact.sol");
+        lp_optimize_as_continuous( mip );
+        string filename = inst_.instanceName()+"_compact";
+        lp_write_sol(mip, (filename+".sol").c_str());
     }
 }
 

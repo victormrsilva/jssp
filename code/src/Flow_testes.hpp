@@ -30,7 +30,7 @@ namespace std {
 class Flow_testes{
 public:
     Flow_testes( const Instance &_inst );
-
+    void teste_elimina_variavel();
 
     virtual ~Flow_testes();
 private:
@@ -71,7 +71,7 @@ private:
 
     int oddHoles();
 
-    void teste_elimina_variavel();
+    
 
     
 };

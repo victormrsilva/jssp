@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/victor/git-version/jssp/code/src/Fernando.cpp
-Fernando.hpp
-/home/victor/git-version/jssp/code/src/Fernando.hpp
+/home/victor/git-version/jssp/code/src/Flow_testes.cpp
+Flow_testes.hpp
+/home/victor/git-version/jssp/code/src/Flow_testes.hpp
 vector
 -
 cfloat
@@ -34,7 +34,7 @@ cgraph/strutils.h
 cgraph/build_cgraph.h
 /home/victor/git-version/jssp/code/src/cgraph/build_cgraph.h
 
-/home/victor/git-version/jssp/code/src/Fernando.hpp
+/home/victor/git-version/jssp/code/src/Flow_testes.hpp
 Instance.hpp
 /home/victor/git-version/jssp/code/src/Instance.hpp
 lp.hpp

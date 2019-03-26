@@ -29,12 +29,12 @@ namespace std {
 
 class Flow_testes{
 public:
-    Flow_testes( const Instance &_inst );
-    void teste_elimina_variavel();
+    Flow_testes( Instance &_inst );
+    void elimina_variavel(int k_max);
 
     virtual ~Flow_testes();
 private:
-    const Instance &inst_;
+    Instance &inst_;
 
     std::vector< int > fim;
     std::vector< std::string > names;
@@ -70,6 +70,8 @@ private:
     void cgraph_creation();
 
     int oddHoles();
+
+    void makespanProblem();
 
     
 

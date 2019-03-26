@@ -1,0 +1,61 @@
+
+Log started (V12.8.0.0) Wed Mar 20 16:53:40 2019
+
+
+Problem 'vi_33_20_021.lp' read.
+Read time = 0.04 sec. (0.02 ticks)
+Infeasible column 'e(1,3,10)'.
+Presolve time = 0.01 sec. (0.05 ticks)
+
+Root node processing (before b&c):
+  Real time             =    0.03 sec. (0.09 ticks)
+Parallel b&c, 4 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.03 sec. (0.09 ticks)
+
+
+MIP - Integer infeasible.
+Current MIP best bound = -2.0000000000e+01 (gap is infinite)
+Solution time =    0.06 sec.  Iterations = 0  Nodes = 0
+Deterministic time = 0.09 ticks  (1.58 ticks/sec)
+
+
+Root node processing (before b&c):
+  Real time             =    0.00 sec. (0.00 ticks)
+Parallel b&c, 4 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.00 sec. (0.00 ticks)
+
+
+MIP - Integer infeasible.
+Current MIP best bound = -2.0000000000e+01 (gap is infinite)
+Solution time =    0.02 sec.  Iterations = 0  Nodes = 0
+Deterministic time = 0.00 ticks  (0.05 ticks/sec)
+
+No integer feasible solution exists.
+No conflict exists.
+No conflict exists.
+
+Root node processing (before b&c):
+  Real time             =    0.00 sec. (0.00 ticks)
+Parallel b&c, 4 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.00 sec. (0.00 ticks)
+
+
+MIP - Integer infeasible.
+Current MIP best bound = -2.0000000000e+01 (gap is infinite)
+Solution time =    0.03 sec.  Iterations = 0  Nodes = 0
+Deterministic time = 0.00 ticks  (0.04 ticks/sec)
+
+No conflict exists.
+No integer feasible solution exists.

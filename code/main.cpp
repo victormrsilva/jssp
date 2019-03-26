@@ -112,7 +112,7 @@ int main( int argc, char **argv )
     if (option == "T"){
         cout << "Test formulation selected" << endl;
         Flow_testes mip( inst );
-        mip.teste_elimina_variavel();
+        mip.elimina_variavel(5);
     }
     
 

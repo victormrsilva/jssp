@@ -24,6 +24,7 @@ class Instance:
   def print(self):
     print("Instance: ",self.instanceName)
     print("Machines: ", self.m, " Tasks: ", self.n, " Time Horizon: ", self.maxTime)
+    print(self.times)
     print("Order: ")
     for i in range(self.n):
       print("task ",i+1)
@@ -34,10 +35,17 @@ class Instance:
   def getMaxTime(self):
     return self.maxTime
 
+  def getQtdMachines(self):
+    return self.m
+
+  def getQtdJobs(self):
+    return self.n
+
   def getMachine(self,task,operation):
     return self.machine[task][operation]
   
   def getTime(self,task,machine):
+    print(task," ", machine, " ", self.times[task][machine])
     return self.times[task][machine]
 
   def getInstanceName(self):

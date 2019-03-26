@@ -80,6 +80,9 @@ public:
     // minimum processing time of machine i
     int minimumTime( int i ) const { return minimum_time_[i]; }
 
+    void setEst(int j, int i, int value) { est_[j][i] = value;}
+    void setLst(int j, int i, int value) { lst_[j][i] = value;}
+
     // save the cmpl file
     void saveCmpl( const std::string fname ) const;
 

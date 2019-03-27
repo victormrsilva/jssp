@@ -10,6 +10,9 @@ Compact::Compact( const Instance &_inst ) : inst_(_inst) { // já inicializa a v
     mip = lp_create();
 
     // variáveis de decisão
+    vector< vector< int > > xIdx_;
+
+    vector< vector< vector< int > > > yIdx_;
     xIdx_ = vector<vector<int>>(inst_.n(),vector<int>(inst_.m()));
     yIdx_ = vector<vector<vector<int>>>(inst_.n(),vector<vector<int>>(inst_.n(),vector<int>(inst_.m(),-1))); // inicia todos os valores com -1
 

@@ -41,5 +41,6 @@
         "strstream": "cpp",
         "cinttypes": "cpp",
         "typeindex": "cpp"
-    }
+    },
+    "python.pythonPath": "C:\\Python36\\python.exe"
 }

@@ -1,4 +1,5 @@
 from instance import Instance
+from flow import Flow
 import sys
 import xlsxwriter
 import os, fnmatch
@@ -31,10 +32,10 @@ if __name__ == "__main__":
         col = col+1
         worksheet.write(row,col,i)
       col = 0
-      for i in range(instance.getQtdMachines()):
+      for i in range(instance.m()):
         row = row+1
         worksheet.write(row,col,"m{}".format(i))
-      row = row - instance.getQtdMachines()+1
+      row = row - instance.m()+1
       with open(entry,"r") as solution_file:
         for line in solution_file:
           tokens = line.split()
@@ -54,6 +55,9 @@ if __name__ == "__main__":
               worksheet.write(row+machine,time+1+i,"",cell_format)
 
             
-      row = row+instance.getQtdMachines()+2
+      row = row+instance.m()+2
 
   workbook.close()
+
+  flow = Flow(instance)
+  flow.constructProblem()

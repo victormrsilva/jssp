@@ -74,7 +74,7 @@ void Flow_testes::combinacao(int tam, vector<int> &vec, vector<vector<int> > &co
     }
 }
 
-void Flow_testes::elimina_variavel(int k_max){
+void Flow_testes::elimina_variavel_flow(int k_max){
     int k = 2;
     if (k_max > inst_.n()){
         k_max = inst_.n();
@@ -132,7 +132,7 @@ void Flow_testes::elimina_variavel(int k_max){
                     obj.push_back(0.0);
                     integer.push_back(1);
             
-                    for (int j1 = 0; j1 < aux.size(); j1++){
+                    for (unsigned int j1= 0; j1 < aux.size(); j1++){
                         int j = aux[j1];
                         int m0 = inst_.machine(j,i);
                         if (t >= inst_.est(j,m0) && t <= inst_.lst(j,m0)){
@@ -181,7 +181,7 @@ void Flow_testes::elimina_variavel(int k_max){
                 vector< int > idx;
                 vector< double > coef;
 
-                for (int j1 = 0; j1 < aux.size(); j1++){
+                for (unsigned int j1= 0; j1 < aux.size(); j1++){
                     int j = aux[j1];
                     if (inst_.machine(j,0) == i) { // se for a primeira máquina
                         idx.push_back( xIdx_teste[i][j][0] );
@@ -202,7 +202,7 @@ void Flow_testes::elimina_variavel(int k_max){
                     vector< int > idx;
                     vector< double > coef;
 
-                    for (int j1 = 0; j1 < aux.size(); j1++){
+                    for (unsigned int j1= 0; j1 < aux.size(); j1++){
                         int j = aux[j1];
                         int tp = t - inst_.time(j,i);
                         if (tp >=  inst_.est(j,i)  && tp <= inst_.lst(j,i)){
@@ -227,7 +227,7 @@ void Flow_testes::elimina_variavel(int k_max){
             }
             cout << "restriction fluxo_maquina added" << endl;
 
-            for (int j1 = 0; j1 < aux.size(); j1++){
+            for (unsigned int j1= 0; j1 < aux.size(); j1++){
                 int j = aux[j1];
                 vector< int > idx;
                 vector< double > coef;
@@ -246,7 +246,7 @@ void Flow_testes::elimina_variavel(int k_max){
             cout << "restriction inicio_espera added" << endl;
 
             for (int i = 0; i < inst_.m(); i++){
-                for (int j1 = 0; j1 < aux.size(); j1++){
+                for (unsigned int j1= 0; j1 < aux.size(); j1++){
                     int j = aux[j1];
                     int h = inst_.machine(j,i); // first machine
                     for (int t = inst_.est(j,h); t <= inst_.lst(j,h); t++){
@@ -279,7 +279,7 @@ void Flow_testes::elimina_variavel(int k_max){
 
 
             for (int i = 0; i < inst_.m(); i++){
-                for (int j1 = 0; j1 < aux.size(); j1++){
+                for (unsigned int j1= 0; j1 < aux.size(); j1++){
                     int j = aux[j1];
                     vector< int > idx;
                     vector< double > coef;
@@ -345,6 +345,353 @@ void Flow_testes::elimina_variavel(int k_max){
     makespanProblem();
 
 
+
+}
+
+void Flow_testes::elimina_variavel_compact(int k_max){
+    int k = 2;
+    if (k_max > inst_.n()){
+        k_max = inst_.n();
+    }
+    while (k <= k_max){
+        bool mudou = false;
+        vector<vector<int>> combinacoes;
+        for (int i = 0; i < inst_.n(); i++){
+            vector<int> vec;
+            vec.push_back(i);
+            combinacao(k,vec,combinacoes);
+        }
+        int melhor = inst_.maxTime();
+
+        cout << "combinacoes: " << combinacoes.size() << endl;
+
+        for(vector<int> aux : combinacoes){
+            string nome = "";
+            for (int i = 0; i < aux.size(); i++){
+                nome += to_string(aux[i]);
+            }
+
+            cout << nome << endl;
+            LinearProgram *mip_teste = lp_create();
+            
+            vector< vector< int > > xIdx_teste;
+
+            vector< vector< vector< int > > > yIdx_teste;
+            xIdx_teste = vector<vector<int>>(inst_.n(),vector<int>(inst_.m()));
+            yIdx_teste = vector<vector<vector<int>>>(inst_.n(),vector<vector<int>>(inst_.n(),vector<int>(inst_.m(),-1))); // inicia todos os valores com -1
+
+            vector< string > names_teste; // nome das variáveis
+            vector< double > lb; // lower bound
+            vector< double > ub; // upper bound
+            vector< double > obj; // se é objetivo?
+            vector< char > integer; // variável inteira?
+            
+
+            // criação das variáveis x
+            for (unsigned int j1= 0; j1 < aux.size(); j1++){
+                for (int a = 0; a < inst_.m(); a++){
+                    int j = aux[j1];
+                    xIdx_teste[j][a] = names_teste.size(); // número do índice da variável (vai de 1 até n*m)
+                    names_teste.push_back("x("+to_string(j+1)+","+to_string(a+1)+")"); // nome dessa variável
+                    lb.push_back(0.0);
+                    ub.push_back(DBL_MAX);
+                    obj.push_back(0.0);
+                    integer.push_back(1);
+                }
+            }
+            // criação das variáveis y
+            for (unsigned int j1= 0; j1 < aux.size(); j1++){
+                int j = aux[j1];
+                for (unsigned int i1= 0; i1 < aux.size(); i1++){
+                    int i = aux[i1];
+                    for (int a = 0; a < inst_.m(); a++){
+                        yIdx_teste[j][i][a] = names_teste.size();
+                        names_teste.push_back("y("+to_string(j+1)+","+to_string(i+1)+","+to_string(a+1)+")");
+                        lb.push_back(0.0);
+                        ub.push_back(1.0); // variável binária
+                        obj.push_back(0.0);
+                        integer.push_back(1);
+                    }
+                }
+            }
+
+            // c var
+            int cIdx_teste = names_teste.size();
+            names_teste.push_back("Z");
+            lb.push_back( 0.0 );
+            ub.push_back( DBL_MAX );
+            obj.push_back( -1.0 );
+            integer.push_back( 1 );
+
+            // adiciona colunas ao solver
+            lp_add_cols( mip_teste, obj, lb, ub, integer, names_teste );
+            cout << "var ok" << endl;
+
+            // restrição ord (cada máquina só pode processar após a anterior ter sido processada. x[j,sigma[j,a]] - x[j,sigma[j,a-1]] >= p[j][a-1]
+            for (unsigned int j1= 0; j1 < aux.size(); j1++){
+                int j = aux[j1];
+                for (int a = 1; a < inst_.m(); a++){
+                    vector< int > idx;
+                    vector< double > coef;
+
+                    idx.push_back( xIdx_teste[j][inst_.machine(j,a)] );
+                    coef.push_back( 1.0 );
+                    idx.push_back( xIdx_teste[j][inst_.machine(j,a-1)] );
+                    coef.push_back( -1.0 );
+
+                    // adiciona restrição.
+                    lp_add_row( mip_teste, idx, coef, "ord("+to_string(j+1)+","+to_string(a+1)+")", 'G', inst_.time( j, inst_.machine(j,a-1)) );
+                }
+            }
+
+            double K; // variável INF
+            for (unsigned int j1= 0; j1 < aux.size(); j1++){
+                int j = aux[j1];
+                for (int a = 0; a < inst_.m(); a++){
+                    K += inst_.time(j,a);
+                }
+            }
+
+            // restrição phi e psi
+
+            for (unsigned int i1= 0; i1 < aux.size(); i1++){
+                int i = aux[i1];
+                for (unsigned int j1= 0; j1 < aux.size(); j1++){
+                    int j = aux[j1];
+                    if (i == j) continue;
+                    for (int a = 0; a < inst_.m(); a++){
+                        vector< int > idx_phy;
+                        vector< double > coef_phy;
+
+                        idx_phy.push_back(xIdx_teste[i][a]);
+                        coef_phy.push_back(1.0);
+                        idx_phy.push_back(xIdx_teste[j][a]);
+                        coef_phy.push_back(-1.0);
+                        idx_phy.push_back(yIdx_teste[i][j][a]);
+                        coef_phy.push_back(K);
+
+                        lp_add_row( mip_teste, idx_phy, coef_phy, "phi("+to_string(i+1)+","+to_string(j+1)+","+to_string(a+1)+")", 'G', inst_.time( j, a) );
+
+                        vector< int > idx_psi;
+                        vector< double > coef_psi;
+
+                        idx_psi.push_back(xIdx_teste[j][a]);
+                        coef_psi.push_back(1.0);
+                        idx_psi.push_back(xIdx_teste[i][a]);
+                        coef_psi.push_back(-1.0);
+                        idx_psi.push_back(yIdx_teste[i][j][a]);
+                        coef_psi.push_back(-1.0*K);
+                        double c = inst_.time(i,a) - K;
+
+                        lp_add_row( mip_teste, idx_psi, coef_psi, "psi("+to_string(i+1)+","+to_string(j+1)+","+to_string(a+1)+")", 'G', c );
+                    }
+                }
+            }
+
+            int j = aux[0];
+            vector< int > idx;
+            vector< double > coef;
+            idx.push_back( cIdx_teste );
+            coef.push_back( 1.0 );
+            idx.push_back( xIdx_teste[j][inst_.machine(j, 0)]);
+            lp_add_row( mip_teste, idx, coef, "fim("+to_string(j+1)+")", 'G', inst_.time( j, inst_.machine(j, 0)) );
+            // restrições fin
+            cout << "makespan constraints created" << endl;
+            lp_write_lp( mip_teste, (inst_.instanceName() + "_"
+            +nome+".lp").c_str() );
+            lp_optimize( mip_teste );
+            lp_write_sol(mip_teste, (inst_.instanceName() + "_"+ nome+".sol").c_str() );
+            int maquina = inst_.machine(aux[0],0);
+            int lst = -1*lp_obj_value(mip_teste) - inst_.time(aux[0],maquina);
+            cout << "lst antigo: " << inst_.lst(aux[0],maquina) << " lst novo: " << lst << endl;
+            getchar();
+            if (lst < inst_.lst(aux[0],maquina)){
+                inst_.setLst(aux[0],maquina,lst);
+                cout << "lst modificado: " << inst_.lst(aux[0],maquina) << endl;
+                mudou = true;
+                inst_.saveCmpl("jssp.cdat");
+                getchar();
+            }
+
+            lp_free( &mip_teste );
+            //getchar();
+        }
+        if (mudou){
+            k = 2;
+        } else {
+            k++;
+        }
+    }
+    makespanProblem();
+
+}
+
+void Flow_testes::elimina_variavel_kondili(int k_max){
+    int k = 2;
+    if (k_max > inst_.n()){
+        k_max = inst_.n();
+    }
+    while (k <= k_max){
+        bool mudou = false;
+        vector<vector<int>> combinacoes;
+        for (int i = 0; i < inst_.n(); i++){
+            vector<int> vec;
+            vec.push_back(i);
+            combinacao(k,vec,combinacoes);
+        }
+        int melhor = inst_.maxTime();
+
+        cout << "combinacoes: " << combinacoes.size() << endl;
+
+        for(vector<int> aux : combinacoes){
+            string nome = "";
+            for (int i = 0; i < aux.size(); i++){
+                nome += to_string(aux[i]);
+            }
+
+            cout << nome << endl;
+            LinearProgram *mip_teste = lp_create();
+            
+            vector< vector< vector< int > > > xIdx_teste;
+
+            xIdx_teste = vector<vector<vector<int>>>(inst_.m(),vector<vector<int>>(inst_.n(),vector<int>(inst_.maxTime())));
+
+            vector< string > names_teste; // nome das variáveis
+            vector< double > lb; // lower bound
+            vector< double > ub; // upper bound
+            vector< double > obj; // se é objetivo?
+            vector< char > integer; // variável inteira?
+            
+
+            // criação das variáveis x
+            for (int i = 0; i < inst_.m(); i++){
+                for (unsigned int j1= 0; j1 < aux.size(); j1++){
+                    int j = aux[j1];
+                    for (int t = inst_.est(j,i); t <= inst_.lst(j,i); t++){
+                        xIdx_teste[i][j][t] = names_teste.size(); // número do índice da variável (vai de 1 até n*m)
+                        names_teste.push_back("x("+to_string(j+1)+","+to_string(i+1)+","+to_string(t)+")"); // nome dessa variável
+                        cout << names_teste[xIdx_teste[i][j][t]] << " ";
+                        lb.push_back(0.0);
+                        ub.push_back(DBL_MAX);
+                        obj.push_back(0.0);
+                        integer.push_back(1);
+                    }
+                }
+            }
+            cout << endl;
+            // c var
+            int cIdx_teste = names_teste.size();
+            names_teste.push_back("C");
+            lb.push_back( 0.0 );
+            ub.push_back( DBL_MAX );
+            obj.push_back( -1.0 );
+            integer.push_back( 1 );
+
+            // adiciona colunas ao solver
+            lp_add_cols( mip_teste, obj, lb, ub, integer, names_teste );
+            cout << "var ok" << endl;
+            cout << "Number of variables: " << names_teste.size() << endl;
+
+
+            // restrição de tempo
+            for (int i = 0; i < inst_.m(); i++){
+                for (unsigned int j1= 0; j1 < aux.size(); j1++){
+                    int j = aux[j1];
+                    vector< int > idx;
+                    vector< double > coef;
+                    for (int t = inst_.est(j,i); t <= inst_.lst(j,i); t++){
+                        idx.push_back( xIdx_teste[i][j][t] );
+                        coef.push_back( 1.0 );
+                        // adiciona restrição.
+                    }
+                    lp_add_row( mip_teste, idx, coef, "time("+to_string(i+1)+","+to_string(j+1)+")", 'E', 1 );
+                }
+            }
+            cout << "time restriction added" << endl;
+            for (int i = 0; i < inst_.m(); i++){
+                for (int t = 0; t < inst_.maxTime(); t++){
+                    vector< int > idx;
+                    vector< double > coef;
+
+                    for (unsigned int j1= 0; j1 < aux.size(); j1++){
+                        int j = aux[j1];
+                        //bool mudou = false;
+                        for (int t_aux = 0; t_aux < inst_.time(j,i); t_aux++){
+                            if ((t - t_aux) >= inst_.est(j,i) && (t-t_aux) <= inst_.lst(j,i)){
+                                idx.push_back( xIdx_teste[i][j][t - t_aux] );
+                                coef.push_back( 1 );
+                            }
+                        }
+                    }
+
+                    lp_add_row( mip_teste, idx, coef, "processing("+to_string(i+1)+","+to_string(t)+")", 'L', 1 );
+                }
+            }
+            cout << "processing restriction added" << endl;
+            for (unsigned int j1= 0; j1 < aux.size(); j1++){
+                int j = aux[j1];
+                for (int i = 1; i < inst_.m(); i++){
+                    int h = inst_.machine(j,i);
+                    vector< int > idx;
+                    vector< double > coef;
+
+                    for (int t = inst_.est(j,h); t <= inst_.lst(j,h); t++){
+                        int h1 = inst_.machine(j,i-1);
+                        int t_aux = t - inst_.time(j,h1);
+                        if (t_aux >= inst_.est(j,h1) && t_aux <= inst_.lst(j,h1)){
+                            idx.push_back( xIdx_teste[h1][j][t_aux] );
+                            coef.push_back( t  );
+                        }
+                        idx.push_back( xIdx_teste[h][j][t] );
+                        coef.push_back( -1 * t );
+                    }
+                    lp_add_row( mip_teste, idx, coef, "ord("+to_string(h+1)+","+to_string(j+1)+")", 'L', 0 );
+                    
+                }
+            }
+            cout << "ord restriction added" << endl;
+            // makespan
+            int j = aux[0];
+            vector< int > idx;
+            vector< double > coef;
+            idx.push_back( cIdx_teste );
+            coef.push_back( 1 );
+
+            for (int t = inst_.est(j,inst_.machine(j,0)); t <= inst_.lst(j,inst_.machine(j,0)); t++){
+                cout << names_teste[xIdx_teste[inst_.machine(j,0)][j][t]] << " ";
+                idx.push_back( xIdx_teste[inst_.machine(j,0)][j][t] );
+                coef.push_back( -1 * (t+inst_.time(j,inst_.machine(j,0))) );
+                // adiciona restrição.
+            }
+            cout << endl;
+            lp_add_row( mip_teste, idx, coef, "makespan("+to_string(inst_.machine(j,0)+1)+","+to_string(j+1)+")", 'E', 0 );
+            
+            cout << "makespan constraints created" << endl;
+            lp_write_lp( mip_teste, (inst_.instanceName() + "_"+nome+".lp").c_str() );
+            lp_optimize( mip_teste );
+            lp_write_sol(mip_teste, (inst_.instanceName() + "_"+ nome+".sol").c_str() );
+            int maquina = inst_.machine(aux[0],0);
+            int lst = -1*lp_obj_value(mip_teste) - inst_.time(aux[0],maquina);
+            cout << "lst antigo: " << inst_.lst(aux[0],maquina) << " lst novo: " << lst << endl;
+            getchar();
+            if (lst < inst_.lst(aux[0],maquina)){
+                inst_.setLst(aux[0],maquina,lst);
+                cout << "lst modificado: " << inst_.lst(aux[0],maquina) << endl;
+                mudou = true;
+                inst_.saveCmpl("jssp.cdat");
+                getchar();
+            }
+
+            lp_free( &mip_teste );
+            //getchar();
+        }
+        if (mudou){
+            k = 2;
+        } else {
+            k++;
+        }
+    }
+    makespanProblem();
 
 }
 
@@ -473,6 +820,7 @@ int Flow_testes::oddHoles(){
     cut_pool_free(&cutPool);
     return oddCuts;
 }
+
 void Flow_testes::cgraph_creation()
 {
     /* variáveis em conflito
@@ -924,7 +1272,7 @@ void Flow_testes::makespanProblem(){
                 int var = xIdx_[m0][j][t];
                 for (int min = 1; min <= inst_.time(j,m0); min++){
                     // cout << min << " " << inst_.time(j,m0) << " " << j+1 << " " << m0+1 << endl;
-                    for (int j1 = 0; j1 < inst_.n(); j1++){
+                    for (unsigned int j1= 0; j1 < inst_.n(); j1++){
                         //variables_pack.emplace_back();
                         //int pos = variables_pack.size()-1;
                         vector<int> aux_vector;

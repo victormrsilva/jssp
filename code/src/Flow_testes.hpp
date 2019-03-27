@@ -30,7 +30,9 @@ namespace std {
 class Flow_testes{
 public:
     Flow_testes( Instance &_inst );
-    void elimina_variavel(int k_max);
+    void elimina_variavel_flow(int k_max);
+    void elimina_variavel_compact(int k_max);
+    void elimina_variavel_kondili(int k_max);
 
     virtual ~Flow_testes();
 private:

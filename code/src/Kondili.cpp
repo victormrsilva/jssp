@@ -116,8 +116,8 @@ Kondili::Kondili( const Instance &_inst ) : inst_(_inst) { // já inicializa a v
             
         }
     }
-
     cout << "ord restriction added" << endl;
+    
     lp_write_lp( mip, inst_.instanceName().c_str() );
     lp_write_mps( mip, inst_.instanceName().c_str() );
     if (inst_.execute()){

@@ -1,0 +1,58 @@
+
+Gurobi 8.1.0 (linux64) logging started Wed Mar 27 12:46:33 2019
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.1.0 build v8.1.0rc1 (linux64)
+Copyright (c) 2018, Gurobi Optimization, LLC
+
+Read LP format model from file vi_33_20.lp
+Reading time = 0.01 seconds
+: 84 rows, 181 columns, 1195 nonzeros
+Optimize a model with 84 rows, 181 columns and 1195 nonzeros
+Variable types: 0 continuous, 181 integer (180 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Found heuristic solution: objective 24.0000000
+Presolve removed 21 rows and 80 columns
+Presolve time: 0.03s
+Presolved: 63 rows, 101 columns, 587 nonzeros
+Variable types: 0 continuous, 101 integer (100 binary)
+
+Root relaxation: objective 1.476923e+01, 83 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   14.76923    0   27   24.00000   14.76923  38.5%     -    0s
+     0     0   16.25772    0   29   24.00000   16.25772  32.3%     -    0s
+H    0     0                      21.0000000   16.25772  22.6%     -    0s
+     0     0   16.26012    0   34   21.00000   16.26012  22.6%     -    0s
+     0     0   16.26012    0   34   21.00000   16.26012  22.6%     -    0s
+     0     0   17.00000    0   32   21.00000   17.00000  19.0%     -    0s
+H    0     0                      20.0000000   17.00000  15.0%     -    0s
+     0     0   17.40198    0   35   20.00000   17.40198  13.0%     -    0s
+     0     0   17.75000    0   36   20.00000   17.75000  11.2%     -    0s
+     0     0   17.75000    0   37   20.00000   17.75000  11.2%     -    0s
+     0     0   18.17647    0   21   20.00000   18.17647  9.12%     -    0s
+     0     0   18.17647    0   19   20.00000   18.17647  9.12%     -    0s
+     0     0   18.20000    0   24   20.00000   18.20000  9.00%     -    0s
+
+Cutting planes:
+  Cover: 1
+  Implied bound: 1
+  Clique: 10
+  StrongCG: 2
+  GUB cover: 4
+  Zero half: 2
+
+Explored 1 nodes (405 simplex iterations) in 0.21 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 3: 20 21 24 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.000000000000e+01, best bound 2.000000000000e+01, gap 0.0000%

@@ -62,7 +62,7 @@ process(vector<vector<vector<vector<int>>>>(inst_.n(), (vector<vector<vector<int
 
 void Flow_testes::combinacao(int tam, vector<int> &vec, vector<vector<int> > &combinacoes){
     if (vec.size() == tam) return;
-    for (int j = 0; j < tam; j++){
+    for (int j = 0; j < inst_.n(); j++){
         if (find(vec.begin(), vec.end(), j) == vec.end()){
             vector<int> aux = vec;
             aux.push_back(j);
@@ -527,6 +527,7 @@ void Flow_testes::elimina_variavel_compact(int k_max){
 }
 
 void Flow_testes::elimina_variavel_kondili(int k_max){
+
     int k = 2;
     if (k_max > inst_.n()){
         k_max = inst_.n();
@@ -546,12 +547,12 @@ void Flow_testes::elimina_variavel_kondili(int k_max){
         for(vector<int> aux : combinacoes){
             string nome = "";
             for (int i = 0; i < aux.size(); i++){
-                nome += to_string(aux[i]);
+                nome += to_string(aux[i]) + "-";
             }
 
-            cout << nome << endl;
+            cout << nome << " ";
             LinearProgram *mip_teste = lp_create();
-            
+            lp_set_print_messages(mip_teste,0);
             vector< vector< vector< int > > > xIdx_teste;
 
             xIdx_teste = vector<vector<vector<int>>>(inst_.m(),vector<vector<int>>(inst_.n(),vector<int>(inst_.maxTime())));
@@ -570,7 +571,7 @@ void Flow_testes::elimina_variavel_kondili(int k_max){
                     for (int t = inst_.est(j,i); t <= inst_.lst(j,i); t++){
                         xIdx_teste[i][j][t] = names_teste.size(); // número do índice da variável (vai de 1 até n*m)
                         names_teste.push_back("x("+to_string(j+1)+","+to_string(i+1)+","+to_string(t)+")"); // nome dessa variável
-                        cout << names_teste[xIdx_teste[i][j][t]] << " ";
+                        //cout << names_teste[xIdx_teste[i][j][t]] << " ";
                         lb.push_back(0.0);
                         ub.push_back(DBL_MAX);
                         obj.push_back(0.0);
@@ -578,7 +579,7 @@ void Flow_testes::elimina_variavel_kondili(int k_max){
                     }
                 }
             }
-            cout << endl;
+            //cout << endl;
             // c var
             int cIdx_teste = names_teste.size();
             names_teste.push_back("C");
@@ -589,8 +590,8 @@ void Flow_testes::elimina_variavel_kondili(int k_max){
 
             // adiciona colunas ao solver
             lp_add_cols( mip_teste, obj, lb, ub, integer, names_teste );
-            cout << "var ok" << endl;
-            cout << "Number of variables: " << names_teste.size() << endl;
+            // cout << "var ok" << endl;
+            // cout << "Number of variables: " << names_teste.size() << endl;
 
 
             // restrição de tempo
@@ -607,7 +608,7 @@ void Flow_testes::elimina_variavel_kondili(int k_max){
                     lp_add_row( mip_teste, idx, coef, "time("+to_string(i+1)+","+to_string(j+1)+")", 'E', 1 );
                 }
             }
-            cout << "time restriction added" << endl;
+            // cout << "time restriction added" << endl;
             for (int i = 0; i < inst_.m(); i++){
                 for (int t = 0; t < inst_.maxTime(); t++){
                     vector< int > idx;
@@ -627,7 +628,7 @@ void Flow_testes::elimina_variavel_kondili(int k_max){
                     lp_add_row( mip_teste, idx, coef, "processing("+to_string(i+1)+","+to_string(t)+")", 'L', 1 );
                 }
             }
-            cout << "processing restriction added" << endl;
+            // cout << "processing restriction added" << endl;
             for (unsigned int j1= 0; j1 < aux.size(); j1++){
                 int j = aux[j1];
                 for (int i = 1; i < inst_.m(); i++){
@@ -649,7 +650,7 @@ void Flow_testes::elimina_variavel_kondili(int k_max){
                     
                 }
             }
-            cout << "ord restriction added" << endl;
+            // cout << "ord restriction added" << endl;
             // makespan
             int j = aux[0];
             vector< int > idx;
@@ -658,22 +659,22 @@ void Flow_testes::elimina_variavel_kondili(int k_max){
             coef.push_back( 1 );
 
             for (int t = inst_.est(j,inst_.machine(j,0)); t <= inst_.lst(j,inst_.machine(j,0)); t++){
-                cout << names_teste[xIdx_teste[inst_.machine(j,0)][j][t]] << " ";
+                //cout << names_teste[xIdx_teste[inst_.machine(j,0)][j][t]] << " ";
                 idx.push_back( xIdx_teste[inst_.machine(j,0)][j][t] );
                 coef.push_back( -1 * (t+inst_.time(j,inst_.machine(j,0))) );
                 // adiciona restrição.
             }
-            cout << endl;
+            //cout << endl;
             lp_add_row( mip_teste, idx, coef, "makespan("+to_string(inst_.machine(j,0)+1)+","+to_string(j+1)+")", 'E', 0 );
             
-            cout << "makespan constraints created" << endl;
+            // cout << "makespan constraints created" << endl;
             lp_write_lp( mip_teste, (inst_.instanceName() + "_"+nome+".lp").c_str() );
             lp_optimize( mip_teste );
             lp_write_sol(mip_teste, (inst_.instanceName() + "_"+ nome+".sol").c_str() );
             int maquina = inst_.machine(aux[0],0);
             int lst = -1*lp_obj_value(mip_teste) - inst_.time(aux[0],maquina);
             cout << "lst antigo: " << inst_.lst(aux[0],maquina) << " lst novo: " << lst << endl;
-            getchar();
+            //getchar();
             if (lst < inst_.lst(aux[0],maquina)){
                 inst_.setLst(aux[0],maquina,lst);
                 cout << "lst modificado: " << inst_.lst(aux[0],maquina) << endl;

@@ -33,6 +33,7 @@ public:
     void elimina_variavel_flow(int k_max);
     void elimina_variavel_compact(int k_max);
     void elimina_variavel_kondili(int k_max);
+    void inicioBT();
 
     virtual ~Flow_testes();
 private:
@@ -75,6 +76,25 @@ private:
 
     void makespanProblem();
 
+    struct S {
+        int i;
+        int j;
+        int t;
+        int var;
+        S& operator =(const S& a)
+        {
+            i = a.i;
+            j = a.j;
+            t = a.t;
+            var = a.var;
+            return *this;
+        }
+    };
+
+    std::vector<S> sol;
+
+    bool insertVar(std::vector<Flow_testes::S> sol, Flow_testes::S var);
+    bool backtrack(int j, int op, int ti, std::vector<Flow_testes::S> sol);
     
 
     

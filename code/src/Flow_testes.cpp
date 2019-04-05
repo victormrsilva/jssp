@@ -57,7 +57,72 @@ Flow_testes::Flow_testes( Instance &_inst ) : inst_(_inst),
 process(vector<vector<vector<vector<int>>>>(inst_.n(), (vector<vector<vector<int>>>(inst_.m(), vector<vector<int>>(inst_.maxTime()+1))))) 
 { // já inicializa a variável privada _inst com o valor passado por referencia
 
+    mip = lp_create();
+
+    // variáveis de decisão
+    xIdx_ = vector<vector<vector<int>>>(inst_.m(),vector<vector<int>>(inst_.n(),vector<int>(inst_.maxTime()+1)));
+    eIdx_ = vector<vector<vector<int>>>(inst_.m(),vector<vector<int>>(inst_.n(),vector<int>(inst_.maxTime()+1)));
+    fIdx_ = vector<vector<int>>(inst_.m(),vector<int>(inst_.maxTime()+1));
+    enter_flow = vector<vector<vector<vector<int>>>>(inst_.n(), vector<vector<vector<int>>>(inst_.m(), vector<vector<int>>(inst_.maxTime()+2)));
+
+    vector< double > lb; // lower bound
+    vector< double > ub; // upper bound
+    vector< double > obj; // se é objetivo?
+    vector< char > integer; // variável inteira?
+
+    // criação das variáveis x
+    for (int i = 0; i < inst_.m(); i++){
+        for (int t = 0; t <= inst_.maxTime(); t++){
+            fIdx_[i][t] = names.size(); 
+            names.push_back("f("+to_string(i+1)+","+to_string(t)+")"); // nome dessa variável
+            lb.push_back(0.0);
+            ub.push_back(1.0);
+            obj.push_back(0.0);
+            integer.push_back(1);
     
+            for (int j = 0; j < inst_.n(); j++){
+                int m0 = inst_.machine(j,i);
+                if (t >= inst_.est(j,m0) && t <= inst_.lst(j,m0)){
+                    xIdx_[m0][j][t] = names.size(); 
+                    names.push_back("x("+to_string(j+1)+","+to_string(m0+1)+","+to_string(t)+")"); // nome dessa variável
+                    lb.push_back(0.0);
+                    ub.push_back(1.0);
+                    obj.push_back(0.0);
+                    integer.push_back(1);
+                    int dur = inst_.time(j, m0);
+
+                    for (int tp = t; tp < t + dur; tp++)
+                    {
+                        process[j][m0][tp].emplace_back(xIdx_[m0][j][t]);
+                    }
+                    // int mf = (i == inst_.m() - 1 ? inst_.m() : inst_.machine(j, i + 1));
+                    // if (mf != inst_.m()){
+                    //     enter_flow[j][mf][t + dur].emplace_back(names.size());
+                    // }
+                
+                    eIdx_[m0][j][t] = names.size(); 
+                    names.push_back("e("+to_string(j+1)+","+to_string(m0+1)+","+to_string(t)+")"); // nome dessa variável
+                    lb.push_back(0.0);
+                    ub.push_back(1.0);
+                    obj.push_back(0.0);
+                    integer.push_back(1);
+                    // if (mf != inst_.m()){
+                    //     enter_flow[j][m0][t + 1].emplace_back(eIdx_[m0][j][t]);
+                    // }
+                }
+            }
+        }
+
+    }
+
+    // c var
+    cIdx_ = names.size();
+    names.push_back("C");
+    lb.push_back( 0.0 );
+    ub.push_back( inst_.maxTime() );
+    obj.push_back( 1.0 );
+    integer.push_back( 1 );
+    cout << variables_pack.size() << endl;
 }
 
 void Flow_testes::combinacao(int tam, vector<int> &vec, vector<vector<int> > &combinacoes){
@@ -1529,6 +1594,71 @@ void Flow_testes::makespanProblem(){
     // }
 }
 
+void Flow_testes::inicioBT(){
+    sol = vector<S>();
+    if (!backtrack(0,0,0,sol)){
+        cout << "Nenhuma solução encontrada" << endl;
+    }
+}
+
+bool Flow_testes::backtrack(int j, int op, int ti, vector<Flow_testes::S> sol){
+    cout << j << " " << op << " " << ti << " " << sol.size() << endl;
+    if (j == inst_.n()){
+        // if (sol.size() == inst_.n()*inst_.m()){
+            for (Flow_testes::S s : sol){
+                cout << " " << names[s.var];
+            }
+            cout << endl;
+            getchar();
+        //     return true;
+        // } else {
+        //     return false;
+        // }
+        return true;
+    }
+    bool res = false;
+    int i = inst_.machine(j,op);
+    int dur = inst_.time(j,i);
+    for (int t = ti; t <= inst_.lst(j,i); t++){
+        Flow_testes::S aux;
+        aux.i = i;
+        aux.j = j;
+        aux.t = t;
+        aux.var = xIdx_[i][j][t];
+        if (insertVar(sol,aux)){
+            sol.push_back(aux);
+            if (op+1 < inst_.m()){ // still operations to be made
+                res = backtrack(j,op+1,t+dur,sol) || res;
+            } else { // no operations. move to next job, first operation, first time
+                res = backtrack(j+1, 0, 0,sol) || res;
+            }
+            sol.pop_back();
+        }
+    }
+    return res;
+}
+
+bool Flow_testes::insertVar(vector<Flow_testes::S> sol, Flow_testes::S var){
+    int tf_var = var.t + inst_.time(var.j,var.i);
+    for (Flow_testes::S s : sol){
+        if (s.i == var.i) {
+            int tf_s = s.t + inst_.time(s.j,s.i);
+            cout << "insertVar i: " << var.t << " " << tf_var << " " << s.t << " " << tf_s << endl;
+            if ( (var.t >= s.t && s.t < tf_var) || (s.t >= var.t && var.t < tf_s) ) {
+                return false;
+            }
+        }
+        if ( s.j == var.j){
+            int tf_s = s.t + inst_.time(s.j,s.i);
+            cout << "insertVar j: " << var.t << " " << tf_var << " " << s.t << " " << tf_s << endl;
+            if ( (s.t >= var.t && var.t < tf_s) ){
+                return false;
+            }
+            
+        } 
+    }
+    return true;
+}
 
 Flow_testes::~Flow_testes()
 {

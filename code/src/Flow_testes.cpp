@@ -1602,19 +1602,18 @@ void Flow_testes::inicioBT(){
 }
 
 bool Flow_testes::backtrack(int j, int op, int ti, vector<Flow_testes::S> sol){
-    cout << j << " " << op << " " << ti << " " << sol.size() << endl;
+//    cout << j << " " << op << " " << ti << " " << sol.size() << endl;
     if (j == inst_.n()){
-        // if (sol.size() == inst_.n()*inst_.m()){
+        if (sol.size() == inst_.n()*inst_.m()){
             for (Flow_testes::S s : sol){
                 cout << " " << names[s.var];
             }
             cout << endl;
             getchar();
-        //     return true;
-        // } else {
-        //     return false;
-        // }
-        return true;
+            return true;
+        } else {
+            return false;
+        }
     }
     bool res = false;
     int i = inst_.machine(j,op);
@@ -1641,21 +1640,17 @@ bool Flow_testes::backtrack(int j, int op, int ti, vector<Flow_testes::S> sol){
 bool Flow_testes::insertVar(vector<Flow_testes::S> sol, Flow_testes::S var){
     int tf_var = var.t + inst_.time(var.j,var.i);
     for (Flow_testes::S s : sol){
-        if (s.i == var.i) {
+        if (s.i == var.i || s.j == var.j) {
             int tf_s = s.t + inst_.time(s.j,s.i);
-            cout << "insertVar i: " << var.t << " " << tf_var << " " << s.t << " " << tf_s << endl;
-            if ( (var.t >= s.t && s.t < tf_var) || (s.t >= var.t && var.t < tf_s) ) {
+
+            auto Min = std::max(s.t, var.t);
+            auto Max = std::min(tf_s-1, tf_var-1);
+            // cout << "Min: " << Min << " Max: " << Max << endl;
+            // cout << "insertVar i: " << var.t << " " << tf_var << " " << s.t << " " << tf_s << endl;
+            if (Min <= Max) {
                 return false;
             }
         }
-        if ( s.j == var.j){
-            int tf_s = s.t + inst_.time(s.j,s.i);
-            cout << "insertVar j: " << var.t << " " << tf_var << " " << s.t << " " << tf_s << endl;
-            if ( (s.t >= var.t && var.t < tf_s) ){
-                return false;
-            }
-            
-        } 
     }
     return true;
 }

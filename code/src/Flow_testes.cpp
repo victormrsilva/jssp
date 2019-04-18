@@ -1595,21 +1595,43 @@ void Flow_testes::makespanProblem(){
 }
 
 void Flow_testes::inicioBT(){
-    sol = vector<S>();
+    vector<S> sol = vector<S>();
+    if (inst_.m() < maxOperationsBT){
+        maxOperationsBT = inst_.m();
+    }
     if (!backtrack(0,0,0,sol)){
         cout << "Nenhuma solução encontrada" << endl;
+    } else {
+        cout << "Soluções encontradas: " << solutions.size() << endl;
+        vector<int> vars = vector<int>(names.size(),0);
+        for (vector<S> vs : solutions){
+            for (S s : vs){
+                vars[s.var]++;
+            }
+        }
+        cout << "variaveis não usadas em nenhuma solução: " << endl;
+        for (int i = 0; i < vars.size(); i++){
+            if (vars[i] == 0){
+                if (names[i].find("x") != std::string::npos){
+                    cout << names[i] << " ";
+                }
+                
+            }
+        }
+        cout << endl;
     }
 }
 
 bool Flow_testes::backtrack(int j, int op, int ti, vector<Flow_testes::S> sol){
-//    cout << j << " " << op << " " << ti << " " << sol.size() << endl;
+    // cout << j << " " << op << " " << ti << " " << sol.size() << endl;
     if (j == inst_.n()){
-        if (sol.size() == inst_.n()*inst_.m()){
+        if (sol.size() == inst_.n() * maxOperationsBT){
             for (Flow_testes::S s : sol){
                 cout << " " << names[s.var];
             }
             cout << endl;
-            getchar();
+            // getchar();
+            solutions.emplace_back(sol);
             return true;
         } else {
             return false;
@@ -1624,12 +1646,15 @@ bool Flow_testes::backtrack(int j, int op, int ti, vector<Flow_testes::S> sol){
         aux.j = j;
         aux.t = t;
         aux.var = xIdx_[i][j][t];
+        // if (j == 0){
+        //     cout << names[xIdx_[i][j][t]] << " " << inst_.lst(j,i) << endl;
+        // }
         if (insertVar(sol,aux)){
             sol.push_back(aux);
-            if (op+1 < inst_.m()){ // still operations to be made
+            if (op+1 < maxOperationsBT){ // still operations to be made
                 res = backtrack(j,op+1,t+dur,sol) || res;
             } else { // no operations. move to next job, first operation, first time
-                res = backtrack(j+1, 0, 0,sol) || res;
+                res = backtrack(j+1, 0, 0, sol) || res;
             }
             sol.pop_back();
         }
@@ -1661,3 +1686,40 @@ Flow_testes::~Flow_testes()
         lp_free( &mip );
 }
 
+void Flow_testes::fenchel(){
+    double *x = lp_x(mip);
+    int qtd = 0;
+
+    LinearProgram *fenchel = lp_create();
+
+    vector<int> lambdas = vector<int>(names.size());
+
+    for (vector<int> aux : variables_pack){
+        //f << names[i] << "(" << x[i] << ") ";
+        double soma = 0; // inicia a soma para ver se há violação
+        for (int var : aux){
+            // f << names[var] << "(" << x[var] << ") ";
+            soma = soma + x[var];
+        }
+        // f << soma << endl;
+        
+        if (soma > 1.001){ // houve violação então vamos adicionar os cortes
+            //cout << soma << endl;
+            vector< int > idx;
+            vector< double > coef;
+            for (int var : aux){
+                idx.emplace_back(var);
+                coef.emplace_back(1.0);
+            }
+            if (idx.size() > 1){
+                qtd_manual_cuts++;
+                qtd++;
+                lp_add_row( mip, idx, coef, "manual_cut("+to_string(qtd_manual_cuts)+")", 'L', 1 );
+            }
+        }
+    }
+    // f.close();
+    string filename = inst_.instanceName()+"_cortes";
+    lp_write_lp(mip, (filename+".lp").c_str());
+    //getchar();
+}

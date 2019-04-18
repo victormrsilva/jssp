@@ -91,12 +91,14 @@ private:
         }
     };
 
-    std::vector<S> sol;
+    std::vector< std::vector<S> > solutions;
+
+    int maxOperationsBT = 5;
 
     bool insertVar(std::vector<Flow_testes::S> sol, Flow_testes::S var);
     bool backtrack(int j, int op, int ti, std::vector<Flow_testes::S> sol);
     
-
+    void fenchel();
     
 };
 

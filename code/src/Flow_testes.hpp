@@ -41,6 +41,7 @@ private:
 
     std::vector< int > fim;
     std::vector< std::string > names;
+    
 
     std::vector< std::vector< std::vector< int > > > xIdx_;
     std::vector< std::vector< std::vector< int > > > eIdx_;
@@ -91,7 +92,7 @@ private:
         }
     };
 
-    std::vector< std::vector<S> > solutions;
+    std::vector< std::vector<Flow_testes::S> > solutions;
 
     int maxOperationsBT = 5;
 

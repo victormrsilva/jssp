@@ -23,6 +23,16 @@ namespace std {
         return seed;
         }
     };
+        struct hash<std::vector<Flow_testes::S>> {
+        size_t operator()(const vector<Flow_testes::S>& v) const {
+        std::hash<Flow_testes::S> hasher;
+        std::size_t seed = 0;
+        for (S i : v) {
+            seed ^= hasher(i.var) + 0x9e3779b9 + (seed<<6) + (seed>>2);
+        }
+        return seed;
+        }
+    };
 }
 #endif
 
@@ -90,6 +100,13 @@ private:
             var = a.var;
             return *this;
         }
+
+        inline bool operator==(S a) {
+            if (a.var==var)
+                return true;
+            else
+                return false;
+        }
     };
 
     std::vector< std::vector<Flow_testes::S> > solutions;
@@ -99,7 +116,7 @@ private:
     bool insertVar(std::vector<Flow_testes::S> sol, Flow_testes::S var);
     bool backtrack(int j, int op, int ti, std::vector<Flow_testes::S> sol);
     
-    void fenchel();
+    void fenchel(int ti, int tf); // pega as variáveis por um intervalo de tempo para fazer o corte
     
 };
 

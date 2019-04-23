@@ -399,7 +399,7 @@ process(vector<vector<vector<vector<int>>>>(inst_.n(), (vector<vector<vector<int
     lp_write_lp( mip, (inst_.instanceName() + "_machine_original.lp").c_str() );
     //lp_write_mps( mip, inst_.instanceName().c_str() );
     //lp_optimize_as_continuous(mip);
-    fenchel();
+    fenchel(0, 15);
     // if (inst_.execute()){
     //     optimize();
     // }
@@ -1970,12 +1970,59 @@ Flow_testes::~Flow_testes()
         lp_free( &mip );
 }
 
-void Flow_testes::fenchel(){
-
-    inicioBT(); // inicia backtracking para pegar as soluções
-
+void Flow_testes::fenchel(int ti, int tf){
     lp_optimize_as_continuous(mip);
     double *x = lp_x(mip);
+
+    unordered_set<vector<S>> solutions;
+    vector<Flow_tests::S> vars;
+    vector<Flow_tests::S> vars_valor1;
+    for (int t = ti, t <= tf; t++){
+        for (int j = 0; j < inst_.n(); j++){
+            for (int i = 0; i < inst_.m(); i++){
+                if (t >= inst_.est(j,i) && t <= inst_.lst(j,i)){
+                    // adiciona variáveis possíveis para o corte se o valor relaxado é maior que 0. 
+                    // Caso sejam == 1, colocar em outro vetor
+                    if (x[xIdx_[i][j][t]] > 0.99999){ 
+                        Flow_testes::S aux;
+                        aux.i = i;
+                        aux.j = j;
+                        aux.t = t;
+                        aux.var = xIdx_[i][j][t];
+                        vars_valor1.push_back(aux);
+                    } else if (x[xIdx_[i][j][t]] > 1-e05){ 
+                        Flow_testes::S aux;
+                        aux.i = i;
+                        aux.j = j;
+                        aux.t = t;
+                        aux.var = xIdx_[i][j][t];
+                        vars.push_back(aux);
+                    }
+                }
+            }
+        }
+    }
+
+    int n = vars.size();
+    for (int r = 2; r <= (inst_.n()*inst_.m()); r++){
+        std::cout << "r: " << r << std::endl;
+        std::vector<bool> v(n);
+        std::fill(v.begin(), v.begin() + r, true);
+
+        do {
+            vector<Flow_testes::S> sol;
+            for (int i = 0; i < n; ++i) {
+                if (v[i]) {
+                    if (insertVar(sol, vars[i]){
+                        sol.push_back(vars[i]);
+                    };
+                }
+            }
+            if (sol.size() == r){
+                solutions.insert(sol);
+            }
+        } while (std::prev_permutation(v.begin(), v.end()));
+    }
 
     LinearProgram *fenchel = lp_create();
 

@@ -1,5 +1,4 @@
 #include "Flow_testes.hpp"
-
 #include <vector>
 #include <cfloat>
 #include <cmath>
@@ -8,6 +7,7 @@
 #include <algorithm>
 #include <time.h>
 #include <unordered_set>
+#include <sstream> 
 
 #include <string.h>
 
@@ -42,7 +42,7 @@ using std::unordered_set;
 using std::string;
 using std::to_string;
 using std::pair;
-
+using std::stringstream;
 
 
 double Flow_testes::teto(double v)
@@ -188,7 +188,6 @@ process(vector<vector<vector<vector<int>>>>(inst_.n(), (vector<vector<vector<int
                                 }
                             }
                         }
-                        bool vetor_igual = false;
                         std::sort(aux_vector.begin(), aux_vector.end(), compare);
                         if (aux_vector.size() != 1){
                             unordered_set<vector<int>>::const_iterator got = variables_pack.find(aux_vector);
@@ -399,7 +398,10 @@ process(vector<vector<vector<vector<int>>>>(inst_.n(), (vector<vector<vector<int
     lp_write_lp( mip, (inst_.instanceName() + "_machine_original.lp").c_str() );
     //lp_write_mps( mip, inst_.instanceName().c_str() );
     //lp_optimize_as_continuous(mip);
-    fenchel(0, 15);
+    int result = 1;
+    while (result = 1){
+        result = fenchel(0, 10);
+    }
     // if (inst_.execute()){
     //     optimize();
     // }
@@ -409,7 +411,7 @@ process(vector<vector<vector<vector<int>>>>(inst_.n(), (vector<vector<vector<int
     // }
 }
 
-void Flow_testes::combinacao(int tam, vector<int> &vec, vector<vector<int> > &combinacoes){
+void Flow_testes::combinacao(unsigned int tam, vector<int> &vec, vector<vector<int> > &combinacoes){
     if (vec.size() == tam) return;
     for (int j = 0; j < inst_.n(); j++){
         if (find(vec.begin(), vec.end(), j) == vec.end()){
@@ -437,13 +439,12 @@ void Flow_testes::elimina_variavel_flow(int k_max){
             vec.push_back(i);
             combinacao(k,vec,combinacoes);
         }
-        int melhor = inst_.maxTime();
 
         cout << "combinacoes: " << combinacoes.size() << endl;
 
         for(vector<int> aux : combinacoes){
             string nome = "";
-            for (int i = 0; i < aux.size(); i++){
+            for (unsigned int i = 0; i < aux.size(); i++){
                 nome += to_string(aux[i]);
             }
 
@@ -692,9 +693,6 @@ void Flow_testes::elimina_variavel_flow(int k_max){
         }
     }
     makespanProblem();
-
-
-
 }
 
 void Flow_testes::elimina_variavel_compact(int k_max){
@@ -710,13 +708,12 @@ void Flow_testes::elimina_variavel_compact(int k_max){
             vec.push_back(i);
             combinacao(k,vec,combinacoes);
         }
-        int melhor = inst_.maxTime();
 
         cout << "combinacoes: " << combinacoes.size() << endl;
 
         for(vector<int> aux : combinacoes){
             string nome = "";
-            for (int i = 0; i < aux.size(); i++){
+            for (unsigned int i = 0; i < aux.size(); i++){
                 nome += to_string(aux[i]);
             }
 
@@ -889,13 +886,12 @@ void Flow_testes::elimina_variavel_kondili(int k_max){
             vec.push_back(i);
             combinacao(k,vec,combinacoes);
         }
-        int melhor = inst_.maxTime();
 
         cout << "combinacoes: " << combinacoes.size() << endl;
 
         for(vector<int> aux : combinacoes){
             string nome = "";
-            for (int i = 0; i < aux.size(); i++){
+            for (unsigned int i = 0; i < aux.size(); i++){
                 nome += to_string(aux[i]) + "-";
             }
 
@@ -1191,8 +1187,6 @@ void Flow_testes::cgraph_creation()
                 for (int j = 0; j < inst_.n(); j++)
                 {
                     int m0 = inst_.machine(j, m);
-                    int mf = (m == inst_.m() - 1 ? inst_.m() : inst_.machine(j, m + 1));
-                    int dur = inst_.time(j, m0); // duration time for machine m0 in job j
                     for (int t = inst_.est(j, m0); t <= inst_.lst(j, m0); t++)
                     {
                         //cout << j << " " << m0 << " " << t << " " << mf << " " << t+dur << endl;
@@ -1268,7 +1262,6 @@ void Flow_testes::cgraph_creation()
                         for (int k = m+1; k < inst_.m(); k++){
                             int m0 = inst_.machine(j,m);
                             int mf = inst_.machine(j,k);
-                            int m_anterior = inst_.machine(j,k-1);
                             //cout << "j" << j << " m0: " << m0+1 << " t0: " << t0 << " mf: " << mf+1 << " k: " << k << " distance: " << inst_.distance(j,m0,mf) << " est(mf): " << inst_.est(j,mf) << endl;
                             for (int tf = inst_.est(j,mf); tf < t+inst_.distance(j,m0,mf); tf++){
                                 //cout << m0+1 << " " << t0 << " " << mf+1 << " " << tf << " " << t0+inst_.time(j,m_anterior) << endl;
@@ -1527,9 +1520,9 @@ void Flow_testes::makespanProblem(){
     mip = lp_create();
 
     // variáveis de decisão
-    xIdx_ = vector<vector<vector<int>>>(inst_.m(),vector<vector<int>>(inst_.n(),vector<int>(inst_.maxTime()+1)));
-    eIdx_ = vector<vector<vector<int>>>(inst_.m(),vector<vector<int>>(inst_.n(),vector<int>(inst_.maxTime()+1)));
-    fIdx_ = vector<vector<int>>(inst_.m(),vector<int>(inst_.maxTime()+1));
+    xIdx_ = vector<vector<vector<int>>>(inst_.m(),vector<vector<int>>(inst_.n(),vector<int>(inst_.maxTime()+1,0)));
+    eIdx_ = vector<vector<vector<int>>>(inst_.m(),vector<vector<int>>(inst_.n(),vector<int>(inst_.maxTime()+1,0)));
+    fIdx_ = vector<vector<int>>(inst_.m(),vector<int>(inst_.maxTime()+1,0));
     enter_flow = vector<vector<vector<vector<int>>>>(inst_.n(), vector<vector<vector<int>>>(inst_.m(), vector<vector<int>>(inst_.maxTime()+2)));
 
     vector< double > lb; // lower bound
@@ -1550,6 +1543,22 @@ void Flow_testes::makespanProblem(){
             for (int j = 0; j < inst_.n(); j++){
                 int m0 = inst_.machine(j,i);
                 if (t >= inst_.est(j,m0) && t <= inst_.lst(j,m0)){
+
+                    // int mf = (i == inst_.m() - 1 ? inst_.m() : inst_.machine(j, i + 1));
+                    // if (mf != inst_.m()){
+                    //     enter_flow[j][mf][t + dur].emplace_back(names.size());
+                    // }
+                    // variável de espera
+                    eIdx_[m0][j][t] = names.size(); 
+                    names.push_back("e("+to_string(j+1)+","+to_string(m0+1)+","+to_string(t)+")"); // nome dessa variável
+                    lb.push_back(0.0);
+                    ub.push_back(1.0);
+                    obj.push_back(0.0);
+                    integer.push_back(1);
+                    
+                    // variável de processamento. Se foi anulada anteriormente pelo método de backtracking, não incluir no modelo
+                    if (xIdx_[m0][j][t] == -1) continue;
+
                     xIdx_[m0][j][t] = names.size(); 
                     names.push_back("x("+to_string(j+1)+","+to_string(m0+1)+","+to_string(t)+")"); // nome dessa variável
                     lb.push_back(0.0);
@@ -1562,17 +1571,6 @@ void Flow_testes::makespanProblem(){
                     {
                         process[j][m0][tp].emplace_back(xIdx_[m0][j][t]);
                     }
-                    // int mf = (i == inst_.m() - 1 ? inst_.m() : inst_.machine(j, i + 1));
-                    // if (mf != inst_.m()){
-                    //     enter_flow[j][mf][t + dur].emplace_back(names.size());
-                    // }
-                
-                    eIdx_[m0][j][t] = names.size(); 
-                    names.push_back("e("+to_string(j+1)+","+to_string(m0+1)+","+to_string(t)+")"); // nome dessa variável
-                    lb.push_back(0.0);
-                    ub.push_back(1.0);
-                    obj.push_back(0.0);
-                    integer.push_back(1);
                     // if (mf != inst_.m()){
                     //     enter_flow[j][m0][t + 1].emplace_back(eIdx_[m0][j][t]);
                     // }
@@ -1591,38 +1589,17 @@ void Flow_testes::makespanProblem(){
     integer.push_back( 1 );
 
     ofstream f;
-    // f.open ("variables_pack.txt");
-    // for (string name : names){
-    //     f << name << endl;
-    // }
-    // f.close();
-
-    // f.open ("enter_flows.txt");
-    // for (int j = 0; j < inst_.n(); j++){
-    //     for (int t0=0; t0 < inst_.maxTime()-1; t0++){
-    //         for (int m0 = 0; m0 <= inst_.m()+1; m0++){
-
-    //             f << "machine " << m0 << " time " << t0 << endl;
-    //             for (int var : enter_flow[j][m0][t0]){
-    //                 f << names[var] << endl;
-    //             }
-    //         }
-    //     }
-    // }
-    // f.close();
-    //cout << "enter_flows criado" << endl;
-
-    //unordered_set<std::vector<int>, VectorHash> variables_pack;
 
     cout << variables_pack.size() << endl;
     
     for (int m0 = 0; m0 < inst_.m(); m0++){
         for (int j = 0; j < inst_.n(); j++){
             for (int t=inst_.est(j,m0); t <= inst_.lst(j,m0); t++){
+                if (xIdx_[m0][j][t] == -1) continue;
                 int var = xIdx_[m0][j][t];
                 for (int min = 1; min <= inst_.time(j,m0); min++){
                     // cout << min << " " << inst_.time(j,m0) << " " << j+1 << " " << m0+1 << endl;
-                    for (unsigned int j1= 0; j1 < inst_.n(); j1++){
+                    for (int j1= 0; j1 < inst_.n(); j1++){
                         //variables_pack.emplace_back();
                         //int pos = variables_pack.size()-1;
                         vector<int> aux_vector;
@@ -1634,6 +1611,7 @@ void Flow_testes::makespanProblem(){
                             if (j1 == j_aux){
                                 for (int t0 = t-inst_.time(j_aux,m0)+1; t0 < t+min; t0++){
                                     if (xIdx_[m0][j_aux][t0] == var) continue;
+                                    if (xIdx_[m0][j_aux][t0] == -1) continue;
                                     if (t0 >= inst_.est(j_aux,m0) && t0 <= inst_.lst(j_aux,m0)){
                                         // cout << "[" << j_aux+1 << "," << m0+1 << "," << t0 << "," << t+inst_.minimumTime(m0) << "," << inst_.est(j_aux,m0) << "," << inst_.lst(j_aux,m0) << "] ";
                                         // cout << names[xIdx_[m0][j_aux][t0]] << " ";
@@ -1647,6 +1625,7 @@ void Flow_testes::makespanProblem(){
                                     int t0 = t+qtd_movimentos;
                                     qtd_movimentos++;
                                     if (xIdx_[m0][j_aux][t0] == var) continue;
+                                    if (xIdx_[m0][j_aux][t0] == -1) continue;
                                     if (t0 >= inst_.est(j_aux,m0) && t0 <= inst_.lst(j_aux,m0)){
                                         // cout << "(" << j_aux+1 << "," << m0+1 << "," << t0 << "," << t+inst_.minimumTime(m0) << "," << inst_.est(j_aux,m0) << "," << inst_.lst(j_aux,m0) << ") ";
                                         // cout << names[xIdx_[m0][j_aux][t0]] << " ";
@@ -1656,7 +1635,6 @@ void Flow_testes::makespanProblem(){
                                 }
                             }
                         }
-                        bool vetor_igual = false;
                         std::sort(aux_vector.begin(), aux_vector.end(), compare);
                         if (aux_vector.size() != 1){
                             unordered_set<vector<int>>::const_iterator got = variables_pack.find(aux_vector);
@@ -1685,32 +1663,7 @@ void Flow_testes::makespanProblem(){
     cout << "arquivo criado" << endl;
 
     cout << variables_pack.size() << endl;
-    // f.open("cuts.txt");
-    // for (vector<int> vars : variables_pack){
-    //     for (int v : vars){
-    //         //cout << vars.size() << " " << v << " " ;
-    //         f << names[v] << " ";
-    //     }
-    //     //cout << endl;
-    //     f << endl;
-    // }
-    // f.close();
-    // cout << "arquivo criado" << endl;
-    //getchar();
-    // f.open ("processing_machines.txt");
-    // for (int t0=0; t0 < inst_.maxTime()-1; t0++){
-    //     for (int m0 = 0; m0 < inst_.m(); m0++){
 
-    //         f << "machine " << m0+1 << " time " << t0 << endl;
-    //         for (int j = 0; j < inst_.n(); j++){
-    //             for (int var : process[j][m0][t0]){
-    //                 f << names[var] << endl;
-    //             }
-    //         }
-    //     }
-    // }
-    // f.close();
-    // cout << "processing_machines created" << endl;
 
     // adiciona colunas ao solver
     lp_add_cols( mip, obj, lb, ub, integer, names );
@@ -1746,11 +1699,11 @@ void Flow_testes::makespanProblem(){
             for (int j = 0; j < inst_.n(); j++){
                 int tp = t - inst_.time(j,i);
                 //cout << "m = " << i << " t = " << t << " j = " << j << " tp = " << tp << " p = " << inst_.time(j,i) << " est " << inst_.est(j,i) << " lst " << inst_.lst(j,i) << endl;
-                if (tp >=  inst_.est(j,i)  && tp <= inst_.lst(j,i)){
+                if (tp >=  inst_.est(j,i)  && tp <= inst_.lst(j,i) && xIdx_[i][j][tp] != -1){
                     idx.push_back( xIdx_[i][j][tp] );
                     coef.push_back( 1.0 );
                 }
-                if (t >= inst_.est(j,i) && t <= inst_.lst(j,i)){
+                if (t >= inst_.est(j,i) && t <= inst_.lst(j,i) && xIdx_[i][j][t] != -1){
                     idx.push_back( xIdx_[i][j][t] );
                     coef.push_back( -1.0 );
                 }
@@ -1799,7 +1752,7 @@ void Flow_testes::makespanProblem(){
 
                     int tp = t - inst_.time(j,h_anterior);
 
-                    if (tp >=  inst_.est(j,h_anterior)  && tp <= inst_.lst(j,h_anterior)){
+                    if (tp >=  inst_.est(j,h_anterior)  && tp <= inst_.lst(j,h_anterior) && xIdx_[h_anterior][j][tp] != -1){
                         idx.push_back( xIdx_[h_anterior][j][tp] );
                         coef.push_back( 1.0 );
                     }
@@ -1808,9 +1761,10 @@ void Flow_testes::makespanProblem(){
                     idx.push_back( eIdx_[h][j][t-1] );
                     coef.push_back( 1.0 );
                 }
-
-                idx.push_back( xIdx_[h][j][t] );
-                coef.push_back( -1.0 );
+                if (xIdx_[h][j][t] != -1){
+                    idx.push_back( xIdx_[h][j][t] );
+                    coef.push_back( -1.0 );
+                }
                 // adiciona restrição.
                 idx.push_back( eIdx_[h][j][t] );
                 coef.push_back( -1.0 );
@@ -1829,14 +1783,16 @@ void Flow_testes::makespanProblem(){
             vector< double > coef;
             int h = inst_.machine(j,i);
             int t = inst_.lst(j,h);
-            idx.push_back( xIdx_[h][j][t] );
-            coef.push_back( -1.0 );
+            if (xIdx_[h][j][t] != -1){ 
+                idx.push_back( xIdx_[h][j][t] );
+                coef.push_back( -1.0 );
+            }
             idx.push_back( eIdx_[h][j][t-1] );
             coef.push_back( 1.0 );
             if (i > 0) {
                 int h_anterior = inst_.machine(j,i-1);
                 int tp = t - inst_.time(j,h_anterior);
-                if (tp <= inst_.lst(j,h_anterior)){ // último tempo agora teve o lst da máquina anterior trocada
+                if (tp <= inst_.lst(j,h_anterior) && xIdx_[h_anterior][j][tp] != -1){ // último tempo agora teve o lst da máquina anterior trocada
                     idx.push_back( xIdx_[h_anterior][j][tp] );
                 }
                 coef.push_back( 1.0 );
@@ -1855,9 +1811,10 @@ void Flow_testes::makespanProblem(){
         coef.push_back( 1.0 );
         int h = inst_.machine(j,inst_.m()-1);
         for (int t = inst_.est(j,h); t <= inst_.lst(j,h); t++){
-            
-            idx.push_back(xIdx_[h][j][t]);
-            coef.push_back(-1*(t+inst_.time(j,h)));
+            if (xIdx_[h][j][t] != -1){
+                idx.push_back(xIdx_[h][j][t]);
+                coef.push_back(-1*(t+inst_.time(j,h)));
+            }
         }
 
         lp_add_row( mip, idx, coef, "fim("+to_string(j+1)+")", 'G', 0 );
@@ -1894,10 +1851,15 @@ void Flow_testes::inicioBT(){
             }
         }
         cout << "variaveis não usadas em nenhuma solução: " << endl;
-        for (int i = 0; i < vars.size(); i++){
+        for (unsigned int i = 0; i < vars.size(); i++){
             if (vars[i] == 0){
                 if (names[i].find("x") != std::string::npos){
                     cout << names[i] << " ";
+                    int mach = 0;
+                    int job = 0;
+                    int time = 0;
+                    sscanf(names[i].c_str(),"lambda(%d,%d,%d)",&job,&mach,&time); // elimina a variável
+                    xIdx_[job][mach][time] = -1;
                 }
                 
             }
@@ -1906,11 +1868,11 @@ void Flow_testes::inicioBT(){
     }
 }
 
-bool Flow_testes::backtrack(int j, int op, int ti, vector<Flow_testes::S> sol){
+bool Flow_testes::backtrack(int j, int op, int ti, vector<S> sol){
     // cout << j << " " << op << " " << ti << " " << sol.size() << endl;
     if (j == inst_.n()){
         if (sol.size() == inst_.n() * maxOperationsBT){
-            // for (Flow_testes::S s : sol){
+            // for (S s : sol){
             //     cout << " " << names[s.var];
             // }
             // cout << endl;
@@ -1925,7 +1887,7 @@ bool Flow_testes::backtrack(int j, int op, int ti, vector<Flow_testes::S> sol){
     int i = inst_.machine(j,op);
     int dur = inst_.time(j,i);
     for (int t = ti; t <= inst_.lst(j,i); t++){
-        Flow_testes::S aux;
+        S aux;
         aux.i = i;
         aux.j = j;
         aux.t = t;
@@ -1946,9 +1908,9 @@ bool Flow_testes::backtrack(int j, int op, int ti, vector<Flow_testes::S> sol){
     return res;
 }
 
-bool Flow_testes::insertVar(vector<Flow_testes::S> sol, Flow_testes::S var){
+bool Flow_testes::insertVar(vector<S> sol, S var){
     int tf_var = var.t + inst_.time(var.j,var.i);
-    for (Flow_testes::S s : sol){
+    for (S s : sol){
         if (s.i == var.i || s.j == var.j) {
             int tf_s = s.t + inst_.time(s.j,s.i);
 
@@ -1970,28 +1932,30 @@ Flow_testes::~Flow_testes()
         lp_free( &mip );
 }
 
-void Flow_testes::fenchel(int ti, int tf){
+int Flow_testes::fenchel(int ti, int tf){
     lp_optimize_as_continuous(mip);
     double *x = lp_x(mip);
 
     unordered_set<vector<S>> solutions;
-    vector<Flow_tests::S> vars;
-    vector<Flow_tests::S> vars_valor1;
-    for (int t = ti, t <= tf; t++){
+    vector<S> vars;
+    vector<S> vars_valor1;
+    for (int t = ti; t <= tf; t++){
         for (int j = 0; j < inst_.n(); j++){
             for (int i = 0; i < inst_.m(); i++){
                 if (t >= inst_.est(j,i) && t <= inst_.lst(j,i)){
                     // adiciona variáveis possíveis para o corte se o valor relaxado é maior que 0. 
                     // Caso sejam == 1, colocar em outro vetor
                     if (x[xIdx_[i][j][t]] > 0.99999){ 
-                        Flow_testes::S aux;
+                        cout << names[xIdx_[i][j][t]] << " " << x[xIdx_[i][j][t]] << endl;
+                        S aux;
                         aux.i = i;
                         aux.j = j;
                         aux.t = t;
                         aux.var = xIdx_[i][j][t];
                         vars_valor1.push_back(aux);
-                    } else if (x[xIdx_[i][j][t]] > 1-e05){ 
-                        Flow_testes::S aux;
+                    } else if (x[xIdx_[i][j][t]] > 1e-05){ 
+                        cout << names[xIdx_[i][j][t]] << " " << x[xIdx_[i][j][t]] << endl;
+                        S aux;
                         aux.i = i;
                         aux.j = j;
                         aux.t = t;
@@ -2004,26 +1968,65 @@ void Flow_testes::fenchel(int ti, int tf){
     }
 
     int n = vars.size();
-    for (int r = 2; r <= (inst_.n()*inst_.m()); r++){
-        std::cout << "r: " << r << std::endl;
+    cout << n << endl;
+    for (int r = (inst_.n()*inst_.m()); r >= 2; r--){
         std::vector<bool> v(n);
         std::fill(v.begin(), v.begin() + r, true);
-
+        cout << r << ":" << endl;
         do {
-            vector<Flow_testes::S> sol;
+            vector<S> sol;
             for (int i = 0; i < n; ++i) {
                 if (v[i]) {
-                    if (insertVar(sol, vars[i]){
+                    if (insertVar(sol, vars[i])){
                         sol.push_back(vars[i]);
                     };
                 }
             }
             if (sol.size() == r){
-                solutions.insert(sol);
+                bool exists_solution = false;
+                for (vector<S> vec : solutions){
+                    if (vec.size() >= sol.size()){
+                        exists_solution = isSubset(vec,sol);
+                    } else {
+                        exists_solution = isSubset(sol,vec);
+                    }
+                    if (exists_solution){
+                        // cout << "subset: ";
+                        // for (S s : sol){
+                        //     cout << names[s.var] << " ";
+                        // }
+                        // cout << endl;
+                        // cout << "set: ";
+                        // for (S s : vec){
+                        //     cout << names[s.var] << " ";
+                        // }
+                        // cout << endl;
+                        break;
+                    }
+                }
+                if (!exists_solution){
+                    for (S s : sol){
+                        cout << names[s.var] << " ";
+                    }
+                    cout << endl;
+                    solutions.insert(sol);
+                }
+                
             }
         } while (std::prev_permutation(v.begin(), v.end()));
+        //getchar();
     }
 
+    // for (vector<S> vec : solutions){
+    //     for (S s : vec){
+    //         cout << names[s.var] << " ";
+    //     }
+    //     cout << endl;
+    // }
+
+    cout << "creating set. press enter" << endl;
+    getchar();
+    
     LinearProgram *fenchel = lp_create();
 
     vector< double > lb; // lower bound
@@ -2031,38 +2034,108 @@ void Flow_testes::fenchel(int ti, int tf){
     vector< double > obj; // se é objetivo?
     vector< char > integer; // variável inteira?
     vector< string > lambda_names;
-    vector< vector< vector< int > > > lambdas = vector<vector<vector<int>>>(inst_.m(),vector<vector<int>>(inst_.n(),vector<int>(inst_.maxTime()+1)));
 
-    for (int i = 0; i < inst_.m(); i++){
-        for (int t = 0; t <= inst_.maxTime(); t++){
-            for (int j = 0; j < inst_.n(); j++){
-                int m0 = inst_.machine(j,i);
-                if (t >= inst_.est(j,m0) && t <= inst_.lst(j,m0)){
-                    lambdas[m0][j][t] = lambda_names.size(); 
-                    lambda_names.push_back("lambda("+to_string(j+1)+","+to_string(m0+1)+","+to_string(t)+")"); // nome dessa variável
-                    lb.push_back(0.0);
-                    ub.push_back(1.0);
-                    obj.push_back(x[xIdx_[m0][j][t]]);
-                    integer.push_back(0);
-                }
+    vector< vector< vector< int > > > lambdas = vector<vector<vector<int>>>(inst_.m(),vector<vector<int>>(inst_.n(),vector<int>(inst_.maxTime()+1,-1)));
+
+    unordered_set<S> set_vars;
+
+    for (vector<S> vec : solutions){
+        for (S s : vec){
+            if (lambdas[s.i][s.j][s.t] == -1){
+                lambdas[s.i][s.j][s.t] = lambda_names.size(); 
+                lambda_names.push_back("lambda("+to_string(s.j+1)+","+to_string(s.i+1)+","+to_string(s.t)+")"); // nome dessa variável
+                lb.push_back(0.0);
+                ub.push_back(1.0);
+                obj.push_back(-x[s.var]);
+                integer.push_back(0);
             }
         }
     }
 
+
+    // for (int i = 0; i < inst_.m(); i++){
+    //     for (int t = 0; t <= inst_.maxTime(); t++){
+    //         for (int j = 0; j < inst_.n(); j++){
+    //             int m0 = inst_.machine(j,i);
+    //             if (t >= inst_.est(j,m0) && t <= inst_.lst(j,m0)){
+    //                 lambdas[m0][j][t] = lambda_names.size(); 
+    //                 lambda_names.push_back("lambda("+to_string(j+1)+","+to_string(m0+1)+","+to_string(t)+")"); // nome dessa variável
+    //                 lb.push_back(0.0);
+    //                 ub.push_back(1.0);
+    //                 obj.push_back(x[xIdx_[m0][j][t]]);
+    //                 integer.push_back(0);
+    //             }
+    //         }
+    //     }
+    // }
+
     lp_add_cols( fenchel, obj, lb, ub, integer, lambda_names );
 
-    for (unsigned int i = 0; i < solutions.size(); i++){
+    int cont = 0;
+    for (vector<S> vec : solutions){
         vector< int > idx;
         vector< double > coef;
-        for (S s : solutions[i]){
+        for (S s : vec){
             //cout << s.i << " " << s.j << " " << s.t << endl;
             idx.push_back(lambdas[s.i][s.j][s.t]);
             coef.push_back(1);
         }
-        lp_add_row(fenchel, idx, coef, "sol("+to_string(i)+")", 'L', 1.0 );
+        lp_add_row(fenchel, idx, coef, "sol("+to_string(cont)+")", 'L', 1.0 );
+        cont++;
     }
-
+    
     string filename = inst_.instanceName()+"_fenchel";
     lp_write_lp(fenchel, (filename+".lp").c_str());
+    lp_optimize(fenchel);
+    
+    double *xf = lp_x(fenchel);
+    double total = 0;
+    for (unsigned int i = 0; i < lambda_names.size(); i++){
+        if (xf[i] > 0){
+            //cout << lambda_names[i] << " " << xf[i] << endl;
+
+            int mach = 0;
+            int job = 0;
+            int time = 0;
+            sscanf(lambda_names[i].c_str(),"lambda(%d,%d,%d)",&job,&mach,&time);
+            
+            cout << lambda_names[i] << "(" << xf[i] <<")" << "*" << names[xIdx_[mach-1][job-1][time]] << "(" << x[xIdx_[mach-1][job-1][time]] <<")" << " + " << endl;
+            total += xf[i]*x[xIdx_[mach-1][job-1][time]];
+        }
+    }
+    cout << total << endl;
+    if (total > 1){
+        vector< int > idx;
+        vector< double > coef;
+        for (unsigned int i = 0; i < lambda_names.size(); i++){
+            if (xf[i] > 0){
+                int mach = 0;
+                int job = 0;
+                int time = 0;
+                sscanf(lambda_names[i].c_str(),"lambda(%d,%d,%d)",&job,&mach,&time);
+                idx.push_back(xIdx_[mach-1][job-1][time]);
+                coef.push_back(xf[i]);
+            }
+        }
+        for (unsigned int i = 0; i < idx.size(); i++){
+            cout << coef[i] << "*" << names[idx[i]] << " ";
+        }
+        lp_add_row(mip, idx, coef, "fenchel("+to_string(qtd_cortes)+")", 'L', 1.0 );
+        qtd_cortes++;
+        lp_write_lp(mip,"teste.lp");
+    }
+    getchar();
+    // delete []x;
+    // delete []xf;
+    if (total > 1) return 1;
+    else return 0;
     //getchar();
-}                
+}      
+
+// return true if vector B is in A
+// return false otherwise
+template <typename T> bool Flow_testes::isSubset(std::vector<T> A, std::vector<T> B){
+    sort(A.begin(), A.end());
+    sort(B.begin(), B.end());
+    return includes(A.begin(), A.end(), B.begin(), B.end());
+}

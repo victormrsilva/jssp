@@ -3,39 +3,12 @@
 
 #include "Instance.hpp"
 #include "lp.hpp"
+#include "Hash.cpp"
 #include <unordered_set>
 extern "C"{
 #include "cgraph/cgraph.h"
 #include "cgraph/clique_separation.h"
 }
-
-#ifndef HASH_H
-#define HASH_H
-namespace std {
-    template <>
-    struct hash<std::vector<int>> {
-        size_t operator()(const vector<int>& v) const {
-        std::hash<int> hasher;
-        std::size_t seed = 0;
-        for (int i : v) {
-            seed ^= hasher(i) + 0x9e3779b9 + (seed<<6) + (seed>>2);
-        }
-        return seed;
-        }
-    };
-        struct hash<std::vector<Flow_testes::S>> {
-        size_t operator()(const vector<Flow_testes::S>& v) const {
-        std::hash<Flow_testes::S> hasher;
-        std::size_t seed = 0;
-        for (S i : v) {
-            seed ^= hasher(i.var) + 0x9e3779b9 + (seed<<6) + (seed>>2);
-        }
-        return seed;
-        }
-    };
-}
-#endif
-
 
 class Flow_testes{
 public:
@@ -46,6 +19,8 @@ public:
     void inicioBT();
 
     virtual ~Flow_testes();
+
+
 private:
     Instance &inst_;
 
@@ -77,7 +52,7 @@ private:
     bool continuo = true;
     bool binario = false;
     void optimize();
-    void combinacao(int tam, std::vector<int> &vec, std::vector<std::vector<int> > &combinacoes);
+    void combinacao(unsigned int tam, std::vector<int> &vec, std::vector<std::vector<int> > &combinacoes);
 
     int cliques(int *idxs,double *coefs);
 
@@ -87,37 +62,21 @@ private:
 
     void makespanProblem();
 
-    struct S {
-        int i;
-        int j;
-        int t;
-        int var;
-        S& operator =(const S& a)
-        {
-            i = a.i;
-            j = a.j;
-            t = a.t;
-            var = a.var;
-            return *this;
-        }
 
-        inline bool operator==(S a) {
-            if (a.var==var)
-                return true;
-            else
-                return false;
-        }
-    };
 
-    std::vector< std::vector<Flow_testes::S> > solutions;
+    std::vector< std::vector<S> > solutions;
 
     int maxOperationsBT = 5;
 
-    bool insertVar(std::vector<Flow_testes::S> sol, Flow_testes::S var);
-    bool backtrack(int j, int op, int ti, std::vector<Flow_testes::S> sol);
+    bool insertVar(std::vector<S> sol, S var);
+    bool backtrack(int j, int op, int ti, std::vector<S> sol);
     
-    void fenchel(int ti, int tf); // pega as variáveis por um intervalo de tempo para fazer o corte
+    int fenchel(int ti, int tf); // pega as variáveis por um intervalo de tempo para fazer o corte
+
+    template <typename T> bool isSubset(std::vector<T> A, std::vector<T> B);
     
 };
+
+
 
 #endif

@@ -19,6 +19,6 @@ add_executable(jssp main.cpp src/Gera.cpp src/Gera.hpp src/Compact.cpp src/Compa
                src/cgraph/BKGraph.cpp src/cgraph/BKGraph.hpp src/cgraph/BKVertex.hpp src/cgraph/BKVertex.cpp src/cgraph/bron_kerbosch.cpp src/cgraph/bron_kerbosch.h 
                src/cgraph/clique_extender.c src/cgraph/clique_extender.h src/cgraph/clique_merge.h src/cgraph/clique_merge.c src/cgraph/clique_separation.c src/cgraph/clique_separation.h 
                src/cgraph/strutils.c src/cgraph/strutils.h src/cgraph/vectormgm.c src/cgraph/vectormgm.h src/cgraph/vint_set.c src/cgraph/vint_set.h src/cgraph/vint_queue.c src/cgraph/vint_queue.h
-               src/cgraph/spaths.h src/cgraph/spaths.c src/cgraph/oddhs.h src/cgraph/oddhs.c src/cgraph/digraph.h src/cgraph/cut.h src/cgraph/cut.c)
+               src/cgraph/spaths.h src/cgraph/spaths.c src/cgraph/oddhs.h src/cgraph/oddhs.c src/cgraph/digraph.h src/cgraph/cut.h src/cgraph/cut.c src/Hash.cpp)
 
 target_link_libraries(jssp ${LP_LINK_FLAGS})

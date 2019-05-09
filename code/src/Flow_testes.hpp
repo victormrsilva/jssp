@@ -73,7 +73,11 @@ private:
     
     int fenchel(int ti, int tf); // pega as variáveis por um intervalo de tempo para fazer o corte
 
-    template <typename T> bool isSubset(std::vector<T> A, std::vector<T> B);
+    template <typename T> bool isSubset(std::vector<T> &A, std::vector<T> &B);
+
+    void enumeracao_fenchel(unsigned int r, const std::vector<S> &vars, int index, std::unordered_set<std::vector<S>> &solutions, std::vector<S> solution);
+
+    bool dominancia(std::vector<S> &vec, std::unordered_set<std::vector<S>> &set);
     
 };
 

@@ -399,8 +399,12 @@ process(vector<vector<vector<vector<int>>>>(inst_.n(), (vector<vector<vector<int
     //lp_write_mps( mip, inst_.instanceName().c_str() );
     //lp_optimize_as_continuous(mip);
     int result = 1;
-    while (result = 1){
-        result = fenchel(0, 10);
+    while (result >= 1){
+        lp_optimize_as_continuous(mip);
+        int result1 = fenchel(0, 10);
+        int result2 = fenchel(5,15);
+        int result3 = fenchel(10,20);
+        result = result1+result2+result3;
     }
     // if (inst_.execute()){
     //     optimize();
@@ -1933,13 +1937,12 @@ Flow_testes::~Flow_testes()
 }
 
 int Flow_testes::fenchel(int ti, int tf){
-    lp_optimize_as_continuous(mip);
     double *x = lp_x(mip);
 
     unordered_set<vector<S>> solutions;
     vector<S> vars;
     vector<S> vars_valor1;
-    for (int t = ti; t <= tf; t++){
+    for (int t = ti; t < tf; t++){
         for (int j = 0; j < inst_.n(); j++){
             for (int i = 0; i < inst_.m(); i++){
                 if (t >= inst_.est(j,i) && t <= inst_.lst(j,i)){
@@ -1970,51 +1973,44 @@ int Flow_testes::fenchel(int ti, int tf){
     int n = vars.size();
     cout << n << endl;
     for (int r = (inst_.n()*inst_.m()); r >= 2; r--){
-        std::vector<bool> v(n);
-        std::fill(v.begin(), v.begin() + r, true);
-        cout << r << ":" << endl;
-        do {
-            vector<S> sol;
-            for (int i = 0; i < n; ++i) {
-                if (v[i]) {
-                    if (insertVar(sol, vars[i])){
-                        sol.push_back(vars[i]);
-                    };
-                }
-            }
-            if (sol.size() == r){
-                bool exists_solution = false;
-                for (vector<S> vec : solutions){
-                    if (vec.size() >= sol.size()){
-                        exists_solution = isSubset(vec,sol);
-                    } else {
-                        exists_solution = isSubset(sol,vec);
-                    }
-                    if (exists_solution){
-                        // cout << "subset: ";
-                        // for (S s : sol){
-                        //     cout << names[s.var] << " ";
-                        // }
-                        // cout << endl;
-                        // cout << "set: ";
-                        // for (S s : vec){
-                        //     cout << names[s.var] << " ";
-                        // }
-                        // cout << endl;
-                        break;
-                    }
-                }
-                if (!exists_solution){
-                    for (S s : sol){
-                        cout << names[s.var] << " ";
-                    }
-                    cout << endl;
-                    solutions.insert(sol);
-                }
+        vector<S> solution;
+        cout << r << endl;
+        enumeracao_fenchel(r,vars,0,solutions,solution);
+        // std::vector<bool> v(n);
+        // std::fill(v.begin(), v.begin() + r, true);
+        // cout << r << ":" << endl;
+        // do {
+        //     vector<S> sol;
+        //     for (int i = 0; i < n; ++i) {
+        //         if (v[i]) {
+        //             if (insertVar(sol, vars[i])){
+        //                 sol.push_back(vars[i]);
+        //             };
+        //         }
+        //     }
+        //     if (sol.size() == r){
+        //         bool exists_solution = false;
+        //         for (vector<S> vec : solutions){
+        //             if (vec.size() >= sol.size()){
+        //                 exists_solution = isSubset(vec,sol);
+        //             } else {
+        //                 exists_solution = isSubset(sol,vec);
+        //             }
+        //             if (exists_solution){
+        //                 break;
+        //             }
+        //         }
+        //         if (!exists_solution){
+        //             for (S s : sol){
+        //                 cout << names[s.var] << " ";
+        //             }
+        //             cout << endl;
+        //             solutions.insert(sol);
+        //         }
                 
-            }
-        } while (std::prev_permutation(v.begin(), v.end()));
-        //getchar();
+        //     }
+        // } while (std::prev_permutation(v.begin(), v.end()));
+        getchar();
     }
 
     // for (vector<S> vec : solutions){
@@ -2132,10 +2128,72 @@ int Flow_testes::fenchel(int ti, int tf){
     //getchar();
 }      
 
-// return true if vector B is in A
+// return true if smaller vector is in bigger vector
 // return false otherwise
-template <typename T> bool Flow_testes::isSubset(std::vector<T> A, std::vector<T> B){
-    sort(A.begin(), A.end());
-    sort(B.begin(), B.end());
-    return includes(A.begin(), A.end(), B.begin(), B.end());
+template <typename T> bool Flow_testes::isSubset(std::vector<T> &A, std::vector<T> &B){
+    if (A.size() > B.size()){
+        sort(A.begin(), A.end());
+        sort(B.begin(), B.end());
+        return includes(A.begin(), A.end(), B.begin(), B.end());
+    } else {
+        sort(A.begin(), A.end());
+        sort(B.begin(), B.end());
+        return includes(B.begin(), B.end(), A.begin(), A.end());
+    }
+}
+
+void Flow_testes::enumeracao_fenchel(unsigned int r, const vector<S> &vars, int index, unordered_set<vector<S>> &solutions, vector<S> solution){
+    cout << "r: " << r << " solution.size: " << solution.size() << " vars.size: " << vars.size() << " index: " << index << " solutions.size: " << solutions.size() endl;
+    for (S s : solution){
+        cout << names[s.var] << " ";
+    }
+    cout << endl;
+    // limite de enumerações
+    if (solutions.size() > 5000){
+        return;
+    }
+    // a quantidade de variáveis restantes para enumerar são menores que o tamanho de r
+    // if (vars.size() - index < r){
+    //     return;
+    // }
+    // enumeração de tamanho r
+    if (solution.size() == r){
+        bool dominado = dominancia(solution,solutions);
+        if (!dominado){
+            for (S s : solution){
+                cout << names[s.var] << " ";
+            }
+            cout << endl;
+            solutions.insert(solution);
+        }
+        return;
+    }
+    // continuação de inserção de variáveis. Caso seja possível inserir, vai pra próxima variável
+    for (unsigned int i = index; i < vars.size(); i++){
+        //cout << solution.size() << " tentando inserir " << names[vars[i].var] << endl;
+        if (insertVar(solution, vars[i])){
+            solution.emplace_back(vars[i]);
+            enumeracao_fenchel(r,vars,i+1,solutions,solution);
+        }
+    }
+}
+
+// verifica se no conjunto de soluções há alguma que esteja dominando a solução que tentamos inserir.
+bool Flow_testes::dominancia(vector<S> &vec, unordered_set<std::vector<S>> &set){
+    bool exists_solution = false;
+    for (vector<S> v : set){
+        // caso o tamanho do vetor seja igual, precisamos olhar a dominância apenas baseado na primeira variável.
+        // se não for, precisamos olhar independente da ordem
+        if (v.size() > vec.size()){
+            exists_solution = isSubset(v,vec);
+        } else if (v.size() == vec.size()){
+            if (v[0] == vec[0]){
+                exists_solution = isSubset(vec,v);
+            }
+        }
+        if (exists_solution){
+            return true;
+        }
+    }
+    return false;
 }

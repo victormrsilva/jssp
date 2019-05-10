@@ -406,6 +406,7 @@ process(vector<vector<vector<vector<int>>>>(inst_.n(), (vector<vector<vector<int
         int result3 = fenchel(10,20);
         result = result1+result2+result3;
     }
+    lp_optimize(mip);
     // if (inst_.execute()){
     //     optimize();
     // }
@@ -1970,6 +1971,7 @@ int Flow_testes::fenchel(int ti, int tf){
         }
     }
 
+    clock_t begin = clock();
     int n = vars.size();
     cout << n << endl;
     for (int r = (inst_.n()*inst_.m()); r >= 2; r--){
@@ -2010,7 +2012,7 @@ int Flow_testes::fenchel(int ti, int tf){
                 
         //     }
         // } while (std::prev_permutation(v.begin(), v.end()));
-        getchar();
+        // getchar();
     }
 
     // for (vector<S> vec : solutions){
@@ -2020,8 +2022,12 @@ int Flow_testes::fenchel(int ti, int tf){
     //     cout << endl;
     // }
 
-    cout << "creating set. press enter" << endl;
-    getchar();
+
+
+    // cout << "creating set. press enter" << endl;
+    // getchar();
+    clock_t end = clock();
+    cout << "Found " << solutions.size() << " enumerations in " << (double)(end - begin) / CLOCKS_PER_SEC << " secs" << endl;
     
     LinearProgram *fenchel = lp_create();
 
@@ -2143,20 +2149,21 @@ template <typename T> bool Flow_testes::isSubset(std::vector<T> &A, std::vector<
 }
 
 void Flow_testes::enumeracao_fenchel(unsigned int r, const vector<S> &vars, int index, unordered_set<vector<S>> &solutions, vector<S> solution){
-    cout << "r: " << r << " solution.size: " << solution.size() << " vars.size: " << vars.size() << " index: " << index << " solutions.size: " << solutions.size() endl;
-    for (S s : solution){
-        cout << names[s.var] << " ";
-    }
-    cout << endl;
+    // cout << "r: " << r << " solution.size: " << solution.size() << " vars.size: " << vars.size() << " index: " << index << " solutions.size: " << solutions.size() << endl;
+    // for (S s : solution){
+    //     cout << names[s.var] << " ";
+    // }
+    // cout << endl;
     // limite de enumerações
     if (solutions.size() > 5000){
         return;
     }
     // a quantidade de variáveis restantes para enumerar são menores que o tamanho de r
-    // if (vars.size() - index < r){
-    //     return;
-    // }
     // enumeração de tamanho r
+    if ((vars.size() - index) < (r - solution.size())){
+        return;
+    }
+
     if (solution.size() == r){
         bool dominado = dominancia(solution,solutions);
         if (!dominado){
@@ -2168,12 +2175,14 @@ void Flow_testes::enumeracao_fenchel(unsigned int r, const vector<S> &vars, int 
         }
         return;
     }
+
     // continuação de inserção de variáveis. Caso seja possível inserir, vai pra próxima variável
     for (unsigned int i = index; i < vars.size(); i++){
         //cout << solution.size() << " tentando inserir " << names[vars[i].var] << endl;
         if (insertVar(solution, vars[i])){
             solution.emplace_back(vars[i]);
             enumeracao_fenchel(r,vars,i+1,solutions,solution);
+            solution.pop_back();
         }
     }
 }

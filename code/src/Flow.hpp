@@ -4,6 +4,7 @@
 #include "Instance.hpp"
 //#include "Callback.hpp"
 #include "lp.hpp"
+#include "Hash.cpp"
 #include "gurobi_c++.h"
 #include <map>
 extern "C"{
@@ -14,13 +15,13 @@ extern "C"{
 class Flow
 {
 public:
-    Flow( const Instance &_inst );
+    Flow( Instance &_inst );
 
 
 
     virtual ~Flow();
 private:
-    const Instance &inst_;
+    Instance &inst_;
 
     int cIdx_;
     LinearProgram *mip;
@@ -30,7 +31,8 @@ private:
     int qtd_cortes = 0;
 
     // void create_x11();
-    void createCompleteGraphDot();
+    void buildProblem();
+    void buildCliqueCuts();
 
     template<class T> bool insere_unico(std::vector<T> &vector, T elemento);
 
@@ -63,6 +65,18 @@ private:
     bool clique = false;
     bool continuo = true;
     bool binario = true;
+
+    /* melhorar o lst */
+    void combinacao(int job, unsigned int tam, std::vector<int> &vec, std::vector<std::vector<int> > &combinacoes);
+    void reduz_lst_kondili(int k_max);
+
+    /*corte de fenchel*/
+    bool insertVar(std::vector<S> sol, S var);
+    bool backtrack(int j, int op, int ti, std::vector<S> sol);
+    template <typename T> bool isSubset(std::vector<T> &A, std::vector<T> &B);
+    void enumeracao_fenchel(unsigned int r, const std::vector<S> &vars, int index, std::unordered_set<std::vector<S>> &solutions, std::vector<S> solution);
+    bool dominancia(std::vector<S> &vec, std::unordered_set<std::vector<S>> &set);
+    
 
 };
 #endif 

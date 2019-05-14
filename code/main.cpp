@@ -113,7 +113,7 @@ int main( int argc, char **argv )
         cout << "Test formulation selected" << endl;
         Flow_testes mip( inst );
         //mip.inicioBT();
-        //mip.elimina_variavel_kondili(5);
+        // mip.reduz_lst_kondili(5);
     }
     
 

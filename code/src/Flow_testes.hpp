@@ -15,7 +15,7 @@ public:
     Flow_testes( Instance &_inst );
     void elimina_variavel_flow(int k_max);
     void elimina_variavel_compact(int k_max);
-    void elimina_variavel_kondili(int k_max);
+    void reduz_lst_kondili(int k_max);
     void inicioBT();
 
     virtual ~Flow_testes();
@@ -52,7 +52,7 @@ private:
     bool continuo = true;
     bool binario = false;
     void optimize();
-    void combinacao(unsigned int tam, std::vector<int> &vec, std::vector<std::vector<int> > &combinacoes);
+    void combinacao(int job, unsigned int tam, std::vector<int> &vec, std::vector<std::vector<int> > &combinacoes);
 
     int cliques(int *idxs,double *coefs);
 
@@ -77,7 +77,7 @@ private:
 
     void enumeracao_fenchel(unsigned int r, const std::vector<S> &vars, int index, std::unordered_set<std::vector<S>> &solutions, std::vector<S> solution);
 
-    bool dominancia(std::vector<S> &vec, std::unordered_set<std::vector<S>> &set);
+    template <typename T> bool dominancia(std::vector<T> &vec, std::unordered_set<std::vector<T>> &set);
     
 };
 

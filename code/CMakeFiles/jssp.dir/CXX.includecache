@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/victor/git-version/jssp/code/src/Flow_testes.cpp
-Flow_testes.hpp
-/home/victor/git-version/jssp/code/src/Flow_testes.hpp
+/home/victor/git-version/jssp/code/src/Fernando.cpp
+Fernando.hpp
+/home/victor/git-version/jssp/code/src/Fernando.hpp
 vector
 -
 cfloat
@@ -25,8 +25,6 @@ time.h
 -
 unordered_set
 -
-sstream
--
 string.h
 -
 cgraph/lp.h
@@ -36,19 +34,19 @@ cgraph/strutils.h
 cgraph/build_cgraph.h
 /home/victor/git-version/jssp/code/src/cgraph/build_cgraph.h
 
-/home/victor/git-version/jssp/code/src/Flow_testes.hpp
+/home/victor/git-version/jssp/code/src/Fernando.hpp
 Instance.hpp
 /home/victor/git-version/jssp/code/src/Instance.hpp
 lp.hpp
 /home/victor/git-version/jssp/code/src/lp.hpp
-Hash.cpp
-/home/victor/git-version/jssp/code/src/Hash.cpp
 unordered_set
 -
 cgraph/cgraph.h
 /home/victor/git-version/jssp/code/src/cgraph/cgraph.h
 cgraph/clique_separation.h
 /home/victor/git-version/jssp/code/src/cgraph/clique_separation.h
+Hash.cpp
+/home/victor/git-version/jssp/code/src/Hash.cpp
 
 /home/victor/git-version/jssp/code/src/Hash.cpp
 Instance.hpp

@@ -49,7 +49,7 @@ double Flow::teto(double v)
     return ceil(v);
 }
 
-Flow::Flow(const Instance &_inst) : inst_(_inst),
+Flow::Flow(Instance &_inst) : inst_(_inst),
                                     mip(lp_create()),
                                     xIdx_(vector<vector<map<int, map<int, map<int, int>>>>>(inst_.n(), vector<map<int, map<int, map<int, int>>>>(inst_.m() + 1))),
                                     enter_flow(vector<vector<vector<vector<int>>>>(inst_.n(), vector<vector<vector<int>>>(inst_.m() + 2 + inst_.n(), vector<vector<int>>(inst_.maxTime()+1)))),
@@ -551,133 +551,6 @@ Flow::~Flow()
     //lp_free( &mip );
 }
 
-// void Flow::create_x11(){
-//     x11_color.emplace_back("black");
-//     x11_color.emplace_back("magenta");
-//     x11_color.emplace_back("grey");
-//     x11_color.emplace_back("gold");
-//     x11_color.emplace_back("blue");
-//     x11_color.emplace_back("green");
-//     x11_color.emplace_back("yellow");
-//     x11_color.emplace_back("red");
-//     x11_color.emplace_back("cyan");
-//     x11_color.emplace_back("crimson");
-//     x11_color.emplace_back("chocolate");
-//     x11_color.emplace_back("brown");
-//     x11_color.emplace_back("orange");
-// }
-
-void Flow::createCompleteGraphDot()
-{
-    ofstream f;
-    f.open("complete.dot");
-
-    f << "digraph complete {" << endl;
-    //f << "ratio = \"auto\" ;" << endl;
-    f << "rankdir=LR;" << endl;
-    f << endl;
-    for (int m = 0; m <= inst_.m() + 1; m++)
-    {
-        if (m == 0)
-        {
-            f << "\"i,1\" [shape=box];" << endl;
-            continue;
-        }
-        string mach;
-        if (mach == to_string(inst_.m() + 1))
-            mach = "f";
-        else
-            mach = to_string(m);
-        for (int t = 0; t <= inst_.maxTime(); t++)
-        {
-            f << "\"" << mach << "," << t + 1 << "\" [shape=box];" << endl;
-        }
-    }
-
-    for (int j = 0; (j < inst_.n()); ++j)
-    {
-        for (int m = -1; (m < inst_.m()); ++m)
-        {
-            if (m == -1)
-            {
-                f << "\"i,1\" -> \"" << inst_.machine(j, 0) + 1 << ",1\" [ label=\"x(" << j + 1 << ",i,1," << inst_.machine(j, 0) + 1 << ",1)\" ]" << endl;
-                continue;
-            }
-            int m0 = inst_.machine(j, m);
-            int mf = (m == inst_.m() - 1 ? inst_.m() : inst_.machine(j, m + 1));
-            int dur = inst_.time(j, m0); // duration time for machine m0 in job j
-            for (int t = inst_.est(j, m0); t <= inst_.lst(j, m0); t++)
-            {
-                if (mf < inst_.m())
-                {
-                    // arc for another machine
-                    f << "\"" << m0 + 1 << "," << t << "\" -> \"" << mf + 1 << "," << t + dur << "\" [ label=\"x(" << j + 1 << "," << m0 + 1 << "," << t << "," << mf + 1 << "," << t + dur << ")\" ]" << endl;
-                    // arc for same machine (waiting)
-                    //can only be made in the last moment possible
-                    if (t == inst_.lst(j, m0))
-                        continue;
-                    // else
-                    f << "\"" << m0 + 1 << "," << t << "\" -> \"" << m0 + 1 << "," << t + 1 << "\" [ label=\"x(" << j + 1 << "," << m0 + 1 << "," << t << "," << m0 + 1 << "," << t + 1 << ")\" ]" << endl;
-                }
-                else
-                { // last machine
-                    f << "\"" << m0 + 1 << "," << t << "\" -> \"f," << t + dur << "\" [ label=\"x(" << j + 1 << "," << m0 + 1 << "," << t << ",f," << t + dur << ")\" ]" << endl;
-                }
-            }
-        }
-    }
-
-    // string mach0,machf;
-    // for ( int j=0 ; (j<inst_.n()) ; ++j ) {
-    //     for ( int m0=0 ; (m0<=inst_.m()) ; ++m0 ) {
-    //         mach0 = to_string(m0);
-    //         if (mach0 == "0") mach0 = "i";
-    //         for ( int t0 = 0; t0 < inst_.maxTime()-1; t0++  ) {
-    //             for (int mf = 1; mf <= inst_.m()+1; mf++){
-    //                 machf = to_string(mf);
-    //                 if (machf == to_string(inst_.m()+1)) machf = "f";
-    //                 for (int tf=t0+1; tf < inst_.maxTime(); tf++){
-    //                     if (m0 == mf && tf > t0+1) continue;
-    //                     f << "\"" << m0 << "," << t0+1 << "\" -> " << "\"" << machf << "," << tf << "\" [ label=\"x(" << j+1 << "," << mach0 << "," << t0+1 << "," << machf << "," << tf+1 << ")\" ];"<< endl ; // \" color=\"" << x11_color[j] <<
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
-
-    f << "{rank=same;" << " \"i,1\" }" << endl;
-
-    for (int t = 0; t <= inst_.maxTime(); t++)
-    {
-        f << "{rank=same;";
-        for (int m = 1; m <= inst_.m() + 1; m++)
-        {
-            string mach;
-            if (m == inst_.m() + 1)
-                mach = "f";
-            else
-                mach = to_string(m);
-
-            if (m > 1)
-                f << ",";
-            f << " \"" << mach << "," << t + 1 << "\"";
-        }
-        f << "}" << endl;
-    }
-    // for (int m = 0; m <= inst_.m()+1; m++){
-    //     string mach = to_string(m);
-    //     if (mach == "0") mach = "i";
-    //     else if (mach == to_string(inst_.m()+1)) mach = "f";
-    //     f << "{rank=same;";
-    //     for (int t = 0; t < inst_.maxTime(); t++){
-    //         f << " \"" << mach << "," << t+1 << "\"";
-    //     }
-    //     f << "}" << endl;
-    // }
-    f << "}" << endl;
-    f.close();
-}
-
 void Flow::optimize(){
 
     if (continuo){
@@ -695,8 +568,6 @@ void Flow::optimize(){
     }
     getchar();
     lp_as_integer(mip);
-
-    //Callback cb = Callback(mip,inst_,xIdx_,process);
 
     //CGraph *cgraph = build_cgraph_lp(mip);
     //cgraph_print_summary(cgraph, "test_cgraph");
@@ -866,4 +737,237 @@ void Flow::lifting_linear(int *idxs, double *coefs){
     string filename = inst_.instanceName()+"_machine_lift_lin";
     lp_write_lp(mip, (filename+".lp").c_str());
     lp_write_sol(mip, (filename+".sol").c_str());
+}
+
+
+void Flow::combinacao(int job, unsigned int tam, vector<int> &vec, vector<vector<int> > &combinacoes){
+    if (vec.size() == tam) return;
+    for (int j = 0; j < inst_.n(); j++){
+        if (j != job && find(vec.begin(), vec.end(), j) == vec.end()){
+            vec.push_back(j);
+            if (vec.size() < tam){
+                combinacao(job, tam,vec,combinacoes);
+            }
+                
+            if (vec.size() == tam){
+                if (combinacoes.size()==0){
+                    // cout << "tam 0: " << job << " ";
+                    // for (int i : vec){
+                    //     cout << i << " ";
+                    // }
+                    // cout << endl;
+                    combinacoes.emplace_back(vec);
+                }
+                else {
+                    bool existe = false;
+                    for(vector<int> v : combinacoes){
+                        if (existe){
+                            break;
+                        }
+                        if (isSubset(v,vec)){
+                            existe = true;
+                            break;
+                        }
+                    }
+                    if (!existe){
+                        // cout << "tam " << combinacoes.size() << ": " << job << " ";
+                        // for (int i : vec){
+                        //     cout << i << " ";
+                        // }
+                        // cout << endl;
+                        combinacoes.emplace_back(vec);
+                        // getchar();
+                    }
+                }
+            }
+            vec.pop_back();
+        }
+    }
+}
+
+void Flow::reduz_lst_kondili(int k_max){
+    int k = 1;
+    if (k_max > inst_.n()){
+        k_max = inst_.n();
+    }
+
+    while (k < k_max){
+        cout << k << " " << k_max << endl;
+        bool mudou = false;
+        vector<vector<int>> combinacoes;
+        for (int i = 0; i < inst_.n(); i++){
+            vector<vector<int>> aux;
+            vector<int> vec;
+            //vec.push_back(i);
+            combinacao(i, k ,vec,aux);
+            for (vector<int> v : aux){
+                v.insert(v.begin(),i);
+                combinacoes.emplace_back(v);
+            }
+        }
+
+        cout << "combinacoes: " << combinacoes.size() << endl;
+
+        for(vector<int> aux : combinacoes){
+            string nome = "";
+            for (unsigned int i = 0; i < aux.size(); i++){
+                nome += to_string(aux[i]) + "-";
+            }
+
+            cout << nome << " ";
+            LinearProgram *mip_teste = lp_create();
+            lp_set_print_messages(mip_teste,0);
+            vector< vector< vector< int > > > xIdx_teste;
+
+            xIdx_teste = vector<vector<vector<int>>>(inst_.m(),vector<vector<int>>(inst_.n(),vector<int>(inst_.maxTime())));
+
+            vector< string > names_teste; // nome das variáveis
+            vector< double > lb; // lower bound
+            vector< double > ub; // upper bound
+            vector< double > obj; // se é objetivo?
+            vector< char > integer; // variável inteira?
+            
+
+            // criação das variáveis x
+            for (int i = 0; i < inst_.m(); i++){
+                for (unsigned int j1= 0; j1 < aux.size(); j1++){
+                    int j = aux[j1];
+                    for (int t = inst_.est(j,i); t <= inst_.lst(j,i); t++){
+                        xIdx_teste[i][j][t] = names_teste.size(); // número do índice da variável (vai de 1 até n*m)
+                        names_teste.push_back("x("+to_string(j+1)+","+to_string(i+1)+","+to_string(t)+")"); // nome dessa variável
+                        //cout << names_teste[xIdx_teste[i][j][t]] << " ";
+                        lb.push_back(0.0);
+                        ub.push_back(DBL_MAX);
+                        obj.push_back(0.0);
+                        integer.push_back(1);
+                    }
+                }
+            }
+            //cout << endl;
+            // c var
+            int cIdx_teste = names_teste.size();
+            names_teste.push_back("C");
+            lb.push_back( 0.0 );
+            ub.push_back( DBL_MAX );
+            obj.push_back( -1.0 );
+            integer.push_back( 1 );
+
+            // adiciona colunas ao solver
+            lp_add_cols( mip_teste, obj, lb, ub, integer, names_teste );
+            // cout << "var ok" << endl;
+            // cout << "Number of variables: " << names_teste.size() << endl;
+
+
+            // restrição de tempo
+            for (int i = 0; i < inst_.m(); i++){
+                for (unsigned int j1= 0; j1 < aux.size(); j1++){
+                    int j = aux[j1];
+                    vector< int > idx;
+                    vector< double > coef;
+                    for (int t = inst_.est(j,i); t <= inst_.lst(j,i); t++){
+                        idx.push_back( xIdx_teste[i][j][t] );
+                        coef.push_back( 1.0 );
+                        // adiciona restrição.
+                    }
+                    lp_add_row( mip_teste, idx, coef, "time("+to_string(i+1)+","+to_string(j+1)+")", 'E', 1 );
+                }
+            }
+            // cout << "time restriction added" << endl;
+            for (int i = 0; i < inst_.m(); i++){
+                for (int t = 0; t < inst_.maxTime(); t++){
+                    vector< int > idx;
+                    vector< double > coef;
+
+                    for (unsigned int j1= 0; j1 < aux.size(); j1++){
+                        int j = aux[j1];
+                        //bool mudou = false;
+                        for (int t_aux = 0; t_aux < inst_.time(j,i); t_aux++){
+                            if ((t - t_aux) >= inst_.est(j,i) && (t-t_aux) <= inst_.lst(j,i)){
+                                idx.push_back( xIdx_teste[i][j][t - t_aux] );
+                                coef.push_back( 1 );
+                            }
+                        }
+                    }
+
+                    lp_add_row( mip_teste, idx, coef, "processing("+to_string(i+1)+","+to_string(t)+")", 'L', 1 );
+                }
+            }
+            // cout << "processing restriction added" << endl;
+            for (unsigned int j1= 0; j1 < aux.size(); j1++){
+                int j = aux[j1];
+                for (int i = 1; i < inst_.m(); i++){
+                    int h = inst_.machine(j,i);
+                    vector< int > idx;
+                    vector< double > coef;
+
+                    for (int t = inst_.est(j,h); t <= inst_.lst(j,h); t++){
+                        int h1 = inst_.machine(j,i-1);
+                        int t_aux = t - inst_.time(j,h1);
+                        if (t_aux >= inst_.est(j,h1) && t_aux <= inst_.lst(j,h1)){
+                            idx.push_back( xIdx_teste[h1][j][t_aux] );
+                            coef.push_back( t  );
+                        }
+                        idx.push_back( xIdx_teste[h][j][t] );
+                        coef.push_back( -1 * t );
+                    }
+                    lp_add_row( mip_teste, idx, coef, "ord("+to_string(h+1)+","+to_string(j+1)+")", 'L', 0 );
+                    
+                }
+            }
+            // cout << "ord restriction added" << endl;
+            // makespan
+            int j = aux[0];
+            vector< int > idx;
+            vector< double > coef;
+            idx.push_back( cIdx_teste );
+            coef.push_back( 1 );
+
+            for (int t = inst_.est(j,inst_.machine(j,0)); t <= inst_.lst(j,inst_.machine(j,0)); t++){
+                //cout << names_teste[xIdx_teste[inst_.machine(j,0)][j][t]] << " ";
+                idx.push_back( xIdx_teste[inst_.machine(j,0)][j][t] );
+                coef.push_back( -1 * (t+inst_.time(j,inst_.machine(j,0))) );
+                // adiciona restrição.
+            }
+            //cout << endl;
+            lp_add_row( mip_teste, idx, coef, "makespan("+to_string(inst_.machine(j,0)+1)+","+to_string(j+1)+")", 'E', 0 );
+            
+            // cout << "makespan constraints created" << endl;
+            lp_write_lp( mip_teste, (inst_.instanceName() + "_"+nome+".lp").c_str() );
+            lp_optimize( mip_teste );
+            lp_write_sol(mip_teste, (inst_.instanceName() + "_"+ nome+".sol").c_str() );
+            int maquina = inst_.machine(aux[0],0);
+            int lst = -1*lp_obj_value(mip_teste) - inst_.time(aux[0],maquina);
+            cout << "lst antigo: " << inst_.lst(aux[0],maquina) << " lst novo: " << lst << endl;
+            //getchar();
+            if (lst < inst_.lst(aux[0],maquina)){
+                inst_.setLst(aux[0],maquina,lst);
+                cout << "lst modificado: " << inst_.lst(aux[0],maquina) << endl;
+                mudou = true;
+                inst_.saveCmpl("jssp.cdat");
+                getchar();
+            }
+
+            lp_free( &mip_teste );
+            //getchar();
+        }
+        if (mudou){
+            k = 2;
+        } else {
+            k++;
+        }
+    }
+}
+
+// return true if smaller vector is in bigger vector
+// return false otherwise
+template <typename T> bool Flow::isSubset(std::vector<T> &A, std::vector<T> &B){
+    if (A.size() > B.size()){
+        sort(A.begin(), A.end());
+        sort(B.begin(), B.end());
+        return includes(A.begin(), A.end(), B.begin(), B.end());
+    } else {
+        sort(A.begin(), A.end());
+        sort(B.begin(), B.end());
+        return includes(B.begin(), B.end(), A.begin(), A.end());
+    }
 }

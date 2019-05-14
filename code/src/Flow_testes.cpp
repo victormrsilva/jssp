@@ -405,8 +405,9 @@ process(vector<vector<vector<vector<int>>>>(inst_.n(), (vector<vector<vector<int
         int result2 = fenchel(5,15);
         int result3 = fenchel(10,20);
         result = result1+result2+result3;
+        getchar();
     }
-    lp_optimize(mip);
+    // lp_optimize(mip);
     // if (inst_.execute()){
     //     optimize();
     // }
@@ -416,36 +417,102 @@ process(vector<vector<vector<vector<int>>>>(inst_.n(), (vector<vector<vector<int
     // }
 }
 
-void Flow_testes::combinacao(unsigned int tam, vector<int> &vec, vector<vector<int> > &combinacoes){
+void Flow_testes::combinacao(int job, unsigned int tam, vector<int> &vec, vector<vector<int> > &combinacoes){
     if (vec.size() == tam) return;
     for (int j = 0; j < inst_.n(); j++){
-        if (find(vec.begin(), vec.end(), j) == vec.end()){
-            vector<int> aux = vec;
-            aux.push_back(j);
-            if (aux.size() < tam)
-                combinacao(tam,aux,combinacoes);
-            if (aux.size() == tam)
-                combinacoes.push_back(aux);
+        if (j != job && find(vec.begin(), vec.end(), j) == vec.end()){
+            vec.push_back(j);
+            if (vec.size() < tam){
+                combinacao(job, tam,vec,combinacoes);
+            }
+                
+            if (vec.size() == tam){
+                if (combinacoes.size()==0){
+                    // cout << "tam 0: " << job << " ";
+                    // for (int i : vec){
+                    //     cout << i << " ";
+                    // }
+                    // cout << endl;
+                    combinacoes.emplace_back(vec);
+                }
+                else {
+                    bool existe = false;
+                    for(vector<int> v : combinacoes){
+                        if (existe){
+                            break;
+                        }
+                        if (isSubset(v,vec)){
+                            existe = true;
+                            break;
+                        }
+                    }
+                    if (!existe){
+                        // cout << "tam " << combinacoes.size() << ": " << job << " ";
+                        // for (int i : vec){
+                        //     cout << i << " ";
+                        // }
+                        // cout << endl;
+                        combinacoes.emplace_back(vec);
+                        // getchar();
+                    }
+                }
+            }
+            vec.pop_back();
         }
     }
 }
 
 void Flow_testes::elimina_variavel_flow(int k_max){
-    int k = 2;
+    int k = 1;
     if (k_max > inst_.n()){
         k_max = inst_.n();
     }
-    while (k <= k_max){
+
+    // vector<vector<int>> combinacoes;
+    // for (int k = 1; k < k_max; k++){
+    //     cout << k << endl;
+    //     for (int i = 0; i < inst_.n(); i++){
+    //         vector<vector<int>> aux;
+    //         vector<int> vec;
+    //         //vec.push_back(i);
+    //         combinacao(i, k ,vec,aux);
+    //         for (vector<int> v : aux){
+    //             v.insert(v.begin(),i);
+    //             combinacoes.emplace_back(v);
+    //         }
+    //     }
+    // }
+    // cout << "combinacoes: " << combinacoes.size() << endl;
+    // for(vector<int> v : combinacoes){
+    //     for (int i : v){
+    //         cout << i << " ";
+    //     }
+    //     cout << endl;
+    // }
+    // getchar();
+    while (k < k_max){
         cout << k << " " << k_max << endl;
         bool mudou = false;
         vector<vector<int>> combinacoes;
         for (int i = 0; i < inst_.n(); i++){
+            vector<vector<int>> aux;
             vector<int> vec;
-            vec.push_back(i);
-            combinacao(k,vec,combinacoes);
+            //vec.push_back(i);
+            combinacao(i, k ,vec,aux);
+            for (vector<int> v : aux){
+                v.insert(v.begin(),i);
+                combinacoes.emplace_back(v);
+            }
         }
 
         cout << "combinacoes: " << combinacoes.size() << endl;
+        for(vector<int> v : combinacoes){
+            for (int i : v){
+                cout << i << " ";
+            }
+            cout << endl;
+        }
+        getchar();
 
         for(vector<int> aux : combinacoes){
             string nome = "";
@@ -701,17 +768,46 @@ void Flow_testes::elimina_variavel_flow(int k_max){
 }
 
 void Flow_testes::elimina_variavel_compact(int k_max){
-    int k = 2;
+    int k = 1;
     if (k_max > inst_.n()){
         k_max = inst_.n();
     }
-    while (k <= k_max){
+
+    // vector<vector<int>> combinacoes;
+    // for (int k = 1; k < k_max; k++){
+    //     cout << k << endl;
+    //     for (int i = 0; i < inst_.n(); i++){
+    //         vector<vector<int>> aux;
+    //         vector<int> vec;
+    //         //vec.push_back(i);
+    //         combinacao(i, k ,vec,aux);
+    //         for (vector<int> v : aux){
+    //             v.insert(v.begin(),i);
+    //             combinacoes.emplace_back(v);
+    //         }
+    //     }
+    // }
+    // cout << "combinacoes: " << combinacoes.size() << endl;
+    // for(vector<int> v : combinacoes){
+    //     for (int i : v){
+    //         cout << i << " ";
+    //     }
+    //     cout << endl;
+    // }
+    // getchar();
+    while (k < k_max){
+        cout << k << " " << k_max << endl;
         bool mudou = false;
         vector<vector<int>> combinacoes;
         for (int i = 0; i < inst_.n(); i++){
+            vector<vector<int>> aux;
             vector<int> vec;
-            vec.push_back(i);
-            combinacao(k,vec,combinacoes);
+            //vec.push_back(i);
+            combinacao(i, k ,vec,aux);
+            for (vector<int> v : aux){
+                v.insert(v.begin(),i);
+                combinacoes.emplace_back(v);
+            }
         }
 
         cout << "combinacoes: " << combinacoes.size() << endl;
@@ -877,19 +973,47 @@ void Flow_testes::elimina_variavel_compact(int k_max){
 
 }
 
-void Flow_testes::elimina_variavel_kondili(int k_max){
-
-    int k = 2;
+void Flow_testes::reduz_lst_kondili(int k_max){
+    int k = 1;
     if (k_max > inst_.n()){
         k_max = inst_.n();
     }
-    while (k <= k_max){
+
+    // vector<vector<int>> combinacoes;
+    // for (int k = 1; k < k_max; k++){
+    //     cout << k << endl;
+    //     for (int i = 0; i < inst_.n(); i++){
+    //         vector<vector<int>> aux;
+    //         vector<int> vec;
+    //         //vec.push_back(i);
+    //         combinacao(i, k ,vec,aux);
+    //         for (vector<int> v : aux){
+    //             v.insert(v.begin(),i);
+    //             combinacoes.emplace_back(v);
+    //         }
+    //     }
+    // }
+    // cout << "combinacoes: " << combinacoes.size() << endl;
+    // for(vector<int> v : combinacoes){
+    //     for (int i : v){
+    //         cout << i << " ";
+    //     }
+    //     cout << endl;
+    // }
+    // getchar();
+    while (k < k_max){
+        cout << k << " " << k_max << endl;
         bool mudou = false;
         vector<vector<int>> combinacoes;
         for (int i = 0; i < inst_.n(); i++){
+            vector<vector<int>> aux;
             vector<int> vec;
-            vec.push_back(i);
-            combinacao(k,vec,combinacoes);
+            //vec.push_back(i);
+            combinacao(i, k ,vec,aux);
+            for (vector<int> v : aux){
+                v.insert(v.begin(),i);
+                combinacoes.emplace_back(v);
+            }
         }
 
         cout << "combinacoes: " << combinacoes.size() << endl;
@@ -1339,6 +1463,7 @@ void Flow_testes::optimize(){
     //lp_write_sol(mip, (filename+".sol").c_str());
 }
 
+// calculate the new lifting and optmize as continuous
 double Flow_testes::lifting(double c, int *idxs, double *coefs){
     string filename = inst_.instanceName()+"_lifting";
     for (int j = 0; j < inst_.n(); j++){
@@ -2188,17 +2313,15 @@ void Flow_testes::enumeracao_fenchel(unsigned int r, const vector<S> &vars, int 
 }
 
 // verifica se no conjunto de soluções há alguma que esteja dominando a solução que tentamos inserir.
-bool Flow_testes::dominancia(vector<S> &vec, unordered_set<std::vector<S>> &set){
+template <typename T> bool Flow_testes::dominancia(vector<T> &vec, unordered_set<vector<T>> &set){
     bool exists_solution = false;
-    for (vector<S> v : set){
+    for (vector<T> v : set){
         // caso o tamanho do vetor seja igual, precisamos olhar a dominância apenas baseado na primeira variável.
         // se não for, precisamos olhar independente da ordem
-        if (v.size() > vec.size()){
+        if (v.size() >= vec.size()){
             exists_solution = isSubset(v,vec);
-        } else if (v.size() == vec.size()){
-            if (v[0] == vec[0]){
-                exists_solution = isSubset(vec,v);
-            }
+        } else {
+            exists_solution = isSubset(vec,v);
         }
         if (exists_solution){
             return true;

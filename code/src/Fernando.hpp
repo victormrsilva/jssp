@@ -64,7 +64,8 @@ private:
     bool insertVar(std::vector<S> sol, S var);
     bool backtrack(int j, int op, int ti, std::vector<S> sol);
     template <typename T> bool isSubset(std::vector<T> &A, std::vector<T> &B);
-    void enumeracao_fenchel(unsigned int r, const std::vector<S> &vars, int index, std::unordered_set<std::vector<S>> &solutions, std::vector<S> solution);
+    bool limite_enumeracao;
+    void enumeracao_fenchel(const std::vector<S> &vars, int index, std::unordered_set<std::vector<S>> &solutions, std::vector<S> solution);
     template <typename T> bool dominancia(std::vector<T> &vec, std::unordered_set<std::vector<T>> &set);
     int fenchel(int ti, int tf); // pega as variáveis por um intervalo de tempo para fazer o corte
     int executeFenchel();

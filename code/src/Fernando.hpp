@@ -69,5 +69,7 @@ private:
     template <typename T> bool dominancia(std::vector<T> &vec, std::unordered_set<std::vector<T>> &set);
     int fenchel(int ti, int tf); // pega as variáveis por um intervalo de tempo para fazer o corte
     int executeFenchel();
-    
+    std::vector< std::vector< int > > enum_time; // armazena o tempo das variáveis a serem alocadas
+
+    bool canInsert(S var);
 };

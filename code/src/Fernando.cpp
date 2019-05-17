@@ -1313,8 +1313,10 @@ void Fernando::enumeracao_fenchel(const vector<S> &vars, int index, unordered_se
         }
         qtd = solutions.size();
         //cout << solution.size() << " tentando inserir " << names[vars[i].var] << endl;
-        if (insertVar(solution, vars[i])){
+        //if (insertVar(solution, vars[i])){
+        if (canInsert(vars[i])){
             solution.emplace_back(vars[i]);
+            enum_time[vars[i].j][vars[i].i] = vars[i].t;
             enumeracao_fenchel(vars,i+1,solutions,solution);
             cout << "qtd_solutions: " << qtd << " solutions: " << solutions.size();
             // no solution inserted
@@ -1324,6 +1326,7 @@ void Fernando::enumeracao_fenchel(const vector<S> &vars, int index, unordered_se
             }
             cout << endl;
             solution.pop_back();
+            enum_time[vars[i].j][vars[i].i] = -1;
         }
     }
 }
@@ -1372,12 +1375,83 @@ int Fernando::executeFenchel(){
     //cout << interval << endl;
     int qtdCuts = 0;
     for (int i = 0; i < (divisions*2) - 1; i++){
+        enum_time = vector< vector< int > >(inst_.n(),vector< int >(inst_.m(),-1));
         limite_enumeracao = false;
         int ti = teto( (i * interval) /2);
         int tf = ti + interval;
         tf = (tf < inst_.maxTime() ? tf : inst_.maxTime());
         cout << "initial: " << ti << " final: " << tf << ". ";
         qtdCuts += fenchel(ti,tf);
+        enum_time.clear();
     }
     return qtdCuts;
+}
+
+bool Fernando::canInsert(S var){
+    int tf_var = var.t + inst_.time(var.j,var.i);
+
+    // check conflict in machine
+    for (int i = 0; i < inst_.m(); i++){
+        if (var.i == i || enum_time[var.j][i] == -1) continue;
+        int tf_s = enum_time[var.j][i] + inst_.time(var.j,i);
+        auto Min = std::max(enum_time[var.j][i], var.t);
+        auto Max = std::min(tf_s-1, tf_var-1);
+        // cout << "Min: " << Min << " Max: " << Max << endl;
+        // cout << "insertVar i: " << var.t << " " << tf_var << " " << s.t << " " << tf_s << endl;
+        if (Min <= Max) {
+            return false;
+        }
+    }
+
+    // check conflict in job
+    for (int j = 0; j < inst_.n(); j++){
+        if (var.j == j || enum_time[j][var.i] == -1) continue;
+        int tf_s = enum_time[j][var.i] + inst_.time(j,var.i);
+        auto Min = std::max(enum_time[j][var.i], var.t);
+        auto Max = std::min(tf_s-1, tf_var-1);
+        // cout << "Min: " << Min << " Max: " << Max << endl;
+        // cout << "insertVar i: " << var.t << " " << tf_var << " " << s.t << " " << tf_s << endl;
+        if (Min <= Max) {
+            return false;
+        }
+    }
+
+
+    int o = inst_.orderMachine(var.j,var.i); // order of the machine;
+
+    if (o != 0) { // not first machine
+        // check order conflict
+        int m_anterior = inst_.machine(var.j,o-1);
+        
+        // tarefa anterior foi alocada
+        if (enum_time[var.j][m_anterior] != -1){
+            int tf_anterior = enum_time[var.j][m_anterior] + inst_.time(var.j,m_anterior);
+            auto Min = std::max(enum_time[var.j][m_anterior], var.t);
+            auto Max = std::min(tf_anterior-1, tf_var-1);
+            // cout << "Min: " << Min << " Max: " << Max << endl;
+            // cout << "insertVar i: " << var.t << " " << tf_var << " " << s.t << " " << tf_s << endl;
+            if (Min <= Max) {
+                return false;
+            }        
+        }
+    }
+
+    if (o != inst_.m()-1){ // not last machine
+        int m_posterior = inst_.machine(var.j,o+1);
+        
+        // tarefa posterior foi alocada
+        if (enum_time[var.j][m_posterior] != -1){
+            int tf_anterior = enum_time[var.j][m_posterior] + inst_.time(var.j,m_posterior);
+            auto Min = std::max(enum_time[var.j][m_posterior], var.t);
+            auto Max = std::min(tf_anterior-1, tf_var-1);
+            // cout << "Min: " << Min << " Max: " << Max << endl;
+            // cout << "insertVar i: " << var.t << " " << tf_var << " " << s.t << " " << tf_s << endl;
+            if (Min <= Max) {
+                return false;
+            }        
+        }
+
+    }
+
+    return true;
 }

@@ -63,6 +63,8 @@ public:
      * @return int 
      */
     int machine( int j, int i ) const { return machines_[j][i]; }
+
+    int orderMachine(int job, int machine);
     int distance( int j, int i, int k ) const { return distances_[j][i][k]; }
 
     // known upper bound
@@ -105,6 +107,7 @@ private:
 
     std::vector< std::vector< int > > times_;
     std::vector< std::vector< std::vector <int > > > distances_;
+    std::vector< std::vector< int > > order_;
 
     std::vector< std::vector< int > > machines_;
 

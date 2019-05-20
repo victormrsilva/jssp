@@ -64,7 +64,7 @@ public:
      */
     int machine( int j, int i ) const { return machines_[j][i]; }
 
-    int orderMachine(int job, int machine);
+    int orderMachine(int job, int machine) { return order_[job][machine]; }
     int distance( int j, int i, int k ) const { return distances_[j][i][k]; }
 
     // known upper bound

@@ -160,6 +160,3 @@ string Instance::instanceName() const{
     return instance_name;
 }
 
-int Instance::orderMachine(int job, int machine){
-
-}

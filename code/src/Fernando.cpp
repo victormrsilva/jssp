@@ -18,6 +18,8 @@ extern "C"
 #include "cgraph/build_cgraph.h"
 }
 
+#define LIMITE 1.00001
+
 struct pair_hash
 {
     template <class T1, class T2>
@@ -134,7 +136,7 @@ int Fernando::manual_cuts(){
         }
         // f << soma << endl;
         
-        if (soma > 1.001){ // houve violação então vamos adicionar os cortes
+        if (soma > LIMITE){ // houve violação então vamos adicionar os cortes
             //cout << soma << endl;
             vector< int > idx;
             vector< double > coef;
@@ -1145,22 +1147,23 @@ int Fernando::fenchel(int ti, int tf){
     vector<S> solution;
     enumeracao_fenchel(vars,0,solutions,solution);
 
-    for (vector<S> v : solutions){
-        cout << v.size() << ": ";
-        for (S s : v){
-            cout << names[s.var] << " ";
-        }
-        cout << endl;
-    }
-    getchar();
-    if (limite_enumeracao){
-        cout << "Limite de enumeração chegado" << endl;
-        return 0;
-    }
-    // cout << "creating set. press enter" << endl;
+    // for (vector<S> v : solutions){
+    //     cout << v.size() << ": ";
+    //     for (S s : v){
+    //         cout << names[s.var] << " ";
+    //     }
+    //     cout << endl;
+    // }
     // getchar();
     clock_t end = clock();
     cout << "With " << vars.size() + vars_valor1.size() << " variables, found " << solutions.size() << " enumerations in " << (double)(end - begin) / CLOCKS_PER_SEC << " secs" << endl;
+
+    if (limite_enumeracao){
+        cout << "Limite de enumeração chegado" << endl;
+
+    }
+    // cout << "creating set. press enter" << endl;
+    // getchar();
     
     // if no enumerations found, end
     if (solutions.size() == 0){
@@ -1227,7 +1230,7 @@ int Fernando::fenchel(int ti, int tf){
         }
     }
     // cout << total << endl;
-    if (total > 1.000001){
+    if (total > LIMITE){
         cout << "fenchel violado: " << total << endl;
         vector< int > idx;
         vector< double > coef;
@@ -1254,17 +1257,12 @@ int Fernando::fenchel(int ti, int tf){
         lp_add_row(mip, idx, coef, "fenchel("+to_string(totalFenchel)+")", 'L', c );
         totalFenchel++;
         // lp_write_lp(mip,"teste.lp");
-        
+        return 1;
     }
     // getchar();
     // delete []x;
     // delete []xf;
-    if (total > 1.000001) {
-        return 1;
-    }
-    else{
-        return 0;
-    }
+    return 0;
     //getchar();
 }      
 
@@ -1302,7 +1300,7 @@ void Fernando::enumeracao_fenchel(const vector<S> &vars, int index, unordered_se
             // }
             // cout << endl;
             solutions.insert(solution);
-            cout << " solutions: " << solutions.size() << " size solution: " << solution.size() << endl;
+            // cout << " solutions: " << solutions.size() << " size solution: " << solution.size() << endl;
         return;
     }
     int qtd = solutions.size();
@@ -1312,19 +1310,19 @@ void Fernando::enumeracao_fenchel(const vector<S> &vars, int index, unordered_se
             break;
         }
         qtd = solutions.size();
-        //cout << solution.size() << " tentando inserir " << names[vars[i].var] << endl;
+        // cout << solution.size() << " tentando inserir " << names[vars[i].var] << endl;
         //if (insertVar(solution, vars[i])){
         if (canInsert(vars[i])){
             solution.emplace_back(vars[i]);
             enum_time[vars[i].j][vars[i].i] = vars[i].t;
             enumeracao_fenchel(vars,i+1,solutions,solution);
-            cout << "qtd_solutions: " << qtd << " solutions: " << solutions.size();
+            // cout << "qtd_solutions: " << qtd << " solutions: " << solutions.size();
             // no solution inserted
             if (solutions.size() == qtd){
-                cout << " size solution: " << solution.size();
+                // cout << " size solution: " << solution.size();
                 solutions.insert(solution);
             }
-            cout << endl;
+            // cout << endl;
             solution.pop_back();
             enum_time[vars[i].j][vars[i].i] = -1;
         }
@@ -1376,82 +1374,119 @@ int Fernando::executeFenchel(){
     int qtdCuts = 0;
     for (int i = 0; i < (divisions*2) - 1; i++){
         enum_time = vector< vector< int > >(inst_.n(),vector< int >(inst_.m(),-1));
+        // for (int j = 0; j < inst_.n(); j++){
+        //     for (int i = 0; i < inst_.m(); i++){
+        //         cout << j+1 << " " << i+1 << " (" << enum_time[j][i];
+        //         if (enum_time[j][i] != -1){
+        //             cout << "-"<< enum_time[j][i]+inst_.time(j,i) << ")";
+        //         }  
+        //         cout << endl;
+        //     }
+        // }
+        // getchar();
+
         limite_enumeracao = false;
         int ti = teto( (i * interval) /2);
         int tf = ti + interval;
         tf = (tf < inst_.maxTime() ? tf : inst_.maxTime());
         cout << "initial: " << ti << " final: " << tf << ". ";
         qtdCuts += fenchel(ti,tf);
+        // for (int j = 0; j < inst_.n(); j++){
+        //     for (int i = 0; i < inst_.m(); i++){
+        //         cout << j+1 << " " << i+1 << " (" << enum_time[j][i];
+        //         if (enum_time[j][i] != -1){
+        //             cout << "-"<< enum_time[j][i]+inst_.time(j,i) << ")";
+        //         }  
+        //         cout << endl;
+        //     }
+        // }
+        // getchar();
+
         enum_time.clear();
     }
     return qtdCuts;
 }
 
 bool Fernando::canInsert(S var){
+
+    // cout << names[var.var] << endl;
+    // for (int j = 0; j < inst_.n(); j++){
+    //     for (int i = 0; i < inst_.m(); i++){
+    //         cout << j+1 << " " << i+1 << " (" << enum_time[j][i];
+    //         if (enum_time[j][i] != -1){
+    //             cout << "-"<< enum_time[j][i]+inst_.time(j,i) << ")";
+    //         }  
+    //         cout << endl;
+    //     }
+    // }
+    // getchar();
+
     int tf_var = var.t + inst_.time(var.j,var.i);
 
+    // check if operation is already allocated
+    // cout << "check if operation is already allocated: ";
+    if (enum_time[var.j][var.i] > -1){
+        return false;
+    }
+    // cout << "ok" <<endl;
+    // getchar();
+
     // check conflict in machine
+    // cout << "check conflict in job: ";
     for (int i = 0; i < inst_.m(); i++){
         if (var.i == i || enum_time[var.j][i] == -1) continue;
         int tf_s = enum_time[var.j][i] + inst_.time(var.j,i);
         auto Min = std::max(enum_time[var.j][i], var.t);
         auto Max = std::min(tf_s-1, tf_var-1);
-        // cout << "Min: " << Min << " Max: " << Max << endl;
-        // cout << "insertVar i: " << var.t << " " << tf_var << " " << s.t << " " << tf_s << endl;
         if (Min <= Max) {
             return false;
         }
     }
+    // cout << "ok" <<endl;
+    // getchar();
 
-    // check conflict in job
+    // check conflict in machine
+    // cout << "check conflict in machine: ";
     for (int j = 0; j < inst_.n(); j++){
         if (var.j == j || enum_time[j][var.i] == -1) continue;
         int tf_s = enum_time[j][var.i] + inst_.time(j,var.i);
         auto Min = std::max(enum_time[j][var.i], var.t);
         auto Max = std::min(tf_s-1, tf_var-1);
-        // cout << "Min: " << Min << " Max: " << Max << endl;
-        // cout << "insertVar i: " << var.t << " " << tf_var << " " << s.t << " " << tf_s << endl;
         if (Min <= Max) {
             return false;
         }
     }
-
+    // cout << "ok" <<endl;
 
     int o = inst_.orderMachine(var.j,var.i); // order of the machine;
-
-    if (o != 0) { // not first machine
-        // check order conflict
-        int m_anterior = inst_.machine(var.j,o-1);
-        
-        // tarefa anterior foi alocada
-        if (enum_time[var.j][m_anterior] != -1){
-            int tf_anterior = enum_time[var.j][m_anterior] + inst_.time(var.j,m_anterior);
-            auto Min = std::max(enum_time[var.j][m_anterior], var.t);
-            auto Max = std::min(tf_anterior-1, tf_var-1);
-            // cout << "Min: " << Min << " Max: " << Max << endl;
-            // cout << "insertVar i: " << var.t << " " << tf_var << " " << s.t << " " << tf_s << endl;
-            if (Min <= Max) {
-                return false;
-            }        
+    // getchar();
+    // cout << "o: " << o << endl;
+    
+    // check operations after the one being inserted
+    // cout << "check operations before the one being inserted";
+    for (int i = o-1; i >= 0; i--){
+        int m_anterior = inst_.machine(var.j,i); // pega as máquinas anteriores
+        // caso o tempo de inicio de uma tarefa que precise ser executada antes seja superior ao tempo de início da tarefa que tentamos inserir, isso não deve acontecer
+        if (enum_time[var.j][m_anterior] != -1 && enum_time[var.j][m_anterior] > var.t){ 
+            return false;
         }
     }
 
-    if (o != inst_.m()-1){ // not last machine
-        int m_posterior = inst_.machine(var.j,o+1);
-        
-        // tarefa posterior foi alocada
-        if (enum_time[var.j][m_posterior] != -1){
-            int tf_anterior = enum_time[var.j][m_posterior] + inst_.time(var.j,m_posterior);
-            auto Min = std::max(enum_time[var.j][m_posterior], var.t);
-            auto Max = std::min(tf_anterior-1, tf_var-1);
-            // cout << "Min: " << Min << " Max: " << Max << endl;
-            // cout << "insertVar i: " << var.t << " " << tf_var << " " << s.t << " " << tf_s << endl;
-            if (Min <= Max) {
-                return false;
-            }        
+    // cout << "ok" <<endl;
+    
+    // getchar();
+    // cout << "check operations after the one being inserted: ";
+    
+    // check operations after the one being inserted
+    for (int i = o+1; i < inst_.m(); i++){
+        int m_posterior = inst_.machine(var.j,i); // pega as máquinas anteriores
+        // caso o tempo de inicio de uma tarefa que precise ser executada depois seja inferior ao tempo de início da tarefa que tentamos inserir, isso não deve acontecer
+        if (enum_time[var.j][m_posterior] != -1 && enum_time[var.j][m_posterior] < var.t){ 
+            return false;
         }
-
     }
 
+    // cout << "ok" <<endl;
+    // getchar();
     return true;
 }

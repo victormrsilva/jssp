@@ -1,0 +1,1536 @@
+there are 6 jobs and 6 machines.
+6 6
+Fernando formulation selected
+Academic license - for non-commercial use only
+Number of variables: 2005
+restriction inicio_maquina added
+restriction fluxo_maquina added
+restriction inicio_espera added
+restriction fluxo_espera added
+ultimo_tempo constraints created
+makespan constraints created
+0
+7931
+arquivo criado
+7931
+Optimize a model with 1212 rows, 2005 columns and 5742 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 6e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 6e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 267 rows and 273 columns
+Presolve time: 0.01s
+Presolved: 945 rows, 1732 columns, 5312 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   1.800000e+01   0.000000e+00      0s
+    2044    5.0842105e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 2044 iterations and 0.25 seconds
+Optimal objective  5.084210526e+01
+iteracao 1
+With 82 variables, found 1000002 enumerations in 4.78125 secs
+Limite de enumeração chegado
+With 83 variables, found 1000002 enumerations in 4.15625 secs
+Limite de enumeração chegado
+With 85 variables, found 1000002 enumerations in 4.39062 secs
+Limite de enumeração chegado
+With 87 variables, found 1000002 enumerations in 4.25 secs
+Limite de enumeração chegado
+With 88 variables, found 1000002 enumerations in 4.17188 secs
+Limite de enumeração chegado
+With 89 variables, found 1000002 enumerations in 4.79688 secs
+Limite de enumeração chegado
+With 88 variables, found 1000002 enumerations in 4.46875 secs
+Limite de enumeração chegado
+With 87 variables, found 1000002 enumerations in 4.53125 secs
+Limite de enumeração chegado
+With 86 variables, found 1000002 enumerations in 4.09375 secs
+Limite de enumeração chegado
+With 81 variables, found 1000002 enumerations in 4.39062 secs
+Limite de enumeração chegado
+With 79 variables, found 1000002 enumerations in 4.60938 secs
+Limite de enumeração chegado
+With 77 variables, found 1000002 enumerations in 4.03125 secs
+Limite de enumeração chegado
+With 73 variables, found 1000002 enumerations in 4.01562 secs
+Limite de enumeração chegado
+With 72 variables, found 1000002 enumerations in 3.96875 secs
+Limite de enumeração chegado
+With 69 variables, found 1000002 enumerations in 4.04688 secs
+Limite de enumeração chegado
+With 66 variables, found 1000002 enumerations in 3.875 secs
+Limite de enumeração chegado
+With 60 variables, found 1000002 enumerations in 3.82812 secs
+Limite de enumeração chegado
+With 55 variables, found 1000002 enumerations in 3.45312 secs
+Limite de enumeração chegado
+clique: 199 fenchel: 0
+lp after cuts: 51.1013. Time elapsed for optmization: 0
+With 89 variables, found 1000002 enumerations in 4.46875 secs
+Limite de enumeração chegado
+With 90 variables, found 1000002 enumerations in 4.57812 secs
+Limite de enumeração chegado
+With 99 variables, found 1000002 enumerations in 4.5625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.28125 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.60938 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.46875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.5625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.26562 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.6875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.79688 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.82812 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.76562 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.9375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.35938 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.34375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.71875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.48438 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.79688 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.1875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.40625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.53125 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.54688 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.64062 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.8125 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.51562 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.65625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.5 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.17188 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.1875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.40625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.14062 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.40625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.70312 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.60938 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.75 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.84375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.64062 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.4375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.46875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.60938 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.46875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.57812 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.57812 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.64062 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.5625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.40625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.42188 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.5 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.3125 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.29688 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.4375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 5.17188 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 5.01562 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.65625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 5.25 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.57812 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.17188 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.34375 secs
+Limite de enumeração chegado
+With 99 variables, found 1000002 enumerations in 4.07812 secs
+Limite de enumeração chegado
+With 96 variables, found 1000002 enumerations in 3.73438 secs
+Limite de enumeração chegado
+With 95 variables, found 1000002 enumerations in 4.125 secs
+Limite de enumeração chegado
+With 95 variables, found 1000002 enumerations in 3.95312 secs
+Limite de enumeração chegado
+With 88 variables, found 1000002 enumerations in 4.23438 secs
+Limite de enumeração chegado
+With 82 variables, found 1000002 enumerations in 4 secs
+Limite de enumeração chegado
+With 75 variables, found 1000002 enumerations in 3.9375 secs
+Limite de enumeração chegado
+With 69 variables, found 1000002 enumerations in 3.76562 secs
+Limite de enumeração chegado
+clique: 97 fenchel: 0
+lp after cuts: 51.3333. Time elapsed for optmization: 0
+With 56 variables, found 1000002 enumerations in 4.76562 secs
+Limite de enumeração chegado
+With 54 variables, found 1000002 enumerations in 4.42188 secs
+Limite de enumeração chegado
+With 52 variables, found 1000002 enumerations in 4.20312 secs
+Limite de enumeração chegado
+With 52 variables, found 1000002 enumerations in 4.26562 secs
+Limite de enumeração chegado
+With 55 variables, found 1000002 enumerations in 4.25 secs
+Limite de enumeração chegado
+With 50 variables, found 1000002 enumerations in 4.48438 secs
+Limite de enumeração chegado
+With 50 variables, found 1000002 enumerations in 4.125 secs
+Limite de enumeração chegado
+With 47 variables, found 1000002 enumerations in 4.20312 secs
+Limite de enumeração chegado
+With 48 variables, found 1000002 enumerations in 4.04688 secs
+Limite de enumeração chegado
+With 44 variables, found 1000002 enumerations in 3.76562 secs
+Limite de enumeração chegado
+With 41 variables, found 1000002 enumerations in 3.875 secs
+Limite de enumeração chegado
+With 41 variables, found 1000002 enumerations in 3.89062 secs
+Limite de enumeração chegado
+With 38 variables, found 950971 enumerations in 3.26562 secs
+time fenchel: 13
+fenchel violado: 1.16667
+With 42 variables, found 1000002 enumerations in 3.57812 secs
+Limite de enumeração chegado
+With 40 variables, found 1000002 enumerations in 3.39062 secs
+Limite de enumeração chegado
+With 42 variables, found 1000002 enumerations in 3.60938 secs
+Limite de enumeração chegado
+With 37 variables, found 1000002 enumerations in 3.20312 secs
+Limite de enumeração chegado
+clique: 5 fenchel: 1
+lp after cuts: 51.3333. Time elapsed for optmization: 0
+With 52 variables, found 1000002 enumerations in 4.29688 secs
+Limite de enumeração chegado
+With 53 variables, found 1000002 enumerations in 3.92188 secs
+Limite de enumeração chegado
+With 51 variables, found 1000002 enumerations in 3.8125 secs
+Limite de enumeração chegado
+With 51 variables, found 1000002 enumerations in 3.79688 secs
+Limite de enumeração chegado
+With 54 variables, found 1000002 enumerations in 3.51562 secs
+Limite de enumeração chegado
+With 56 variables, found 1000002 enumerations in 3.73438 secs
+Limite de enumeração chegado
+With 58 variables, found 1000002 enumerations in 4.09375 secs
+Limite de enumeração chegado
+With 56 variables, found 1000002 enumerations in 3.67188 secs
+Limite de enumeração chegado
+With 56 variables, found 1000002 enumerations in 3.92188 secs
+Limite de enumeração chegado
+With 54 variables, found 1000002 enumerations in 3.21875 secs
+Limite de enumeração chegado
+With 54 variables, found 1000002 enumerations in 3.45312 secs
+Limite de enumeração chegado
+With 52 variables, found 1000002 enumerations in 3.39062 secs
+Limite de enumeração chegado
+With 52 variables, found 1000002 enumerations in 3.46875 secs
+Limite de enumeração chegado
+With 58 variables, found 1000002 enumerations in 3.5625 secs
+Limite de enumeração chegado
+With 54 variables, found 1000002 enumerations in 3.32812 secs
+Limite de enumeração chegado
+With 53 variables, found 1000002 enumerations in 3.5625 secs
+Limite de enumeração chegado
+With 49 variables, found 1000002 enumerations in 3.32812 secs
+Limite de enumeração chegado
+clique: 11 fenchel: 0
+lp after cuts: 51.3333. Time elapsed for optmization: 0
+With 51 variables, found 1000002 enumerations in 4.32812 secs
+Limite de enumeração chegado
+With 50 variables, found 1000002 enumerations in 3.90625 secs
+Limite de enumeração chegado
+With 48 variables, found 1000002 enumerations in 3.79688 secs
+Limite de enumeração chegado
+With 48 variables, found 1000002 enumerations in 3.79688 secs
+Limite de enumeração chegado
+With 52 variables, found 1000002 enumerations in 3.75 secs
+Limite de enumeração chegado
+With 49 variables, found 1000002 enumerations in 4.03125 secs
+Limite de enumeração chegado
+With 48 variables, found 1000002 enumerations in 3.28125 secs
+Limite de enumeração chegado
+With 46 variables, found 1000002 enumerations in 3.8125 secs
+Limite de enumeração chegado
+With 46 variables, found 1000002 enumerations in 3.40625 secs
+Limite de enumeração chegado
+With 41 variables, found 1000002 enumerations in 3.35938 secs
+Limite de enumeração chegado
+With 40 variables, found 1000002 enumerations in 3.28125 secs
+Limite de enumeração chegado
+With 38 variables, found 1000002 enumerations in 3.23438 secs
+Limite de enumeração chegado
+With 37 variables, found 606551 enumerations in 2 secs
+time fenchel: 5
+fenchel violado: 1.16667
+With 42 variables, found 1000002 enumerations in 3.29688 secs
+Limite de enumeração chegado
+With 40 variables, found 1000002 enumerations in 3.15625 secs
+Limite de enumeração chegado
+With 40 variables, found 1000002 enumerations in 3.39062 secs
+Limite de enumeração chegado
+With 38 variables, found 1000002 enumerations in 3.15625 secs
+Limite de enumeração chegado
+clique: 1 fenchel: 1
+lp after cuts: 51.3333. Time elapsed for optmization: 0
+With 53 variables, found 1000002 enumerations in 4.32812 secs
+Limite de enumeração chegado
+With 53 variables, found 1000002 enumerations in 4.04688 secs
+Limite de enumeração chegado
+With 52 variables, found 1000002 enumerations in 4 secs
+Limite de enumeração chegado
+With 52 variables, found 1000002 enumerations in 4.01562 secs
+Limite de enumeração chegado
+With 57 variables, found 1000002 enumerations in 3.78125 secs
+Limite de enumeração chegado
+With 56 variables, found 1000002 enumerations in 4.29688 secs
+Limite de enumeração chegado
+With 57 variables, found 1000002 enumerations in 3.8125 secs
+Limite de enumeração chegado
+With 55 variables, found 1000002 enumerations in 3.70312 secs
+Limite de enumeração chegado
+With 56 variables, found 1000002 enumerations in 3.95312 secs
+Limite de enumeração chegado
+With 51 variables, found 1000002 enumerations in 3.26562 secs
+Limite de enumeração chegado
+With 50 variables, found 1000002 enumerations in 3.4375 secs
+Limite de enumeração chegado
+With 48 variables, found 1000002 enumerations in 3.32812 secs
+Limite de enumeração chegado
+With 48 variables, found 1000002 enumerations in 3.34375 secs
+Limite de enumeração chegado
+With 54 variables, found 1000002 enumerations in 3.42188 secs
+Limite de enumeração chegado
+With 51 variables, found 1000002 enumerations in 3.25 secs
+Limite de enumeração chegado
+With 50 variables, found 1000002 enumerations in 3.51562 secs
+Limite de enumeração chegado
+With 47 variables, found 1000002 enumerations in 3.3125 secs
+Limite de enumeração chegado
+clique: 0 fenchel: 0
+lp after cuts: 51.3333. Time elapsed for optmization: 0
+qtd cortes: clique: 313 fenchel: 2
+
+C: 51 soma: 53.4762 soma - C: 2.47619
+lp_add_row: repeated name: fim(1). previous use was index 1206
+
+C: 51 soma: 52.3333 soma - C: 1.33333
+lp_add_row: repeated name: fim(2). previous use was index 1206
+
+C: 51 soma: 52.5238 soma - C: 1.52381
+lp_add_row: repeated name: fim(3). previous use was index 1206
+
+C: 51 soma: 53.6667 soma - C: 2.66667
+lp_add_row: repeated name: fim(4). previous use was index 1206
+
+C: 51 soma: 52.3333 soma - C: 1.33333
+lp_add_row: repeated name: fim(5). previous use was index 1206
+
+C: 51 soma: 51.6667 soma - C: 0.666667
+lp_add_row: repeated name: fim(6). previous use was index 1206
+Optimize a model with 1527 rows, 2005 columns and 10779 nonzeros
+Coefficient statistics:
+  Matrix range     [2e-01, 6e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 6e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 252 rows and 258 columns
+Presolve time: 0.01s
+Presolved: 1275 rows, 1747 columns, 10368 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   5.800000e+01   0.000000e+00      0s
+    3747    5.2350254e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 3747 iterations and 0.44 seconds
+Optimal objective  5.235025381e+01
+Lifting solved for c = 51. Files ft06_lifting.lp e ft06_lifting.sol successfully created.
+iteracao 2
+With 92 variables, found 1000002 enumerations in 3.85938 secs
+Limite de enumeração chegado
+With 88 variables, found 1000002 enumerations in 3.71875 secs
+Limite de enumeração chegado
+With 91 variables, found 1000002 enumerations in 3.67188 secs
+Limite de enumeração chegado
+With 91 variables, found 1000002 enumerations in 4.15625 secs
+Limite de enumeração chegado
+With 97 variables, found 1000002 enumerations in 4.42188 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.4375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.51562 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.45312 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.29688 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.25 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.14062 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.23438 secs
+Limite de enumeração chegado
+With 99 variables, found 1000002 enumerations in 4.48438 secs
+Limite de enumeração chegado
+With 95 variables, found 1000002 enumerations in 4.35938 secs
+Limite de enumeração chegado
+With 92 variables, found 1000002 enumerations in 3.79688 secs
+Limite de enumeração chegado
+With 89 variables, found 1000002 enumerations in 3.92188 secs
+Limite de enumeração chegado
+With 91 variables, found 1000002 enumerations in 3.84375 secs
+Limite de enumeração chegado
+With 89 variables, found 1000002 enumerations in 3.53125 secs
+Limite de enumeração chegado
+With 88 variables, found 1000002 enumerations in 3.9375 secs
+Limite de enumeração chegado
+With 86 variables, found 1000002 enumerations in 3.65625 secs
+Limite de enumeração chegado
+With 80 variables, found 1000002 enumerations in 3.85938 secs
+Limite de enumeração chegado
+With 70 variables, found 1000002 enumerations in 3.45312 secs
+Limite de enumeração chegado
+With 68 variables, found 1000002 enumerations in 3.26562 secs
+Limite de enumeração chegado
+clique: 65 fenchel: 0
+lp after cuts: 52.4305. Time elapsed for optmization: 0
+With 90 variables, found 1000002 enumerations in 3.875 secs
+Limite de enumeração chegado
+With 89 variables, found 1000002 enumerations in 3.8125 secs
+Limite de enumeração chegado
+With 91 variables, found 1000002 enumerations in 4.09375 secs
+Limite de enumeração chegado
+With 88 variables, found 1000002 enumerations in 3.95312 secs
+Limite de enumeração chegado
+With 96 variables, found 1000002 enumerations in 4.125 secs
+Limite de enumeração chegado
+With 98 variables, found 1000002 enumerations in 4.3125 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.3125 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.21875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.26562 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.25 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 3.82812 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.32812 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.25 secs
+Limite de enumeração chegado
+With 98 variables, found 1000002 enumerations in 4.21875 secs
+Limite de enumeração chegado
+With 90 variables, found 1000002 enumerations in 4.21875 secs
+Limite de enumeração chegado
+With 87 variables, found 1000002 enumerations in 4.04688 secs
+Limite de enumeração chegado
+With 83 variables, found 1000002 enumerations in 3.92188 secs
+Limite de enumeração chegado
+With 83 variables, found 1000002 enumerations in 3.6875 secs
+Limite de enumeração chegado
+With 82 variables, found 1000002 enumerations in 3.35938 secs
+Limite de enumeração chegado
+With 81 variables, found 1000002 enumerations in 3.57812 secs
+Limite de enumeração chegado
+With 77 variables, found 1000002 enumerations in 3.79688 secs
+Limite de enumeração chegado
+With 73 variables, found 1000002 enumerations in 3.5625 secs
+Limite de enumeração chegado
+With 66 variables, found 1000002 enumerations in 3.35938 secs
+Limite de enumeração chegado
+With 64 variables, found 1000002 enumerations in 2.96875 secs
+Limite de enumeração chegado
+With 61 variables, found 1000002 enumerations in 3.15625 secs
+Limite de enumeração chegado
+clique: 10 fenchel: 0
+lp after cuts: 52.4305. Time elapsed for optmization: 1
+With 90 variables, found 1000002 enumerations in 3.875 secs
+Limite de enumeração chegado
+With 89 variables, found 1000002 enumerations in 3.79688 secs
+Limite de enumeração chegado
+With 91 variables, found 1000002 enumerations in 4.23438 secs
+Limite de enumeração chegado
+With 88 variables, found 1000002 enumerations in 4.65625 secs
+Limite de enumeração chegado
+With 96 variables, found 1000002 enumerations in 4.1875 secs
+Limite de enumeração chegado
+With 98 variables, found 1000002 enumerations in 4.3125 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.34375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.21875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.35938 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.40625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 3.875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.45312 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.1875 secs
+Limite de enumeração chegado
+With 98 variables, found 1000002 enumerations in 4.125 secs
+Limite de enumeração chegado
+With 90 variables, found 1000002 enumerations in 4.20312 secs
+Limite de enumeração chegado
+With 86 variables, found 1000002 enumerations in 4 secs
+Limite de enumeração chegado
+With 82 variables, found 1000002 enumerations in 3.96875 secs
+Limite de enumeração chegado
+With 82 variables, found 1000002 enumerations in 3.67188 secs
+Limite de enumeração chegado
+With 81 variables, found 1000002 enumerations in 3.35938 secs
+Limite de enumeração chegado
+With 80 variables, found 1000002 enumerations in 3.57812 secs
+Limite de enumeração chegado
+With 76 variables, found 1000002 enumerations in 3.78125 secs
+Limite de enumeração chegado
+With 72 variables, found 1000002 enumerations in 3.54688 secs
+Limite de enumeração chegado
+With 65 variables, found 1000002 enumerations in 3.3125 secs
+Limite de enumeração chegado
+With 63 variables, found 1000002 enumerations in 3.04688 secs
+Limite de enumeração chegado
+With 60 variables, found 1000002 enumerations in 3.1875 secs
+Limite de enumeração chegado
+clique: 0 fenchel: 0
+lp after cuts: 52.4305. Time elapsed for optmization: 0
+qtd cortes: clique: 75 fenchel: 0
+
+C: 53 soma: 53.7152 soma - C: 0.715232
+lp_add_row: repeated name: fim(1). previous use was index 1521
+
+C: 53 soma: 53.3841 soma - C: 0.384106
+lp_add_row: repeated name: fim(2). previous use was index 1521
+
+C: 53 soma: 53.4503 soma - C: 0.450331
+lp_add_row: repeated name: fim(3). previous use was index 1521
+
+C: 53 soma: 53.5298 soma - C: 0.529801
+lp_add_row: repeated name: fim(4). previous use was index 1521
+
+C: 53 soma: 53.3333 soma - C: 0.333333
+lp_add_row: repeated name: fim(5). previous use was index 1521
+
+C: 53 soma: 53.3046 soma - C: 0.304636
+lp_add_row: repeated name: fim(6). previous use was index 1521
+Optimize a model with 1602 rows, 2005 columns and 11915 nonzeros
+Coefficient statistics:
+  Matrix range     [2e-01, 6e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 6e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 248 rows and 254 columns
+Presolve time: 0.01s
+Presolved: 1354 rows, 1751 columns, 11492 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   5.800000e+01   0.000000e+00      0s
+    3403    5.3390244e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 3403 iterations and 0.44 seconds
+Optimal objective  5.339024390e+01
+Lifting solved for c = 53. Files ft06_lifting.lp e ft06_lifting.sol successfully created.
+iteracao 3
+With 90 variables, found 1000002 enumerations in 3.46875 secs
+Limite de enumeração chegado
+With 86 variables, found 1000002 enumerations in 4.01562 secs
+Limite de enumeração chegado
+With 90 variables, found 1000002 enumerations in 4.0625 secs
+Limite de enumeração chegado
+With 95 variables, found 1000002 enumerations in 4.17188 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.34375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.4375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.09375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.4375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.125 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.42188 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.23438 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.32812 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.28125 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.10938 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.34375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.54688 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.3125 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.0625 secs
+Limite de enumeração chegado
+With 99 variables, found 1000002 enumerations in 4.48438 secs
+Limite de enumeração chegado
+With 95 variables, found 1000002 enumerations in 4.78125 secs
+Limite de enumeração chegado
+With 90 variables, found 1000002 enumerations in 4.14062 secs
+Limite de enumeração chegado
+With 86 variables, found 1000002 enumerations in 4.0625 secs
+Limite de enumeração chegado
+With 90 variables, found 1000002 enumerations in 3.71875 secs
+Limite de enumeração chegado
+With 87 variables, found 1000002 enumerations in 3.60938 secs
+Limite de enumeração chegado
+With 84 variables, found 1000002 enumerations in 3.76562 secs
+Limite de enumeração chegado
+With 77 variables, found 1000002 enumerations in 4.03125 secs
+Limite de enumeração chegado
+With 74 variables, found 1000002 enumerations in 3.6875 secs
+Limite de enumeração chegado
+With 68 variables, found 1000002 enumerations in 3.28125 secs
+Limite de enumeração chegado
+With 64 variables, found 1000002 enumerations in 3.14062 secs
+Limite de enumeração chegado
+With 59 variables, found 1000002 enumerations in 3.1875 secs
+Limite de enumeração chegado
+clique: 36 fenchel: 0
+lp after cuts: 53.4516. Time elapsed for optmization: 0
+With 88 variables, found 1000002 enumerations in 3.70312 secs
+Limite de enumeração chegado
+With 85 variables, found 1000002 enumerations in 3.90625 secs
+Limite de enumeração chegado
+With 86 variables, found 1000002 enumerations in 3.70312 secs
+Limite de enumeração chegado
+With 95 variables, found 1000002 enumerations in 4.125 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.48438 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.57812 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.23438 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.35938 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.29688 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.26562 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.1875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.34375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.09375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.14062 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.65625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.9375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.60938 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.6875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.4375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.82812 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.70312 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.54688 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.14062 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.35938 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.40625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.39062 secs
+Limite de enumeração chegado
+With 98 variables, found 1000002 enumerations in 4.54688 secs
+Limite de enumeração chegado
+With 92 variables, found 1000002 enumerations in 4.17188 secs
+Limite de enumeração chegado
+With 90 variables, found 1000002 enumerations in 3.79688 secs
+Limite de enumeração chegado
+With 89 variables, found 1000002 enumerations in 3.8125 secs
+Limite de enumeração chegado
+With 87 variables, found 1000002 enumerations in 3.6875 secs
+Limite de enumeração chegado
+With 84 variables, found 1000002 enumerations in 4.0625 secs
+Limite de enumeração chegado
+With 77 variables, found 1000002 enumerations in 3.90625 secs
+Limite de enumeração chegado
+With 72 variables, found 1000002 enumerations in 3.76562 secs
+Limite de enumeração chegado
+With 65 variables, found 1000002 enumerations in 3.26562 secs
+Limite de enumeração chegado
+With 62 variables, found 1000002 enumerations in 3.125 secs
+Limite de enumeração chegado
+With 56 variables, found 1000002 enumerations in 3.125 secs
+Limite de enumeração chegado
+clique: 13 fenchel: 0
+lp after cuts: 53.4516. Time elapsed for optmization: 0
+With 86 variables, found 1000002 enumerations in 3.71875 secs
+Limite de enumeração chegado
+With 83 variables, found 1000002 enumerations in 4.07812 secs
+Limite de enumeração chegado
+With 88 variables, found 1000002 enumerations in 4.125 secs
+Limite de enumeração chegado
+With 94 variables, found 1000002 enumerations in 4.15625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.15625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.40625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.0625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.09375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.42188 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.79688 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.46875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.1875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.54688 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.21875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.60938 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.59375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.40625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.14062 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.45312 secs
+Limite de enumeração chegado
+With 96 variables, found 1000002 enumerations in 4.5 secs
+Limite de enumeração chegado
+With 90 variables, found 1000002 enumerations in 4.17188 secs
+Limite de enumeração chegado
+With 88 variables, found 1000002 enumerations in 3.84375 secs
+Limite de enumeração chegado
+With 87 variables, found 1000002 enumerations in 3.85938 secs
+Limite de enumeração chegado
+With 85 variables, found 1000002 enumerations in 3.73438 secs
+Limite de enumeração chegado
+With 82 variables, found 1000002 enumerations in 3.75 secs
+Limite de enumeração chegado
+With 75 variables, found 1000002 enumerations in 4.07812 secs
+Limite de enumeração chegado
+With 71 variables, found 1000002 enumerations in 3.76562 secs
+Limite de enumeração chegado
+With 65 variables, found 1000002 enumerations in 3.28125 secs
+Limite de enumeração chegado
+With 62 variables, found 1000002 enumerations in 3.14062 secs
+Limite de enumeração chegado
+With 56 variables, found 1000002 enumerations in 3.125 secs
+Limite de enumeração chegado
+clique: 0 fenchel: 0
+lp after cuts: 53.4516. Time elapsed for optmization: 0
+qtd cortes: clique: 49 fenchel: 0
+
+C: 54 soma: 54.2258 soma - C: 0.225806
+lp_add_row: repeated name: fim(1). previous use was index 1596
+
+C: 54 soma: 54.1129 soma - C: 0.112903
+lp_add_row: repeated name: fim(2). previous use was index 1596
+
+C: 54 soma: 54.2258 soma - C: 0.225806
+lp_add_row: repeated name: fim(3). previous use was index 1596
+
+C: 54 soma: 54.2258 soma - C: 0.225806
+lp_add_row: repeated name: fim(4). previous use was index 1596
+
+C: 54 soma: 54.0565 soma - C: 0.0564516
+lp_add_row: repeated name: fim(5). previous use was index 1596
+
+C: 54 soma: 54.2258 soma - C: 0.225806
+lp_add_row: repeated name: fim(6). previous use was index 1596
+Optimize a model with 1651 rows, 2005 columns and 12592 nonzeros
+Coefficient statistics:
+  Matrix range     [2e-01, 6e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 6e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 248 rows and 254 columns
+Presolve time: 0.01s
+Presolved: 1403 rows, 1751 columns, 12170 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   5.800000e+01   0.000000e+00      0s
+    2958    5.4100000e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 2958 iterations and 0.40 seconds
+Optimal objective  5.410000000e+01
+Lifting solved for c = 54. Files ft06_lifting.lp e ft06_lifting.sol successfully created.
+iteracao 4
+With 82 variables, found 1000002 enumerations in 3.89062 secs
+Limite de enumeração chegado
+With 83 variables, found 1000002 enumerations in 3.875 secs
+Limite de enumeração chegado
+With 86 variables, found 1000002 enumerations in 3.85938 secs
+Limite de enumeração chegado
+With 87 variables, found 1000002 enumerations in 4.10938 secs
+Limite de enumeração chegado
+With 93 variables, found 1000002 enumerations in 4.34375 secs
+Limite de enumeração chegado
+With 99 variables, found 1000002 enumerations in 4.20312 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.03125 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.40625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.76562 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.5625 secs
+Limite de enumeração chegado
+With 98 variables, found 1000002 enumerations in 4.70312 secs
+Limite de enumeração chegado
+With 97 variables, found 1000002 enumerations in 4.32812 secs
+Limite de enumeração chegado
+With 93 variables, found 1000002 enumerations in 4.125 secs
+Limite de enumeração chegado
+With 90 variables, found 1000002 enumerations in 4.15625 secs
+Limite de enumeração chegado
+With 90 variables, found 1000002 enumerations in 3.79688 secs
+Limite de enumeração chegado
+With 86 variables, found 1000002 enumerations in 4.125 secs
+Limite de enumeração chegado
+With 83 variables, found 1000002 enumerations in 3.875 secs
+Limite de enumeração chegado
+With 81 variables, found 1000002 enumerations in 3.84375 secs
+Limite de enumeração chegado
+With 75 variables, found 1000002 enumerations in 3.53125 secs
+Limite de enumeração chegado
+With 65 variables, found 1000002 enumerations in 3.65625 secs
+Limite de enumeração chegado
+With 61 variables, found 1000002 enumerations in 3.03125 secs
+Limite de enumeração chegado
+clique: 32 fenchel: 0
+lp after cuts: 54.1081. Time elapsed for optmization: 0
+With 84 variables, found 1000002 enumerations in 3.98438 secs
+Limite de enumeração chegado
+With 84 variables, found 1000002 enumerations in 4.04688 secs
+Limite de enumeração chegado
+With 87 variables, found 1000002 enumerations in 3.84375 secs
+Limite de enumeração chegado
+With 95 variables, found 1000002 enumerations in 3.96875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.60938 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.5 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.46875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.54688 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.4375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 3.84375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 3.89062 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.125 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.15625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.21875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.09375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.25 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.70312 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.40625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.32812 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.23438 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.32812 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.14062 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.0625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.23438 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.70312 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.40625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.35938 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.21875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.39062 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.35938 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 3.98438 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 3.84375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 3.98438 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.40625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.4375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 3.98438 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.01562 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 3.82812 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 3.95312 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.40625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.53125 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.8125 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.96875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.84375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.42188 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.76562 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.51562 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.89062 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.14062 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.28125 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.60938 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.73438 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.57812 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.92188 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.23438 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.25 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.65625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.25 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.3125 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.21875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.57812 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 3.98438 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.01562 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.32812 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.34375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.32812 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.45312 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 5.20312 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 5.03125 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.84375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.54688 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.73438 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.54688 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.42188 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.125 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.48438 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.125 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.0625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.09375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.04688 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.32812 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.1875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.10938 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 3.875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 3.71875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 3.6875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 3.67188 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 3.98438 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.07812 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 3.96875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 3.95312 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 3.75 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 3.85938 secs
+Limite de enumeração chegado
+With 98 variables, found 1000002 enumerations in 3.92188 secs
+Limite de enumeração chegado
+With 91 variables, found 1000002 enumerations in 3.8125 secs
+Limite de enumeração chegado
+With 82 variables, found 1000002 enumerations in 3.5 secs
+Limite de enumeração chegado
+With 73 variables, found 1000002 enumerations in 3.54688 secs
+Limite de enumeração chegado
+With 68 variables, found 1000002 enumerations in 3.45312 secs
+Limite de enumeração chegado
+clique: 7 fenchel: 0
+lp after cuts: 54.1111. Time elapsed for optmization: 0
+With 92 variables, found 1000002 enumerations in 4.125 secs
+Limite de enumeração chegado
+With 92 variables, found 1000002 enumerations in 4.14062 secs
+Limite de enumeração chegado
+With 95 variables, found 1000002 enumerations in 3.59375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.1875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 3.75 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.14062 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.25 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.26562 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.15625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.1875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.21875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.21875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.48438 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.65625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.28125 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.35938 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.20312 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.42188 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.21875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.42188 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.35938 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.45312 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.04688 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 3.89062 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.125 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 3.85938 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 3.875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.29688 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.15625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.20312 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.25 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.23438 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.32812 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.39062 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.25 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.17188 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.34375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 3.90625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.17188 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 3.90625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 3.875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.29688 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.1875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.21875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.25 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.20312 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.35938 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.35938 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.34375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.25 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.32812 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.54688 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.26562 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.26562 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 3.96875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.45312 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.75 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.1875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.1875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.4375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.5625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.26562 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.28125 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.60938 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 3.95312 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.48438 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.75 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.39062 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.90625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.96875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.75 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.42188 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.53125 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.59375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.1875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.57812 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.21875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.73438 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.40625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.57812 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.59375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.14062 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.57812 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.21875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.1875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.07812 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.4375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.3125 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.15625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.34375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.71875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.23438 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.34375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.60938 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.85938 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.60938 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.9375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.59375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.5625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.70312 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.3125 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.20312 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.45312 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.32812 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 3.96875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.03125 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 3.96875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.1875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 3.67188 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 3.84375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.01562 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.14062 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 3.9375 secs
+Limite de enumeração chegado
+With 99 variables, found 1000002 enumerations in 3.90625 secs
+Limite de enumeração chegado
+With 96 variables, found 1000002 enumerations in 4.26562 secs
+Limite de enumeração chegado
+With 90 variables, found 1000002 enumerations in 5.23438 secs
+Limite de enumeração chegado
+With 81 variables, found 1000002 enumerations in 3.45312 secs
+Limite de enumeração chegado
+With 73 variables, found 1000002 enumerations in 3.59375 secs
+Limite de enumeração chegado
+With 69 variables, found 1000002 enumerations in 3.53125 secs
+Limite de enumeração chegado
+clique: 3 fenchel: 0
+lp after cuts: 54.1111. Time elapsed for optmization: 0
+With 89 variables, found 1000002 enumerations in 3.875 secs
+Limite de enumeração chegado
+With 88 variables, found 1000002 enumerations in 4 secs
+Limite de enumeração chegado
+With 91 variables, found 1000002 enumerations in 3.75 secs
+Limite de enumeração chegado
+With 99 variables, found 1000002 enumerations in 4.125 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.35938 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.23438 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.71875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.71875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.5 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.51562 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 3.8125 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 3.8125 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.09375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 3.79688 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.01562 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.0625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.04688 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.17188 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.10938 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.17188 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.64062 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.26562 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.15625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.1875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.29688 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.0625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.04688 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.20312 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.10938 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.15625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.53125 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.23438 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.20312 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.35938 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.79688 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.73438 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.76562 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.04688 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.51562 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.70312 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.54688 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.57812 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.73438 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 3.95312 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.3125 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.48438 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.59375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.71875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.75 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.40625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.5 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 5.23438 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.84375 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.73438 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.76562 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.76562 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.76562 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.48438 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.23438 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.39062 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.5 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 3.92188 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.04688 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 3.85938 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.0625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.64062 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.5625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.92188 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.65625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.40625 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.70312 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.46875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 4.32812 secs
+Limite de enumeração chegado
+With 99 variables, found 1000002 enumerations in 4.21875 secs
+Limite de enumeração chegado
+With 100 variables, found 1000002 enumerations in 3.64062 secs
+Limite de enumeração chegado
+With 94 variables, found 1000002 enumerations in 3.70312 secs
+Limite de enumeração chegado
+With 90 variables, found 1000002 enumerations in 3.8125 secs
+Limite de enumeração chegado
+With 84 variables, found 1000002 enumerations in 3.95312 secs
+Limite de enumeração chegado
+With 76 variables, found 1000002 enumerations in 3.375 secs
+Limite de enumeração chegado
+With 68 variables, found 1000002 enumerations in 3.51562 secs
+Limite de enumeração chegado
+With 64 variables, found 1000002 enumerations in 3.45312 secs
+Limite de enumeração chegado
+clique: 0 fenchel: 0
+lp after cuts: 54.1111. Time elapsed for optmization: 0
+qtd cortes: clique: 42 fenchel: 0
+
+C: 55 soma: 55 soma - C: 6.32383e-13
+lp_add_row: repeated name: fim(1). previous use was index 1645
+
+C: 55 soma: 55 soma - C: 0
+lp_add_row: repeated name: fim(2). previous use was index 1645
+
+C: 55 soma: 55 soma - C: -2.77112e-13
+lp_add_row: repeated name: fim(3). previous use was index 1645
+
+C: 55 soma: 55 soma - C: 6.46594e-13
+lp_add_row: repeated name: fim(4). previous use was index 1645
+
+C: 55 soma: 55 soma - C: 5.82645e-13
+lp_add_row: repeated name: fim(5). previous use was index 1645
+
+C: 55 soma: 55 soma - C: -7.10543e-15
+lp_add_row: repeated name: fim(6). previous use was index 1645
+Optimize a model with 1693 rows, 2005 columns and 13179 nonzeros
+Coefficient statistics:
+  Matrix range     [2e-01, 6e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 6e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 248 rows and 254 columns
+Presolve time: 0.01s
+Presolved: 1445 rows, 1751 columns, 12756 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   5.900000e+01   0.000000e+00      0s
+    1992    5.5000000e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 1992 iterations and 0.27 seconds
+Optimal objective  5.500000000e+01
+Lifting solved for c = 55. Files ft06_lifting.lp e ft06_lifting.sol successfully created.
+fim: bnd = 55 teto(bnd_anterior) = 55

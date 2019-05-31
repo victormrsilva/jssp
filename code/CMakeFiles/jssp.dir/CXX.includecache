@@ -41,6 +41,8 @@ lp.hpp
 /home/victor/git-version/jssp/code/src/lp.hpp
 unordered_set
 -
+deque
+-
 cgraph/cgraph.h
 /home/victor/git-version/jssp/code/src/cgraph/cgraph.h
 cgraph/clique_separation.h

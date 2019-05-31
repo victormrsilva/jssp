@@ -1,6 +1,7 @@
 #include "Instance.hpp"
 #include "lp.hpp"
 #include <unordered_set>
+#include <deque>
 extern "C"{
 #include "cgraph/cgraph.h"
 #include "cgraph/clique_separation.h"
@@ -38,6 +39,9 @@ private:
 
     int totalCliques = 0;
     int totalFenchel = 0;
+    int qtdLimitesEnumeracao = 0;
+    int qtdLimiteVarsEnumeracao = 0;
+    int qtdJanelaModificada = 0;
     int cIdx_;
     LinearProgram *mip;
     double teto(double v);
@@ -67,7 +71,8 @@ private:
     bool limite_enumeracao;
     void enumeracao_fenchel(const std::vector<S> &vars, int index, std::unordered_set<std::vector<S>> &solutions, std::vector<S> solution);
     template <typename T> bool dominancia(std::vector<T> &vec, std::unordered_set<std::vector<T>> &set);
-    int fenchel(int ti, int tf); // pega as variáveis por um intervalo de tempo para fazer o corte
+    int fenchel_tempo(int ti, int tf); // pega as variáveis por um intervalo de tempo para fazer o corte
+    int fenchel_vars(std::deque<int> &vars); // pega as variáveis pelo intervalo de variáveis maiores que zero
     int executeFenchel();
     std::vector< std::vector< int > > enum_time; // armazena o tempo das variáveis a serem alocadas
 

@@ -18,7 +18,14 @@ extern "C"
 #include "cgraph/build_cgraph.h"
 }
 
+#define STR_EXPAND(tok) #tok
+#define STR(tok) STR_EXPAND(tok)
+
 #define LIMITE 1.00001
+#define LIMITE_ENUM 20000
+#define LIMITE_VARS 50
+#define TAMANHO_JANELA 10
+
 
 struct pair_hash
 {
@@ -42,6 +49,7 @@ using std::unordered_set;
 using std::string;
 using std::to_string;
 using std::pair;
+using std::deque;
 
 bool compare(int i, int j) { return i < j;}
 
@@ -70,24 +78,30 @@ process(vector<vector<vector<vector<int>>>>(inst_.n(), (vector<vector<vector<int
     double bnd = lp_obj_value(mip);
     int iteracao = 1;
     ofstream f;
-    f.open(inst_.instanceName() + "_continuos_fenchel_3.csv");
-    f << "iteracao;bnd;cliques;fenchel;valor_lifting" << endl;
-    f << "0;" << bnd <<";0;0;0" << endl;
+    f.open(inst_.instanceName() + "_" + STR(LIMITE_ENUM) + "_" + STR(LIMITE_VARS) + "_" + STR(TAMANHO_JANELA) +"_continuos_clique_fenchel.csv");
+    f << "iteracao;bnd;cliques;fenchel;limiteEnum;limiteVar;janelaModificada;valor_lifting;tempo" << endl;
+    f << "0;" << bnd <<";0;0;0;0;0;0;" << lp_solution_time(mip) << endl;
     while (!criterio_parada){
         cout << "iteracao " << iteracao << endl;
+        clock_t begin = clock();
+
         int cliqueIter = 0;
         int clique = 0;
         int fenchel = 0;
         int fenchelIter = 0;
+        qtdJanelaModificada = 0;
+        qtdLimitesEnumeracao = 0;
+        qtdLimiteVarsEnumeracao = 0;
         lp_set_print_messages(mip,0);
         do {            
-            clique = manual_cuts();
+            // clique = manual_cuts();
             fenchel = executeFenchel();
             cliqueIter += clique;
             fenchelIter += fenchel;
             cout << "clique: " << clique << " fenchel: " << fenchel << endl;
             lp_write_lp(mip,"lp_after_cuts.lp");
             lp_optimize(mip);
+            cout << "lp after cuts: " << lp_obj_value(mip) << ". Time elapsed for optmization: " << lp_solution_time(mip) << endl;
         } while ((clique+fenchel) > 0);
         lp_set_print_messages(mip,1);
         cout << "qtd cortes: clique: " << cliqueIter << " fenchel: " << fenchelIter << endl;
@@ -99,31 +113,24 @@ process(vector<vector<vector<vector<int>>>>(inst_.n(), (vector<vector<vector<int
         int c = teto(bnd);
         // getchar();
         bnd = lifting(c); // calculate lifting. the optimization is made within this function
-        f << iteracao << ";" << bnd << ";" << cliqueIter << ";" << fenchelIter << ";" << c << endl;
-        cout << bnd << " " << bnd_anterior << " " << teto(bnd_anterior)<< " " << cliqueIter << " " << fenchelIter << endl;
+        // "iteracao;bnd;cliques;fenchel;limiteEnum;limiteVar;janelaModificada;valor_lifting"
+        clock_t end = clock();
+        f << iteracao << ";" << bnd << ";" << cliqueIter << ";" << fenchelIter << ";" << qtdLimitesEnumeracao << ";" << qtdLimiteVarsEnumeracao << ";" << qtdJanelaModificada << ";" << c << ";" << (double)(end - begin) / CLOCKS_PER_SEC << endl;
+        // cout << bnd << " " << bnd_anterior << " " << teto(bnd_anterior)<< " " << cliqueIter << " " << fenchelIter << endl;
         // getchar();
         if (fabs(bnd - teto(bnd_anterior)) < 1e-06){
-            cout << bnd << " " << teto(bnd_anterior) << endl;
+            cout << "fim: bnd = " <<  bnd << " teto(bnd_anterior) = " << teto(bnd_anterior) << endl;
             criterio_parada = true;
-            f.close();
         }
         iteracao++;
     }
-    lp_write_lp(mip,(inst_.instanceName() + "_continuos_cuts.lp").c_str());
+    f.close();
+    lp_write_lp(mip,(inst_.instanceName() + "_" + STR(LIMITE_ENUM) + "_" + STR(LIMITE_VARS) + "_" + STR(TAMANHO_JANELA) + "_continuos_cuts.lp").c_str());
 
-    //lp_write_mps( mip, inst_.instanceName().c_str() );
-    //lp_optimize_as_continuous(mip);
-    // if (inst_.execute()){
-    //     optimize();
-    // }
-    // // if (inst_.execute()){
-    //     lp_optimize( mip );
-    //     lp_write_sol(mip, "jssp_Fernando.sol");
-    // }
 }
 
 int Fernando::manual_cuts(){
-    double *x = lp_x(mip);
+    const double *x = lp_x(mip);
     // ofstream f;
     // f.open("cuts_manual.txt");
     int qtd = 0;
@@ -161,8 +168,8 @@ int Fernando::manual_cuts(){
 int Fernando::cliques(int *idxs,double *coefs)
 {
     clock_t begin = clock();
-    double *x = lp_x(mip);
-    double *rc = lp_reduced_cost(mip);
+    const double *x = lp_x(mip);
+    const double *rc = lp_reduced_cost(mip);
 
     // for (unsigned int i = 0; i < names.size(); i++)
     // {
@@ -1107,8 +1114,8 @@ void Fernando::buildCliqueCuts(){
 }
 
 
-int Fernando::fenchel(int ti, int tf){
-    double *x = lp_x(mip);
+int Fernando::fenchel_tempo(int ti, int tf){
+    const double *x = lp_x(mip);
 
     unordered_set<vector<S>> solutions;
     vector<S> vars;
@@ -1147,6 +1154,17 @@ int Fernando::fenchel(int ti, int tf){
     vector<S> solution;
     enumeracao_fenchel(vars,0,solutions,solution);
 
+
+    // getchar();
+    clock_t end = clock();
+    cout << "With " << vars.size() + vars_valor1.size() << " variables, found " << solutions.size() << " enumerations in " << (double)(end - begin) / CLOCKS_PER_SEC << " secs" << endl;
+
+    if (limite_enumeracao){
+        cout << "Limite de enumeração chegado" << endl;
+        return 0;
+    }
+    // cout << "creating set. press enter" << endl;
+    // getchar();
     // for (vector<S> v : solutions){
     //     cout << v.size() << ": ";
     //     for (S s : v){
@@ -1154,17 +1172,6 @@ int Fernando::fenchel(int ti, int tf){
     //     }
     //     cout << endl;
     // }
-    // getchar();
-    clock_t end = clock();
-    cout << "With " << vars.size() + vars_valor1.size() << " variables, found " << solutions.size() << " enumerations in " << (double)(end - begin) / CLOCKS_PER_SEC << " secs" << endl;
-
-    if (limite_enumeracao){
-        cout << "Limite de enumeração chegado" << endl;
-
-    }
-    // cout << "creating set. press enter" << endl;
-    // getchar();
-    
     // if no enumerations found, end
     if (solutions.size() == 0){
         return 0;
@@ -1214,7 +1221,7 @@ int Fernando::fenchel(int ti, int tf){
     lp_write_lp(fenchel, (filename+".lp").c_str());
     lp_optimize(fenchel);
     
-    double *xf = lp_x(fenchel);
+    const double *xf = lp_x(fenchel);
     double total = 0;
     for (unsigned int i = 0; i < lambda_names.size(); i++){
         if (xf[i] > 0){
@@ -1248,7 +1255,7 @@ int Fernando::fenchel(int ti, int tf){
 
         for (S s : vars_valor1){
             idx.push_back(xIdx_[s.i][s.j][s.t]);
-            coef.push_back(-1.0);
+            coef.push_back(1.0);
         }
         // for (unsigned int i = 0; i < idx.size(); i++){
         //     cout << coef[i] << "*" << names[idx[i]] << " ";
@@ -1281,13 +1288,8 @@ template <typename T> bool Fernando::isSubset(std::vector<T> &A, std::vector<T> 
 }
 
 void Fernando::enumeracao_fenchel(const vector<S> &vars, int index, unordered_set<vector<S>> &solutions, vector<S> solution){
-    //cout << "solution.size: " << solution.size() << " vars.size: " << vars.size() << " index: " << index << " solutions.size: " << solutions.size() << endl;
-    // for (S s : solution){
-    //     cout << names[s.var] << " ";
-    // }
-    // cout << endl;
     // limite de enumerações
-    if (solutions.size() > 5000){
+    if (solutions.size() > LIMITE_ENUM){
         limite_enumeracao = true;
         return;
     }
@@ -1311,7 +1313,6 @@ void Fernando::enumeracao_fenchel(const vector<S> &vars, int index, unordered_se
         }
         qtd = solutions.size();
         // cout << solution.size() << " tentando inserir " << names[vars[i].var] << endl;
-        //if (insertVar(solution, vars[i])){
         if (canInsert(vars[i])){
             solution.emplace_back(vars[i]);
             enum_time[vars[i].j][vars[i].i] = vars[i].t;
@@ -1319,7 +1320,6 @@ void Fernando::enumeracao_fenchel(const vector<S> &vars, int index, unordered_se
             // cout << "qtd_solutions: " << qtd << " solutions: " << solutions.size();
             // no solution inserted
             if (solutions.size() == qtd){
-                // cout << " size solution: " << solution.size();
                 solutions.insert(solution);
             }
             // cout << endl;
@@ -1366,60 +1366,77 @@ bool Fernando::insertVar(vector<S> sol, S var){
 }
 
 int Fernando::executeFenchel(){
-    int divisions = 3; // how many time divisions will make
-    double interval = inst_.maxTime() / (double)divisions;
+    // int divisions = inst_.m(); // how many time divisions will make
+    // double interval = inst_.maxTime() / (double)divisions;
+
+    int interval = TAMANHO_JANELA; // tamanho da janela de tempo a ser analisada
+    int passo = 2; // quanto a janela anda
     
-    interval = teto(interval); // size of time interval
-    //cout << interval << endl;
+    int maxVars = LIMITE_VARS; // quantidade máxima de variáveis a serem enumeradas
+
+    int divisions = inst_.maxTime()/passo; // qtd de divisões baseadas no passo
+
+    deque<int> vars;
+    const double *x = lp_x(mip);
     int qtdCuts = 0;
-    for (int i = 0; i < (divisions*2) - 1; i++){
-        enum_time = vector< vector< int > >(inst_.n(),vector< int >(inst_.m(),-1));
-        // for (int j = 0; j < inst_.n(); j++){
-        //     for (int i = 0; i < inst_.m(); i++){
-        //         cout << j+1 << " " << i+1 << " (" << enum_time[j][i];
-        //         if (enum_time[j][i] != -1){
-        //             cout << "-"<< enum_time[j][i]+inst_.time(j,i) << ")";
-        //         }  
-        //         cout << endl;
-        //     }
-        // }
-        // getchar();
-
-        limite_enumeracao = false;
-        int ti = teto( (i * interval) /2);
-        int tf = ti + interval;
+    int ti = 0; // tempo inicial
+    int tf = 0; // tempo final
+    
+    while (tf < inst_.maxTime()){
+        tf = interval + ti;
         tf = (tf < inst_.maxTime() ? tf : inst_.maxTime());
-        cout << "initial: " << ti << " final: " << tf << ". ";
-        qtdCuts += fenchel(ti,tf);
-        // for (int j = 0; j < inst_.n(); j++){
-        //     for (int i = 0; i < inst_.m(); i++){
-        //         cout << j+1 << " " << i+1 << " (" << enum_time[j][i];
-        //         if (enum_time[j][i] != -1){
-        //             cout << "-"<< enum_time[j][i]+inst_.time(j,i) << ")";
-        //         }  
-        //         cout << endl;
-        //     }
-        // }
-        // getchar();
-
+        // cout << "ti: " << ti << " tf: " << tf << endl;
+        for (int t = ti; t < tf; t++){
+            bool mudouVar = false;
+            for (int i = 0; i < inst_.m(); i++){
+                for (int j = 0; j < inst_.n(); j++){
+                    if (t >= inst_.est(j,i) && t <= inst_.lst(j,i)){ // se está no intervalo possível
+                        if (x[xIdx_[i][j][t]] > 1e-05){
+                            if (vars.size() < maxVars){ 
+                                // cout << names[xIdx_[i][j][t]] << " " << x[xIdx_[i][j][t]] << endl;
+                                vars.push_back(xIdx_[i][j][t]);
+                                mudouVar = true;
+                            } else {
+                                // caso eu chegue no maior valor de variáveis possível, executa com o conjunto atual 
+                                // cout << "chegou no limite. executando com conjunto atual." << endl;
+                                enum_time = vector< vector< int > >(inst_.n(),vector< int >(inst_.m(),-1));
+                                limite_enumeracao = false;
+                                // cout << "vars: " << vars.size() << endl;
+                                qtdCuts += fenchel_vars(vars);
+                                enum_time.clear();
+                                // e removo as mais antigas e insiro a mais nova
+                                // cout << "removendo mais antiga" << endl;
+                                vars.pop_front();
+                                vars.push_back(xIdx_[i][j][t]);
+                                qtdLimiteVarsEnumeracao++;
+                                mudouVar = true;
+                                // getchar();
+                            } 
+                        }
+                    }
+                }
+            }
+            // if no vars were inserted in this time, add one unit of time later
+            if (!mudouVar){
+                tf = ( (tf + 1) < inst_.maxTime() ? tf + 1 : inst_.maxTime());
+                qtdJanelaModificada++;
+                // cout << "tempo final alterado. agora é " << tf << endl;
+            }
+        }
+        enum_time = vector< vector< int > >(inst_.n(),vector< int >(inst_.m(),-1));
+        limite_enumeracao = false;
+        // cout << "ti: " << ti << " tf: " << tf <<  " vars: " << vars.size() << endl;
+        qtdCuts += fenchel_vars(vars);
         enum_time.clear();
+        vars.clear();
+        ti = ti + passo; // anda a janela
     }
+    // getchar();
+
     return qtdCuts;
 }
 
 bool Fernando::canInsert(S var){
-
-    // cout << names[var.var] << endl;
-    // for (int j = 0; j < inst_.n(); j++){
-    //     for (int i = 0; i < inst_.m(); i++){
-    //         cout << j+1 << " " << i+1 << " (" << enum_time[j][i];
-    //         if (enum_time[j][i] != -1){
-    //             cout << "-"<< enum_time[j][i]+inst_.time(j,i) << ")";
-    //         }  
-    //         cout << endl;
-    //     }
-    // }
-    // getchar();
 
     int tf_var = var.t + inst_.time(var.j,var.i);
 
@@ -1462,7 +1479,7 @@ bool Fernando::canInsert(S var){
     // getchar();
     // cout << "o: " << o << endl;
     
-    // check operations after the one being inserted
+    // check operations before the one being inserted
     // cout << "check operations before the one being inserted";
     for (int i = o-1; i >= 0; i--){
         int m_anterior = inst_.machine(var.j,i); // pega as máquinas anteriores
@@ -1473,11 +1490,9 @@ bool Fernando::canInsert(S var){
     }
 
     // cout << "ok" <<endl;
-    
-    // getchar();
-    // cout << "check operations after the one being inserted: ";
-    
+
     // check operations after the one being inserted
+    // cout << "operations after the one being inserted" << endl;
     for (int i = o+1; i < inst_.m(); i++){
         int m_posterior = inst_.machine(var.j,i); // pega as máquinas anteriores
         // caso o tempo de inicio de uma tarefa que precise ser executada depois seja inferior ao tempo de início da tarefa que tentamos inserir, isso não deve acontecer
@@ -1489,4 +1504,162 @@ bool Fernando::canInsert(S var){
     // cout << "ok" <<endl;
     // getchar();
     return true;
+}
+
+
+int Fernando::fenchel_vars( deque<int> &vars){
+    const double *x = lp_x(mip);
+
+    unordered_set<vector<S>> solutions;
+    vector<S> v;
+    vector<S> v1;
+    for (unsigned i = 0; i < vars.size(); i++){
+        S aux;
+        sscanf(names[vars[i]].c_str(),"x(%d,%d,%d)",&aux.j,&aux.i,&aux.t);
+        
+        aux.i = aux.i - 1;
+        aux.j = aux.j - 1;
+        aux.var = xIdx_[aux.i][aux.j][aux.t];
+        
+        // cout << i << " " << vars[i] << " " <<names[vars[i]].c_str() << " " << x[vars[i]] << endl;
+        if (x[vars[i]] > 0.99999){
+            v1.emplace_back(aux);
+        } else {
+            v.emplace_back(aux);
+        }
+    }
+    // getchar();
+    clock_t begin = clock();
+
+    // cout << "variaveis" << endl;
+    // for (S s : v){
+        // cout << names[s.var] << " ";
+    // }
+    // cout << endl;
+    // getchar();
+
+    vector<S> solution;
+    enumeracao_fenchel(v,0,solutions,solution);
+
+
+    // getchar();
+    clock_t end = clock();
+    cout << "With " << v.size() + v1.size() << " variables, found " << solutions.size() << " enumerations in " << (double)(end - begin) / CLOCKS_PER_SEC << " secs" << endl;
+
+    if (limite_enumeracao){
+        cout << "Limite de enumeração chegado" << endl;
+        qtdLimitesEnumeracao++;
+        return 0;
+    }
+    // cout << "creating set. press enter" << endl;
+    // getchar();
+    // for (vector<S> v : solutions){
+        // cout << v.size() << ": ";
+        // for (S s : v){
+            // cout << names[s.var] << " ";
+        // }
+        // cout << endl;
+    // }
+    // if no enumerations found, end
+    if (solutions.size() == 0){
+        return 0;
+    }
+    LinearProgram *fenchel = lp_create();
+    lp_set_print_messages(fenchel,0);
+
+    vector< double > lb; // lower bound
+    vector< double > ub; // upper bound
+    vector< double > obj; // se é objetivo?
+    vector< char > integer; // variável inteira?
+    vector< string > lambda_names;
+
+    vector< vector< vector< int > > > lambdas = vector<vector<vector<int>>>(inst_.m(),vector<vector<int>>(inst_.n(),vector<int>(inst_.maxTime()+1,-1)));
+
+    unordered_set<S> set_vars;
+
+    for (vector<S> vec : solutions){
+        for (S s : vec){
+            if (lambdas[s.i][s.j][s.t] == -1){
+                lambdas[s.i][s.j][s.t] = lambda_names.size(); 
+                lambda_names.push_back("lambda("+to_string(s.j+1)+","+to_string(s.i+1)+","+to_string(s.t)+")"); // nome dessa variável
+                lb.push_back(0.0);
+                ub.push_back(1.0);
+                obj.push_back(-x[s.var]);
+                integer.push_back(0);
+            }
+        }
+    }
+
+    lp_add_cols( fenchel, obj, lb, ub, integer, lambda_names );
+
+    int cont = 0;
+    for (vector<S> vec : solutions){
+        vector< int > idx;
+        vector< double > coef;
+        for (S s : vec){
+            //cout << s.i << " " << s.j << " " << s.t << endl;
+            idx.push_back(lambdas[s.i][s.j][s.t]);
+            coef.push_back(1);
+        }
+        lp_add_row(fenchel, idx, coef, "sol("+to_string(cont)+")", 'L', 1.0 );
+        cont++;
+    }
+    
+    string filename = inst_.instanceName()+"_fenchel";
+    lp_write_lp(fenchel, (filename+".lp").c_str());
+    lp_optimize(fenchel);
+    cout << "time fenchel: " << lp_solution_time(fenchel) << endl;
+    const double *xf = lp_x(fenchel);
+    double total = 0;
+    for (unsigned int i = 0; i < lambda_names.size(); i++){
+        if (xf[i] > 0){
+            //cout << lambda_names[i] << " " << xf[i] << endl;
+
+            int mach = 0;
+            int job = 0;
+            int time = 0;
+            sscanf(lambda_names[i].c_str(),"lambda(%d,%d,%d)",&job,&mach,&time);
+            
+            // cout << lambda_names[i] << "(" << xf[i] <<")" << "*" << names[xIdx_[mach-1][job-1][time]] << "(" << x[xIdx_[mach-1][job-1][time]] <<")" << " + " << endl;
+            total += xf[i]*x[xIdx_[mach-1][job-1][time]];
+        }
+    }
+    // cout << total << endl;
+    if (total > LIMITE){
+        cout << "fenchel violado: " << total << endl;
+        vector< int > idx;
+        vector< double > coef;
+        for (unsigned int i = 0; i < lambda_names.size(); i++){
+            if (xf[i] > 0){
+                int mach = 0;
+                int job = 0;
+                int time = 0;
+                // cout << lambda_names[i].c_str() << " " << xf[i] << endl;
+                sscanf(lambda_names[i].c_str(),"lambda(%d,%d,%d)",&job,&mach,&time);
+                idx.push_back(xIdx_[mach-1][job-1][time]);
+                coef.push_back(xf[i]);
+            }
+        }
+
+        for (S s : v1){
+            idx.push_back(xIdx_[s.i][s.j][s.t]);
+            coef.push_back(1.0);
+        }
+        // for (unsigned int i = 0; i < idx.size(); i++){
+        //     cout << coef[i] << "*" << names[idx[i]] << " ";
+        // }
+        double c = 1 + (double)v1.size();
+        lp_add_row(mip, idx, coef, "fenchel("+to_string(totalFenchel)+")", 'L', c );
+        totalFenchel++;
+
+        lp_free(&fenchel);
+        // lp_write_lp(mip,"teste.lp");
+        return 1;
+    }
+    // getchar();
+    // delete []x;
+    // delete []xf;
+    lp_free(&fenchel);
+    return 0;
+    //getchar();
 }

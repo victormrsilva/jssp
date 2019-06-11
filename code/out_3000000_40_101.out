@@ -1,0 +1,1935 @@
+there are 6 jobs and 6 machines.
+6 6
+Fernando formulation selected
+Academic license - for non-commercial use only
+Number of variables: 2005
+restriction inicio_maquina added
+restriction fluxo_maquina added
+restriction inicio_espera added
+restriction fluxo_espera added
+ultimo_tempo constraints created
+makespan constraints created
+0
+7931
+arquivo criado
+7931
+Optimize a model with 1212 rows, 2005 columns and 5742 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 6e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 6e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 267 rows and 273 columns
+Presolve time: 0.00s
+Presolved: 945 rows, 1732 columns, 5312 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   1.800000e+01   0.000000e+00      0s
+    2044    5.0842105e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 2044 iterations and 0.19 seconds
+Optimal objective  5.084210526e+01
+iteracao 1
+With 40 variables, found 3000002 enumerations in 15.2988 secs.Limite de enumeração chegado
+With 40 variables, found 1961900 enumerations in 9.26493 secs. time fenchel: 10
+fenchel violado: 1.13333
+With 40 variables, found 1532966 enumerations in 7.4699 secs. time fenchel: 9
+fenchel violado: 1.13333
+With 40 variables, found 2511786 enumerations in 11.5573 secs. time fenchel: 13
+fenchel violado: 1.13333
+With 40 variables, found 2020550 enumerations in 9.68826 secs. time fenchel: 11
+fenchel violado: 1.13333
+With 40 variables, found 698716 enumerations in 3.52282 secs. time fenchel: 3
+fenchel violado: 1.13333
+With 40 variables, found 961125 enumerations in 5.03316 secs. time fenchel: 4
+fenchel violado: 1.13333
+With 40 variables, found 692783 enumerations in 3.61831 secs. time fenchel: 4
+fenchel violado: 1.13333
+With 40 variables, found 882919 enumerations in 4.51406 secs. time fenchel: 5
+fenchel violado: 1.13333
+With 40 variables, found 600488 enumerations in 2.89845 secs. time fenchel: 2
+With 40 variables, found 411283 enumerations in 2.09173 secs. time fenchel: 2
+fenchel violado: 1.17895
+With 40 variables, found 973179 enumerations in 5.0328 secs. time fenchel: 4
+fenchel violado: 1.17895
+With 40 variables, found 597903 enumerations in 3.0461 secs. time fenchel: 2
+fenchel violado: 1.17895
+With 40 variables, found 554829 enumerations in 2.72729 secs. time fenchel: 3
+fenchel violado: 1.17895
+With 40 variables, found 456090 enumerations in 2.45791 secs. time fenchel: 2
+fenchel violado: 1.17895
+With 40 variables, found 782463 enumerations in 3.95786 secs. time fenchel: 5
+fenchel violado: 1.08246
+With 40 variables, found 1051168 enumerations in 5.40341 secs. time fenchel: 4
+fenchel violado: 1.26316
+With 40 variables, found 799996 enumerations in 3.89407 secs. time fenchel: 4
+fenchel violado: 1.26316
+clique: 0 fenchel: 16
+lp after cuts: 50.8421. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 14.5551 secs.Limite de enumeração chegado
+With 40 variables, found 2160014 enumerations in 10.4694 secs. time fenchel: 11
+fenchel violado: 1.01212
+With 40 variables, found 1580442 enumerations in 7.89773 secs. time fenchel: 14
+fenchel violado: 1.03079
+With 40 variables, found 2518658 enumerations in 12.3881 secs. time fenchel: 25
+fenchel violado: 1.03079
+With 40 variables, found 1922828 enumerations in 8.71361 secs. time fenchel: 17
+fenchel violado: 1.03079
+With 40 variables, found 946490 enumerations in 4.84528 secs. time fenchel: 4
+fenchel violado: 1.01302
+With 40 variables, found 1042303 enumerations in 5.38823 secs. time fenchel: 4
+With 40 variables, found 854713 enumerations in 4.33427 secs. time fenchel: 4
+With 40 variables, found 654862 enumerations in 3.69281 secs. time fenchel: 2
+With 40 variables, found 588290 enumerations in 3.0122 secs. time fenchel: 3
+With 40 variables, found 657510 enumerations in 3.28474 secs. time fenchel: 3
+fenchel violado: 1.07274
+With 40 variables, found 1246197 enumerations in 6.2783 secs. time fenchel: 5
+fenchel violado: 1.07274
+With 40 variables, found 892314 enumerations in 3.99978 secs. time fenchel: 5
+fenchel violado: 1.08045
+With 40 variables, found 702146 enumerations in 3.30739 secs. time fenchel: 5
+fenchel violado: 1.08045
+With 40 variables, found 475740 enumerations in 2.42726 secs. time fenchel: 2
+fenchel violado: 1.18
+With 40 variables, found 957177 enumerations in 4.69776 secs. time fenchel: 4
+fenchel violado: 1.17223
+With 40 variables, found 1053518 enumerations in 5.072 secs. time fenchel: 5
+fenchel violado: 1.17736
+With 40 variables, found 1108850 enumerations in 5.15921 secs. time fenchel: 5
+fenchel violado: 1.18129
+clique: 0 fenchel: 13
+lp after cuts: 50.8421. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 15.6057 secs.Limite de enumeração chegado
+With 40 variables, found 3000002 enumerations in 13.9661 secs.Limite de enumeração chegado
+With 40 variables, found 2887232 enumerations in 14.2691 secs. time fenchel: 26
+With 40 variables, found 2564862 enumerations in 12.5552 secs. time fenchel: 13
+With 40 variables, found 2337794 enumerations in 11.5172 secs. time fenchel: 20
+With 40 variables, found 1116653 enumerations in 5.93232 secs. time fenchel: 5
+With 40 variables, found 1181273 enumerations in 6.22093 secs. time fenchel: 5
+fenchel violado: 1.11234
+With 40 variables, found 865549 enumerations in 4.35098 secs. time fenchel: 4
+fenchel violado: 1.11234
+With 40 variables, found 851587 enumerations in 4.61966 secs. time fenchel: 3
+fenchel violado: 1.11234
+With 40 variables, found 545697 enumerations in 3.18748 secs. time fenchel: 2
+fenchel violado: 1.11234
+With 40 variables, found 393107 enumerations in 2.10362 secs. time fenchel: 2
+fenchel violado: 1.11234
+With 40 variables, found 943281 enumerations in 5.16485 secs. time fenchel: 4
+fenchel violado: 1.14951
+With 40 variables, found 720342 enumerations in 3.70607 secs. time fenchel: 3
+fenchel violado: 1.14951
+With 40 variables, found 488058 enumerations in 2.56487 secs. time fenchel: 2
+fenchel violado: 1.14951
+With 40 variables, found 732965 enumerations in 3.75101 secs. time fenchel: 3
+fenchel violado: 1.11942
+With 40 variables, found 1592342 enumerations in 7.79365 secs. time fenchel: 8
+fenchel violado: 1.1708
+With 40 variables, found 936393 enumerations in 4.84825 secs. time fenchel: 5
+fenchel violado: 1.1708
+With 40 variables, found 901367 enumerations in 4.73681 secs. time fenchel: 5
+fenchel violado: 1.1708
+clique: 0 fenchel: 12
+lp after cuts: 50.8421. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 14.7194 secs.Limite de enumeração chegado
+With 40 variables, found 3000002 enumerations in 14.5841 secs.Limite de enumeração chegado
+With 40 variables, found 2056085 enumerations in 10.2264 secs. time fenchel: 15
+fenchel violado: 1.10081
+With 40 variables, found 1446800 enumerations in 7.43495 secs. time fenchel: 7
+fenchel violado: 1.10081
+With 40 variables, found 3000002 enumerations in 14.6698 secs.Limite de enumeração chegado
+With 40 variables, found 762000 enumerations in 4.10872 secs. time fenchel: 4
+fenchel violado: 1.09389
+With 40 variables, found 1207879 enumerations in 6.37845 secs. time fenchel: 5
+fenchel violado: 1.05708
+With 40 variables, found 769083 enumerations in 4.23041 secs. time fenchel: 3
+fenchel violado: 1.05708
+With 40 variables, found 1091430 enumerations in 4.61053 secs. time fenchel: 7
+fenchel violado: 1.05708
+With 40 variables, found 806824 enumerations in 3.37704 secs. time fenchel: 4
+With 40 variables, found 367205 enumerations in 1.64806 secs. time fenchel: 2
+With 40 variables, found 535899 enumerations in 2.36733 secs. time fenchel: 2
+fenchel violado: 1.11733
+With 40 variables, found 507750 enumerations in 2.23205 secs. time fenchel: 3
+fenchel violado: 1.11733
+With 40 variables, found 450344 enumerations in 2.0385 secs. time fenchel: 1
+fenchel violado: 1.11733
+With 40 variables, found 508002 enumerations in 2.32145 secs. time fenchel: 3
+fenchel violado: 1.11733
+With 40 variables, found 679282 enumerations in 3.52853 secs. time fenchel: 3
+fenchel violado: 1.20459
+With 40 variables, found 677741 enumerations in 2.95381 secs. time fenchel: 3
+fenchel violado: 1.20459
+With 40 variables, found 750796 enumerations in 2.87554 secs. time fenchel: 4
+fenchel violado: 1.20459
+clique: 0 fenchel: 13
+lp after cuts: 50.8421. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 15.7303 secs.Limite de enumeração chegado
+With 40 variables, found 2161622 enumerations in 10.9737 secs. time fenchel: 11
+fenchel violado: 1.09364
+With 40 variables, found 1986458 enumerations in 9.42322 secs. time fenchel: 13
+fenchel violado: 1.06009
+With 40 variables, found 1510704 enumerations in 7.63265 secs. time fenchel: 8
+fenchel violado: 1.06009
+With 40 variables, found 3000002 enumerations in 13.6743 secs.Limite de enumeração chegado
+With 40 variables, found 1016944 enumerations in 4.7858 secs. time fenchel: 5
+With 40 variables, found 1380793 enumerations in 7.28136 secs. time fenchel: 7
+With 40 variables, found 1344160 enumerations in 5.98072 secs. time fenchel: 10
+With 40 variables, found 1224658 enumerations in 5.82116 secs. time fenchel: 8
+With 40 variables, found 789436 enumerations in 3.90687 secs. time fenchel: 4
+With 40 variables, found 345378 enumerations in 1.87376 secs. time fenchel: 1
+fenchel violado: 1.0636
+With 40 variables, found 449978 enumerations in 2.31139 secs. time fenchel: 1
+fenchel violado: 1.01338
+With 40 variables, found 536502 enumerations in 2.55767 secs. time fenchel: 4
+fenchel violado: 1.01338
+With 40 variables, found 422858 enumerations in 2.15022 secs. time fenchel: 2
+fenchel violado: 1.01338
+With 40 variables, found 525288 enumerations in 2.69384 secs. time fenchel: 3
+fenchel violado: 1.0807
+With 40 variables, found 1068602 enumerations in 4.97833 secs. time fenchel: 5
+fenchel violado: 1.2136
+With 40 variables, found 766441 enumerations in 3.53925 secs. time fenchel: 3
+fenchel violado: 1.2136
+With 40 variables, found 593698 enumerations in 2.88709 secs. time fenchel: 2
+fenchel violado: 1.2136
+clique: 0 fenchel: 11
+lp after cuts: 50.8421. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 15.5021 secs.Limite de enumeração chegado
+With 40 variables, found 2300282 enumerations in 10.875 secs. time fenchel: 23
+With 40 variables, found 1928284 enumerations in 8.84292 secs. time fenchel: 18
+With 40 variables, found 1509800 enumerations in 7.22001 secs. time fenchel: 7
+fenchel violado: 1.01747
+With 40 variables, found 2581420 enumerations in 12.1418 secs. time fenchel: 24
+fenchel violado: 1.01747
+With 40 variables, found 1164597 enumerations in 4.72039 secs. time fenchel: 10
+With 40 variables, found 1458863 enumerations in 6.25682 secs. time fenchel: 6
+With 40 variables, found 1572646 enumerations in 6.10213 secs. time fenchel: 9
+With 40 variables, found 1245649 enumerations in 5.63384 secs. time fenchel: 6
+With 40 variables, found 1041917 enumerations in 4.43119 secs. time fenchel: 5
+With 40 variables, found 311401 enumerations in 1.60343 secs. time fenchel: 2
+With 40 variables, found 396607 enumerations in 1.8532 secs. time fenchel: 2
+fenchel violado: 1.02013
+With 40 variables, found 476968 enumerations in 2.44249 secs. time fenchel: 2
+fenchel violado: 1.06787
+With 40 variables, found 567814 enumerations in 2.88817 secs. time fenchel: 3
+fenchel violado: 1.02013
+With 40 variables, found 868391 enumerations in 4.2515 secs. time fenchel: 4
+fenchel violado: 1.02013
+With 40 variables, found 1703161 enumerations in 7.46198 secs. time fenchel: 8
+fenchel violado: 1.19773
+With 40 variables, found 925875 enumerations in 4.26561 secs. time fenchel: 4
+fenchel violado: 1.19773
+With 40 variables, found 703921 enumerations in 3.39572 secs. time fenchel: 3
+fenchel violado: 1.19773
+clique: 0 fenchel: 9
+lp after cuts: 50.8421. Time elapsed for optmization: 1
+With 40 variables, found 3000002 enumerations in 14.5425 secs.Limite de enumeração chegado
+With 40 variables, found 1833653 enumerations in 8.97786 secs. time fenchel: 15
+fenchel violado: 1.03462
+With 40 variables, found 1817838 enumerations in 8.55618 secs. time fenchel: 9
+With 40 variables, found 1363276 enumerations in 6.71425 secs. time fenchel: 17
+With 40 variables, found 2564564 enumerations in 12.4545 secs. time fenchel: 12
+fenchel violado: 1.0106
+With 40 variables, found 988021 enumerations in 4.20468 secs. time fenchel: 10
+With 40 variables, found 1349809 enumerations in 5.82634 secs. time fenchel: 10
+With 40 variables, found 1087532 enumerations in 5.04622 secs. time fenchel: 6
+With 40 variables, found 1215440 enumerations in 5.68161 secs. time fenchel: 7
+With 40 variables, found 922449 enumerations in 4.06569 secs. time fenchel: 5
+With 40 variables, found 342959 enumerations in 1.48991 secs. time fenchel: 2
+With 40 variables, found 559431 enumerations in 2.6128 secs. time fenchel: 3
+fenchel violado: 1.05388
+With 40 variables, found 546665 enumerations in 2.35032 secs. time fenchel: 3
+fenchel violado: 1.05388
+With 40 variables, found 608016 enumerations in 2.55781 secs. time fenchel: 2
+fenchel violado: 1.05388
+With 40 variables, found 1118405 enumerations in 4.54838 secs. time fenchel: 5
+fenchel violado: 1.01135
+With 40 variables, found 1345276 enumerations in 6.03659 secs. time fenchel: 6
+fenchel violado: 1.25404
+With 40 variables, found 1086956 enumerations in 4.26233 secs. time fenchel: 5
+fenchel violado: 1.25404
+With 40 variables, found 859536 enumerations in 3.22911 secs. time fenchel: 4
+fenchel violado: 1.25404
+clique: 0 fenchel: 9
+lp after cuts: 50.8421. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 15.5126 secs.Limite de enumeração chegado
+With 40 variables, found 2197517 enumerations in 9.86906 secs. time fenchel: 12
+fenchel violado: 1.02632
+With 40 variables, found 1983728 enumerations in 9.16139 secs. time fenchel: 17
+With 40 variables, found 1546748 enumerations in 7.3936 secs. time fenchel: 13
+With 40 variables, found 2654011 enumerations in 12.5173 secs. time fenchel: 22
+With 40 variables, found 1243717 enumerations in 5.69611 secs. time fenchel: 12
+With 40 variables, found 1144300 enumerations in 5.29292 secs. time fenchel: 7
+With 40 variables, found 1009741 enumerations in 4.82609 secs. time fenchel: 5
+With 40 variables, found 1466920 enumerations in 7.50107 secs. time fenchel: 9
+With 40 variables, found 1206844 enumerations in 5.65691 secs. time fenchel: 6
+With 40 variables, found 413696 enumerations in 2.10156 secs. time fenchel: 3
+With 40 variables, found 629437 enumerations in 3.20193 secs. time fenchel: 3
+fenchel violado: 1.11184
+With 40 variables, found 533488 enumerations in 2.68122 secs. time fenchel: 3
+fenchel violado: 1.11184
+With 40 variables, found 507345 enumerations in 2.50752 secs. time fenchel: 2
+fenchel violado: 1.1568
+With 40 variables, found 543346 enumerations in 2.8453 secs. time fenchel: 3
+fenchel violado: 1.19737
+With 40 variables, found 1245580 enumerations in 5.82378 secs. time fenchel: 6
+fenchel violado: 1.19737
+With 40 variables, found 918484 enumerations in 4.49019 secs. time fenchel: 4
+fenchel violado: 1.19737
+With 40 variables, found 861788 enumerations in 3.82763 secs. time fenchel: 4
+fenchel violado: 1.19737
+clique: 0 fenchel: 8
+lp after cuts: 50.8421. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 15.9315 secs.Limite de enumeração chegado
+With 40 variables, found 1939088 enumerations in 9.55611 secs. time fenchel: 16
+With 40 variables, found 1895340 enumerations in 9.36553 secs. time fenchel: 14
+With 40 variables, found 1535914 enumerations in 7.81824 secs. time fenchel: 18
+With 40 variables, found 2271163 enumerations in 11.4691 secs. time fenchel: 12
+With 40 variables, found 1081396 enumerations in 5.12291 secs. time fenchel: 8
+With 40 variables, found 1473420 enumerations in 6.26725 secs. time fenchel: 9
+With 40 variables, found 899421 enumerations in 4.36126 secs. time fenchel: 6
+With 40 variables, found 1233310 enumerations in 6.21332 secs. time fenchel: 8
+With 40 variables, found 871478 enumerations in 4.39846 secs. time fenchel: 4
+fenchel violado: 1.09742
+With 40 variables, found 394955 enumerations in 1.90149 secs. time fenchel: 2
+fenchel violado: 1.09742
+With 40 variables, found 498069 enumerations in 2.38131 secs. time fenchel: 2
+fenchel violado: 1.1672
+With 40 variables, found 386148 enumerations in 1.82615 secs. time fenchel: 2
+fenchel violado: 1.1672
+With 40 variables, found 480473 enumerations in 2.34151 secs. time fenchel: 2
+fenchel violado: 1.1672
+With 40 variables, found 918850 enumerations in 4.04976 secs. time fenchel: 5
+fenchel violado: 1.1672
+With 40 variables, found 1256006 enumerations in 5.35993 secs. time fenchel: 6
+fenchel violado: 1.17065
+With 40 variables, found 877353 enumerations in 3.77579 secs. time fenchel: 4
+fenchel violado: 1.26316
+With 40 variables, found 753192 enumerations in 3.28663 secs. time fenchel: 3
+fenchel violado: 1.17065
+clique: 0 fenchel: 9
+lp after cuts: 50.8421. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 15.3827 secs.Limite de enumeração chegado
+With 40 variables, found 1927313 enumerations in 9.17371 secs. time fenchel: 14
+With 40 variables, found 1897400 enumerations in 8.96977 secs. time fenchel: 14
+With 40 variables, found 2564015 enumerations in 12.9179 secs. time fenchel: 13
+With 40 variables, found 2469579 enumerations in 12.3206 secs. time fenchel: 17
+With 40 variables, found 1343913 enumerations in 6.45563 secs. time fenchel: 11
+With 40 variables, found 1295377 enumerations in 6.61383 secs. time fenchel: 8
+With 40 variables, found 931612 enumerations in 4.76085 secs. time fenchel: 4
+With 40 variables, found 1037762 enumerations in 5.18909 secs. time fenchel: 4
+With 40 variables, found 877723 enumerations in 4.44065 secs. time fenchel: 4
+With 40 variables, found 420704 enumerations in 1.98588 secs. time fenchel: 2
+fenchel violado: 1.16903
+With 40 variables, found 738422 enumerations in 3.45919 secs. time fenchel: 3
+fenchel violado: 1.16903
+With 40 variables, found 505300 enumerations in 2.29166 secs. time fenchel: 2
+fenchel violado: 1.16903
+With 40 variables, found 406618 enumerations in 1.95917 secs. time fenchel: 2
+fenchel violado: 1.16903
+With 40 variables, found 527290 enumerations in 2.42296 secs. time fenchel: 2
+fenchel violado: 1.16903
+With 40 variables, found 541550 enumerations in 2.63977 secs. time fenchel: 3
+fenchel violado: 1.16903
+With 40 variables, found 647194 enumerations in 2.96692 secs. time fenchel: 3
+fenchel violado: 1.13276
+With 40 variables, found 528927 enumerations in 2.6434 secs. time fenchel: 2
+fenchel violado: 1.21053
+With 40 variables, found 260192 enumerations in 1.28853 secs. time fenchel: 1
+fenchel violado: 1.21053
+clique: 0 fenchel: 9
+lp after cuts: 50.8421. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 15.0528 secs.Limite de enumeração chegado
+With 40 variables, found 1768840 enumerations in 8.87632 secs. time fenchel: 8
+fenchel violado: 1.03813
+With 40 variables, found 1780900 enumerations in 8.92264 secs. time fenchel: 8
+With 40 variables, found 2338724 enumerations in 12.432 secs. time fenchel: 16
+With 40 variables, found 2283138 enumerations in 11.8533 secs. time fenchel: 11
+With 40 variables, found 1422047 enumerations in 6.5733 secs. time fenchel: 8
+With 40 variables, found 1670087 enumerations in 7.90815 secs. time fenchel: 8
+With 40 variables, found 1044119 enumerations in 4.62396 secs. time fenchel: 5
+With 40 variables, found 1912891 enumerations in 8.90433 secs. time fenchel: 8
+With 40 variables, found 893608 enumerations in 4.44616 secs. time fenchel: 4
+With 40 variables, found 499806 enumerations in 2.09958 secs. time fenchel: 2
+fenchel violado: 1.0533
+With 40 variables, found 1052973 enumerations in 4.66947 secs. time fenchel: 4
+fenchel violado: 1.0533
+With 40 variables, found 356585 enumerations in 1.80707 secs. time fenchel: 1
+fenchel violado: 1.0533
+With 40 variables, found 470738 enumerations in 2.28854 secs. time fenchel: 1
+fenchel violado: 1.0533
+With 40 variables, found 671057 enumerations in 3.23129 secs. time fenchel: 3
+fenchel violado: 1.0533
+With 40 variables, found 1439026 enumerations in 6.40327 secs. time fenchel: 7
+fenchel violado: 1.0533
+With 40 variables, found 898134 enumerations in 3.39385 secs. time fenchel: 4
+fenchel violado: 1.16595
+With 40 variables, found 799451 enumerations in 3.39361 secs. time fenchel: 4
+fenchel violado: 1.06337
+With 40 variables, found 444624 enumerations in 2.11942 secs. time fenchel: 2
+fenchel violado: 1.26316
+clique: 0 fenchel: 10
+lp after cuts: 50.8421. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 14.099 secs.Limite de enumeração chegado
+With 40 variables, found 1920488 enumerations in 8.64623 secs. time fenchel: 9
+fenchel violado: 1.15789
+With 40 variables, found 1978178 enumerations in 9.56746 secs. time fenchel: 13
+With 40 variables, found 3000002 enumerations in 13.6774 secs.Limite de enumeração chegado
+With 40 variables, found 3000002 enumerations in 14.1322 secs.Limite de enumeração chegado
+With 40 variables, found 1032167 enumerations in 4.84066 secs. time fenchel: 4
+With 40 variables, found 1129706 enumerations in 5.78657 secs. time fenchel: 5
+With 40 variables, found 808929 enumerations in 4.13944 secs. time fenchel: 5
+With 40 variables, found 1327606 enumerations in 6.89534 secs. time fenchel: 5
+With 40 variables, found 651674 enumerations in 3.42029 secs. time fenchel: 3
+With 40 variables, found 557627 enumerations in 2.68054 secs. time fenchel: 4
+With 40 variables, found 980994 enumerations in 4.48007 secs. time fenchel: 6
+With 40 variables, found 479106 enumerations in 2.36579 secs. time fenchel: 2
+fenchel violado: 1.06316
+With 40 variables, found 514426 enumerations in 2.54028 secs. time fenchel: 2
+fenchel violado: 1.06316
+With 40 variables, found 625218 enumerations in 3.29344 secs. time fenchel: 2
+fenchel violado: 1.19649
+With 40 variables, found 1303256 enumerations in 6.15781 secs. time fenchel: 9
+fenchel violado: 1.1614
+With 40 variables, found 971997 enumerations in 4.63801 secs. time fenchel: 4
+fenchel violado: 1.15789
+clique: 0 fenchel: 6
+lp after cuts: 50.8421. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 14.2046 secs.Limite de enumeração chegado
+With 40 variables, found 1996757 enumerations in 9.04357 secs. time fenchel: 10
+fenchel violado: 1.14876
+With 40 variables, found 2078896 enumerations in 10.0652 secs. time fenchel: 9
+With 40 variables, found 2420178 enumerations in 12.9917 secs. time fenchel: 12
+With 40 variables, found 2448068 enumerations in 12.7787 secs. time fenchel: 14
+With 40 variables, found 988483 enumerations in 5.03252 secs. time fenchel: 6
+With 40 variables, found 1455318 enumerations in 6.85435 secs. time fenchel: 6
+With 40 variables, found 1094259 enumerations in 5.12894 secs. time fenchel: 6
+With 40 variables, found 1403312 enumerations in 7.28753 secs. time fenchel: 6
+With 40 variables, found 576712 enumerations in 3.22142 secs. time fenchel: 3
+With 40 variables, found 519780 enumerations in 2.62665 secs. time fenchel: 2
+fenchel violado: 1.10103
+With 40 variables, found 884423 enumerations in 4.36056 secs. time fenchel: 4
+fenchel violado: 1.10103
+With 40 variables, found 489492 enumerations in 2.44408 secs. time fenchel: 2
+fenchel violado: 1.10494
+With 40 variables, found 457941 enumerations in 2.28772 secs. time fenchel: 2
+fenchel violado: 1.10494
+With 40 variables, found 508007 enumerations in 2.43216 secs. time fenchel: 3
+fenchel violado: 1.10494
+With 40 variables, found 797750 enumerations in 3.74811 secs. time fenchel: 4
+fenchel violado: 1.10494
+With 40 variables, found 829889 enumerations in 3.8766 secs. time fenchel: 4
+fenchel violado: 1.10103
+With 40 variables, found 713320 enumerations in 3.23988 secs. time fenchel: 5
+fenchel violado: 1.10678
+clique: 0 fenchel: 9
+lp after cuts: 50.8421. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 14.2401 secs.Limite de enumeração chegado
+With 40 variables, found 1728294 enumerations in 8.45347 secs. time fenchel: 8
+With 40 variables, found 1800250 enumerations in 8.69379 secs. time fenchel: 13
+With 40 variables, found 2457510 enumerations in 11.7629 secs. time fenchel: 12
+With 40 variables, found 2125639 enumerations in 10.2263 secs. time fenchel: 10
+With 40 variables, found 990438 enumerations in 4.48862 secs. time fenchel: 7
+With 40 variables, found 1541034 enumerations in 6.88983 secs. time fenchel: 10
+With 40 variables, found 858793 enumerations in 4.05222 secs. time fenchel: 3
+With 40 variables, found 1109865 enumerations in 5.75072 secs. time fenchel: 4
+With 40 variables, found 606262 enumerations in 3.0046 secs. time fenchel: 3
+fenchel violado: 1.08201
+With 40 variables, found 385358 enumerations in 2.03047 secs. time fenchel: 2
+fenchel violado: 1.08201
+With 40 variables, found 927546 enumerations in 4.39228 secs. time fenchel: 4
+fenchel violado: 1.08201
+With 40 variables, found 500459 enumerations in 2.44223 secs. time fenchel: 2
+fenchel violado: 1.1097
+With 40 variables, found 438194 enumerations in 2.20232 secs. time fenchel: 1
+fenchel violado: 1.1097
+With 40 variables, found 392530 enumerations in 2.03355 secs. time fenchel: 2
+fenchel violado: 1.14596
+With 40 variables, found 721483 enumerations in 3.60433 secs. time fenchel: 3
+fenchel violado: 1.14596
+With 40 variables, found 724495 enumerations in 3.39401 secs. time fenchel: 3
+fenchel violado: 1.14596
+With 40 variables, found 616634 enumerations in 3.16413 secs. time fenchel: 2
+fenchel violado: 1.15483
+clique: 0 fenchel: 9
+lp after cuts: 50.8421. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 14.4505 secs.Limite de enumeração chegado
+With 40 variables, found 2614134 enumerations in 12.8212 secs. time fenchel: 20
+With 40 variables, found 1966854 enumerations in 9.29745 secs. time fenchel: 15
+With 40 variables, found 1637208 enumerations in 7.66309 secs. time fenchel: 12
+With 40 variables, found 1886409 enumerations in 8.64549 secs. time fenchel: 15
+With 40 variables, found 750701 enumerations in 3.61749 secs. time fenchel: 3
+With 40 variables, found 1233983 enumerations in 5.78997 secs. time fenchel: 8
+With 40 variables, found 812618 enumerations in 4.0075 secs. time fenchel: 6
+With 40 variables, found 960549 enumerations in 4.84959 secs. time fenchel: 4
+With 40 variables, found 694735 enumerations in 3.42851 secs. time fenchel: 3
+fenchel violado: 1.08726
+With 40 variables, found 409194 enumerations in 2.1638 secs. time fenchel: 2
+fenchel violado: 1.08726
+With 40 variables, found 630326 enumerations in 3.32015 secs. time fenchel: 2
+fenchel violado: 1.08726
+With 40 variables, found 351625 enumerations in 1.8525 secs. time fenchel: 1
+fenchel violado: 1.14479
+With 40 variables, found 407391 enumerations in 2.22198 secs. time fenchel: 2
+fenchel violado: 1.08726
+With 40 variables, found 363349 enumerations in 2.16265 secs. time fenchel: 2
+fenchel violado: 1.08726
+With 40 variables, found 711995 enumerations in 3.7777 secs. time fenchel: 4
+fenchel violado: 1.08726
+With 40 variables, found 819085 enumerations in 4.36148 secs. time fenchel: 5
+fenchel violado: 1.07272
+With 40 variables, found 730160 enumerations in 3.87035 secs. time fenchel: 3
+fenchel violado: 1.07272
+clique: 0 fenchel: 9
+lp after cuts: 50.8421. Time elapsed for optmization: 0
+With 40 variables, found 2593230 enumerations in 13.5373 secs. time fenchel: 12
+fenchel violado: 1.14241
+With 40 variables, found 1177202 enumerations in 6.04478 secs. time fenchel: 4
+fenchel violado: 1.14241
+With 40 variables, found 1498634 enumerations in 7.30046 secs. time fenchel: 6
+fenchel violado: 1.14241
+With 40 variables, found 1716192 enumerations in 8.33579 secs. time fenchel: 7
+fenchel violado: 1.14241
+With 40 variables, found 3000002 enumerations in 14.172 secs.Limite de enumeração chegado
+With 40 variables, found 1113510 enumerations in 5.57858 secs. time fenchel: 4
+With 40 variables, found 858072 enumerations in 4.21407 secs. time fenchel: 3
+With 40 variables, found 659274 enumerations in 3.2206 secs. time fenchel: 6
+With 40 variables, found 913753 enumerations in 4.22773 secs. time fenchel: 8
+With 40 variables, found 858151 enumerations in 3.75288 secs. time fenchel: 3
+With 40 variables, found 567578 enumerations in 2.68615 secs. time fenchel: 4
+With 40 variables, found 820415 enumerations in 3.98593 secs. time fenchel: 5
+With 40 variables, found 495663 enumerations in 2.49818 secs. time fenchel: 1
+fenchel violado: 1.14347
+With 40 variables, found 526009 enumerations in 2.849 secs. time fenchel: 2
+fenchel violado: 1.14347
+With 40 variables, found 570379 enumerations in 2.92805 secs. time fenchel: 3
+fenchel violado: 1.14347
+With 40 variables, found 739248 enumerations in 3.54822 secs. time fenchel: 3
+fenchel violado: 1.11971
+With 40 variables, found 869020 enumerations in 4.30141 secs. time fenchel: 4
+fenchel violado: 1.11971
+With 40 variables, found 693273 enumerations in 3.55658 secs. time fenchel: 4
+fenchel violado: 1.11971
+clique: 0 fenchel: 10
+lp after cuts: 50.8421. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 15.6295 secs.Limite de enumeração chegado
+With 40 variables, found 2387308 enumerations in 11.922 secs. time fenchel: 11
+With 40 variables, found 2236366 enumerations in 11.2932 secs. time fenchel: 11
+With 40 variables, found 1824426 enumerations in 9.02966 secs. time fenchel: 8
+With 40 variables, found 3000002 enumerations in 13.7623 secs.Limite de enumeração chegado
+With 40 variables, found 1103342 enumerations in 5.59237 secs. time fenchel: 5
+With 40 variables, found 1009258 enumerations in 4.81906 secs. time fenchel: 11
+With 40 variables, found 570981 enumerations in 3.0205 secs. time fenchel: 7
+With 40 variables, found 885324 enumerations in 4.26794 secs. time fenchel: 10
+With 40 variables, found 808216 enumerations in 3.71368 secs. time fenchel: 5
+With 40 variables, found 397046 enumerations in 1.88711 secs. time fenchel: 3
+fenchel violado: 1.02202
+With 40 variables, found 632976 enumerations in 3.17124 secs. time fenchel: 2
+With 40 variables, found 380079 enumerations in 2.0655 secs. time fenchel: 2
+fenchel violado: 1.0234
+With 40 variables, found 648306 enumerations in 3.27653 secs. time fenchel: 3
+fenchel violado: 1.0234
+With 40 variables, found 812027 enumerations in 3.76256 secs. time fenchel: 5
+fenchel violado: 1.04702
+With 40 variables, found 974540 enumerations in 4.46187 secs. time fenchel: 8
+fenchel violado: 1.04702
+With 40 variables, found 851522 enumerations in 4.19132 secs. time fenchel: 3
+fenchel violado: 1.05757
+With 40 variables, found 676577 enumerations in 3.66275 secs. time fenchel: 5
+fenchel violado: 1.05757
+clique: 0 fenchel: 7
+lp after cuts: 50.8421. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 15.0225 secs.Limite de enumeração chegado
+With 40 variables, found 1931235 enumerations in 9.35112 secs. time fenchel: 14
+With 40 variables, found 2601810 enumerations in 13.0588 secs. time fenchel: 13
+With 40 variables, found 1851053 enumerations in 9.46604 secs. time fenchel: 14
+With 40 variables, found 2867438 enumerations in 14.1213 secs. time fenchel: 27
+With 40 variables, found 940601 enumerations in 4.38435 secs. time fenchel: 4
+With 40 variables, found 980931 enumerations in 4.784 secs. time fenchel: 10
+With 40 variables, found 575587 enumerations in 3.04712 secs. time fenchel: 7
+With 40 variables, found 927077 enumerations in 4.88485 secs. time fenchel: 11
+With 40 variables, found 815705 enumerations in 4.02189 secs. time fenchel: 3
+fenchel violado: 1.04919
+With 40 variables, found 470943 enumerations in 2.29121 secs. time fenchel: 2
+With 40 variables, found 810560 enumerations in 3.89109 secs. time fenchel: 5
+fenchel violado: 1.02715
+With 40 variables, found 485953 enumerations in 2.38389 secs. time fenchel: 2
+fenchel violado: 1.05201
+With 40 variables, found 688386 enumerations in 3.17525 secs. time fenchel: 4
+fenchel violado: 1.06015
+With 40 variables, found 722723 enumerations in 3.16693 secs. time fenchel: 3
+fenchel violado: 1.06015
+With 40 variables, found 948830 enumerations in 4.38027 secs. time fenchel: 4
+fenchel violado: 1.06015
+With 40 variables, found 1184972 enumerations in 5.16906 secs. time fenchel: 5
+fenchel violado: 1.06015
+With 40 variables, found 1029561 enumerations in 4.49715 secs. time fenchel: 4
+fenchel violado: 1.06015
+clique: 0 fenchel: 8
+lp after cuts: 50.8421. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 14.8249 secs.Limite de enumeração chegado
+With 40 variables, found 1448449 enumerations in 7.02508 secs. time fenchel: 7
+With 40 variables, found 2035681 enumerations in 10.8625 secs. time fenchel: 10
+With 40 variables, found 1565368 enumerations in 8.40609 secs. time fenchel: 7
+With 40 variables, found 2519215 enumerations in 13.1566 secs. time fenchel: 16
+With 40 variables, found 898511 enumerations in 4.34329 secs. time fenchel: 9
+With 40 variables, found 906026 enumerations in 4.455 secs. time fenchel: 10
+With 40 variables, found 575805 enumerations in 2.90485 secs. time fenchel: 6
+With 40 variables, found 1123449 enumerations in 5.76401 secs. time fenchel: 5
+With 40 variables, found 856120 enumerations in 3.91301 secs. time fenchel: 3
+With 40 variables, found 484631 enumerations in 2.38275 secs. time fenchel: 2
+With 40 variables, found 693994 enumerations in 3.41796 secs. time fenchel: 3
+fenchel violado: 1.10615
+With 40 variables, found 422435 enumerations in 2.03044 secs. time fenchel: 2
+fenchel violado: 1.10615
+With 40 variables, found 607172 enumerations in 3.05793 secs. time fenchel: 2
+fenchel violado: 1.10615
+With 40 variables, found 716359 enumerations in 3.54096 secs. time fenchel: 3
+fenchel violado: 1.10615
+With 40 variables, found 1010626 enumerations in 4.62738 secs. time fenchel: 5
+fenchel violado: 1.10615
+With 40 variables, found 1235478 enumerations in 5.63398 secs. time fenchel: 7
+fenchel violado: 1.05333
+With 40 variables, found 849076 enumerations in 4.02419 secs. time fenchel: 3
+fenchel violado: 1.07137
+clique: 0 fenchel: 7
+lp after cuts: 50.8421. Time elapsed for optmization: 0
+With 40 variables, found 2523182 enumerations in 12.081 secs. time fenchel: 13
+fenchel violado: 1.18596
+With 40 variables, found 1949292 enumerations in 8.29444 secs. time fenchel: 9
+fenchel violado: 1.04211
+With 40 variables, found 1201870 enumerations in 5.91335 secs. time fenchel: 5
+fenchel violado: 1.04211
+With 40 variables, found 1615026 enumerations in 7.73805 secs. time fenchel: 8
+fenchel violado: 1.04211
+With 40 variables, found 2364316 enumerations in 11.7662 secs. time fenchel: 25
+With 40 variables, found 1011805 enumerations in 4.69002 secs. time fenchel: 5
+fenchel violado: 1.04211
+With 40 variables, found 1026584 enumerations in 4.88653 secs. time fenchel: 4
+With 40 variables, found 831846 enumerations in 3.86109 secs. time fenchel: 4
+With 40 variables, found 1526640 enumerations in 7.41575 secs. time fenchel: 12
+With 40 variables, found 849403 enumerations in 4.32597 secs. time fenchel: 3
+With 40 variables, found 507435 enumerations in 2.6094 secs. time fenchel: 2
+fenchel violado: 1.04411
+With 40 variables, found 726492 enumerations in 3.53315 secs. time fenchel: 3
+fenchel violado: 1.03358
+With 40 variables, found 615666 enumerations in 3.08624 secs. time fenchel: 3
+fenchel violado: 1.08535
+With 40 variables, found 897007 enumerations in 3.91539 secs. time fenchel: 5
+fenchel violado: 1.08535
+With 40 variables, found 1011382 enumerations in 4.5253 secs. time fenchel: 6
+fenchel violado: 1.11601
+With 40 variables, found 1245020 enumerations in 5.42406 secs. time fenchel: 7
+fenchel violado: 1.01647
+With 40 variables, found 1109761 enumerations in 4.87853 secs. time fenchel: 6
+fenchel violado: 1.02632
+With 40 variables, found 818380 enumerations in 4.07219 secs. time fenchel: 8
+fenchel violado: 1.02632
+clique: 0 fenchel: 13
+lp after cuts: 50.8437. Time elapsed for optmization: 0
+With 40 variables, found 2879546 enumerations in 14.6678 secs. time fenchel: 14
+fenchel violado: 1.13968
+With 40 variables, found 1409040 enumerations in 7.0175 secs. time fenchel: 7
+fenchel violado: 1.03245
+With 40 variables, found 2060612 enumerations in 10.7838 secs. time fenchel: 17
+With 40 variables, found 1612055 enumerations in 8.49855 secs. time fenchel: 9
+With 40 variables, found 2600917 enumerations in 13.5358 secs. time fenchel: 13
+With 40 variables, found 753714 enumerations in 3.97978 secs. time fenchel: 3
+With 40 variables, found 824467 enumerations in 4.06981 secs. time fenchel: 7
+With 40 variables, found 896704 enumerations in 3.89825 secs. time fenchel: 8
+With 40 variables, found 889337 enumerations in 4.6182 secs. time fenchel: 8
+With 40 variables, found 833875 enumerations in 3.86474 secs. time fenchel: 4
+With 40 variables, found 754427 enumerations in 3.28871 secs. time fenchel: 3
+With 40 variables, found 700708 enumerations in 3.29104 secs. time fenchel: 4
+With 40 variables, found 463729 enumerations in 2.32489 secs. time fenchel: 2
+With 40 variables, found 681814 enumerations in 3.14296 secs. time fenchel: 4
+With 40 variables, found 829683 enumerations in 3.87099 secs. time fenchel: 4
+fenchel violado: 1.03591
+With 40 variables, found 1153946 enumerations in 5.34433 secs. time fenchel: 9
+fenchel violado: 1.03591
+With 40 variables, found 1205863 enumerations in 5.97638 secs. time fenchel: 6
+fenchel violado: 1.05384
+With 40 variables, found 957819 enumerations in 4.49059 secs. time fenchel: 4
+fenchel violado: 1.05384
+clique: 0 fenchel: 6
+lp after cuts: 50.8444. Time elapsed for optmization: 0
+With 40 variables, found 2630972 enumerations in 13.4886 secs. time fenchel: 13
+fenchel violado: 1.2
+With 40 variables, found 1484226 enumerations in 7.32401 secs. time fenchel: 9
+fenchel violado: 1.06667
+With 40 variables, found 2217496 enumerations in 12.2376 secs. time fenchel: 14
+fenchel violado: 1.06667
+With 40 variables, found 3000002 enumerations in 15.7032 secs.Limite de enumeração chegado
+With 40 variables, found 3000002 enumerations in 15.3373 secs.Limite de enumeração chegado
+With 40 variables, found 916675 enumerations in 5.02752 secs. time fenchel: 6
+With 40 variables, found 922519 enumerations in 4.83215 secs. time fenchel: 6
+With 40 variables, found 749347 enumerations in 3.85682 secs. time fenchel: 3
+With 40 variables, found 1001306 enumerations in 5.24651 secs. time fenchel: 7
+With 40 variables, found 409957 enumerations in 2.29452 secs. time fenchel: 1
+With 40 variables, found 674860 enumerations in 3.18894 secs. time fenchel: 5
+With 40 variables, found 982158 enumerations in 5.511 secs. time fenchel: 5
+With 40 variables, found 884372 enumerations in 4.20453 secs. time fenchel: 7
+With 40 variables, found 847330 enumerations in 3.93616 secs. time fenchel: 3
+With 40 variables, found 820464 enumerations in 4.2848 secs. time fenchel: 4
+fenchel violado: 1.12222
+With 40 variables, found 1884100 enumerations in 9.44553 secs. time fenchel: 16
+fenchel violado: 1.01085
+With 40 variables, found 1139430 enumerations in 5.59097 secs. time fenchel: 6
+fenchel violado: 1.12222
+With 40 variables, found 1014321 enumerations in 4.83304 secs. time fenchel: 6
+fenchel violado: 1.12222
+clique: 0 fenchel: 7
+lp after cuts: 50.8444. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 14.3041 secs.Limite de enumeração chegado
+With 40 variables, found 1690242 enumerations in 8.58127 secs. time fenchel: 13
+With 40 variables, found 2785588 enumerations in 14.5558 secs. time fenchel: 13
+With 40 variables, found 3000002 enumerations in 15.1533 secs.Limite de enumeração chegado
+With 40 variables, found 3000002 enumerations in 15.6424 secs.Limite de enumeração chegado
+With 40 variables, found 1115127 enumerations in 5.18901 secs. time fenchel: 5
+With 40 variables, found 1063447 enumerations in 5.60359 secs. time fenchel: 7
+With 40 variables, found 764062 enumerations in 3.84662 secs. time fenchel: 3
+With 40 variables, found 1092103 enumerations in 5.66464 secs. time fenchel: 10
+With 40 variables, found 568800 enumerations in 2.93828 secs. time fenchel: 4
+With 40 variables, found 531258 enumerations in 2.73335 secs. time fenchel: 2
+fenchel violado: 1.13333
+With 40 variables, found 1062118 enumerations in 5.54769 secs. time fenchel: 8
+With 40 variables, found 1153868 enumerations in 5.16115 secs. time fenchel: 8
+With 40 variables, found 1001348 enumerations in 4.52111 secs. time fenchel: 6
+fenchel violado: 1.06329
+With 40 variables, found 931605 enumerations in 4.62369 secs. time fenchel: 4
+fenchel violado: 1.07979
+With 40 variables, found 1906574 enumerations in 9.27335 secs. time fenchel: 9
+fenchel violado: 1.11111
+With 40 variables, found 1233843 enumerations in 5.69435 secs. time fenchel: 7
+fenchel violado: 1.11111
+With 40 variables, found 1145019 enumerations in 5.46768 secs. time fenchel: 6
+fenchel violado: 1.11111
+clique: 0 fenchel: 6
+lp after cuts: 50.8486. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 14.3058 secs.Limite de enumeração chegado
+With 40 variables, found 2615148 enumerations in 13.0561 secs. time fenchel: 17
+fenchel violado: 1.03686
+With 40 variables, found 3000002 enumerations in 14.725 secs.Limite de enumeração chegado
+With 40 variables, found 2952642 enumerations in 14.4952 secs. time fenchel: 18
+With 40 variables, found 2224618 enumerations in 10.4474 secs. time fenchel: 15
+With 40 variables, found 1107302 enumerations in 5.33519 secs. time fenchel: 4
+fenchel violado: 1.03686
+With 40 variables, found 665046 enumerations in 3.29197 secs. time fenchel: 4
+fenchel violado: 1.03686
+With 40 variables, found 528122 enumerations in 2.55448 secs. time fenchel: 3
+fenchel violado: 1.03686
+With 40 variables, found 662440 enumerations in 3.28132 secs. time fenchel: 4
+With 40 variables, found 528773 enumerations in 2.50724 secs. time fenchel: 3
+With 40 variables, found 532892 enumerations in 2.52381 secs. time fenchel: 3
+With 40 variables, found 1038224 enumerations in 4.91227 secs. time fenchel: 4
+With 40 variables, found 764710 enumerations in 3.57734 secs. time fenchel: 3
+With 40 variables, found 769528 enumerations in 3.5334 secs. time fenchel: 3
+fenchel violado: 1.03849
+With 40 variables, found 828651 enumerations in 4.00823 secs. time fenchel: 5
+fenchel violado: 1.03849
+With 40 variables, found 1746300 enumerations in 7.77463 secs. time fenchel: 11
+fenchel violado: 1.04497
+With 40 variables, found 937784 enumerations in 4.33483 secs. time fenchel: 4
+fenchel violado: 1.04497
+With 40 variables, found 1004596 enumerations in 4.15679 secs. time fenchel: 9
+fenchel violado: 1.04497
+clique: 0 fenchel: 9
+lp after cuts: 50.8486. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 14.4463 secs.Limite de enumeração chegado
+With 40 variables, found 2479464 enumerations in 12.3365 secs. time fenchel: 13
+fenchel violado: 1.18131
+With 40 variables, found 3000002 enumerations in 14.9177 secs.Limite de enumeração chegado
+With 40 variables, found 2851108 enumerations in 14.1346 secs. time fenchel: 14
+With 40 variables, found 2729944 enumerations in 12.5463 secs. time fenchel: 14
+With 40 variables, found 1461031 enumerations in 6.80605 secs. time fenchel: 6
+With 40 variables, found 1056663 enumerations in 5.20341 secs. time fenchel: 5
+With 40 variables, found 900832 enumerations in 4.47143 secs. time fenchel: 6
+With 40 variables, found 1333350 enumerations in 6.33552 secs. time fenchel: 5
+With 40 variables, found 608441 enumerations in 2.98802 secs. time fenchel: 2
+With 40 variables, found 534325 enumerations in 2.56264 secs. time fenchel: 2
+With 40 variables, found 1324956 enumerations in 5.97295 secs. time fenchel: 6
+With 40 variables, found 635706 enumerations in 3.31014 secs. time fenchel: 2
+fenchel violado: 1.07063
+With 40 variables, found 645920 enumerations in 3.43287 secs. time fenchel: 2
+fenchel violado: 1.07063
+With 40 variables, found 629689 enumerations in 3.5264 secs. time fenchel: 2
+With 40 variables, found 1469084 enumerations in 7.54629 secs. time fenchel: 10
+With 40 variables, found 1072616 enumerations in 4.57005 secs. time fenchel: 6
+fenchel violado: 1.01133
+With 40 variables, found 1011437 enumerations in 4.4698 secs. time fenchel: 6
+fenchel violado: 1.0151
+clique: 0 fenchel: 5
+lp after cuts: 50.8486. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 14.4415 secs.Limite de enumeração chegado
+With 40 variables, found 2750044 enumerations in 13.5163 secs. time fenchel: 16
+With 40 variables, found 3000002 enumerations in 15.1557 secs.Limite de enumeração chegado
+With 40 variables, found 2868447 enumerations in 13.2602 secs. time fenchel: 17
+With 40 variables, found 2356623 enumerations in 11.3722 secs. time fenchel: 11
+With 40 variables, found 1661892 enumerations in 7.95141 secs. time fenchel: 7
+With 40 variables, found 1342178 enumerations in 6.24893 secs. time fenchel: 6
+With 40 variables, found 1109057 enumerations in 5.20937 secs. time fenchel: 5
+With 40 variables, found 1388262 enumerations in 6.12849 secs. time fenchel: 6
+With 40 variables, found 681965 enumerations in 3.30527 secs. time fenchel: 4
+With 40 variables, found 537394 enumerations in 2.42742 secs. time fenchel: 3
+With 40 variables, found 1016090 enumerations in 4.52002 secs. time fenchel: 5
+With 40 variables, found 706224 enumerations in 3.43639 secs. time fenchel: 4
+With 40 variables, found 665132 enumerations in 3.34214 secs. time fenchel: 3
+With 40 variables, found 711163 enumerations in 3.67876 secs. time fenchel: 6
+With 40 variables, found 1572294 enumerations in 8.05924 secs. time fenchel: 8
+With 40 variables, found 893993 enumerations in 4.17717 secs. time fenchel: 7
+With 40 variables, found 820348 enumerations in 4.20995 secs. time fenchel: 6
+clique: 0 fenchel: 0
+lp after cuts: 50.8486. Time elapsed for optmization: 0
+qtd cortes: clique: 0 fenchel: 230
+
+C: 51 soma: 53.2437 soma - C: 2.24368
+lp_add_row: repeated name: fim(1). previous use was index 1206
+
+C: 51 soma: 52.2004 soma - C: 1.20043
+lp_add_row: repeated name: fim(2). previous use was index 1206
+
+C: 51 soma: 52.3981 soma - C: 1.39811
+lp_add_row: repeated name: fim(3). previous use was index 1206
+
+C: 51 soma: 53.4061 soma - C: 2.40606
+lp_add_row: repeated name: fim(4). previous use was index 1206
+
+C: 51 soma: 52.0821 soma - C: 1.08209
+lp_add_row: repeated name: fim(5). previous use was index 1206
+
+C: 51 soma: 51.6722 soma - C: 0.672175
+lp_add_row: repeated name: fim(6). previous use was index 1206
+Optimize a model with 1442 rows, 2005 columns and 7230 nonzeros
+Coefficient statistics:
+  Matrix range     [2e-01, 6e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 6e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 375 rows and 270 columns
+Presolve time: 0.01s
+Presolved: 1067 rows, 1735 columns, 6195 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   2.550000e+01   0.000000e+00      0s
+    3082    5.2089655e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 3082 iterations and 0.39 seconds
+Optimal objective  5.208965517e+01
+Lifting solved for c = 51. Files ft06_lifting.lp e ft06_lifting.sol successfully created.
+iteracao 2
+With 40 variables, found 1338578 enumerations in 6.22965 secs. time fenchel: 6
+With 40 variables, found 1568018 enumerations in 6.96113 secs. time fenchel: 8
+With 40 variables, found 1801666 enumerations in 8.46656 secs. time fenchel: 11
+With 40 variables, found 1464966 enumerations in 7.12244 secs. time fenchel: 6
+fenchel violado: 1.02261
+With 40 variables, found 908491 enumerations in 4.63368 secs. time fenchel: 5
+fenchel violado: 1.08654
+With 40 variables, found 1883876 enumerations in 8.83144 secs. time fenchel: 9
+fenchel violado: 1.08654
+With 40 variables, found 2181894 enumerations in 10.048 secs. time fenchel: 16
+With 40 variables, found 1238643 enumerations in 5.59467 secs. time fenchel: 6
+fenchel violado: 1.08654
+With 40 variables, found 896376 enumerations in 4.67763 secs. time fenchel: 4
+fenchel violado: 1.08654
+With 40 variables, found 413496 enumerations in 2.13777 secs. time fenchel: 2
+fenchel violado: 1.08654
+With 40 variables, found 462897 enumerations in 2.46785 secs. time fenchel: 1
+fenchel violado: 1.08654
+With 40 variables, found 708938 enumerations in 3.54993 secs. time fenchel: 3
+fenchel violado: 1.08654
+With 40 variables, found 1060074 enumerations in 5.00486 secs. time fenchel: 6
+fenchel violado: 1.03514
+With 40 variables, found 907003 enumerations in 4.27188 secs. time fenchel: 5
+fenchel violado: 1.03727
+With 40 variables, found 851914 enumerations in 3.85258 secs. time fenchel: 4
+fenchel violado: 1.03727
+With 40 variables, found 664313 enumerations in 3.04587 secs. time fenchel: 4
+fenchel violado: 1.03727
+With 40 variables, found 731234 enumerations in 3.46048 secs. time fenchel: 3
+fenchel violado: 1.03727
+With 40 variables, found 822116 enumerations in 3.96996 secs. time fenchel: 5
+fenchel violado: 1.03727
+clique: 0 fenchel: 14
+lp after cuts: 52.0897. Time elapsed for optmization: 0
+With 40 variables, found 1531054 enumerations in 6.90625 secs. time fenchel: 10
+fenchel violado: 1.08966
+With 40 variables, found 1404810 enumerations in 6.30894 secs. time fenchel: 6
+With 40 variables, found 1961364 enumerations in 8.77567 secs. time fenchel: 9
+With 40 variables, found 1509762 enumerations in 6.97163 secs. time fenchel: 7
+With 40 variables, found 916006 enumerations in 4.5309 secs. time fenchel: 5
+With 40 variables, found 1859089 enumerations in 8.22639 secs. time fenchel: 9
+With 40 variables, found 2747226 enumerations in 9.01803 secs. time fenchel: 19
+With 40 variables, found 1329471 enumerations in 5.17703 secs. time fenchel: 6
+With 40 variables, found 1007474 enumerations in 4.52443 secs. time fenchel: 5
+fenchel violado: 1.01773
+With 40 variables, found 427161 enumerations in 2.08732 secs. time fenchel: 1
+fenchel violado: 1.01773
+With 40 variables, found 528277 enumerations in 2.63793 secs. time fenchel: 3
+With 40 variables, found 756074 enumerations in 3.53462 secs. time fenchel: 3
+fenchel violado: 1.01773
+With 40 variables, found 1044966 enumerations in 5.01712 secs. time fenchel: 4
+fenchel violado: 1.01951
+With 40 variables, found 838634 enumerations in 4.13421 secs. time fenchel: 3
+fenchel violado: 1.14828
+With 40 variables, found 893930 enumerations in 3.68448 secs. time fenchel: 6
+fenchel violado: 1.01242
+With 40 variables, found 569874 enumerations in 2.54032 secs. time fenchel: 3
+fenchel violado: 1.03268
+With 40 variables, found 730244 enumerations in 3.39689 secs. time fenchel: 3
+fenchel violado: 1.15829
+With 40 variables, found 737768 enumerations in 3.46554 secs. time fenchel: 3
+fenchel violado: 1.15829
+clique: 0 fenchel: 10
+lp after cuts: 52.0897. Time elapsed for optmization: 0
+With 40 variables, found 1340436 enumerations in 6.18487 secs. time fenchel: 6
+With 40 variables, found 1852476 enumerations in 7.68847 secs. time fenchel: 12
+With 40 variables, found 2046602 enumerations in 8.9803 secs. time fenchel: 10
+With 40 variables, found 2218736 enumerations in 9.9275 secs. time fenchel: 13
+With 40 variables, found 1491513 enumerations in 6.78552 secs. time fenchel: 8
+With 40 variables, found 1926264 enumerations in 8.3819 secs. time fenchel: 13
+With 40 variables, found 2438468 enumerations in 9.69177 secs. time fenchel: 15
+With 40 variables, found 1520061 enumerations in 6.56267 secs. time fenchel: 7
+With 40 variables, found 1229987 enumerations in 5.96824 secs. time fenchel: 7
+With 40 variables, found 389827 enumerations in 1.90551 secs. time fenchel: 2
+fenchel violado: 1.08812
+With 40 variables, found 405241 enumerations in 2.1737 secs. time fenchel: 1
+fenchel violado: 1.10421
+With 40 variables, found 592159 enumerations in 3.09056 secs. time fenchel: 2
+fenchel violado: 1.10421
+With 40 variables, found 734953 enumerations in 3.26963 secs. time fenchel: 3
+fenchel violado: 1.10421
+With 40 variables, found 463854 enumerations in 2.2942 secs. time fenchel: 2
+fenchel violado: 1.10421
+With 40 variables, found 504837 enumerations in 2.51182 secs. time fenchel: 2
+fenchel violado: 1.10421
+With 40 variables, found 913467 enumerations in 4.18947 secs. time fenchel: 4
+fenchel violado: 1.10421
+With 40 variables, found 914378 enumerations in 4.1891 secs. time fenchel: 5
+fenchel violado: 1.09962
+With 40 variables, found 890016 enumerations in 3.96153 secs. time fenchel: 4
+fenchel violado: 1.09962
+clique: 0 fenchel: 9
+lp after cuts: 52.0897. Time elapsed for optmization: 0
+With 40 variables, found 2259647 enumerations in 9.95437 secs. time fenchel: 15
+With 40 variables, found 2269454 enumerations in 9.8477 secs. time fenchel: 13
+With 40 variables, found 2654599 enumerations in 11.9392 secs. time fenchel: 13
+With 40 variables, found 2189652 enumerations in 10.4203 secs. time fenchel: 11
+With 40 variables, found 1422082 enumerations in 6.68824 secs. time fenchel: 9
+With 40 variables, found 1716355 enumerations in 7.265 secs. time fenchel: 9
+With 40 variables, found 1949342 enumerations in 8.1229 secs. time fenchel: 10
+With 40 variables, found 1095103 enumerations in 5.09041 secs. time fenchel: 8
+With 40 variables, found 641898 enumerations in 3.4736 secs. time fenchel: 2
+With 40 variables, found 447568 enumerations in 2.24493 secs. time fenchel: 2
+fenchel violado: 1.01232
+With 40 variables, found 528355 enumerations in 2.40504 secs. time fenchel: 3
+fenchel violado: 1.01232
+With 40 variables, found 937323 enumerations in 4.40924 secs. time fenchel: 4
+fenchel violado: 1.01232
+With 40 variables, found 810859 enumerations in 3.6093 secs. time fenchel: 4
+fenchel violado: 1.01232
+With 40 variables, found 650262 enumerations in 3.07258 secs. time fenchel: 3
+fenchel violado: 1.05653
+With 40 variables, found 650002 enumerations in 3.15473 secs. time fenchel: 2
+fenchel violado: 1.01232
+With 40 variables, found 935510 enumerations in 4.43119 secs. time fenchel: 4
+With 40 variables, found 1220470 enumerations in 5.15857 secs. time fenchel: 7
+With 40 variables, found 1091134 enumerations in 5.22221 secs. time fenchel: 6
+clique: 0 fenchel: 6
+lp after cuts: 52.0897. Time elapsed for optmization: 0
+With 40 variables, found 2259647 enumerations in 9.92061 secs. time fenchel: 16
+With 40 variables, found 2366252 enumerations in 9.95277 secs. time fenchel: 14
+With 40 variables, found 2686481 enumerations in 12.1419 secs. time fenchel: 18
+With 40 variables, found 2056856 enumerations in 9.28813 secs. time fenchel: 13
+With 40 variables, found 1434668 enumerations in 6.77782 secs. time fenchel: 9
+With 40 variables, found 1719900 enumerations in 7.42589 secs. time fenchel: 9
+With 40 variables, found 1958378 enumerations in 8.19358 secs. time fenchel: 10
+With 40 variables, found 979756 enumerations in 4.84992 secs. time fenchel: 7
+With 40 variables, found 813358 enumerations in 4.03533 secs. time fenchel: 4
+With 40 variables, found 488227 enumerations in 2.22848 secs. time fenchel: 2
+With 40 variables, found 452913 enumerations in 2.03228 secs. time fenchel: 2
+With 40 variables, found 885649 enumerations in 3.97382 secs. time fenchel: 6
+With 40 variables, found 973398 enumerations in 4.22005 secs. time fenchel: 5
+With 40 variables, found 849376 enumerations in 3.37032 secs. time fenchel: 3
+fenchel violado: 1.09852
+With 40 variables, found 865313 enumerations in 3.30138 secs. time fenchel: 4
+fenchel violado: 1.09852
+With 40 variables, found 1027000 enumerations in 4.53381 secs. time fenchel: 5
+With 40 variables, found 1111367 enumerations in 4.98505 secs. time fenchel: 5
+With 40 variables, found 1169531 enumerations in 4.92335 secs. time fenchel: 7
+clique: 0 fenchel: 2
+lp after cuts: 52.0897. Time elapsed for optmization: 1
+With 40 variables, found 1802976 enumerations in 8.80702 secs. time fenchel: 9
+fenchel violado: 1.08966
+With 40 variables, found 2359640 enumerations in 10.0293 secs. time fenchel: 11
+With 40 variables, found 3000002 enumerations in 12.5684 secs.Limite de enumeração chegado
+With 40 variables, found 2146474 enumerations in 9.97941 secs. time fenchel: 12
+With 40 variables, found 1293362 enumerations in 6.5831 secs. time fenchel: 7
+With 40 variables, found 1777841 enumerations in 7.83129 secs. time fenchel: 8
+With 40 variables, found 1754610 enumerations in 8.04175 secs. time fenchel: 13
+With 40 variables, found 857570 enumerations in 4.25486 secs. time fenchel: 4
+With 40 variables, found 650975 enumerations in 3.5762 secs. time fenchel: 2
+With 40 variables, found 482903 enumerations in 2.31722 secs. time fenchel: 2
+With 40 variables, found 531563 enumerations in 2.57267 secs. time fenchel: 3
+With 40 variables, found 855378 enumerations in 3.84346 secs. time fenchel: 4
+With 40 variables, found 933745 enumerations in 4.39158 secs. time fenchel: 3
+With 40 variables, found 579518 enumerations in 2.72072 secs. time fenchel: 3
+With 40 variables, found 730898 enumerations in 3.31098 secs. time fenchel: 2
+With 40 variables, found 1359316 enumerations in 5.63853 secs. time fenchel: 9
+With 40 variables, found 1242802 enumerations in 5.87068 secs. time fenchel: 6
+fenchel violado: 1.11609
+With 40 variables, found 1111060 enumerations in 5.01772 secs. time fenchel: 5
+fenchel violado: 1.11609
+clique: 0 fenchel: 3
+lp after cuts: 52.0897. Time elapsed for optmization: 0
+With 40 variables, found 2527162 enumerations in 11.1349 secs. time fenchel: 13
+With 40 variables, found 2306628 enumerations in 10.4134 secs. time fenchel: 16
+With 40 variables, found 2402094 enumerations in 11.2253 secs. time fenchel: 15
+With 40 variables, found 2428238 enumerations in 11.3681 secs. time fenchel: 12
+With 40 variables, found 1577863 enumerations in 7.53972 secs. time fenchel: 7
+With 40 variables, found 1656966 enumerations in 7.64511 secs. time fenchel: 10
+With 40 variables, found 2234050 enumerations in 9.66191 secs. time fenchel: 10
+With 40 variables, found 1354464 enumerations in 5.79527 secs. time fenchel: 12
+With 40 variables, found 1407654 enumerations in 6.20756 secs. time fenchel: 8
+With 40 variables, found 582054 enumerations in 2.68429 secs. time fenchel: 3
+With 40 variables, found 523775 enumerations in 2.34363 secs. time fenchel: 3
+With 40 variables, found 754863 enumerations in 3.42371 secs. time fenchel: 3
+With 40 variables, found 445483 enumerations in 2.331 secs. time fenchel: 2
+With 40 variables, found 600636 enumerations in 2.89683 secs. time fenchel: 3
+With 40 variables, found 625611 enumerations in 3.15154 secs. time fenchel: 2
+With 40 variables, found 1053470 enumerations in 4.80736 secs. time fenchel: 4
+With 40 variables, found 1193601 enumerations in 5.77955 secs. time fenchel: 4
+With 40 variables, found 995345 enumerations in 4.68337 secs. time fenchel: 5
+clique: 0 fenchel: 0
+lp after cuts: 52.0897. Time elapsed for optmization: 0
+qtd cortes: clique: 0 fenchel: 44
+
+C: 53 soma: 53.4534 soma - C: 0.453448
+lp_add_row: repeated name: fim(1). previous use was index 1436
+
+C: 53 soma: 53.3517 soma - C: 0.351724
+lp_add_row: repeated name: fim(2). previous use was index 1436
+
+C: 53 soma: 53.5448 soma - C: 0.544828
+lp_add_row: repeated name: fim(3). previous use was index 1436
+
+C: 53 soma: 53.5379 soma - C: 0.537931
+lp_add_row: repeated name: fim(4). previous use was index 1436
+
+C: 53 soma: 53.4552 soma - C: 0.455172
+lp_add_row: repeated name: fim(5). previous use was index 1436
+
+C: 53 soma: 53.5448 soma - C: 0.544828
+lp_add_row: repeated name: fim(6). previous use was index 1436
+Optimize a model with 1486 rows, 2005 columns and 7458 nonzeros
+Coefficient statistics:
+  Matrix range     [2e-01, 6e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 6e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 394 rows and 264 columns
+Presolve time: 0.01s
+Presolved: 1092 rows, 1741 columns, 6299 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   2.500000e+01   0.000000e+00      0s
+    3056    5.3245868e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 3056 iterations and 0.37 seconds
+Optimal objective  5.324586834e+01
+Lifting solved for c = 53. Files ft06_lifting.lp e ft06_lifting.sol successfully created.
+iteracao 3
+With 40 variables, found 3000002 enumerations in 16.0307 secs.Limite de enumeração chegado
+With 40 variables, found 3000002 enumerations in 14.9124 secs.Limite de enumeração chegado
+With 40 variables, found 3000002 enumerations in 14.5345 secs.Limite de enumeração chegado
+With 40 variables, found 3000002 enumerations in 13.8131 secs.Limite de enumeração chegado
+With 40 variables, found 2850276 enumerations in 13.9661 secs. time fenchel: 14
+With 40 variables, found 2481866 enumerations in 13.1986 secs. time fenchel: 13
+With 40 variables, found 1864554 enumerations in 10.1552 secs. time fenchel: 8
+With 40 variables, found 1217749 enumerations in 5.87561 secs. time fenchel: 6
+With 40 variables, found 1322163 enumerations in 6.25258 secs. time fenchel: 6
+fenchel violado: 1.29545
+With 40 variables, found 908361 enumerations in 4.2907 secs. time fenchel: 4
+fenchel violado: 1.29545
+With 40 variables, found 499933 enumerations in 2.45877 secs. time fenchel: 2
+fenchel violado: 1.29545
+With 40 variables, found 568634 enumerations in 2.85538 secs. time fenchel: 2
+fenchel violado: 1.29545
+With 40 variables, found 604668 enumerations in 3.02542 secs. time fenchel: 2
+fenchel violado: 1.37847
+With 40 variables, found 1174342 enumerations in 5.5042 secs. time fenchel: 5
+fenchel violado: 1.29545
+With 40 variables, found 1277842 enumerations in 6.52949 secs. time fenchel: 5
+fenchel violado: 1.25553
+With 40 variables, found 817593 enumerations in 3.89045 secs. time fenchel: 3
+fenchel violado: 1.37847
+With 40 variables, found 1064231 enumerations in 5.36979 secs. time fenchel: 5
+fenchel violado: 1.37847
+With 40 variables, found 1009301 enumerations in 4.74062 secs. time fenchel: 4
+fenchel violado: 1.37847
+clique: 0 fenchel: 10
+lp after cuts: 53.2535. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 17.1621 secs.Limite de enumeração chegado
+With 40 variables, found 2350012 enumerations in 14.1478 secs. time fenchel: 11
+With 40 variables, found 2529012 enumerations in 14.9389 secs. time fenchel: 12
+With 40 variables, found 3000002 enumerations in 15.6973 secs.Limite de enumeração chegado
+With 40 variables, found 1981058 enumerations in 10.61 secs. time fenchel: 10
+With 40 variables, found 3000002 enumerations in 16.1673 secs.Limite de enumeração chegado
+With 40 variables, found 2722308 enumerations in 15.2517 secs. time fenchel: 13
+With 40 variables, found 1340103 enumerations in 7.48228 secs. time fenchel: 5
+With 40 variables, found 1531742 enumerations in 7.92136 secs. time fenchel: 9
+With 40 variables, found 693900 enumerations in 3.73285 secs. time fenchel: 4
+With 40 variables, found 478977 enumerations in 2.67474 secs. time fenchel: 2
+With 40 variables, found 661738 enumerations in 2.75039 secs. time fenchel: 3
+fenchel violado: 1.17041
+With 40 variables, found 1028320 enumerations in 4.51047 secs. time fenchel: 4
+fenchel violado: 1.17041
+With 40 variables, found 957700 enumerations in 3.98679 secs. time fenchel: 4
+fenchel violado: 1.17041
+With 40 variables, found 2347434 enumerations in 10.904 secs. time fenchel: 11
+fenchel violado: 1.17041
+With 40 variables, found 1212160 enumerations in 6.25911 secs. time fenchel: 5
+fenchel violado: 1.17041
+With 40 variables, found 1042681 enumerations in 5.23592 secs. time fenchel: 4
+fenchel violado: 1.17041
+With 40 variables, found 1004846 enumerations in 5.074 secs. time fenchel: 3
+fenchel violado: 1.17041
+clique: 0 fenchel: 7
+lp after cuts: 53.2537. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 16.4846 secs.Limite de enumeração chegado
+With 40 variables, found 2650542 enumerations in 14.5562 secs. time fenchel: 14
+With 40 variables, found 2521512 enumerations in 14.3487 secs. time fenchel: 15
+With 40 variables, found 2647608 enumerations in 13.5853 secs. time fenchel: 15
+With 40 variables, found 1758408 enumerations in 8.53266 secs. time fenchel: 8
+With 40 variables, found 1993112 enumerations in 10.216 secs. time fenchel: 9
+With 40 variables, found 1875582 enumerations in 9.62727 secs. time fenchel: 8
+With 40 variables, found 1207565 enumerations in 5.46581 secs. time fenchel: 5
+With 40 variables, found 1403229 enumerations in 7.22305 secs. time fenchel: 6
+With 40 variables, found 863940 enumerations in 4.11092 secs. time fenchel: 3
+With 40 variables, found 494624 enumerations in 2.51228 secs. time fenchel: 2
+With 40 variables, found 573338 enumerations in 2.82568 secs. time fenchel: 3
+With 40 variables, found 811202 enumerations in 3.538 secs. time fenchel: 5
+With 40 variables, found 998802 enumerations in 4.50025 secs. time fenchel: 6
+With 40 variables, found 1714444 enumerations in 8.37661 secs. time fenchel: 7
+fenchel violado: 1.03949
+With 40 variables, found 1313441 enumerations in 6.26697 secs. time fenchel: 5
+fenchel violado: 1.16636
+With 40 variables, found 967012 enumerations in 4.70791 secs. time fenchel: 4
+fenchel violado: 1.16636
+With 40 variables, found 1037230 enumerations in 4.52302 secs. time fenchel: 4
+fenchel violado: 1.16636
+clique: 0 fenchel: 4
+lp after cuts: 53.2537. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 16.0851 secs.Limite de enumeração chegado
+With 40 variables, found 2342521 enumerations in 13.4776 secs. time fenchel: 13
+With 40 variables, found 3000002 enumerations in 15.6286 secs.Limite de enumeração chegado
+With 40 variables, found 2711488 enumerations in 13.8194 secs. time fenchel: 16
+With 40 variables, found 2035900 enumerations in 9.45078 secs. time fenchel: 10
+With 40 variables, found 2054825 enumerations in 10.7207 secs. time fenchel: 10
+With 40 variables, found 1665773 enumerations in 9.40599 secs. time fenchel: 7
+With 40 variables, found 1261821 enumerations in 6.04046 secs. time fenchel: 5
+With 40 variables, found 1599751 enumerations in 7.78493 secs. time fenchel: 8
+With 40 variables, found 729660 enumerations in 3.93716 secs. time fenchel: 3
+With 40 variables, found 564264 enumerations in 2.89379 secs. time fenchel: 2
+With 40 variables, found 565726 enumerations in 2.86178 secs. time fenchel: 3
+With 40 variables, found 881320 enumerations in 4.30764 secs. time fenchel: 5
+With 40 variables, found 885542 enumerations in 4.32151 secs. time fenchel: 5
+With 40 variables, found 1416834 enumerations in 6.51559 secs. time fenchel: 8
+With 40 variables, found 1294782 enumerations in 6.55555 secs. time fenchel: 6
+fenchel violado: 1.12608
+With 40 variables, found 761826 enumerations in 3.80224 secs. time fenchel: 2
+fenchel violado: 1.12608
+With 40 variables, found 803049 enumerations in 4.00894 secs. time fenchel: 3
+fenchel violado: 1.12608
+With 40 variables, found 1027446 enumerations in 4.21262 secs. time fenchel: 4
+fenchel violado: 1.12608
+clique: 0 fenchel: 4
+lp after cuts: 53.2537. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 14.0712 secs.Limite de enumeração chegado
+With 40 variables, found 2544939 enumerations in 12.7159 secs. time fenchel: 14
+With 40 variables, found 3000002 enumerations in 14.408 secs.Limite de enumeração chegado
+With 40 variables, found 3000002 enumerations in 15.2602 secs.Limite de enumeração chegado
+With 40 variables, found 2252254 enumerations in 11.2443 secs. time fenchel: 12
+With 40 variables, found 2766148 enumerations in 15.0115 secs. time fenchel: 13
+With 40 variables, found 2114150 enumerations in 11.8888 secs. time fenchel: 10
+With 40 variables, found 1742180 enumerations in 8.41358 secs. time fenchel: 9
+With 40 variables, found 1976444 enumerations in 10.1918 secs. time fenchel: 10
+With 40 variables, found 758330 enumerations in 3.98378 secs. time fenchel: 3
+With 40 variables, found 565431 enumerations in 3.01367 secs. time fenchel: 3
+fenchel violado: 1.02642
+With 40 variables, found 624845 enumerations in 2.97352 secs. time fenchel: 3
+With 40 variables, found 1299473 enumerations in 6.49238 secs. time fenchel: 6
+With 40 variables, found 984522 enumerations in 4.66415 secs. time fenchel: 5
+With 40 variables, found 1782277 enumerations in 8.23315 secs. time fenchel: 7
+With 40 variables, found 1552951 enumerations in 7.14435 secs. time fenchel: 6
+With 40 variables, found 763761 enumerations in 3.74451 secs. time fenchel: 3
+With 40 variables, found 877576 enumerations in 4.44446 secs. time fenchel: 4
+With 40 variables, found 869424 enumerations in 3.91199 secs. time fenchel: 3
+fenchel violado: 1.07596
+clique: 0 fenchel: 2
+lp after cuts: 53.2539. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 15.1885 secs.Limite de enumeração chegado
+With 40 variables, found 3000002 enumerations in 15.1855 secs.Limite de enumeração chegado
+With 40 variables, found 3000002 enumerations in 15.4699 secs.Limite de enumeração chegado
+With 40 variables, found 3000002 enumerations in 16.1511 secs.Limite de enumeração chegado
+With 40 variables, found 3000002 enumerations in 14.6579 secs.Limite de enumeração chegado
+With 40 variables, found 3000002 enumerations in 15.3845 secs.Limite de enumeração chegado
+With 40 variables, found 3000002 enumerations in 15.5929 secs.Limite de enumeração chegado
+With 40 variables, found 1748995 enumerations in 9.30771 secs. time fenchel: 8
+With 40 variables, found 2112108 enumerations in 11.5302 secs. time fenchel: 10
+With 40 variables, found 757340 enumerations in 4.20389 secs. time fenchel: 3
+With 40 variables, found 603801 enumerations in 3.10291 secs. time fenchel: 2
+With 40 variables, found 465650 enumerations in 2.41154 secs. time fenchel: 2
+With 40 variables, found 1135193 enumerations in 5.96152 secs. time fenchel: 5
+With 40 variables, found 856636 enumerations in 4.53465 secs. time fenchel: 3
+With 40 variables, found 1610439 enumerations in 7.74814 secs. time fenchel: 7
+With 40 variables, found 1830458 enumerations in 7.82594 secs. time fenchel: 11
+With 40 variables, found 945094 enumerations in 4.6545 secs. time fenchel: 4
+With 40 variables, found 1188005 enumerations in 5.38235 secs. time fenchel: 5
+With 40 variables, found 866216 enumerations in 3.79185 secs. time fenchel: 3
+fenchel violado: 1.08706
+clique: 0 fenchel: 1
+lp after cuts: 53.2539. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 15.3944 secs.Limite de enumeração chegado
+With 40 variables, found 3000002 enumerations in 15.5614 secs.Limite de enumeração chegado
+With 40 variables, found 3000002 enumerations in 14.9087 secs.Limite de enumeração chegado
+With 40 variables, found 3000002 enumerations in 15.2061 secs.Limite de enumeração chegado
+With 40 variables, found 2203060 enumerations in 11.9621 secs. time fenchel: 10
+With 40 variables, found 3000002 enumerations in 15.9048 secs.Limite de enumeração chegado
+With 40 variables, found 2429159 enumerations in 13.8034 secs. time fenchel: 12
+With 40 variables, found 1760713 enumerations in 8.7146 secs. time fenchel: 8
+With 40 variables, found 1870064 enumerations in 9.75648 secs. time fenchel: 8
+With 40 variables, found 761650 enumerations in 3.99804 secs. time fenchel: 3
+With 40 variables, found 642512 enumerations in 3.09848 secs. time fenchel: 2
+With 40 variables, found 449474 enumerations in 2.24861 secs. time fenchel: 1
+With 40 variables, found 1127140 enumerations in 5.58102 secs. time fenchel: 4
+With 40 variables, found 1187548 enumerations in 4.93494 secs. time fenchel: 5
+With 40 variables, found 1576664 enumerations in 7.21622 secs. time fenchel: 6
+With 40 variables, found 1109159 enumerations in 5.76206 secs. time fenchel: 5
+fenchel violado: 1.03402
+With 40 variables, found 758870 enumerations in 3.76056 secs. time fenchel: 3
+fenchel violado: 1.08868
+With 40 variables, found 810802 enumerations in 4.02363 secs. time fenchel: 3
+fenchel violado: 1.08868
+With 40 variables, found 677606 enumerations in 3.14094 secs. time fenchel: 3
+fenchel violado: 1.08868
+clique: 0 fenchel: 4
+lp after cuts: 53.2539. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 15.453 secs.Limite de enumeração chegado
+With 40 variables, found 2814085 enumerations in 15.0849 secs. time fenchel: 13
+With 40 variables, found 3000002 enumerations in 15.1778 secs.Limite de enumeração chegado
+With 40 variables, found 3000002 enumerations in 14.7552 secs.Limite de enumeração chegado
+With 40 variables, found 2190856 enumerations in 11.5465 secs. time fenchel: 12
+With 40 variables, found 3000002 enumerations in 15.8015 secs.Limite de enumeração chegado
+With 40 variables, found 2372317 enumerations in 13.2485 secs. time fenchel: 14
+With 40 variables, found 1745972 enumerations in 8.58414 secs. time fenchel: 9
+With 40 variables, found 2807001 enumerations in 12.8068 secs. time fenchel: 13
+With 40 variables, found 813142 enumerations in 4.46498 secs. time fenchel: 4
+With 40 variables, found 623030 enumerations in 3.14226 secs. time fenchel: 3
+With 40 variables, found 431954 enumerations in 2.35255 secs. time fenchel: 2
+With 40 variables, found 961534 enumerations in 5.09579 secs. time fenchel: 4
+With 40 variables, found 836699 enumerations in 4.1361 secs. time fenchel: 4
+With 40 variables, found 1318440 enumerations in 6.4581 secs. time fenchel: 6
+With 40 variables, found 1177749 enumerations in 6.07604 secs. time fenchel: 5
+With 40 variables, found 686407 enumerations in 3.49951 secs. time fenchel: 3
+With 40 variables, found 864276 enumerations in 4.06378 secs. time fenchel: 4
+fenchel violado: 1.0221
+With 40 variables, found 606611 enumerations in 2.93896 secs. time fenchel: 3
+fenchel violado: 1.06048
+clique: 0 fenchel: 2
+lp after cuts: 53.2539. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 15.4766 secs.Limite de enumeração chegado
+With 40 variables, found 3000002 enumerations in 14.97 secs.Limite de enumeração chegado
+With 40 variables, found 3000002 enumerations in 15.8566 secs.Limite de enumeração chegado
+With 40 variables, found 3000002 enumerations in 14.5943 secs.Limite de enumeração chegado
+With 40 variables, found 2203182 enumerations in 11.6152 secs. time fenchel: 10
+With 40 variables, found 3000002 enumerations in 15.0182 secs.Limite de enumeração chegado
+With 40 variables, found 2363137 enumerations in 13.0227 secs. time fenchel: 11
+With 40 variables, found 1090721 enumerations in 6.42977 secs. time fenchel: 4
+With 40 variables, found 1271421 enumerations in 7.02912 secs. time fenchel: 5
+With 40 variables, found 779054 enumerations in 3.68948 secs. time fenchel: 3
+With 40 variables, found 510406 enumerations in 2.6638 secs. time fenchel: 2
+With 40 variables, found 451414 enumerations in 2.38126 secs. time fenchel: 2
+With 40 variables, found 1131638 enumerations in 5.896 secs. time fenchel: 4
+With 40 variables, found 681757 enumerations in 3.66554 secs. time fenchel: 4
+With 40 variables, found 1561468 enumerations in 7.52109 secs. time fenchel: 7
+With 40 variables, found 1249814 enumerations in 6.19027 secs. time fenchel: 6
+With 40 variables, found 687847 enumerations in 3.57975 secs. time fenchel: 4
+With 40 variables, found 962926 enumerations in 4.5287 secs. time fenchel: 4
+With 40 variables, found 532634 enumerations in 2.79515 secs. time fenchel: 3
+fenchel violado: 1.02259
+clique: 0 fenchel: 1
+lp after cuts: 53.2539. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 15.4578 secs.Limite de enumeração chegado
+With 40 variables, found 3000002 enumerations in 14.9637 secs.Limite de enumeração chegado
+With 40 variables, found 3000002 enumerations in 15.8594 secs.Limite de enumeração chegado
+With 40 variables, found 3000002 enumerations in 14.5205 secs.Limite de enumeração chegado
+With 40 variables, found 2203182 enumerations in 11.4485 secs. time fenchel: 10
+With 40 variables, found 3000002 enumerations in 15.014 secs.Limite de enumeração chegado
+With 40 variables, found 2363489 enumerations in 13.0673 secs. time fenchel: 13
+With 40 variables, found 1090721 enumerations in 6.44973 secs. time fenchel: 4
+With 40 variables, found 1271421 enumerations in 7.09974 secs. time fenchel: 5
+With 40 variables, found 779054 enumerations in 3.72182 secs. time fenchel: 3
+With 40 variables, found 510406 enumerations in 2.70534 secs. time fenchel: 2
+With 40 variables, found 451414 enumerations in 2.3086 secs. time fenchel: 2
+With 40 variables, found 1132574 enumerations in 5.8179 secs. time fenchel: 4
+With 40 variables, found 681915 enumerations in 3.65989 secs. time fenchel: 4
+With 40 variables, found 1561468 enumerations in 7.60793 secs. time fenchel: 7
+With 40 variables, found 1249814 enumerations in 6.20492 secs. time fenchel: 6
+With 40 variables, found 686957 enumerations in 3.57069 secs. time fenchel: 3
+With 40 variables, found 759432 enumerations in 3.77483 secs. time fenchel: 3
+With 40 variables, found 539926 enumerations in 2.72618 secs. time fenchel: 3
+clique: 0 fenchel: 0
+lp after cuts: 53.2539. Time elapsed for optmization: 0
+qtd cortes: clique: 0 fenchel: 35
+
+C: 54 soma: 54.0409 soma - C: 0.0408629
+lp_add_row: repeated name: fim(1). previous use was index 1480
+
+C: 54 soma: 54.0678 soma - C: 0.0677659
+lp_add_row: repeated name: fim(2). previous use was index 1480
+
+C: 54 soma: 54 soma - C: 4.9738e-14
+lp_add_row: repeated name: fim(3). previous use was index 1480
+
+C: 54 soma: 54.127 soma - C: 0.126958
+lp_add_row: repeated name: fim(4). previous use was index 1480
+
+C: 54 soma: 54.0452 soma - C: 0.0451772
+lp_add_row: repeated name: fim(5). previous use was index 1480
+
+C: 54 soma: 54.127 soma - C: 0.126958
+lp_add_row: repeated name: fim(6). previous use was index 1480
+Optimize a model with 1521 rows, 2005 columns and 7668 nonzeros
+Coefficient statistics:
+  Matrix range     [2e-01, 6e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 6e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 413 rows and 263 columns
+Presolve time: 0.01s
+Presolved: 1108 rows, 1742 columns, 6406 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   3.100000e+01   0.000000e+00      0s
+    3635    5.4028169e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 3635 iterations and 0.47 seconds
+Optimal objective  5.402816901e+01
+Lifting solved for c = 54. Files ft06_lifting.lp e ft06_lifting.sol successfully created.
+iteracao 4
+With 40 variables, found 2415592 enumerations in 13.986 secs. time fenchel: 11
+fenchel violado: 1.28169
+With 40 variables, found 1219450 enumerations in 6.93164 secs. time fenchel: 6
+fenchel violado: 1.04225
+With 40 variables, found 1512852 enumerations in 8.80971 secs. time fenchel: 6
+fenchel violado: 1.23944
+With 40 variables, found 1184262 enumerations in 6.83674 secs. time fenchel: 4
+fenchel violado: 1.23944
+With 40 variables, found 1372716 enumerations in 8.38344 secs. time fenchel: 6
+fenchel violado: 1.23944
+With 40 variables, found 826674 enumerations in 5.1838 secs. time fenchel: 4
+fenchel violado: 1.23944
+With 40 variables, found 2008282 enumerations in 11.1556 secs. time fenchel: 9
+fenchel violado: 1.23944
+With 40 variables, found 877251 enumerations in 4.54629 secs. time fenchel: 4
+fenchel violado: 1.23944
+With 40 variables, found 1027272 enumerations in 5.14937 secs. time fenchel: 3
+fenchel violado: 1.23944
+With 40 variables, found 648859 enumerations in 3.06915 secs. time fenchel: 3
+fenchel violado: 1.07042
+With 40 variables, found 390767 enumerations in 1.81694 secs. time fenchel: 1
+fenchel violado: 1.07042
+With 40 variables, found 867702 enumerations in 4.37245 secs. time fenchel: 3
+fenchel violado: 1.07042
+With 40 variables, found 933621 enumerations in 4.49674 secs. time fenchel: 4
+fenchel violado: 1.12676
+With 40 variables, found 1663147 enumerations in 7.95662 secs. time fenchel: 7
+fenchel violado: 1.12676
+With 40 variables, found 730117 enumerations in 3.92941 secs. time fenchel: 3
+fenchel violado: 1.12676
+With 40 variables, found 1195424 enumerations in 6.35764 secs. time fenchel: 4
+fenchel violado: 1.12676
+With 40 variables, found 1362998 enumerations in 6.49517 secs. time fenchel: 6
+fenchel violado: 1.12676
+With 40 variables, found 1151308 enumerations in 5.29422 secs. time fenchel: 5
+fenchel violado: 1.12676
+With 40 variables, found 321066 enumerations in 1.64227 secs. time fenchel: 1
+fenchel violado: 1.12676
+clique: 0 fenchel: 19
+lp after cuts: 54.0282. Time elapsed for optmization: 0
+With 40 variables, found 2137824 enumerations in 10.777 secs. time fenchel: 12
+fenchel violado: 1.05869
+With 40 variables, found 1033920 enumerations in 5.07797 secs. time fenchel: 4
+fenchel violado: 1.01878
+With 40 variables, found 1498462 enumerations in 7.65044 secs. time fenchel: 6
+fenchel violado: 1.01878
+With 40 variables, found 1258116 enumerations in 6.50502 secs. time fenchel: 5
+fenchel violado: 1.01878
+With 40 variables, found 1618112 enumerations in 8.45794 secs. time fenchel: 7
+fenchel violado: 1.01878
+With 40 variables, found 857008 enumerations in 4.27031 secs. time fenchel: 4
+fenchel violado: 1.07717
+With 40 variables, found 2138976 enumerations in 11.476 secs. time fenchel: 10
+fenchel violado: 1.07717
+With 40 variables, found 881872 enumerations in 4.64105 secs. time fenchel: 3
+fenchel violado: 1.07717
+With 40 variables, found 1165941 enumerations in 5.85023 secs. time fenchel: 6
+fenchel violado: 1.07717
+With 40 variables, found 502569 enumerations in 2.46364 secs. time fenchel: 2
+fenchel violado: 1.07717
+With 40 variables, found 416040 enumerations in 1.94891 secs. time fenchel: 2
+fenchel violado: 1.07717
+With 40 variables, found 772634 enumerations in 3.95553 secs. time fenchel: 3
+fenchel violado: 1.07717
+With 40 variables, found 774674 enumerations in 3.69586 secs. time fenchel: 3
+fenchel violado: 1.19366
+With 40 variables, found 1573981 enumerations in 7.32682 secs. time fenchel: 7
+fenchel violado: 1.19366
+With 40 variables, found 738354 enumerations in 3.77459 secs. time fenchel: 3
+fenchel violado: 1.19366
+With 40 variables, found 1036224 enumerations in 5.59959 secs. time fenchel: 4
+fenchel violado: 1.19366
+With 40 variables, found 1150974 enumerations in 5.22191 secs. time fenchel: 5
+fenchel violado: 1.19366
+With 40 variables, found 1244886 enumerations in 4.87495 secs. time fenchel: 5
+fenchel violado: 1.19366
+With 40 variables, found 489014 enumerations in 2.30055 secs. time fenchel: 1
+fenchel violado: 1.19366
+clique: 0 fenchel: 19
+lp after cuts: 54.0282. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 15.8613 secs.Limite de enumeração chegado
+With 40 variables, found 2055320 enumerations in 10.3079 secs. time fenchel: 9
+fenchel violado: 1.15493
+With 40 variables, found 2065434 enumerations in 10.7777 secs. time fenchel: 10
+fenchel violado: 1.15493
+With 40 variables, found 1871188 enumerations in 9.82286 secs. time fenchel: 8
+fenchel violado: 1.15493
+With 40 variables, found 1725450 enumerations in 9.07731 secs. time fenchel: 8
+fenchel violado: 1.15493
+With 40 variables, found 1626701 enumerations in 8.65987 secs. time fenchel: 7
+fenchel violado: 1.01408
+With 40 variables, found 2192637 enumerations in 12.4456 secs. time fenchel: 11
+fenchel violado: 1.01408
+With 40 variables, found 1096398 enumerations in 5.41615 secs. time fenchel: 6
+fenchel violado: 1.01408
+With 40 variables, found 1155040 enumerations in 6.17306 secs. time fenchel: 8
+With 40 variables, found 503510 enumerations in 2.19949 secs. time fenchel: 2
+fenchel violado: 1.07042
+With 40 variables, found 382863 enumerations in 1.68985 secs. time fenchel: 2
+fenchel violado: 1.09859
+With 40 variables, found 1001054 enumerations in 5.05105 secs. time fenchel: 6
+With 40 variables, found 981348 enumerations in 4.67254 secs. time fenchel: 5
+With 40 variables, found 1444887 enumerations in 7.7851 secs. time fenchel: 6
+fenchel violado: 1.02817
+With 40 variables, found 689409 enumerations in 3.69193 secs. time fenchel: 4
+fenchel violado: 1.05634
+With 40 variables, found 1463284 enumerations in 6.79306 secs. time fenchel: 6
+fenchel violado: 1.0493
+With 40 variables, found 1410560 enumerations in 6.22743 secs. time fenchel: 7
+fenchel violado: 1.0493
+With 40 variables, found 1100624 enumerations in 5.05807 secs. time fenchel: 4
+fenchel violado: 1.1831
+With 40 variables, found 476106 enumerations in 2.17529 secs. time fenchel: 2
+fenchel violado: 1.1831
+clique: 0 fenchel: 15
+lp after cuts: 54.0282. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 16.9325 secs.Limite de enumeração chegado
+With 40 variables, found 3000002 enumerations in 16.5782 secs.Limite de enumeração chegado
+With 40 variables, found 2631987 enumerations in 15.4255 secs. time fenchel: 13
+With 40 variables, found 2496516 enumerations in 12.8497 secs. time fenchel: 11
+With 40 variables, found 2752219 enumerations in 14.0175 secs. time fenchel: 15
+With 40 variables, found 2346146 enumerations in 11.6117 secs. time fenchel: 12
+With 40 variables, found 2683768 enumerations in 13.5104 secs. time fenchel: 24
+With 40 variables, found 1441286 enumerations in 6.20518 secs. time fenchel: 7
+With 40 variables, found 1137712 enumerations in 5.89576 secs. time fenchel: 8
+With 40 variables, found 360821 enumerations in 1.83144 secs. time fenchel: 2
+fenchel violado: 1.02465
+With 40 variables, found 231781 enumerations in 1.30917 secs. time fenchel: 1
+fenchel violado: 1.08099
+With 40 variables, found 938812 enumerations in 4.58728 secs. time fenchel: 4
+fenchel violado: 1.05282
+With 40 variables, found 628702 enumerations in 3.26365 secs. time fenchel: 3
+With 40 variables, found 1388405 enumerations in 6.97864 secs. time fenchel: 6
+With 40 variables, found 1201986 enumerations in 5.22503 secs. time fenchel: 4
+fenchel violado: 1.05634
+With 40 variables, found 1628506 enumerations in 8.45848 secs. time fenchel: 7
+fenchel violado: 1.07042
+With 40 variables, found 1705176 enumerations in 7.93808 secs. time fenchel: 8
+fenchel violado: 1.09859
+With 40 variables, found 1048198 enumerations in 4.75037 secs. time fenchel: 4
+fenchel violado: 1.09859
+With 40 variables, found 708376 enumerations in 3.32376 secs. time fenchel: 2
+fenchel violado: 1.12676
+clique: 0 fenchel: 8
+lp after cuts: 54.0282. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 16.0157 secs.Limite de enumeração chegado
+With 40 variables, found 3000002 enumerations in 15.4886 secs.Limite de enumeração chegado
+With 40 variables, found 2898072 enumerations in 15.0307 secs. time fenchel: 20
+With 40 variables, found 3000002 enumerations in 14.7338 secs.Limite de enumeração chegado
+With 40 variables, found 2472140 enumerations in 12.4528 secs. time fenchel: 15
+With 40 variables, found 1889951 enumerations in 9.48754 secs. time fenchel: 11
+With 40 variables, found 2636937 enumerations in 13.2494 secs. time fenchel: 13
+With 40 variables, found 1248269 enumerations in 6.06351 secs. time fenchel: 5
+With 40 variables, found 1149120 enumerations in 5.57222 secs. time fenchel: 6
+With 40 variables, found 515089 enumerations in 2.40588 secs. time fenchel: 2
+fenchel violado: 1.05634
+With 40 variables, found 269322 enumerations in 1.39007 secs. time fenchel: 1
+fenchel violado: 1.10563
+With 40 variables, found 1177573 enumerations in 5.55104 secs. time fenchel: 4
+fenchel violado: 1.05634
+With 40 variables, found 704979 enumerations in 3.59275 secs. time fenchel: 4
+With 40 variables, found 1750220 enumerations in 9.01471 secs. time fenchel: 12
+With 40 variables, found 877946 enumerations in 4.51169 secs. time fenchel: 3
+fenchel violado: 1.05634
+With 40 variables, found 1638076 enumerations in 8.61658 secs. time fenchel: 8
+fenchel violado: 1.08451
+With 40 variables, found 1074962 enumerations in 5.41243 secs. time fenchel: 5
+fenchel violado: 1.08451
+With 40 variables, found 763632 enumerations in 3.78711 secs. time fenchel: 3
+fenchel violado: 1.09155
+With 40 variables, found 433146 enumerations in 2.12344 secs. time fenchel: 1
+fenchel violado: 1.09155
+clique: 0 fenchel: 8
+lp after cuts: 54.0282. Time elapsed for optmization: 0
+With 40 variables, found 2996480 enumerations in 15.5581 secs. time fenchel: 15
+fenchel violado: 1.04225
+With 40 variables, found 2698776 enumerations in 14.1307 secs. time fenchel: 14
+With 40 variables, found 2542926 enumerations in 13.2948 secs. time fenchel: 14
+With 40 variables, found 2648832 enumerations in 14.7423 secs. time fenchel: 15
+With 40 variables, found 1810412 enumerations in 10.0235 secs. time fenchel: 8
+With 40 variables, found 1104219 enumerations in 6.44076 secs. time fenchel: 4
+fenchel violado: 1.04225
+With 40 variables, found 1770183 enumerations in 11.0394 secs. time fenchel: 8
+fenchel violado: 1.07042
+With 40 variables, found 898894 enumerations in 4.78162 secs. time fenchel: 4
+fenchel violado: 1.07042
+With 40 variables, found 1171822 enumerations in 5.38598 secs. time fenchel: 6
+fenchel violado: 1.07042
+With 40 variables, found 526590 enumerations in 2.4051 secs. time fenchel: 2
+fenchel violado: 1.07042
+With 40 variables, found 341881 enumerations in 1.66643 secs. time fenchel: 1
+fenchel violado: 1.07042
+With 40 variables, found 884638 enumerations in 4.27087 secs. time fenchel: 6
+fenchel violado: 1.07042
+With 40 variables, found 824164 enumerations in 3.60392 secs. time fenchel: 4
+fenchel violado: 1.02817
+With 40 variables, found 1445808 enumerations in 6.83177 secs. time fenchel: 6
+fenchel violado: 1.02817
+With 40 variables, found 1197600 enumerations in 5.71744 secs. time fenchel: 5
+fenchel violado: 1.02817
+With 40 variables, found 1639972 enumerations in 8.02147 secs. time fenchel: 12
+fenchel violado: 1.02817
+With 40 variables, found 1141944 enumerations in 5.59683 secs. time fenchel: 5
+fenchel violado: 1.09155
+With 40 variables, found 889688 enumerations in 4.21325 secs. time fenchel: 4
+fenchel violado: 1.20423
+With 40 variables, found 436506 enumerations in 2.0695 secs. time fenchel: 2
+fenchel violado: 1.20423
+clique: 0 fenchel: 15
+lp after cuts: 54.0288. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 15.974 secs.Limite de enumeração chegado
+With 40 variables, found 3000002 enumerations in 16.4884 secs.Limite de enumeração chegado
+With 40 variables, found 2641228 enumerations in 15.3778 secs. time fenchel: 18
+With 40 variables, found 3000002 enumerations in 15.1169 secs.Limite de enumeração chegado
+With 40 variables, found 2081812 enumerations in 11.066 secs. time fenchel: 11
+With 40 variables, found 1199456 enumerations in 5.99425 secs. time fenchel: 5
+With 40 variables, found 3000002 enumerations in 14.5317 secs.Limite de enumeração chegado
+With 40 variables, found 1229000 enumerations in 6.31622 secs. time fenchel: 5
+fenchel violado: 1.09353
+With 40 variables, found 1273164 enumerations in 6.60375 secs. time fenchel: 5
+fenchel violado: 1.09353
+With 40 variables, found 471279 enumerations in 2.2765 secs. time fenchel: 1
+fenchel violado: 1.09353
+With 40 variables, found 345445 enumerations in 1.69234 secs. time fenchel: 1
+fenchel violado: 1.09353
+With 40 variables, found 865986 enumerations in 4.08142 secs. time fenchel: 4
+fenchel violado: 1.09353
+With 40 variables, found 747275 enumerations in 3.5275 secs. time fenchel: 3
+fenchel violado: 1.09353
+With 40 variables, found 1207408 enumerations in 5.87993 secs. time fenchel: 5
+fenchel violado: 1.09353
+With 40 variables, found 929909 enumerations in 4.6019 secs. time fenchel: 4
+fenchel violado: 1.09353
+With 40 variables, found 1807248 enumerations in 8.78799 secs. time fenchel: 8
+fenchel violado: 1.09353
+With 40 variables, found 1020384 enumerations in 4.91991 secs. time fenchel: 5
+fenchel violado: 1.05755
+With 40 variables, found 704574 enumerations in 3.38537 secs. time fenchel: 4
+fenchel violado: 1.11511
+clique: 0 fenchel: 11
+lp after cuts: 54.0288. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 18.178 secs.Limite de enumeração chegado
+With 40 variables, found 3000002 enumerations in 16.6927 secs.Limite de enumeração chegado
+With 40 variables, found 2887532 enumerations in 16.7895 secs. time fenchel: 19
+With 40 variables, found 3000002 enumerations in 16.6688 secs.Limite de enumeração chegado
+With 40 variables, found 3000002 enumerations in 15.8747 secs.Limite de enumeração chegado
+With 40 variables, found 1312289 enumerations in 7.64736 secs. time fenchel: 6
+With 40 variables, found 3000002 enumerations in 14.4286 secs.Limite de enumeração chegado
+With 40 variables, found 1286880 enumerations in 6.8746 secs. time fenchel: 6
+With 40 variables, found 1333464 enumerations in 7.32997 secs. time fenchel: 5
+With 40 variables, found 414430 enumerations in 2.12626 secs. time fenchel: 3
+With 40 variables, found 315787 enumerations in 1.67438 secs. time fenchel: 2
+With 40 variables, found 908213 enumerations in 4.2419 secs. time fenchel: 6
+With 40 variables, found 728345 enumerations in 3.4184 secs. time fenchel: 3
+With 40 variables, found 1583729 enumerations in 7.46991 secs. time fenchel: 8
+With 40 variables, found 906686 enumerations in 4.34725 secs. time fenchel: 5
+With 40 variables, found 1892600 enumerations in 8.6141 secs. time fenchel: 10
+fenchel violado: 1.06475
+With 40 variables, found 1032516 enumerations in 4.95017 secs. time fenchel: 3
+fenchel violado: 1.06475
+With 40 variables, found 806066 enumerations in 3.49993 secs. time fenchel: 4
+fenchel violado: 1.1223
+With 40 variables, found 389144 enumerations in 1.69695 secs. time fenchel: 2
+fenchel violado: 1.1223
+clique: 0 fenchel: 4
+lp after cuts: 54.0289. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 15.3082 secs.Limite de enumeração chegado
+With 40 variables, found 3000002 enumerations in 14.7295 secs.Limite de enumeração chegado
+With 40 variables, found 3000002 enumerations in 14.467 secs.Limite de enumeração chegado
+With 40 variables, found 3000002 enumerations in 15.3743 secs.Limite de enumeração chegado
+With 40 variables, found 3000002 enumerations in 14.8888 secs.Limite de enumeração chegado
+With 40 variables, found 2898136 enumerations in 13.9125 secs. time fenchel: 17
+With 40 variables, found 3000002 enumerations in 14.7405 secs.Limite de enumeração chegado
+With 40 variables, found 1169919 enumerations in 5.86947 secs. time fenchel: 5
+fenchel violado: 1.01447
+With 40 variables, found 1017368 enumerations in 5.82323 secs. time fenchel: 4
+fenchel violado: 1.01447
+With 40 variables, found 444034 enumerations in 2.68932 secs. time fenchel: 1
+fenchel violado: 1.01447
+With 40 variables, found 358938 enumerations in 1.81726 secs. time fenchel: 1
+fenchel violado: 1.11208
+With 40 variables, found 973302 enumerations in 4.66708 secs. time fenchel: 6
+fenchel violado: 1.11208
+With 40 variables, found 622161 enumerations in 2.98569 secs. time fenchel: 2
+With 40 variables, found 1337401 enumerations in 6.82817 secs. time fenchel: 6
+With 40 variables, found 536974 enumerations in 2.97334 secs. time fenchel: 4
+fenchel violado: 1.01117
+With 40 variables, found 1089180 enumerations in 6.21018 secs. time fenchel: 5
+fenchel violado: 1.04094
+With 40 variables, found 947748 enumerations in 4.22675 secs. time fenchel: 4
+fenchel violado: 1.07279
+With 40 variables, found 864728 enumerations in 3.62222 secs. time fenchel: 3
+fenchel violado: 1.07279
+With 40 variables, found 1204011 enumerations in 5.24718 secs. time fenchel: 5
+fenchel violado: 1.07279
+clique: 0 fenchel: 10
+lp after cuts: 54.029. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 15.5404 secs.Limite de enumeração chegado
+With 40 variables, found 2602216 enumerations in 13.1817 secs. time fenchel: 13
+With 40 variables, found 2470536 enumerations in 12.9019 secs. time fenchel: 17
+With 40 variables, found 2420096 enumerations in 12.1099 secs. time fenchel: 12
+fenchel violado: 1.14238
+With 40 variables, found 1880892 enumerations in 9.88581 secs. time fenchel: 9
+fenchel violado: 1.14238
+With 40 variables, found 2305368 enumerations in 10.7775 secs. time fenchel: 11
+With 40 variables, found 2419026 enumerations in 11.1979 secs. time fenchel: 11
+With 40 variables, found 1355736 enumerations in 5.98454 secs. time fenchel: 8
+With 40 variables, found 1059818 enumerations in 5.74382 secs. time fenchel: 5
+With 40 variables, found 593108 enumerations in 2.86969 secs. time fenchel: 2
+fenchel violado: 1.12914
+With 40 variables, found 386323 enumerations in 1.97972 secs. time fenchel: 1
+fenchel violado: 1.12914
+With 40 variables, found 1082234 enumerations in 5.19195 secs. time fenchel: 4
+fenchel violado: 1.12914
+With 40 variables, found 579406 enumerations in 2.92738 secs. time fenchel: 3
+With 40 variables, found 1227704 enumerations in 6.18231 secs. time fenchel: 7
+With 40 variables, found 609680 enumerations in 3.0275 secs. time fenchel: 2
+fenchel violado: 1.04822
+With 40 variables, found 1405284 enumerations in 6.83256 secs. time fenchel: 6
+fenchel violado: 1.05712
+With 40 variables, found 898612 enumerations in 3.97181 secs. time fenchel: 4
+fenchel violado: 1.05712
+With 40 variables, found 774170 enumerations in 3.48277 secs. time fenchel: 3
+fenchel violado: 1.05712
+With 40 variables, found 580392 enumerations in 2.6796 secs. time fenchel: 3
+fenchel violado: 1.08609
+clique: 0 fenchel: 10
+lp after cuts: 54.0292. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 16.0742 secs.Limite de enumeração chegado
+With 40 variables, found 1609484 enumerations in 8.09149 secs. time fenchel: 6
+fenchel violado: 1.09947
+With 40 variables, found 3000002 enumerations in 15.3108 secs.Limite de enumeração chegado
+With 40 variables, found 3000002 enumerations in 15.5346 secs.Limite de enumeração chegado
+With 40 variables, found 2606976 enumerations in 12.5758 secs. time fenchel: 13
+fenchel violado: 1.09947
+With 40 variables, found 1529888 enumerations in 8.27179 secs. time fenchel: 8
+With 40 variables, found 2310344 enumerations in 12.3676 secs. time fenchel: 11
+With 40 variables, found 1201516 enumerations in 6.21373 secs. time fenchel: 4
+With 40 variables, found 1368381 enumerations in 7.00815 secs. time fenchel: 7
+With 40 variables, found 567517 enumerations in 3.11022 secs. time fenchel: 3
+fenchel violado: 1.02122
+With 40 variables, found 380718 enumerations in 1.84803 secs. time fenchel: 3
+fenchel violado: 1.02122
+With 40 variables, found 800511 enumerations in 4.28663 secs. time fenchel: 5
+fenchel violado: 1.02122
+With 40 variables, found 530954 enumerations in 2.58668 secs. time fenchel: 3
+With 40 variables, found 1381715 enumerations in 6.26392 secs. time fenchel: 6
+With 40 variables, found 306292 enumerations in 1.67715 secs. time fenchel: 2
+fenchel violado: 1.05603
+With 40 variables, found 1235726 enumerations in 5.88895 secs. time fenchel: 6
+fenchel violado: 1.02918
+With 40 variables, found 1037204 enumerations in 4.8707 secs. time fenchel: 4
+fenchel violado: 1.05703
+With 40 variables, found 809030 enumerations in 3.67969 secs. time fenchel: 4
+fenchel violado: 1.05703
+With 40 variables, found 637152 enumerations in 3.18974 secs. time fenchel: 2
+fenchel violado: 1.09019
+clique: 0 fenchel: 10
+lp after cuts: 54.0292. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 15.6717 secs.Limite de enumeração chegado
+With 40 variables, found 1714376 enumerations in 9.42679 secs. time fenchel: 8
+With 40 variables, found 3000002 enumerations in 17.0208 secs.Limite de enumeração chegado
+With 40 variables, found 2994750 enumerations in 16.6092 secs. time fenchel: 16
+With 40 variables, found 2293744 enumerations in 11.7409 secs. time fenchel: 15
+With 40 variables, found 1512128 enumerations in 8.28908 secs. time fenchel: 8
+With 40 variables, found 3000002 enumerations in 14.9223 secs.Limite de enumeração chegado
+With 40 variables, found 1346624 enumerations in 6.99788 secs. time fenchel: 9
+With 40 variables, found 1377076 enumerations in 7.29006 secs. time fenchel: 6
+With 40 variables, found 498709 enumerations in 2.55021 secs. time fenchel: 2
+fenchel violado: 1.05183
+With 40 variables, found 382548 enumerations in 1.97193 secs. time fenchel: 1
+fenchel violado: 1.05183
+With 40 variables, found 764871 enumerations in 3.8731 secs. time fenchel: 3
+fenchel violado: 1.05183
+With 40 variables, found 638395 enumerations in 3.1088 secs. time fenchel: 3
+With 40 variables, found 1657448 enumerations in 7.82845 secs. time fenchel: 10
+With 40 variables, found 455274 enumerations in 2.28833 secs. time fenchel: 2
+With 40 variables, found 1437714 enumerations in 7.25541 secs. time fenchel: 7
+With 40 variables, found 1501652 enumerations in 6.70465 secs. time fenchel: 6
+With 40 variables, found 834350 enumerations in 3.75503 secs. time fenchel: 3
+With 40 variables, found 552530 enumerations in 2.73989 secs. time fenchel: 3
+fenchel violado: 1.04293
+clique: 0 fenchel: 4
+lp after cuts: 54.0293. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 16.0927 secs.Limite de enumeração chegado
+With 40 variables, found 1764324 enumerations in 9.47897 secs. time fenchel: 9
+With 40 variables, found 3000002 enumerations in 16.6875 secs.Limite de enumeração chegado
+With 40 variables, found 3000002 enumerations in 16.1313 secs.Limite de enumeração chegado
+With 40 variables, found 2142016 enumerations in 11.8222 secs. time fenchel: 15
+With 40 variables, found 1485152 enumerations in 8.13343 secs. time fenchel: 9
+With 40 variables, found 3000002 enumerations in 15.5952 secs.Limite de enumeração chegado
+With 40 variables, found 1285011 enumerations in 6.7628 secs. time fenchel: 7
+With 40 variables, found 1351100 enumerations in 6.79445 secs. time fenchel: 7
+With 40 variables, found 532232 enumerations in 2.70011 secs. time fenchel: 2
+With 40 variables, found 296779 enumerations in 1.40153 secs. time fenchel: 2
+With 40 variables, found 768896 enumerations in 3.91082 secs. time fenchel: 3
+With 40 variables, found 702402 enumerations in 3.4381 secs. time fenchel: 3
+With 40 variables, found 1642324 enumerations in 7.99927 secs. time fenchel: 8
+With 40 variables, found 462819 enumerations in 2.27367 secs. time fenchel: 1
+With 40 variables, found 1430362 enumerations in 6.95845 secs. time fenchel: 7
+With 40 variables, found 1417228 enumerations in 6.27826 secs. time fenchel: 7
+fenchel violado: 1.01997
+With 40 variables, found 789384 enumerations in 3.70785 secs. time fenchel: 5
+fenchel violado: 1.01176
+With 40 variables, found 375766 enumerations in 2.03465 secs. time fenchel: 2
+fenchel violado: 1.07279
+clique: 0 fenchel: 3
+lp after cuts: 54.0294. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 17.9669 secs.Limite de enumeração chegado
+With 40 variables, found 1499196 enumerations in 8.22232 secs. time fenchel: 7
+With 40 variables, found 2119434 enumerations in 11.6853 secs. time fenchel: 11
+With 40 variables, found 2009904 enumerations in 10.8168 secs. time fenchel: 12
+With 40 variables, found 1883348 enumerations in 8.9567 secs. time fenchel: 11
+With 40 variables, found 1613956 enumerations in 7.8011 secs. time fenchel: 8
+With 40 variables, found 2790450 enumerations in 15.1376 secs. time fenchel: 14
+With 40 variables, found 1600404 enumerations in 6.35217 secs. time fenchel: 8
+fenchel violado: 1.12394
+With 40 variables, found 1167192 enumerations in 5.51747 secs. time fenchel: 4
+fenchel violado: 1.12394
+With 40 variables, found 389994 enumerations in 1.95017 secs. time fenchel: 2
+fenchel violado: 1.12394
+With 40 variables, found 200706 enumerations in 0.889813 secs. time fenchel: 1
+fenchel violado: 1.12394
+With 40 variables, found 820718 enumerations in 3.62375 secs. time fenchel: 4
+fenchel violado: 1.12394
+With 40 variables, found 534340 enumerations in 2.93308 secs. time fenchel: 2
+fenchel violado: 1.01246
+With 40 variables, found 1238638 enumerations in 6.29673 secs. time fenchel: 5
+With 40 variables, found 575730 enumerations in 2.55149 secs. time fenchel: 3
+fenchel violado: 1.09524
+With 40 variables, found 1653636 enumerations in 7.55372 secs. time fenchel: 8
+fenchel violado: 1.03049
+With 40 variables, found 1562188 enumerations in 8.0615 secs. time fenchel: 8
+fenchel violado: 1.03538
+With 40 variables, found 822110 enumerations in 4.07683 secs. time fenchel: 4
+fenchel violado: 1.02982
+With 40 variables, found 522484 enumerations in 2.75068 secs. time fenchel: 3
+fenchel violado: 1.04272
+clique: 0 fenchel: 11
+lp after cuts: 54.0294. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 15.5009 secs.Limite de enumeração chegado
+With 40 variables, found 2960464 enumerations in 13.7019 secs. time fenchel: 14
+With 40 variables, found 3000002 enumerations in 14.2318 secs.Limite de enumeração chegado
+With 40 variables, found 3000002 enumerations in 14.8758 secs.Limite de enumeração chegado
+With 40 variables, found 2587680 enumerations in 12.725 secs. time fenchel: 14
+With 40 variables, found 1850432 enumerations in 9.28031 secs. time fenchel: 11
+With 40 variables, found 3000002 enumerations in 14.8441 secs.Limite de enumeração chegado
+With 40 variables, found 1352838 enumerations in 6.24309 secs. time fenchel: 7
+With 40 variables, found 1772140 enumerations in 8.29433 secs. time fenchel: 8
+With 40 variables, found 587702 enumerations in 3.03959 secs. time fenchel: 2
+With 40 variables, found 266919 enumerations in 1.39745 secs. time fenchel: 1
+With 40 variables, found 922474 enumerations in 4.43086 secs. time fenchel: 6
+With 40 variables, found 469089 enumerations in 2.60615 secs. time fenchel: 2
+fenchel violado: 1.10502
+With 40 variables, found 1280072 enumerations in 6.74147 secs. time fenchel: 6
+fenchel violado: 1.10502
+With 40 variables, found 583902 enumerations in 3.09133 secs. time fenchel: 2
+fenchel violado: 1.10502
+With 40 variables, found 1517848 enumerations in 8.22686 secs. time fenchel: 6
+With 40 variables, found 2103480 enumerations in 9.67498 secs. time fenchel: 11
+With 40 variables, found 1041136 enumerations in 4.31004 secs. time fenchel: 4
+fenchel violado: 1.0401
+With 40 variables, found 1101112 enumerations in 4.77549 secs. time fenchel: 4
+fenchel violado: 1.0401
+clique: 0 fenchel: 5
+lp after cuts: 54.0294. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 15.771 secs.Limite de enumeração chegado
+With 40 variables, found 3000002 enumerations in 14.62 secs.Limite de enumeração chegado
+With 40 variables, found 3000002 enumerations in 14.0716 secs.Limite de enumeração chegado
+With 40 variables, found 2985168 enumerations in 15.2163 secs. time fenchel: 18
+With 40 variables, found 3000002 enumerations in 14.8143 secs.Limite de enumeração chegado
+With 40 variables, found 2044816 enumerations in 10.172 secs. time fenchel: 9
+With 40 variables, found 3000002 enumerations in 16.3778 secs.Limite de enumeração chegado
+With 40 variables, found 1287750 enumerations in 6.41138 secs. time fenchel: 6
+With 40 variables, found 2009124 enumerations in 8.69619 secs. time fenchel: 9
+With 40 variables, found 596394 enumerations in 2.72616 secs. time fenchel: 2
+With 40 variables, found 249831 enumerations in 1.27584 secs. time fenchel: 0
+With 40 variables, found 861862 enumerations in 4.39192 secs. time fenchel: 3
+With 40 variables, found 573502 enumerations in 3.12669 secs. time fenchel: 3
+With 40 variables, found 1309197 enumerations in 6.72743 secs. time fenchel: 7
+With 40 variables, found 586251 enumerations in 3.16559 secs. time fenchel: 3
+With 40 variables, found 1926204 enumerations in 9.42104 secs. time fenchel: 13
+With 40 variables, found 1493610 enumerations in 7.4719 secs. time fenchel: 7
+With 40 variables, found 922816 enumerations in 4.25662 secs. time fenchel: 6
+fenchel violado: 1.02481
+With 40 variables, found 682408 enumerations in 3.40796 secs. time fenchel: 3
+fenchel violado: 1.02481
+clique: 0 fenchel: 2
+lp after cuts: 54.0294. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 16.1831 secs.Limite de enumeração chegado
+With 40 variables, found 2840384 enumerations in 14.4476 secs. time fenchel: 15
+With 40 variables, found 3000002 enumerations in 14.3285 secs.Limite de enumeração chegado
+With 40 variables, found 2976848 enumerations in 15.5904 secs. time fenchel: 18
+With 40 variables, found 3000002 enumerations in 14.9081 secs.Limite de enumeração chegado
+With 40 variables, found 2063344 enumerations in 10.3016 secs. time fenchel: 12
+With 40 variables, found 3000002 enumerations in 15.4948 secs.Limite de enumeração chegado
+With 40 variables, found 1898604 enumerations in 9.30211 secs. time fenchel: 11
+With 40 variables, found 1847967 enumerations in 9.54018 secs. time fenchel: 10
+With 40 variables, found 513510 enumerations in 2.5699 secs. time fenchel: 2
+With 40 variables, found 246113 enumerations in 1.29269 secs. time fenchel: 1
+With 40 variables, found 867539 enumerations in 4.42119 secs. time fenchel: 4
+With 40 variables, found 795291 enumerations in 3.79097 secs. time fenchel: 5
+With 40 variables, found 1155373 enumerations in 6.074 secs. time fenchel: 6
+With 40 variables, found 493211 enumerations in 2.54738 secs. time fenchel: 2
+With 40 variables, found 1793708 enumerations in 9.57984 secs. time fenchel: 11
+With 40 variables, found 1573316 enumerations in 7.85556 secs. time fenchel: 7
+fenchel violado: 1.0251
+With 40 variables, found 806160 enumerations in 3.75636 secs. time fenchel: 5
+fenchel violado: 1.0251
+With 40 variables, found 866414 enumerations in 3.15987 secs. time fenchel: 4
+clique: 0 fenchel: 2
+lp after cuts: 54.0294. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 15.1449 secs.Limite de enumeração chegado
+With 40 variables, found 2860292 enumerations in 14.1033 secs. time fenchel: 14
+With 40 variables, found 3000002 enumerations in 13.724 secs.Limite de enumeração chegado
+With 40 variables, found 2995536 enumerations in 15.0648 secs. time fenchel: 15
+With 40 variables, found 3000002 enumerations in 14.5205 secs.Limite de enumeração chegado
+With 40 variables, found 2116480 enumerations in 10.1131 secs. time fenchel: 10
+With 40 variables, found 3000002 enumerations in 13.9581 secs.Limite de enumeração chegado
+With 40 variables, found 1666368 enumerations in 8.08058 secs. time fenchel: 7
+With 40 variables, found 1765044 enumerations in 8.75822 secs. time fenchel: 9
+With 40 variables, found 549428 enumerations in 2.79148 secs. time fenchel: 3
+With 40 variables, found 410296 enumerations in 1.98843 secs. time fenchel: 3
+With 40 variables, found 711509 enumerations in 3.61834 secs. time fenchel: 6
+With 40 variables, found 894321 enumerations in 3.90199 secs. time fenchel: 5
+With 40 variables, found 1421721 enumerations in 6.98827 secs. time fenchel: 9
+With 40 variables, found 475821 enumerations in 2.45668 secs. time fenchel: 1
+With 40 variables, found 1753392 enumerations in 9.01336 secs. time fenchel: 10
+With 40 variables, found 1655262 enumerations in 7.83458 secs. time fenchel: 10
+With 40 variables, found 820512 enumerations in 3.9257 secs. time fenchel: 5
+fenchel violado: 1.02039
+With 40 variables, found 594710 enumerations in 2.99069 secs. time fenchel: 3
+fenchel violado: 1.01404
+clique: 0 fenchel: 2
+lp after cuts: 54.0294. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 14.5182 secs.Limite de enumeração chegado
+With 40 variables, found 2848828 enumerations in 14.0567 secs. time fenchel: 15
+With 40 variables, found 2910880 enumerations in 14.2385 secs. time fenchel: 15
+With 40 variables, found 2718784 enumerations in 13.3094 secs. time fenchel: 14
+With 40 variables, found 2685024 enumerations in 12.5836 secs. time fenchel: 15
+With 40 variables, found 1681168 enumerations in 8.65484 secs. time fenchel: 8
+With 40 variables, found 3000002 enumerations in 13.888 secs.Limite de enumeração chegado
+With 40 variables, found 1376324 enumerations in 6.27531 secs. time fenchel: 7
+With 40 variables, found 1186540 enumerations in 5.8588 secs. time fenchel: 6
+With 40 variables, found 473692 enumerations in 2.40572 secs. time fenchel: 2
+With 40 variables, found 297122 enumerations in 1.52326 secs. time fenchel: 2
+With 40 variables, found 649686 enumerations in 3.46565 secs. time fenchel: 3
+With 40 variables, found 640032 enumerations in 3.29065 secs. time fenchel: 3
+With 40 variables, found 1273508 enumerations in 6.51523 secs. time fenchel: 5
+With 40 variables, found 508466 enumerations in 2.68152 secs. time fenchel: 4
+With 40 variables, found 1771718 enumerations in 8.76614 secs. time fenchel: 9
+With 40 variables, found 1721852 enumerations in 8.1969 secs. time fenchel: 7
+With 40 variables, found 705732 enumerations in 3.35318 secs. time fenchel: 4
+fenchel violado: 1.01241
+With 40 variables, found 559652 enumerations in 2.81107 secs. time fenchel: 3
+clique: 0 fenchel: 1
+lp after cuts: 54.0294. Time elapsed for optmization: 0
+With 40 variables, found 3000002 enumerations in 14.9078 secs.Limite de enumeração chegado
+With 40 variables, found 2754028 enumerations in 13.4956 secs. time fenchel: 13
+With 40 variables, found 3000002 enumerations in 14.0018 secs.Limite de enumeração chegado
+With 40 variables, found 2596240 enumerations in 13.0545 secs. time fenchel: 13
+With 40 variables, found 2495328 enumerations in 12.0364 secs. time fenchel: 12
+With 40 variables, found 1706224 enumerations in 8.50305 secs. time fenchel: 11
+With 40 variables, found 3000002 enumerations in 13.5982 secs.Limite de enumeração chegado
+With 40 variables, found 1612900 enumerations in 7.52466 secs. time fenchel: 7
+With 40 variables, found 1343952 enumerations in 6.66545 secs. time fenchel: 10
+With 40 variables, found 488260 enumerations in 2.45795 secs. time fenchel: 2
+With 40 variables, found 308139 enumerations in 1.55394 secs. time fenchel: 1
+With 40 variables, found 772959 enumerations in 3.86964 secs. time fenchel: 3
+With 40 variables, found 891025 enumerations in 4.10894 secs. time fenchel: 4
+With 40 variables, found 1526197 enumerations in 7.46579 secs. time fenchel: 8
+With 40 variables, found 689123 enumerations in 3.58255 secs. time fenchel: 3
+With 40 variables, found 1882000 enumerations in 9.68719 secs. time fenchel: 10
+With 40 variables, found 1611240 enumerations in 7.36353 secs. time fenchel: 8
+With 40 variables, found 712360 enumerations in 3.39538 secs. time fenchel: 5
+With 40 variables, found 687668 enumerations in 3.29413 secs. time fenchel: 3
+clique: 0 fenchel: 0
+lp after cuts: 54.0294. Time elapsed for optmization: 0
+qtd cortes: clique: 0 fenchel: 159
+
+C: 55 soma: 55 soma - C: 0
+lp_add_row: repeated name: fim(1). previous use was index 1515
+
+C: 55 soma: 55 soma - C: 7.10543e-15
+lp_add_row: repeated name: fim(2). previous use was index 1515
+
+C: 55 soma: 55 soma - C: -2.13163e-14
+lp_add_row: repeated name: fim(3). previous use was index 1515
+
+C: 55 soma: 55 soma - C: -7.10543e-15
+lp_add_row: repeated name: fim(4). previous use was index 1515
+
+C: 55 soma: 55 soma - C: 0
+lp_add_row: repeated name: fim(5). previous use was index 1515
+
+C: 55 soma: 55 soma - C: 7.10543e-15
+lp_add_row: repeated name: fim(6). previous use was index 1515
+Optimize a model with 1680 rows, 2005 columns and 8569 nonzeros
+Coefficient statistics:
+  Matrix range     [2e-01, 6e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 6e+01]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 490 rows and 262 columns
+Presolve time: 0.01s
+Presolved: 1190 rows, 1743 columns, 6962 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   2.900000e+01   0.000000e+00      0s
+    1687    5.5000000e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 1687 iterations and 0.23 seconds
+Optimal objective  5.500000000e+01
+Lifting solved for c = 55. Files ft06_lifting.lp e ft06_lifting.sol successfully created.
+fim: bnd = 55 teto(bnd_anterior) = 55

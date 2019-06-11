@@ -1,0 +1,86 @@
+EST:
+5   0   9
+
+LST:
+13  8   17
+
+inserir uma variável implica em:
+  * aumentar o est das operações que vem depois, desde que não estejam na solução
+  * diminuir o lst das operações que vem antes, desde que não estejam na solução
+  * caso a operação esteja na solução, o est e lst dela estarão fixos
+
+remover uma variável implica em:
+  * diminuir o est das operações que vem depois em modificadorEst, até encontrar uma que esteja na solução
+  * aumentar o lst das operações que vem antes em modificadorEst, até encontrar uma que estejan na solução
+  * caso a operação esteja na solução, o est e lst dela permanecerão fixos
+
+(2,3,13)*
+nEst = t = 13
+nLst = t = 13
+modificadorEst = t - novoEst(2,3) = 13 - 9 = 4
+modificadorLst = t - novoLst(2,3) = 13 - 17 = -4
+modificadoresEst = 0    0   4
+modificadoresLst = 0    0   -4
+novoEst = 5   0   13
+novoLst = 9   4   13
+
+(2,1,7)* (2,3,13)
+nEst = 7
+nLst = 7
+modificadorEst = t - novoEst(2,1) = 7 - 5 = 2
+modificadorLst = t - novoLst(2,1) = 7 - 9 = -2
+modificadoresEst = 0  2   4
+modificadoresLst = 0  -2   -4
+novoEst = 7   0   13
+novoLst = 7   2   13
+
+(2,3,13) (remoção da (2,1,7))
+nEst = novoEst(2,1) - modificadoresEst(2,1) = 7 - 2 = 5
+nLst = novoLst(2,1) - modificaodresLst(2,1) = 7 + 2 = 9
+modificadorEst = 0
+modificadorLst = 0
+modificadoresEst = 0  0   4
+modificadoresLst = 0  0   -4
+novoEst = 5   0   13
+novoLst = 9   4   13
+
+-----------------------------------------
+(2,2,3)
+nEst = 3
+nLst = 3
+modificadorEst = t - novoEst(2,2) = 3 - 0 = 3
+modificadorLst = t - novoLst(2,2) = 3 - 8 = -5
+modificadoresEst = 0  3   0
+modificadoresLst = 0  -5  0
+novoEst = 8   3   12
+novoLst = 13  3   17
+
+(2,1,10) (2,2,3)
+nEst = 10
+nLst = 10
+modificadorEst = t - novoEst(2,1) = 10 - 8 = 2
+modificadorLst = t - novoLst(2,1) = 10 - 13 = -3
+modificadoresEst = 2  3   0
+modificadoresLst = -3 -5  0
+novoEst = 10  3   14
+novoLst = 10  3   17
+
+------------------
+
+(2,1,10)
+nEst = 10
+nLst = 10
+modificadorEst = t - novoEst(2,1) = 10 - 5 = 5
+modificadorLst = t - novoLst(2,1) = 10 - 13 = -3
+modificadoresEst = 5   0   0
+modificadoresLst = -3  0   0
+novoEst = 10  0   14
+novoLst = 10  5   17
+
+(2,2,4) (2,1,10)
+nEst = 4
+nLst = 4
+modificadorEst = t - novoEst(2,2) = 4 - 0 = 4
+modificadorLst = t - novoLst(2,2) = 4 - 5 = -1
+novoEst = 10  4   14
+novoLst = 10  4   17

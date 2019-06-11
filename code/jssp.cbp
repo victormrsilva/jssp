@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="jssp"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/victor/git-version/jssp/code"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/victor/git-version/jssp/code/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/victor/git-version/jssp/code/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/victor/git-version/jssp/code/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/victor/git-version/jssp/code/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/victor/git-version/jssp/code"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/victor/git-version/jssp/code/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/victor/git-version/jssp/code/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/victor/git-version/jssp/code/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/victor/git-version/jssp/code/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="jssp">
+				<Option output="/home/victor/git-version/jssp/code/jssp" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/victor/git-version/jssp/code"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/victor/git-version/jssp/code/Makefile&quot;  VERBOSE=1 jssp"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/victor/git-version/jssp/code/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/victor/git-version/jssp/code/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/victor/git-version/jssp/code/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="jssp/fast">
+				<Option output="/home/victor/git-version/jssp/code/jssp" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/victor/git-version/jssp/code"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/victor/git-version/jssp/code/Makefile&quot;  VERBOSE=1 jssp/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/victor/git-version/jssp/code/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/victor/git-version/jssp/code/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/victor/git-version/jssp/code/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/victor/git-version/jssp/code"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/victor/git-version/jssp/code/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/victor/git-version/jssp/code/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/victor/git-version/jssp/code/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/victor/git-version/jssp/code/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/victor/git-version/jssp/code/main.cpp">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/Callback.cpp">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/Callback.hpp">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/Compact.cpp">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/Compact.hpp">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/Fernando.cpp">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/Fernando.hpp">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/Flow.cpp">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/Flow.hpp">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/Flow_testes.cpp">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/Flow_testes.hpp">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/Gera.cpp">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/Gera.hpp">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/Hash.cpp">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/Instance.cpp">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/Instance.hpp">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/Kondili.cpp">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/Kondili.hpp">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/cgraph/BKGraph.cpp">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/cgraph/BKGraph.hpp">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/cgraph/BKVertex.cpp">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/cgraph/BKVertex.hpp">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/cgraph/bron_kerbosch.cpp">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/cgraph/bron_kerbosch.h">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/cgraph/build_cgraph.cpp">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/cgraph/build_cgraph.h">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/cgraph/cgraph.c">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/cgraph/cgraph.h">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/cgraph/clique.c">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/cgraph/clique.h">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/cgraph/clique_extender.c">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/cgraph/clique_extender.h">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/cgraph/clique_merge.c">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/cgraph/clique_merge.h">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/cgraph/clique_separation.c">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/cgraph/clique_separation.h">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/cgraph/cut.c">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/cgraph/cut.h">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/cgraph/digraph.h">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/cgraph/lp.cpp">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/cgraph/lp.h">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/cgraph/macros.h">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/cgraph/memory.c">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/cgraph/memory.h">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/cgraph/node_heap.c">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/cgraph/node_heap.h">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/cgraph/oddhs.c">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/cgraph/oddhs.h">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/cgraph/spaths.c">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/cgraph/spaths.h">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/cgraph/strutils.c">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/cgraph/strutils.h">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/cgraph/vectormgm.c">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/cgraph/vectormgm.h">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/cgraph/vint_queue.c">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/cgraph/vint_queue.h">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/cgraph/vint_set.c">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/cgraph/vint_set.h">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/src/lp.hpp">
+			<Option target="jssp"/>
+		</Unit>
+		<Unit filename="/home/victor/git-version/jssp/code/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

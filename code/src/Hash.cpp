@@ -14,16 +14,18 @@ extern "C"{
         int j;
         int t;
         int var;
+        double x;
 
         S(){
 
         }
 
-        S(int i1, int j1, int t1, int var1){
+        S(int i1, int j1, int t1, int var1, double x1){
           i = i1;
           j = j1;
           t = t1;
           var = var1;
+          x = x1;
         }
 
         S& operator =(const S& a)
@@ -32,6 +34,7 @@ extern "C"{
             j = a.j;
             t = a.t;
             var = a.var;
+            x = a.x;
             return *this;
         }
 

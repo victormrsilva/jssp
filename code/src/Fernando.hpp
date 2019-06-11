@@ -69,12 +69,21 @@ private:
     bool backtrack(int j, int op, int ti, std::vector<S> sol);
     template <typename T> bool isSubset(std::vector<T> &A, std::vector<T> &B);
     bool limite_enumeracao;
-    void enumeracao_fenchel(const std::vector<S> &vars, int index, std::unordered_set<std::vector<S>> &solutions, std::vector<S> solution);
-    template <typename T> bool dominancia(std::vector<T> &vec, std::unordered_set<std::vector<T>> &set);
+    void enumeracao_fenchel(const std::deque<S> &vars, int index, std::vector<std::vector<S>> &solutions, std::vector<S> solution);
+    template <typename T> bool dominancia(std::vector<T> &vec, std::vector<std::vector<T>> &set);
     int fenchel_tempo(int ti, int tf); // pega as variáveis por um intervalo de tempo para fazer o corte
-    int fenchel_vars(std::deque<int> &vars); // pega as variáveis pelo intervalo de variáveis maiores que zero
+    int fenchel_vars(std::deque<S> &vars, std::deque<S> &vars1); // pega as variáveis pelo intervalo de variáveis maiores que zero
     int executeFenchel();
     std::vector< std::vector< int > > enum_time; // armazena o tempo das variáveis a serem alocadas
+    std::vector< std::vector< int > > novoEst; // armazena o novo est do backtracking
+    std::vector< std::vector< int > > novoLst; // armazena o novo lst do backtracking
+    std::vector< std::vector< int > > modificadoresEst; // armazena o modificador aplicado no novo est do backtracking
+    std::vector< std::vector< int > > modificadoresLst; // armazena o modificador aplicado no novo lst do backtracking
+
+    int runFenchel(std::deque<S> &vars, std::deque<S> &vars1);
+
+    void setAuxiliaresBacktrack(const S &var);
+    void desetAuxiliaresBacktrack(const S &var);
 
     bool canInsert(S var);
 };

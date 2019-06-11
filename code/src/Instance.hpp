@@ -93,6 +93,11 @@ public:
 
     // return if will be executed
     int execute() const; 
+
+    // return a copy of est
+    std::vector< std::vector <int> > copyEst() { return est_; }
+    // return a copy of lst
+    std::vector< std::vector <int> > copyLst() { return est_; }
 private:
     int n_;
     int m_;

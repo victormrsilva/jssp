@@ -1,0 +1,951 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="jssp" targetName="jssp" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="26e86f02-a7b5-4ec3-b676-9458074a76e9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/victor.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/c_cpp_properties.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/c_cpp_properties.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/ipch/1cf74fb2efa820d5/FERNANDO.ipch" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/ipch/1cf74fb2efa820d5/FERNANDO.ipch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/ipch/ebe6c6aa8a633d15/Fernando.ipch" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/ipch/ebe6c6aa8a633d15/Fernando.ipch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/ipch/fdef15f6d485efa1/INSTANCE.ipch" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/ipch/fdef15f6d485efa1/INSTANCE.ipch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/code/.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/3.13.0/CMakeCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/3.13.0/CMakeCCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/3.13.0/CMakeCXXCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/3.13.0/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/3.13.0/CMakeSystem.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/3.13.0/CMakeSystem.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/3.13.0/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/3.13.0/CompilerIdC/CMakeCCompilerId.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/3.13.0/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/3.13.0/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/3.5.1/CMakeCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/3.5.1/CMakeCCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/3.5.1/CMakeCXXCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/3.5.1/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/3.5.1/CMakeSystem.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/3.5.1/CMakeSystem.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/3.5.1/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/3.5.1/CompilerIdC/CMakeCCompilerId.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/3.5.1/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/3.5.1/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/feature_tests.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/Callback.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/Callback.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/Compact.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/Compact.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/Fernando.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/Flow.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/Flow.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/Flow_testes.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/Flow_testes.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/Gera.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/Gera.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/Hash.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/Hash.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/Instance.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/Instance.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/Kondili.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/Kondili.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/cgraph/BKGraph.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/cgraph/BKGraph.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/cgraph/BKVertex.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/cgraph/BKVertex.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/cgraph/bron_kerbosch.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/cgraph/bron_kerbosch.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/cgraph/build_cgraph.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/cgraph/build_cgraph.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/cgraph/cgraph.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/cgraph/cgraph.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/cgraph/clique.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/cgraph/clique.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/cgraph/clique_extender.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/cgraph/clique_extender.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/cgraph/clique_merge.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/cgraph/clique_merge.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/cgraph/clique_separation.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/cgraph/clique_separation.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/cgraph/cut.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/cgraph/cut.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/cgraph/lp.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/cgraph/lp.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/cgraph/memory.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/cgraph/memory.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/cgraph/node_heap.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/cgraph/node_heap.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/cgraph/oddhs.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/cgraph/oddhs.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/cgraph/spaths.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/cgraph/spaths.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/cgraph/strutils.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/cgraph/strutils.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/cgraph/vectormgm.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/cgraph/vectormgm.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/cgraph/vint_queue.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/cgraph/vint_queue.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/cgraph/vint_set.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/src/cgraph/vint_set.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/code/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/Makefile.1" beforeDir="false" afterPath="$PROJECT_DIR$/code/Makefile.1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/Makefile.deps" beforeDir="false" afterPath="$PROJECT_DIR$/code/Makefile.deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/abz5" beforeDir="false" afterPath="$PROJECT_DIR$/code/abz5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/abz6" beforeDir="false" afterPath="$PROJECT_DIR$/code/abz6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/abz8" beforeDir="false" afterPath="$PROJECT_DIR$/code/abz8" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/build/Callback.d" beforeDir="false" afterPath="$PROJECT_DIR$/code/build/Callback.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/build/cgraph/BKGraph.d" beforeDir="false" afterPath="$PROJECT_DIR$/code/build/cgraph/BKGraph.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/build/cgraph/BKVertex.d" beforeDir="false" afterPath="$PROJECT_DIR$/code/build/cgraph/BKVertex.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/build/cgraph/bron_kerbosch.d" beforeDir="false" afterPath="$PROJECT_DIR$/code/build/cgraph/bron_kerbosch.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/build/cgraph/build_cgraph.d" beforeDir="false" afterPath="$PROJECT_DIR$/code/build/cgraph/build_cgraph.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/build/cgraph/cgraph.d" beforeDir="false" afterPath="$PROJECT_DIR$/code/build/cgraph/cgraph.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/build/cgraph/clique.d" beforeDir="false" afterPath="$PROJECT_DIR$/code/build/cgraph/clique.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/build/cgraph/clique_extender.d" beforeDir="false" afterPath="$PROJECT_DIR$/code/build/cgraph/clique_extender.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/build/cgraph/clique_merge.d" beforeDir="false" afterPath="$PROJECT_DIR$/code/build/cgraph/clique_merge.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/build/cgraph/clique_separation.d" beforeDir="false" afterPath="$PROJECT_DIR$/code/build/cgraph/clique_separation.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/build/cgraph/cut.d" beforeDir="false" afterPath="$PROJECT_DIR$/code/build/cgraph/cut.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/build/cgraph/knapsack_separation.d" beforeDir="false" afterPath="$PROJECT_DIR$/code/build/cgraph/knapsack_separation.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/build/cgraph/memory.d" beforeDir="false" afterPath="$PROJECT_DIR$/code/build/cgraph/memory.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/build/cgraph/mrgclq.d" beforeDir="false" afterPath="$PROJECT_DIR$/code/build/cgraph/mrgclq.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/build/cgraph/node_heap.d" beforeDir="false" afterPath="$PROJECT_DIR$/code/build/cgraph/node_heap.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/build/cgraph/oddhs.d" beforeDir="false" afterPath="$PROJECT_DIR$/code/build/cgraph/oddhs.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/build/cgraph/spaths.d" beforeDir="false" afterPath="$PROJECT_DIR$/code/build/cgraph/spaths.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/build/cgraph/strutils.d" beforeDir="false" afterPath="$PROJECT_DIR$/code/build/cgraph/strutils.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/build/cgraph/vectormgm.d" beforeDir="false" afterPath="$PROJECT_DIR$/code/build/cgraph/vectormgm.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/build/cgraph/vint_queue.d" beforeDir="false" afterPath="$PROJECT_DIR$/code/build/cgraph/vint_queue.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/build/cgraph/vint_set.d" beforeDir="false" afterPath="$PROJECT_DIR$/code/build/cgraph/vint_set.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/code/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/cplex.log" beforeDir="false" afterPath="$PROJECT_DIR$/code/cplex.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/create_formulations.sh" beforeDir="false" afterPath="$PROJECT_DIR$/code/create_formulations.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/create_timeline.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/create_timeline.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/cuts.txt" beforeDir="false" afterPath="$PROJECT_DIR$/code/cuts.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/dmu01" beforeDir="false" afterPath="$PROJECT_DIR$/code/dmu01" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/execute.sh" beforeDir="false" afterPath="$PROJECT_DIR$/code/execute.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/fe03" beforeDir="false" afterPath="$PROJECT_DIR$/code/fe03" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/format_solution.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/format_solution.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/format_solutions.sh" beforeDir="false" afterPath="$PROJECT_DIR$/code/format_solutions.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/ft03" beforeDir="false" afterPath="$PROJECT_DIR$/code/ft03" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/ft06" beforeDir="false" afterPath="$PROJECT_DIR$/code/ft06" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/ft06_2000000_100_10_continuos_cuts.lp" beforeDir="false" afterPath="$PROJECT_DIR$/code/ft06_2000000_100_10_continuos_cuts.lp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/ft06_lifting.lp" beforeDir="false" afterPath="$PROJECT_DIR$/code/ft06_lifting.lp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/ft06_lifting.sol" beforeDir="false" afterPath="$PROJECT_DIR$/code/ft06_lifting.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/ft10" beforeDir="false" afterPath="$PROJECT_DIR$/code/ft10" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/gera.sh" beforeDir="false" afterPath="$PROJECT_DIR$/code/gera.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/gurobi.log" beforeDir="false" afterPath="$PROJECT_DIR$/code/gurobi.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/gurobi.sh" beforeDir="false" afterPath="$PROJECT_DIR$/code/gurobi.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/jssp" beforeDir="false" afterPath="$PROJECT_DIR$/code/jssp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/jssp.cdat" beforeDir="false" afterPath="$PROJECT_DIR$/code/jssp.cdat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/la02" beforeDir="false" afterPath="$PROJECT_DIR$/code/la02" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/lp_after_cuts.lp" beforeDir="false" afterPath="$PROJECT_DIR$/code/lp_after_cuts.lp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/out.out" beforeDir="false" afterPath="$PROJECT_DIR$/code/out.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/1lp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/1lp.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/1lp.h" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/1lp.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/Callback.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/Callback.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/Callback.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/Callback.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/Compact.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/Compact.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/Compact.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/Compact.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/Fernando.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/Fernando.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/Fernando.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/Fernando.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/Flow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/Flow.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/Flow.cpp.bkp" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/Flow.cpp.bkp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/Flow.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/Flow.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/Flow.hpp.bkp" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/Flow.hpp.bkp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/Flow_cuts.1.cpp1" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/Flow_cuts.1.cpp1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/Flow_cuts.1.hpp1" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/Flow_cuts.1.hpp1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/Flow_new.cpp1" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/Flow_new.cpp1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/Flow_new.hpp1" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/Flow_new.hpp1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/Flow_testes.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/Flow_testes.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/Flow_testes.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/Flow_testes.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/Gera.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/Gera.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/Gera.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/Gera.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/Hash.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/Hash.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/Instance.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/Instance.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/Instance.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/Instance.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/Kondili.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/Kondili.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/Kondili.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/Kondili.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph/BKGraph.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph/BKGraph.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph/BKGraph.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph/BKGraph.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph/BKVertex.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph/BKVertex.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph/BKVertex.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph/BKVertex.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph/bron_kerbosch.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph/bron_kerbosch.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph/bron_kerbosch.h" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph/bron_kerbosch.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph/build_cgraph.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph/build_cgraph.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph/build_cgraph.h" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph/build_cgraph.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph/cgraph.c" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph/cgraph.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph/cgraph.h" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph/cgraph.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph/clique.c" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph/clique.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph/clique.h" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph/clique.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph/clique_extender.c" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph/clique_extender.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph/clique_extender.h" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph/clique_extender.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph/clique_merge.c" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph/clique_merge.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph/clique_merge.h" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph/clique_merge.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph/clique_separation.c" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph/clique_separation.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph/clique_separation.h" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph/clique_separation.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph/cut.c" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph/cut.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph/cut.h" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph/cut.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph/digraph.h" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph/digraph.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph/lp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph/lp.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph/lp.h" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph/lp.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph/macros.h" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph/macros.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph/main.teste_cpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph/main.teste_cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph/memory.c" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph/memory.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph/memory.h" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph/memory.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph/node_heap.c" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph/node_heap.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph/node_heap.h" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph/node_heap.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph/oddhs.c" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph/oddhs.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph/oddhs.h" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph/oddhs.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph/spaths.c" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph/spaths.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph/spaths.h" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph/spaths.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph/strutils.c" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph/strutils.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph/strutils.h" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph/strutils.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph/vectormgm.c" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph/vectormgm.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph/vectormgm.h" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph/vectormgm.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph/vint_queue.c" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph/vint_queue.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph/vint_queue.h" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph/vint_queue.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph/vint_set.c" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph/vint_set.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph/vint_set.h" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph/vint_set.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph1/BKGraph.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph1/BKGraph.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph1/BKGraph.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph1/BKGraph.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph1/BKVertex.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph1/BKVertex.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph1/BKVertex.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph1/BKVertex.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph1/bron_kerbosch.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph1/bron_kerbosch.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph1/bron_kerbosch.h" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph1/bron_kerbosch.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph1/build_cgraph.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph1/build_cgraph.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph1/build_cgraph.h" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph1/build_cgraph.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph1/cgraph.c" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph1/cgraph.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph1/cgraph.h" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph1/cgraph.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph1/clique.c" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph1/clique.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph1/clique.h" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph1/clique.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph1/clique_extender.c" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph1/clique_extender.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph1/clique_extender.h" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph1/clique_extender.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph1/clique_merge.c" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph1/clique_merge.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph1/clique_merge.h" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph1/clique_merge.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph1/clique_separation.c" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph1/clique_separation.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph1/clique_separation.h" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph1/clique_separation.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph1/cut.c" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph1/cut.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph1/cut.h" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph1/cut.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph1/digraph.h" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph1/digraph.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph1/knapsack_separation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph1/knapsack_separation.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph1/knapsack_separation.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph1/knapsack_separation.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph1/lp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph1/lp.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph1/lp.h" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph1/lp.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph1/macros.h" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph1/macros.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph1/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph1/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph1/memory.c" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph1/memory.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph1/memory.h" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph1/memory.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph1/mrgclq.c" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph1/mrgclq.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph1/node_heap.c" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph1/node_heap.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph1/node_heap.h" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph1/node_heap.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph1/oddhs.c" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph1/oddhs.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph1/oddhs.h" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph1/oddhs.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph1/spaths.c" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph1/spaths.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph1/spaths.h" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph1/spaths.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph1/strutils.c" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph1/strutils.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph1/strutils.h" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph1/strutils.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph1/vectormgm.c" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph1/vectormgm.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph1/vectormgm.h" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph1/vectormgm.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph1/vint_queue.c" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph1/vint_queue.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph1/vint_queue.h" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph1/vint_queue.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph1/vint_set.c" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph1/vint_set.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/cgraph1/vint_set.h" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/cgraph1/vint_set.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/gurobi_c++.h" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/gurobi_c++.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/gurobi_c.h" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/gurobi_c.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/lp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/lp.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/lp.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/lp.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/ta05" beforeDir="false" afterPath="$PROJECT_DIR$/code/ta05" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/ta18" beforeDir="false" afterPath="$PROJECT_DIR$/code/ta18" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/teste.lp" beforeDir="false" afterPath="$PROJECT_DIR$/code/teste.lp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/teste.sol" beforeDir="false" afterPath="$PROJECT_DIR$/code/teste.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/teste_cb.lp" beforeDir="false" afterPath="$PROJECT_DIR$/code/teste_cb.lp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/vi_33_20_20000_50_10_continuos_clique_fenchel.csv" beforeDir="false" afterPath="$PROJECT_DIR$/code/vi_33_20_20000_50_10_continuos_clique_fenchel.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/vi_33_20_20000_50_10_continuos_cuts.lp" beforeDir="false" afterPath="$PROJECT_DIR$/code/vi_33_20_20000_50_10_continuos_cuts.lp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/vi_33_20_fenchel.lp" beforeDir="false" afterPath="$PROJECT_DIR$/code/vi_33_20_fenchel.lp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/vi_33_20_lifting.lp" beforeDir="false" afterPath="$PROJECT_DIR$/code/vi_33_20_lifting.lp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/vi_33_20_lifting.sol" beforeDir="false" afterPath="$PROJECT_DIR$/code/vi_33_20_lifting.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/vi_33_40_continuos_cuts.lp" beforeDir="false" afterPath="$PROJECT_DIR$/code/vi_33_40_continuos_cuts.lp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/vi_33_40_fenchel.lp" beforeDir="false" afterPath="$PROJECT_DIR$/code/vi_33_40_fenchel.lp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/vi_33_40_lifting.lp" beforeDir="false" afterPath="$PROJECT_DIR$/code/vi_33_40_lifting.lp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/vi_33_40_lifting.sol" beforeDir="false" afterPath="$PROJECT_DIR$/code/vi_33_40_lifting.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/vi_33_40_machine_original.lp" beforeDir="false" afterPath="$PROJECT_DIR$/code/vi_33_40_machine_original.lp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/vi_33_44_continuos_cuts.lp" beforeDir="false" afterPath="$PROJECT_DIR$/code/vi_33_44_continuos_cuts.lp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/vi_33_44_lifting.lp" beforeDir="false" afterPath="$PROJECT_DIR$/code/vi_33_44_lifting.lp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/vi_33_44_lifting.sol" beforeDir="false" afterPath="$PROJECT_DIR$/code/vi_33_44_lifting.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/vi_33_44_machine_original.lp" beforeDir="false" afterPath="$PROJECT_DIR$/code/vi_33_44_machine_original.lp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/vi_44_39_lifting.lp" beforeDir="false" afterPath="$PROJECT_DIR$/code/vi_44_39_lifting.lp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/vi_44_39_lifting.sol" beforeDir="false" afterPath="$PROJECT_DIR$/code/vi_44_39_lifting.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/vi_44_49_continuos_cuts.lp" beforeDir="false" afterPath="$PROJECT_DIR$/code/vi_44_49_continuos_cuts.lp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/vi_44_49_lifting.lp" beforeDir="false" afterPath="$PROJECT_DIR$/code/vi_44_49_lifting.lp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/vi_44_49_lifting.sol" beforeDir="false" afterPath="$PROJECT_DIR$/code/vi_44_49_lifting.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/vi_44_49_machine_original.lp" beforeDir="false" afterPath="$PROJECT_DIR$/code/vi_44_49_machine_original.lp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/abz5" beforeDir="false" afterPath="$PROJECT_DIR$/instances/abz5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/abz6" beforeDir="false" afterPath="$PROJECT_DIR$/instances/abz6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/abz7" beforeDir="false" afterPath="$PROJECT_DIR$/instances/abz7" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/abz8" beforeDir="false" afterPath="$PROJECT_DIR$/instances/abz8" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/abz9" beforeDir="false" afterPath="$PROJECT_DIR$/instances/abz9" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu01" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu01" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu02" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu02" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu03" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu03" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu04" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu04" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu05" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu05" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu06" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu06" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu07" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu07" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu08" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu08" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu09" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu09" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu10" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu10" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu11" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu11" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu12" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu12" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu13" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu13" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu14" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu14" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu15" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu15" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu16" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu16" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu17" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu17" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu18" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu18" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu19" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu19" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu20" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu20" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu21" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu21" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu22" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu22" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu23" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu23" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu24" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu24" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu25" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu25" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu26" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu26" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu27" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu27" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu28" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu28" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu29" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu29" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu30" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu30" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu31" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu31" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu32" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu32" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu33" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu33" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu34" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu34" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu35" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu35" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu36" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu36" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu37" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu37" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu38" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu38" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu39" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu39" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu40" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu40" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu41" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu41" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu42" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu42" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu43" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu43" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu44" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu44" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu45" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu45" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu46" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu46" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu47" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu47" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu48" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu48" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu49" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu49" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu50" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu50" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu51" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu51" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu52" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu52" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu53" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu53" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu54" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu54" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu55" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu55" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu56" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu56" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu57" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu57" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu58" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu58" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu59" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu59" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu60" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu60" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu61" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu61" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu62" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu62" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu63" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu63" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu64" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu64" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu65" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu65" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu66" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu66" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu67" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu67" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu68" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu68" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu69" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu69" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu70" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu70" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu71" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu71" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu72" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu72" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu73" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu73" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu74" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu74" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu75" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu75" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu76" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu76" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu77" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu77" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu78" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu78" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu79" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu79" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/dmu80" beforeDir="false" afterPath="$PROJECT_DIR$/instances/dmu80" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ft06" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ft06" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ft10" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ft10" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ft20" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ft20" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/la01" beforeDir="false" afterPath="$PROJECT_DIR$/instances/la01" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/la02" beforeDir="false" afterPath="$PROJECT_DIR$/instances/la02" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/la03" beforeDir="false" afterPath="$PROJECT_DIR$/instances/la03" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/la04" beforeDir="false" afterPath="$PROJECT_DIR$/instances/la04" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/la05" beforeDir="false" afterPath="$PROJECT_DIR$/instances/la05" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/la06" beforeDir="false" afterPath="$PROJECT_DIR$/instances/la06" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/la07" beforeDir="false" afterPath="$PROJECT_DIR$/instances/la07" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/la08" beforeDir="false" afterPath="$PROJECT_DIR$/instances/la08" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/la09" beforeDir="false" afterPath="$PROJECT_DIR$/instances/la09" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/la10" beforeDir="false" afterPath="$PROJECT_DIR$/instances/la10" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/la11" beforeDir="false" afterPath="$PROJECT_DIR$/instances/la11" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/la12" beforeDir="false" afterPath="$PROJECT_DIR$/instances/la12" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/la13" beforeDir="false" afterPath="$PROJECT_DIR$/instances/la13" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/la14" beforeDir="false" afterPath="$PROJECT_DIR$/instances/la14" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/la15" beforeDir="false" afterPath="$PROJECT_DIR$/instances/la15" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/la16" beforeDir="false" afterPath="$PROJECT_DIR$/instances/la16" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/la17" beforeDir="false" afterPath="$PROJECT_DIR$/instances/la17" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/la18" beforeDir="false" afterPath="$PROJECT_DIR$/instances/la18" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/la19" beforeDir="false" afterPath="$PROJECT_DIR$/instances/la19" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/la20" beforeDir="false" afterPath="$PROJECT_DIR$/instances/la20" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/la21" beforeDir="false" afterPath="$PROJECT_DIR$/instances/la21" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/la22" beforeDir="false" afterPath="$PROJECT_DIR$/instances/la22" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/la23" beforeDir="false" afterPath="$PROJECT_DIR$/instances/la23" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/la24" beforeDir="false" afterPath="$PROJECT_DIR$/instances/la24" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/la25" beforeDir="false" afterPath="$PROJECT_DIR$/instances/la25" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/la26" beforeDir="false" afterPath="$PROJECT_DIR$/instances/la26" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/la27" beforeDir="false" afterPath="$PROJECT_DIR$/instances/la27" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/la28" beforeDir="false" afterPath="$PROJECT_DIR$/instances/la28" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/la29" beforeDir="false" afterPath="$PROJECT_DIR$/instances/la29" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/la30" beforeDir="false" afterPath="$PROJECT_DIR$/instances/la30" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/la31" beforeDir="false" afterPath="$PROJECT_DIR$/instances/la31" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/la32" beforeDir="false" afterPath="$PROJECT_DIR$/instances/la32" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/la33" beforeDir="false" afterPath="$PROJECT_DIR$/instances/la33" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/la34" beforeDir="false" afterPath="$PROJECT_DIR$/instances/la34" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/la35" beforeDir="false" afterPath="$PROJECT_DIR$/instances/la35" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/la36" beforeDir="false" afterPath="$PROJECT_DIR$/instances/la36" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/la37" beforeDir="false" afterPath="$PROJECT_DIR$/instances/la37" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/la38" beforeDir="false" afterPath="$PROJECT_DIR$/instances/la38" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/la39" beforeDir="false" afterPath="$PROJECT_DIR$/instances/la39" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/la40" beforeDir="false" afterPath="$PROJECT_DIR$/instances/la40" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/orb01" beforeDir="false" afterPath="$PROJECT_DIR$/instances/orb01" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/orb02" beforeDir="false" afterPath="$PROJECT_DIR$/instances/orb02" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/orb03" beforeDir="false" afterPath="$PROJECT_DIR$/instances/orb03" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/orb04" beforeDir="false" afterPath="$PROJECT_DIR$/instances/orb04" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/orb05" beforeDir="false" afterPath="$PROJECT_DIR$/instances/orb05" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/orb06" beforeDir="false" afterPath="$PROJECT_DIR$/instances/orb06" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/orb07" beforeDir="false" afterPath="$PROJECT_DIR$/instances/orb07" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/orb08" beforeDir="false" afterPath="$PROJECT_DIR$/instances/orb08" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/orb09" beforeDir="false" afterPath="$PROJECT_DIR$/instances/orb09" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/orb10" beforeDir="false" afterPath="$PROJECT_DIR$/instances/orb10" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/swv01" beforeDir="false" afterPath="$PROJECT_DIR$/instances/swv01" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/swv02" beforeDir="false" afterPath="$PROJECT_DIR$/instances/swv02" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/swv03" beforeDir="false" afterPath="$PROJECT_DIR$/instances/swv03" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/swv04" beforeDir="false" afterPath="$PROJECT_DIR$/instances/swv04" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/swv05" beforeDir="false" afterPath="$PROJECT_DIR$/instances/swv05" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/swv06" beforeDir="false" afterPath="$PROJECT_DIR$/instances/swv06" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/swv07" beforeDir="false" afterPath="$PROJECT_DIR$/instances/swv07" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/swv08" beforeDir="false" afterPath="$PROJECT_DIR$/instances/swv08" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/swv09" beforeDir="false" afterPath="$PROJECT_DIR$/instances/swv09" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/swv10" beforeDir="false" afterPath="$PROJECT_DIR$/instances/swv10" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/swv11" beforeDir="false" afterPath="$PROJECT_DIR$/instances/swv11" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/swv12" beforeDir="false" afterPath="$PROJECT_DIR$/instances/swv12" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/swv13" beforeDir="false" afterPath="$PROJECT_DIR$/instances/swv13" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/swv14" beforeDir="false" afterPath="$PROJECT_DIR$/instances/swv14" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/swv15" beforeDir="false" afterPath="$PROJECT_DIR$/instances/swv15" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/swv16" beforeDir="false" afterPath="$PROJECT_DIR$/instances/swv16" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/swv17" beforeDir="false" afterPath="$PROJECT_DIR$/instances/swv17" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/swv18" beforeDir="false" afterPath="$PROJECT_DIR$/instances/swv18" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/swv19" beforeDir="false" afterPath="$PROJECT_DIR$/instances/swv19" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/swv20" beforeDir="false" afterPath="$PROJECT_DIR$/instances/swv20" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta01" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta01" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta02" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta02" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta03" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta03" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta04" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta04" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta05" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta05" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta06" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta06" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta07" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta07" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta08" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta08" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta09" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta09" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta10" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta10" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta11" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta11" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta12" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta12" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta13" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta13" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta14" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta14" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta15" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta15" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta16" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta16" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta17" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta17" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta18" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta18" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta19" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta19" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta20" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta20" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta21" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta21" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta22" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta22" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta23" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta23" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta24" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta24" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta25" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta25" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta26" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta26" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta27" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta27" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta28" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta28" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta29" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta29" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta30" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta30" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta31" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta31" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta32" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta32" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta33" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta33" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta34" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta34" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta35" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta35" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta36" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta36" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta37" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta37" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta38" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta38" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta39" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta39" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta40" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta40" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta41" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta41" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta42" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta42" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta43" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta43" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta44" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta44" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta45" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta45" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta46" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta46" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta47" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta47" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta48" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta48" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta49" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta49" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta50" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta50" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta51" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta51" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta52" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta52" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta53" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta53" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta54" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta54" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta55" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta55" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta56" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta56" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta57" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta57" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta58" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta58" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta59" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta59" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta60" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta60" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta61" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta61" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta62" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta62" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta63" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta63" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta64" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta64" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta65" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta65" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta66" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta66" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta67" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta67" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta68" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta68" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta69" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta69" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta70" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta70" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta71" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta71" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta72" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta72" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta73" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta73" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta74" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta74" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta75" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta75" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta76" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta76" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta77" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta77" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta78" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta78" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta79" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta79" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/ta80" beforeDir="false" afterPath="$PROJECT_DIR$/instances/ta80" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/yn01" beforeDir="false" afterPath="$PROJECT_DIR$/instances/yn01" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/yn02" beforeDir="false" afterPath="$PROJECT_DIR$/instances/yn02" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/yn03" beforeDir="false" afterPath="$PROJECT_DIR$/instances/yn03" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instances/yn04" beforeDir="false" afterPath="$PROJECT_DIR$/instances/yn04" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/examples/belgium-tourism-14.tsp" beforeDir="false" afterPath="$PROJECT_DIR$/python/examples/belgium-tourism-14.tsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/examples/bench/.ycm_extra_conf.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/examples/bench/.ycm_extra_conf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/examples/bench/bench.sh" beforeDir="false" afterPath="$PROJECT_DIR$/python/examples/bench/bench.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/examples/bench/queens-gurobi.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/examples/bench/queens-gurobi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/examples/bench/queens-pulp.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/examples/bench/queens-pulp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/examples/bench/queens.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/examples/bench/queens.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/examples/cgsep.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/examples/cgsep.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/examples/cutting_stock.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/examples/cutting_stock.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/examples/europe-tourism-22.tsp" beforeDir="false" afterPath="$PROJECT_DIR$/python/examples/europe-tourism-22.tsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/examples/master.lp" beforeDir="false" afterPath="$PROJECT_DIR$/python/examples/master.lp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/examples/pricing.lp" beforeDir="false" afterPath="$PROJECT_DIR$/python/examples/pricing.lp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/examples/queens.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/examples/queens.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/examples/queens_pulp.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/examples/queens_pulp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/examples/tsp-compact.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/examples/tsp-compact.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/examples/tsp-cuts.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/examples/tsp-cuts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/examples/tsp-gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/examples/tsp-gui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/examples/tsp-mipstart.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/examples/tsp-mipstart.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/examples/tsp-sol-pool.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/examples/tsp-sol-pool.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/examples/tspdata.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/examples/tspdata.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/examples/ulysses22.tsp" beforeDir="false" afterPath="$PROJECT_DIR$/python/examples/ulysses22.tsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/flow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/instance.1.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/instance.1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/instance.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/instance.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/main.1.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/main.1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/teste.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/teste.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/2-hrs/compact/abz5.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/2-hrs/compact/abz5.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/2-hrs/compact/abz5.sol" beforeDir="false" afterPath="$PROJECT_DIR$/results/2-hrs/compact/abz5.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/2-hrs/compact/abz7.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/2-hrs/compact/abz7.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/2-hrs/compact/abz7.sol" beforeDir="false" afterPath="$PROJECT_DIR$/results/2-hrs/compact/abz7.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/2-hrs/compact/abz8.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/2-hrs/compact/abz8.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/2-hrs/compact/abz8.sol" beforeDir="false" afterPath="$PROJECT_DIR$/results/2-hrs/compact/abz8.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/2-hrs/compact/abz9.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/2-hrs/compact/abz9.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/2-hrs/compact/abz9.sol" beforeDir="false" afterPath="$PROJECT_DIR$/results/2-hrs/compact/abz9.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/2-hrs/compact/ft20.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/2-hrs/compact/ft20.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/2-hrs/compact/ft20.sol" beforeDir="false" afterPath="$PROJECT_DIR$/results/2-hrs/compact/ft20.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/2-hrs/compact/la02.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/2-hrs/compact/la02.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/2-hrs/compact/la02.sol" beforeDir="false" afterPath="$PROJECT_DIR$/results/2-hrs/compact/la02.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/2-hrs/compact/la07.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/2-hrs/compact/la07.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/2-hrs/compact/la09.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/2-hrs/compact/la09.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/2-hrs/compact/la09.sol" beforeDir="false" afterPath="$PROJECT_DIR$/results/2-hrs/compact/la09.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/2-hrs/compact/la11.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/2-hrs/compact/la11.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/2-hrs/compact/la11.sol" beforeDir="false" afterPath="$PROJECT_DIR$/results/2-hrs/compact/la11.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/2-hrs/compact/la21.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/2-hrs/compact/la21.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/2-hrs/compact/la21.sol" beforeDir="false" afterPath="$PROJECT_DIR$/results/2-hrs/compact/la21.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/2-hrs/flow/abz5.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/2-hrs/flow/abz5.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/2-hrs/flow/abz7.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/2-hrs/flow/abz7.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/2-hrs/flow/abz8.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/2-hrs/flow/abz8.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/2-hrs/flow/abz9.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/2-hrs/flow/abz9.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/2-hrs/flow/ft20.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/2-hrs/flow/ft20.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/2-hrs/flow/la02.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/2-hrs/flow/la02.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/2-hrs/flow/la07.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/2-hrs/flow/la07.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/2-hrs/flow/la09.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/2-hrs/flow/la09.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/2-hrs/flow/la11.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/2-hrs/flow/la11.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/2-hrs/flow/la21.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/2-hrs/flow/la21.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/compact_abz5.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/compact_abz5.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/compact_abz5.sol" beforeDir="false" afterPath="$PROJECT_DIR$/results/compact_abz5.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/compact_abz7.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/compact_abz7.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/compact_abz7.sol" beforeDir="false" afterPath="$PROJECT_DIR$/results/compact_abz7.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/compact_abz8.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/compact_abz8.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/compact_abz8.sol" beforeDir="false" afterPath="$PROJECT_DIR$/results/compact_abz8.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/compact_abz9.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/compact_abz9.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/compact_abz9.sol" beforeDir="false" afterPath="$PROJECT_DIR$/results/compact_abz9.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/compact_ft20.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/compact_ft20.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/compact_ft20.sol" beforeDir="false" afterPath="$PROJECT_DIR$/results/compact_ft20.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/compact_la02.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/compact_la02.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/compact_la02.sol" beforeDir="false" afterPath="$PROJECT_DIR$/results/compact_la02.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/compact_la07.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/compact_la07.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/compact_la07.sol" beforeDir="false" afterPath="$PROJECT_DIR$/results/compact_la07.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/compact_la09.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/compact_la09.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/compact_la09.sol" beforeDir="false" afterPath="$PROJECT_DIR$/results/compact_la09.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/compact_la11.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/compact_la11.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/compact_la11.sol" beforeDir="false" afterPath="$PROJECT_DIR$/results/compact_la11.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/fernando_abz5.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/fernando_abz5.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/fernando_abz7.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/fernando_abz7.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/fernando_abz8.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/fernando_abz8.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/fernando_abz9.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/fernando_abz9.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/fernando_ft20.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/fernando_ft20.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/fernando_la02.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/fernando_la02.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/fernando_la07.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/fernando_la07.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/fernando_la09.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/fernando_la09.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/fernando_la11.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/fernando_la11.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/flow_abz5.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/flow_abz5.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/flow_abz7.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/flow_abz7.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/flow_abz8.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/flow_abz8.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/flow_abz9.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/flow_abz9.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/flow_ft20.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/flow_ft20.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/flow_la02.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/flow_la02.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/flow_la07.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/flow_la07.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/flow_la09.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/flow_la09.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/flow_la11.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/flow_la11.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/grbtune.log" beforeDir="false" afterPath="$PROJECT_DIR$/results/grbtune.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/grbtune3.log" beforeDir="false" afterPath="$PROJECT_DIR$/results/grbtune3.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/solution 12-hrs flwo/abz8.out_" beforeDir="false" afterPath="$PROJECT_DIR$/results/solution 12-hrs flwo/abz8.out_" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/solution 12-hrs flwo/abz8.sol" beforeDir="false" afterPath="$PROJECT_DIR$/results/solution 12-hrs flwo/abz8.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/solution 12-hrs flwo/dmu02.out_" beforeDir="false" afterPath="$PROJECT_DIR$/results/solution 12-hrs flwo/dmu02.out_" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/solution 12-hrs flwo/dmu02.sol" beforeDir="false" afterPath="$PROJECT_DIR$/results/solution 12-hrs flwo/dmu02.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/solution 12-hrs flwo/dmu33.out_" beforeDir="false" afterPath="$PROJECT_DIR$/results/solution 12-hrs flwo/dmu33.out_" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/solution 12-hrs flwo/dmu41.out_" beforeDir="false" afterPath="$PROJECT_DIR$/results/solution 12-hrs flwo/dmu41.out_" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/solution 12-hrs flwo/dmu41.sol" beforeDir="false" afterPath="$PROJECT_DIR$/results/solution 12-hrs flwo/dmu41.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/solution 12-hrs flwo/dmu59.out_" beforeDir="false" afterPath="$PROJECT_DIR$/results/solution 12-hrs flwo/dmu59.out_" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/solution 12-hrs flwo/flow_abz8.sol" beforeDir="false" afterPath="$PROJECT_DIR$/results/solution 12-hrs flwo/flow_abz8.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/solution 12-hrs flwo/flow_dmu02.sol" beforeDir="false" afterPath="$PROJECT_DIR$/results/solution 12-hrs flwo/flow_dmu02.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/solution 12-hrs flwo/flow_dmu33.sol" beforeDir="false" afterPath="$PROJECT_DIR$/results/solution 12-hrs flwo/flow_dmu33.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/solution 12-hrs flwo/flow_dmu41.sol" beforeDir="false" afterPath="$PROJECT_DIR$/results/solution 12-hrs flwo/flow_dmu41.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/solution 12-hrs flwo/flow_dmu59.sol" beforeDir="false" afterPath="$PROJECT_DIR$/results/solution 12-hrs flwo/flow_dmu59.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/solution 12-hrs flwo/flow_ft20.sol" beforeDir="false" afterPath="$PROJECT_DIR$/results/solution 12-hrs flwo/flow_ft20.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/solution 12-hrs flwo/flow_la02.sol" beforeDir="false" afterPath="$PROJECT_DIR$/results/solution 12-hrs flwo/flow_la02.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/solution 12-hrs flwo/flow_la31.sol" beforeDir="false" afterPath="$PROJECT_DIR$/results/solution 12-hrs flwo/flow_la31.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/solution 12-hrs flwo/flow_swv07.sol" beforeDir="false" afterPath="$PROJECT_DIR$/results/solution 12-hrs flwo/flow_swv07.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/solution 12-hrs flwo/flow_swv16.sol" beforeDir="false" afterPath="$PROJECT_DIR$/results/solution 12-hrs flwo/flow_swv16.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/solution 12-hrs flwo/flow_ta18.sol" beforeDir="false" afterPath="$PROJECT_DIR$/results/solution 12-hrs flwo/flow_ta18.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/solution 12-hrs flwo/flow_ta27.sol" beforeDir="false" afterPath="$PROJECT_DIR$/results/solution 12-hrs flwo/flow_ta27.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/solution 12-hrs flwo/flow_ta41.sol" beforeDir="false" afterPath="$PROJECT_DIR$/results/solution 12-hrs flwo/flow_ta41.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/solution 12-hrs flwo/flow_yn02.sol" beforeDir="false" afterPath="$PROJECT_DIR$/results/solution 12-hrs flwo/flow_yn02.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/solution 12-hrs flwo/ft20.out_" beforeDir="false" afterPath="$PROJECT_DIR$/results/solution 12-hrs flwo/ft20.out_" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/solution 12-hrs flwo/ft20.sol" beforeDir="false" afterPath="$PROJECT_DIR$/results/solution 12-hrs flwo/ft20.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/solution 12-hrs flwo/gurobi.log" beforeDir="false" afterPath="$PROJECT_DIR$/results/solution 12-hrs flwo/gurobi.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/solution 12-hrs flwo/la31.out_" beforeDir="false" afterPath="$PROJECT_DIR$/results/solution 12-hrs flwo/la31.out_" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/solution 12-hrs flwo/la31.sol" beforeDir="false" afterPath="$PROJECT_DIR$/results/solution 12-hrs flwo/la31.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/solution 12-hrs flwo/nohup.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/solution 12-hrs flwo/nohup.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/solution 12-hrs flwo/swv07.out_" beforeDir="false" afterPath="$PROJECT_DIR$/results/solution 12-hrs flwo/swv07.out_" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/solution 12-hrs flwo/swv07.sol" beforeDir="false" afterPath="$PROJECT_DIR$/results/solution 12-hrs flwo/swv07.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/solution 12-hrs flwo/swv16.out_" beforeDir="false" afterPath="$PROJECT_DIR$/results/solution 12-hrs flwo/swv16.out_" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/solution 12-hrs flwo/swv16.sol" beforeDir="false" afterPath="$PROJECT_DIR$/results/solution 12-hrs flwo/swv16.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/solution 12-hrs flwo/ta18.out_" beforeDir="false" afterPath="$PROJECT_DIR$/results/solution 12-hrs flwo/ta18.out_" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/solution 12-hrs flwo/ta18.sol" beforeDir="false" afterPath="$PROJECT_DIR$/results/solution 12-hrs flwo/ta18.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/solution 12-hrs flwo/ta27.out_" beforeDir="false" afterPath="$PROJECT_DIR$/results/solution 12-hrs flwo/ta27.out_" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/solution 12-hrs flwo/ta27.sol" beforeDir="false" afterPath="$PROJECT_DIR$/results/solution 12-hrs flwo/ta27.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/solution 12-hrs flwo/ta41.out_" beforeDir="false" afterPath="$PROJECT_DIR$/results/solution 12-hrs flwo/ta41.out_" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/solution 12-hrs flwo/ta41.sol" beforeDir="false" afterPath="$PROJECT_DIR$/results/solution 12-hrs flwo/ta41.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/solution 12-hrs flwo/yn02.out" beforeDir="false" afterPath="$PROJECT_DIR$/results/solution 12-hrs flwo/yn02.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/solution 12-hrs flwo/yn02.sol" beforeDir="false" afterPath="$PROJECT_DIR$/results/solution 12-hrs flwo/yn02.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/tune1.log" beforeDir="false" afterPath="$PROJECT_DIR$/results/tune1.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/tune1.prm" beforeDir="false" afterPath="$PROJECT_DIR$/results/tune1.prm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/tune2.log" beforeDir="false" afterPath="$PROJECT_DIR$/results/tune2.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/tune2.prm" beforeDir="false" afterPath="$PROJECT_DIR$/results/tune2.prm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/tune3.log" beforeDir="false" afterPath="$PROJECT_DIR$/results/tune3.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/tune3.prm" beforeDir="false" afterPath="$PROJECT_DIR$/results/tune3.prm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/tune_abz1.log" beforeDir="false" afterPath="$PROJECT_DIR$/results/tune_abz1.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/tune_abz1.prm" beforeDir="false" afterPath="$PROJECT_DIR$/results/tune_abz1.prm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/tune_abz2.log" beforeDir="false" afterPath="$PROJECT_DIR$/results/tune_abz2.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/tune_abz2.prm" beforeDir="false" afterPath="$PROJECT_DIR$/results/tune_abz2.prm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/tune_abz3.log" beforeDir="false" afterPath="$PROJECT_DIR$/results/tune_abz3.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/tune_abz3.prm" beforeDir="false" afterPath="$PROJECT_DIR$/results/tune_abz3.prm" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/code/cmake-build-debug/" />
+    <ignored path="$PROJECT_DIR$/code/CMakeFiles/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/main.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="108" column="13" selection-start-line="108" selection-start-column="13" selection-end-line="108" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/src/Fernando.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="71" column="44" selection-start-line="71" selection-start-column="44" selection-end-line="71" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/code/src/Fernando.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
+              <folding>
+                <element signature="e#493#759#1" />
+                <element signature="e#1029#1163#0" />
+                <element signature="e#6160#8804#0" />
+                <element signature="e#8806#9568#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/src/Hash.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="44" column="8" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/jssp.cdat">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>getchar()</find>
+      <find>lp_write_lp(fenchel</find>
+      <find>push_back</find>
+      <find>canIn</find>
+      <find>fenchel_vars</find>
+      <find>v1</find>
+      <find>gurobi810</find>
+      <find>set_vars</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>emplace_back</replace>
+      <replace>gurobi811</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/code/src/Hash.cpp" />
+        <option value="$PROJECT_DIR$/code/src/Fernando.hpp" />
+        <option value="$PROJECT_DIR$/code/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/code/src/Fernando.cpp" />
+        <option value="$PROJECT_DIR$/code/ft06_modificado_erase_1.01_3000000_50_20_continuos_clique_fenchel.csv" />
+      </list>
+    </option>
+  </component>
+  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="67" />
+    <option name="y" value="27" />
+    <option name="width" value="1299" />
+    <option name="height" value="705" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="jssp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jssp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jssp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jssp" type="462c0819:PsiDirectoryNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jssp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/code/CMakeLists.txt" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="jssp" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="ft06 55 1 Fe" PASS_PARENT_ENVS_2="true" PROJECT_NAME="jssp" TARGET_NAME="jssp" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="jssp" RUN_TARGET_NAME="jssp">
+      <envs>
+        <env name="LD_LIBRARY_PATH" value="/opt/gurobi811/linux64/lib" />
+      </envs>
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="26e86f02-a7b5-4ec3-b676-9458074a76e9" name="Default Changelist" comment="" />
+      <created>1559322279380</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1559322279380</updated>
+      <workItem from="1559322288775" duration="454000" />
+      <workItem from="1559568204446" duration="1439000" />
+      <workItem from="1559569727682" duration="448000" />
+      <workItem from="1559570244860" duration="6436000" />
+      <workItem from="1559855295510" duration="1812000" />
+      <workItem from="1559871756145" duration="1704000" />
+      <workItem from="1559911454091" duration="9058000" />
+      <workItem from="1560186596037" duration="11126000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="32477000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="67" y="25" width="1299" height="743" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49348533" visible="true" weight="0.2386273" />
+      <window_info id="Structure" order="1" sideWeight="0.50651467" side_tool="true" visible="true" weight="0.2386273" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.52274543" weight="0.30944625" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32899022" />
+      <window_info anchor="bottom" id="Database Changes" order="7" />
+      <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.4980048" weight="0.32736155" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32899022" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.481245" side_tool="true" weight="0.4771987" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.32899022" />
+      <window_info anchor="bottom" id="CMake" order="12" weight="0.328125" />
+      <window_info anchor="bottom" id="Profiler" order="13" sideWeight="0.51875496" weight="0.4771987" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/idea.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="108" column="13" selection-start-line="108" selection-start-column="13" selection-end-line="108" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/src/Fernando.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="71" column="44" selection-start-line="71" selection-start-column="44" selection-end-line="71" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/src/Hash.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="44" column="8" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="24" lean-forward="true" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/jssp.cdat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/ft06_modificado_erase_1.01_3000000_50_20_continuos_clique_fenchel.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="1" selection-start-column="1" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/ft06_modificado_erase_1.01_3000000_40_20_continuos_clique_fenchel.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/src/Fernando.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#493#759#1" />
+            <element signature="e#1029#1163#0" />
+            <element signature="e#6160#8804#0" />
+            <element signature="e#8806#9568#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

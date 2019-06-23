@@ -21,11 +21,11 @@ extern "C"
 #define STR_EXPAND(tok) #tok
 #define STR(tok) STR_EXPAND(tok)
 
-// #define LIMITE 1.00001
-#define LIMITE 1.01
-#define LIMITE_ENUM 3000000
-#define LIMITE_VARS 40
-#define TAMANHO_JANELA 20
+#define LIMITE 1.00001
+// #define LIMITE 1.01
+#define LIMITE_ENUM 20000
+#define LIMITE_VARS 30
+#define TAMANHO_JANELA 10
 
 
 struct pair_hash
@@ -81,7 +81,7 @@ process(vector<vector<vector<vector<int>>>>(inst_.n(), (vector<vector<vector<int
     double bnd = lp_obj_value(mip);
     int iteracao = 1;
     ofstream f;
-    f.open(inst_.instanceName() + "_modificado_erase_1.01_" + STR(LIMITE_ENUM) + "_" + STR(LIMITE_VARS) + "_" + STR(TAMANHO_JANELA) +"_continuos_clique_fenchel.csv");
+    f.open(inst_.instanceName() + "_modificad_erase_" + STR(LIMITE_ENUM) + "_" + STR(LIMITE_VARS) + "_" + STR(TAMANHO_JANELA) +"_continuos_clique_fenchel.csv");
     f << "iteracao;bnd;cliques;fenchel;limiteEnum;limiteVar;janelaModificada;valor_lifting;tempo" << endl;
     f << "0;" << bnd <<";0;0;0;0;0;0;" << lp_solution_time(mip) << endl;
 
@@ -111,7 +111,7 @@ process(vector<vector<vector<vector<int>>>>(inst_.n(), (vector<vector<vector<int
         qtdLimiteVarsEnumeracao = 0;
         lp_set_print_messages(mip,0);
         do {            
-            // clique = manual_cuts();
+            clique = manual_cuts();
             fenchel = executeFenchel();
             cliqueIter += clique;
             fenchelIter += fenchel;
@@ -1467,24 +1467,24 @@ int Fernando::executeFenchel(){
                             S aux = S(i,j,t,xIdx_[i][j][t],x[xIdx_[i][j][t]]);
                             vars_continua.emplace_back(aux);
                             mudouVar = true;
-//                            if (vars_continua.size() < maxVars){
-//                                // cout << names[xIdx_[i][j][t]] << " " << x[xIdx_[i][j][t]] << endl;
-//                                S aux = S(i,j,t,xIdx_[i][j][t],x[xIdx_[i][j][t]]);
-//                                vars_continua.emplace_back(aux);
-//                                mudouVar = true;
-//                            } else {
-//                                // caso eu chegue no maior valor de variáveis possível, executa com o conjunto atual
-//                                // cout << "chegou no limite. executando com conjunto atual." << endl;
-//                                qtdCuts += runFenchel(vars_continua, vars1);
-//                                // e removo as mais antigas e insiro a mais nova
-//                                // cout << "removendo mais antiga" << endl;
-//                                vars_continua.pop_front();
-//                                S aux = S(i,j,t,xIdx_[i][j][t],x[xIdx_[i][j][t]]);
-//                                vars_continua.emplace_back(aux);
-//                                qtdLimiteVarsEnumeracao++;
-//                                mudouVar = true;
-//                                // getchar();
-//                            }
+                            // if (vars_continua.size() < maxVars){
+                            //     // cout << names[xIdx_[i][j][t]] << " " << x[xIdx_[i][j][t]] << endl;
+                            //     S aux = S(i,j,t,xIdx_[i][j][t],x[xIdx_[i][j][t]]);
+                            //     vars_continua.emplace_back(aux);
+                            //     mudouVar = true;
+                            // } else {
+                            //     // caso eu chegue no maior valor de variáveis possível, executa com o conjunto atual
+                            //     // cout << "chegou no limite. executando com conjunto atual." << endl;
+                            //     qtdCuts += runFenchel(vars_continua, vars1);
+                            //     // e removo as mais antigas e insiro a mais nova
+                            //     // cout << "removendo mais antiga" << endl;
+                            //     vars_continua.pop_front();
+                            //     S aux = S(i,j,t,xIdx_[i][j][t],x[xIdx_[i][j][t]]);
+                            //     vars_continua.emplace_back(aux);
+                            //     qtdLimiteVarsEnumeracao++;
+                            //     mudouVar = true;
+                            //     // getchar();
+                            // }
                         }
                     }
                 }

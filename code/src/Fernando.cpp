@@ -22,10 +22,10 @@ extern "C"
 #define STR(tok) STR_EXPAND(tok)
 
 #define LIMITE 1.00001
-// #define LIMITE 1.01
-#define LIMITE_ENUM 20000
-#define LIMITE_VARS 30
-#define TAMANHO_JANELA 10
+//#define LIMITE 1.01
+#define LIMITE_ENUM 5000000
+#define LIMITE_VARS 500
+#define TAMANHO_JANELA 9
 
 
 struct pair_hash
@@ -65,7 +65,7 @@ double Fernando::teto(double v)
 }
 
 Fernando::Fernando( Instance &_inst ) : inst_(_inst),
-process(vector<vector<vector<vector<int>>>>(inst_.n(), (vector<vector<vector<int>>>(inst_.m(), vector<vector<int>>(inst_.maxTime()+1))))) 
+                                        process(vector<vector<vector<vector<int>>>>(inst_.n(), (vector<vector<vector<int>>>(inst_.m(), vector<vector<int>>(inst_.maxTime()+1)))))
 { // já inicializa a variável privada _inst com o valor passado por referencia
     // reduz_lst_kondili(5);
 
@@ -81,7 +81,8 @@ process(vector<vector<vector<vector<int>>>>(inst_.n(), (vector<vector<vector<int
     double bnd = lp_obj_value(mip);
     int iteracao = 1;
     ofstream f;
-    f.open(inst_.instanceName() + "_modificad_erase_" + STR(LIMITE_ENUM) + "_" + STR(LIMITE_VARS) + "_" + STR(TAMANHO_JANELA) +"_continuos_clique_fenchel.csv");
+//    f.open(inst_.instanceName() + "_modificado_erase_1.01_" + STR(LIMITE_ENUM) + "_" + STR(LIMITE_VARS) + "_" + STR(TAMANHO_JANELA) +"_continuos_+clique_fenchel.csv");
+    f.open(inst_.instanceName() + "_" + STR(LIMITE_ENUM) + "_" + STR(LIMITE_VARS) + "_" + STR(TAMANHO_JANELA) +"_continuos_clique_fenchel.csv");
     f << "iteracao;bnd;cliques;fenchel;limiteEnum;limiteVar;janelaModificada;valor_lifting;tempo" << endl;
     f << "0;" << bnd <<";0;0;0;0;0;0;" << lp_solution_time(mip) << endl;
 
@@ -110,7 +111,7 @@ process(vector<vector<vector<vector<int>>>>(inst_.n(), (vector<vector<vector<int
         qtdLimitesEnumeracao = 0;
         qtdLimiteVarsEnumeracao = 0;
         lp_set_print_messages(mip,0);
-        do {            
+        do {
             clique = manual_cuts();
             fenchel = executeFenchel();
             cliqueIter += clique;
@@ -159,9 +160,9 @@ int Fernando::manual_cuts(){
             soma = soma + x[var];
         }
         // f << soma << endl;
-        
+
         if (soma > 1.000001){ // houve violação então vamos adicionar os cortes
-        // if (soma > LIMITE){ // houve violação então vamos adicionar os cortes
+            // if (soma > LIMITE){ // houve violação então vamos adicionar os cortes
             //cout << soma << endl;
             vector< int > idx;
             vector< double > coef;
@@ -289,119 +290,119 @@ void Fernando::cgraph_creation()
     unordered_set<int> conflitos;
     //cgraph_add_node_conflicts(cgraph,cIdx_,&conflitos[0],conflitos.size());
     vector<int> indices_conflitos;
-            for (int m = 0; m < inst_.m(); m++)
+    for (int m = 0; m < inst_.m(); m++)
+    {
+        for (int j = 0; j < inst_.n(); j++)
+        {
+            int m0 = inst_.machine(j, m);
+            int mf = (m == inst_.m() - 1 ? inst_.m() : inst_.machine(j, m + 1));
+            int dur = inst_.time(j, m0); // duration time for machine m0 in job j
+            for (int t = inst_.est(j, m0); t <= inst_.lst(j, m0); t++)
             {
-                for (int j = 0; j < inst_.n(); j++)
+                //cout << j << " " << m0 << " " << t << " " << mf << " " << t+dur << endl;
+                int idx = xIdx_[m0][j][t];
+                // cout << idx << endl;
+                indices_conflitos.emplace_back(idx);
+                conflitos.clear();
+                file_conflitos << "variavel: " << idx << " " << names[idx] << endl;
+                // caso 1
+                file_conflitos << "caso 1: " << endl;
+                for (int tf = inst_.est(j, m0); tf < inst_.lst(j, m0); tf++)
                 {
-                    int m0 = inst_.machine(j, m);
-                    int mf = (m == inst_.m() - 1 ? inst_.m() : inst_.machine(j, m + 1));
-                    int dur = inst_.time(j, m0); // duration time for machine m0 in job j
-                    for (int t = inst_.est(j, m0); t <= inst_.lst(j, m0); t++)
-                    {
-                        //cout << j << " " << m0 << " " << t << " " << mf << " " << t+dur << endl;
-                        int idx = xIdx_[m0][j][t];
-                        // cout << idx << endl;
-                        indices_conflitos.emplace_back(idx);
-                        conflitos.clear();
-                        file_conflitos << "variavel: " << idx << " " << names[idx] << endl;
-                        // caso 1
-                        file_conflitos << "caso 1: " << endl;
-                        for (int tf = inst_.est(j, m0); tf < inst_.lst(j, m0); tf++)
-                        {
-                            if (t == tf)
-                                continue;
-                            // if (tf > inst_.est(j, m0))
-                            // {
-                            //     file_conflitos << names[xIdx_[j][m0 + 1][tf - 1][m0 + 1][tf]] << " ";
-                            //     conflitos.insert(xIdx_[j][m0 + 1][tf - 1][m0 + 1][tf]);
-                            // }
-                            file_conflitos << names[xIdx_[m0][j][tf]] << " ";
-                            conflitos.insert(xIdx_[m0][j][tf]);
-                        }
+                    if (t == tf)
+                        continue;
+                    // if (tf > inst_.est(j, m0))
+                    // {
+                    //     file_conflitos << names[xIdx_[j][m0 + 1][tf - 1][m0 + 1][tf]] << " ";
+                    //     conflitos.insert(xIdx_[j][m0 + 1][tf - 1][m0 + 1][tf]);
+                    // }
+                    file_conflitos << names[xIdx_[m0][j][tf]] << " ";
+                    conflitos.insert(xIdx_[m0][j][tf]);
+                }
 
-                        // caso 2
-                        file_conflitos << endl << "caso 2: " << endl;
-                        if (m != 0)
+                // caso 2
+                file_conflitos << endl << "caso 2: " << endl;
+                if (m != 0)
+                {
+                    unordered_set<pair<int,int>,pair_hash> analisar;
+                    //cout << "analisar j: " << j+1 << " maquina: " << inst_.machine(j,m-1)+1 << " tempo: " << t-inst_.time(j, inst_.machine(j,m-1)) << " maquina atual: " << inst_.machine(j,m)+1 << " tempo atual: " << t << endl;
+                    analisar.emplace(std::make_pair(m-1,t-inst_.time(j, inst_.machine(j,m-1))));
+                    while (!analisar.empty()){
+                        pair<int,int> maquina_tempo = *analisar.begin();
+                        analisar.erase(analisar.begin());
+                        if (maquina_tempo.first == -1) continue; // primeira máquina
+                        int t0 = maquina_tempo.second;
+                        int m0 = inst_.machine(j,maquina_tempo.first);
+                        int mf = inst_.machine(j,maquina_tempo.first-1);
+
+                        //cout << "j:" << j+1 << " m: " << m << " t: " << t << " m0: " << m0+1 << " mf: " << mf+1 << " t0: " << t0 << " tf: " << t0-inst_.time(j,mf) << endl;
+                        //cout << maquina_tempo.first-1 << " " << t0-inst_.time(j,mf) << endl;
+                        for (int tf = t0 + 1 ; tf <= inst_.lst(j,m0); tf++)
                         {
-                            unordered_set<pair<int,int>,pair_hash> analisar;
-                            //cout << "analisar j: " << j+1 << " maquina: " << inst_.machine(j,m-1)+1 << " tempo: " << t-inst_.time(j, inst_.machine(j,m-1)) << " maquina atual: " << inst_.machine(j,m)+1 << " tempo atual: " << t << endl;
-                            analisar.emplace(std::make_pair(m-1,t-inst_.time(j, inst_.machine(j,m-1))));
-                            while (!analisar.empty()){
-                                pair<int,int> maquina_tempo = *analisar.begin();
-                                analisar.erase(analisar.begin());
-                                if (maquina_tempo.first == -1) continue; // primeira máquina
-                                int t0 = maquina_tempo.second;
-                                int m0 = inst_.machine(j,maquina_tempo.first);
-                                int mf = inst_.machine(j,maquina_tempo.first-1);
-                                
-                                //cout << "j:" << j+1 << " m: " << m << " t: " << t << " m0: " << m0+1 << " mf: " << mf+1 << " t0: " << t0 << " tf: " << t0-inst_.time(j,mf) << endl;
-                                //cout << maquina_tempo.first-1 << " " << t0-inst_.time(j,mf) << endl;
-                                for (int tf = t0 + 1 ; tf <= inst_.lst(j,m0); tf++)
-                                {
-                                    //cout << names[xIdx_[m0][j][tf]] << endl;
-                                    auto i = conflitos.emplace(xIdx_[m0][j][tf]);
-                                    if (i.second){ // conseguiu inserir{
-                                        file_conflitos << names[xIdx_[m0][j][tf]] << " ";
-                                    }
-                                }
-                                
-                                analisar.emplace(std::make_pair(maquina_tempo.first-1,t0-inst_.time(j,mf)));
-                                //cout << analisar.size() << endl;
-                                //getchar();
+                            //cout << names[xIdx_[m0][j][tf]] << endl;
+                            auto i = conflitos.emplace(xIdx_[m0][j][tf]);
+                            if (i.second){ // conseguiu inserir{
+                                file_conflitos << names[xIdx_[m0][j][tf]] << " ";
                             }
                         }
 
-                        // caso 3
-                        file_conflitos << endl << "caso 3: " << endl;
-                        for (int j_ = 0; j_ < inst_.n(); j_++)
-                        {
-                            for (int var : process[j_][m0][t])
-                            {
-                                if (var == idx)
-                                    continue;
-                                file_conflitos << names[var] << " ";
-                                conflitos.insert(var);
-                            }
-                        }
-
-                        // caso 4
-                        file_conflitos << endl << "caso 4: " << endl;
-
-
-                        for (int k = m+1; k < inst_.m(); k++){
-                            int m0 = inst_.machine(j,m);
-                            int mf = inst_.machine(j,k);
-                            int m_anterior = inst_.machine(j,k-1);
-                            //cout << "j" << j << " m0: " << m0+1 << " t0: " << t0 << " mf: " << mf+1 << " k: " << k << " distance: " << inst_.distance(j,m0,mf) << " est(mf): " << inst_.est(j,mf) << endl;
-                            for (int tf = inst_.est(j,mf); tf < t+inst_.distance(j,m0,mf); tf++){
-                                //cout << m0+1 << " " << t0 << " " << mf+1 << " " << tf << " " << t0+inst_.time(j,m_anterior) << endl;
-                                int var = xIdx_[mf][j][tf];
-                                conflitos.insert(var);
-                                file_conflitos << names[var] << " ";
-                                //cout << names[var] << endl;
-                            }
-                        }
-                                    //getchar();
-                        
-                        // mostra conflitos
-                        file_conflitos << endl << "todos os conflitos: " << endl;
-                        file_conflitos << names[idx] << " = ";
-                        vector<int> conflicts(conflitos.begin(),conflitos.end());
-                        for (int var : conflicts)
-                        {
-                            file_conflitos << names[var] << " ";
-                        }
-                        file_conflitos << endl << endl;
-                        cgraph_add_node_conflicts(cgraph, idx, &conflicts[0], conflicts.size());
-                        // idx = xIdx_[j][m0+1][t][m0+1][t+1];
-                        // conflitos.clear();
-                        // cgraph_add_node_conflicts(cgraph,idx,&conflitos[0],conflitos.size());
-                        //cout << "conflitos adicionados no cgraph" << endl;
+                        analisar.emplace(std::make_pair(maquina_tempo.first-1,t0-inst_.time(j,mf)));
+                        //cout << analisar.size() << endl;
                         //getchar();
                     }
                 }
+
+                // caso 3
+                file_conflitos << endl << "caso 3: " << endl;
+                for (int j_ = 0; j_ < inst_.n(); j_++)
+                {
+                    for (int var : process[j_][m0][t])
+                    {
+                        if (var == idx)
+                            continue;
+                        file_conflitos << names[var] << " ";
+                        conflitos.insert(var);
+                    }
+                }
+
+                // caso 4
+                file_conflitos << endl << "caso 4: " << endl;
+
+
+                for (int k = m+1; k < inst_.m(); k++){
+                    int m0 = inst_.machine(j,m);
+                    int mf = inst_.machine(j,k);
+                    int m_anterior = inst_.machine(j,k-1);
+                    //cout << "j" << j << " m0: " << m0+1 << " t0: " << t0 << " mf: " << mf+1 << " k: " << k << " distance: " << inst_.distance(j,m0,mf) << " est(mf): " << inst_.est(j,mf) << endl;
+                    for (int tf = inst_.est(j,mf); tf < t+inst_.distance(j,m0,mf); tf++){
+                        //cout << m0+1 << " " << t0 << " " << mf+1 << " " << tf << " " << t0+inst_.time(j,m_anterior) << endl;
+                        int var = xIdx_[mf][j][tf];
+                        conflitos.insert(var);
+                        file_conflitos << names[var] << " ";
+                        //cout << names[var] << endl;
+                    }
+                }
+                //getchar();
+
+                // mostra conflitos
+                file_conflitos << endl << "todos os conflitos: " << endl;
+                file_conflitos << names[idx] << " = ";
+                vector<int> conflicts(conflitos.begin(),conflitos.end());
+                for (int var : conflicts)
+                {
+                    file_conflitos << names[var] << " ";
+                }
+                file_conflitos << endl << endl;
+                cgraph_add_node_conflicts(cgraph, idx, &conflicts[0], conflicts.size());
+                // idx = xIdx_[j][m0+1][t][m0+1][t+1];
+                // conflitos.clear();
+                // cgraph_add_node_conflicts(cgraph,idx,&conflitos[0],conflitos.size());
+                //cout << "conflitos adicionados no cgraph" << endl;
+                //getchar();
             }
-    
+        }
+    }
+
     file_conflitos.close();
     clock_t end = clock();
     cout << "cgraph creation time: " << (double) (end-begin)/CLOCKS_PER_SEC << endl;
@@ -468,18 +469,18 @@ double Fernando::lifting(double c){
             //lp_row_name(mip,idxs[i], nome);
             if ((-1 * coefs[i]) > c )
                 aux = -1 * coefs[i];
-            else 
+            else
                 aux = c;
             //cout << coefs[i] << " " << c2 << " " <<  idxs[i] << " " << nome << " " << x << " " << c2*x <<endl;
             sol += aux * x;
         }
         int h = inst_.machine(j,inst_.m()-1);
         for (int t = inst_.est(j,h); t <= inst_.lst(j,h); t++){
-    
+
             idx.emplace_back(xIdx_[h][j][t]);
             if ((fabs(t+inst_.time(j,h)) - c ) > 1e-6)
                 aux = t+inst_.time(j,h);
-            else 
+            else
                 aux = c;
             coef.emplace_back(-aux);
         }
@@ -491,7 +492,7 @@ double Fernando::lifting(double c){
         lp_write_lp(mip, "teste_cb.lp");
     }
     lp_write_lp(mip, (filename+".lp").c_str());
-    
+
     lp_optimize(mip);
     lp_write_sol(mip,(filename+".sol").c_str());
     cout << "Lifting solved for c = " << c << ". Files " << filename+".lp" << " e " << filename+".sol" << " successfully created." << endl;
@@ -521,13 +522,13 @@ void Fernando::lifting_binario(){
         iteracoes++;
         int cortes = 0;
         c = ((ub-lb)/2 + lb);
-        
+
         if (clique)
         {
             cortes = manual_cuts();
             //saida << cliques(idxs,coefs) << ";";
         }
-        
+
         bnd = lifting(teto(c));
         saida << iteracoes << ";" << lb << ";" << ub << ";" <<teto(c) << ";" << cortes <<"," << bnd << ";" << lp_solution_time(mip) << endl;
         //lp_optimize_as_continuous(mip);
@@ -540,7 +541,7 @@ void Fernando::lifting_binario(){
             lb = teto(c);
         }
         cout << "depois: lb: " << lb << " ub: " << ub << " teto(c): " << teto(c) << " bnd: " << bnd << " fabs: " << fabs(c-bnd) << endl; //<< " floor(bnd):" << floor(bnd) << endl;
-        
+
         if (fabs(ub - lb) <= 1){
             cout << "antes: lb: " << lb << " ub: " << ub << " teto(c): " << teto(c) << " bnd: " << bnd << " fabs: " << fabs(c-bnd) << endl; //<< " floor(bnd):" << floor(bnd) << endl;
             c = ((ub-lb)/2 + lb);
@@ -560,7 +561,7 @@ void Fernando::lifting_binario(){
 
         //getchar();
     };
-    
+
     clock_t end = clock();
     cout << "Quantidade de iterações binario: " << iteracoes << " lb: " << lb << " ub " << ub <<endl;
     saida << iteracoes << ";" << lb << ";" << ub << ";" << teto(c) << ";-;-" << endl;
@@ -599,17 +600,17 @@ void Fernando::lifting_linear(){
             //cout << "oddHoles: " << cortes << endl;
             //cortes = cortes + cliques(idxs,coefs);
         }
-        
+
         bnd_anterior = bnd;
         c = teto(bnd);
         bnd = lifting(c);
-        
+
         //lp_write_lp(mip, "teste_cb.lp");
         //lp_write_sol(mip, "solution.sol");
         saida << iteracoes << ";" << bnd << ";" << c << ";" << cortes << ";" << lp_solution_time(mip)<<endl;
         cout <<  " c: " << c << " bnd_anterior: " << bnd_anterior << " bnd: " << bnd << endl;
         //getchar();
-    } 
+    }
     clock_t end = clock();
     cout << "Quantidade de iterações linear: " << iteracoes  <<endl;
     double time_spent = ((double)end - begin) / ((double)CLOCKS_PER_SEC);
@@ -633,7 +634,7 @@ void Fernando::combinacao(int job, unsigned int tam, vector<int> &vec, vector<ve
             if (vec.size() < tam){
                 combinacao(job, tam,vec,combinacoes);
             }
-                
+
             if (vec.size() == tam){
                 if (combinacoes.size()==0){
                     // cout << "tam 0: " << job << " ";
@@ -711,7 +712,7 @@ void Fernando::reduz_lst_kondili(int k_max){
             vector< double > ub; // upper bound
             vector< double > obj; // se é objetivo?
             vector< char > integer; // variável inteira?
-            
+
 
             // criação das variáveis x
             for (int i = 0; i < inst_.m(); i++){
@@ -796,7 +797,7 @@ void Fernando::reduz_lst_kondili(int k_max){
                         coef.emplace_back( -1 * t );
                     }
                     lp_add_row( mip_teste, idx, coef, "ord("+to_string(h+1)+","+to_string(j+1)+")", 'L', 0 );
-                    
+
                 }
             }
             // cout << "ord restriction added" << endl;
@@ -815,7 +816,7 @@ void Fernando::reduz_lst_kondili(int k_max){
             }
             //cout << endl;
             lp_add_row( mip_teste, idx, coef, "makespan("+to_string(inst_.machine(j,0)+1)+","+to_string(j+1)+")", 'E', 0 );
-            
+
             // cout << "makespan constraints created" << endl;
             lp_set_print_messages(mip_teste,0);
             // lp_write_lp( mip_teste, (inst_.instanceName() + "_"+nome+".lp").c_str() );
@@ -860,17 +861,17 @@ void Fernando::buildProblem(){
     // criação das variáveis x
     for (int i = 0; i < inst_.m(); i++){
         for (int t = 0; t <= inst_.maxTime(); t++){
-            fIdx_[i][t] = names.size(); 
+            fIdx_[i][t] = names.size();
             names.emplace_back("f("+to_string(i+1)+","+to_string(t)+")"); // nome dessa variável
             lb.emplace_back(0.0);
             ub.emplace_back(1.0);
             obj.emplace_back(0.0);
             integer.emplace_back(0);
-    
+
             for (int j = 0; j < inst_.n(); j++){
                 int m0 = inst_.machine(j,i);
                 if (t >= inst_.est(j,m0) && t <= inst_.lst(j,m0)){
-                    xIdx_[m0][j][t] = names.size(); 
+                    xIdx_[m0][j][t] = names.size();
                     names.emplace_back("x("+to_string(j+1)+","+to_string(m0+1)+","+to_string(t)+")"); // nome dessa variável
                     lb.emplace_back(0.0);
                     ub.emplace_back(1.0);
@@ -881,8 +882,8 @@ void Fernando::buildProblem(){
                     for (int tp = t; tp < t + dur; tp++) {
                         process[j][m0][tp].emplace_back(xIdx_[m0][j][t]);
                     }
-                
-                    eIdx_[m0][j][t] = names.size(); 
+
+                    eIdx_[m0][j][t] = names.size();
                     names.emplace_back("e("+to_string(j+1)+","+to_string(m0+1)+","+to_string(t)+")"); // nome dessa variável
                     lb.emplace_back(0.0);
                     ub.emplace_back(1.0);
@@ -971,7 +972,7 @@ void Fernando::buildProblem(){
         // adiciona restrição.
         idx.emplace_back( eIdx_[h][j][0] );
         coef.emplace_back( 1.0 );
-        
+
         lp_add_row( mip, idx, coef, "inicio_espera(m"+to_string(h)+",j"+to_string(j+1)+",t"+to_string(1)+")", 'E', 1 );
         constr_names.emplace_back("inicio_espera(m"+to_string(h)+",j"+to_string(j+1)+",t"+to_string(1)+")");
 
@@ -1045,7 +1046,7 @@ void Fernando::buildProblem(){
         coef.emplace_back( 1.0 );
         int h = inst_.machine(j,inst_.m()-1);
         for (int t = inst_.est(j,h); t <= inst_.lst(j,h); t++){
-            
+
             idx.emplace_back(xIdx_[h][j][t]);
             coef.emplace_back(-1*(t+inst_.time(j,h)));
         }
@@ -1059,7 +1060,7 @@ void Fernando::buildProblem(){
 
 void Fernando::buildCliqueCuts(){
     cout << variables_pack.size() << endl;
-    
+
     for (int m0 = 0; m0 < inst_.m(); m0++){
         for (int j = 0; j < inst_.n(); j++){
             for (int t=inst_.est(j,m0); t <= inst_.lst(j,m0); t++){
@@ -1315,12 +1316,12 @@ void Fernando::enumeracao_fenchel(const deque<S> &vars, int index, vector<vector
 
     // fim da recursão. Adiciona no conjunto de soluções
     if (solution.size() == inst_.m()*inst_.n()){
-            // for (S s : solution){
-            //     cout << names[s.var] << " ";
-            // }
-            // cout << endl;
-            solutions.emplace_back(solution);
-            // cout << " solutions: " << solutions.size() << " size solution: " << solution.size() << endl;
+        // for (S s : solution){
+        //     cout << names[s.var] << " ";
+        // }
+        // cout << endl;
+        solutions.emplace_back(solution);
+        // cout << " solutions: " << solutions.size() << " size solution: " << solution.size() << endl;
         return;
     }
     unsigned int qtd;
@@ -1439,7 +1440,7 @@ int Fernando::executeFenchel(){
 
     int interval = TAMANHO_JANELA; // tamanho da janela de tempo a ser analisada
     int passo = 2; // quanto a janela anda
-    
+
     int maxVars = LIMITE_VARS; // quantidade máxima de variáveis a serem enumeradas
 
 //    deque<int> vars;
@@ -1449,7 +1450,7 @@ int Fernando::executeFenchel(){
     int ti = 0; // tempo inicial
     int tf = 0; // tempo final
 
-    
+
     while (tf < inst_.maxTime()){
         tf = interval + ti;
         tf = (tf < inst_.maxTime() ? tf : inst_.maxTime());
@@ -1464,27 +1465,27 @@ int Fernando::executeFenchel(){
                             vars1.emplace_back(aux);
                             mudouVar = true;
                         } else if (x[xIdx_[i][j][t]] > 1e-05){
-                            S aux = S(i,j,t,xIdx_[i][j][t],x[xIdx_[i][j][t]]);
-                            vars_continua.emplace_back(aux);
-                            mudouVar = true;
-                            // if (vars_continua.size() < maxVars){
-                            //     // cout << names[xIdx_[i][j][t]] << " " << x[xIdx_[i][j][t]] << endl;
-                            //     S aux = S(i,j,t,xIdx_[i][j][t],x[xIdx_[i][j][t]]);
-                            //     vars_continua.emplace_back(aux);
-                            //     mudouVar = true;
-                            // } else {
-                            //     // caso eu chegue no maior valor de variáveis possível, executa com o conjunto atual
-                            //     // cout << "chegou no limite. executando com conjunto atual." << endl;
-                            //     qtdCuts += runFenchel(vars_continua, vars1);
-                            //     // e removo as mais antigas e insiro a mais nova
-                            //     // cout << "removendo mais antiga" << endl;
-                            //     vars_continua.pop_front();
-                            //     S aux = S(i,j,t,xIdx_[i][j][t],x[xIdx_[i][j][t]]);
-                            //     vars_continua.emplace_back(aux);
-                            //     qtdLimiteVarsEnumeracao++;
-                            //     mudouVar = true;
-                            //     // getchar();
-                            // }
+                            // S aux = S(i,j,t,xIdx_[i][j][t],x[xIdx_[i][j][t]]);
+                            // vars_continua.emplace_back(aux);
+                            // mudouVar = true;
+                            if (vars_continua.size() < maxVars){
+                                // cout << names[xIdx_[i][j][t]] << " " << x[xIdx_[i][j][t]] << endl;
+                                S aux = S(i,j,t,xIdx_[i][j][t],x[xIdx_[i][j][t]]);
+                                vars_continua.emplace_back(aux);
+                                mudouVar = true;
+                            } else {
+                                // caso eu chegue no maior valor de variáveis possível, executa com o conjunto atual
+                                // cout << "chegou no limite. executando com conjunto atual." << endl;
+                                qtdCuts += runFenchel(vars_continua, vars1);
+                                // e removo as mais antigas e insiro a mais nova
+                                // cout << "removendo mais antiga" << endl;
+                                vars_continua.pop_front();
+                                S aux = S(i,j,t,xIdx_[i][j][t],x[xIdx_[i][j][t]]);
+                                vars_continua.emplace_back(aux);
+                                qtdLimiteVarsEnumeracao++;
+                                mudouVar = true;
+                                // getchar();
+                            }
                         }
                     }
                 }
@@ -1498,10 +1499,10 @@ int Fernando::executeFenchel(){
         }
 
         // pega apenas as com maior valor contínuo
-        if (vars_continua.size() > maxVars){
-            std::sort(vars_continua.begin(), vars_continua.end(),[] (S a, S b) { return a.x > b.x; });
-            vars_continua.erase(vars_continua.begin()+maxVars, vars_continua.end());
-        }
+        // if (vars_continua.size() > maxVars){
+        //     std::sort(vars_continua.begin(), vars_continua.end(),[] (S a, S b) { return a.x > b.x; });
+        //     vars_continua.erase(vars_continua.begin()+maxVars, vars_continua.end());
+        // }
 
         qtdCuts += runFenchel(vars_continua, vars1);
 
@@ -1527,17 +1528,27 @@ bool Fernando::canInsert(S var){
     // cout << "ok" <<endl;
     // getchar();
 
-    // check conflict in machine
-    // cout << "check conflict in job: ";
-    for (int i = 0; i < inst_.m(); i++){
-        if (var.i == i || enum_time[var.j][i] == -1) continue;
-        int tf_s = enum_time[var.j][i] + inst_.time(var.j,i);
-        auto Min = std::max(enum_time[var.j][i], var.t);
-        auto Max = std::min(tf_s-1, tf_var-1);
-        if (Min <= Max) {
-            return false;
-        }
+    // check if variable can be in the solution based on the est and lst of current solution
+    // this already checks the conflict in job
+    if (var.t < novoEst[var.j][var.i]){
+        return false;
     }
+    if (var.t > novoLst[var.j][var.i]){
+        return false;
+    }
+
+
+    // check conflict in job
+    // cout << "check conflict in job: ";
+    // for (int i = 0; i < inst_.m(); i++){
+    //     if (var.i == i || enum_time[var.j][i] == -1) continue;
+    //     int tf_s = enum_time[var.j][i] + inst_.time(var.j,i);
+    //     auto Min = std::max(enum_time[var.j][i], var.t);
+    //     auto Max = std::min(tf_s-1, tf_var-1);
+    //     if (Min <= Max) {
+    //         return false;
+    //     }
+    // }
     // cout << "ok" <<endl;
     // getchar();
 
@@ -1554,12 +1565,6 @@ bool Fernando::canInsert(S var){
     }
     // cout << "ok" <<endl;
 
-    if (var.t < novoEst[var.j][var.i]){
-        return false;
-    }
-    if (var.t > novoLst[var.j][var.i]){
-        return false;
-    }
 
     return true;
 
@@ -1629,7 +1634,15 @@ int Fernando::fenchel_vars( deque<S> &vars, deque<S> &vars1){
     // getchar();
 
     vector<S> solution;
+    for (S v : vars1){
+        cout << names[v.var] << " " << v.x << endl;
+        solution.emplace_back(v);
+        setAuxiliaresBacktrack(v);
+    }
     enumeracao_fenchel(vars,0,solutions,solution);
+    for (S v : solution){
+        desetAuxiliaresBacktrack(v);
+    }
 
 
     // getchar();
@@ -1669,7 +1682,7 @@ int Fernando::fenchel_vars( deque<S> &vars, deque<S> &vars1){
     for (const vector<S> &vec : solutions){
         for (S s : vec){
             if (lambdas[s.i][s.j][s.t] == -1){
-                lambdas[s.i][s.j][s.t] = lambda_names.size(); 
+                lambdas[s.i][s.j][s.t] = lambda_names.size();
                 lambda_names.emplace_back("lambda("+to_string(s.j+1)+","+to_string(s.i+1)+","+to_string(s.t)+")"); // nome dessa variável
                 lb.emplace_back(0.0);
                 ub.emplace_back(1.0);
@@ -1693,7 +1706,7 @@ int Fernando::fenchel_vars( deque<S> &vars, deque<S> &vars1){
         lp_add_row(fenchel, idx, coef, "sol("+to_string(cont)+")", 'L', 1.0 );
         cont++;
     }
-    
+
     string filename = inst_.instanceName()+"_fenchel";
 //    lp_write_lp(fenchel, (filename+".lp").c_str());
     lp_optimize(fenchel);
@@ -1708,7 +1721,7 @@ int Fernando::fenchel_vars( deque<S> &vars, deque<S> &vars1){
             int job = 0;
             int time = 0;
             sscanf(lambda_names[i].c_str(),"lambda(%d,%d,%d)",&job,&mach,&time);
-            
+
             // cout << lambda_names[i] << "(" << xf[i] <<")" << "*" << names[xIdx_[mach-1][job-1][time]] << "(" << x[xIdx_[mach-1][job-1][time]] <<")" << " + " << endl;
             total += xf[i]*x[xIdx_[mach-1][job-1][time]];
         }

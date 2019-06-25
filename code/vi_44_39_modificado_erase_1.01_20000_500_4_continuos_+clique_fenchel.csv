@@ -1,0 +1,5 @@
+iteracao;bnd;cliques;fenchel;limiteEnum;limiteVar;janelaModificada;valor_lifting;tempo
+0;32.2939;0;0;0;0;0;0;1
+1;35.5;109;2;0;0;105;33;0.40625
+2;37;16;0;0;0;58;36;0.25
+3;37;10;0;0;0;86;36;0.234375

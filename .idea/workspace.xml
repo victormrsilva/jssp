@@ -11,21 +11,16 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26e86f02-a7b5-4ec3-b676-9458074a76e9" name="Default Changelist" comment="python compact formulation&#10;&#10;(cherry picked from commit 3b737634cbb8b0616ff97798f76c6f09478602ac)">
-      <change beforePath="$PROJECT_DIR$/.idea/jssp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jssp.iml" afterDir="false" />
+    <list default="true" id="26e86f02-a7b5-4ec3-b676-9458074a76e9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/python/compact_cutpool.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/feature_tests.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/link.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/python/compact.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/compact.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/examples/tsp-compact.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/examples/tsp-compact.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/examples/tspdata.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/examples/tspdata.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/python/gurobi.log" beforeDir="false" afterPath="$PROJECT_DIR$/python/gurobi.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/jssp_compact.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/jssp_compact.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/python/model_clique.lp" beforeDir="false" afterPath="$PROJECT_DIR$/python/model_clique.lp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/sol.sol" beforeDir="false" afterPath="$PROJECT_DIR$/python/sol.sol" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/python/teste.lp" beforeDir="false" afterPath="$PROJECT_DIR$/python/teste.lp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/code/cmake-build-debug/" />
@@ -50,8 +45,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/python/jssp_compact.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="238">
+              <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -59,13 +54,55 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/python/compact.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
-              <caret line="273" column="34" selection-start-line="273" selection-start-column="34" selection-end-line="273" selection-end-column="34" />
+            <state relative-caret-position="204">
+              <caret line="167" column="55" selection-start-line="167" selection-start-column="55" selection-end-line="167" selection-end-column="55" />
               <folding>
                 <element signature="e#13#46#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/python/best_model.lp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="8" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python/compact_cutpool.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="11" column="21" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python/examples/tsp-compact.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="595">
+              <caret line="41" selection-start-line="41" selection-end-line="42" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#20#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python/examples/tspdata.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+              <folding>
+                <element signature="e#0#53#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -74,17 +111,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/python/teste.lp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="189" selection-start-line="189" selection-end-line="189" />
+            <state relative-caret-position="1326">
+              <caret line="78" selection-start-line="78" selection-end-line="78" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.txt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/python/model.lp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="83" selection-start-line="78" selection-end-line="83" />
+            <state relative-caret-position="1326">
+              <caret line="78" selection-start-line="82" selection-start-column="61" selection-end-line="82" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -116,10 +158,19 @@
       <find>manual_cuts</find>
       <find>self.e</find>
       <find>aux</find>
-      <find>print</find>
       <find>end</find>
       <find>rs &lt; ls</find>
       <find>range(len(S)</find>
+      <find>(isinstance(result,int) == False)</find>
+      <find>].x</find>
+      <find>t[</find>
+      <find>self.y</find>
+      <find>isIn</find>
+      <find>isinstance(self.y</find>
+      <find>&gt;=</find>
+      <find>self.x</find>
+      <find>print</find>
+      <find>X_aux</find>
     </findStrings>
     <replaceStrings>
       <replace>emplace_back</replace>
@@ -128,6 +179,9 @@
       <replace>s_aux</replace>
       <replace>basic_cuts</replace>
       <replace>sizeS</replace>
+      <replace>isinstance(result,int) == False</replace>
+      <replace>][1]</replace>
+      <replace>x_aux</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -144,8 +198,12 @@
         <option value="$PROJECT_DIR$/code/src/Fernando.cpp" />
         <option value="$PROJECT_DIR$/code/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/python/JSSPInstance.py" />
-        <option value="$PROJECT_DIR$/python/compact.py" />
         <option value="$PROJECT_DIR$/python/teste.lp" />
+        <option value="$PROJECT_DIR$/python/examples/tspdata.py" />
+        <option value="$PROJECT_DIR$/python/examples/tsp-compact.py" />
+        <option value="$PROJECT_DIR$/python/compact_cutpool.py" />
+        <option value="$PROJECT_DIR$/python/jssp_compact.py" />
+        <option value="$PROJECT_DIR$/python/compact.py" />
       </list>
     </option>
   </component>
@@ -161,7 +219,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -172,31 +229,26 @@
             <path>
               <item name="jssp" type="b2602c69:ProjectViewProjectNode" />
               <item name="jssp" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jssp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jssp" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jssp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jssp" type="462c0819:PsiDirectoryNode" />
               <item name="python" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/code/build" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/python" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/python" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -244,7 +296,10 @@
       <workItem from="1561377314364" duration="19939000" />
       <workItem from="1561552356407" duration="3119000" />
       <workItem from="1561980403042" duration="4549000" />
-      <workItem from="1561987836604" duration="5824000" />
+      <workItem from="1561987836604" duration="5912000" />
+      <workItem from="1562023444384" duration="15466000" />
+      <workItem from="1563213879720" duration="17345000" />
+      <workItem from="1563318060832" duration="133000" />
     </task>
     <task id="LOCAL-00001" summary="teste">
       <created>1561493909764</created>
@@ -253,11 +308,18 @@
       <option name="project" value="LOCAL" />
       <updated>1561493909764</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="python cuts compact formulation">
+      <created>1562015525288</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1562015525288</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75357000" />
+    <option name="totallyTimeSpent" value="108389000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -272,8 +334,8 @@
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4820847" visible="true" weight="0.26735833" />
-      <window_info id="Structure" order="1" sideWeight="0.5179153" side_tool="true" visible="true" weight="0.26735833" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4752941" visible="true" weight="0.28172386" />
+      <window_info id="Structure" order="1" sideWeight="0.5247059" side_tool="true" visible="true" weight="0.28172386" />
       <window_info id="Favorites" order="2" sideWeight="0.5169903" side_tool="true" weight="0.26256984" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -286,7 +348,7 @@
       <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.4980048" weight="0.32736155" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32899022" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.49162012" side_tool="true" weight="0.32899022" />
-      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.5083799" weight="0.30781758" />
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.5083799" visible="true" weight="0.30781758" />
       <window_info anchor="bottom" id="CMake" order="12" weight="0.32736155" />
       <window_info anchor="bottom" id="Profiler" order="13" sideWeight="0.51875496" weight="0.4771987" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -342,7 +404,8 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <MESSAGE value="teste" />
-    <option name="LAST_COMMIT_MESSAGE" value="teste" />
+    <MESSAGE value="python cuts compact formulation" />
+    <option name="LAST_COMMIT_MESSAGE" value="python cuts compact formulation" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$APPLICATION_CONFIG_DIR$/idea.properties">
@@ -420,13 +483,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/python/JSSPInstance.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/code/src/Fernando.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="492">
@@ -436,35 +492,79 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/python/jssp_compact.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="238">
+          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/python/model.lp">
+    <entry file="file://$PROJECT_DIR$/python/compact_cutpool.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="83" selection-start-line="78" selection-end-line="83" />
+        <state relative-caret-position="68">
+          <caret line="11" column="21" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/examples/tsp-compact.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="41" selection-start-line="41" selection-end-line="42" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/examples/tspdata.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#53#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/python/teste.lp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="189" selection-start-line="189" selection-end-line="189" />
+        <state relative-caret-position="1326">
+          <caret line="78" selection-start-line="78" selection-end-line="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/model.lp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1326">
+          <caret line="78" selection-start-line="82" selection-start-column="61" selection-end-line="82" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/JSSPInstance.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/python/compact.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="273" column="34" selection-start-line="273" selection-start-column="34" selection-end-line="273" selection-end-column="34" />
+        <state relative-caret-position="204">
+          <caret line="167" column="55" selection-start-line="167" selection-start-column="55" selection-end-line="167" selection-end-column="55" />
           <folding>
             <element signature="e#13#46#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/best_model.lp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="8" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
         </state>
       </provider>
     </entry>

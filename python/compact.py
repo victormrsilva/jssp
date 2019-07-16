@@ -5,6 +5,8 @@ import sys
 from time import process_time
 import numpy as np
 
+from compact_cutpool import Compact_CutPool
+
 from itertools import permutations, combinations
 
 
@@ -15,19 +17,6 @@ class Compact:
     # build the problem
     def constructProblem(self):
         self.instance.print()
-        # S = [0, 2]
-        # print("E({0,2},1) = ", self.E(S, 1))
-        # print("F({0,2},1) = ", self.F(S, 1))
-        # print("p({0,2},1) = ", self.p(S, 1))
-        # S = [0, 1, 2]
-        # print("E({0,1,2},0) = ", self.E(S, 0))
-        # print("F({0,1,2},0) = ", self.F(S, 0))
-        # print("p({0,1,2},0) = ", self.p(S, 0))
-
-        # for aux in range(1,self.instance.m):
-        #     comb = combinations(list(range(0,self.instance.n)), aux+1)
-        #     for S in list(comb):
-        #         print(S)
 
         self.model = Model('compact')
 
@@ -60,9 +49,16 @@ class Compact:
         for j in range(self.instance.n):
             self.model += self.c - self.x[j][self.instance.machines[j][self.instance.m - 1]] >= self.instance.times[j][
                 self.instance.machines[j][self.instance.m - 1]], 'makespan({})'.format(j)
-        newConstraints = True
         self.model.write('model.lp')
 
+    #cutpool
+    def optmizeCuts(self):
+        self.model.cuts_generator = Compact_CutPool(self.instance)
+        self.model.optimize()
+
+    #relax model
+    def relax(self):
+        newConstraints = True
         self.model.relax()
         self.iterationsCuts = 0
         while newConstraints:
@@ -77,6 +73,7 @@ class Compact:
             self.model.write('teste.lp')
             hasCuts = 0
             for a in range(self.instance.m):
+                self.basic_cuts_best(a)
                 triangle_cuts = 0
                 basic_cuts_epsilon = 0
                 basic_cuts = 0
@@ -108,13 +105,9 @@ class Compact:
                             for l in range(self.instance.n):
                                 late_jobs_cuts += self.late_job_cuts(S,a,k,l)
                             half_cuts += self.half_cuts(S,a,k)
-                minS = min(self.instance.n,5)
-                for sizeS in range(1, minS):
-                    # generate all combinations of jobs with size sizeS = {2,...,min(n,5)}
-                    # used for cuts where the order of jobs doesn't matter
-                    perm = permutations(list(range(0, self.instance.n)), sizeS + 1)
-                    for S in list(perm):
-                        clique_cuts += self.clique_cuts(S, a)
+
+                        if len(S) <= 5:
+                            clique_cuts += self.clique_cuts(S, a)
                 print('For machine {} were found {} basic cuts, {} two jobs cuts, {} clique cuts, {} triangle cuts, {} basic cuts epsilon, {} half cuts and {} late jobs cuts'.format(a, basic_cuts, two_job_cuts, clique_cuts, triangle_cuts, basic_cuts_epsilon, half_cuts, late_jobs_cuts))
                 hasCuts += basic_cuts + clique_cuts + basic_cuts_epsilon + half_cuts + late_jobs_cuts + two_job_cuts + triangle_cuts
                 self.model.write('teste.lp')
@@ -122,19 +115,11 @@ class Compact:
 
             if hasCuts > 0:
                 newConstraints = True
-            self.model.relax()
-            self.optimize()
+        return
 
     # optimize model
-    def optimize(self):
+    def optimizeInteger(self):
         self.model.optimize()
-
-        # printing results
-        print("C: ", self.c.x)
-        for j in range(self.instance.n):
-            for i in range(self.instance.m):
-                print('x({},{}) = {} '.format(j + 1, i + 1, self.x[j][i].x), end='')
-            print()
 
     def E(self, S, a):
         min = 99999999
@@ -156,29 +141,72 @@ class Compact:
             soma += self.instance.times[s][a]
         return soma
 
+    def basic_cuts_best(self, a):
+        m = Model('optmize_cut')
+        x_aux = [m.add_var(var_type=BINARY, lb=0, name='x({})'.format(i)) for i in range(self.instance.n)]
+        v = [m.add_var(var_type=INTEGER, lb=0, name='v({})'.format(i)) for i in range(self.instance.n)]
+        e_p = [m.add_var(var_type=INTEGER, lb=0, name='e_p({})'.format(i)) for i in range(self.instance.n)]
+        xi_xj = [[m.add_var(var_type=BINARY, lb=0, name='xi_xj({},{})'.format(i,j)) for i in range(self.instance.n)] for j in range(self.instance.n)]
+        y = [m.add_var(var_type=INTEGER, lb=0, name='y({})'.format(i)) for i in range(self.instance.n)]
+        e = [m.add_var(var_type=BINARY, lb=0, name='e({})'.format(i)) for i in range(self.instance.n)]
+        z = m.add_var(var_type=INTEGER, name='E')
+
+        # var = xsum(self.instance.times[j][a] * self.x[j][a].x * x_aux[j] for j in range(self.instance.n))
+
+        # var += - xsum(self.instance.times[j][a]*e_p[j] for j in range(self.instance.n))
+        # z*xsum(self.instance.times[j][a] * x_aux[j] for j in range(self.instance.n))
+        # var += - xsum(self.instance.times[j][a] * self.instance.times[i][a] * xi_xj[i][j] for i in range(self.instance.n) for j in range(i+1,self.instance.n))
+        m.objective = xsum(self.instance.times[j][a] * self.x[j][a].x * x_aux[j] for j in range(self.instance.n)) - xsum(self.instance.times[j][a]*e_p[j] for j in range(self.instance.n)) - xsum(self.instance.times[j][a] * self.instance.times[i][a] * xi_xj[j][i] for i in range(self.instance.n) for j in range(i+1,self.instance.n))
+        # print(var)
+
+        for j in range(self.instance.n):
+            m += v[j] - self.instance.times[j][a]*x_aux[j] + self.instance.K * x_aux[j] == self.instance.K, 'eq26({})'.format(j)
+            m += z - v[j] <= 0, 'eq27({})'.format(j)
+            m += z - y[j]>= 0, 'eq28({})'.format(j)
+            m += y[j] + self.instance.K * e[j] >= 0, 'eq29({})'.format(j)
+            m += y[j] - v[j]<= 0, 'eq30({})'.format(j)
+            m += y[j] - v[j] - self.instance.K*e[j] >= - self.instance.K, 'eq31({})'.format(j)
+            #z*x(j)
+            m += e_p[j] - self.instance.K * x_aux[j]<= 0, 'e_s1({})'.format(j)
+            m += e_p[j] - z <= 0, 'e_s2({})'.format(j)
+            m += e_p[j] - z - self.instance.K * x_aux[j] >= -self.instance.K , 'e_s3({})'.format(j)
+            # x[i]*x[j]
+            for i in range(j+1, self.instance.n):
+                m += xi_xj[i][j] <= x_aux[i], 'xi_xj1({},{})'.format(j,i)
+                m += xi_xj[i][j] <= x_aux[j], 'xi_xj2({},{})'.format(j,i)
+                m += xi_xj[i][j] >= x_aux[j]+x_aux[i] - 1, 'xi_xj3({},{})'.format(j,i)
+
+        m += xsum(e[j] for j in range(self.instance.n)) == 1, 'eq32'
+
+        m.write('best_model.lp')
+        input('modelo pronto')
+        m.optimize()
+        print('{}'.format(m.objective_value))
+        for j in range(self.instance.n):
+            print('x[{}] = {}'.format(j, x_aux[j]))
+            print('v[{}] = {}'.format(j, v[j]))
+            print('y[{}] = {}'.format(j, y[j]))
+            print('e[{}] = {}'.format(j, e[j]))
+        print('z = {}'.format(z))
+        input()
+
     def basic_cuts(self, S, a):
         cuts = 0
 
         # right side
         rs = 0
         for j in S:
-            # print('+ {}*{} '.format(self.instance.times[j][a], round(self.x[j][a].x, 2)), end='')
             rs += self.instance.times[j][a] * self.x[j][a].x
 
-        # print(' >= ', end='')
         # left side
         ls = self.E(S, a) * self.p(S, a)
-        # print(' {}*{} '.format(self.E(S, a), self.p(S, a)), end='')
         for i in range(len(S)):
             for j in range(i + 1, len(S)):
-                # print('+ {}*{} '.format(self.instance.times[S[i]][a], self.instance.times[S[j]][a]), end='')
                 ls += self.instance.times[S[i]][a] * self.instance.times[S[j]][a]
-        # print()
+
         # check violated cut
         if (ls - rs) > 0.00001: # if rs < ls:
-            print('{} >= {}'.format(rs, ls))
             cuts += 1
-            # print(S)
             self.model += xsum(self.instance.times[j][a] * self.x[j][a] for j in S) >= ls, 'basic_cuts{}({},{})'.format(self.iterationsCuts,
                 ''.join(str(i) for i in S), a)
 
@@ -186,27 +214,21 @@ class Compact:
         # right side
         rs = 0
         for j in S:
-            # print('+ {}*({} - {}) '.format(self.instance.times[j][a], round(self.c.x, 2), round(self.x[j][a].x, 2)),end='')
             rs += self.instance.times[j][a] * (self.c.x - self.x[j][a].x)
-        # print(' >= ', end='')
+
         # left side
         ls = self.F(S, a) * self.p(S, a)
-        # print(' {}*{} '.format(self.F(S, a), self.p(S, a)), end='')
+
         for j in S:
-            # print('+ {}^2 '.format(self.instance.times[j][a]), end='')
             ls += self.instance.times[j][a] * self.instance.times[j][a]
+
         for i in range(len(S)):
             for j in range(i + 1, len(S)):
-                # print('+ {}*{} '.format(self.instance.times[S[i]][a], self.instance.times[S[j]][a]), end='')
                 ls += self.instance.times[S[i]][a] * self.instance.times[S[j]][a]
-        # print()
-        # print('{} >= {}'.format(rs, ls))
-        # check violated cut
 
+        # check violated cut
         if (ls - rs) > 0.00001: # if rs < ls:
-            print('reverse: {} >= {}'.format(rs, ls))
             cuts += 1
-            # print(S)
             self.model += xsum(self.instance.times[j][a] * (self.c - self.x[j][a]) for j in
                                S) >= ls, 'basic_cuts_reverse{}({},{})'.format(self.iterationsCuts,''.join(str(i) for i in S), a)
 
@@ -223,8 +245,6 @@ class Compact:
         ls = self.instance.times[i][a] * self.instance.times[j][a] + self.instance.e[i][a] * \
              self.instance.times[j][a] + self.instance.e[j][a] * self.instance.times[i][a]
 
-        # print('{} >= {}'.format(rs, ls))
-        # input()
         # check violated cut
         if (ls - rs) > 0.00001: # if rs < ls:
             cuts = 1
@@ -240,8 +260,6 @@ class Compact:
         perms = [np.asarray(s) for s in perms]
 
         K = [[0] * len(S) for i in range(len(perms))]
-        # print(K)
-        # print(perms)
 
         for i in range(len(K)):
             soma = 0
@@ -252,8 +270,6 @@ class Compact:
                     soma += self.instance.times[S[perms[i][j - 1]]][a]
                 for aux in range(j, len(K[i])):
                     K[i][perms[i][aux]] = soma
-
-        #print(K)
 
         m = Model('clique_cuts')
         t = [m.add_var(var_type=CONTINUOUS, lb=0, name='t({})'.format(i)) for i in S]
@@ -273,10 +289,8 @@ class Compact:
         # xt >= is a valid inequality. Thus, a violated cut is < 1
         if (1 - soma) > 0.00001: # < 1:
             cuts = 1
-            # for i in range(len(S)):
-            #     print('a({}) = {}\t'.format(t[i].name, t[i].x), end='')
             self.model += xsum(t[i].x * self.x[S[i]][a] for i in range(len(S))) >= 1, 'clique_cuts{}({},{})'.format(self.iterationsCuts,''.join(str(i) for i in S), a)
-            # input('encontrado')
+
         return cuts
 
     # triangle cuts
@@ -292,29 +306,21 @@ class Compact:
         # right side
         rs = 0
         for j in S:
-            # print('+ {}*{} '.format(self.instance.times[j][a], round(self.x[j][a].x, 2)), end='')
             rs += self.instance.times[j][a] * self.x[j][a].x
-        # print(' >= ', end='')
         # left side
         ls = 0
         soma1 = 0
         for j in range(len(S)):
             for i in range(j + 1, len(S)):
-                # print('+ {}*{} '.format(self.instance.times[i][a], self.instance.times[j][a]), end='')
                 soma1 += self.instance.times[S[i]][a] * self.instance.times[S[j]][a]
-        # print(' {}*{} '.format(self.instance.e[k][a], self.p(S, a)), end='')
         soma1 += self.instance.e[k][a] * self.p(S, a)
 
         ls += soma1
 
         soma2 = 0
-        # print(' - {}('.format(self.p(S,a)), end='')
         for j in S:
-            # print('+ {} * max({} - {}, 0)'.format(self.y[j][k][a].x, self.instance.e[k][a], self.instance.e[j][a]), end='')
             soma2 += self.y[j][k][a].x * max(self.instance.e[k][a] - self.instance.e[j][a], 0)
         ls -= soma2 * self.p(S, a)
-        # print(')')
-        # print ('{} >= {}'.format(rs, ls))
         cuts = 0
 
         if (ls - rs) > 0.00001: # if rs < ls:
@@ -324,43 +330,44 @@ class Compact:
         return cuts
 
     def half_cuts(self, S, a, k):
-        # print('{} >= '.format(self.x[k][a].x), end='')
         # left side
         ls = self.E(S, a)
-        # print('{} '.format(self.E(S,a)), end='')
+
         for j in S:
             if j != k:
-                # print(' + {}*{}'.format(self.y[j][k][a].x,self. instance.times[j][a]), end='')
                 ls += self.y[j][k][a].x * self.instance.times[j][a]
-        # print()
-        # print('{} >= {}'.format(self.x[k][a].x, ls))
+
         cuts = 0
         if (ls - self.x[k][a].x) > 0.00001: #self.x[k][a].x < ls:
             cuts = 1
             self.model += self.x[k][a] - xsum(self.y[j][k][a]* self.instance.times[j][a] for j in S if j != k) >= self.E(S,a), 'half_cuts{}({},{},{})'.format(self.iterationsCuts,''.join(str(i) for i in S), k, a)
+
         return cuts
 
     def late_job_cuts(self, S, a, k, l):
         # left side
-        # print('{} >= '.format(self.x[k][a].x), end='')
-        # ls = 0
         ls = self.instance.e[l][a]
-        # print('{}'.format(self.instance.e[l][a]), end='')
+
         for j in S:
             if j != k:
-                # print(' + {} * {}'.format(self.y[j][k][a].x, self.instance.times[j][a]), end='')
                 ls += self.y[j][k][a].x * self.instance.times[j][a]
+
         for j in S:
             if j != l:
-                # print(' - {} * max({} - {},0)'.format(self.y[j][l][a].x, self.instance.e[l][a], self.instance.e[j][a]), end='')
                 ls -= self.y[j][l][a].x * max(self.instance.e[l][a] - self.instance.e[j][a], 0)
-        # print()
+
         cuts = 0
-        # print('{} >= {}'.format(round(self.x[k][a].x,2), ls))
+
         if (ls - self.x[k][a].x) > 0.00001: # self.x[k][a].x < ls:
             cuts = 1
             self.model += self.x[k][a] - xsum(self.y[j][k][a] * self.instance.times[j][a] for j in S if j != k) + xsum(
                 self.y[j][l][a] * max(self.instance.e[l][a] - self.instance.e[j][a], 0) for j in S if j != l) >= \
-                          self.instance.e[l][a], 'late_job_cuts{}({},{},{},{})'.format(self.iterationsCuts,''.join(str(i) for i in S), a, k,
-                                                                                     l)
+                          self.instance.e[l][a], 'late_job_cuts{}({},{},{},{})'.format(self.iterationsCuts,''.join(str(i) for i in S), a, k, l)
         return cuts
+
+    def printSolution(self):
+        print("C: ", self.c.x)
+        for j in range(self.instance.n):
+            for i in range(self.instance.m):
+                print('x({},{}) = {} '.format(j + 1, i + 1, self.x[j][i].x), end='')
+            print()

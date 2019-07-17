@@ -71,9 +71,11 @@ class Compact:
                     print('x({},{}) = {}\t'.format(j, i, round(self.x[j][i].x, 2)), end='')
                 print()
             self.model.write('teste.lp')
+            input()
             hasCuts = 0
             for a in range(self.instance.m):
-                self.basic_cuts_best(a)
+                print('Machine {}'.format(a))
+                # hasCuts += self.basic_cuts_best(a)
                 triangle_cuts = 0
                 basic_cuts_epsilon = 0
                 basic_cuts = 0
@@ -81,14 +83,14 @@ class Compact:
                 half_cuts = 0
                 two_job_cuts = 0
                 clique_cuts = 0
-                # all possible combinations with 2 jobs. order doesnt' matter
-                comb = combinations(list(range(0,self.instance.n)),2)
-                for jobs in list(comb):
-                    two_job_cuts += self.two_jobs_cuts(jobs[0],jobs[1],a)
-                # all possible combinations with 3 josb. the order matters
-                perm = permutations(list(range(0, self.instance.n)), 3)
-                for jobs in list(perm):
-                    triangle_cuts += self.triangle_cuts(jobs[0],jobs[1], jobs[2], a)
+                # # all possible combinations with 2 jobs. order doesnt' matter
+                # comb = combinations(list(range(0,self.instance.n)),2)
+                # for jobs in list(comb):
+                #     two_job_cuts += self.two_jobs_cuts(jobs[0],jobs[1],a)
+                # # all possible combinations with 3 josb. the order matters
+                # perm = permutations(list(range(0, self.instance.n)), 3)
+                # for jobs in list(perm):
+                #     triangle_cuts += self.triangle_cuts(jobs[0],jobs[1], jobs[2], a)
 
                 for sizeS in range(1, self.instance.n):
                     # generate all combinations of jobs with size sizeS = {2,...,n}
@@ -97,22 +99,28 @@ class Compact:
                     for S in list(comb):
                         basic_cuts += self.basic_cuts(S,a)
 
-                        for k in range(self.instance.n):
-                            # if k not in S:
-                            basic_cuts_epsilon += self.basic_cuts_plus_epsilon(S,a,k)
+                #         for k in range(self.instance.n):
+                #             # if k not in S:
+                #             basic_cuts_epsilon += self.basic_cuts_plus_epsilon(S,a,k)
 
-                        for k in S:
-                            for l in range(self.instance.n):
-                                late_jobs_cuts += self.late_job_cuts(S,a,k,l)
-                            half_cuts += self.half_cuts(S,a,k)
+                #         for k in S:
+                #             for l in range(self.instance.n):
+                #                 late_jobs_cuts += self.late_job_cuts(S,a,k,l)
+                #             half_cuts += self.half_cuts(S,a,k)
 
-                        if len(S) <= 5:
-                            clique_cuts += self.clique_cuts(S, a)
-                print('For machine {} were found {} basic cuts, {} two jobs cuts, {} clique cuts, {} triangle cuts, {} basic cuts epsilon, {} half cuts and {} late jobs cuts'.format(a, basic_cuts, two_job_cuts, clique_cuts, triangle_cuts, basic_cuts_epsilon, half_cuts, late_jobs_cuts))
+                #         if len(S) <= 5:
+                #             clique_cuts += self.clique_cuts(S, a)
+                # print('For machine {} were found {} basic cuts, {} two jobs cuts, {} clique cuts, {} triangle cuts, {} basic cuts epsilon, {} half cuts and {} late jobs cuts'.format(a, basic_cuts, two_job_cuts, clique_cuts, triangle_cuts, basic_cuts_epsilon, half_cuts, late_jobs_cuts))
                 hasCuts += basic_cuts + clique_cuts + basic_cuts_epsilon + half_cuts + late_jobs_cuts + two_job_cuts + triangle_cuts
                 self.model.write('teste.lp')
                 # input()
-
+            print('Cuts found: {}'.format(hasCuts))
+            print('objective value : {}'.format(self.model.objective_value))
+            for j in range(self.instance.n):
+                for i in range(self.instance.m):
+                    print('x({},{}) = {}\t'.format(j, i, round(self.x[j][i].x, 2)), end='')
+                print()
+            input()
             if hasCuts > 0:
                 newConstraints = True
         return
@@ -148,7 +156,7 @@ class Compact:
         e_p = [m.add_var(var_type=INTEGER, lb=0, name='e_p({})'.format(i)) for i in range(self.instance.n)]
         xi_xj = [[m.add_var(var_type=BINARY, lb=0, name='xi_xj({},{})'.format(i,j)) for i in range(self.instance.n)] for j in range(self.instance.n)]
         y = [m.add_var(var_type=INTEGER, lb=0, name='y({})'.format(i)) for i in range(self.instance.n)]
-        e = [m.add_var(var_type=BINARY, lb=0, name='e({})'.format(i)) for i in range(self.instance.n)]
+        o = [m.add_var(var_type=BINARY, lb=0, name='e({})'.format(i)) for i in range(self.instance.n)]
         z = m.add_var(var_type=INTEGER, name='E')
 
         # var = xsum(self.instance.times[j][a] * self.x[j][a].x * x_aux[j] for j in range(self.instance.n))
@@ -160,12 +168,12 @@ class Compact:
         # print(var)
 
         for j in range(self.instance.n):
-            m += v[j] - self.instance.times[j][a]*x_aux[j] + self.instance.K * x_aux[j] == self.instance.K, 'eq26({})'.format(j)
+            m += v[j] - self.instance.e[j][a]*x_aux[j] + self.instance.K * x_aux[j] == self.instance.K, 'eq26({})'.format(j)
             m += z - v[j] <= 0, 'eq27({})'.format(j)
             m += z - y[j]>= 0, 'eq28({})'.format(j)
-            m += y[j] + self.instance.K * e[j] >= 0, 'eq29({})'.format(j)
-            m += y[j] - v[j]<= 0, 'eq30({})'.format(j)
-            m += y[j] - v[j] - self.instance.K*e[j] >= - self.instance.K, 'eq31({})'.format(j)
+            m += y[j] - self.instance.K * o[j] <= 0, 'eq29({})'.format(j)
+            m += y[j] - v[j] <= 0, 'eq30({})'.format(j)
+            m += y[j] - v[j] - self.instance.K*o[j] >= - self.instance.K, 'eq31({})'.format(j)
             #z*x(j)
             m += e_p[j] - self.instance.K * x_aux[j]<= 0, 'e_s1({})'.format(j)
             m += e_p[j] - z <= 0, 'e_s2({})'.format(j)
@@ -175,20 +183,42 @@ class Compact:
                 m += xi_xj[i][j] <= x_aux[i], 'xi_xj1({},{})'.format(j,i)
                 m += xi_xj[i][j] <= x_aux[j], 'xi_xj2({},{})'.format(j,i)
                 m += xi_xj[i][j] >= x_aux[j]+x_aux[i] - 1, 'xi_xj3({},{})'.format(j,i)
-
-        m += xsum(e[j] for j in range(self.instance.n)) == 1, 'eq32'
+        m += xsum(o[j] for j in range(self.instance.n)) == 1, 'eq32'
+        m += xsum(x_aux[j] for j in range(self.instance.n)) >= 2, 'minimum_jobs'
 
         m.write('best_model.lp')
-        input('modelo pronto')
+        # input('modelo pronto')
         m.optimize()
-        print('{}'.format(m.objective_value))
+        print('{}'.format((round(m.objective_value,2))) )
         for j in range(self.instance.n):
-            print('x[{}] = {}'.format(j, x_aux[j]))
-            print('v[{}] = {}'.format(j, v[j]))
-            print('y[{}] = {}'.format(j, y[j]))
-            print('e[{}] = {}'.format(j, e[j]))
-        print('z = {}'.format(z))
+            print('x[{}] = {}'.format(j, round(x_aux[j].x,2)))
+            print('v[{}] = {}'.format(j, round(v[j].x,2)))
+            print('y[{}] = {}'.format(j, round(y[j].x,2)))
+            print('o[{}] = {}'.format(j, round(o[j].x,2)))
+        print('z = {}'.format(round(z.x,2)))
         input()
+
+        if m.objective_value > -0.0001:
+            return 0
+
+        S = []
+        for j in range(self.instance.n):
+            if x_aux[j].x > 0.99999:
+                S.append(j)
+
+        if len(S) <= 1:
+            return 0
+        
+        # left side
+        ls = self.E(S, a) * self.p(S, a)
+        for i in range(len(S)):
+            for j in range(i + 1, len(S)):
+                ls += self.instance.times[S[i]][a] * self.instance.times[S[j]][a]
+        print(xsum(self.instance.times[j][a] * self.x[j][a] for j in S) >= ls)
+        self.model += xsum(self.instance.times[j][a] * self.x[j][a] for j in S) >= ls, 'basic_cuts{}({},{})'.format(self.iterationsCuts,''.join(str(i) for i in S), a)
+        input()
+        return 1
+
 
     def basic_cuts(self, S, a):
         cuts = 0
@@ -199,11 +229,11 @@ class Compact:
             rs += self.instance.times[j][a] * self.x[j][a].x
 
         # left side
+
         ls = self.E(S, a) * self.p(S, a)
         for i in range(len(S)):
             for j in range(i + 1, len(S)):
                 ls += self.instance.times[S[i]][a] * self.instance.times[S[j]][a]
-
         # check violated cut
         if (ls - rs) > 0.00001: # if rs < ls:
             cuts += 1
@@ -212,25 +242,25 @@ class Compact:
 
         # reverse
         # right side
-        rs = 0
-        for j in S:
-            rs += self.instance.times[j][a] * (self.c.x - self.x[j][a].x)
+        # rs = 0
+        # for j in S:
+        #     rs += self.instance.times[j][a] * (self.c.x - self.x[j][a].x)
 
-        # left side
-        ls = self.F(S, a) * self.p(S, a)
+        # # left side
+        # ls = self.F(S, a) * self.p(S, a)
 
-        for j in S:
-            ls += self.instance.times[j][a] * self.instance.times[j][a]
+        # for j in S:
+        #     ls += self.instance.times[j][a] * self.instance.times[j][a]
 
-        for i in range(len(S)):
-            for j in range(i + 1, len(S)):
-                ls += self.instance.times[S[i]][a] * self.instance.times[S[j]][a]
+        # for i in range(len(S)):
+        #     for j in range(i + 1, len(S)):
+        #         ls += self.instance.times[S[i]][a] * self.instance.times[S[j]][a]
 
-        # check violated cut
-        if (ls - rs) > 0.00001: # if rs < ls:
-            cuts += 1
-            self.model += xsum(self.instance.times[j][a] * (self.c - self.x[j][a]) for j in
-                               S) >= ls, 'basic_cuts_reverse{}({},{})'.format(self.iterationsCuts,''.join(str(i) for i in S), a)
+        # # check violated cut
+        # if (ls - rs) > 0.00001: # if rs < ls:
+        #     cuts += 1
+        #     self.model += xsum(self.instance.times[j][a] * (self.c - self.x[j][a]) for j in
+        #                        S) >= ls, 'basic_cuts_reverse{}({},{})'.format(self.iterationsCuts,''.join(str(i) for i in S), a)
 
         return cuts
 
@@ -239,7 +269,7 @@ class Compact:
         cuts = 0
 
         # right side
-        rs = (self.instance.times[i][a] + self.instance.e[i][a] - self.instance.e[j][a]) * self.x[i][a].x + (
+        rs = (self.instance.times[i][a] + self.instance.e[i][a] - self.instance.o[j][a]) * self.x[i][a].x + (
                     self.instance.times[j][a] + self.instance.e[j][a] - self.instance.e[i][a]) * self.x[j][a].x
         # left side
         ls = self.instance.times[i][a] * self.instance.times[j][a] + self.instance.e[i][a] * \

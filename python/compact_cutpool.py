@@ -60,44 +60,66 @@ class Compact_CutPool(CutsGenerator):
                     print(result)
                     cp.add(result)
 
-            for sizeS in range(1, self.instance.n):
-                # generate all combinations of jobs with size sizeS = {2,...,n}
-                # used for cuts where the order of jobs doesn't matter
-                comb = combinations(list(range(0, self.instance.n)), sizeS + 1)
-                for S in list(comb):
-                    result = self.basic_cuts(S,a)
+            result = self.basic_cuts_best(a)
+            if isinstance(result,int) == False:
+                print(result)
+                cp.add(result)
+
+            for k in range(self.instance.n):
+                result = self.basic_cuts_plus_epsilon_best(a,k)
+                if isinstance(result,int) == False:
+                    print(result)
+                    cp.add(result)
+
+                result = self.half_cuts_best(a,k)
+                if isinstance(result,int) == False:
+                    print(result)
+                    cp.add(result)
+
+                for l in range(self.instance.n):
+                    result = self.late_job_cuts_best(a,k,l)
                     if isinstance(result,int) == False:
                         print(result)
                         cp.add(result)
 
-                    result = self.basic_cuts_reverse(S,a)
-                    if isinstance(result,int) == False:
-                        print(result)
-                        cp.add(result)
+            # for sizeS in range(1, self.instance.n):
+            #     # generate all combinations of jobs with size sizeS = {2,...,n}
+            #     # used for cuts where the order of jobs doesn't matter
+            #     comb = combinations(list(range(0, self.instance.n)), sizeS + 1)
+            #     for S in list(comb):
+            #         result = self.basic_cuts(S,a)
+            #         if isinstance(result,int) == False:
+            #             print(result)
+            #             cp.add(result)
 
-                    for k in range(self.instance.n):
-                        result = self.basic_cuts_plus_epsilon(S,a,k)
-                        if isinstance(result,int) == False:
-                            print(result)
-                            cp.add(result)
+            #         result = self.basic_cuts_reverse(S,a)
+            #         if isinstance(result,int) == False:
+            #             print(result)
+            #             cp.add(result)
 
-                    for k in S:
-                        for l in range(self.instance.n):
-                            result = self.late_job_cuts(S,a,k,l)
-                            if isinstance(result,int) == False:
-                                print(result)
-                                cp.add(result)
+            #         for k in range(self.instance.n):
+            #             result = self.basic_cuts_plus_epsilon(S,a,k)
+            #             if isinstance(result,int) == False:
+            #                 print(result)
+            #                 cp.add(result)
 
-                        result = self.half_cuts(S,a,k)
-                        if isinstance(result,int) == False:
-                            print(result)
-                            cp.add(result)
+            #         for k in S:
+            #             for l in range(self.instance.n):
+            #                 result = self.late_job_cuts(S,a,k,l)
+            #                 if isinstance(result,int) == False:
+            #                     print(result)
+            #                     cp.add(result)
 
-                    if len(S) <= 5:
-                        result = self.clique_cuts(S, a)
-                        if isinstance(result,int) == False:
-                            print(result)
-                            cp.add(result)
+            #             result = self.half_cuts(S,a,k)
+            #             if isinstance(result,int) == False:
+            #                 print(result)
+            #                 cp.add(result)
+
+            #         if len(S) <= 5:
+            #             result = self.clique_cuts(S, a)
+            #             if isinstance(result,int) == False:
+            #                 print(result)
+            #                 cp.add(result)
         for cut in cp.cuts:
             model.add_cut(cut)
         return
@@ -140,6 +162,171 @@ class Compact_CutPool(CutsGenerator):
             return xsum(self.instance.times[j][a] * self.x[j][a][0] for j in S) >= ls
 
         return 0
+
+    def basic_cuts_best(self, a):
+        m = Model('basic_cut_best')
+        x_aux = [m.add_var(var_type=BINARY, lb=0, name='x({})'.format(i)) for i in range(self.instance.n)]
+        v = [m.add_var(var_type=INTEGER, lb=0, name='v({})'.format(i)) for i in range(self.instance.n)]
+        e_p = [m.add_var(var_type=INTEGER, lb=0, name='e_p({})'.format(i)) for i in range(self.instance.n)]
+        xi_xj = [[m.add_var(var_type=BINARY, lb=0, name='xi_xj({},{})'.format(i,j)) for i in range(self.instance.n)] for j in range(self.instance.n)]
+        y = [m.add_var(var_type=INTEGER, lb=0, name='y({})'.format(i)) for i in range(self.instance.n)]
+        o = [m.add_var(var_type=BINARY, lb=0, name='e({})'.format(i)) for i in range(self.instance.n)]
+        z = m.add_var(var_type=INTEGER, name='E')
+
+        m.objective = xsum(self.instance.times[j][a] * self.x[j][a][1] * x_aux[j] for j in range(self.instance.n)) - xsum(self.instance.times[j][a]*e_p[j] for j in range(self.instance.n)) - xsum(self.instance.times[j][a] * self.instance.times[i][a] * xi_xj[j][i] for i in range(self.instance.n) for j in range(i+1,self.instance.n))
+
+        for j in range(self.instance.n):
+            m += v[j] - self.instance.e[j][a]*x_aux[j] + self.instance.K * x_aux[j] == self.instance.K, 'eq26({})'.format(j)
+            m += z - v[j] <= 0, 'eq27({})'.format(j)
+            m += z - y[j]>= 0, 'eq28({})'.format(j)
+            m += y[j] - self.instance.K * o[j] <= 0, 'eq29({})'.format(j)
+            m += y[j] - v[j] <= 0, 'eq30({})'.format(j)
+            m += y[j] - v[j] - self.instance.K*o[j] >= - self.instance.K, 'eq31({})'.format(j)
+            #z*x(j)
+            m += e_p[j] - self.instance.K * x_aux[j]<= 0, 'e_s1({})'.format(j)
+            m += e_p[j] - z <= 0, 'e_s2({})'.format(j)
+            m += e_p[j] - z - self.instance.K * x_aux[j] >= -self.instance.K , 'e_s3({})'.format(j)
+            # x[i]*x[j]
+            for i in range(j+1, self.instance.n):
+                m += xi_xj[i][j] <= x_aux[i], 'xi_xj1({},{})'.format(j,i)
+                m += xi_xj[i][j] <= x_aux[j], 'xi_xj2({},{})'.format(j,i)
+                m += xi_xj[i][j] >= x_aux[j]+x_aux[i] - 1, 'xi_xj3({},{})'.format(j,i)
+        m += xsum(o[j] for j in range(self.instance.n)) == 1, 'eq32'
+        m += xsum(x_aux[j] for j in range(self.instance.n)) >= 2, 'minimum_jobs'
+
+        m.optimize()
+
+        if m.objective_value > -0.0001:
+            return 0
+
+        S = []
+        for j in range(self.instance.n):
+            if x_aux[j].x > 0.99999:
+                S.append(j)
+
+        if len(S) <= 1:
+            return 0
+        
+        # left side
+        ls = self.E(S, a) * self.p(S, a)
+        for i in range(len(S)):
+            for j in range(i + 1, len(S)):
+                ls += self.instance.times[S[i]][a] * self.instance.times[S[j]][a]
+        
+        return xsum(self.instance.times[j][a] * self.x[j][a][0] for j in S) >= ls
+
+    def basic_cuts_plus_epsilon_best(self, a, k):
+        m = Model('basic_cut_plus_epsilon_best')
+        x_aux = [m.add_var(var_type=BINARY, lb=0, name='x({})'.format(i)) for i in range(self.instance.n)]
+        xi_xj = [[m.add_var(var_type=BINARY, lb=0, name='xi_xj({},{})'.format(i,j)) for i in range(self.instance.n)] for j in range(self.instance.n)]
+        for i in range(self.instance.n):
+            for j in range(i+1, self.instance.n):
+                xi_xj[i][j] = xi_xj[j][i]
+
+        var = xsum(self.instance.times[j][a] * self.x[j][a][1] * x_aux[j] for j in range(self.instance.n)) # part 1 of cut
+        var += - xsum(self.instance.times[j][a] * self.instance.times[i][a] * xi_xj[i][j] for i in range(self.instance.n) for j in range(i+1,self.instance.n)) # part 2 of cut
+        var += - self.instance.e[k][a]*xsum(self.instance.times[j][a] * x_aux[j] for j in range(self.instance.n) if j != k) # part 3 of cut
+        var += xsum(self.y[j][k][a][1] * max(self.instance.e[k][a] - self.instance.e[j][a], 0) * self.instance.times[j][a] * x_aux[j] for j in range(self.instance.n) if j != k) # part 4 of cut if i == j (just expand the multiplication)
+        var += xsum(self.y[i][k][a][1] * max(self.instance.e[k][a] - self.instance.e[i][a], 0) * self.instance.times[j][a]* xi_xj[i][j] for i in range(self.instance.n) for j in range(self.instance.n) if i != k and j != k and i != j) # part 4 of cut if i != j (just expand the multiplication)
+        m.objective = var
+
+        for j in range(self.instance.n):
+            for i in range(j+1, self.instance.n):
+                m += xi_xj[i][j] <= x_aux[i], 'xi_xj1({},{})'.format(j,i)
+                m += xi_xj[i][j] <= x_aux[j], 'xi_xj2({},{})'.format(j,i)
+                m += xi_xj[i][j] >= x_aux[j]+x_aux[i] - 1, 'xi_xj3({},{})'.format(j,i)
+        m += x_aux[k] == 0, 'not_in_S'
+        m += xsum(x_aux[j] for j in range(self.instance.n)) >= 2, 'minimum_jobs'
+
+        m.optimize()
+
+        if m.objective_value > -0.0001:
+            return 0
+
+        S = []
+        for j in range(self.instance.n):
+            if x_aux[j].x > 0.99999:
+                S.append(j)
+
+        if len(S) <= 1:
+            return 0
+        
+        # left side
+        ls = self.instance.e[k][a] * self.p(S, a)
+        for i in range(len(S)):
+            for j in range(i + 1, len(S)):
+                ls += self.instance.times[S[i]][a] * self.instance.times[S[j]][a]
+        
+        return xsum(self.instance.times[j][a] * self.x[j][a][0] for j in S) + xsum(self.y[j][k][a][0] * max(self.instance.e[k][a] - self.instance.e[j][a], 0) for j in S) * self.p(S,a) >= ls
+
+    def half_cuts_best(self,a,k):
+        m = Model('basic_cut_best')
+        x_aux = [m.add_var(var_type=BINARY, lb=0, name='x({})'.format(i)) for i in range(self.instance.n)]
+        v = [m.add_var(var_type=INTEGER, lb=0, name='v({})'.format(i)) for i in range(self.instance.n)]
+        t = [m.add_var(var_type=INTEGER, lb=0, name='t({})'.format(i)) for i in range(self.instance.n)]
+        o = [m.add_var(var_type=BINARY, lb=0, name='o({})'.format(i)) for i in range(self.instance.n)]
+        e = m.add_var(var_type=INTEGER, name='E')
+        C = m.add_var(name='C', lb=-100*self.instance.K)
+        
+        var = self.x[k][a][1] - e - xsum(self.y[j][k][a][1]*self.instance.times[j][a]*x_aux[j] for j in range(self.instance.n) if j != k)
+
+        m.objective = C
+
+        for j in range(self.instance.n):
+            m += v[j] - self.instance.e[j][a]*x_aux[j] + self.instance.K * x_aux[j] == self.instance.K, 'eq26({})'.format(j)
+            m += e - v[j] <= 0, 'eq27({})'.format(j)
+            m += e - t[j]>= 0, 'eq28({})'.format(j)
+            m += t[j] - self.instance.K * o[j] <= 0, 'eq29({})'.format(j)
+            m += t[j] - v[j] <= 0, 'eq30({})'.format(j)
+            m += t[j] - v[j] - self.instance.K*o[j] >= - self.instance.K, 'eq31({})'.format(j)
+        m += xsum(o[j] for j in range(self.instance.n)) == 1, 'eq32'
+        m += xsum(x_aux[j] for j in range(self.instance.n)) >= 2, 'minimum_jobs'
+        m += x_aux[k] == 1, 'k_in_S'
+        m += C + e + xsum(self.y[j][k][a][1]*self.instance.times[j][a]*x_aux[j] for j in range(self.instance.n) if j != k) == self.x[k][a][1]
+
+        m.optimize()
+
+        if m.objective_value > -0.0001:
+            return 0
+
+        S = []
+        for j in range(self.instance.n):
+            if x_aux[j].x > 0.99999:
+                S.append(j)
+
+        if len(S) <= 1:
+            return 0
+        
+        return self.x[k][a][0] - self.E(S,a) - xsum(self.y[j][k][a][0]*self.instance.times[j][a] for j in S if j != k) >= 0
+
+    def late_job_cuts_best(self,a,k,l):
+        m = Model('basic_cut_best')
+        x_aux = [m.add_var(var_type=BINARY, lb=0, name='x({})'.format(i)) for i in range(self.instance.n)]
+        C = m.add_var(name='C', lb=-100*self.instance.K)
+        
+        var = self.x[k][a][1] - self.instance.e[l][a] - xsum( self.y[j][k][a][1] * self.instance.times[j][a] * x_aux[j] for j in range(self.instance.n) if j != k)
+        var += xsum(self.y[j][l][a][1] * max(self.instance.e[l][a] - self.instance.e[j][a], 0) * x_aux[j] for j in range(self.instance.n) if j != l)
+
+        m.objective = C
+
+        m += xsum(x_aux[j] for j in range(self.instance.n)) >= 2, 'minimum_jobs'
+        m += x_aux[k] == 1, 'k_in_S'
+        m += C + xsum( self.y[j][k][a][1] * self.instance.times[j][a] * x_aux[j] for j in range(self.instance.n) if j != k) -  xsum(self.y[j][l][a][1] * max(self.instance.e[l][a] - self.instance.e[j][a], 0) * x_aux[j] for j in range(self.instance.n) if j != l) == self.x[k][a][1] - self.instance.e[l][a]
+
+        m.optimize()
+        if m.objective_value > -0.0001:
+            return 0
+
+        S = []
+        for j in range(self.instance.n):
+            if x_aux[j].x > 0.99999:
+                S.append(j)
+
+        if len(S) <= 1:
+            return 0
+        
+        return self.x[k][a][0] - xsum(self.y[j][k][a][0] * self.instance.times[j][a] for j in S if j != k) + xsum(self.y[j][l][a][0] * max(self.instance.e[l][a] - self.instance.e[j][a], 0) for j in S if j != l) >= self.instance.e[l][a]
+
 
     def basic_cuts_reverse(self, S, a):
         # reverse

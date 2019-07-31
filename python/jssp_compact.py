@@ -10,10 +10,10 @@ compact = Compact(inst)
 compact.constructProblem()
 
 # execute with cutpool
-# compact.optmizeCuts()
+compact.optmizeCuts()
 
 # # execute with adding cuts after relaxing the problem
-compact.relax()
+# compact.relax()
 #
 # # execute the integer problem
 # compact.optimizeInteger()

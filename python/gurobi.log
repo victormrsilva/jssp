@@ -4425,3 +4425,619 @@ Solution count 1: -4.5
 
 Optimal solution found (tolerance 1.00e-04)
 Best objective -4.500000000000e+00, best bound -4.500000000000e+00, gap 0.0000%
+
+Gurobi 8.1.1 (linux64) logging started Mon Aug 26 19:04:33 2019
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.1.1 build v8.1.1rc0 (linux64)
+Copyright (c) 2019, Gurobi Optimization, LLC
+
+Warning: unknown variable 'xi_xj(0,0)' in bounds section
+Warning: unknown variable 'xi_xj(1,0)' in bounds section
+Warning: unknown variable 'xi_xj(2,0)' in bounds section
+Warning: unknown variable 'xi_xj(1,1)' in bounds section
+Warning: unknown variable 'xi_xj(2,1)' in bounds section
+Warning: unknown variable 'xi_xj(2,2)' in bounds section
+Read LP format model from file best_model.lp
+Reading time = 0.05 seconds
+OBJROW: 10 rows, 12 columns, 24 nonzeros
+Optimize a model with 10 rows, 12 columns and 24 nonzeros
+Variable types: 0 continuous, 12 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [1e+01, 3e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+00]
+Found heuristic solution: objective 0.0000000
+Presolve removed 10 rows and 12 columns
+Presolve time: 0.04s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.10 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 2: -44 0 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective -4.400000000000e+01, best bound -4.400000000000e+01, gap 0.0000%
+
+Wrote result file 'sol.sol'
+
+
+Gurobi 8.1.1 (linux64) logging started Thu Aug 29 12:19:29 2019
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.1.1 build v8.1.1rc0 (linux64)
+Copyright (c) 2019, Gurobi Optimization, LLC
+
+Warning: lp file contains 6 repeated variable(s) in constraints, grouped them, 0 cancellation
+Read LP format model from file teste_.lp
+Reading time = 0.03 seconds
+OBJROW: 7 rows, 6 columns, 18 nonzeros
+Optimize a model with 7 rows, 6 columns and 18 nonzeros
+Variable types: 0 continuous, 6 integer (6 binary)
+Coefficient statistics:
+  Matrix range     [2e-01, 1e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Found heuristic solution: objective -2.0000000
+Presolve removed 7 rows and 6 columns
+Presolve time: 0.04s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.10 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 2: -3 -2 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective -3.000000000000e+00, best bound -3.000000000000e+00, gap 0.0000%
+
+Gurobi 8.1.1 (linux64) logging started Thu Aug 29 12:19:38 2019
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.1.1 build v8.1.1rc0 (linux64)
+Copyright (c) 2019, Gurobi Optimization, LLC
+
+Warning: lp file contains 6 repeated variable(s) in constraints, grouped them, 0 cancellation
+Read LP format model from file teste_.lp
+Reading time = 0.01 seconds
+OBJROW: 7 rows, 6 columns, 18 nonzeros
+Optimize a model with 7 rows, 6 columns and 18 nonzeros
+Variable types: 0 continuous, 6 integer (6 binary)
+Coefficient statistics:
+  Matrix range     [2e-01, 1e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Found heuristic solution: objective -2.0000000
+Presolve removed 7 rows and 6 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.06 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 2: -3 -2 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective -3.000000000000e+00, best bound -3.000000000000e+00, gap 0.0000%
+
+Wrote result file 'sol.sol'
+
+
+Gurobi 8.1.1 (linux64) logging started Thu Aug 29 12:19:57 2019
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.1.1 build v8.1.1rc0 (linux64)
+Copyright (c) 2019, Gurobi Optimization, LLC
+
+Warning: lp file contains 6 repeated variable(s) in constraints, grouped them, 0 cancellation
+Read LP format model from file teste_.lp
+Reading time = 0.00 seconds
+OBJROW: 7 rows, 6 columns, 18 nonzeros
+Optimize a model with 7 rows, 6 columns and 18 nonzeros
+Variable types: 0 continuous, 6 integer (6 binary)
+Coefficient statistics:
+  Matrix range     [2e-01, 1e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Found heuristic solution: objective -2.0000000
+Presolve removed 7 rows and 6 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 2: -3 -2 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective -3.000000000000e+00, best bound -3.000000000000e+00, gap 0.0000%
+
+Wrote result file 'sol.sol'
+
+
+Gurobi 8.1.1 (linux64) logging started Thu Aug 29 12:21:49 2019
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.1.1 build v8.1.1rc0 (linux64)
+Copyright (c) 2019, Gurobi Optimization, LLC
+
+Warning: lp file contains 6 repeated variable(s) in constraints, grouped them, 0 cancellation
+Read LP format model from file teste_.lp
+Reading time = 0.00 seconds
+OBJROW: 7 rows, 6 columns, 18 nonzeros
+Optimize a model with 7 rows, 6 columns and 18 nonzeros
+Variable types: 0 continuous, 6 integer (6 binary)
+Coefficient statistics:
+  Matrix range     [2e-01, 1e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Found heuristic solution: objective -2.0000000
+Presolve removed 7 rows and 6 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 1: -2 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective -2.000000000000e+00, best bound -2.000000000000e+00, gap 0.0000%
+
+Wrote result file 'sol.sol'
+
+
+Gurobi 8.1.1 (linux64) logging started Thu Aug 29 12:30:03 2019
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.1.1 build v8.1.1rc0 (linux64)
+Copyright (c) 2019, Gurobi Optimization, LLC
+
+Error reading LP format file teste_.lp at line 6
+Unrecognized constraint RHS or sense
+Neighboring tokens: " <= x(2,1) + x(3,1) x(2,1) + x(2,3) <= x(1,2) "
+
+
+ERROR 10012: Unable to read file
+
+
+Gurobi 8.1.1 (linux64) logging started Thu Aug 29 12:30:54 2019
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.1.1 build v8.1.1rc0 (linux64)
+Copyright (c) 2019, Gurobi Optimization, LLC
+
+Warning: lp file contains 6 repeated variable(s) in constraints, grouped them, 0 cancellation
+Read LP format model from file teste_.lp
+Reading time = 0.00 seconds
+OBJROW: 4 rows, 6 columns, 18 nonzeros
+Optimize a model with 4 rows, 6 columns and 18 nonzeros
+Variable types: 0 continuous, 6 integer (6 binary)
+Coefficient statistics:
+  Matrix range     [2e-01, 1e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Found heuristic solution: objective 0.0000000
+Presolve removed 4 rows and 6 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 2: -2 0 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective -2.000000000000e+00, best bound -2.000000000000e+00, gap 0.0000%
+
+Wrote result file 'sol.sol'
+
+
+Gurobi 8.1.1 (linux64) logging started Thu Aug 29 12:31:11 2019
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.1.1 build v8.1.1rc0 (linux64)
+Copyright (c) 2019, Gurobi Optimization, LLC
+
+Warning: lp file contains 6 repeated variable(s) in constraints, grouped them, 0 cancellation
+Read LP format model from file teste_.lp
+Reading time = 0.00 seconds
+OBJROW: 4 rows, 6 columns, 18 nonzeros
+Optimize a model with 4 rows, 6 columns and 18 nonzeros
+Variable types: 0 continuous, 6 integer (6 binary)
+Coefficient statistics:
+  Matrix range     [2e-01, 1e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Found heuristic solution: objective 0.0000000
+Presolve removed 4 rows and 6 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 2: -3 0 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective -3.000000000000e+00, best bound -3.000000000000e+00, gap 0.0000%
+
+Wrote result file 'sol.sol'
+
+
+Gurobi 8.1.1 (linux64) logging started Thu Aug 29 19:46:02 2019
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.1.1 build v8.1.1rc0 (linux64)
+Copyright (c) 2019, Gurobi Optimization, LLC
+
+Warning: lp file contains 6 repeated variable(s) in constraints, grouped them, 0 cancellation
+Read LP format model from file teste_.lp
+Reading time = 0.03 seconds
+OBJROW: 4 rows, 10 columns, 18 nonzeros
+Optimize a model with 4 rows, 10 columns and 18 nonzeros
+Variable types: 4 continuous, 6 integer (6 binary)
+Coefficient statistics:
+  Matrix range     [2e-01, 1e+00]
+  Objective range  [2e-01, 8e-01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Found heuristic solution: objective -1.0000000
+Presolve removed 4 rows and 10 columns
+Presolve time: 0.04s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.10 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 2: -2.2 -1 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective -2.200000000000e+00, best bound -2.200000000000e+00, gap 0.0000%
+
+Wrote result file 'sol.sol'
+
+
+Gurobi 8.1.1 (linux64) logging started Thu Aug 29 19:47:12 2019
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.1.1 build v8.1.1rc0 (linux64)
+Copyright (c) 2019, Gurobi Optimization, LLC
+
+Warning: lp file contains 6 repeated variable(s) in constraints, grouped them, 0 cancellation
+Read LP format model from file teste_.lp
+Reading time = 0.00 seconds
+OBJROW: 4 rows, 6 columns, 18 nonzeros
+Optimize a model with 4 rows, 6 columns and 18 nonzeros
+Variable types: 0 continuous, 6 integer (6 binary)
+Coefficient statistics:
+  Matrix range     [2e-01, 1e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Found heuristic solution: objective 0.0000000
+Presolve removed 4 rows and 6 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 2: -3 0 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective -3.000000000000e+00, best bound -3.000000000000e+00, gap 0.0000%
+
+Wrote result file 'sol.sol'
+
+
+Gurobi 8.1.1 (linux64) logging started Thu Aug 29 19:47:41 2019
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.1.1 build v8.1.1rc0 (linux64)
+Copyright (c) 2019, Gurobi Optimization, LLC
+
+Warning: lp file contains 6 repeated variable(s) in constraints, grouped them, 0 cancellation
+Read LP format model from file teste_.lp
+Reading time = 0.00 seconds
+OBJROW: 4 rows, 6 columns, 18 nonzeros
+Optimize a model with 4 rows, 6 columns and 18 nonzeros
+Variable types: 0 continuous, 6 integer (6 binary)
+Coefficient statistics:
+  Matrix range     [2e-01, 1e+00]
+  Objective range  [2e-01, 8e-01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Found heuristic solution: objective 0.0000000
+Presolve removed 4 rows and 6 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.03 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 2: -2 0 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective -2.000000000000e+00, best bound -2.000000000000e+00, gap 0.0000%
+
+Wrote result file 'sol.sol'
+
+
+Gurobi 8.1.1 (linux64) logging started Thu Aug 29 19:50:12 2019
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.1.1 build v8.1.1rc0 (linux64)
+Copyright (c) 2019, Gurobi Optimization, LLC
+
+Warning: lp file contains 4 repeated variable(s) in constraints, grouped them, 1 cancellation
+Read LP format model from file teste_.lp
+Reading time = 0.00 seconds
+OBJROW: 4 rows, 6 columns, 17 nonzeros
+Optimize a model with 4 rows, 6 columns and 17 nonzeros
+Variable types: 0 continuous, 6 integer (6 binary)
+Coefficient statistics:
+  Matrix range     [5e-01, 1e+00]
+  Objective range  [1e-02, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Found heuristic solution: objective 0.0000000
+Presolve removed 4 rows and 6 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 2: -1 0 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective -1.000000000000e+00, best bound -1.000000000000e+00, gap 0.0000%
+
+Wrote result file 'sol.sol'
+
+
+Gurobi 8.1.1 (linux64) logging started Tue Sep 10 12:01:42 2019
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.1.1 build v8.1.1rc0 (linux64)
+Copyright (c) 2019, Gurobi Optimization, LLC
+
+Warning: unknown variable 'y(0,0,0)' in bounds section
+Warning: unknown variable 'y(0,0,1)' in bounds section
+Warning: unknown variable 'y(0,0,2)' in bounds section
+Warning: unknown variable 'y(0,0,3)' in bounds section
+Warning: unknown variable 'y(0,0,4)' in bounds section
+Warning: unknown variable 'y(0,0,5)' in bounds section
+Warning: unknown variable 'y(1,1,0)' in bounds section
+Warning: unknown variable 'y(1,1,1)' in bounds section
+Warning: unknown variable 'y(1,1,2)' in bounds section
+Warning: unknown variable 'y(1,1,3)' in bounds section
+Warning: unknown variable 'y(1,1,4)' in bounds section
+Warning: unknown variable 'y(1,1,5)' in bounds section
+Warning: unknown variable 'y(2,2,0)' in bounds section
+Warning: unknown variable 'y(2,2,1)' in bounds section
+Warning: unknown variable 'y(2,2,2)' in bounds section
+Warning: unknown variable 'y(2,2,3)' in bounds section
+Warning: unknown variable 'y(2,2,4)' in bounds section
+Warning: unknown variable 'y(2,2,5)' in bounds section
+Warning: unknown variable 'y(3,3,0)' in bounds section
+Warning: unknown variable 'y(3,3,1)' in bounds section
+Warning: unknown variable 'y(3,3,2)' in bounds section
+Warning: unknown variable 'y(3,3,3)' in bounds section
+Warning: unknown variable 'y(3,3,4)' in bounds section
+Warning: unknown variable 'y(3,3,5)' in bounds section
+Warning: unknown variable 'y(4,4,0)' in bounds section
+Warning: unknown variable 'y(4,4,1)' in bounds section
+Warning: unknown variable 'y(4,4,2)' in bounds section
+Warning: unknown variable 'y(4,4,3)' in bounds section
+Warning: unknown variable 'y(4,4,4)' in bounds section
+Warning: unknown variable 'y(4,4,5)' in bounds section
+Warning: unknown variable 'y(5,5,0)' in bounds section
+Warning: unknown variable 'y(5,5,1)' in bounds section
+Warning: unknown variable 'y(5,5,2)' in bounds section
+Warning: unknown variable 'y(5,5,3)' in bounds section
+Warning: unknown variable 'y(5,5,4)' in bounds section
+Warning: unknown variable 'y(5,5,5)' in bounds section
+Read LP format model from file instancesft06_best_model.lp
+Reading time = 0.04 seconds
+OBJROW: 696 rows, 253 columns, 2441 nonzeros
+Optimize a model with 696 rows, 253 columns and 2441 nonzeros
+Coefficient statistics:
+  Matrix range     [1e-03, 8e+02]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+03]
+Presolve removed 196 rows and 36 columns
+Presolve time: 0.04s
+Presolved: 500 rows, 397 columns, 1996 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    4.6956000e+01   2.463389e+03   0.000000e+00      0s
+     227    4.7000000e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 227 iterations and 0.11 seconds
+Optimal objective  4.700000000e+01
+
+Gurobi 8.1.1 (linux64) logging started Tue Sep 10 12:02:11 2019
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.1.1 build v8.1.1rc0 (linux64)
+Copyright (c) 2019, Gurobi Optimization, LLC
+
+Warning: unknown variable 'y(0,0,0)' in bounds section
+Warning: unknown variable 'y(0,0,1)' in bounds section
+Warning: unknown variable 'y(0,0,2)' in bounds section
+Warning: unknown variable 'y(0,0,3)' in bounds section
+Warning: unknown variable 'y(0,0,4)' in bounds section
+Warning: unknown variable 'y(0,0,5)' in bounds section
+Warning: unknown variable 'y(1,1,0)' in bounds section
+Warning: unknown variable 'y(1,1,1)' in bounds section
+Warning: unknown variable 'y(1,1,2)' in bounds section
+Warning: unknown variable 'y(1,1,3)' in bounds section
+Warning: unknown variable 'y(1,1,4)' in bounds section
+Warning: unknown variable 'y(1,1,5)' in bounds section
+Warning: unknown variable 'y(2,2,0)' in bounds section
+Warning: unknown variable 'y(2,2,1)' in bounds section
+Warning: unknown variable 'y(2,2,2)' in bounds section
+Warning: unknown variable 'y(2,2,3)' in bounds section
+Warning: unknown variable 'y(2,2,4)' in bounds section
+Warning: unknown variable 'y(2,2,5)' in bounds section
+Warning: unknown variable 'y(3,3,0)' in bounds section
+Warning: unknown variable 'y(3,3,1)' in bounds section
+Warning: unknown variable 'y(3,3,2)' in bounds section
+Warning: unknown variable 'y(3,3,3)' in bounds section
+Warning: unknown variable 'y(3,3,4)' in bounds section
+Warning: unknown variable 'y(3,3,5)' in bounds section
+Warning: unknown variable 'y(4,4,0)' in bounds section
+Warning: unknown variable 'y(4,4,1)' in bounds section
+Warning: unknown variable 'y(4,4,2)' in bounds section
+Warning: unknown variable 'y(4,4,3)' in bounds section
+Warning: unknown variable 'y(4,4,4)' in bounds section
+Warning: unknown variable 'y(4,4,5)' in bounds section
+Warning: unknown variable 'y(5,5,0)' in bounds section
+Warning: unknown variable 'y(5,5,1)' in bounds section
+Warning: unknown variable 'y(5,5,2)' in bounds section
+Warning: unknown variable 'y(5,5,3)' in bounds section
+Warning: unknown variable 'y(5,5,4)' in bounds section
+Warning: unknown variable 'y(5,5,5)' in bounds section
+Read LP format model from file model.lp
+Reading time = 0.01 seconds
+OBJROW: 396 rows, 253 columns, 1152 nonzeros
+Optimize a model with 396 rows, 253 columns and 1152 nonzeros
+Variable types: 0 continuous, 253 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+02]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+02]
+Presolve removed 0 rows and 36 columns
+Presolve time: 0.04s
+Presolved: 396 rows, 217 columns, 1152 nonzeros
+Variable types: 0 continuous, 217 integer (180 binary)
+
+Root relaxation: objective 4.700000e+01, 120 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   47.00000    0   14          -   47.00000      -     -    0s
+H    0     0                      77.0000000   47.00000  39.0%     -    0s
+H    0     0                      74.0000000   47.00000  36.5%     -    0s
+     0     0   47.00000    0   36   74.00000   47.00000  36.5%     -    0s
+H    0     0                      70.0000000   47.00000  32.9%     -    0s
+     0     0   47.00000    0   36   70.00000   47.00000  32.9%     -    0s
+     0     0   47.00000    0   38   70.00000   47.00000  32.9%     -    0s
+     0     0   47.00000    0   20   70.00000   47.00000  32.9%     -    0s
+H    0     0                      66.0000000   47.00000  28.8%     -    0s
+H    0     0                      62.0000000   47.00000  24.2%     -    0s
+     0     0   47.00000    0    9   62.00000   47.00000  24.2%     -    0s
+H    0     0                      56.0000000   47.00000  16.1%     -    0s
+H    0     0                      55.0000000   47.00000  14.5%     -    0s
+     0     0   53.00000    0   13   55.00000   53.00000  3.64%     -    0s
+     0     0   53.00000    0    5   55.00000   53.00000  3.64%     -    0s
+     0     0   53.00000    0    8   55.00000   53.00000  3.64%     -    0s
+
+Cutting planes:
+  Learned: 1
+  Gomory: 4
+  Cover: 8
+  Implied bound: 2
+  MIR: 7
+
+Explored 1 nodes (1068 simplex iterations) in 0.28 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 7: 55 56 62 ... 77
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 5.500000000000e+01, best bound 5.500000000000e+01, gap 0.0000%
+
+Gurobi 8.1.1 (linux64) logging started Wed Sep 18 11:27:21 2019
+
+Academic license - for non-commercial use only
+
+Gurobi 8.1.1 (linux64) logging started Wed Sep 18 11:27:31 2019
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.1.1 build v8.1.1rc0 (linux64)
+Copyright (c) 2019, Gurobi Optimization, LLC
+
+Warning: unknown variable 'y(0,0,0)' in bounds section
+Warning: unknown variable 'y(0,0,1)' in bounds section
+Warning: unknown variable 'y(0,0,2)' in bounds section
+Warning: unknown variable 'y(0,0,3)' in bounds section
+Warning: unknown variable 'y(0,0,4)' in bounds section
+Warning: unknown variable 'y(0,0,5)' in bounds section
+Warning: unknown variable 'y(1,1,0)' in bounds section
+Warning: unknown variable 'y(1,1,1)' in bounds section
+Warning: unknown variable 'y(1,1,2)' in bounds section
+Warning: unknown variable 'y(1,1,3)' in bounds section
+Warning: unknown variable 'y(1,1,4)' in bounds section
+Warning: unknown variable 'y(1,1,5)' in bounds section
+Warning: unknown variable 'y(2,2,0)' in bounds section
+Warning: unknown variable 'y(2,2,1)' in bounds section
+Warning: unknown variable 'y(2,2,2)' in bounds section
+Warning: unknown variable 'y(2,2,3)' in bounds section
+Warning: unknown variable 'y(2,2,4)' in bounds section
+Warning: unknown variable 'y(2,2,5)' in bounds section
+Warning: unknown variable 'y(3,3,0)' in bounds section
+Warning: unknown variable 'y(3,3,1)' in bounds section
+Warning: unknown variable 'y(3,3,2)' in bounds section
+Warning: unknown variable 'y(3,3,3)' in bounds section
+Warning: unknown variable 'y(3,3,4)' in bounds section
+Warning: unknown variable 'y(3,3,5)' in bounds section
+Warning: unknown variable 'y(4,4,0)' in bounds section
+Warning: unknown variable 'y(4,4,1)' in bounds section
+Warning: unknown variable 'y(4,4,2)' in bounds section
+Warning: unknown variable 'y(4,4,3)' in bounds section
+Warning: unknown variable 'y(4,4,4)' in bounds section
+Warning: unknown variable 'y(4,4,5)' in bounds section
+Warning: unknown variable 'y(5,5,0)' in bounds section
+Warning: unknown variable 'y(5,5,1)' in bounds section
+Warning: unknown variable 'y(5,5,2)' in bounds section
+Warning: unknown variable 'y(5,5,3)' in bounds section
+Warning: unknown variable 'y(5,5,4)' in bounds section
+Warning: unknown variable 'y(5,5,5)' in bounds section
+Read LP format model from file teste.lp
+Reading time = 0.73 seconds
+OBJROW: 695 rows, 253 columns, 2433 nonzeros
+Optimize a model with 695 rows, 253 columns and 2433 nonzeros
+Coefficient statistics:
+  Matrix range     [1e-03, 8e+02]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+03]
+Presolve removed 196 rows and 36 columns
+Presolve time: 0.21s
+Presolved: 499 rows, 397 columns, 1988 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    4.6956000e+01   2.435424e+03   0.000000e+00      0s
+     211    4.7000000e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 211 iterations and 0.27 seconds
+Optimal objective  4.700000000e+01

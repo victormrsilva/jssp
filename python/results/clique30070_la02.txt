@@ -1,0 +1,101 @@
+Optimize a model with 950 rows, 551 columns and 2800 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+03]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+01, 3e+03]
+Presolve removed 450 rows and 50 columns
+Presolve time: 0.00s
+Presolved: 500 rows, 951 columns, 1900 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    3.9369500e+02   5.688373e+02   0.000000e+00      0s
+     341    3.9400000e+02   0.000000e+00   0.000000e+00      0s
+
+Solved in 341 iterations and 0.00 seconds
+Optimal objective  3.940000000e+02
+Using Python-MIP package version 1.4.2
+gurobi version 8.1 found
+Machines:  5 Jobs:  10
+Order: 
+Job  0 : machine 0 ( 20 ) machine 3 ( 87 ) machine 1 ( 31 ) machine 4 ( 76 ) machine 2 ( 17 ) 
+Job  1 : machine 4 ( 25 ) machine 2 ( 32 ) machine 0 ( 24 ) machine 1 ( 18 ) machine 3 ( 81 ) 
+Job  2 : machine 1 ( 72 ) machine 2 ( 23 ) machine 4 ( 28 ) machine 0 ( 58 ) machine 3 ( 99 ) 
+Job  3 : machine 2 ( 86 ) machine 1 ( 76 ) machine 4 ( 97 ) machine 0 ( 45 ) machine 3 ( 90 ) 
+Job  4 : machine 4 ( 27 ) machine 0 ( 42 ) machine 3 ( 48 ) machine 2 ( 17 ) machine 1 ( 46 ) 
+Job  5 : machine 1 ( 67 ) machine 0 ( 98 ) machine 4 ( 48 ) machine 3 ( 27 ) machine 2 ( 62 ) 
+Job  6 : machine 4 ( 28 ) machine 1 ( 12 ) machine 3 ( 19 ) machine 0 ( 80 ) machine 2 ( 50 ) 
+Job  7 : machine 1 ( 63 ) machine 0 ( 94 ) machine 2 ( 98 ) machine 3 ( 50 ) machine 4 ( 80 ) 
+Job  8 : machine 4 ( 14 ) machine 0 ( 75 ) machine 2 ( 50 ) machine 1 ( 41 ) machine 3 ( 55 ) 
+Job  9 : machine 4 ( 72 ) machine 2 ( 18 ) machine 1 ( 37 ) machine 3 ( 79 ) machine 0 ( 61 ) 
+K:  2643
+Job  0 , e: machine  0 ( 0 ) machine  1 ( 107 ) machine  2 ( 214 ) machine  3 ( 20 ) machine  4 ( 138 ) 
+Job  1 , e: machine  0 ( 57 ) machine  1 ( 81 ) machine  2 ( 25 ) machine  3 ( 99 ) machine  4 ( 0 ) 
+Job  2 , e: machine  0 ( 123 ) machine  1 ( 0 ) machine  2 ( 72 ) machine  3 ( 181 ) machine  4 ( 95 ) 
+Job  3 , e: machine  0 ( 259 ) machine  1 ( 86 ) machine  2 ( 0 ) machine  3 ( 304 ) machine  4 ( 162 ) 
+Job  4 , e: machine  0 ( 27 ) machine  1 ( 134 ) machine  2 ( 117 ) machine  3 ( 69 ) machine  4 ( 0 ) 
+Job  5 , e: machine  0 ( 67 ) machine  1 ( 0 ) machine  2 ( 240 ) machine  3 ( 213 ) machine  4 ( 165 ) 
+Job  6 , e: machine  0 ( 59 ) machine  1 ( 28 ) machine  2 ( 139 ) machine  3 ( 40 ) machine  4 ( 0 ) 
+Job  7 , e: machine  0 ( 63 ) machine  1 ( 0 ) machine  2 ( 157 ) machine  3 ( 255 ) machine  4 ( 305 ) 
+Job  8 , e: machine  0 ( 14 ) machine  1 ( 139 ) machine  2 ( 89 ) machine  3 ( 180 ) machine  4 ( 0 ) 
+Job  9 , e: machine  0 ( 206 ) machine  1 ( 90 ) machine  2 ( 72 ) machine  3 ( 127 ) machine  4 ( 0 ) 
+Job  0 , f: machine  0 ( 211 ) machine  1 ( 93 ) machine  2 ( 0 ) machine  3 ( 124 ) machine  4 ( 17 ) 
+Job  1 , f: machine  0 ( 99 ) machine  1 ( 81 ) machine  2 ( 123 ) machine  3 ( 0 ) machine  4 ( 155 ) 
+Job  2 , f: machine  0 ( 99 ) machine  1 ( 208 ) machine  2 ( 185 ) machine  3 ( 0 ) machine  4 ( 157 ) 
+Job  3 , f: machine  0 ( 90 ) machine  1 ( 232 ) machine  2 ( 308 ) machine  3 ( 0 ) machine  4 ( 135 ) 
+Job  4 , f: machine  0 ( 111 ) machine  1 ( 0 ) machine  2 ( 46 ) machine  3 ( 63 ) machine  4 ( 153 ) 
+Job  5 , f: machine  0 ( 137 ) machine  1 ( 235 ) machine  2 ( 0 ) machine  3 ( 62 ) machine  4 ( 89 ) 
+Job  6 , f: machine  0 ( 50 ) machine  1 ( 149 ) machine  2 ( 0 ) machine  3 ( 130 ) machine  4 ( 161 ) 
+Job  7 , f: machine  0 ( 228 ) machine  1 ( 322 ) machine  2 ( 130 ) machine  3 ( 80 ) machine  4 ( 0 ) 
+Job  8 , f: machine  0 ( 146 ) machine  1 ( 55 ) machine  2 ( 96 ) machine  3 ( 0 ) machine  4 ( 221 ) 
+Job  9 , f: machine  0 ( 0 ) machine  1 ( 140 ) machine  2 ( 177 ) machine  3 ( 61 ) machine  4 ( 195 ) 
+objective value : 394.0
+Time limit for finding cliques. Cliques found: 751
+Elapsed time for clique: 311.15
+For machine 0 were found 0 basic cuts, 0 two jobs cuts, 751 clique cuts, 0 triangle cuts, 0 basic cuts epsilon, 0 half cuts and 0 late jobs cuts
+Time limit for finding cliques. Cliques found: 704
+Elapsed time for clique: 310.52
+For machine 1 were found 0 basic cuts, 0 two jobs cuts, 704 clique cuts, 0 triangle cuts, 0 basic cuts epsilon, 0 half cuts and 0 late jobs cuts
+Time limit for finding cliques. Cliques found: 427
+Elapsed time for clique: 311.75
+For machine 2 were found 0 basic cuts, 0 two jobs cuts, 427 clique cuts, 0 triangle cuts, 0 basic cuts epsilon, 0 half cuts and 0 late jobs cuts
+Time limit for finding cliques. Cliques found: 615
+Elapsed time for clique: 313.01
+For machine 3 were found 0 basic cuts, 0 two jobs cuts, 615 clique cuts, 0 triangle cuts, 0 basic cuts epsilon, 0 half cuts and 0 late jobs cuts
+Time for clique: 0.31Optimize a model with 3802 rows, 551 columns and 18317 nonzeros
+Coefficient statistics:
+  Matrix range     [2e-05, 3e+03]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 3e+03]
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    3.9400000e+02   3.345778e+05   0.000000e+00      0s
+     127    4.5999135e+02   0.000000e+00   0.000000e+00      0s
+
+Solved in 127 iterations and 0.01 seconds
+Optimal objective  4.599913518e+02
+
+Time limit for finding cliques. Cliques found: 355
+Elapsed time for clique: 308.32
+For machine 4 were found 0 basic cuts, 0 two jobs cuts, 355 clique cuts, 0 triangle cuts, 0 basic cuts epsilon, 0 half cuts and 0 late jobs cuts
+Time elapsed for iteration 1: 1554.74s
+objective value : 459.9913517507094
+Time limit for finding cliques. Cliques found: 0
+Elapsed time for clique: 311.03
+For machine 0 were found 0 basic cuts, 0 two jobs cuts, 0 clique cuts, 0 triangle cuts, 0 basic cuts epsilon, 0 half cuts and 0 late jobs cuts
+Time limit for finding cliques. Cliques found: 0
+Elapsed time for clique: 308.66
+For machine 1 were found 0 basic cuts, 0 two jobs cuts, 0 clique cuts, 0 triangle cuts, 0 basic cuts epsilon, 0 half cuts and 0 late jobs cuts
+Time limit for finding cliques. Cliques found: 0
+Elapsed time for clique: 311.1
+For machine 2 were found 0 basic cuts, 0 two jobs cuts, 0 clique cuts, 0 triangle cuts, 0 basic cuts epsilon, 0 half cuts and 0 late jobs cuts
+Time limit for finding cliques. Cliques found: 0
+Elapsed time for clique: 312.14
+For machine 3 were found 0 basic cuts, 0 two jobs cuts, 0 clique cuts, 0 triangle cuts, 0 basic cuts epsilon, 0 half cuts and 0 late jobs cuts
+Time limit for finding cliques. Cliques found: 0
+Elapsed time for clique: 308.27
+For machine 4 were found 0 basic cuts, 0 two jobs cuts, 0 clique cuts, 0 triangle cuts, 0 basic cuts epsilon, 0 half cuts and 0 late jobs cuts
+Time elapsed for iteration 2: 1551.2s
+Number of iterations: 1. Gain of objective value: 65.99135175070938. Total of cuts found: 2852. Objective value: 459.9913517507094.
+Were found a total of 0 basic cuts, 0 two jobs cuts, 2852 clique cuts, 0 triangle cuts, 0 basic cuts epsilon, 0 half cuts and 0 late jobs cuts
+Elapsed time: 3105.989246368408

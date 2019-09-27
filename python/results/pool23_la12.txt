@@ -1,0 +1,164 @@
+Using Python-MIP package version 1.4.2
+gurobi version 8.1 found
+Machines:  5 Jobs:  20
+Order: 
+Job  0 : machine 1 ( 23 ) machine 0 ( 82 ) machine 4 ( 84 ) machine 2 ( 45 ) machine 3 ( 38 ) 
+Job  1 : machine 3 ( 50 ) machine 4 ( 41 ) machine 1 ( 29 ) machine 0 ( 18 ) machine 2 ( 21 ) 
+Job  2 : machine 4 ( 16 ) machine 3 ( 54 ) machine 1 ( 52 ) machine 2 ( 38 ) machine 0 ( 52 ) 
+Job  3 : machine 1 ( 62 ) machine 3 ( 57 ) machine 4 ( 37 ) machine 2 ( 74 ) machine 0 ( 54 ) 
+Job  4 : machine 3 ( 68 ) machine 1 ( 61 ) machine 2 ( 30 ) machine 0 ( 81 ) machine 4 ( 57 ) 
+Job  5 : machine 1 ( 89 ) machine 2 ( 89 ) machine 3 ( 11 ) machine 0 ( 79 ) machine 4 ( 81 ) 
+Job  6 : machine 1 ( 66 ) machine 0 ( 91 ) machine 3 ( 33 ) machine 4 ( 20 ) machine 2 ( 20 ) 
+Job  7 : machine 3 ( 8 ) machine 4 ( 24 ) machine 2 ( 55 ) machine 0 ( 32 ) machine 1 ( 84 ) 
+Job  8 : machine 0 ( 7 ) machine 2 ( 64 ) machine 1 ( 39 ) machine 4 ( 56 ) machine 3 ( 54 ) 
+Job  9 : machine 0 ( 19 ) machine 4 ( 40 ) machine 3 ( 7 ) machine 2 ( 8 ) machine 1 ( 83 ) 
+Job  10 : machine 0 ( 63 ) machine 2 ( 64 ) machine 3 ( 91 ) machine 4 ( 40 ) machine 1 ( 6 ) 
+Job  11 : machine 1 ( 42 ) machine 3 ( 61 ) machine 4 ( 15 ) machine 2 ( 98 ) machine 0 ( 74 ) 
+Job  12 : machine 1 ( 80 ) machine 0 ( 26 ) machine 3 ( 75 ) machine 4 ( 6 ) machine 2 ( 87 ) 
+Job  13 : machine 2 ( 39 ) machine 4 ( 22 ) machine 0 ( 75 ) machine 3 ( 24 ) machine 1 ( 44 ) 
+Job  14 : machine 1 ( 15 ) machine 3 ( 79 ) machine 4 ( 8 ) machine 0 ( 12 ) machine 2 ( 20 ) 
+Job  15 : machine 3 ( 26 ) machine 2 ( 43 ) machine 0 ( 80 ) machine 4 ( 22 ) machine 1 ( 61 ) 
+Job  16 : machine 2 ( 62 ) machine 1 ( 36 ) machine 0 ( 63 ) machine 3 ( 96 ) machine 4 ( 40 ) 
+Job  17 : machine 1 ( 33 ) machine 3 ( 18 ) machine 0 ( 22 ) machine 4 ( 5 ) machine 2 ( 10 ) 
+Job  18 : machine 2 ( 64 ) machine 4 ( 64 ) machine 0 ( 89 ) machine 1 ( 96 ) machine 3 ( 95 ) 
+Job  19 : machine 2 ( 18 ) machine 4 ( 23 ) machine 3 ( 15 ) machine 1 ( 38 ) machine 0 ( 8 ) 
+K:  4676
+Job  0 , e: machine  0 ( 23 ) machine  1 ( 0 ) machine  2 ( 189 ) machine  3 ( 234 ) machine  4 ( 105 ) 
+Job  1 , e: machine  0 ( 120 ) machine  1 ( 91 ) machine  2 ( 138 ) machine  3 ( 0 ) machine  4 ( 50 ) 
+Job  2 , e: machine  0 ( 160 ) machine  1 ( 70 ) machine  2 ( 122 ) machine  3 ( 16 ) machine  4 ( 0 ) 
+Job  3 , e: machine  0 ( 230 ) machine  1 ( 0 ) machine  2 ( 156 ) machine  3 ( 62 ) machine  4 ( 119 ) 
+Job  4 , e: machine  0 ( 159 ) machine  1 ( 68 ) machine  2 ( 129 ) machine  3 ( 0 ) machine  4 ( 240 ) 
+Job  5 , e: machine  0 ( 189 ) machine  1 ( 0 ) machine  2 ( 89 ) machine  3 ( 178 ) machine  4 ( 268 ) 
+Job  6 , e: machine  0 ( 66 ) machine  1 ( 0 ) machine  2 ( 210 ) machine  3 ( 157 ) machine  4 ( 190 ) 
+Job  7 , e: machine  0 ( 87 ) machine  1 ( 119 ) machine  2 ( 32 ) machine  3 ( 0 ) machine  4 ( 8 ) 
+Job  8 , e: machine  0 ( 0 ) machine  1 ( 71 ) machine  2 ( 7 ) machine  3 ( 166 ) machine  4 ( 110 ) 
+Job  9 , e: machine  0 ( 0 ) machine  1 ( 74 ) machine  2 ( 66 ) machine  3 ( 59 ) machine  4 ( 19 ) 
+Job  10 , e: machine  0 ( 0 ) machine  1 ( 258 ) machine  2 ( 63 ) machine  3 ( 127 ) machine  4 ( 218 ) 
+Job  11 , e: machine  0 ( 216 ) machine  1 ( 0 ) machine  2 ( 118 ) machine  3 ( 42 ) machine  4 ( 103 ) 
+Job  12 , e: machine  0 ( 80 ) machine  1 ( 0 ) machine  2 ( 187 ) machine  3 ( 106 ) machine  4 ( 181 ) 
+Job  13 , e: machine  0 ( 61 ) machine  1 ( 160 ) machine  2 ( 0 ) machine  3 ( 136 ) machine  4 ( 39 ) 
+Job  14 , e: machine  0 ( 102 ) machine  1 ( 0 ) machine  2 ( 114 ) machine  3 ( 15 ) machine  4 ( 94 ) 
+Job  15 , e: machine  0 ( 69 ) machine  1 ( 171 ) machine  2 ( 26 ) machine  3 ( 0 ) machine  4 ( 149 ) 
+Job  16 , e: machine  0 ( 98 ) machine  1 ( 62 ) machine  2 ( 0 ) machine  3 ( 161 ) machine  4 ( 257 ) 
+Job  17 , e: machine  0 ( 51 ) machine  1 ( 0 ) machine  2 ( 78 ) machine  3 ( 33 ) machine  4 ( 73 ) 
+Job  18 , e: machine  0 ( 128 ) machine  1 ( 217 ) machine  2 ( 0 ) machine  3 ( 313 ) machine  4 ( 64 ) 
+Job  19 , e: machine  0 ( 94 ) machine  1 ( 56 ) machine  2 ( 0 ) machine  3 ( 41 ) machine  4 ( 18 ) 
+Job  0 , f: machine  0 ( 167 ) machine  1 ( 249 ) machine  2 ( 38 ) machine  3 ( 0 ) machine  4 ( 83 ) 
+Job  1 , f: machine  0 ( 21 ) machine  1 ( 39 ) machine  2 ( 0 ) machine  3 ( 109 ) machine  4 ( 68 ) 
+Job  2 , f: machine  0 ( 0 ) machine  1 ( 90 ) machine  2 ( 52 ) machine  3 ( 142 ) machine  4 ( 196 ) 
+Job  3 , f: machine  0 ( 0 ) machine  1 ( 222 ) machine  2 ( 54 ) machine  3 ( 165 ) machine  4 ( 128 ) 
+Job  4 , f: machine  0 ( 57 ) machine  1 ( 168 ) machine  2 ( 138 ) machine  3 ( 229 ) machine  4 ( 0 ) 
+Job  5 , f: machine  0 ( 81 ) machine  1 ( 260 ) machine  2 ( 171 ) machine  3 ( 160 ) machine  4 ( 0 ) 
+Job  6 , f: machine  0 ( 73 ) machine  1 ( 164 ) machine  2 ( 0 ) machine  3 ( 40 ) machine  4 ( 20 ) 
+Job  7 , f: machine  0 ( 84 ) machine  1 ( 0 ) machine  2 ( 116 ) machine  3 ( 195 ) machine  4 ( 171 ) 
+Job  8 , f: machine  0 ( 213 ) machine  1 ( 110 ) machine  2 ( 149 ) machine  3 ( 0 ) machine  4 ( 54 ) 
+Job  9 , f: machine  0 ( 138 ) machine  1 ( 0 ) machine  2 ( 83 ) machine  3 ( 91 ) machine  4 ( 98 ) 
+Job  10 , f: machine  0 ( 201 ) machine  1 ( 0 ) machine  2 ( 137 ) machine  3 ( 46 ) machine  4 ( 6 ) 
+Job  11 , f: machine  0 ( 0 ) machine  1 ( 248 ) machine  2 ( 74 ) machine  3 ( 187 ) machine  4 ( 172 ) 
+Job  12 , f: machine  0 ( 168 ) machine  1 ( 194 ) machine  2 ( 0 ) machine  3 ( 93 ) machine  4 ( 87 ) 
+Job  13 , f: machine  0 ( 68 ) machine  1 ( 0 ) machine  2 ( 165 ) machine  3 ( 44 ) machine  4 ( 143 ) 
+Job  14 , f: machine  0 ( 20 ) machine  1 ( 119 ) machine  2 ( 0 ) machine  3 ( 40 ) machine  4 ( 32 ) 
+Job  15 , f: machine  0 ( 83 ) machine  1 ( 0 ) machine  2 ( 163 ) machine  3 ( 206 ) machine  4 ( 61 ) 
+Job  16 , f: machine  0 ( 136 ) machine  1 ( 199 ) machine  2 ( 235 ) machine  3 ( 40 ) machine  4 ( 0 ) 
+Job  17 , f: machine  0 ( 15 ) machine  1 ( 55 ) machine  2 ( 0 ) machine  3 ( 37 ) machine  4 ( 10 ) 
+Job  18 , f: machine  0 ( 191 ) machine  1 ( 95 ) machine  2 ( 344 ) machine  3 ( 0 ) machine  4 ( 280 ) 
+Job  19 , f: machine  0 ( 0 ) machine  1 ( 8 ) machine  2 ( 84 ) machine  3 ( 46 ) machine  4 ( 61 ) 
+objective value : 408.0
+Time limit for finding cliques. Cliques found: 599
+For machine 0 were found 0 basic cuts, 1 two jobs cuts, 599 clique cuts, 0 triangle cuts, 1 basic cuts epsilon, 16 half cuts and 213 late jobs cuts
+Time limit for finding cliques. Cliques found: 608
+For machine 1 were found 0 basic cuts, 1 two jobs cuts, 608 clique cuts, 0 triangle cuts, 1 basic cuts epsilon, 18 half cuts and 243 late jobs cuts
+Time limit for finding cliques. Cliques found: 590
+For machine 2 were found 0 basic cuts, 1 two jobs cuts, 590 clique cuts, 0 triangle cuts, 1 basic cuts epsilon, 15 half cuts and 211 late jobs cuts
+Time limit for finding cliques. Cliques found: 601
+For machine 3 were found 0 basic cuts, 1 two jobs cuts, 601 clique cuts, 0 triangle cuts, 1 basic cuts epsilon, 16 half cuts and 217 late jobs cuts
+Time limit for finding cliques. Cliques found: 561
+For machine 4 were found 0 basic cuts, 1 two jobs cuts, 561 clique cuts, 0 triangle cuts, 1 basic cuts epsilon, 13 half cuts and 209 late jobs cuts
+Time elapsed for iteration 1: 3058.51s
+objective value : 659.7392578125
+Time limit for finding cliques. Cliques found: 0
+For machine 0 were found 0 basic cuts, 0 two jobs cuts, 0 clique cuts, 0 triangle cuts, 1 basic cuts epsilon, 0 half cuts and 0 late jobs cuts
+Time limit for finding cliques. Cliques found: 0
+For machine 1 were found 0 basic cuts, 0 two jobs cuts, 0 clique cuts, 0 triangle cuts, 0 basic cuts epsilon, 0 half cuts and 0 late jobs cuts
+Time limit for finding cliques. Cliques found: 0
+For machine 2 were found 0 basic cuts, 0 two jobs cuts, 0 clique cuts, 0 triangle cuts, 0 basic cuts epsilon, 0 half cuts and 1 late jobs cuts
+Time limit for finding cliques. Cliques found: 0
+For machine 3 were found 0 basic cuts, 1 two jobs cuts, 0 clique cuts, 0 triangle cuts, 0 basic cuts epsilon, 0 half cuts and 10 late jobs cuts
+Time limit for finding cliques. Cliques found: 0
+For machine 4 were found 0 basic cuts, 1 two jobs cuts, 0 clique cuts, 0 triangle cuts, 0 basic cuts epsilon, 0 half cuts and 0 late jobs cuts
+Time elapsed for iteration 2: 3062.24s
+objective value : 660.8283576962713
+Time limit for finding cliques. Cliques found: 0
+For machine 0 were found 0 basic cuts, 0 two jobs cuts, 0 clique cuts, 0 triangle cuts, 1 basic cuts epsilon, 0 half cuts and 0 late jobs cuts
+Time limit for finding cliques. Cliques found: 0
+For machine 1 were found 0 basic cuts, 0 two jobs cuts, 0 clique cuts, 0 triangle cuts, 0 basic cuts epsilon, 0 half cuts and 0 late jobs cuts
+Time limit for finding cliques. Cliques found: 0
+For machine 2 were found 0 basic cuts, 0 two jobs cuts, 0 clique cuts, 0 triangle cuts, 0 basic cuts epsilon, 0 half cuts and 0 late jobs cuts
+Time limit for finding cliques. Cliques found: 0
+For machine 3 were found 0 basic cuts, 1 two jobs cuts, 0 clique cuts, 0 triangle cuts, 0 basic cuts epsilon, 0 half cuts and 1 late jobs cuts
+Time limit for finding cliques. Cliques found: 0
+For machine 4 were found 0 basic cuts, 0 two jobs cuts, 0 clique cuts, 0 triangle cuts, 0 basic cuts epsilon, 0 half cuts and 0 late jobs cuts
+Time elapsed for iteration 3: 3062.79s
+objective value : 660.8283576962712
+Time limit for finding cliques. Cliques found: 0
+For machine 0 were found 0 basic cuts, 0 two jobs cuts, 0 clique cuts, 0 triangle cuts, 1 basic cuts epsilon, 0 half cuts and 0 late jobs cuts
+Time limit for finding cliques. Cliques found: 0
+For machine 1 were found 0 basic cuts, 0 two jobs cuts, 0 clique cuts, 0 triangle cuts, 0 basic cuts epsilon, 0 half cuts and 0 late jobs cuts
+Time limit for finding cliques. Cliques found: 0
+For machine 2 were found 0 basic cuts, 0 two jobs cuts, 0 clique cuts, 0 triangle cuts, 0 basic cuts epsilon, 0 half cuts and 0 late jobs cuts
+Time limit for finding cliques. Cliques found: 0
+For machine 3 were found 0 basic cuts, 0 two jobs cuts, 0 clique cuts, 0 triangle cuts, 0 basic cuts epsilon, 0 half cuts and 0 late jobs cuts
+Time limit for finding cliques. Cliques found: 0
+For machine 4 were found 0 basic cuts, 0 two jobs cuts, 0 clique cuts, 0 triangle cuts, 0 basic cuts epsilon, 0 half cuts and 0 late jobs cuts
+Time elapsed for iteration 4: 3059.27s
+objective value : 660.8283576962713
+Time limit for finding cliques. Cliques found: 0
+For machine 0 were found 0 basic cuts, 0 two jobs cuts, 0 clique cuts, 0 triangle cuts, 1 basic cuts epsilon, 0 half cuts and 0 late jobs cuts
+Time limit for finding cliques. Cliques found: 0
+For machine 1 were found 0 basic cuts, 0 two jobs cuts, 0 clique cuts, 0 triangle cuts, 0 basic cuts epsilon, 0 half cuts and 0 late jobs cuts
+Time limit for finding cliques. Cliques found: 0
+For machine 2 were found 0 basic cuts, 0 two jobs cuts, 0 clique cuts, 0 triangle cuts, 0 basic cuts epsilon, 0 half cuts and 0 late jobs cuts
+Time limit for finding cliques. Cliques found: 0
+For machine 3 were found 0 basic cuts, 0 two jobs cuts, 0 clique cuts, 0 triangle cuts, 0 basic cuts epsilon, 0 half cuts and 0 late jobs cuts
+Time limit for finding cliques. Cliques found: 0
+For machine 4 were found 0 basic cuts, 0 two jobs cuts, 0 clique cuts, 0 triangle cuts, 0 basic cuts epsilon, 0 half cuts and 0 late jobs cuts
+Time elapsed for iteration 5: 3063.02s
+objective value : 660.8283576962713
+Time limit for finding cliques. Cliques found: 0
+For machine 0 were found 0 basic cuts, 0 two jobs cuts, 0 clique cuts, 0 triangle cuts, 1 basic cuts epsilon, 0 half cuts and 0 late jobs cuts
+Time limit for finding cliques. Cliques found: 0
+For machine 1 were found 0 basic cuts, 0 two jobs cuts, 0 clique cuts, 0 triangle cuts, 0 basic cuts epsilon, 0 half cuts and 0 late jobs cuts
+Time limit for finding cliques. Cliques found: 0
+For machine 2 were found 0 basic cuts, 0 two jobs cuts, 0 clique cuts, 0 triangle cuts, 0 basic cuts epsilon, 0 half cuts and 0 late jobs cuts
+Time limit for finding cliques. Cliques found: 0
+For machine 3 were found 0 basic cuts, 0 two jobs cuts, 0 clique cuts, 0 triangle cuts, 0 basic cuts epsilon, 0 half cuts and 0 late jobs cuts
+Time limit for finding cliques. Cliques found: 0
+For machine 4 were found 0 basic cuts, 0 two jobs cuts, 0 clique cuts, 0 triangle cuts, 0 basic cuts epsilon, 0 half cuts and 0 late jobs cuts
+Time elapsed for iteration 6: 3065.2s
+objective value : 660.8283576962713
+Time limit for finding cliques. Cliques found: 0
+For machine 0 were found 0 basic cuts, 0 two jobs cuts, 0 clique cuts, 0 triangle cuts, 1 basic cuts epsilon, 0 half cuts and 0 late jobs cuts
+Time limit for finding cliques. Cliques found: 0
+For machine 1 were found 0 basic cuts, 0 two jobs cuts, 0 clique cuts, 0 triangle cuts, 0 basic cuts epsilon, 0 half cuts and 0 late jobs cuts
+Time limit for finding cliques. Cliques found: 0
+For machine 2 were found 0 basic cuts, 0 two jobs cuts, 0 clique cuts, 0 triangle cuts, 0 basic cuts epsilon, 0 half cuts and 0 late jobs cuts
+Time limit for finding cliques. Cliques found: 0
+For machine 3 were found 0 basic cuts, 0 two jobs cuts, 0 clique cuts, 0 triangle cuts, 0 basic cuts epsilon, 0 half cuts and 0 late jobs cuts
+Time limit for finding cliques. Cliques found: 0
+For machine 4 were found 0 basic cuts, 0 two jobs cuts, 0 clique cuts, 0 triangle cuts, 0 basic cuts epsilon, 0 half cuts and 0 late jobs cuts
+Time elapsed for iteration 7: 3062.01s
+objective value : 660.8283576962712
+Time limit for finding cliques. Cliques found: 0
+For machine 0 were found 0 basic cuts, 0 two jobs cuts, 0 clique cuts, 0 triangle cuts, 0 basic cuts epsilon, 0 half cuts and 0 late jobs cuts
+Time limit for finding cliques. Cliques found: 0
+For machine 1 were found 0 basic cuts, 0 two jobs cuts, 0 clique cuts, 0 triangle cuts, 0 basic cuts epsilon, 0 half cuts and 0 late jobs cuts
+Time limit for finding cliques. Cliques found: 0
+For machine 2 were found 0 basic cuts, 0 two jobs cuts, 0 clique cuts, 0 triangle cuts, 0 basic cuts epsilon, 0 half cuts and 0 late jobs cuts
+Time limit for finding cliques. Cliques found: 0
+For machine 3 were found 0 basic cuts, 0 two jobs cuts, 0 clique cuts, 0 triangle cuts, 0 basic cuts epsilon, 0 half cuts and 0 late jobs cuts
+Time limit for finding cliques. Cliques found: 0
+For machine 4 were found 0 basic cuts, 0 two jobs cuts, 0 clique cuts, 0 triangle cuts, 0 basic cuts epsilon, 0 half cuts and 0 late jobs cuts
+Time elapsed for iteration 8: 3062.21s
+Number of iterations: 7. Gain of objective value: 252.82835769627115. Total of cuts found: 4161. Objective value: 660.8283576962712.
+Were found a total of 0 basic cuts, 8 two jobs cuts, 2959 clique cuts, 0 triangle cuts, 11 basic cuts epsilon, 78 half cuts and 1105 late jobs cuts
+Elapsed time: 24495.46142053604

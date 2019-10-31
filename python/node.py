@@ -91,7 +91,7 @@ class Node:
                 self.mip.optimize()
 
         end = time()
-        print('Time elapsed relaxation: {}s'.format(round(end - start, 2)))
+        # print('Time elapsed relaxation: {}s'.format(round(end - start, 2)))
 
 
     # j before k in machine i
@@ -228,7 +228,7 @@ class Node:
                 newConstraints = True
 
         end = time()
-        print('Time elapsed relaxation: {}s'.format(round(end - start, 2)))
+        # print('Time elapsed relaxation: {}s'.format(round(end - start, 2)))
 
     def cuts(self):
         totalCuts = 0
@@ -716,7 +716,7 @@ class Node:
             xij[i][j] for i in range(self.instance.n) for j in range(self.instance.n) if j != i) >= -1, 'triangle_cut'
         m.optimize()
 
-        if m.objective_value > -0.000000001:
+        if m.objective_value > -0.000000001 or m.status == OptimizationStatus.INFESIABLE:
             return 0
 
         S = []

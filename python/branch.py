@@ -39,7 +39,7 @@ class Branch:
                         valuejk = p.valueOrder(j, k, i)
                         valuekj = p.valueOrder(k, j, i)
                         if max(valuejk, valuekj) == 0:
-                            input('{} {} {} {} {}'.format(j, k, i, valuejk, valuekj))
+                            print('max(valuejk, valuekj) == 0 ; j = {} k = {} i = {} valuejk = {} valuekj = {}'.format(j, k, i, valuejk, valuekj))
                             continue
                         value = abs(valuejk - valuekj) / (2*max(valuejk, valuekj))  # ficar valor entre 0 e 0,5
                         # input('{} {} {} {} {} {} {}'.format(j, k, i, valuejk, valuekj, value, dist))
@@ -51,8 +51,9 @@ class Branch:
             # print('ordenado')
             # print(a)
             eps = 0.00000001
-            input(len(a))
+            # input(len(a))
             qtd = 0
+            start_iter = time()
             for key, value in a:
                 i = key[0]
                 j = key[1]
@@ -63,9 +64,13 @@ class Branch:
                 p2 = Node(p.mip, p.instance)  # k before j in machine i
                 p2.depth = p.depth + 1
                 # input('atualizando nós')
+                start = time()
                 p1.updateNode(j, k, i)
+                end = time()
+                print('Time elapsed relaxation p1: {}s ; '.format(round(end - start, 2)), end='')
                 # input('teste update node')
                 # p1.printSolution()
+                
                 p1.mip.write('testep1depth{}.lp'.format(p1.depth))
                 if p1.mip.status == OptimizationStatus.OPTIMAL or p1.mip.status == OptimizationStatus.FEASIBLE:  # optimal or feasible solution found
                     print('obj p1: {}'.format(p1.mip.objective_value), end='')
@@ -82,8 +87,13 @@ class Branch:
                         print(' obj float')
                         if p1.mip.objective_value - (bestUB - 1 + eps) <= eps:
                             L.append(p1)
-
+                else:
+                    print(' infesiable')
+                
+                start = time()
                 p2.updateNode(k, j, i)
+                end = time()
+                print('Time elapsed relaxation p2: {}s ; '.format(round(end - start, 2)), end='')
 
                 p2.mip.write('testep2depth{}.lp'.format(p2.depth))
                 if p2.mip.status == OptimizationStatus.OPTIMAL or p2.mip.status == OptimizationStatus.FEASIBLE:  # feasible solution found
@@ -108,7 +118,9 @@ class Branch:
 
                 print('quantidade de nós vistos no depth {}: {} de {}'.format(p.depth, qtd, len(a)))
                 print('list size: {}'.format(len(L)))
-            input('new depth')
+            end_iter = time()
+            print('Time elapsed for iteration: {}s'.format(round(end_iter - start_iter, 2)))
+            print('new depth')
     def integerSol(self, p):
         for i in range(p.instance.m):
             for j in range(p.instance.n):

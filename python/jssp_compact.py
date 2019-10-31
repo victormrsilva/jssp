@@ -2,13 +2,21 @@ from sys import argv
 import time
 from JSSPInstance import JSSPInstance
 from compact import Compact
+from branch import Branch
 
 inst = JSSPInstance(argv[1])
-
+inst.print()
+# input('instance')
 compact = Compact(inst)
 
 # build the model
-compact.constructProblem()
+# compact.constructProblemM()
+compact.constructProblemMcCormick()
+
+branch = Branch()
+
+branch.branch(compact)
+
 
 start = time.time()
 # execute with cutpool

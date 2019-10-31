@@ -1,7 +1,7 @@
 # compact_cutpool.py
 from mip.model import Model, xsum
 from mip.constants import INTEGER, BINARY, CONTINUOUS
-from mip.callbacks import CutsGenerator, CutPool
+from mip.callbacks import CutPool, ConstrGenerator
 import sys
 from time import process_time
 import numpy as np
@@ -9,7 +9,7 @@ import numpy as np
 from itertools import permutations, combinations
 
 
-class Compact_CutPool(CutsGenerator):
+class Compact_CutPool(ConstrGenerator):
     def __init__(self, instance):
         self.instance = instance
         self.m = Model()

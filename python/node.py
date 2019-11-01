@@ -218,14 +218,18 @@ class Node:
             newConstraints = False
             lastobj = self.mip.objective_value
             # start = time()
-            self.cuts()
-
-            self.mip.optimize()
-            # print('lastobj = {} ; obj = {}'.format(lastobj, self.mip.objective_value))
-
-            # apenas verifica novamente se há mudança no objetivo
-            if (self.mip.objective_value - lastobj) >= 0.000001:
+            hasCuts = self.cuts()
+            if hasCuts > 0:
                 newConstraints = True
+                self.mip.optimize()
+            # self.cuts()
+            #
+            # self.mip.optimize()
+            # # print('lastobj = {} ; obj = {}'.format(lastobj, self.mip.objective_value))
+            #
+            # # apenas verifica novamente se há mudança no objetivo
+            # if (self.mip.objective_value - lastobj) >= 0.000001:
+            #     newConstraints = True
 
         end = time()
         # print('Time elapsed relaxation: {}s'.format(round(end - start, 2)))
@@ -716,7 +720,7 @@ class Node:
             xij[i][j] for i in range(self.instance.n) for j in range(self.instance.n) if j != i) >= -1, 'triangle_cut'
         m.optimize()
 
-        if m.objective_value > -0.000000001 or m.status == OptimizationStatus.INFESIABLE:
+        if m.objective_value > -0.000000001 or m.status == OptimizationStatus.INFEASIBLE:
             return 0
 
         S = []

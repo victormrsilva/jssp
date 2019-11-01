@@ -1,0 +1,1722 @@
+Using Python-MIP package version 1.5.3
+Machines:  6 Jobs:  6
+Order: 
+Job  0 : machine 2 ( 1 ) machine 0 ( 3 ) machine 1 ( 6 ) machine 3 ( 7 ) machine 5 ( 3 ) machine 4 ( 6 ) 
+Job  1 : machine 1 ( 8 ) machine 2 ( 5 ) machine 4 ( 10 ) machine 5 ( 10 ) machine 0 ( 10 ) machine 3 ( 4 ) 
+Job  2 : machine 2 ( 5 ) machine 3 ( 4 ) machine 5 ( 8 ) machine 0 ( 9 ) machine 1 ( 1 ) machine 4 ( 7 ) 
+Job  3 : machine 1 ( 5 ) machine 0 ( 5 ) machine 2 ( 5 ) machine 3 ( 3 ) machine 4 ( 8 ) machine 5 ( 9 ) 
+Job  4 : machine 2 ( 9 ) machine 1 ( 3 ) machine 4 ( 5 ) machine 5 ( 4 ) machine 0 ( 3 ) machine 3 ( 1 ) 
+Job  5 : machine 1 ( 3 ) machine 3 ( 3 ) machine 5 ( 9 ) machine 0 ( 10 ) machine 4 ( 4 ) machine 2 ( 1 ) 
+K:  197
+Job  0 , e: machine  0 ( 1 ) machine  1 ( 4 ) machine  2 ( 0 ) machine  3 ( 10 ) machine  4 ( 20 ) machine  5 ( 17 ) 
+Job  1 , e: machine  0 ( 33 ) machine  1 ( 0 ) machine  2 ( 8 ) machine  3 ( 43 ) machine  4 ( 13 ) machine  5 ( 23 ) 
+Job  2 , e: machine  0 ( 17 ) machine  1 ( 26 ) machine  2 ( 0 ) machine  3 ( 5 ) machine  4 ( 27 ) machine  5 ( 9 ) 
+Job  3 , e: machine  0 ( 5 ) machine  1 ( 0 ) machine  2 ( 10 ) machine  3 ( 15 ) machine  4 ( 18 ) machine  5 ( 26 ) 
+Job  4 , e: machine  0 ( 21 ) machine  1 ( 9 ) machine  2 ( 0 ) machine  3 ( 24 ) machine  4 ( 12 ) machine  5 ( 17 ) 
+Job  5 , e: machine  0 ( 15 ) machine  1 ( 0 ) machine  2 ( 29 ) machine  3 ( 3 ) machine  4 ( 25 ) machine  5 ( 6 ) 
+Job  0 , f: machine  0 ( 22 ) machine  1 ( 16 ) machine  2 ( 25 ) machine  3 ( 9 ) machine  4 ( 0 ) machine  5 ( 6 ) 
+Job  1 , f: machine  0 ( 4 ) machine  1 ( 39 ) machine  2 ( 34 ) machine  3 ( 0 ) machine  4 ( 24 ) machine  5 ( 14 ) 
+Job  2 , f: machine  0 ( 8 ) machine  1 ( 7 ) machine  2 ( 29 ) machine  3 ( 25 ) machine  4 ( 0 ) machine  5 ( 17 ) 
+Job  3 , f: machine  0 ( 25 ) machine  1 ( 30 ) machine  2 ( 20 ) machine  3 ( 17 ) machine  4 ( 9 ) machine  5 ( 0 ) 
+Job  4 , f: machine  0 ( 1 ) machine  1 ( 13 ) machine  2 ( 16 ) machine  3 ( 0 ) machine  4 ( 8 ) machine  5 ( 4 ) 
+Job  5 , f: machine  0 ( 5 ) machine  1 ( 27 ) machine  2 ( 0 ) machine  3 ( 24 ) machine  4 ( 1 ) machine  5 ( 15 ) 
+EST and LST:
+Job: 0 Machine: 0 EST: 1 LST: 172
+Job: 0 Machine: 1 EST: 4 LST: 175
+Job: 0 Machine: 2 EST: 0 LST: 171
+Job: 0 Machine: 3 EST: 10 LST: 181
+Job: 0 Machine: 4 EST: 20 LST: 191
+Job: 0 Machine: 5 EST: 17 LST: 188
+Job: 1 Machine: 0 EST: 33 LST: 183
+Job: 1 Machine: 1 EST: 0 LST: 150
+Job: 1 Machine: 2 EST: 8 LST: 158
+Job: 1 Machine: 3 EST: 43 LST: 193
+Job: 1 Machine: 4 EST: 13 LST: 163
+Job: 1 Machine: 5 EST: 23 LST: 173
+Job: 2 Machine: 0 EST: 17 LST: 180
+Job: 2 Machine: 1 EST: 26 LST: 189
+Job: 2 Machine: 2 EST: 0 LST: 163
+Job: 2 Machine: 3 EST: 5 LST: 168
+Job: 2 Machine: 4 EST: 27 LST: 190
+Job: 2 Machine: 5 EST: 9 LST: 172
+Job: 3 Machine: 0 EST: 5 LST: 167
+Job: 3 Machine: 1 EST: 0 LST: 162
+Job: 3 Machine: 2 EST: 10 LST: 172
+Job: 3 Machine: 3 EST: 15 LST: 177
+Job: 3 Machine: 4 EST: 18 LST: 180
+Job: 3 Machine: 5 EST: 26 LST: 188
+Job: 4 Machine: 0 EST: 21 LST: 193
+Job: 4 Machine: 1 EST: 9 LST: 181
+Job: 4 Machine: 2 EST: 0 LST: 172
+Job: 4 Machine: 3 EST: 24 LST: 196
+Job: 4 Machine: 4 EST: 12 LST: 184
+Job: 4 Machine: 5 EST: 17 LST: 189
+Job: 5 Machine: 0 EST: 15 LST: 182
+Job: 5 Machine: 1 EST: 0 LST: 167
+Job: 5 Machine: 2 EST: 29 LST: 196
+Job: 5 Machine: 3 EST: 3 LST: 170
+Job: 5 Machine: 4 EST: 25 LST: 192
+Job: 5 Machine: 5 EST: 6 LST: 173
+Order:
+Job: 0 Machine: 0 = 1 
+Job: 0 Machine: 1 = 2 
+Job: 0 Machine: 2 = 0 
+Job: 0 Machine: 3 = 3 
+Job: 0 Machine: 4 = 5 
+Job: 0 Machine: 5 = 4 
+Job: 1 Machine: 0 = 4 
+Job: 1 Machine: 1 = 0 
+Job: 1 Machine: 2 = 1 
+Job: 1 Machine: 3 = 5 
+Job: 1 Machine: 4 = 2 
+Job: 1 Machine: 5 = 3 
+Job: 2 Machine: 0 = 3 
+Job: 2 Machine: 1 = 4 
+Job: 2 Machine: 2 = 0 
+Job: 2 Machine: 3 = 1 
+Job: 2 Machine: 4 = 5 
+Job: 2 Machine: 5 = 2 
+Job: 3 Machine: 0 = 1 
+Job: 3 Machine: 1 = 0 
+Job: 3 Machine: 2 = 2 
+Job: 3 Machine: 3 = 3 
+Job: 3 Machine: 4 = 4 
+Job: 3 Machine: 5 = 5 
+Job: 4 Machine: 0 = 4 
+Job: 4 Machine: 1 = 1 
+Job: 4 Machine: 2 = 0 
+Job: 4 Machine: 3 = 5 
+Job: 4 Machine: 4 = 2 
+Job: 4 Machine: 5 = 3 
+Job: 5 Machine: 0 = 3 
+Job: 5 Machine: 1 = 0 
+Job: 5 Machine: 2 = 5 
+Job: 5 Machine: 3 = 1 
+Job: 5 Machine: 4 = 4 
+Job: 5 Machine: 5 = 2 
+Distances:
+Job 0, Machine 2 -> Machine 0: distance 1
+Job 0, Machine 2 -> Machine 1: distance 4
+Job 0, Machine 2 -> Machine 3: distance 10
+Job 0, Machine 2 -> Machine 5: distance 17
+Job 0, Machine 2 -> Machine 4: distance 20
+Job 0, Machine 0 -> Machine 1: distance 3
+Job 0, Machine 0 -> Machine 3: distance 9
+Job 0, Machine 0 -> Machine 5: distance 16
+Job 0, Machine 0 -> Machine 4: distance 19
+Job 0, Machine 1 -> Machine 3: distance 6
+Job 0, Machine 1 -> Machine 5: distance 13
+Job 0, Machine 1 -> Machine 4: distance 16
+Job 0, Machine 3 -> Machine 5: distance 7
+Job 0, Machine 3 -> Machine 4: distance 10
+Job 0, Machine 5 -> Machine 4: distance 3
+Job 1, Machine 1 -> Machine 2: distance 8
+Job 1, Machine 1 -> Machine 4: distance 13
+Job 1, Machine 1 -> Machine 5: distance 23
+Job 1, Machine 1 -> Machine 0: distance 33
+Job 1, Machine 1 -> Machine 3: distance 43
+Job 1, Machine 2 -> Machine 4: distance 5
+Job 1, Machine 2 -> Machine 5: distance 15
+Job 1, Machine 2 -> Machine 0: distance 25
+Job 1, Machine 2 -> Machine 3: distance 35
+Job 1, Machine 4 -> Machine 5: distance 10
+Job 1, Machine 4 -> Machine 0: distance 20
+Job 1, Machine 4 -> Machine 3: distance 30
+Job 1, Machine 5 -> Machine 0: distance 10
+Job 1, Machine 5 -> Machine 3: distance 20
+Job 1, Machine 0 -> Machine 3: distance 10
+Job 2, Machine 2 -> Machine 3: distance 5
+Job 2, Machine 2 -> Machine 5: distance 9
+Job 2, Machine 2 -> Machine 0: distance 17
+Job 2, Machine 2 -> Machine 1: distance 26
+Job 2, Machine 2 -> Machine 4: distance 27
+Job 2, Machine 3 -> Machine 5: distance 4
+Job 2, Machine 3 -> Machine 0: distance 12
+Job 2, Machine 3 -> Machine 1: distance 21
+Job 2, Machine 3 -> Machine 4: distance 22
+Job 2, Machine 5 -> Machine 0: distance 8
+Job 2, Machine 5 -> Machine 1: distance 17
+Job 2, Machine 5 -> Machine 4: distance 18
+Job 2, Machine 0 -> Machine 1: distance 9
+Job 2, Machine 0 -> Machine 4: distance 10
+Job 2, Machine 1 -> Machine 4: distance 1
+Job 3, Machine 1 -> Machine 0: distance 5
+Job 3, Machine 1 -> Machine 2: distance 10
+Job 3, Machine 1 -> Machine 3: distance 15
+Job 3, Machine 1 -> Machine 4: distance 18
+Job 3, Machine 1 -> Machine 5: distance 26
+Job 3, Machine 0 -> Machine 2: distance 5
+Job 3, Machine 0 -> Machine 3: distance 10
+Job 3, Machine 0 -> Machine 4: distance 13
+Job 3, Machine 0 -> Machine 5: distance 21
+Job 3, Machine 2 -> Machine 3: distance 5
+Job 3, Machine 2 -> Machine 4: distance 8
+Job 3, Machine 2 -> Machine 5: distance 16
+Job 3, Machine 3 -> Machine 4: distance 3
+Job 3, Machine 3 -> Machine 5: distance 11
+Job 3, Machine 4 -> Machine 5: distance 8
+Job 4, Machine 2 -> Machine 1: distance 9
+Job 4, Machine 2 -> Machine 4: distance 12
+Job 4, Machine 2 -> Machine 5: distance 17
+Job 4, Machine 2 -> Machine 0: distance 21
+Job 4, Machine 2 -> Machine 3: distance 24
+Job 4, Machine 1 -> Machine 4: distance 3
+Job 4, Machine 1 -> Machine 5: distance 8
+Job 4, Machine 1 -> Machine 0: distance 12
+Job 4, Machine 1 -> Machine 3: distance 15
+Job 4, Machine 4 -> Machine 5: distance 5
+Job 4, Machine 4 -> Machine 0: distance 9
+Job 4, Machine 4 -> Machine 3: distance 12
+Job 4, Machine 5 -> Machine 0: distance 4
+Job 4, Machine 5 -> Machine 3: distance 7
+Job 4, Machine 0 -> Machine 3: distance 3
+Job 5, Machine 1 -> Machine 3: distance 3
+Job 5, Machine 1 -> Machine 5: distance 6
+Job 5, Machine 1 -> Machine 0: distance 15
+Job 5, Machine 1 -> Machine 4: distance 25
+Job 5, Machine 1 -> Machine 2: distance 29
+Job 5, Machine 3 -> Machine 5: distance 3
+Job 5, Machine 3 -> Machine 0: distance 12
+Job 5, Machine 3 -> Machine 4: distance 22
+Job 5, Machine 3 -> Machine 2: distance 26
+Job 5, Machine 5 -> Machine 0: distance 9
+Job 5, Machine 5 -> Machine 4: distance 19
+Job 5, Machine 5 -> Machine 2: distance 23
+Job 5, Machine 0 -> Machine 4: distance 10
+Job 5, Machine 0 -> Machine 2: distance 14
+Job 5, Machine 4 -> Machine 2: distance 4
+McCormic linearization
+progress: LB = 46.99999999999742 - bestUB = 197 - gap = 76.14%
+Time elapsed relaxation p1: 18.35s ; obj p1: 46.999999999999986 obj integer ; var not integer: x(3,1) value 9.457378699223874
+Time elapsed relaxation p2: 19.71s ; obj p2: 47.818181818181834 obj float
+quantidade de nós vistos no depth 0: 1 de 90
+list size: 2
+Time elapsed relaxation p1: 18.83s ; obj p1: 47.0 obj integer ; var not integer: x(5,0) value 23.44379645670041
+Time elapsed relaxation p2: 18.89s ; obj p2: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.663585905793845
+quantidade de nós vistos no depth 0: 2 de 90
+list size: 4
+Time elapsed relaxation p1: 13.53s ; obj p1: 47.00000000000001 obj integer ; var not integer: x(3,0) value 14.84583539207747
+Time elapsed relaxation p2: 12.88s ; obj p2: 46.999999999999986 obj integer ; var not integer: x(5,0) value 23.65228589826143
+quantidade de nós vistos no depth 0: 3 de 90
+list size: 6
+Time elapsed relaxation p1: 18.03s ; obj p1: 48.000000000000014 obj integer ; var not integer: x(2,0) value 26.65670628183362
+Time elapsed relaxation p2: 17.75s ; obj p2: 46.99999999999999 obj integer ; var not integer: x(2,0) value 26.653900308142966
+quantidade de nós vistos no depth 0: 4 de 90
+list size: 8
+Time elapsed relaxation p1: 15.4s ; obj p1: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.79924901353373
+Time elapsed relaxation p2: 14.27s ; obj p2: 73.99999999999994 obj integer ; var not integer: x(2,0) value 28.959999999999987
+quantidade de nós vistos no depth 0: 5 de 90
+list size: 10
+Time elapsed relaxation p1: 16.32s ; obj p1: 73.00000000000003 obj integer ; var not integer: x(2,0) value 27.946185077437214
+Time elapsed relaxation p2: 14.98s ; obj p2: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.79924901353373
+quantidade de nós vistos no depth 0: 6 de 90
+list size: 12
+Time elapsed relaxation p1: 17.22s ; obj p1: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.691696025620864
+Time elapsed relaxation p2: 12.6s ; obj p2: 48.33333333333334 obj float
+quantidade de nós vistos no depth 0: 7 de 90
+list size: 14
+Time elapsed relaxation p1: 19.31s ; obj p1: 47.0 obj integer ; var not integer: x(2,0) value 26.791527894282666
+Time elapsed relaxation p2: 15.1s ; obj p2: 47.53333333333334 obj float
+quantidade de nós vistos no depth 0: 8 de 90
+list size: 16
+Time elapsed relaxation p1: 18.4s ; obj p1: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.691696025620864
+Time elapsed relaxation p2: 11.54s ; obj p2: 66.55555555555554 obj float
+quantidade de nós vistos no depth 0: 9 de 90
+list size: 18
+Time elapsed relaxation p1: 16.49s ; obj p1: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.691696025620864
+Time elapsed relaxation p2: 7.86s ; obj p2: 63.99999999999998 obj integer ; var not integer: x(0,0) value 8.011128189497358
+quantidade de nós vistos no depth 0: 10 de 90
+list size: 20
+Time elapsed relaxation p1: 17.43s ; obj p1: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.68742964199125
+Time elapsed relaxation p2: 18.15s ; obj p2: 50.99999999999998 obj integer ; var not integer: x(0,0) value 18.150763176779478
+quantidade de nós vistos no depth 0: 11 de 90
+list size: 22
+Time elapsed relaxation p1: 22.0s ; obj p1: 66.99999999999999 obj integer ; var not integer: x(2,0) value 26.09202453987731
+Time elapsed relaxation p2: 18.11s ; obj p2: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.691696025620864
+quantidade de nós vistos no depth 0: 12 de 90
+list size: 24
+Time elapsed relaxation p1: 17.63s ; obj p1: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.962392910702548
+Time elapsed relaxation p2: 19.98s ; obj p2: 59.27777777777777 obj float
+quantidade de nós vistos no depth 0: 13 de 90
+list size: 26
+Time elapsed relaxation p1: 13.38s ; obj p1: 47.0 obj integer ; var not integer: x(3,0) value 14.656791907514455
+Time elapsed relaxation p2: 19.41s ; obj p2: 47.00000000000001 obj integer ; var not integer: x(2,0) value 27.428571428571384
+quantidade de nós vistos no depth 0: 14 de 90
+list size: 28
+Time elapsed relaxation p1: 13.93s ; obj p1: 46.99999999999999 obj integer ; var not integer: x(2,0) value 27.733333333333334
+Time elapsed relaxation p2: 13.69s ; obj p2: 49.400000000000006 obj float
+quantidade de nós vistos no depth 0: 15 de 90
+list size: 30
+Time elapsed relaxation p1: 16.71s ; obj p1: 46.99999999999999 obj integer ; var not integer: x(2,0) value 26.65228589826143
+Time elapsed relaxation p2: 17.42s ; obj p2: 52.0 obj integer ; var not integer: x(0,0) value 19.3232470679146
+quantidade de nós vistos no depth 0: 16 de 90
+list size: 32
+Time elapsed relaxation p1: 15.14s ; obj p1: 47.00000000000001 obj integer ; var not integer: x(0,0) value 10.2110622116558
+Time elapsed relaxation p2: 14.97s ; obj p2: 46.999999999999986 obj integer ; var not integer: x(2,0) value 27.323888603549623
+quantidade de nós vistos no depth 0: 17 de 90
+list size: 34
+Time elapsed relaxation p1: 20.18s ; obj p1: 48.89473684210526 obj float
+Time elapsed relaxation p2: 17.27s ; obj p2: 46.99999999999999 obj integer ; var not integer: x(2,0) value 26.688564966501296
+quantidade de nós vistos no depth 0: 18 de 90
+list size: 36
+Time elapsed relaxation p1: 19.94s ; obj p1: 58.000000000000014 obj integer ; var not integer: x(0,0) value 6.336866162293623
+Time elapsed relaxation p2: 20.29s ; obj p2: 47.00000000000001 obj integer ; var not integer: x(3,0) value 16.513622792223778
+quantidade de nós vistos no depth 0: 19 de 90
+list size: 38
+Time elapsed relaxation p1: 17.4s ; obj p1: 46.99999999999999 obj integer ; var not integer: x(2,0) value 26.478527607361965
+Time elapsed relaxation p2: 25.66s ; obj p2: 47.642857142857146 obj float
+quantidade de nós vistos no depth 0: 20 de 90
+list size: 40
+Time elapsed relaxation p1: 31.59s ; obj p1: 47.729166666666664 obj float
+Time elapsed relaxation p2: 15.32s ; obj p2: 46.99999999999998 obj integer ; var not integer: x(2,0) value 27.363636363636374
+quantidade de nós vistos no depth 0: 21 de 90
+list size: 42
+Time elapsed relaxation p1: 10.85s ; obj p1: 59.27777777777778 obj float
+Time elapsed relaxation p2: 15.73s ; obj p2: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.691696025620864
+quantidade de nós vistos no depth 0: 22 de 90
+list size: 44
+Time elapsed relaxation p1: 17.34s ; obj p1: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.65228589826143
+Time elapsed relaxation p2: 13.19s ; obj p2: 54.0 obj integer ; var not integer: x(2,0) value 24.619469026548664
+quantidade de nós vistos no depth 0: 23 de 90
+list size: 46
+Time elapsed relaxation p1: 15.07s ; obj p1: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.691696025620864
+Time elapsed relaxation p2: 8.97s ; obj p2: 54.99999999999999 obj integer ; var not integer: x(0,0) value 19.01650841494511
+quantidade de nós vistos no depth 0: 24 de 90
+list size: 48
+Time elapsed relaxation p1: 9.19s ; obj p1: 57.0 obj integer ; var not integer: x(2,0) value 29.93629300776914
+Time elapsed relaxation p2: 12.99s ; obj p2: 46.999999999999986 obj integer ; var not integer: x(2,0) value 27.272727272727305
+quantidade de nós vistos no depth 0: 25 de 90
+list size: 50
+Time elapsed relaxation p1: 13.15s ; obj p1: 46.99999999999998 obj integer ; var not integer: x(0,0) value 10.545454545454543
+Time elapsed relaxation p2: 27.93s ; obj p2: 49.99999999999999 obj integer ; var not integer: x(0,0) value 14.010627309625255
+quantidade de nós vistos no depth 0: 26 de 90
+list size: 52
+Time elapsed relaxation p1: 16.22s ; obj p1: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.79924901353373
+Time elapsed relaxation p2: 20.22s ; obj p2: 67.84615384615385 obj float
+quantidade de nós vistos no depth 0: 27 de 90
+list size: 54
+Time elapsed relaxation p1: 14.97s ; obj p1: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.691696025620864
+Time elapsed relaxation p2: 10.78s ; obj p2: 50.46666666666666 obj float
+quantidade de nós vistos no depth 0: 28 de 90
+list size: 56
+Time elapsed relaxation p1: 10.53s ; obj p1: 49.18045112781953 obj float
+Time elapsed relaxation p2: 14.93s ; obj p2: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.691696025620864
+quantidade de nós vistos no depth 0: 29 de 90
+list size: 58
+Time elapsed relaxation p1: 11.62s ; obj p1: 47.99999999999999 obj integer ; var not integer: x(0,0) value 4.568862275449103
+Time elapsed relaxation p2: 14.7s ; obj p2: 46.999999999999986 obj integer ; var not integer: x(2,0) value 26.652285898261432
+quantidade de nós vistos no depth 0: 30 de 90
+list size: 60
+Time elapsed relaxation p1: 16.21s ; obj p1: 60.0 obj integer ; var not integer: x(0,0) value 8.741935483871035
+Time elapsed relaxation p2: 16.56s ; obj p2: 47.00000000000001 obj integer ; var not integer: x(3,0) value 16.300000000000004
+quantidade de nós vistos no depth 0: 31 de 90
+list size: 62
+Time elapsed relaxation p1: 14.83s ; obj p1: 47.0 obj integer ; var not integer: x(3,1) value 9.600307113051164
+Time elapsed relaxation p2: 17.95s ; obj p2: 47.272727272727266 obj float
+quantidade de nós vistos no depth 0: 32 de 90
+list size: 64
+Time elapsed relaxation p1: 17.38s ; obj p1: 46.999999999999986 obj integer ; var not integer: x(2,0) value 27.733333333333302
+Time elapsed relaxation p2: 20.67s ; obj p2: 47.0 obj integer ; var not integer: x(2,0) value 27.869881020669393
+quantidade de nós vistos no depth 0: 33 de 90
+list size: 66
+Time elapsed relaxation p1: 16.7s ; obj p1: 47.00000000000001 obj integer ; var not integer: x(3,0) value 16.300586957826894
+Time elapsed relaxation p2: 13.2s ; obj p2: 47.00000000000001 obj integer ; var not integer: x(4,0) value 34.038555091882834
+quantidade de nós vistos no depth 0: 34 de 90
+list size: 68
+Time elapsed relaxation p1: 22.0s ; obj p1: 47.0 obj integer ; var not integer: x(2,0) value 27.361963190184067
+Time elapsed relaxation p2: 13.18s ; obj p2: 47.054545454545455 obj float
+quantidade de nós vistos no depth 0: 35 de 90
+list size: 70
+Time elapsed relaxation p1: 16.84s ; obj p1: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.691696025620864
+Time elapsed relaxation p2: 8.59s ; obj p2: 69.85714285714279 obj float
+quantidade de nós vistos no depth 0: 36 de 90
+list size: 72
+Time elapsed relaxation p1: 31.69s ; obj p1: 47.62500000000001 obj float
+Time elapsed relaxation p2: 15.46s ; obj p2: 47.0 obj integer ; var not integer: x(2,0) value 26.652285898261432
+quantidade de nós vistos no depth 0: 37 de 90
+list size: 74
+Time elapsed relaxation p1: 13.16s ; obj p1: 48.0 obj integer ; var not integer: x(4,2) value 1.6666666666666696
+Time elapsed relaxation p2: 16.98s ; obj p2: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.691696025620864
+quantidade de nós vistos no depth 0: 38 de 90
+list size: 76
+Time elapsed relaxation p1: 12.34s ; obj p1: 81.99999999999999 obj integer ; var not integer: x(0,0) value 13.263379263493691
+Time elapsed relaxation p2: 16.41s ; obj p2: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.691696025620864
+quantidade de nós vistos no depth 0: 39 de 90
+list size: 78
+Time elapsed relaxation p1: 16.74s ; obj p1: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.691696025620864
+Time elapsed relaxation p2: 15.3s ; obj p2: 50.00000000000001 obj integer ; var not integer: x(2,0) value 29.856399455955316
+quantidade de nós vistos no depth 0: 40 de 90
+list size: 80
+Time elapsed relaxation p1: 16.83s ; obj p1: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.691696025620864
+Time elapsed relaxation p2: 15.28s ; obj p2: 51.00000000000003 obj integer ; var not integer: x(3,0) value 17.685686007316907
+quantidade de nós vistos no depth 0: 41 de 90
+list size: 82
+Time elapsed relaxation p1: 17.9s ; obj p1: 65.0 obj integer ; var not integer: x(0,0) value 7.637681159420288
+Time elapsed relaxation p2: 16.56s ; obj p2: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.79924901353373
+quantidade de nós vistos no depth 0: 42 de 90
+list size: 84
+Time elapsed relaxation p1: 25.38s ; obj p1: 47.0 obj integer ; var not integer: x(2,0) value 26.414540438854115
+Time elapsed relaxation p2: 27.38s ; obj p2: 47.60576923076923 obj float
+quantidade de nós vistos no depth 0: 43 de 90
+list size: 86
+Time elapsed relaxation p1: 14.04s ; obj p1: 46.99999999999999 obj integer ; var not integer: x(2,0) value 29.642872998871837
+Time elapsed relaxation p2: 23.4s ; obj p2: 47.14423076923077 obj float
+quantidade de nós vistos no depth 0: 44 de 90
+list size: 88
+Time elapsed relaxation p1: 17.65s ; obj p1: 47.00000000000001 obj integer ; var not integer: x(2,0) value 27.814790051798166
+Time elapsed relaxation p2: 17.22s ; obj p2: 47.00000000000001 obj integer ; var not integer: x(2,0) value 27.465152701644488
+quantidade de nós vistos no depth 0: 45 de 90
+list size: 90
+Time elapsed relaxation p1: 19.54s ; obj p1: 47.25000000000001 obj float
+Time elapsed relaxation p2: 16.64s ; obj p2: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.691696025620864
+quantidade de nós vistos no depth 0: 46 de 90
+list size: 92
+Time elapsed relaxation p1: 17.36s ; obj p1: 46.99999999999999 obj integer ; var not integer: x(2,0) value 27.460774772928946
+Time elapsed relaxation p2: 25.68s ; obj p2: 47.84375 obj float
+quantidade de nós vistos no depth 0: 47 de 90
+list size: 94
+Time elapsed relaxation p1: 13.78s ; obj p1: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.652285898261418
+Time elapsed relaxation p2: 22.82s ; obj p2: 48.90909090909091 obj float
+quantidade de nós vistos no depth 0: 48 de 90
+list size: 96
+Time elapsed relaxation p1: 13.57s ; obj p1: 47.571428571428584 obj float
+Time elapsed relaxation p2: 19.33s ; obj p2: 47.00000000000001 obj integer ; var not integer: x(0,0) value 14.255776684013206
+quantidade de nós vistos no depth 0: 49 de 90
+list size: 98
+Time elapsed relaxation p1: 16.78s ; obj p1: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.79924901353373
+Time elapsed relaxation p2: 11.66s ; obj p2: 54.00000000000001 obj integer ; var not integer: x(0,0) value 16.257810266672113
+quantidade de nós vistos no depth 0: 50 de 90
+list size: 100
+Time elapsed relaxation p1: 17.3s ; obj p1: 48.488721804511286 obj float
+Time elapsed relaxation p2: 21.28s ; obj p2: 47.0 obj integer ; var not integer: x(2,0) value 26.652285898261432
+quantidade de nós vistos no depth 0: 51 de 90
+list size: 102
+Time elapsed relaxation p1: 13.63s ; obj p1: 47.00000000000001 obj integer ; var not integer: x(2,0) value 27.11297305075337
+Time elapsed relaxation p2: 10.34s ; obj p2: 54.99999999999999 obj integer ; var not integer: x(0,0) value 19.239750051398683
+quantidade de nós vistos no depth 0: 52 de 90
+list size: 104
+Time elapsed relaxation p1: 18.96s ; obj p1: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.79924901353373
+Time elapsed relaxation p2: 16.76s ; obj p2: 49.39999999999999 obj float
+quantidade de nós vistos no depth 0: 53 de 90
+list size: 106
+Time elapsed relaxation p1: 18.91s ; obj p1: 49.400000000000006 obj float
+Time elapsed relaxation p2: 13.2s ; obj p2: 47.00000000000001 obj integer ; var not integer: x(2,0) value 27.223799138586617
+quantidade de nós vistos no depth 0: 54 de 90
+list size: 108
+Time elapsed relaxation p1: 16.4s ; obj p1: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.702716122206205
+Time elapsed relaxation p2: 19.59s ; obj p2: 49.52631578947369 obj float
+quantidade de nós vistos no depth 0: 55 de 90
+list size: 110
+Time elapsed relaxation p1: 15.84s ; obj p1: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.691696025620864
+Time elapsed relaxation p2: 19.64s ; obj p2: 61.07692307692309 obj float
+quantidade de nós vistos no depth 0: 56 de 90
+list size: 112
+Time elapsed relaxation p1: 14.47s ; obj p1: 47.0 obj integer ; var not integer: x(2,0) value 26.86266080440498
+Time elapsed relaxation p2: 12.82s ; obj p2: 48.33333333333334 obj float
+quantidade de nós vistos no depth 0: 57 de 90
+list size: 114
+Time elapsed relaxation p1: 20.17s ; obj p1: 55.99999999999999 obj integer ; var not integer: x(0,0) value 16.162790697674424
+Time elapsed relaxation p2: 17.05s ; obj p2: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.79924901353373
+quantidade de nós vistos no depth 0: 58 de 90
+list size: 116
+Time elapsed relaxation p1: 14.34s ; obj p1: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.691696025620864
+Time elapsed relaxation p2: 13.22s ; obj p2: 50.84615384615385 obj float
+quantidade de nós vistos no depth 0: 59 de 90
+list size: 118
+Time elapsed relaxation p1: 10.72s ; obj p1: 81.15789473684212 obj float
+Time elapsed relaxation p2: 13.86s ; obj p2: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.691696025620864
+quantidade de nós vistos no depth 0: 60 de 90
+list size: 120
+Time elapsed relaxation p1: 17.07s ; obj p1: 47.000000000000014 obj integer ; var not integer: x(3,0) value 16.564803804994057
+Time elapsed relaxation p2: 12.56s ; obj p2: 48.1986301369863 obj float
+quantidade de nós vistos no depth 0: 61 de 90
+list size: 122
+Time elapsed relaxation p1: 13.44s ; obj p1: 46.99999999999999 obj integer ; var not integer: x(3,0) value 16.600000000000005
+Time elapsed relaxation p2: 14.46s ; obj p2: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.689103855254523
+quantidade de nós vistos no depth 0: 62 de 90
+list size: 124
+Time elapsed relaxation p1: 12.2s ; obj p1: 47.77215189873417 obj float
+Time elapsed relaxation p2: 18.84s ; obj p2: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.65228589826143
+quantidade de nós vistos no depth 0: 63 de 90
+list size: 126
+Time elapsed relaxation p1: 10.28s ; obj p1: 56.99999999999998 obj integer ; var not integer: x(0,0) value 10.101796407185628
+Time elapsed relaxation p2: 16.98s ; obj p2: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.691696025620864
+quantidade de nós vistos no depth 0: 64 de 90
+list size: 128
+Time elapsed relaxation p1: 21.19s ; obj p1: 47.0 obj integer ; var not integer: x(2,0) value 26.65228589826144
+Time elapsed relaxation p2: 21.36s ; obj p2: 47.27272727272729 obj float
+quantidade de nós vistos no depth 0: 65 de 90
+list size: 130
+Time elapsed relaxation p1: 16.85s ; obj p1: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.691696025620864
+Time elapsed relaxation p2: 15.24s ; obj p2: 48.999999999999986 obj integer ; var not integer: x(3,0) value 16.996093749999996
+quantidade de nós vistos no depth 0: 66 de 90
+list size: 132
+Time elapsed relaxation p1: 16.53s ; obj p1: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.691696025620864
+Time elapsed relaxation p2: 11.36s ; obj p2: 54.000000000000014 obj integer ; var not integer: x(1,0) value 37.470588235294116
+quantidade de nós vistos no depth 0: 67 de 90
+list size: 134
+Time elapsed relaxation p1: 11.3s ; obj p1: 51.0 obj integer ; var not integer: x(0,0) value 13.375856970022852
+Time elapsed relaxation p2: 22.09s ; obj p2: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.674535923196487
+quantidade de nós vistos no depth 0: 68 de 90
+list size: 136
+Time elapsed relaxation p1: 23.14s ; obj p1: 46.999999999999986 obj integer ; var not integer: x(5,0) value 23.4145404388541
+Time elapsed relaxation p2: 12.98s ; obj p2: 46.999999999999986 obj integer ; var not integer: x(5,0) value 23.443796456700408
+quantidade de nós vistos no depth 0: 69 de 90
+list size: 138
+Time elapsed relaxation p1: 12.6s ; obj p1: 47.8 obj float
+Time elapsed relaxation p2: 13.83s ; obj p2: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.716415922870066
+quantidade de nós vistos no depth 0: 70 de 90
+list size: 140
+Time elapsed relaxation p1: 18.91s ; obj p1: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.652285898261432
+Time elapsed relaxation p2: 12.88s ; obj p2: 63.00000000000001 obj integer ; var not integer: x(0,0) value 4.625
+quantidade de nós vistos no depth 0: 71 de 90
+list size: 142
+Time elapsed relaxation p1: 8.76s ; obj p1: 53.07692307692308 obj float
+Time elapsed relaxation p2: 16.38s ; obj p2: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.691696025620864
+quantidade de nós vistos no depth 0: 72 de 90
+list size: 144
+Time elapsed relaxation p1: 11.71s ; obj p1: 49.30769230769232 obj float
+Time elapsed relaxation p2: 16.19s ; obj p2: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.691696025620864
+quantidade de nós vistos no depth 0: 73 de 90
+list size: 146
+Time elapsed relaxation p1: 13.37s ; obj p1: 46.999999999999766 obj integer ; var not integer: x(0,0) value 14.372799142687397
+Time elapsed relaxation p2: 20.36s ; obj p2: 47.92857142857143 obj float
+quantidade de nós vistos no depth 0: 74 de 90
+list size: 148
+Time elapsed relaxation p1: 14.01s ; obj p1: 47.0 obj integer ; var not integer: x(2,0) value 26.652285898261425
+Time elapsed relaxation p2: 15.34s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(0,0) value 8.213441276597093
+quantidade de nós vistos no depth 0: 75 de 90
+list size: 150
+Time elapsed relaxation p1: 17.18s ; obj p1: 47.99999999999999 obj integer ; var not integer: x(2,0) value 30.66548565164624
+Time elapsed relaxation p2: 16.67s ; obj p2: 46.99999999999999 obj integer ; var not integer: x(2,0) value 27.4285714285714
+quantidade de nós vistos no depth 0: 76 de 90
+list size: 152
+Time elapsed relaxation p1: 21.75s ; obj p1: 47.0 obj integer ; var not integer: x(3,0) value 16.324387844429232
+Time elapsed relaxation p2: 20.11s ; obj p2: 47.0 obj integer ; var not integer: x(2,0) value 26.652285898261436
+quantidade de nós vistos no depth 0: 77 de 90
+list size: 154
+Time elapsed relaxation p1: 12.79s ; obj p1: 57.99999999999973 obj integer ; var not integer: x(0,0) value 5.542857142857036
+Time elapsed relaxation p2: 13.57s ; obj p2: 47.00000000000001 obj integer ; var not integer: x(2,0) value 27.86988102066934
+quantidade de nós vistos no depth 0: 78 de 90
+list size: 156
+Time elapsed relaxation p1: 16.79s ; obj p1: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.689103855254523
+Time elapsed relaxation p2: 17.2s ; obj p2: 59.00000000000001 obj integer ; var not integer: x(0,0) value 15.809758552748827
+quantidade de nós vistos no depth 0: 79 de 90
+list size: 158
+Time elapsed relaxation p1: 16.49s ; obj p1: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.691696025620864
+Time elapsed relaxation p2: 12.69s ; obj p2: 67.99999999999908 obj integer ; var not integer: x(1,1) value 0.7076913438841034
+quantidade de nós vistos no depth 0: 80 de 90
+list size: 160
+Time elapsed relaxation p1: 16.45s ; obj p1: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.691696025620864
+Time elapsed relaxation p2: 14.38s ; obj p2: 49.666666666666664 obj float
+quantidade de nós vistos no depth 0: 81 de 90
+list size: 162
+Time elapsed relaxation p1: 11.84s ; obj p1: 57.0 obj integer ; var not integer: x(2,0) value 24.995676280679348
+Time elapsed relaxation p2: 18.11s ; obj p2: 47.00000000000001 obj integer ; var not integer: x(2,0) value 27.166725549420512
+quantidade de nós vistos no depth 0: 82 de 90
+list size: 164
+Time elapsed relaxation p1: 16.95s ; obj p1: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.79924901353373
+Time elapsed relaxation p2: 20.29s ; obj p2: 74.00000000000001 obj integer ; var not integer: x(0,0) value 13.462532299741603
+quantidade de nós vistos no depth 0: 83 de 90
+list size: 166
+Time elapsed relaxation p1: 19.09s ; obj p1: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.691696025620864
+Time elapsed relaxation p2: 15.54s ; obj p2: 49.892561983471076 obj float
+quantidade de nós vistos no depth 0: 84 de 90
+list size: 168
+Time elapsed relaxation p1: 22.29s ; obj p1: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.691696025620864
+Time elapsed relaxation p2: 20.65s ; obj p2: 50.07692307692308 obj float
+quantidade de nós vistos no depth 0: 85 de 90
+list size: 170
+Time elapsed relaxation p1: 20.07s ; obj p1: 60.000000000000014 obj integer ; var not integer: x(2,0) value 27.35434948637405
+Time elapsed relaxation p2: 16.52s ; obj p2: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.691696025620864
+quantidade de nós vistos no depth 0: 86 de 90
+list size: 172
+Time elapsed relaxation p1: 15.92s ; obj p1: 47.727272727272734 obj float
+Time elapsed relaxation p2: 13.72s ; obj p2: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.683671853385544
+quantidade de nós vistos no depth 0: 87 de 90
+list size: 174
+Time elapsed relaxation p1: 17.16s ; obj p1: 47.43750000000001 obj float
+Time elapsed relaxation p2: 18.04s ; obj p2: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.691696025620864
+quantidade de nós vistos no depth 0: 88 de 90
+list size: 176
+Time elapsed relaxation p1: 17.81s ; obj p1: 48.488721804511286 obj float
+Time elapsed relaxation p2: 16.39s ; obj p2: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.691696025620864
+quantidade de nós vistos no depth 0: 89 de 90
+list size: 178
+Time elapsed relaxation p1: 16.83s ; obj p1: 47.00000000000001 obj integer ; var not integer: x(2,0) value 26.691696025620864
+Time elapsed relaxation p2: 12.49s ; obj p2: 60.0 obj integer ; var not integer: x(0,0) value 7.369668246445506
+quantidade de nós vistos no depth 0: 90 de 90
+list size: 180
+Time elapsed for iteration: 2985.48s
+new depth
+progress: LB = 60.0 - bestUB = 197 - gap = 69.54%
+max(valuejk, valuekj) == 0 ; j = 1 k = 2 i = 2 valuejk = -26.0 valuekj = 0
+max(valuejk, valuekj) == 0 ; j = 2 k = 3 i = 2 valuejk = 0 valuekj = -14.0
+Time elapsed relaxation p1: 12.91s ; obj p1: 60.0 obj integer ; var not integer: x(4,0) value 34.69261023592808
+Time elapsed relaxation p2: 14.13s ; obj p2: 62.12121212121211 obj float
+quantidade de nós vistos no depth 1: 1 de 85
+list size: 181
+Time elapsed relaxation p1: 12.92s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(5,0) value 26.365775102998445
+Time elapsed relaxation p2: 19.79s ; obj p2: 60.000000000000014 obj integer ; var not integer: x(4,0) value 34.36842212542249
+quantidade de nós vistos no depth 1: 2 de 85
+list size: 183
+Time elapsed relaxation p1: 17.59s ; obj p1: 64.42105263157896 obj float
+Time elapsed relaxation p2: 13.25s ; obj p2: 65.99999999999999 obj integer ; var not integer: x(0,0) value 8.27962085308056
+quantidade de nós vistos no depth 1: 3 de 85
+list size: 185
+Time elapsed relaxation p1: 13.51s ; obj p1: 59.99999999999998 obj integer ; var not integer: x(5,0) value 26.38101893985272
+Time elapsed relaxation p2: 15.28s ; obj p2: 60.000000000000014 obj integer ; var not integer: x(5,0) value 24.796442400924466
+quantidade de nós vistos no depth 1: 4 de 85
+list size: 187
+Time elapsed relaxation p1: 14.34s ; obj p1: 59.99999999999954 obj integer ; var not integer: x(5,0) value 43.20762435037068
+Time elapsed relaxation p2: 18.2s ; obj p2: 63.0 obj integer ; var not integer: x(0,0) value 8.122580645161289
+quantidade de nós vistos no depth 1: 5 de 85
+list size: 189
+Time elapsed relaxation p1: 16.61s ; obj p1: 60.0 obj integer ; var not integer: x(0,0) value 5.791666666666666
+Time elapsed relaxation p2: 14.76s ; obj p2: 60.000000000000014 obj integer ; var not integer: x(5,0) value 24.796442400924402
+quantidade de nós vistos no depth 1: 6 de 85
+list size: 191
+Time elapsed relaxation p1: 17.05s ; obj p1: 60.0 obj integer ; var not integer: x(4,0) value 34.297505181508015
+Time elapsed relaxation p2: 12.41s ; obj p2: 66.00000000000001 obj integer ; var not integer: x(0,0) value 7.710168263637985
+quantidade de nós vistos no depth 1: 7 de 85
+list size: 193
+Time elapsed relaxation p1: 16.68s ; obj p1: 60.277777777777764 obj float
+Time elapsed relaxation p2: 14.84s ; obj p2: 60.000000000000014 obj integer ; var not integer: x(5,0) value 24.796442400924466
+quantidade de nós vistos no depth 1: 8 de 85
+list size: 195
+Time elapsed relaxation p1: 18.66s ; obj p1: 60.000000000000014 obj integer ; var not integer: x(1,1) value 10.732100052594417
+Time elapsed relaxation p2: 21.57s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(5,0) value 26.07813021702839
+quantidade de nós vistos no depth 1: 9 de 85
+list size: 197
+Time elapsed relaxation p1: 15.47s ; obj p1: 140.00000000000006 obj integer ; var not integer: x(0,0) value 8.441860465116276
+Time elapsed relaxation p2: 16.97s ; obj p2: 60.000000000000014 obj integer ; var not integer: x(5,0) value 24.796442400924402
+quantidade de nós vistos no depth 1: 10 de 85
+list size: 199
+Time elapsed relaxation p1: 11.72s ; obj p1: 60.967741935483865 obj float
+Time elapsed relaxation p2: 13.43s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(0,1) value 16.94797687861272
+quantidade de nós vistos no depth 1: 11 de 85
+list size: 201
+Time elapsed relaxation p1: 11.87s ; obj p1: 61.88172043010751 obj float
+Time elapsed relaxation p2: 11.97s ; obj p2: 60.0 obj integer ; var not integer: x(5,0) value 23.404416722859064
+quantidade de nós vistos no depth 1: 12 de 85
+list size: 203
+Time elapsed relaxation p1: 14.32s ; obj p1: 60.000000000000014 obj integer ; var not integer: x(5,0) value 26.228790566165188
+Time elapsed relaxation p2: 17.53s ; obj p2: 60.0295566502463 obj float
+quantidade de nós vistos no depth 1: 13 de 85
+list size: 205
+Time elapsed relaxation p1: 22.0s ; obj p1: 63.076923076923066 obj float
+Time elapsed relaxation p2: 16.72s ; obj p2: 60.0 obj integer ; var not integer: x(5,0) value 23.419910325024894
+quantidade de nós vistos no depth 1: 14 de 85
+list size: 207
+Time elapsed relaxation p1: 11.43s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(5,0) value 22.293651778858052
+Time elapsed relaxation p2: 18.21s ; obj p2: 60.0 obj integer ; var not integer: x(4,0) value 35.99450671440105
+quantidade de nós vistos no depth 1: 15 de 85
+list size: 209
+Time elapsed relaxation p1: 19.85s ; obj p1: 60.0 obj integer ; var not integer: x(4,0) value 34.297505181508015
+Time elapsed relaxation p2: 13.81s ; obj p2: 93.50000000000001 obj float
+quantidade de nós vistos no depth 1: 16 de 85
+list size: 211
+Time elapsed relaxation p1: 0.04s ;  infesiable
+Time elapsed relaxation p2: 15.37s ; obj p2: 60.000000000000014 obj integer ; var not integer: x(5,0) value 24.796442400924402
+quantidade de nós vistos no depth 1: 17 de 85
+list size: 212
+Time elapsed relaxation p1: 16.58s ; obj p1: 60.07142857142857 obj float
+Time elapsed relaxation p2: 12.77s ; obj p2: 60.029556650246285 obj float
+quantidade de nós vistos no depth 1: 18 de 85
+list size: 214
+Time elapsed relaxation p1: 16.13s ; obj p1: 66.15384615384615 obj float
+Time elapsed relaxation p2: 14.31s ; obj p2: 60.000000000000014 obj integer ; var not integer: x(4,0) value 36.160648248582575
+quantidade de nós vistos no depth 1: 19 de 85
+list size: 216
+Time elapsed relaxation p1: 17.93s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(5,0) value 23.50649022252192
+Time elapsed relaxation p2: 11.84s ; obj p2: 63.99999999999998 obj integer ; var not integer: x(0,0) value 10.478070652730395
+quantidade de nós vistos no depth 1: 20 de 85
+list size: 218
+Time elapsed relaxation p1: 12.97s ; obj p1: 67.0 obj integer ; var not integer: x(1,0) value 46.212976962986374
+Time elapsed relaxation p2: 16.62s ; obj p2: 59.99999999999998 obj integer ; var not integer: x(0,1) value 15.679968701095465
+quantidade de nós vistos no depth 1: 21 de 85
+list size: 220
+Time elapsed relaxation p1: 20.25s ; obj p1: 60.0 obj integer ; var not integer: x(4,0) value 34.297505181508015
+Time elapsed relaxation p2: 13.99s ; obj p2: 67.97315436241611 obj float
+quantidade de nós vistos no depth 1: 22 de 85
+list size: 222
+Time elapsed relaxation p1: 13.41s ; obj p1: 68.00000000000003 obj integer ; var not integer: x(0,0) value 23.163968500169318
+Time elapsed relaxation p2: 16.54s ; obj p2: 60.00000000000003 obj integer ; var not integer: x(4,0) value 38.38491305412687
+quantidade de nós vistos no depth 1: 23 de 85
+list size: 224
+Time elapsed relaxation p1: 16.51s ; obj p1: 60.0 obj integer ; var not integer: x(0,1) value 13.666666666666668
+Time elapsed relaxation p2: 17.54s ; obj p2: 60.000000000000014 obj integer ; var not integer: x(0,1) value 14.636502395502964
+quantidade de nós vistos no depth 1: 24 de 85
+list size: 226
+Time elapsed relaxation p1: 23.74s ; obj p1: 70.0 obj integer ; var not integer: x(0,0) value 19.162286399520355
+Time elapsed relaxation p2: 18.91s ; obj p2: 60.00000000000003 obj integer ; var not integer: x(4,0) value 36.16064824858255
+quantidade de nós vistos no depth 1: 25 de 85
+list size: 228
+Time elapsed relaxation p1: 13.25s ; obj p1: 60.000000000000014 obj integer ; var not integer: x(0,1) value 14.199903127362687
+Time elapsed relaxation p2: 30.12s ; obj p2: 60.0 obj integer ; var not integer: x(5,0) value 23.900202292650025
+quantidade de nós vistos no depth 1: 26 de 85
+list size: 230
+Time elapsed relaxation p1: 16.97s ; obj p1: 60.0 obj integer ; var not integer: x(4,0) value 34.297505181508015
+Time elapsed relaxation p2: 10.54s ; obj p2: 94.0 obj integer ; var not integer: x(0,1) value 14.539342381522333
+quantidade de nós vistos no depth 1: 27 de 85
+list size: 232
+Time elapsed relaxation p1: 15.45s ; obj p1: 60.0 obj integer ; var not integer: x(4,0) value 34.297505181508015
+Time elapsed relaxation p2: 14.01s ; obj p2: 62.357142857142854 obj float
+quantidade de nós vistos no depth 1: 28 de 85
+list size: 234
+Time elapsed relaxation p1: 11.95s ; obj p1: 64.99999999999797 obj integer ; var not integer: x(0,0) value 9.596096047983085
+Time elapsed relaxation p2: 11.9s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(4,0) value 34.08277631310884
+quantidade de nós vistos no depth 1: 29 de 85
+list size: 236
+Time elapsed relaxation p1: 13.19s ; obj p1: 63.684210526315795 obj float
+Time elapsed relaxation p2: 11.39s ; obj p2: 67.0 obj integer ; var not integer: x(0,0) value 5.814323041423141
+quantidade de nós vistos no depth 1: 30 de 85
+list size: 238
+Time elapsed relaxation p1: 10.67s ; obj p1: 60.0 obj integer ; var not integer: x(5,0) value 41.642857142857146
+Time elapsed relaxation p2: 13.49s ; obj p2: 60.00000000000003 obj integer ; var not integer: x(5,0) value 23.46274443695253
+quantidade de nós vistos no depth 1: 31 de 85
+list size: 240
+Time elapsed relaxation p1: 12.47s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.015795328142396
+Time elapsed relaxation p2: 15.4s ; obj p2: 60.0 obj integer ; var not integer: x(4,0) value 34.297505181508015
+quantidade de nós vistos no depth 1: 32 de 85
+list size: 242
+Time elapsed relaxation p1: 16.16s ; obj p1: 59.999999999999986 obj integer ; var not integer: x(0,0) value 4.880239520958084
+Time elapsed relaxation p2: 15.12s ; obj p2: 60.000000000000014 obj integer ; var not integer: x(4,0) value 34.368422125422526
+quantidade de nós vistos no depth 1: 33 de 85
+list size: 244
+Time elapsed relaxation p1: 17.37s ; obj p1: 64.92307692307692 obj float
+Time elapsed relaxation p2: 17.04s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.87326126062596
+quantidade de nós vistos no depth 1: 34 de 85
+list size: 246
+Time elapsed relaxation p1: 10.4s ; obj p1: 60.36734693877551 obj float
+Time elapsed relaxation p2: 15.58s ; obj p2: 60.000000000000014 obj integer ; var not integer: x(5,0) value 24.796442400924402
+quantidade de nós vistos no depth 1: 35 de 85
+list size: 248
+Time elapsed relaxation p1: 20.44s ; obj p1: 60.399999999999984 obj float
+Time elapsed relaxation p2: 15.76s ; obj p2: 60.0 obj integer ; var not integer: x(4,0) value 35.61445783132526
+quantidade de nós vistos no depth 1: 36 de 85
+list size: 250
+Time elapsed relaxation p1: 17.28s ; obj p1: 60.0 obj integer ; var not integer: x(4,0) value 34.297505181508015
+Time elapsed relaxation p2: 10.52s ; obj p2: 74.0 obj integer ; var not integer: x(3,0) value 16.658352445394954
+quantidade de nós vistos no depth 1: 37 de 85
+list size: 252
+Time elapsed relaxation p1: 13.31s ; obj p1: 60.000000000000014 obj integer ; var not integer: x(5,0) value 24.796442400924402
+Time elapsed relaxation p2: 12.14s ; obj p2: 61.66666666666668 obj float
+quantidade de nós vistos no depth 1: 38 de 85
+list size: 254
+Time elapsed relaxation p1: 15.54s ; obj p1: 60.0 obj integer ; var not integer: x(5,0) value 22.25535627050037
+Time elapsed relaxation p2: 13.78s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(4,0) value 34.73359142346635
+quantidade de nós vistos no depth 1: 39 de 85
+list size: 256
+Time elapsed relaxation p1: 13.55s ; obj p1: 60.000000000000014 obj integer ; var not integer: x(5,0) value 24.796442400924402
+Time elapsed relaxation p2: 11.19s ; obj p2: 99.99999999999781 obj integer ; var not integer: x(4,1) value 14.712121212120996
+quantidade de nós vistos no depth 1: 40 de 85
+list size: 258
+Time elapsed relaxation p1: 13.44s ; obj p1: 60.000000000000014 obj integer ; var not integer: x(5,0) value 24.796442400924402
+Time elapsed relaxation p2: 9.77s ; obj p2: 69.85714285714286 obj float
+quantidade de nós vistos no depth 1: 41 de 85
+list size: 260
+Time elapsed relaxation p1: 9.48s ; obj p1: 78.99999999999999 obj integer ; var not integer: x(0,0) value 10.549132947976883
+Time elapsed relaxation p2: 13.57s ; obj p2: 60.000000000000014 obj integer ; var not integer: x(5,0) value 24.796442400924402
+quantidade de nós vistos no depth 1: 42 de 85
+list size: 262
+Time elapsed relaxation p1: 0.04s ;  infesiable
+Time elapsed relaxation p2: 13.59s ; obj p2: 60.000000000000014 obj integer ; var not integer: x(5,0) value 24.796442400924402
+quantidade de nós vistos no depth 1: 43 de 85
+list size: 263
+Time elapsed relaxation p1: 11.14s ; obj p1: 60.00000000000001 obj integer ; var not integer: x(0,0) value 6.5669642857142865
+Time elapsed relaxation p2: 14.79s ; obj p2: 59.99999999999961 obj integer ; var not integer: x(4,0) value 37.07068518274245
+quantidade de nós vistos no depth 1: 44 de 85
+list size: 265
+Time elapsed relaxation p1: 0.04s ;  infesiable
+Time elapsed relaxation p2: 18.84s ; obj p2: 60.0 obj integer ; var not integer: x(4,0) value 34.297505181508015
+quantidade de nós vistos no depth 1: 45 de 85
+list size: 266
+Time elapsed relaxation p1: 11.82s ; obj p1: 112.0 obj integer ; var not integer: x(0,0) value 8.583333333333332
+Time elapsed relaxation p2: 13.94s ; obj p2: 60.000000000000014 obj integer ; var not integer: x(5,0) value 24.796442400924402
+quantidade de nós vistos no depth 1: 46 de 85
+list size: 268
+Time elapsed relaxation p1: 13.17s ; obj p1: 60.000000000000014 obj integer ; var not integer: x(5,0) value 24.796442400924402
+Time elapsed relaxation p2: 11.69s ; obj p2: 78.99999999999999 obj integer ; var not integer: x(0,0) value 14.600949721325717
+quantidade de nós vistos no depth 1: 47 de 85
+list size: 270
+Time elapsed relaxation p1: 20.68s ; obj p1: 60.000000000000014 obj integer ; var not integer: x(0,0) value 7.3696682464454994
+Time elapsed relaxation p2: 16.7s ; obj p2: 60.0 obj integer ; var not integer: x(4,0) value 34.297505181508015
+quantidade de nós vistos no depth 1: 48 de 85
+list size: 272
+Time elapsed relaxation p1: 15.45s ; obj p1: 59.999999999997186 obj integer ; var not integer: x(4,0) value 33.150816075185055
+Time elapsed relaxation p2: 9.62s ; obj p2: 70.99999999999999 obj integer ; var not integer: x(0,0) value 8.894736842105235
+quantidade de nós vistos no depth 1: 49 de 85
+list size: 274
+Time elapsed relaxation p1: 15.45s ; obj p1: 62.72727272727273 obj float
+Time elapsed relaxation p2: 14.36s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.09865724596416
+quantidade de nós vistos no depth 1: 50 de 85
+list size: 276
+Time elapsed relaxation p1: 9.25s ; obj p1: 81.69473684210527 obj float
+Time elapsed relaxation p2: 12.43s ; obj p2: 60.000000000000014 obj integer ; var not integer: x(5,0) value 24.796442400924402
+quantidade de nós vistos no depth 1: 51 de 85
+list size: 278
+Time elapsed relaxation p1: 13.06s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(5,0) value 23.462744436952118
+Time elapsed relaxation p2: 14.2s ; obj p2: 60.759493670886066 obj float
+quantidade de nós vistos no depth 1: 52 de 85
+list size: 280
+Time elapsed relaxation p1: 12.56s ; obj p1: 60.0 obj integer ; var not integer: x(0,0) value 4.880239520958084
+Time elapsed relaxation p2: 13.24s ; obj p2: 59.9999999999996 obj integer ; var not integer: x(5,0) value 23.46274443695253
+quantidade de nós vistos no depth 1: 53 de 85
+list size: 282
+Time elapsed relaxation p1: 9.8s ; obj p1: 63.684210526315795 obj float
+Time elapsed relaxation p2: 13.62s ; obj p2: 60.000000000000014 obj integer ; var not integer: x(5,0) value 24.7964424009244
+quantidade de nós vistos no depth 1: 54 de 85
+list size: 284
+Time elapsed relaxation p1: 15.36s ; obj p1: 60.000000000000014 obj integer ; var not integer: x(4,0) value 36.16064824858035
+Time elapsed relaxation p2: 13.39s ; obj p2: 72.00000000000001 obj integer ; var not integer: x(0,0) value 11.57656524908328
+quantidade de nós vistos no depth 1: 55 de 85
+list size: 286
+Time elapsed relaxation p1: 18.61s ; obj p1: 71.88888888888891 obj float
+Time elapsed relaxation p2: 20.04s ; obj p2: 59.9999999999996 obj integer ; var not integer: x(5,0) value 23.46274443695253
+quantidade de nós vistos no depth 1: 56 de 85
+list size: 288
+Time elapsed relaxation p1: 13.83s ; obj p1: 63.315789473684205 obj float
+Time elapsed relaxation p2: 15.69s ; obj p2: 60.000000000000014 obj integer ; var not integer: x(5,0) value 24.796442400924402
+quantidade de nós vistos no depth 1: 57 de 85
+list size: 290
+Time elapsed relaxation p1: 15.3s ; obj p1: 60.00000000000003 obj integer ; var not integer: x(4,0) value 36.160648248580344
+Time elapsed relaxation p2: 17.05s ; obj p2: 60.09448818897637 obj float
+quantidade de nós vistos no depth 1: 58 de 85
+list size: 292
+Time elapsed relaxation p1: 11.96s ; obj p1: 64.84615384615384 obj float
+Time elapsed relaxation p2: 13.56s ; obj p2: 60.000000000000014 obj integer ; var not integer: x(5,0) value 24.796442400924402
+quantidade de nós vistos no depth 1: 59 de 85
+list size: 294
+Time elapsed relaxation p1: 15.59s ; obj p1: 60.0 obj integer ; var not integer: x(4,0) value 34.297505181508015
+Time elapsed relaxation p2: 12.68s ; obj p2: 90.50000000000001 obj float
+quantidade de nós vistos no depth 1: 60 de 85
+list size: 296
+Time elapsed relaxation p1: 15.34s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(4,0) value 36.160648248578205
+Time elapsed relaxation p2: 17.75s ; obj p2: 60.02955665024631 obj float
+quantidade de nós vistos no depth 1: 61 de 85
+list size: 298
+Time elapsed relaxation p1: 13.43s ; obj p1: 60.000000000000014 obj integer ; var not integer: x(5,0) value 24.796442400924402
+Time elapsed relaxation p2: 8.18s ; obj p2: 72.04615384615386 obj float
+quantidade de nós vistos no depth 1: 62 de 85
+list size: 300
+Time elapsed relaxation p1: 12.72s ; obj p1: 59.99999999999958 obj integer ; var not integer: x(0,1) value 17.898363151884276
+Time elapsed relaxation p2: 20.07s ; obj p2: 60.749999999999986 obj float
+quantidade de nós vistos no depth 1: 63 de 85
+list size: 302
+Time elapsed relaxation p1: 13.18s ; obj p1: 60.0 obj integer ; var not integer: x(1,1) value 10.291893676737637
+Time elapsed relaxation p2: 13.05s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(4,0) value 35.23696883487389
+quantidade de nós vistos no depth 1: 64 de 85
+list size: 304
+Time elapsed relaxation p1: 12.12s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(0,0) value 8.205966186877289
+Time elapsed relaxation p2: 14.58s ; obj p2: 59.99999999999756 obj integer ; var not integer: x(4,0) value 34.35881806640333
+quantidade de nós vistos no depth 1: 65 de 85
+list size: 306
+Time elapsed relaxation p1: 12.08s ; obj p1: 60.000000000000014 obj integer ; var not integer: x(5,0) value 23.864157346841694
+Time elapsed relaxation p2: 11.29s ; obj p2: 63.66666666666665 obj float
+quantidade de nós vistos no depth 1: 66 de 85
+list size: 308
+Time elapsed relaxation p1: 13.29s ; obj p1: 60.000000000000014 obj integer ; var not integer: x(5,0) value 24.796442400924402
+Time elapsed relaxation p2: 8.61s ; obj p2: 79.99999999999999 obj integer ; var not integer: x(0,0) value 7.786069651741289
+quantidade de nós vistos no depth 1: 67 de 85
+list size: 310
+Time elapsed relaxation p1: 13.34s ; obj p1: 60.000000000000014 obj integer ; var not integer: x(5,0) value 24.796442400924402
+Time elapsed relaxation p2: 9.32s ; obj p2: 80.00000000000003 obj integer ; var not integer: x(0,0) value 9.837246859839363
+quantidade de nós vistos no depth 1: 68 de 85
+list size: 312
+Time elapsed relaxation p1: 13.08s ; obj p1: 60.000000000000014 obj integer ; var not integer: x(5,0) value 24.796442400924402
+Time elapsed relaxation p2: 9.87s ; obj p2: 63.23076923076924 obj float
+quantidade de nós vistos no depth 1: 69 de 85
+list size: 314
+Time elapsed relaxation p1: 13.62s ; obj p1: 82.00000000000001 obj integer ; var not integer: x(0,0) value 16.426829268292686
+Time elapsed relaxation p2: 26.51s ; obj p2: 60.0 obj integer ; var not integer: x(4,0) value 34.297505181508015
+quantidade de nós vistos no depth 1: 70 de 85
+list size: 316
+Time elapsed relaxation p1: 15.52s ; obj p1: 60.000000000000014 obj integer ; var not integer: x(5,0) value 24.796442400924402
+Time elapsed relaxation p2: 9.94s ; obj p2: 69.99999999999997 obj integer ; var not integer: x(1,0) value 45.30467504340942
+quantidade de nós vistos no depth 1: 71 de 85
+list size: 318
+Time elapsed relaxation p1: 13.39s ; obj p1: 60.000000000000014 obj integer ; var not integer: x(5,0) value 24.796442400924402
+Time elapsed relaxation p2: 12.89s ; obj p2: 59.99999999999884 obj integer ; var not integer: x(0,1) value 14.936819824433336
+quantidade de nós vistos no depth 1: 72 de 85
+list size: 320
+Time elapsed relaxation p1: 14.16s ; obj p1: 60.0 obj integer ; var not integer: x(0,0) value 3.9411764705882346
+Time elapsed relaxation p2: 13.22s ; obj p2: 60.0 obj integer ; var not integer: x(4,0) value 34.62876963522765
+quantidade de nós vistos no depth 1: 73 de 85
+list size: 322
+Time elapsed relaxation p1: 11.79s ; obj p1: 70.00000000000001 obj integer ; var not integer: x(5,0) value 22.47887323943664
+Time elapsed relaxation p2: 14.39s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(0,1) value 17.91327751629473
+quantidade de nós vistos no depth 1: 74 de 85
+list size: 324
+Time elapsed relaxation p1: 15.34s ; obj p1: 60.0 obj integer ; var not integer: x(4,0) value 34.297505181508015
+Time elapsed relaxation p2: 10.66s ; obj p2: 61.30909090909091 obj float
+quantidade de nós vistos no depth 1: 75 de 85
+list size: 326
+Time elapsed relaxation p1: 14.78s ; obj p1: 60.000000000000014 obj integer ; var not integer: x(5,0) value 24.796442400924402
+Time elapsed relaxation p2: 11.83s ; obj p2: 66.55555555555557 obj float
+quantidade de nós vistos no depth 1: 76 de 85
+list size: 328
+Time elapsed relaxation p1: 13.38s ; obj p1: 60.000000000000014 obj integer ; var not integer: x(5,0) value 24.796442400924402
+Time elapsed relaxation p2: 16.98s ; obj p2: 67.94871794871794 obj float
+quantidade de nós vistos no depth 1: 77 de 85
+list size: 330
+Time elapsed relaxation p1: 13.72s ; obj p1: 61.13513513513516 obj float
+Time elapsed relaxation p2: 15.12s ; obj p2: 59.99999999999998 obj integer ; var not integer: x(4,0) value 34.29750518150802
+quantidade de nós vistos no depth 1: 78 de 85
+list size: 332
+Time elapsed relaxation p1: 14.78s ; obj p1: 61.23529411764706 obj float
+Time elapsed relaxation p2: 12.86s ; obj p2: 60.000000000000014 obj integer ; var not integer: x(5,0) value 24.796442400924402
+quantidade de nós vistos no depth 1: 79 de 85
+list size: 334
+Time elapsed relaxation p1: 10.52s ; obj p1: 103.78947368421045 obj float
+Time elapsed relaxation p2: 13.08s ; obj p2: 60.000000000000014 obj integer ; var not integer: x(5,0) value 24.796442400924402
+quantidade de nós vistos no depth 1: 80 de 85
+list size: 336
+Time elapsed relaxation p1: 14.27s ; obj p1: 63.85714285714286 obj float
+Time elapsed relaxation p2: 11.36s ; obj p2: 60.0 obj integer ; var not integer: x(4,0) value 34.407951514844186
+quantidade de nós vistos no depth 1: 81 de 85
+list size: 338
+Time elapsed relaxation p1: 20.77s ; obj p1: 68.18181818181814 obj float
+Time elapsed relaxation p2: 13.17s ; obj p2: 60.000000000000014 obj integer ; var not integer: x(5,0) value 24.796442400924402
+quantidade de nós vistos no depth 1: 82 de 85
+list size: 340
+Time elapsed relaxation p1: 13.55s ; obj p1: 60.76103500761034 obj float
+Time elapsed relaxation p2: 11.95s ; obj p2: 60.00000000000003 obj integer ; var not integer: x(4,0) value 36.16064824858035
+quantidade de nós vistos no depth 1: 83 de 85
+list size: 342
+Time elapsed relaxation p1: 9.3s ; obj p1: 84.53846153846148 obj float
+Time elapsed relaxation p2: 12.88s ; obj p2: 60.000000000000014 obj integer ; var not integer: x(5,0) value 24.796442400924477
+quantidade de nós vistos no depth 1: 84 de 85
+list size: 344
+Time elapsed relaxation p1: 0.04s ;  infesiable
+Time elapsed relaxation p2: 12.88s ; obj p2: 60.000000000000014 obj integer ; var not integer: x(5,0) value 24.796442400924402
+quantidade de nós vistos no depth 1: 85 de 85
+list size: 345
+Time elapsed for iteration: 2413.25s
+new depth
+progress: LB = 60.000000000000014 - bestUB = 197 - gap = 69.54%
+max(valuejk, valuekj) == 0 ; j = 1 k = 2 i = 2 valuejk = -26.0 valuekj = 0
+max(valuejk, valuekj) == 0 ; j = 2 k = 3 i = 2 valuejk = 0 valuekj = -14.0
+Time elapsed relaxation p1: 12.98s ; obj p1: 64.42105263157895 obj float
+Time elapsed relaxation p2: 10.89s ; obj p2: 66.0 obj integer ; var not integer: x(5,0) value 21.211267605633818
+quantidade de nós vistos no depth 2: 1 de 85
+list size: 346
+Time elapsed relaxation p1: 9.79s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(5,0) value 21.211267605633818
+Time elapsed relaxation p2: 16.22s ; obj p2: 62.1212121212121 obj float
+quantidade de nós vistos no depth 2: 2 de 85
+list size: 348
+Time elapsed relaxation p1: 10.81s ; obj p1: 61.881720430107514 obj float
+Time elapsed relaxation p2: 12.24s ; obj p2: 60.0 obj integer ; var not integer: x(5,0) value 22.27424971800862
+quantidade de nós vistos no depth 2: 3 de 85
+list size: 350
+Time elapsed relaxation p1: 9.5s ; obj p1: 59.99999999999998 obj integer ; var not integer: x(5,0) value 21.211267605633807
+Time elapsed relaxation p2: 12.84s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(4,0) value 34.21569949645068
+quantidade de nós vistos no depth 2: 4 de 85
+list size: 352
+Time elapsed relaxation p1: 12.73s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(5,0) value 21.21126760563381
+Time elapsed relaxation p2: 9.5s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(5,0) value 21.211267605633807
+quantidade de nós vistos no depth 2: 5 de 85
+list size: 354
+Time elapsed relaxation p1: 11.05s ; obj p1: 59.999999999999986 obj integer ; var not integer: x(1,1) value 9.92266299030509
+Time elapsed relaxation p2: 10.84s ; obj p2: 60.00000000000001 obj integer ; var not integer: x(5,0) value 21.211267605633815
+quantidade de nós vistos no depth 2: 6 de 85
+list size: 356
+Time elapsed relaxation p1: 11.16s ; obj p1: 64.92307692307692 obj float
+Time elapsed relaxation p2: 9.55s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(5,0) value 22.60039986938361
+quantidade de nós vistos no depth 2: 7 de 85
+list size: 358
+Time elapsed relaxation p1: 13.43s ; obj p1: 63.68421052631578 obj float
+Time elapsed relaxation p2: 10.3s ; obj p2: 66.99999999999999 obj integer ; var not integer: x(5,0) value 21.21126760563381
+quantidade de nós vistos no depth 2: 8 de 85
+list size: 360
+Time elapsed relaxation p1: 11.03s ; obj p1: 63.315789473684205 obj float
+Time elapsed relaxation p2: 12.68s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191088
+quantidade de nós vistos no depth 2: 9 de 85
+list size: 362
+Time elapsed relaxation p1: 9.41s ; obj p1: 60.00000000000001 obj integer ; var not integer: x(4,0) value 25.21957776130117
+Time elapsed relaxation p2: 10.18s ; obj p2: 63.0 obj integer ; var not integer: x(4,0) value 31.976559344133303
+quantidade de nós vistos no depth 2: 10 de 85
+list size: 364
+Time elapsed relaxation p1: 10.43s ; obj p1: 67.0 obj integer ; var not integer: x(1,1) value 10.166223404255323
+Time elapsed relaxation p2: 12.85s ; obj p2: 60.0 obj integer ; var not integer: x(4,0) value 33.12816434064552
+quantidade de nós vistos no depth 2: 11 de 85
+list size: 366
+Time elapsed relaxation p1: 12.59s ; obj p1: 69.99999999999999 obj integer ; var not integer: x(0,0) value 18.942857142857147
+Time elapsed relaxation p2: 10.9s ; obj p2: 60.00000000000001 obj integer ; var not integer: x(5,0) value 21.211267605633815
+quantidade de nós vistos no depth 2: 12 de 85
+list size: 368
+Time elapsed relaxation p1: 12.35s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191088
+Time elapsed relaxation p2: 12.61s ; obj p2: 61.66666666666667 obj float
+quantidade de nós vistos no depth 2: 13 de 85
+list size: 370
+Time elapsed relaxation p1: 12.14s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191088
+Time elapsed relaxation p2: 14.05s ; obj p2: 93.49999999999999 obj float
+quantidade de nós vistos no depth 2: 14 de 85
+list size: 372
+Time elapsed relaxation p1: 12.18s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191088
+Time elapsed relaxation p2: 9.22s ; obj p2: 66.0 obj integer ; var not integer: x(4,0) value 30.906026321865607
+quantidade de nós vistos no depth 2: 15 de 85
+list size: 374
+Time elapsed relaxation p1: 12.58s ; obj p1: 60.277777777777764 obj float
+Time elapsed relaxation p2: 12.3s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191088
+quantidade de nós vistos no depth 2: 16 de 85
+list size: 376
+Time elapsed relaxation p1: 9.59s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(0,0) value 9.173232376716433
+Time elapsed relaxation p2: 12.72s ; obj p2: 60.0 obj integer ; var not integer: x(5,0) value 22.27424971800862
+quantidade de nós vistos no depth 2: 17 de 85
+list size: 378
+Time elapsed relaxation p1: 14.89s ; obj p1: 140.00000000000009 obj integer ; var not integer: x(0,0) value 17.058823529411782
+Time elapsed relaxation p2: 12.2s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191088
+quantidade de nós vistos no depth 2: 18 de 85
+list size: 380
+Time elapsed relaxation p1: 12.35s ; obj p1: 60.96774193548387 obj float
+Time elapsed relaxation p2: 9.24s ; obj p2: 60.00000000000001 obj integer ; var not integer: x(5,0) value 21.39732125899306
+quantidade de nós vistos no depth 2: 19 de 85
+list size: 382
+Time elapsed relaxation p1: 12.54s ; obj p1: 59.999999999999986 obj integer ; var not integer: x(5,0) value 21.21126760563381
+Time elapsed relaxation p2: 8.86s ; obj p2: 60.02955665024631 obj float
+quantidade de nós vistos no depth 2: 20 de 85
+list size: 384
+Time elapsed relaxation p1: 9.42s ; obj p1: 63.076923076923066 obj float
+Time elapsed relaxation p2: 13.24s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(4,0) value 34.21569949645069
+quantidade de nós vistos no depth 2: 21 de 85
+list size: 386
+Time elapsed relaxation p1: 13.48s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191088
+Time elapsed relaxation p2: 9.23s ; obj p2: 99.99999999999999 obj integer ; var not integer: x(0,0) value 7.543831168831171
+quantidade de nós vistos no depth 2: 22 de 85
+list size: 388
+Time elapsed relaxation p1: 12.14s ; obj p1: 111.99999999999994 obj integer ; var not integer: x(0,0) value 16.814285714285713
+Time elapsed relaxation p2: 18.41s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191088
+quantidade de nós vistos no depth 2: 23 de 85
+list size: 390
+Time elapsed relaxation p1: 13.19s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.17188805346699
+Time elapsed relaxation p2: 17.42s ; obj p2: 59.99999999999998 obj integer ; var not integer: x(4,0) value 33.22370480191088
+quantidade de nós vistos no depth 2: 24 de 85
+list size: 392
+Time elapsed relaxation p1: 16.28s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191088
+Time elapsed relaxation p2: 19.95s ; obj p2: 62.35714285714285 obj float
+quantidade de nós vistos no depth 2: 25 de 85
+list size: 394
+Time elapsed relaxation p1: 23.86s ; obj p1: 60.07142857142856 obj float
+Time elapsed relaxation p2: 19.43s ; obj p2: 60.029556650246306 obj float
+quantidade de nós vistos no depth 2: 26 de 85
+list size: 396
+Time elapsed relaxation p1: 16.94s ; obj p1: 66.15384615384616 obj float
+Time elapsed relaxation p2: 12.64s ; obj p2: 60.00000000000001 obj integer ; var not integer: x(5,0) value 21.211267605633797
+quantidade de nós vistos no depth 2: 27 de 85
+list size: 398
+Time elapsed relaxation p1: 13.27s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.223704801910884
+Time elapsed relaxation p2: 9.94s ; obj p2: 64.00000000000003 obj integer ; var not integer: x(0,0) value 13.585751589454597
+quantidade de nós vistos no depth 2: 28 de 85
+list size: 400
+Time elapsed relaxation p1: 12.56s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191088
+Time elapsed relaxation p2: 10.7s ; obj p2: 67.97315436241614 obj float
+quantidade de nós vistos no depth 2: 29 de 85
+list size: 402
+Time elapsed relaxation p1: 12.08s ; obj p1: 60.76103500761033 obj float
+Time elapsed relaxation p2: 13.54s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191088
+quantidade de nós vistos no depth 2: 30 de 85
+list size: 404
+Time elapsed relaxation p1: 16.97s ; obj p1: 67.99999999999997 obj integer ; var not integer: x(0,0) value 18.485714285714284
+Time elapsed relaxation p2: 9.68s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191088
+quantidade de nós vistos no depth 2: 31 de 85
+list size: 406
+Time elapsed relaxation p1: 14.5s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191088
+Time elapsed relaxation p2: 11.34s ; obj p2: 74.00000000000001 obj integer ; var not integer: x(3,0) value 13.54118128062585
+quantidade de nós vistos no depth 2: 32 de 85
+list size: 408
+Time elapsed relaxation p1: 6.38s ; obj p1: 65.0 obj integer ; var not integer: x(4,0) value 23.973404255319146
+Time elapsed relaxation p2: 12.7s ; obj p2: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.22370480191088
+quantidade de nós vistos no depth 2: 33 de 85
+list size: 410
+Time elapsed relaxation p1: 12.47s ; obj p1: 60.4 obj float
+Time elapsed relaxation p2: 9.66s ; obj p2: 60.00000000000001 obj integer ; var not integer: x(4,0) value 30.906026321865596
+quantidade de nós vistos no depth 2: 34 de 85
+list size: 412
+Time elapsed relaxation p1: 0.04s ;  infesiable
+Time elapsed relaxation p2: 12.78s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191088
+quantidade de nós vistos no depth 2: 35 de 85
+list size: 413
+Time elapsed relaxation p1: 12.66s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191088
+Time elapsed relaxation p2: 11.49s ; obj p2: 69.85714285714285 obj float
+quantidade de nós vistos no depth 2: 36 de 85
+list size: 415
+Time elapsed relaxation p1: 8.89s ; obj p1: 60.36734693877551 obj float
+Time elapsed relaxation p2: 15.94s ; obj p2: 59.999999999999986 obj integer ; var not integer: x(5,0) value 21.21126760563381
+quantidade de nós vistos no depth 2: 37 de 85
+list size: 417
+Time elapsed relaxation p1: 13.7s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(5,0) value 21.211267605633815
+Time elapsed relaxation p2: 12.89s ; obj p2: 59.99999999999998 obj integer ; var not integer: x(5,0) value 21.223833653678145
+quantidade de nós vistos no depth 2: 38 de 85
+list size: 419
+Time elapsed relaxation p1: 8.67s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(4,0) value 23.87289869251979
+Time elapsed relaxation p2: 9.76s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191087
+quantidade de nós vistos no depth 2: 39 de 85
+list size: 421
+Time elapsed relaxation p1: 0.04s ;  infesiable
+Time elapsed relaxation p2: 12.58s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191088
+quantidade de nós vistos no depth 2: 40 de 85
+list size: 422
+Time elapsed relaxation p1: 9.62s ; obj p1: 79.0 obj integer ; var not integer: x(0,0) value 14.485714285714282
+Time elapsed relaxation p2: 13.88s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191088
+quantidade de nós vistos no depth 2: 41 de 85
+list size: 424
+Time elapsed relaxation p1: 11.66s ; obj p1: 84.53846153846153 obj float
+Time elapsed relaxation p2: 15.21s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191088
+quantidade de nós vistos no depth 2: 42 de 85
+list size: 426
+Time elapsed relaxation p1: 13.45s ; obj p1: 59.999999999999986 obj integer ; var not integer: x(4,0) value 30.899999999999995
+Time elapsed relaxation p2: 14.11s ; obj p2: 60.00000000000001 obj integer ; var not integer: x(5,0) value 21.211267605633807
+quantidade de nós vistos no depth 2: 43 de 85
+list size: 428
+Time elapsed relaxation p1: 13.85s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(5,0) value 21.892857142857142
+Time elapsed relaxation p2: 10.98s ; obj p2: 70.99999999999997 obj integer ; var not integer: x(0,0) value 12.72093023255814
+quantidade de nós vistos no depth 2: 44 de 85
+list size: 430
+Time elapsed relaxation p1: 14.49s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191088
+Time elapsed relaxation p2: 16.63s ; obj p2: 60.759493670886066 obj float
+quantidade de nós vistos no depth 2: 45 de 85
+list size: 432
+Time elapsed relaxation p1: 14.82s ; obj p1: 62.72727272727271 obj float
+Time elapsed relaxation p2: 13.14s ; obj p2: 59.99999999999997 obj integer ; var not integer: x(4,0) value 33.171888053467
+quantidade de nós vistos no depth 2: 46 de 85
+list size: 434
+Time elapsed relaxation p1: 0.04s ;  infesiable
+Time elapsed relaxation p2: 12.64s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191088
+quantidade de nós vistos no depth 2: 47 de 85
+list size: 435
+Time elapsed relaxation p1: 9.83s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191087
+Time elapsed relaxation p2: 11.89s ; obj p2: 72.0 obj integer ; var not integer: x(1,0) value 46.476040237610114
+quantidade de nós vistos no depth 2: 48 de 85
+list size: 437
+Time elapsed relaxation p1: 12.42s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191088
+Time elapsed relaxation p2: 8.94s ; obj p2: 79.00000000000001 obj integer ; var not integer: x(1,0) value 46.014891515601974
+quantidade de nós vistos no depth 2: 49 de 85
+list size: 439
+Time elapsed relaxation p1: 12.84s ; obj p1: 59.999999999999986 obj integer ; var not integer: x(1,1) value 9.90909090909091
+Time elapsed relaxation p2: 14.3s ; obj p2: 59.999999999999986 obj integer ; var not integer: x(4,0) value 33.22370480191087
+quantidade de nós vistos no depth 2: 50 de 85
+list size: 441
+Time elapsed relaxation p1: 10.18s ; obj p1: 63.684210526315795 obj float
+Time elapsed relaxation p2: 12.49s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191088
+quantidade de nós vistos no depth 2: 51 de 85
+list size: 443
+Time elapsed relaxation p1: 11.75s ; obj p1: 60.00000000000001 obj integer ; var not integer: x(0,1) value 15.078095238095237
+Time elapsed relaxation p2: 12.46s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191088
+quantidade de nós vistos no depth 2: 52 de 85
+list size: 445
+Time elapsed relaxation p1: 12.16s ; obj p1: 71.88888888888889 obj float
+Time elapsed relaxation p2: 12.78s ; obj p2: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.223704801910884
+quantidade de nós vistos no depth 2: 53 de 85
+list size: 447
+Time elapsed relaxation p1: 10.61s ; obj p1: 81.69473684210524 obj float
+Time elapsed relaxation p2: 12.63s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191088
+quantidade de nós vistos no depth 2: 54 de 85
+list size: 449
+Time elapsed relaxation p1: 10.71s ; obj p1: 64.84615384615385 obj float
+Time elapsed relaxation p2: 16.73s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191088
+quantidade de nós vistos no depth 2: 55 de 85
+list size: 451
+Time elapsed relaxation p1: 17.71s ; obj p1: 59.99999999999998 obj integer ; var not integer: x(5,0) value 21.2112676056338
+Time elapsed relaxation p2: 13.7s ; obj p2: 60.09448818897636 obj float
+quantidade de nós vistos no depth 2: 56 de 85
+list size: 453
+Time elapsed relaxation p1: 15.12s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191088
+Time elapsed relaxation p2: 11.72s ; obj p2: 94.00000000000004 obj integer ; var not integer: x(4,0) value 34.40967760040982
+quantidade de nós vistos no depth 2: 57 de 85
+list size: 455
+Time elapsed relaxation p1: 14.6s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191088
+Time elapsed relaxation p2: 11.74s ; obj p2: 90.49999999999999 obj float
+quantidade de nós vistos no depth 2: 58 de 85
+list size: 457
+Time elapsed relaxation p1: 13.48s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191087
+Time elapsed relaxation p2: 11.19s ; obj p2: 59.99999999999997 obj integer ; var not integer: x(4,0) value 33.22370480191087
+quantidade de nós vistos no depth 2: 59 de 85
+list size: 459
+Time elapsed relaxation p1: 14.11s ; obj p1: 59.99999999999998 obj integer ; var not integer: x(4,0) value 33.22370480191088
+Time elapsed relaxation p2: 11.96s ; obj p2: 60.02955665024629 obj float
+quantidade de nós vistos no depth 2: 60 de 85
+list size: 461
+Time elapsed relaxation p1: 13.27s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191088
+Time elapsed relaxation p2: 10.4s ; obj p2: 63.230769230769226 obj float
+quantidade de nós vistos no depth 2: 61 de 85
+list size: 463
+Time elapsed relaxation p1: 11.89s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(4,0) value 27.245398773006134
+Time elapsed relaxation p2: 13.06s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191088
+quantidade de nós vistos no depth 2: 62 de 85
+list size: 465
+Time elapsed relaxation p1: 12.39s ; obj p1: 60.00000000000002 obj integer ; var not integer: x(5,0) value 21.21126760563381
+Time elapsed relaxation p2: 10.84s ; obj p2: 63.666666666666664 obj float
+quantidade de nós vistos no depth 2: 63 de 85
+list size: 467
+Time elapsed relaxation p1: 14.61s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191088
+Time elapsed relaxation p2: 8.88s ; obj p2: 66.55555555555557 obj float
+quantidade de nós vistos no depth 2: 64 de 85
+list size: 469
+Time elapsed relaxation p1: 13.08s ; obj p1: 60.00000000000001 obj integer ; var not integer: x(5,0) value 21.211267605633815
+Time elapsed relaxation p2: 12.73s ; obj p2: 80.00000000000001 obj integer ; var not integer: x(0,0) value 16.695121951219505
+quantidade de nós vistos no depth 2: 65 de 85
+list size: 471
+Time elapsed relaxation p1: 16.03s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191088
+Time elapsed relaxation p2: 12.11s ; obj p2: 60.00000000000001 obj integer ; var not integer: x(5,0) value 21.21126760563381
+quantidade de nós vistos no depth 2: 66 de 85
+list size: 473
+Time elapsed relaxation p1: 9.73s ; obj p1: 103.78947368421053 obj float
+Time elapsed relaxation p2: 14.6s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191088
+quantidade de nós vistos no depth 2: 67 de 85
+list size: 475
+Time elapsed relaxation p1: 7.95s ; obj p1: 82.0 obj integer ; var not integer: x(0,0) value 16.538016896398403
+Time elapsed relaxation p2: 16.06s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191088
+quantidade de nós vistos no depth 2: 68 de 85
+list size: 477
+Time elapsed relaxation p1: 10.29s ; obj p1: 60.00000000000001 obj integer ; var not integer: x(4,0) value 32.66666666666669
+Time elapsed relaxation p2: 11.35s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(5,0) value 21.223833653677474
+quantidade de nós vistos no depth 2: 69 de 85
+list size: 479
+Time elapsed relaxation p1: 15.07s ; obj p1: 69.99999999999997 obj integer ; var not integer: x(1,0) value 49.1978216260667
+Time elapsed relaxation p2: 14.11s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191088
+quantidade de nós vistos no depth 2: 70 de 85
+list size: 481
+Time elapsed relaxation p1: 11.94s ; obj p1: 60.0 obj integer ; var not integer: x(1,1) value 12.965361445783133
+Time elapsed relaxation p2: 14.87s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191088
+quantidade de nós vistos no depth 2: 71 de 85
+list size: 483
+Time elapsed relaxation p1: 15.11s ; obj p1: 59.999999999999986 obj integer ; var not integer: x(4,0) value 33.22370480191088
+Time elapsed relaxation p2: 11.74s ; obj p2: 61.309090909090905 obj float
+quantidade de nós vistos no depth 2: 72 de 85
+list size: 485
+Time elapsed relaxation p1: 15.25s ; obj p1: 59.99999999999997 obj integer ; var not integer: x(4,0) value 33.17188805346699
+Time elapsed relaxation p2: 13.95s ; obj p2: 60.74999999999999 obj float
+quantidade de nós vistos no depth 2: 73 de 85
+list size: 487
+Time elapsed relaxation p1: 13.97s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191088
+Time elapsed relaxation p2: 12.8s ; obj p2: 72.04615384615389 obj float
+quantidade de nós vistos no depth 2: 74 de 85
+list size: 489
+Time elapsed relaxation p1: 14.5s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191088
+Time elapsed relaxation p2: 10.68s ; obj p2: 80.0 obj integer ; var not integer: x(0,0) value 16.69512195121951
+quantidade de nós vistos no depth 2: 75 de 85
+list size: 491
+Time elapsed relaxation p1: 15.12s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191088
+Time elapsed relaxation p2: 15.39s ; obj p2: 67.94871794871796 obj float
+quantidade de nós vistos no depth 2: 76 de 85
+list size: 493
+Time elapsed relaxation p1: 16.44s ; obj p1: 61.13513513513516 obj float
+Time elapsed relaxation p2: 15.41s ; obj p2: 59.999999999999986 obj integer ; var not integer: x(4,0) value 33.22370480191088
+quantidade de nós vistos no depth 2: 77 de 85
+list size: 495
+Time elapsed relaxation p1: 16.26s ; obj p1: 61.23529411764705 obj float
+Time elapsed relaxation p2: 15.12s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191088
+quantidade de nós vistos no depth 2: 78 de 85
+list size: 497
+Time elapsed relaxation p1: 14.44s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191088
+Time elapsed relaxation p2: 12.09s ; obj p2: 69.99999999999888 obj integer ; var not integer: x(0,0) value 11.21963735474193
+quantidade de nós vistos no depth 2: 79 de 85
+list size: 499
+Time elapsed relaxation p1: 16.14s ; obj p1: 63.857142857142875 obj float
+Time elapsed relaxation p2: 14.63s ; obj p2: 59.99999999999998 obj integer ; var not integer: x(4,0) value 33.22370480191088
+quantidade de nós vistos no depth 2: 80 de 85
+list size: 501
+Time elapsed relaxation p1: 15.23s ; obj p1: 68.18181818181819 obj float
+Time elapsed relaxation p2: 12.93s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191088
+quantidade de nós vistos no depth 2: 81 de 85
+list size: 503
+Time elapsed relaxation p1: 13.0s ; obj p1: 60.00000000000001 obj integer ; var not integer: x(0,0) value 9.867175572519086
+Time elapsed relaxation p2: 12.14s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(5,0) value 22.76651982378855
+quantidade de nós vistos no depth 2: 82 de 85
+list size: 505
+Time elapsed relaxation p1: 15.98s ; obj p1: 60.00000000000001 obj integer ; var not integer: x(0,1) value 16.94797687861272
+Time elapsed relaxation p2: 15.55s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191088
+quantidade de nós vistos no depth 2: 83 de 85
+list size: 507
+Time elapsed relaxation p1: 0.06s ;  infesiable
+Time elapsed relaxation p2: 16.11s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191088
+quantidade de nós vistos no depth 2: 84 de 85
+list size: 508
+Time elapsed relaxation p1: 13.26s ; obj p1: 59.999999999999986 obj integer ; var not integer: x(1,1) value 10.297662990305078
+Time elapsed relaxation p2: 15.16s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.22370480191088
+quantidade de nós vistos no depth 2: 85 de 85
+list size: 510
+Time elapsed for iteration: 2147.98s
+new depth
+progress: LB = 59.99999999999999 - bestUB = 197 - gap = 69.54%
+max(valuejk, valuekj) == 0 ; j = 1 k = 2 i = 2 valuejk = -26.0 valuekj = 0
+max(valuejk, valuekj) == 0 ; j = 2 k = 3 i = 2 valuejk = 0 valuekj = -14.0
+Time elapsed relaxation p1: 14.12s ; obj p1: 64.42105263157896 obj float
+Time elapsed relaxation p2: 13.31s ; obj p2: 66.0 obj integer ; var not integer: x(0,0) value 9.526315789473685
+quantidade de nós vistos no depth 3: 1 de 85
+list size: 511
+Time elapsed relaxation p1: 13.44s ; obj p1: 66.15384615384616 obj float
+Time elapsed relaxation p2: 16.11s ; obj p2: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.829587253905736
+quantidade de nós vistos no depth 3: 2 de 85
+list size: 513
+Time elapsed relaxation p1: 14.23s ; obj p1: 60.00000000000001 obj integer ; var not integer: x(0,0) value 9.977423667413968
+Time elapsed relaxation p2: 14.11s ; obj p2: 60.00000000000001 obj integer ; var not integer: x(0,1) value 13.286679406291082
+quantidade de nós vistos no depth 3: 3 de 85
+list size: 515
+Time elapsed relaxation p1: 15.79s ; obj p1: 59.99999999999998 obj integer ; var not integer: x(0,0) value 9.526315789473683
+Time elapsed relaxation p2: 11.6s ; obj p2: 60.02955665024631 obj float
+quantidade de nós vistos no depth 3: 4 de 85
+list size: 517
+Time elapsed relaxation p1: 11.58s ; obj p1: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.86683295001782
+Time elapsed relaxation p2: 14.59s ; obj p2: 62.12121212121211 obj float
+quantidade de nós vistos no depth 3: 5 de 85
+list size: 519
+Time elapsed relaxation p1: 10.65s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(4,0) value 31.44768509777752
+Time elapsed relaxation p2: 11.1s ; obj p2: 63.0 obj integer ; var not integer: x(0,0) value 10.520958083832333
+quantidade de nós vistos no depth 3: 6 de 85
+list size: 521
+Time elapsed relaxation p1: 12.99s ; obj p1: 63.684210526315795 obj float
+Time elapsed relaxation p2: 8.86s ; obj p2: 66.99999999999999 obj integer ; var not integer: x(0,0) value 9.526315789473689
+quantidade de nós vistos no depth 3: 7 de 85
+list size: 523
+Time elapsed relaxation p1: 9.1s ; obj p1: 60.0 obj integer ; var not integer: x(5,0) value 23.291530737828104
+Time elapsed relaxation p2: 10.98s ; obj p2: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.86683295001782
+quantidade de nós vistos no depth 3: 8 de 85
+list size: 525
+Time elapsed relaxation p1: 10.47s ; obj p1: 140.00000000000003 obj integer ; var not integer: x(0,0) value 11.73170731707317
+Time elapsed relaxation p2: 11.01s ; obj p2: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.86683295001782
+quantidade de nós vistos no depth 3: 9 de 85
+list size: 527
+Time elapsed relaxation p1: 0.03s ;  infesiable
+Time elapsed relaxation p2: 10.97s ; obj p2: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.86683295001782
+quantidade de nós vistos no depth 3: 10 de 85
+list size: 528
+Time elapsed relaxation p1: 12.01s ; obj p1: 60.26315789473683 obj float
+Time elapsed relaxation p2: 8.9s ; obj p2: 60.00000000000001 obj integer ; var not integer: x(4,0) value 34.011684782608704
+quantidade de nós vistos no depth 3: 11 de 85
+list size: 530
+Time elapsed relaxation p1: 10.33s ; obj p1: 61.881720430107514 obj float
+Time elapsed relaxation p2: 12.97s ; obj p2: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.86683295001782
+quantidade de nós vistos no depth 3: 12 de 85
+list size: 532
+Time elapsed relaxation p1: 11.82s ; obj p1: 64.92307692307692 obj float
+Time elapsed relaxation p2: 8.85s ; obj p2: 59.999999999999986 obj integer ; var not integer: x(4,0) value 34.074579934011126
+quantidade de nós vistos no depth 3: 13 de 85
+list size: 534
+Time elapsed relaxation p1: 11.0s ; obj p1: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.86683295001782
+Time elapsed relaxation p2: 11.3s ; obj p2: 61.714285714285715 obj float
+quantidade de nós vistos no depth 3: 14 de 85
+list size: 536
+Time elapsed relaxation p1: 10.87s ; obj p1: 60.00000000000001 obj integer ; var not integer: x(0,0) value 8.534156974321865
+Time elapsed relaxation p2: 12.04s ; obj p2: 65.99999999999957 obj integer ; var not integer: x(1,0) value 46.29215490241391
+quantidade de nós vistos no depth 3: 15 de 85
+list size: 538
+Time elapsed relaxation p1: 11.02s ; obj p1: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.86683295001782
+Time elapsed relaxation p2: 8.67s ; obj p2: 93.49999999999997 obj float
+quantidade de nós vistos no depth 3: 16 de 85
+list size: 540
+Time elapsed relaxation p1: 10.73s ; obj p1: 60.27777777777779 obj float
+Time elapsed relaxation p2: 11.19s ; obj p2: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.86683295001782
+quantidade de nós vistos no depth 3: 17 de 85
+list size: 542
+Time elapsed relaxation p1: 10.45s ; obj p1: 60.967741935483886 obj float
+Time elapsed relaxation p2: 15.25s ; obj p2: 59.99999999999998 obj integer ; var not integer: x(5,0) value 23.341110880827028
+quantidade de nós vistos no depth 3: 18 de 85
+list size: 544
+Time elapsed relaxation p1: 14.51s ; obj p1: 63.0769230769231 obj float
+Time elapsed relaxation p2: 11.03s ; obj p2: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.86683295001782
+quantidade de nós vistos no depth 3: 19 de 85
+list size: 546
+Time elapsed relaxation p1: 14.22s ; obj p1: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.778517725037155
+Time elapsed relaxation p2: 11.57s ; obj p2: 59.99999999999998 obj integer ; var not integer: x(4,0) value 34.126469573596836
+quantidade de nós vistos no depth 3: 20 de 85
+list size: 548
+Time elapsed relaxation p1: 12.36s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(0,0) value 3.6857887874837014
+Time elapsed relaxation p2: 13.18s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(4,0) value 34.42742746148844
+quantidade de nós vistos no depth 3: 21 de 85
+list size: 550
+Time elapsed relaxation p1: 11.05s ; obj p1: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.86683295001782
+Time elapsed relaxation p2: 9.96s ; obj p2: 79.00000000000001 obj integer ; var not integer: x(0,0) value 13.934941218735977
+quantidade de nós vistos no depth 3: 22 de 85
+list size: 552
+Time elapsed relaxation p1: 11.13s ; obj p1: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.86683295001782
+Time elapsed relaxation p2: 9.62s ; obj p2: 62.35714285714287 obj float
+quantidade de nós vistos no depth 3: 23 de 85
+list size: 554
+Time elapsed relaxation p1: 10.92s ; obj p1: 60.07142857142858 obj float
+Time elapsed relaxation p2: 13.73s ; obj p2: 60.02955665024629 obj float
+quantidade de nós vistos no depth 3: 24 de 85
+list size: 556
+Time elapsed relaxation p1: 11.08s ; obj p1: 60.00000000000001 obj integer ; var not integer: x(0,0) value 8.534156974321865
+Time elapsed relaxation p2: 9.72s ; obj p2: 63.999999999999986 obj integer ; var not integer: x(0,0) value 10.695968274950427
+quantidade de nós vistos no depth 3: 25 de 85
+list size: 558
+Time elapsed relaxation p1: 11.23s ; obj p1: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.86683295001782
+Time elapsed relaxation p2: 10.52s ; obj p2: 67.97315436241611 obj float
+quantidade de nós vistos no depth 3: 26 de 85
+list size: 560
+Time elapsed relaxation p1: 8.44s ; obj p1: 59.999999999999986 obj integer ; var not integer: x(0,0) value 8.122580645161289
+Time elapsed relaxation p2: 12.27s ; obj p2: 60.00000000000001 obj integer ; var not integer: x(0,0) value 9.414113226007307
+quantidade de nós vistos no depth 3: 27 de 85
+list size: 562
+Time elapsed relaxation p1: 8.86s ; obj p1: 65.0 obj integer ; var not integer: x(4,0) value 32.212500000000006
+Time elapsed relaxation p2: 13.19s ; obj p2: 60.00000000000001 obj integer ; var not integer: x(4,0) value 34.08277631310885
+quantidade de nós vistos no depth 3: 28 de 85
+list size: 564
+Time elapsed relaxation p1: 8.31s ; obj p1: 68.0 obj integer ; var not integer: x(0,0) value 13.18079096045198
+Time elapsed relaxation p2: 11.06s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(0,0) value 9.809362906299512
+quantidade de nós vistos no depth 3: 29 de 85
+list size: 566
+Time elapsed relaxation p1: 9.44s ; obj p1: 66.9999999999996 obj integer ; var not integer: x(1,1) value 12.40035056445404
+Time elapsed relaxation p2: 11.15s ; obj p2: 60.00000000000001 obj integer ; var not integer: x(4,0) value 34.08277631310885
+quantidade de nós vistos no depth 3: 30 de 85
+list size: 568
+Time elapsed relaxation p1: 10.79s ; obj p1: 69.99999999999999 obj integer ; var not integer: x(0,0) value 14.092438207737668
+Time elapsed relaxation p2: 9.03s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(4,0) value 34.04055215912655
+quantidade de nós vistos no depth 3: 31 de 85
+list size: 570
+Time elapsed relaxation p1: 9.55s ; obj p1: 60.00000000000001 obj integer ; var not integer: x(0,0) value 8.070967741935481
+Time elapsed relaxation p2: 12.68s ; obj p2: 60.00000000000001 obj integer ; var not integer: x(0,1) value 14.06103286384976
+quantidade de nós vistos no depth 3: 32 de 85
+list size: 572
+Time elapsed relaxation p1: 11.01s ; obj p1: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.86683295001782
+Time elapsed relaxation p2: 13.14s ; obj p2: 93.99999999999997 obj integer ; var not integer: x(0,0) value 8.12258064516129
+quantidade de nós vistos no depth 3: 33 de 85
+list size: 574
+Time elapsed relaxation p1: 11.16s ; obj p1: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.86683295001782
+Time elapsed relaxation p2: 11.93s ; obj p2: 74.0 obj integer ; var not integer: x(3,0) value 12.805687203791479
+quantidade de nós vistos no depth 3: 34 de 85
+list size: 576
+Time elapsed relaxation p1: 0.03s ;  infesiable
+Time elapsed relaxation p2: 11.01s ; obj p2: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.86683295001782
+quantidade de nós vistos no depth 3: 35 de 85
+list size: 577
+Time elapsed relaxation p1: 9.27s ; obj p1: 111.99999999999996 obj integer ; var not integer: x(0,0) value 12.532203389830512
+Time elapsed relaxation p2: 11.13s ; obj p2: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.86683295001782
+quantidade de nós vistos no depth 3: 36 de 85
+list size: 579
+Time elapsed relaxation p1: 11.02s ; obj p1: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.86683295001782
+Time elapsed relaxation p2: 7.25s ; obj p2: 69.85714285714286 obj float
+quantidade de nós vistos no depth 3: 37 de 85
+list size: 581
+Time elapsed relaxation p1: 10.89s ; obj p1: 60.00000000000001 obj integer ; var not integer: x(0,0) value 9.881982254112142
+Time elapsed relaxation p2: 12.48s ; obj p2: 59.99999999999924 obj integer ; var not integer: x(4,0) value 34.019039660471485
+quantidade de nós vistos no depth 3: 38 de 85
+list size: 583
+Time elapsed relaxation p1: 8.63s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(4,0) value 35.071341357055644
+Time elapsed relaxation p2: 10.96s ; obj p2: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.86683295001783
+quantidade de nós vistos no depth 3: 39 de 85
+list size: 585
+Time elapsed relaxation p1: 11.11s ; obj p1: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.86683295001782
+Time elapsed relaxation p2: 10.01s ; obj p2: 99.99999999999997 obj integer ; var not integer: x(4,0) value 39.379121902326794
+quantidade de nós vistos no depth 3: 40 de 85
+list size: 587
+Time elapsed relaxation p1: 9.32s ; obj p1: 79.0 obj integer ; var not integer: x(0,0) value 9.077477848753357
+Time elapsed relaxation p2: 11.05s ; obj p2: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.86683295001782
+quantidade de nós vistos no depth 3: 41 de 85
+list size: 589
+Time elapsed relaxation p1: 0.03s ;  infesiable
+Time elapsed relaxation p2: 11.0s ; obj p2: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.86683295001782
+quantidade de nós vistos no depth 3: 42 de 85
+list size: 590
+Time elapsed relaxation p1: 10.11s ; obj p1: 63.46153846153845 obj float
+Time elapsed relaxation p2: 12.46s ; obj p2: 60.00000000000001 obj integer ; var not integer: x(0,0) value 9.414113226007299
+quantidade de nós vistos no depth 3: 43 de 85
+list size: 592
+Time elapsed relaxation p1: 12.41s ; obj p1: 60.4 obj float
+Time elapsed relaxation p2: 10.43s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(4,0) value 32.32929059983207
+quantidade de nós vistos no depth 3: 44 de 85
+list size: 594
+Time elapsed relaxation p1: 7.9s ; obj p1: 60.3673469387755 obj float
+Time elapsed relaxation p2: 11.04s ; obj p2: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.86683295001782
+quantidade de nós vistos no depth 3: 45 de 85
+list size: 596
+Time elapsed relaxation p1: 8.71s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(1,1) value 5.52657004830918
+Time elapsed relaxation p2: 10.4s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(4,0) value 34.0116847826087
+quantidade de nós vistos no depth 3: 46 de 85
+list size: 598
+Time elapsed relaxation p1: 10.65s ; obj p1: 59.99999999999998 obj integer ; var not integer: x(0,0) value 8.377338195618025
+Time elapsed relaxation p2: 9.87s ; obj p2: 71.0 obj integer ; var not integer: x(0,0) value 14.209039548022599
+quantidade de nós vistos no depth 3: 47 de 85
+list size: 600
+Time elapsed relaxation p1: 9.25s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(0,0) value 8.4520325203252
+Time elapsed relaxation p2: 13.32s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(4,0) value 34.42742746148844
+quantidade de nós vistos no depth 3: 48 de 85
+list size: 602
+Time elapsed relaxation p1: 11.15s ; obj p1: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.86683295001782
+Time elapsed relaxation p2: 10.84s ; obj p2: 72.00000000000001 obj integer ; var not integer: x(0,0) value 13.274952919020718
+quantidade de nós vistos no depth 3: 49 de 85
+list size: 604
+Time elapsed relaxation p1: 12.6s ; obj p1: 62.72727272727274 obj float
+Time elapsed relaxation p2: 12.14s ; obj p2: 59.99999999999998 obj integer ; var not integer: x(4,0) value 34.126469573596836
+quantidade de nós vistos no depth 3: 50 de 85
+list size: 606
+Time elapsed relaxation p1: 10.69s ; obj p1: 63.684210526315795 obj float
+Time elapsed relaxation p2: 11.09s ; obj p2: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.86683295001783
+quantidade de nós vistos no depth 3: 51 de 85
+list size: 608
+Time elapsed relaxation p1: 9.16s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(4,0) value 34.011684782608704
+Time elapsed relaxation p2: 12.82s ; obj p2: 60.02955665024632 obj float
+quantidade de nós vistos no depth 3: 52 de 85
+list size: 610
+Time elapsed relaxation p1: 11.45s ; obj p1: 60.76103500761034 obj float
+Time elapsed relaxation p2: 10.56s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(4,0) value 35.90249766677249
+quantidade de nós vistos no depth 3: 53 de 85
+list size: 612
+Time elapsed relaxation p1: 8.73s ; obj p1: 59.999999999999986 obj integer ; var not integer: x(0,0) value 9.419132559560175
+Time elapsed relaxation p2: 11.1s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(4,0) value 33.8668329500178
+quantidade de nós vistos no depth 3: 54 de 85
+list size: 614
+Time elapsed relaxation p1: 13.65s ; obj p1: 73.53846153846152 obj float
+Time elapsed relaxation p2: 11.07s ; obj p2: 60.000000000000014 obj integer ; var not integer: x(4,0) value 34.08277631310885
+quantidade de nós vistos no depth 3: 55 de 85
+list size: 616
+Time elapsed relaxation p1: 9.93s ; obj p1: 59.99999999999492 obj integer ; var not integer: x(0,0) value 9.714347751021625
+Time elapsed relaxation p2: 8.59s ; obj p2: 63.66666666666668 obj float
+quantidade de nós vistos no depth 3: 56 de 85
+list size: 618
+Time elapsed relaxation p1: 9.43s ; obj p1: 63.575268817204304 obj float
+Time elapsed relaxation p2: 11.17s ; obj p2: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.86683295001782
+quantidade de nós vistos no depth 3: 57 de 85
+list size: 620
+Time elapsed relaxation p1: 9.17s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(0,0) value 9.87933554285632
+Time elapsed relaxation p2: 11.48s ; obj p2: 60.75949367088607 obj float
+quantidade de nós vistos no depth 3: 58 de 85
+list size: 622
+Time elapsed relaxation p1: 9.33s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(0,0) value 7.436336220478313
+Time elapsed relaxation p2: 16.02s ; obj p2: 60.09448818897637 obj float
+quantidade de nós vistos no depth 3: 59 de 85
+list size: 624
+Time elapsed relaxation p1: 9.38s ; obj p1: 142.40000000000015 obj float
+Time elapsed relaxation p2: 11.09s ; obj p2: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.86683295001782
+quantidade de nós vistos no depth 3: 60 de 85
+list size: 626
+Time elapsed relaxation p1: 0.07s ;  infesiable
+Time elapsed relaxation p2: 11.11s ; obj p2: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.86683295001782
+quantidade de nós vistos no depth 3: 61 de 85
+list size: 627
+Time elapsed relaxation p1: 10.64s ; obj p1: 59.99999999999998 obj integer ; var not integer: x(0,0) value 8.377338195618025
+Time elapsed relaxation p2: 10.94s ; obj p2: 79.99999999999999 obj integer ; var not integer: x(0,0) value 14.209039548022599
+quantidade de nós vistos no depth 3: 62 de 85
+list size: 629
+Time elapsed relaxation p1: 11.2s ; obj p1: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.86683295001782
+Time elapsed relaxation p2: 10.62s ; obj p2: 60.749999999999986 obj float
+quantidade de nós vistos no depth 3: 63 de 85
+list size: 631
+Time elapsed relaxation p1: 11.1s ; obj p1: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.86683295001782
+Time elapsed relaxation p2: 8.71s ; obj p2: 90.50000000000001 obj float
+quantidade de nós vistos no depth 3: 64 de 85
+list size: 633
+Time elapsed relaxation p1: 7.68s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(0,0) value 9.852764913885785
+Time elapsed relaxation p2: 10.14s ; obj p2: 59.999999999999986 obj integer ; var not integer: x(0,0) value 9.242804069540709
+quantidade de nós vistos no depth 3: 65 de 85
+list size: 635
+Time elapsed relaxation p1: 9.53s ; obj p1: 59.99999999999998 obj integer ; var not integer: x(4,1) value 12.666666666666645
+Time elapsed relaxation p2: 11.12s ; obj p2: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.86683295001782
+quantidade de nós vistos no depth 3: 66 de 85
+list size: 637
+Time elapsed relaxation p1: 11.08s ; obj p1: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.86683295001782
+Time elapsed relaxation p2: 10.51s ; obj p2: 63.23076923076921 obj float
+quantidade de nós vistos no depth 3: 67 de 85
+list size: 639
+Time elapsed relaxation p1: 11.23s ; obj p1: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.86683295001782
+Time elapsed relaxation p2: 11.44s ; obj p2: 59.999999999999986 obj integer ; var not integer: x(1,1) value 9.499999999999995
+quantidade de nós vistos no depth 3: 68 de 85
+list size: 641
+Time elapsed relaxation p1: 8.34s ; obj p1: 103.78947368421053 obj float
+Time elapsed relaxation p2: 11.13s ; obj p2: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.86683295001782
+quantidade de nós vistos no depth 3: 69 de 85
+list size: 643
+Time elapsed relaxation p1: 11.13s ; obj p1: 82.00000000000003 obj integer ; var not integer: x(0,0) value 11.697674418604649
+Time elapsed relaxation p2: 11.07s ; obj p2: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.86683295001782
+quantidade de nós vistos no depth 3: 70 de 85
+list size: 645
+Time elapsed relaxation p1: 0.03s ;  infesiable
+Time elapsed relaxation p2: 11.03s ; obj p2: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.86683295001782
+quantidade de nós vistos no depth 3: 71 de 85
+list size: 646
+Time elapsed relaxation p1: 10.14s ; obj p1: 70.0 obj integer ; var not integer: x(4,0) value 37.20555555555556
+Time elapsed relaxation p2: 11.15s ; obj p2: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.86683295001782
+quantidade de nós vistos no depth 3: 72 de 85
+list size: 648
+Time elapsed relaxation p1: 11.16s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(4,0) value 34.082776313108845
+Time elapsed relaxation p2: 9.77s ; obj p2: 61.30909090909091 obj float
+quantidade de nós vistos no depth 3: 73 de 85
+list size: 650
+Time elapsed relaxation p1: 11.09s ; obj p1: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.86683295001782
+Time elapsed relaxation p2: 7.37s ; obj p2: 72.04615384615384 obj float
+quantidade de nós vistos no depth 3: 74 de 85
+list size: 652
+Time elapsed relaxation p1: 11.17s ; obj p1: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.86683295001782
+Time elapsed relaxation p2: 10.98s ; obj p2: 79.99999999999999 obj integer ; var not integer: x(0,0) value 15.454638817755
+quantidade de nós vistos no depth 3: 75 de 85
+list size: 654
+Time elapsed relaxation p1: 11.19s ; obj p1: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.86683295001782
+Time elapsed relaxation p2: 11.35s ; obj p2: 66.55555555555554 obj float
+quantidade de nós vistos no depth 3: 76 de 85
+list size: 656
+Time elapsed relaxation p1: 11.13s ; obj p1: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.86683295001782
+Time elapsed relaxation p2: 9.03s ; obj p2: 67.94871794871794 obj float
+quantidade de nós vistos no depth 3: 77 de 85
+list size: 658
+Time elapsed relaxation p1: 12.87s ; obj p1: 61.13513513513514 obj float
+Time elapsed relaxation p2: 11.17s ; obj p2: 60.00000000000001 obj integer ; var not integer: x(0,0) value 9.850870426410097
+quantidade de nós vistos no depth 3: 78 de 85
+list size: 660
+Time elapsed relaxation p1: 13.94s ; obj p1: 61.235294117647044 obj float
+Time elapsed relaxation p2: 11.14s ; obj p2: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.86683295001782
+quantidade de nós vistos no depth 3: 79 de 85
+list size: 662
+Time elapsed relaxation p1: 11.12s ; obj p1: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.86683295001782
+Time elapsed relaxation p2: 12.33s ; obj p2: 70.0 obj integer ; var not integer: x(0,0) value 15.064166833828185
+quantidade de nós vistos no depth 3: 80 de 85
+list size: 664
+Time elapsed relaxation p1: 13.06s ; obj p1: 63.85714285714286 obj float
+Time elapsed relaxation p2: 9.04s ; obj p2: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.964266820528636
+quantidade de nós vistos no depth 3: 81 de 85
+list size: 666
+Time elapsed relaxation p1: 17.12s ; obj p1: 68.1818181818182 obj float
+Time elapsed relaxation p2: 13.28s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(4,0) value 34.42742746148844
+quantidade de nós vistos no depth 3: 82 de 85
+list size: 668
+Time elapsed relaxation p1: 13.62s ; obj p1: 60.00000000000001 obj integer ; var not integer: x(0,0) value 9.618181818181828
+Time elapsed relaxation p2: 9.18s ; obj p2: 59.99999999999998 obj integer ; var not integer: x(4,0) value 34.18257741627541
+quantidade de nós vistos no depth 3: 83 de 85
+list size: 670
+Time elapsed relaxation p1: 0.03s ;  infesiable
+Time elapsed relaxation p2: 11.34s ; obj p2: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.86683295001782
+quantidade de nós vistos no depth 3: 84 de 85
+list size: 671
+Time elapsed relaxation p1: 9.41s ; obj p1: 84.53846153846155 obj float
+Time elapsed relaxation p2: 11.08s ; obj p2: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.8668329500178
+quantidade de nós vistos no depth 3: 85 de 85
+list size: 673
+Time elapsed for iteration: 1830.49s
+new depth
+progress: LB = 60.00000000000001 - bestUB = 197 - gap = 69.54%
+max(valuejk, valuekj) == 0 ; j = 1 k = 2 i = 2 valuejk = -26.0 valuekj = 0
+max(valuejk, valuekj) == 0 ; j = 2 k = 3 i = 2 valuejk = 0 valuekj = -14.0
+Time elapsed relaxation p1: 9.77s ; obj p1: 64.42105263157895 obj float
+Time elapsed relaxation p2: 9.74s ; obj p2: 66.0 obj integer ; var not integer: x(4,0) value 34.303942211136665
+quantidade de nós vistos no depth 4: 1 de 85
+list size: 674
+Time elapsed relaxation p1: 13.0s ; obj p1: 59.99999999999998 obj integer ; var not integer: x(0,1) value 15.44444444444444
+Time elapsed relaxation p2: 6.73s ; obj p2: 59.99999999999998 obj integer ; var not integer: x(5,0) value 21.089285714285715
+quantidade de nós vistos no depth 4: 2 de 85
+list size: 676
+Time elapsed relaxation p1: 9.15s ; obj p1: 59.99999999999998 obj integer ; var not integer: x(4,0) value 34.23109066761686
+Time elapsed relaxation p2: 12.81s ; obj p2: 62.12121212121211 obj float
+quantidade de nós vistos no depth 4: 3 de 85
+list size: 678
+Time elapsed relaxation p1: 7.22s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(0,1) value 15.410404624277453
+Time elapsed relaxation p2: 7.17s ; obj p2: 59.99999999999775 obj integer ; var not integer: x(4,0) value 34.23109066761677
+quantidade de nós vistos no depth 4: 4 de 85
+list size: 680
+Time elapsed relaxation p1: 10.52s ; obj p1: 61.881720430107514 obj float
+Time elapsed relaxation p2: 7.21s ; obj p2: 59.99999999999787 obj integer ; var not integer: x(4,0) value 34.231090667616776
+quantidade de nós vistos no depth 4: 5 de 85
+list size: 682
+Time elapsed relaxation p1: 12.7s ; obj p1: 63.46153846153846 obj float
+Time elapsed relaxation p2: 7.22s ; obj p2: 59.99999999999998 obj integer ; var not integer: x(4,0) value 34.231090667616854
+quantidade de nós vistos no depth 4: 6 de 85
+list size: 684
+Time elapsed relaxation p1: 10.8s ; obj p1: 63.076923076923066 obj float
+Time elapsed relaxation p2: 7.15s ; obj p2: 59.99999999999775 obj integer ; var not integer: x(4,0) value 34.23109066761677
+quantidade de nós vistos no depth 4: 7 de 85
+list size: 686
+Time elapsed relaxation p1: 10.36s ; obj p1: 69.99999999999999 obj integer ; var not integer: x(0,0) value 18.036585365853657
+Time elapsed relaxation p2: 10.01s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(4,0) value 34.23109066761686
+quantidade de nós vistos no depth 4: 8 de 85
+list size: 688
+Time elapsed relaxation p1: 14.51s ; obj p1: 64.92307692307689 obj float
+Time elapsed relaxation p2: 12.22s ; obj p2: 59.99999999999998 obj integer ; var not integer: x(4,0) value 34.23109066761686
+quantidade de nós vistos no depth 4: 9 de 85
+list size: 690
+Time elapsed relaxation p1: 9.34s ; obj p1: 63.5752688172043 obj float
+Time elapsed relaxation p2: 9.21s ; obj p2: 59.99999999999998 obj integer ; var not integer: x(4,0) value 34.23109066761686
+quantidade de nós vistos no depth 4: 10 de 85
+list size: 692
+Time elapsed relaxation p1: 10.07s ; obj p1: 63.684210526315766 obj float
+Time elapsed relaxation p2: 6.56s ; obj p2: 66.99999999999999 obj integer ; var not integer: x(4,0) value 34.30394221113666
+quantidade de nós vistos no depth 4: 11 de 85
+list size: 694
+Time elapsed relaxation p1: 6.96s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(4,0) value 32.94074074074073
+Time elapsed relaxation p2: 12.46s ; obj p2: 63.000000000000014 obj integer ; var not integer: x(0,0) value 10.520958083832335
+quantidade de nós vistos no depth 4: 12 de 85
+list size: 696
+Time elapsed relaxation p1: 7.17s ; obj p1: 59.99999999999775 obj integer ; var not integer: x(4,0) value 34.23109066761677
+Time elapsed relaxation p2: 6.98s ; obj p2: 99.99999999999997 obj integer ; var not integer: x(4,0) value 33.02572876574367
+quantidade de nós vistos no depth 4: 13 de 85
+list size: 698
+Time elapsed relaxation p1: 8.03s ; obj p1: 67.00000000000001 obj integer ; var not integer: x(4,0) value 30.88304093567251
+Time elapsed relaxation p2: 9.61s ; obj p2: 59.999999999997854 obj integer ; var not integer: x(4,0) value 34.183115260908615
+quantidade de nós vistos no depth 4: 14 de 85
+list size: 700
+Time elapsed relaxation p1: 7.1s ; obj p1: 59.99999999999999 obj integer ; var not integer: x(0,1) value 15.08670520231214
+Time elapsed relaxation p2: 7.17s ; obj p2: 59.99999999999787 obj integer ; var not integer: x(4,0) value 34.231090667616776
+quantidade de nós vistos no depth 4: 15 de 85
+list size: 702
+Time elapsed relaxation p1: 7.2s ; obj p1: 59.99999999999775 obj integer ; var not integer: x(4,0) value 34.23109066761677
+Time elapsed relaxation p2: 11.63s ; obj p2: 61.71428571428572 obj float
+quantidade de nós vistos no depth 4: 16 de 85
+list size: 704
+Time elapsed relaxation p1: 12.23s ; obj p1: 60.96774193548387 obj float
+Time elapsed relaxation p2: 10.77s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(4,0) value 29.81203007518797
+quantidade de nós vistos no depth 4: 17 de 85
+list size: 706
+Time elapsed relaxation p1: 9.34s ; obj p1: 59.99999999999998 obj integer ; var not integer: x(4,0) value 34.23109066761686
+Time elapsed relaxation p2: 8.46s ; obj p2: 93.50000000000004 obj float
+quantidade de nós vistos no depth 4: 18 de 85
+list size: 708
+Time elapsed relaxation p1: 9.11s ; obj p1: 59.99999999999998 obj integer ; var not integer: x(4,0) value 34.23109066761686
+Time elapsed relaxation p2: 6.73s ; obj p2: 66.00000000000001 obj integer ; var not integer: x(1,0) value 47.111638185567564
+quantidade de nós vistos no depth 4: 19 de 85
+list size: 710
+Time elapsed relaxation p1: 13.75s ; obj p1: 60.27777777777778 obj float
+Time elapsed relaxation p2: 10.12s ; obj p2: 59.99999999999998 obj integer ; var not integer: x(4,0) value 34.23109066761686
+quantidade de nós vistos no depth 4: 20 de 85
+list size: 712
+Time elapsed relaxation p1: 11.04s ; obj p1: 59.999999999999986 obj integer ; var not integer: x(0,1) value 15.444444444444436
+Time elapsed relaxation p2: 13.38s ; obj p2: 60.02955665024629 obj float
+quantidade de nós vistos no depth 4: 21 de 85
+list size: 714
+Time elapsed relaxation p1: 10.04s ; obj p1: 140.00000000000009 obj integer ; var not integer: x(0,0) value 10.73373545885395
+Time elapsed relaxation p2: 9.34s ; obj p2: 59.99999999999998 obj integer ; var not integer: x(4,0) value 34.23109066761686
+quantidade de nós vistos no depth 4: 22 de 85
+list size: 716
+Time elapsed relaxation p1: 9.53s ; obj p1: 59.999999999999986 obj integer ; var not integer: x(4,0) value 34.231090667616854
+Time elapsed relaxation p2: 4.59s ; obj p2: 59.99999999999999 obj integer ; var not integer: x(4,0) value 34.39483286969672
+quantidade de nós vistos no depth 4: 23 de 85
+list size: 718
+Time elapsed relaxation p1: 9.14s ; obj p1: 59.99999999999998 obj integer ; var not integer: x(4,0) value 34.23109066761686
+Time elapsed relaxation p2: 15.03s ; obj p2: 62.35714285714286 obj float
+quantidade de nós vistos no depth 4: 24 de 85
+list size: 720
+Time elapsed relaxation p1: 10.26s ; obj p1: 60.07142857142855 obj float
+Time elapsed relaxation p2: 13.89s ; obj p2: 60.02955665024632 obj float
+quantidade de nós vistos no depth 4: 25 de 85
+list size: 722
+Time elapsed relaxation p1: 9.67s ; obj p1: 60.76103500761034 obj float
+Time elapsed relaxation p2: 9.11s ; obj p2: 59.99999999999998 obj integer ; var not integer: x(4,0) value 34.23109066761686
+quantidade de nós vistos no depth 4: 26 de 85
+list size: 724
+Time elapsed relaxation p1: 13.11s ; obj p1: 66.15384615384615 obj float
+Time elapsed relaxation p2: 11.67s ; obj p2: 59.999999999999886 obj integer ; var not integer: x(4,0) value 34.231090667616854
+quantidade de nós vistos no depth 4: 27 de 85
+list size: 726
+Time elapsed relaxation p1: 9.33s ; obj p1: 59.99999999999998 obj integer ; var not integer: x(4,0) value 34.23109066761686
+Time elapsed relaxation p2: 10.59s ; obj p2: 64.0 obj integer ; var not integer: x(1,0) value 47.202216928020746
+quantidade de nós vistos no depth 4: 28 de 85
+list size: 728
+Time elapsed relaxation p1: 9.16s ; obj p1: 59.99999999999998 obj integer ; var not integer: x(4,0) value 34.23109066761686
+Time elapsed relaxation p2: 8.23s ; obj p2: 67.97315436241608 obj float
+quantidade de nós vistos no depth 4: 29 de 85
+list size: 730
+Time elapsed relaxation p1: 9.11s ; obj p1: 59.99999999999998 obj integer ; var not integer: x(4,0) value 34.23109066761686
+Time elapsed relaxation p2: 8.36s ; obj p2: 78.99999999999855 obj integer ; var not integer: x(0,0) value 14.737096467139475
+quantidade de nós vistos no depth 4: 30 de 85
+list size: 732
+Time elapsed relaxation p1: 10.09s ; obj p1: 67.99999999999997 obj integer ; var not integer: x(0,0) value 13.180790960451978
+Time elapsed relaxation p2: 12.15s ; obj p2: 59.99999999999998 obj integer ; var not integer: x(4,0) value 34.23109066761686
+quantidade de nós vistos no depth 4: 31 de 85
+list size: 734
+Time elapsed relaxation p1: 9.24s ; obj p1: 60.00000000000001 obj integer ; var not integer: x(4,0) value 33.87289869251979
+Time elapsed relaxation p2: 9.31s ; obj p2: 59.99999999999998 obj integer ; var not integer: x(4,0) value 34.23109066761686
+quantidade de nós vistos no depth 4: 32 de 85
+list size: 736
+Time elapsed relaxation p1: 9.2s ; obj p1: 59.99999999999998 obj integer ; var not integer: x(4,0) value 34.23109066761686
+Time elapsed relaxation p2: 10.77s ; obj p2: 69.8571428571428 obj float
+quantidade de nós vistos no depth 4: 33 de 85
+list size: 738
+Time elapsed relaxation p1: 7.81s ; obj p1: 112.00000000000001

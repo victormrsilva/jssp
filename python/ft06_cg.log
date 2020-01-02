@@ -1,0 +1,10 @@
+Using Python-MIP package version 1.5.3
+McCormic linearization
+time	;node	;father	;remain	;LB	;bestLB	;bestUB	;status
+37.1307	;1	;-	;0	;49.0000;49.0000;57.0000	;root
+118.1014	;2	;1	;1	;50.3500;49.0000;57.0000;branch
+380.5268	;3	;1	;1	;64.0000;49.0000;57.0000;cut
+2955.9457	;4	;1	;1	;82.0000;49.0000;57.0000;cut
+3036.5639	;5	;1	;2	;50.3500;49.0000;57.0000;branch
+Best UB: 57 ; Total nodes: 5 ; Visited nodes: 3 ; Remaining nodes: 2 ; Integer solutions found: []
+Time:  3036.5639255046844

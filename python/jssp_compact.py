@@ -5,14 +5,20 @@ from compact import Compact
 from branch import Branch
 
 inst = JSSPInstance(argv[1])
-inst.print()
+# inst.print()
 # input('instance')
 compact = Compact(inst)
 
 # build the model
 # compact.constructProblemM()
+# compact.constructProblemMcCormick()
+# input('feito')
+# compact.model.relax()
+# compact.model.optimize()
+# compact.printSolution()
+# input()
 compact.constructProblemMcCormick()
-
+# input()
 branch = Branch()
 
 branch.branch(compact)

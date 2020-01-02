@@ -35,21 +35,28 @@ class Compact:
         self.totalLateJobCuts = 0
         self.totalHalfCuts = 0
         self.c = 0
-        self.x = 0
-        self.y = 0
-        self.v = 0
-        self.u = 0
+        self.x = [[0 for i in range(self.instance.m)] for j in range(self.instance.n)]
+        self.y = [
+            [[0 for i in range(self.instance.m)] for k in range(self.instance.n)] for j in range(self.instance.n)]
+        self.v = [
+            [[0 for i in range(self.instance.m)]
+             for k in range(self.instance.n)] for j in range(self.instance.n)]
+        self.u = [
+            [[0 for i in range(self.instance.m)]
+             for k in range(self.instance.n)] for j in range(self.instance.n)]
+
 
     # build the problem with big-M
     def constructProblemM(self):
-        self.instance.print()
+        # self.instance.print()
 
         self.c = self.model.add_var(var_type=INTEGER, name="C")
-        self.x = [[self.model.add_var(var_type=INTEGER, name='x({},{})'.format(j, i)) for i in range(self.instance.m)]
-                  for j in range(self.instance.n)]
-        self.y = [
-            [[self.model.add_var(var_type=BINARY, name='y({},{},{})'.format(j, k, i)) for i in range(self.instance.m)]
-             for k in range(self.instance.n)] for j in range(self.instance.n)]
+        for i in range(self.instance.m):
+            for j in range(self.instance.n):
+                self.x[j][i] = self.model.add_var(var_type=INTEGER, name='x(j{},m{})'.format(j, i))
+                for k in range(j+1, self.instance.n):
+                    self.y[j][k][i] = self.model.add_var(var_type=BINARY, name='y(j{},k{},m{})'.format(j, k, i))
+                    self.y[k][j][i] = self.model.add_var(var_type=BINARY, name='y(j{},k{},m{})'.format(k, j, i))
 
         self.model.objective = self.c
 
@@ -81,19 +88,30 @@ class Compact:
         print('McCormic linearization')
 
         self.c = self.model.add_var(var_type=INTEGER, lb=0, ub=self.instance.K, name="C")
-        self.x = [[self.model.add_var(var_type=INTEGER, lb=self.instance.est[j][i], ub=self.instance.lst[j][i],
-                  name='x({},{})'.format(j, i)) for i in range(self.instance.m)] for j in range(self.instance.n)]
-        self.y = [
-            [[self.model.add_var(var_type=BINARY, name='y({},{},{})'.format(j, k, i)) for i in range(self.instance.m)]
-             for k in range(self.instance.n)] for j in range(self.instance.n)]
 
-        self.v = [
-            [[self.model.add_var(var_type=INTEGER, lb=(self.instance.est[k][i] - self.instance.lst[j][i] - self.instance.times[j][i]),
-                   ub=(self.instance.lst[k][i] - self.instance.est[j][i] - self.instance.times[j][i]), name='v({},{},{})'.format(j, k, i)) for i in range(self.instance.m)]
-             for k in range(self.instance.n)] for j in range(self.instance.n)]
-        self.u = [
-            [[self.model.add_var(var_type=INTEGER, lb=-10*self.instance.K, name='u({},{},{})'.format(j, k, i)) for i in range(self.instance.m)]
-             for k in range(self.instance.n)] for j in range(self.instance.n)]
+        for i in range(self.instance.m):
+            for j in range(self.instance.n):
+                self.x[j][i] = self.model.add_var(var_type=INTEGER, lb=self.instance.est[j][i],
+                                                  ub=self.instance.lst[j][i],
+                                                  name='x({},{})'.format(j, i))
+                for k in range(j+1, self.instance.n):
+                    self.y[j][k][i] = self.model.add_var(var_type=BINARY, name='y({},{},{})'.format(j, k, i))
+                    self.y[k][j][i] = self.model.add_var(var_type=BINARY, name='y({},{},{})'.format(k, j, i))
+                    self.v[j][k][i] = self.model.add_var(var_type=INTEGER,
+                                        lb=self.instance.est[j][i] - self.instance.lst[k][i] - self.instance.times[k][i],
+                                        ub=self.instance.lst[j][i] - self.instance.est[k][i] - self.instance.times[k][i],
+                                        name='v({},{},{})'.format(j, k, i))
+                    self.v[k][j][i] = self.model.add_var(var_type=INTEGER,
+                                        lb=self.instance.est[k][i] - self.instance.lst[j][i] - self.instance.times[j][i],
+                                        ub=self.instance.lst[k][i] - self.instance.est[j][i] - self.instance.times[j][i],
+                                        name='v({},{},{})'.format(k, j, i))
+                    self.u[j][k][i] = self.model.add_var(var_type=INTEGER,
+                                                         lb=-10*self.instance.K,
+                                                         name='u({},{},{})'.format(j, k, i))
+                    self.u[k][j][i] = self.model.add_var(var_type=INTEGER,
+                                                         lb=-10*self.instance.K,
+                                                         name='u({},{},{})'.format(k, j, i))
+
 
         self.model.objective = self.c
 
@@ -103,26 +121,37 @@ class Compact:
                 self.model += self.x[j][self.instance.machines[j][i]] - self.x[j][self.instance.machines[j][i - 1]] >= \
                               self.instance.times[j][self.instance.machines[j][i - 1]], 'ord({},{})'.format(j, i)
 
+        for j in range(self.instance.n):
+            for k in range(j + 1, self.instance.n):
+                for i in range(self.instance.m):
+                    self.model += self.y[j][k][i] + self.y[k][j][i] == 1, 'triangle2({},{},{})'.format(j, k, i)
+
+
         # constraints (3-4)
         for j in range(self.instance.n):
             for k in range(j + 1, self.instance.n):
                 for i in range(self.instance.m):
-                    vjkL = self.instance.est[k][i] - self.instance.lst[j][i] - self.instance.times[j][i]
-                    vjkU = self.instance.lst[k][i] - self.instance.est[j][i] - self.instance.times[j][i]
-                    vkjL = self.instance.est[j][i] - self.instance.lst[k][i] - self.instance.times[k][i]
-                    vkjU = self.instance.lst[j][i] - self.instance.est[k][i] - self.instance.times[k][i]
-                    self.model += self.v[j][k][i] - self.x[k][i] + self.x[j][i] == - self.instance.times[j][i], 'MCLinV({},{},{})'.format(j, k, i)
-                    self.model += self.v[k][j][i] - self.x[j][i] + self.x[k][i] == - self.instance.times[k][i], 'MCLinV({},{},{})'.format(k, j, i)
+                    vjkL = self.v[j][k][i].lb
+                    vjkU = self.v[j][k][i].ub
+                    vkjL = self.v[k][j][i].lb
+                    vkjU = self.v[k][j][i].ub
+                    self.model += self.v[j][k][i] == self.x[j][i] - self.x[k][i] - self.instance.times[k][i], 'MCLinV({},{},{})'.format(j, k, i)
+                    self.model += self.v[k][j][i] == self.x[k][i] - self.x[j][i] - self.instance.times[j][i], 'MCLinV({},{},{})'.format(k, j, i)
                     self.model += self.u[j][k][i] >= 0, 'MCLin1({},{},{})'.format(j, k, i)
-                    self.model += self.u[j][k][i] - vjkL * self.y[j][k][i] >= 0, 'MCLin2({},{},{})'.format(j, k, i)
-                    self.model += self.u[j][k][i] - vjkU * self.y[j][k][i] - self.v[j][k][i] >= - vjkU, 'MCLin3({},{},{})'.format(j, k, i)
-                    self.model += self.u[j][k][i] - vjkU * self.y[j][k][i] <= 0, 'MCLin4({},{},{})'.format(j, k, i)
-                    self.model += self.u[j][k][i] - self.v[j][k][i] - vjkL * self.y[j][k][i] <= - vjkL, 'MCLin5({},{},{})'.format(j, k, i)
+                    self.model += self.u[j][k][i] >= vjkL * self.y[k][j][i], 'MCLin2({},{},{})'.format(j, k, i)
+                    self.model += self.u[j][k][i] >= self.v[j][k][i] + vjkU * self.y[k][j][i] - vjkU, 'MCLin3({},{},{})'.format(j, k, i)
+                    self.model += self.u[j][k][i] <= vjkU * self.y[k][j][i], 'MCLin4({},{},{})'.format(j, k, i)
+                    self.model += self.u[j][k][i] <= self.v[j][k][i] + vjkL * self.y[k][j][i] - vjkL, 'MCLin5({},{},{})'.format(j, k, i)
                     self.model += self.u[k][j][i] >= 0, 'MCLin6({},{},{})'.format(k, j, i)
-                    self.model += self.u[k][j][i] + vkjL * self.y[k][j][i] >= vkjL, 'MCLin7({},{},{})'.format(k, j, i)
-                    self.model += self.u[k][j][i] + vkjU * self.y[j][k][i] - self.v[k][j][i] >= 0, 'MCLin8({},{},{})'.format(k, j, i)
-                    self.model += self.u[k][j][i] - vkjU * self.y[j][k][i] <= vkjU , 'MCLin9({},{},{})'.format(k, j, i)
-                    self.model += self.u[k][j][i] + vkjL * self.y[j][k][i] - self.v[k][j][i] <= 0, 'MCLin10({},{},{})'.format(k, j, i)
+                    self.model += self.u[k][j][i] >= vkjL * self.y[j][k][i], 'MCLin7({},{},{})'.format(k, j, i)
+                    self.model += self.u[k][j][i] >= self.v[k][j][i] + vkjU * self.y[j][k][i] - vkjU, 'MCLin8({},{},{})'.format(k, j, i)
+                    self.model += self.u[k][j][i] <= vkjU * self.y[j][k][i], 'MCLin9({},{},{})'.format(k, j, i)
+                    self.model += self.u[k][j][i] <= self.v[k][j][i] + vkjL * self.y[j][k][i] - vkjL, 'MCLin10({},{},{})'.format(k, j, i)
+                    # self.model += self.u[k][j][i] >= 0, 'MCLin6({},{},{})'.format(k, j, i)
+                    # self.model += self.u[k][j][i] >= vkjL * self.y[k][j][i], 'MCLin7({},{},{})'.format(k, j, i)
+                    # self.model += self.u[k][j][i] >= self.v[k][j][i] + vkjU * self.y[k][j][i] - vkjU, 'MCLin8({},{},{})'.format(k, j, i)
+                    # self.model += self.u[k][j][i] - vkjU * self.y[j][k][i] <= vkjU , 'MCLin9({},{},{})'.format(k, j, i)
+                    # self.model += self.u[k][j][i] + vkjL * self.y[j][k][i] - self.v[k][j][i] <= 0, 'MCLin10({},{},{})'.format(k, j, i)
 
         # constraints (5)
         for j in range(self.instance.n):
@@ -134,7 +163,7 @@ class Compact:
 
     # cutpool
     def optmizeCuts(self):
-        self.model.cuts_generator = Compact_CutPool(self.instance)
+        # self.model.cuts_generator = Compact_CutPool(self.instance)
         self.model.optimize(max_seconds=1800)
 
     # relax model
@@ -914,5 +943,5 @@ class Compact:
         print("C: ", self.c.x)
         for j in range(self.instance.n):
             for i in range(self.instance.m):
-                print('x({},{}) = {} '.format(j, i, self.x[j][i].x), end='')
+                print('x({},{}) = {:.2f}\t '.format(j, i, self.x[j][i].x), end='')
             print()

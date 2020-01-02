@@ -8,7 +8,7 @@ import subprocess
 if __name__ == "__main__":
   instance = Instance(sys.argv[1], int(sys.argv[2]))
   instance.print()
-
+  print(int(sys.argv[2]))
   # colors to use
   colors = ['red','blue','green','brown','gray','pink','yellow','black','cyan','gray','lime','magenta','navy','orange','purple','silver','white']
 
@@ -23,18 +23,18 @@ if __name__ == "__main__":
   pattern = "{}*.sol".format(sys.argv[1])
   row = 0
   col = 0
-  for entry in listOfFiles:  
+  for entry in listOfFiles:
     if fnmatch.fnmatch(entry, pattern):
       print(entry)
       worksheet.write(row,col,entry)
       row = row+1
       for i in range(int(sys.argv[2])+1):
         col = col+1
-        worksheet.write(row,col,i)
+        worksheet.write(row, col, i)
       col = 0
       for i in range(instance.m()):
         row = row+1
-        worksheet.write(row,col,"m{}".format(i))
+        worksheet.write(row, col, "m{}".format(i))
       row = row - instance.m()+1
       with open(entry,"r") as solution_file:
         for line in solution_file:
@@ -46,18 +46,20 @@ if __name__ == "__main__":
             values = values.replace(")","")
             values = values.split(",")
             print(values)
-            task,machine,time = int(values[0])-1,int(values[1])-1,int (values[2])
+            if len(values) > 2:
+              task, machine, time = int(values[0])-1,int(values[1])-1,int (values[2])
+            else:
+              task, machine = int(values[0]), int(values[1])
+              time = float(tokens[2])
             worksheet.write(row+machine,col,"m{}".format(machine))
-            for i in range(instance.getTime(task,machine)):
+            for i in range(instance.getTime(task, machine)):
               cell_format = workbook.add_format()
               cell_format.set_pattern(1)
               cell_format.set_bg_color(colors[task])
-              worksheet.write(row+machine,time+1+i,"",cell_format)
+              worksheet.write(row+machine, time+1+i, "", cell_format)
 
             
       row = row+instance.m()+2
 
   workbook.close()
 
-  flow = Flow(instance)
-  flow.constructProblem()

@@ -1,14 +1,14 @@
 \ LP format - for model browsing. Use MPS format to capture full model detail.
 Minimize
-  - 4 x1
+  5 x0p - 5 x0n + 2 x1p - 2 x1n
 Subject To
- constr(0): - x0 + x1 <= 1
- constr(1): - x0 + 3 x1 >= -8
- constr(2): - x0 - 5 x1 >= -6
- constr(3): 4 x0 + 4 x1 >= -0
+ constr(0): - 2 x0p + 2 x0n + 2 x1p - 2 x1n <= 9
+ constr(1): - x0p + x0n - 5 x1p + 5 x1n <= 5
 Bounds
- x0 <= 1
- x1 <= 5
+ x0p <= 4
+ x0n <= 2
+ x1p <= 5
+ x1n <= 2
 Generals
- x0 x1
+ x0p x0n x1p x1n
 End

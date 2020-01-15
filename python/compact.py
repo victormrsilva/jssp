@@ -147,11 +147,6 @@ class Compact:
                     self.model += self.u[k][j][i] >= self.v[k][j][i] + vkjU * self.y[j][k][i] - vkjU, 'MCLin8({},{},{})'.format(k, j, i)
                     self.model += self.u[k][j][i] <= vkjU * self.y[j][k][i], 'MCLin9({},{},{})'.format(k, j, i)
                     self.model += self.u[k][j][i] <= self.v[k][j][i] + vkjL * self.y[j][k][i] - vkjL, 'MCLin10({},{},{})'.format(k, j, i)
-                    # self.model += self.u[k][j][i] >= 0, 'MCLin6({},{},{})'.format(k, j, i)
-                    # self.model += self.u[k][j][i] >= vkjL * self.y[k][j][i], 'MCLin7({},{},{})'.format(k, j, i)
-                    # self.model += self.u[k][j][i] >= self.v[k][j][i] + vkjU * self.y[k][j][i] - vkjU, 'MCLin8({},{},{})'.format(k, j, i)
-                    # self.model += self.u[k][j][i] - vkjU * self.y[j][k][i] <= vkjU , 'MCLin9({},{},{})'.format(k, j, i)
-                    # self.model += self.u[k][j][i] + vkjL * self.y[j][k][i] - self.v[k][j][i] <= 0, 'MCLin10({},{},{})'.format(k, j, i)
 
         # constraints (5)
         for j in range(self.instance.n):

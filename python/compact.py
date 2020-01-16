@@ -155,6 +155,124 @@ class Compact:
         self.model.write(
             '{}_modelMCLin.lp'.format(self.instance.instancename.translate(str.maketrans('', '', string.punctuation))))
 
+    def constructProblemMcCormickNonNegative(self):
+        print('McCormic linearization non-negative')
+
+        self.c = self.model.add_var(var_type=INTEGER, lb=0, ub=self.instance.K, name="C")
+
+        for i in range(self.instance.m):
+            for j in range(self.instance.n):
+                self.x[j][i] = self.model.add_var(var_type=INTEGER, lb=self.instance.est[j][i],
+                                                  ub=self.instance.lst[j][i],
+                                                  name='x({},{})'.format(j, i))
+                for k in range(j+1, self.instance.n):
+                    self.y[j][k][i] = self.model.add_var(var_type=BINARY, name='y({},{},{})'.format(j, k, i))
+                    self.y[k][j][i] = self.model.add_var(var_type=BINARY, name='y({},{},{})'.format(k, j, i))
+
+                    lb = self.instance.est[j][i] - self.instance.lst[k][i] - self.instance.times[k][i]
+                    ub = self.instance.lst[j][i] - self.instance.est[k][i] - self.instance.times[k][i]
+                    if lb >= 0:
+                        self.v[j][k][i] = (self.model.add_var(var_type=INTEGER,
+                                        lb=lb,
+                                        ub=ub,
+                                        name='v({},{},{})p'.format(j, k, i)), 0)
+                    else:
+                        self.v[j][k][i] = (self.model.add_var(var_type=INTEGER,
+                                        lb=0,
+                                        ub=ub,
+                                        name='v({},{},{})p'.format(j, k, i)),
+                                            self.model.add_var(var_type=INTEGER,
+                                        lb=0,
+                                        ub=abs(lb),
+                                        name='v({},{},{})n'.format(j, k, i)))
+                    lb = self.instance.est[k][i] - self.instance.lst[j][i] - self.instance.times[j][i]
+                    ub = self.instance.lst[k][i] - self.instance.est[j][i] - self.instance.times[j][i]
+                    if lb >= 0:
+                        self.v[k][j][i] = (self.model.add_var(var_type=INTEGER,
+                                        lb=lb,
+                                        ub=ub,
+                                        name='v({},{},{})p'.format(k, j, i)), 0)
+                    else:
+                        self.v[k][j][i] = (self.model.add_var(var_type=INTEGER,
+                                            lb=0,
+                                            ub=ub,
+                                            name='v({},{},{})p'.format(k, j, i)),
+                                           self.model.add_var(var_type=INTEGER,
+                                            lb=0,
+                                            ub=abs(lb),
+                                            name='v({},{},{})n'.format(k, j, i))
+                                          )
+                    self.u[j][k][i] = (self.model.add_var(var_type=INTEGER,
+                                                         lb=0,
+                                                         ub=10*self.instance.K,
+                                                         name='u({},{},{})p'.format(j, k, i)),
+                                       self.model.add_var(var_type=INTEGER,
+                                                          lb=0,
+                                                          ub=10 * self.instance.K,
+                                                          name='u({},{},{})n'.format(j, k, i))
+                                       )
+                    self.u[k][j][i] = (self.model.add_var(var_type=INTEGER,
+                                                         lb=0,
+                                                         ub=10*self.instance.K,
+                                                         name='u({},{},{})p'.format(k, j, i)),
+                                       self.model.add_var(var_type=INTEGER,
+                                                          lb=0,
+                                                          ub=10 * self.instance.K,
+                                                          name='u({},{},{})n'.format(k, j, i))
+                                       )
+
+        self.model.objective = self.c
+
+        # constraints (2)
+        for j in range(self.instance.n):
+            for i in range(1, self.instance.m):
+                self.model += self.x[j][self.instance.machines[j][i]] - self.x[j][self.instance.machines[j][i - 1]] >= \
+                              self.instance.times[j][self.instance.machines[j][i - 1]], 'ord({},{})'.format(j, i)
+
+        for j in range(self.instance.n):
+            for k in range(j + 1, self.instance.n):
+                for i in range(self.instance.m):
+                    self.model += self.y[j][k][i] + self.y[k][j][i] == 1, 'triangle2({},{},{})'.format(j, k, i)
+
+
+        # constraints (3-4)
+        for j in range(self.instance.n):
+            for k in range(j + 1, self.instance.n):
+                for i in range(self.instance.m):
+                    if type(self.v[j][k][i][1]) == int:  # indica que a variável não possui lb negativo
+                        vjkL = self.v[j][k][i].lb
+                        vjkU = self.v[j][k][i].ub
+                    else: # indica que a variável possui lb negativo
+                        vjkL = -self.v[j][k][i][1].ub  # lb
+                        vjkU = self.v[j][k][i][0].ub  # ub
+
+                    if type(self.v[k][j][i][1]) == int: # indica que a variável não possui lb negativo
+                        vkjL = self.v[k][j][i].lb
+                        vkjU = self.v[k][j][i].ub
+                    else: # indica que a variável possui lb negativo
+                        vkjL = - self.v[k][j][i][1].ub  # lb
+                        vkjU = self.v[k][j][i][0].ub  # ub
+
+                    self.model += (self.v[j][k][i][0] - self.v[j][k][i][1]) == self.x[j][i] - self.x[k][i] - self.instance.times[k][i], 'MCLinV({},{},{})'.format(j, k, i)
+                    self.model += (self.v[k][j][i][0] - self.v[k][j][i][1]) == self.x[k][i] - self.x[j][i] - self.instance.times[j][i], 'MCLinV({},{},{})'.format(k, j, i)
+                    self.model += (self.u[j][k][i][0] - self.u[j][k][i][1]) >= 0, 'MCLin1({},{},{})'.format(j, k, i)
+                    self.model += (self.u[j][k][i][0] - self.u[j][k][i][1]) >= vjkL * self.y[k][j][i], 'MCLin2({},{},{})'.format(j, k, i)
+                    self.model += (self.u[j][k][i][0] - self.u[j][k][i][1]) >= (self.v[j][k][i][0] - self.v[j][k][i][1]) + vjkU * self.y[k][j][i] - vjkU, 'MCLin3({},{},{})'.format(j, k, i)
+                    self.model += (self.u[j][k][i][0] - self.u[j][k][i][1]) <= vjkU * self.y[k][j][i], 'MCLin4({},{},{})'.format(j, k, i)
+                    self.model += (self.u[j][k][i][0] - self.u[j][k][i][1]) <= (self.v[j][k][i][0] - self.v[j][k][i][1]) + vjkL * self.y[k][j][i] - vjkL, 'MCLin5({},{},{})'.format(j, k, i)
+                    self.model += (self.u[k][j][i][0] - self.u[k][j][i][1]) >= 0, 'MCLin6({},{},{})'.format(k, j, i)
+                    self.model += (self.u[k][j][i][0] - self.u[k][j][i][1]) >= vkjL * self.y[j][k][i], 'MCLin7({},{},{})'.format(k, j, i)
+                    self.model += (self.u[k][j][i][0] - self.u[k][j][i][1]) >= (self.v[k][j][i][0] - self.v[k][j][i][1]) + vkjU * self.y[j][k][i] - vkjU, 'MCLin8({},{},{})'.format(k, j, i)
+                    self.model += (self.u[k][j][i][0] - self.u[k][j][i][1]) <= vkjU * self.y[j][k][i], 'MCLin9({},{},{})'.format(k, j, i)
+                    self.model += (self.u[k][j][i][0] - self.u[k][j][i][1]) <= (self.v[k][j][i][0] - self.v[k][j][i][1]) + vkjL * self.y[j][k][i] - vkjL, 'MCLin10({},{},{})'.format(k, j, i)
+
+        # constraints (5)
+        for j in range(self.instance.n):
+            self.model += self.c - self.x[j][self.instance.machines[j][self.instance.m - 1]] >= self.instance.times[j][
+                self.instance.machines[j][self.instance.m - 1]], 'makespan({})'.format(j)
+        self.model.write(
+            '{}_modelMCLinNonNeg.lp'.format(self.instance.instancename.translate(str.maketrans('', '', string.punctuation))))
+
 
     # cutpool
     def optmizeCuts(self):

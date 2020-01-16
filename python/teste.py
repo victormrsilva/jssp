@@ -410,15 +410,14 @@ class Teste:
             indexes.append(i)
 
         for i in range(len(model.vars)):
-            print(model.vars[i].name, model.vars[i].x, end='')
+            print(' {}: {}'.format(model.vars[i].name, round(model.vars[i].x, 10)), end='')
             if abs(model.vars[i].x - model.vars[i].ub) < eps:
-                print(' *')
-            else:
-                print()
+                print('*', end='')
 
+        print()
         constrs = [c for c in model.constrs if not c.name.startswith('gomory')]
-        for i in range(len(constrs)):
-            print(i, constrs[i])
+        # for i in range(len(constrs)):
+        #     print(i, constrs[i])
 
         u = [m.add_var(var_type=CONTINUOUS, lb=0, ub=1 - delta,
                        name='u({})'.format(constrs[i].name)) for i in range(len(constrs))]
@@ -430,7 +429,7 @@ class Teste:
 
         newconstraints = {model.vars[i].name: 0 for i in indexes}
         newconstraints['b'] = 0
-        print(newconstraints)
+        # print(newconstraints)
         for i in range(len(constrs)):
             mult = 1
             c = model.constrs[i]
@@ -459,7 +458,7 @@ class Teste:
             for k in range(m.num_solutions):
                 teste = 0
                 for i in indexes:
-                    print(model.vars[i].name, round(a[model.vars[i].name].xi(k), 10))
+                    # print(model.vars[i].name, round(a[model.vars[i].name].xi(k), 10))
                     teste += model.vars[i] * round(a[model.vars[i].name].xi(k), 10)
                 var = 0
                 b = 0
@@ -476,16 +475,16 @@ class Teste:
                 b = np.floor(round(b, 10))
                 restr = 0
                 soma = 0
-                print('var: ', var, ' b: ', b)
+                # print('var: ', var, ' b: ', b)
                 for (v, coeff) in var.expr.items():
                     restr += np.floor(round(coeff, 10)) * v
                     soma += np.floor(round(coeff, 10)) * v.x
 
-                print('eq: ', restr, 'soma; ', soma, 'b: ', b, 'soma > b?', soma > b)
-                print('teste: ', teste, ';soma:', xsum(model.vars[i].x * round(a[model.vars[i].name].xi(k), 10) for i in indexes),
-                      ';a0:', a0.xi(k))
-                print('==========================')
-                if round(soma, 10) > round(b, 10) and len(restr.expr.items()) > 0:
+                # print('eq: ', restr, 'soma; ', soma, 'b: ', b, 'soma > b?', soma > b)
+                # print('teste: ', teste, ';soma:', xsum(model.vars[i].x * round(a[model.vars[i].name].xi(k), 10) for i in indexes),
+                #       ';a0:', a0.xi(k))
+                # print('==========================')
+                if round(soma, 10) > round(b, 10) + 0.0001 and len(restr.expr.items()) > 0:
                     restrictions.append(restr <= b)
         return restrictions
 
@@ -501,7 +500,7 @@ class Teste:
         self.model.read(lp)
         self.model.relax()
         self.model.optimize()
-        input('{} - obj: {} ; atual = {}'.format(lp, obj, self.model.objective_value))
+        # input('{} - obj: {} ; atual = {}'.format(lp, obj, self.model.objective_value))
 
         if funcao == 1:
             cg = self.chvatal_gomory()
@@ -512,7 +511,7 @@ class Teste:
         else:
             cg = self.chvatal_gomory_4try()
         totalCG = 0
-        input('{} - obj: {} ; atual = {} ; CG encontrado: {}'.format(lp, obj, self.model.objective_value, len(cg)))
+        print('{} - obj: {} ; atual = {} ; CG encontrado: {}'.format(lp, obj, self.model.objective_value, len(cg)))
         while len(cg) > 0:
             for r in cg:
                 print(r)
@@ -529,11 +528,11 @@ class Teste:
                 cg = self.chvatal_gomory_3try()
             else:
                 cg = self.chvatal_gomory_4try()
-            input('{} - obj: {} ; atual = {} ; CG encontrado: {}'.format(lp, obj, self.model.objective_value, len(cg)))
+            print('{} - obj: {} ; atual = {} ; CG encontrado: {}'.format(lp, obj, self.model.objective_value, len(cg)))
 
         self.model.optimize()
-        if obj < self.model.objective_value:
-            input('{} - obj: {} ; atual = {} ; CG encontrado: {}'.format(lp, obj, self.model.objective_value, len(cg)))
+        # if obj < self.model.objective_value:
+            # input('{} - obj: {} ; atual = {} ; CG encontrado: {}'.format(lp, obj, self.model.objective_value, len(cg)))
 
     def criaTestes(self):
         maxlp = 50
@@ -766,12 +765,12 @@ if __name__ == "__main__":
     #     input('/***************************************************/')
     cg = int(sys.argv[2])
     t = Teste()
-    # t.teste(sys.argv[1], cg)
+    t.teste(sys.argv[1], cg)
     # t.teste('teste0.lp')
     # t.teste('rcpsp7.lp')
     # t.teste('vi_33_28_cuts.lp')
     # t.teste('vi4439_modelMCLin.lp')
     # t.teste('vi3328_modelMCLin.lp')
-    t.criaTestes_2vars()
+    # t.criaTestes_2vars()
 
 

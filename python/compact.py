@@ -1,15 +1,15 @@
 # compact.py
 import string
 
-from mip.model import Model, xsum
-from mip.constants import INTEGER, BINARY, CONTINUOUS
+from mip.model import Model, xsum, Var
+from mip.constants import INTEGER, BINARY, CONTINUOUS, OptimizationStatus
 import sys
 from time import process_time, time
 import numpy as np
 import copy
 
 # from compact_cutpool import Compact_CutPool
-from simulatedannealing import SimulatedAnnealing
+from SA_clique import Clique
 
 from itertools import permutations, combinations
 
@@ -86,7 +86,7 @@ class Compact:
     # build the problem with McCormick linearization
     def constructProblemMcCormick(self):
         print('McCormic linearization')
-
+        self.model.clear()
         self.c = self.model.add_var(var_type=INTEGER, lb=0, ub=self.instance.K, name="C")
 
         for i in range(self.instance.m):
@@ -156,7 +156,7 @@ class Compact:
             '{}_modelMCLin.lp'.format(self.instance.instancename.translate(str.maketrans('', '', string.punctuation))))
 
     def constructProblemMcCormickNonNegative(self):
-        print('McCormic linearization non-negative')
+        # print('McCormic linearization non-negative')
 
         self.c = self.model.add_var(var_type=INTEGER, lb=0, ub=self.instance.K, name="C")
 
@@ -287,12 +287,13 @@ class Compact:
         cutsFound = 0
         firstObjValue = 0
         start = time()
+
         while newConstraints:
             self.iterationsCuts += 1
             newConstraints = False
             self.model.verbose = 0
             self.model.optimize()
-
+            self.clique_heuristic()
             if firstObjValue == 0:  # first execution
                 firstObjValue = self.model.objective_value
                 # execute clique (must be only executed at the beginning of the cuts)
@@ -399,7 +400,6 @@ class Compact:
     def basic_cuts_best(self, a):
         m = self.m
         m.clear()
-        # print('Best basic cuts')
         m.verbose = 0
         x_aux = [m.add_var(var_type=BINARY, lb=0, name='x({})'.format(i)) for i in range(self.instance.n)]
         v = [m.add_var(var_type=INTEGER, lb=0, name='v({})'.format(i)) for i in range(self.instance.n)]
@@ -409,18 +409,18 @@ class Compact:
         y = [m.add_var(var_type=INTEGER, lb=0, name='y({})'.format(i)) for i in range(self.instance.n)]
         o = [m.add_var(var_type=BINARY, lb=0, name='e({})'.format(i)) for i in range(self.instance.n)]
         z = m.add_var(var_type=INTEGER, name='E')
+        c = m.add_var(var_type=CONTINUOUS, lb=-100 * self.instance.K, name='C')
+        rs = m.add_var(var_type=INTEGER, lb=-100 * self.instance.K, name='rs')
+        ls = m.add_var(var_type=INTEGER, lb=-100 * self.instance.K, name='ls')
 
-        # var = xsum(self.instance.times[j][a] * self.x[j][a].x * x_aux[j] for j in range(self.instance.n))
+        m.objective = c
 
-        # var += - xsum(self.instance.times[j][a]*e_p[j] for j in range(self.instance.n))
-        # z*xsum(self.instance.times[j][a] * x_aux[j] for j in range(self.instance.n))
-        # var += - xsum(self.instance.times[j][a] * self.instance.times[i][a] * xij[i][j] for i in range(self.instance.n) for j in range(i+1,self.instance.n))
-        m.objective = xsum(
-            self.instance.times[j][a] * self.x[j][a].x * x_aux[j] for j in range(self.instance.n)) - xsum(
-            self.instance.times[j][a] * e_p[j] for j in range(self.instance.n)) - xsum(
-            self.instance.times[j][a] * self.instance.times[i][a] * xij[j][i] for i in range(self.instance.n) for j in
-            range(i + 1, self.instance.n))
-        # print(var)
+        m += c == rs - ls, 'C'
+        m += rs - ls <= 0, 'violado'
+        m += rs == xsum(self.instance.times[j][a] * self.x[j][a].x * x_aux[j] for j in range(self.instance.n)), 'RS'
+        m += ls == xsum(self.instance.times[j][a] * e_p[j] for j in range(self.instance.n)) + xsum(
+            self.instance.times[j][a] * self.instance.times[i][a] * xij[j][i] for i in range(self.instance.n) for j
+            in range(i + 1, self.instance.n)), 'LS'
 
         for j in range(self.instance.n):
             m += v[j] - self.instance.e[j][a] * x_aux[j] + self.instance.K * x_aux[
@@ -442,17 +442,9 @@ class Compact:
         m += xsum(o[j] for j in range(self.instance.n)) == 1, 'eq32'
         m += xsum(x_aux[j] for j in range(self.instance.n)) >= 2, 'minimum_jobs'
 
-        # m.write('best_model.lp')
-        # input('modelo pronto')
         m.optimize()
-        # print('{}'.format((round(m.objective_value,2))) )
-        # for j in range(self.instance.n):
-        #     print('x[{}] = {}'.format(j, round(x_aux[j].x,2)))
-        #     print('v[{}] = {}'.format(j, round(v[j].x,2)))
-        #     print('y[{}] = {}'.format(j, round(y[j].x,2)))
-        #     print('o[{}] = {}'.format(j, round(o[j].x,2)))
-        # print('z = {}'.format(round(z.x,2)))
-        # input()
+        if m.status != OptimizationStatus.OPTIMAL:
+            return 0
 
         if m.objective_value > -0.0001:
             return 0
@@ -470,68 +462,62 @@ class Compact:
         for i in range(len(S)):
             for j in range(i + 1, len(S)):
                 ls += self.instance.times[S[i]][a] * self.instance.times[S[j]][a]
-        # print(xsum(self.instance.times[j][a] * self.x[j][a] for j in S) >= ls)
-        self.model += xsum(self.instance.times[j][a] * self.x[j][a] for j in S) >= ls, 'basic_cuts_best' \
-                                                                                       '{}({},{})'.format(
-            self.iterationsCuts, ''.join(str(i) for i in S), a)
-        # input()
+
+        c_name = 'cut_basic_best({},{})'.format(''.join(str(i) for i in S), a)
+        # m.write('teste_cut.lp')
+        # print(c_name, m.objective_value)
+        # c = self.model.constr_by_name(c_name)
+        # if c is not None:
+        #     print(c_name, m.objective_value)
+        #     print(c)
+        #     m.write('teste_cut.lp')
+        #     input()
+        #     return 0
+        # self.model.remove(c)
+        self.model += xsum(self.instance.times[j][a] * self.x[j][a] for j in S) >= ls, c_name
+
+        # self.model += xsum(self.instance.times[j][a] * self.x[j][a] for j in S) >= ls, 'cut_basic_best' \
+        #                                                                              '{}({},{})'.format(
+        #     self.iterationsCuts, ''.join(str(i) for i in S), a)
         return 1
 
     def basic_cuts_plus_epsilon_best(self, a, k):
-        # print('Best basic cuts plus epsilon. K = {}'.format(k))
         m = self.m
         m.clear()
         m.verbose = 0
         x_aux = [m.add_var(var_type=BINARY, lb=0, name='x({})'.format(i)) for i in range(self.instance.n)]
         xij = [[m.add_var(var_type=BINARY, lb=0, name='xij({},{})'.format(i, j)) for i in range(self.instance.n)] for j
                in range(self.instance.n)]
+        c = m.add_var(var_type=CONTINUOUS, lb=-100 * self.instance.K, name='C')
+        rs = m.add_var(var_type=INTEGER, lb=-100 * self.instance.K, name='rs')
+        ls = m.add_var(var_type=INTEGER, lb=-100 * self.instance.K, name='ls')
+
         for i in range(self.instance.n):
             for j in range(i + 1, self.instance.n):
                 xij[i][j] = xij[j][i]
 
-        # for j in range(self.instance.n):
-        #     if j != k:
-        #         print('+{}*{}*{}'.format(self.instance.times[j][a], self.x[j][a].x , x_aux[j].name), end='')
-        # print()
-        # for i in range(self.instance.n):
-        #     for j in range(i+1, self.instance.n):
-        #         if j != k and i != k:
-        #             print('- {}*{}*{}'.format(self.instance.times[j][a], self.instance.times[i][a], xij[i][j].name), end='')
-        # print()
-        # for j in range(self.instance.n):
-        #     if k != j:
-        #         print('-{}*{}*{}'.format(self.instance.e[k][a], self.instance.times[j][a], x_aux[j].name), end='')
-        # print()
-        # for j in range(self.instance.n):
-        #     if j != k:
-        #         print('- {}*{}*{}*{}'.format(self.y[j][k][a].x, max(self.instance.e[k][a] - self.instance.e[j][a], 0), self.instance.times[j][a], x_aux[j].name), end='')
-        # print()
-        # for i in range(self.instance.n):
-        #     for j in range(self.instance.n):
-        #         if j != k and i != k and j != k:
-        #             print('- {}*{}*{}*{}'.format(self.y[i][k][a].x, max(self.instance.e[k][a] - self.instance.e[i][a], 0), self.instance.times[j][a], xij[i][j].name), end='')
-        # print()
-
         var = xsum(
-            self.instance.times[j][a] * self.x[j][a].x * x_aux[j] for j in range(self.instance.n))  # part 1 of cut
-        var += - xsum(
             self.instance.times[j][a] * self.instance.times[i][a] * xij[i][j] for i in range(self.instance.n) for j in
             range(i + 1, self.instance.n))  # part 2 of cut
-        var += - self.instance.e[k][a] * xsum(
+        var += self.instance.e[k][a] * xsum(
             self.instance.times[j][a] * x_aux[j] for j in range(self.instance.n) if j != k)  # part 3 of cut
-        var += xsum(
+        var -= xsum(
             self.y[j][k][a].x * max(self.instance.e[k][a] - self.instance.e[j][a], 0) * self.instance.times[j][a] *
             x_aux[j] for j in range(self.instance.n) if
-            j != k)  # part 4 of cut if i == j (just expand the multiplication)
-        var += xsum(
+            j != k and not isinstance(self.y[j][k][a], int))  # part 4 of cut if i == j (just expand the multiplication)
+        var -= xsum(
             self.y[i][k][a].x * max(self.instance.e[k][a] - self.instance.e[i][a], 0) * self.instance.times[j][a] *
             xij[i][j] for i in range(self.instance.n) for j in range(self.instance.n) if
-            i != k and j != k and i != j)  # part 4 of cut if i != j (just expand the multiplication)
-        # print(var)
-        # input()
-        m.objective = var
-        # print(var)
+            i != k and j != k and i != j and not isinstance(self.y[i][k][a],
+                                                            int))  # part 4 of cut if i != j (just expand the multiplication)
 
+        m.objective = c
+        m += c == ls - rs, 'C'
+        m += c <= 0, 'violado'
+        m += ls == xsum(
+            self.instance.times[j][a] * self.x[j][a].x * x_aux[j] for j in
+            range(self.instance.n)), 'LS'  # part 1 of cut
+        m += rs == var, 'RS'
         for j in range(self.instance.n):
             for i in range(j + 1, self.instance.n):
                 m += xij[i][j] <= x_aux[i], 'xij1({},{})'.format(j, i)
@@ -540,13 +526,10 @@ class Compact:
         m += x_aux[k] == 0, 'not_in_S'
         m += xsum(x_aux[j] for j in range(self.instance.n)) >= 2, 'minimum_jobs'
 
-        # m.write('best_model.lp')
-        # input('modelo pronto')
         m.optimize()
-        # print('{}'.format((round(m.objective_value,2))) )
-        # for j in range(self.instance.n):
-        #     print('x[{}] = {}'.format(j, round(x_aux[j].x,2)))
-        # input()
+
+        if m.status != OptimizationStatus.OPTIMAL:
+            return 0
 
         if m.objective_value > -0.0001:
             return 0
@@ -559,22 +542,40 @@ class Compact:
         if len(S) <= 1:
             return 0
 
-        # left side
-        ls = self.instance.e[k][a] * self.p(S, a)
+        c_name = 'cut_basic_plus_epsilon_best({},{},{})'.format(''.join(str(i) for i in S), a, k)
+        # self.printSolution()
+        # for j in range(self.instance.n):
+        #     print('{}*{}*{} + '.format(self.instance.times[j][a], self.x[j][a].x, x_aux[j]), end='')
+        # print()
+        # print(c_name, m.objective_value)
+        # m.write('teste_cut.lp')
+        # input()
+
+        # c = self.model.constr_by_name(c_name)
+        # if c is not None:
+        #     print(c_name, m.objective_value)
+        #     m.write('teste_cut.lp')
+        #     input()
+        #     return 0
+        # self.model.remove(c)
+
+        # right side
+        rs = self.instance.e[k][a] * self.p(S, a)
         for i in range(len(S)):
             for j in range(i + 1, len(S)):
-                ls += self.instance.times[S[i]][a] * self.instance.times[S[j]][a]
+                rs += self.instance.times[S[i]][a] * self.instance.times[S[j]][a]
 
-        # print(xsum(self.instance.times[j][a] * self.x[j][a] for j in S) + xsum(self.y[j][k][a] * max(self.instance.e[k][a] - self.instance.e[j][a], 0) for j in S) * self.p(S,a)>= ls)
         self.model += xsum(self.instance.times[j][a] * self.x[j][a] for j in S) + xsum(
-            self.y[j][k][a] * max(self.instance.e[k][a] - self.instance.e[j][a], 0) for j in S) * self.p(S,
-                                                                                                         a) >= ls, 'basic_cuts_plus_epsilon_best{}({},{},{})'.format(
-            self.iterationsCuts, ''.join(str(i) for i in S), a, k)
-        # input()
+            self.y[j][k][a] * max(self.instance.e[k][a] - self.instance.e[j][a], 0) for j in S) * \
+                    self.p(S, a) >= rs, c_name
+
+        # self.model += xsum(self.instance.times[j][a] * self.x[j][a] for j in S) + xsum(
+        #     self.y[j][k][a] * max(self.instance.e[k][a] - self.instance.e[j][a], 0) for j in S) * self.p(S,
+        #                                                                                                  a) >= ls, 'cut_basic_plus_epsilon_best{}({},{},{})'.format(
+        #     self.iterationsCuts, ''.join(str(i) for i in S), a, k)
         return 1
 
     def half_cuts_best(self, a, k):
-        # print('Best half cuts. K = {}'.format(k))
         m = self.m
         m.clear()
         m.verbose = 0
@@ -583,20 +584,19 @@ class Compact:
         t = [m.add_var(var_type=INTEGER, lb=0, name='t({})'.format(i)) for i in range(self.instance.n)]
         o = [m.add_var(var_type=BINARY, lb=0, name='o({})'.format(i)) for i in range(self.instance.n)]
         e = m.add_var(var_type=INTEGER, name='E')
-        C = m.add_var(name='C', lb=-100 * self.instance.K)
+        c = m.add_var(var_type=CONTINUOUS, lb=-100 * self.instance.K, name='C')
+        rs = m.add_var(var_type=INTEGER, lb=-100 * self.instance.K, name='rs')
+        ls = m.add_var(var_type=INTEGER, lb=-100 * self.instance.K, name='ls')
+        # C = m.add_var(name='C', lb=-100 * self.instance.K)
 
-        # print(self.x[k][a].x)
-        # print(e)
-        # for j in range(self.instance.n):
-        #     if j != k:
-        #         print(' - {}*{}*{}'.format( self.y[j][k][a].x,self.instance.times[j][a],x_aux[j].name,end=''))
-        # print()
-        var = self.x[k][a].x - e - xsum(
-            self.y[j][k][a].x * self.instance.times[j][a] * x_aux[j] for j in range(self.instance.n) if j != k)
+        m.objective = c
 
-        m.objective = C
-        # print(var)
-
+        m += ls == self.x[k][a].x, 'LS'
+        m += rs == e + xsum(
+            self.y[j][k][a].x * self.instance.times[j][a] * x_aux[j] for j in range(self.instance.n) if j != k and
+            not isinstance(self.y[j][k][a], int)), 'RS'
+        m += c == ls - rs, 'C'
+        m += c <= 0, 'violado'
         for j in range(self.instance.n):
             m += v[j] - self.instance.e[j][a] * x_aux[j] + self.instance.K * x_aux[
                 j] == self.instance.K, 'eq26({})'.format(j)
@@ -608,23 +608,16 @@ class Compact:
         m += xsum(o[j] for j in range(self.instance.n)) == 1, 'eq32'
         m += xsum(x_aux[j] for j in range(self.instance.n)) >= 2, 'minimum_jobs'
         m += x_aux[k] == 1, 'k_in_S'
-        m += C + e + xsum(
-            self.y[j][k][a].x * self.instance.times[j][a] * x_aux[j] for j in range(self.instance.n) if j != k) == \
-             self.x[k][a].x
+        # m += C + e + xsum(
+        #     self.y[j][k][a].x * self.instance.times[j][a] * x_aux[j] for j in range(self.instance.n) if j != k and
+        #         not isinstance(self.y[j][k][a], int)) == self.x[k][a].x
 
-        # m.write('best_model.lp')
-        # input('modelo pronto')
         m.optimize()
-        # print('{}'.format((round(m.objective_value,2))) )
-        # for j in range(self.instance.n):
-        #     print('x[{}] = {}'.format(j, round(x_aux[j].x,2)))
-        #     print('v[{}] = {}'.format(j, round(v[j].x,2)))
-        #     print('t[{}] = {}'.format(j, round(t[j].x,2)))
-        #     print('o[{}] = {}'.format(j, round(o[j].x,2)))
-        # print('e = {}'.format(round(e.x,2)))
-        # input()
 
-        if m.objective_value > -0.0001:
+        if m.status != OptimizationStatus.OPTIMAL:
+            return 0
+
+        if (m.objective_value) > -0.00000001:
             return 0
 
         S = []
@@ -632,55 +625,63 @@ class Compact:
             if x_aux[j].x > 0.99999:
                 S.append(j)
 
-        if len(S) <= 1:
-            return 0
-
+        c_name = 'cut_half_best({},{},{})'.format(k, ''.join(str(i) for i in S), a)
+        # self.printSolution()
+        # print(c_name, m.objective_value)
+        # m.write('teste_cut.lp')
+        # print(e.x, end='')
+        # for j in range(self.instance.n):
+        #     if j != k:
+        #         print(' + {}*{}*{}'.format(self.y[j][k][a].x, self.instance.times[j][a], x_aux[j]), end='')
+        # input()
+        # c = self.model.constr_by_name(c_name)
+        # # # print(c_name)
+        # if c is not None:
+        #     print(c)
+        #     print(c_name, m.objective_value)
+        # #     print('{} {}'.format(self.x[k][a].x, m.objective_value))
+        # #     print(self.x[k][a].x - self.E(S, a) - xsum(self.y[j][k][a].x * self.instance.times[j][a] for j in S if j != k))
+        #     self.printSolution()
+        #     self.model.write('teste.lp')
+        #     m.write('teste_cut.lp')
+        #     input()
+        #     return 0
+        #     # self.model.remove(c)
         self.model += self.x[k][a] - self.E(S, a) - xsum(
-            self.y[j][k][a] * self.instance.times[j][a] for j in S if j != k) >= 0, 'half_cuts_best{}({},{},{})'.format(
-            self.iterationsCuts, k, ''.join(str(i) for i in S), a)
+            self.y[j][k][a] * self.instance.times[j][a] for j in S if j != k) >= 0, c_name
+
+        # self.model += self.x[k][a] - self.E(S, a) - xsum(
+        #     self.y[j][k][a] * self.instance.times[j][a] for j in S if j != k) >= 0, 'cut_half_best{}({},{},{})'.format(
+        #     self.iterationsCuts, k, ''.join(str(i) for i in S), a)
         # input()
         return 1
 
     def late_job_cuts_best(self, a, k, l):
-        # print('Best Late jobs cuts. K = {}. L = {}'.format(k, l))
         m = self.m
         m.clear()
         m.verbose = 0
         x_aux = [m.add_var(var_type=BINARY, lb=0, name='x({})'.format(i)) for i in range(self.instance.n)]
-        C = m.add_var(name='C', lb=-100 * self.instance.K)
-
-        # print(self.x[k][a].x)
-        # print(- self.instance.e[l][a])
-        # for j in range(self.instance.n):
-        #     if j != k:
-        #         print(' - {}*{}*{}'.format( self.y[j][k][a].x,self.instance.times[j][a],x_aux[j].name,end=''))
-        # print()
-        # for j in range(self.instance.n):
-        #     if j != l:
-        #         print(' + {}*{}*{}'.format( self.y[j][l][a].x,max(self.instance.e[l][a] - self.instance.e[j][a], 0),x_aux[j].name,end=''))
-        # print()
-        var = self.x[k][a].x - self.instance.e[l][a] - xsum(
-            self.y[j][k][a].x * self.instance.times[j][a] * x_aux[j] for j in range(self.instance.n) if j != k)
-        var += xsum(self.y[j][l][a].x * max(self.instance.e[l][a] - self.instance.e[j][a], 0) * x_aux[j] for j in
-                    range(self.instance.n) if j != l)
+        rs = m.add_var(var_type=INTEGER, lb=-100 * self.instance.K, name='rs')
+        ls = m.add_var(var_type=INTEGER, lb=-100 * self.instance.K, name='ls')
+        C = m.add_var(var_type=CONTINUOUS, name='C', lb=-100 * self.instance.K)
+        var = self.instance.e[l][a]
+        var += xsum(self.y[j][k][a].x * self.instance.times[j][a] * x_aux[j] for j in range(self.instance.n)
+                    if j != k and not isinstance(self.y[j][k][a], int))
+        var -= xsum(self.y[j][l][a].x * max(self.instance.e[l][a] - self.instance.e[j][a], 0) * x_aux[j]
+                    for j in range(self.instance.n) if j != l and not isinstance(self.y[j][l][a], int))
 
         m.objective = C
-        # print(var)
-
+        m += ls == self.x[k][a].x, 'LS'
+        m += rs == var, 'RS'
+        m += C == ls - rs, 'C'
+        m += C <= 0, 'violado'
         m += xsum(x_aux[j] for j in range(self.instance.n)) >= 2, 'minimum_jobs'
         m += x_aux[k] == 1, 'k_in_S'
-        m += C + xsum(self.y[j][k][a].x * self.instance.times[j][a] * x_aux[j] for j in range(self.instance.n)
-                      if j != k) - xsum(self.y[j][l][a].x * max(self.instance.e[l][a] - self.instance.e[j][a], 0)
-                                        * x_aux[j] for j in range(self.instance.n) if j != l) == self.x[k][a].x - \
-             self.instance.e[l][a]
 
-        # m.write('best_model.lp')
-        # input('modelo pronto')
         m.optimize()
-        # print('obj: {}'.format((round(m.objective_value,2))) )
-        # for j in range(self.instance.n):
-        #     print('x[{}] = {}'.format(j, round(x_aux[j].x,2)))
-        # input()
+
+        if m.status != OptimizationStatus.OPTIMAL:
+            return 0
 
         if m.objective_value > -0.0001:
             return 0
@@ -693,12 +694,28 @@ class Compact:
         if len(S) <= 1:
             return 0
 
+        c_name = 'cut_late_job_best({},{},{},{})'.format(''.join(str(i) for i in S), a, k, l)
+        # print(c_name, m.objective_value)
+        # self.printSolution()
+        # m.write('teste_cut.lp')
+        # input()
+        # c = self.model.constr_by_name(c_name)
+        # if c is not None:
+        #     print(c_name, m.objective_value)
+        #     self.printSolution()
+        #     m.write('teste_cut.lp')
+        #     input()
+        #     return 0
+        # self.model.remove(c)
         self.model += self.x[k][a] - xsum(self.y[j][k][a] * self.instance.times[j][a] for j in S if j != k) + xsum(
             self.y[j][l][a] * max(self.instance.e[l][a] - self.instance.e[j][a], 0) for j in S if j != l) >= \
-                      self.instance.e[l][a], 'late_job_cuts_best{}({},{},{},{})'.format(self.iterationsCuts,
-                                                                                        ''.join(str(i) for i in S), a,
-                                                                                        k, l)
-        # input('corte criado')
+                    self.instance.e[l][a], c_name
+
+        # self.model += self.x[k][a] - xsum(self.y[j][k][a] * self.instance.times[j][a] for j in S if j != k) + xsum(
+        #     self.y[j][l][a] * max(self.instance.e[l][a] - self.instance.e[j][a], 0) for j in S if j != l) >= \
+        #             self.instance.e[l][a], 'cut_late_job_best{}({},{},{},{})'.format(self.iterationsCuts,
+        #                                                                              ''.join(str(i) for i in S), a,
+        #                                                                              k, l)
         return 1
 
     def two_jobs_cuts_best(self, a):
@@ -709,24 +726,25 @@ class Compact:
         x_aux = [m.add_var(var_type=BINARY, lb=0, name='x({})'.format(i)) for i in range(self.instance.n)]
         xij = [[m.add_var(var_type=BINARY, lb=0, name='xij({},{})'.format(i, j)) for i in range(self.instance.n)] for j
                in range(self.instance.n)]
+        rs = m.add_var(var_type=INTEGER, lb=-100 * self.instance.K, name='rs')
+        ls = m.add_var(var_type=INTEGER, lb=-100 * self.instance.K, name='ls')
+        c = m.add_var(var_type=CONTINUOUS, lb=-100 * self.instance.K, name='c')
         for i in range(self.instance.n):
             for j in range(i + 1, self.instance.n):
                 xij[i][j] = xij[j][i]
 
-        var = xsum(self.instance.times[j][a] * self.x[j][a].x * x_aux[j] for j in range(self.instance.n))
-        var += xsum(self.instance.e[j][a] * self.x[j][a].x * x_aux[j] for j in range(self.instance.n))
+        var = 0
+        var2 = 0
         for i in range(self.instance.n):
-            for j in range(self.instance.n):
-                if i != j:
-                    var -= self.instance.e[i][a] * self.x[j][a].x * xij[i][j]
-                    var -= self.instance.e[i][a] * self.instance.times[j][a] * xij[i][j]
-                if j > i:
-                    var -= self.instance.times[i][a] * self.instance.times[j][a] * xij[i][j]
-        # print(var)
-        # input()
-        m.objective = var
-
-        # print(var)
+            for j in range(i + 1, self.instance.n):
+                var += (self.instance.times[i][a] + self.instance.e[i][a] - self.instance.e[j][a]) * self.x[i][a].x * \
+                       xij[i][j]
+                var += (self.instance.times[j][a] + self.instance.e[j][a] - self.instance.e[i][a]) * self.x[j][a].x * \
+                       xij[i][j]
+                var2 += self.instance.times[i][a] * self.instance.times[j][a] * xij[i][j]
+                var2 += self.instance.e[i][a] * self.instance.times[j][a] * xij[i][j]
+                var2 += self.instance.e[j][a] * self.instance.times[i][a] * xij[i][j]
+        m.objective = c
 
         for j in range(self.instance.n):
             for i in range(j + 1, self.instance.n):
@@ -734,16 +752,17 @@ class Compact:
                 m += xij[i][j] <= x_aux[j], 'xij2({},{})'.format(j, i)
                 m += xij[i][j] >= x_aux[j] + x_aux[i] - 1, 'xij3({},{})'.format(j, i)
         m += xsum(x_aux[j] for j in range(self.instance.n)) == 2, 'must_be_2'
+        m += ls == var, 'LS'
+        m += rs == var2, 'RS'
+        m += c == ls - rs, 'C'
+        m += c <= 0, 'violado'
 
-        # m.write('best_model.lp')
-        # input('modelo pronto')
         m.optimize()
-        # print('{}'.format((round(m.objective_value,2))) )
-        # for j in range(self.instance.n):
-        #     print('x[{}] = {}'.format(j, round(x_aux[j].x,2)))
-        # input()
 
-        if m.objective_value > -0.0001:
+        if m.status != OptimizationStatus.OPTIMAL:
+            return 0
+
+        if m.objective_value > -0.000001:
             return 0
 
         S = []
@@ -754,8 +773,31 @@ class Compact:
         if len(S) <= 1:
             return 0
 
+        # apply cut to the model
+        c_name = 'cut_two_jobs({},{},{})'.format(S[0], S[1], a)
+        # m.write('teste_cut.lp')
+        # print(c_name, m.objective_value)
+        # c = self.model.constr_by_name(c_name)
+        # if c is not None:
+        #     self.printSolution()
+        #     i = S[0]
+        #     j = S[1]
+        #     print(c_name)
+        #     print(c)
+        #     print(m.objective_value)
+        #     print('({} + {} - {}) * {} + ({} + {} - {}) * {} >= {}*{} + {}*{} + {}*{}'.format(
+        #         self.instance.times[i][a], self.instance.e[i][a], self.instance.e[j][a], self.x[i][a].x,
+        #         self.instance.times[j][a], self.instance.e[j][a], self.instance.e[i][a], self.x[j][a].x,
+        #         self.instance.times[i][a], self.instance.times[j][a],
+        #         self.instance.e[i][a], self.instance.times[j][a],
+        #         self.instance.e[j][a], self.instance.times[i][a]
+        #     ))
+        #     m.write('teste_cut.lp')
+            # self.model.write('teste.lp')
+            # input()
+            # self.model.remove(c)
+
         self.two_jobs_cuts(S[0], S[1], a)
-        # input()
         return 1
 
     def basic_cuts(self, S, a):
@@ -806,62 +848,96 @@ class Compact:
     # two-job cuts
     def two_jobs_cuts(self, i, j, a):
         # right side
-        rs = (self.instance.times[i][a] + self.instance.e[i][a] - self.instance.e[j][a]) * self.x[i][a].x + (
-                self.instance.times[j][a] + self.instance.e[j][a] - self.instance.e[i][a]) * self.x[j][a].x
-        # left side
-        ls = self.instance.times[i][a] * self.instance.times[j][a] + self.instance.e[i][a] * \
-             self.instance.times[j][a] + self.instance.e[j][a] * self.instance.times[i][a]
+        rs = self.instance.times[i][a] * self.instance.times[j][a] + \
+             self.instance.e[i][a] * self.instance.times[j][a] + \
+             self.instance.e[j][a] * self.instance.times[i][a]
+        # print('corte: {} {}'.format(rs, ls))
 
-        # apply cut to the model
         self.model += (self.instance.times[i][a] + self.instance.e[i][a] - self.instance.e[j][a]) * self.x[i][
             a] + (self.instance.times[j][a] + self.instance.e[j][a] - self.instance.e[i][a]) * self.x[j][
-                          a] >= ls, 'two_jobs_cuts{}({},{},{})'.format(self.iterationsCuts, i, j, a)
+                        a] >= rs, 'cut_two_jobs({},{},{})'.format(i, j, a)
+
+        # self.model += (self.instance.times[i][a] + self.instance.e[i][a] - self.instance.e[j][a]) * self.x[i][
+        #     a] + (self.instance.times[j][a] + self.instance.e[j][a] - self.instance.e[i][a]) * self.x[j][
+        #                 a] >= ls, 'cut_two_jobs{}({},{},{})'.format(self.iterationsCuts, i, j, a)
         return 1
+
+    def clique_heuristic(self, a, steps):
+        x_bar = [self.x[j][a].x for j in range(self.instance.n)]
+        p = [self.instance.times[j][a] for j in range(self.instance.n)]
+        est = [self.instance.est[j][a] for j in range(self.instance.n)]
+        clique = Clique(x_bar, p, est, steps)
+        escolhidos, t, custos = clique.annealing()
+        cuts = 0
+        if escolhidos.ndim > 1:
+            # print(escolhidos, t, custos)
+            cuts = len(escolhidos)
+            for e in range(len(escolhidos)):
+                c_name = 'cut_clique_{}({},{})'.format(self.iterationsCuts, ''.join(str(i) for i in np.where(escolhidos[e] == 1)[0]), a)
+                self.model += xsum(t[e][i] * self.x[i][a] for i in range(self.instance.n)) >= 1, c_name
+                # print('{} : Chosen = {} ; t = {} ; cost = {}'.format(c_name, escolhidos[e], t[e], custos[e]))
+        elif escolhidos.ndim == 1 and escolhidos.size > 0:
+            cuts = 1
+            c_name = 'cut_clique_{}({},{})'.format(self.iterationsCuts, ''.join(str(i) for i in np.where(escolhidos == 1)[0]), a)
+            self.model += xsum(t[i] * self.x[i][a] for i in range(self.instance.n)) >= 1, c_name
+            # print('{} : Chosen = {} ; t = {} ; cost = {}'.format(c_name, escolhidos, t, custos))
+        # print(x_bar, p, est)
+        # input('machine: {}'.format(a))
+        # self.model.write('teste.lp')
+        # input('lp escrito')
+        return cuts
 
     def clique_cuts(self, S, a):
         s_aux = list(range(len(S)))
         perms = np.asarray(list(permutations(s_aux)))
         perms = [np.asarray(s) for s in perms]
-        # print(perms)
 
         K = [[0] * len(S) for i in range(len(perms))]
-        # print(K)
 
         for i in range(len(K)):
             soma = 0
             for j in range(len(K[i])):
                 if j == 0:
-                    soma += self.instance.e[S[perms[i][j]]][a]
+                    soma = self.instance.est[S[perms[i][j]]][a]
                 else:
-                    soma += self.instance.times[S[perms[i][j - 1]]][a]
+                    soma = max(soma + self.instance.times[S[perms[i][j - 1]]][a], self.instance.est[S[perms[i][j]]][a])
                 for aux in range(j, len(K[i])):
                     K[i][perms[i][aux]] = soma
-        # print(K)
-        # input('input')
         m = self.m
         m.clear()
         m.verbose = 0
         t = [m.add_var(var_type=CONTINUOUS, lb=0, name='t({})'.format(i)) for i in S]
-        m.objective = xsum(i for i in t)
+        # c = m.add_var(var_type=CONTINUOUS, lb=0, name='c')
+        m.objective = xsum(self.x[S[i]][a].x * t[i] for i in range(len(S)))
 
         for i in range(len(K)):
             m += xsum(K[i][j] * t[j] for j in range(len(K[i]))) >= 1, 'K({})'.format(i)
-
-        # m.write('model_clique.lp')
+        # m += c == xsum(self.x[S[i]][a].x * t[i] for i in range(len(S))), 'C'
+        # m += c <= 1, 'violado'
         m.optimize()
 
-        soma = 0
-        for i in range(len(S)):
-            soma += t[i].x * self.x[S[i]][a].x
+        if m.status != OptimizationStatus.OPTIMAL:
+            return 0
 
-        cuts = 0
-        # xt >= is a valid inequality. Thus, a violated cut is < 1
-        if (1 - soma) > 0.00001:  # < 1:
-            cuts = 1
-            self.model += xsum(t[i].x * self.x[S[i]][a] for i in range(len(S))) >= 1, 'clique_cuts{}({},{})'.format(
-                self.iterationsCuts, ''.join(str(i) for i in S), a)
+        soma = m.objective_value
+        if soma > 0.99999999:
+            return 0
+        # x_bar = []
+        # t_bar = []
+        # for i in range(len(S)):
+        #     x_bar.append(self.x[S[i]][a].x)
+        #     t_bar.append(t[i].x)
+        c_name = 'cut_clique_{}({},{})'.format(self.iterationsCuts, ''.join(str(i) for i in S), a)
 
-        return cuts
+        # print(x_bar, t_bar, soma, c_name)
+        # m.write('teste_cut.lp')
+        # print(S)
+        # input('clique machine {}'.format(a))
+
+        self.model += xsum(round(t[i].x, 10) * self.x[S[i]][a] for i in range(len(S))) >= 1, c_name
+
+        return 1
+
 
     """
     # sc = size of smaller clique
@@ -869,13 +945,14 @@ class Compact:
     # maxCliques = maximum cliques to be investigated
     """
 
-    def clique_cuts_best(self, a):
+    def clique_cuts_best(self, a, lc=None, hc=None):
         cliquesFound = 0
         start = time()
         timeLimit = 600  # 10 minutes
-        for sizeS in range(self.lc, self.hc):
-            comb = combinations(list(range(0, self.instance.n)),
-                                sizeS + 1)  # combinations of all possibles jobs of size sizeS
+        lc = self.lc if lc is None else min(lc, self.instance.n)
+        hc = self.hc if hc is None else min(hc, self.instance.n)
+        for sizeS in range(lc, hc+1):
+            comb = combinations(list(range(0, self.instance.n)), sizeS)  # combinations of all possibles jobs of size sizeS
             comb = list(comb)
             dict = {}
             for s in range(len(comb)):
@@ -884,33 +961,25 @@ class Compact:
                     return 0
                 dist = 0
                 S = comb[s]
-                for i in list(range(0, sizeS + 1)):
-                    for j in list(range(i + 1, sizeS + 1)):
+                for i in list(range(0, sizeS)):
+                    for j in list(range(i + 1, sizeS)):
                         dist += abs(self.x[S[i]][a].x - self.x[S[j]][a].x)
-                # print('{}: {}'.format(S, dist))
                 dict[s] = dist
-            # print(dict)
-            # print(sorted(dict.items(), key=lambda l: l[1]))
             i = 0
-            # print('Elapsed time: {}'.format(end-start))
             end = time()
             if (end - start) >= timeLimit:
-                print('Time limit for enumaration of cliques')
+                # print('Time limit for enumaration of cliques')
                 return 0
-
             for key, value in sorted(dict.items(), key=lambda l: l[1]):
                 end = time()
                 if (end - start) >= timeLimit:
-                    timeout = True
-                    print('Time limit for finding cliques. Cliques found: {}'.format(cliquesFound))
+                    # print('Time limit for finding cliques. Cliques found: {}'.format(cliquesFound))
                     return cliquesFound
                 S = comb[key]
-                # print(S)
                 cliquesFound += self.clique_cuts(S, a)
                 i += 1
                 if i == self.maxCliques:
                     break
-            # input(cliquesFound)
         return cliquesFound
 
     # triangle cuts
@@ -928,57 +997,78 @@ class Compact:
         m = self.m
         m.clear()
         m.verbose = 0
-        xij = [[m.add_var(var_type=BINARY, name='xij({},{})'.format(i, j)) for i in range(self.instance.n)]
-               for j in range(self.instance.n)]
-
-        var = - xsum(xij[i][j] for i in range(self.instance.n) for j in range(self.instance.n) if i != j)
-        # print(var)
-        # input()
-        m.objective = var
-        # print(var)
-
+        xij = [[0 for i in range(self.instance.n)] for j in range(self.instance.n)]
         for i in range(self.instance.n):
-            m += xsum(xij[i][j] for j in range(self.instance.n) if j != i) - xsum(xij[j][i]
-                                                                                  for j in range(self.instance.n) if
-                                                                                  j != i) == 0, 'flow({})'.format(i)
-        m += xsum(
-            self.y[i][j][a].x * xij[i][j] for i in range(self.instance.n) for j in range(self.instance.n) if j != i
-            ) - xsum(
-            xij[i][j] for i in range(self.instance.n) for j in range(self.instance.n) if j != i) >= -1, 'triangle_cut'
-        # m.write('best_model.lp')
-        # input('modelo pronto')
-        m.optimize()
-        # if m.objective_value < 0:
-        #     m.write('best_model.lp')
-        #     print('{}'.format((round(m.objective_value,2))) )
-        #     for i in range(self.instance.n):
-        #         for j in range(self.instance.n):
-        #             print('x[{}][{}] = {} - y[{},{}] = {}'.format(i, j, round(xij[i][j].x, 2), i, j, round(self.y[i][j][a].x, 2)))
-        #     input()
+            for j in range(self.instance.n):
+                if i != j:
+                    if not isinstance(self.y[i][j][a], int) or not isinstance(self.y[i][j][a], int):
+                        xij[i][j] = m.add_var(var_type=BINARY, name='xij({},{})'.format(i, j))
 
-        if m.objective_value > -0.000000001:
+        var = - xsum(xij[i][j] for i in range(self.instance.n) for j in range(self.instance.n) if i != j
+                     and isinstance(xij[i][j], Var))
+        m.objective = var
+
+        m += xsum(xij[i][j] for i in range(self.instance.n) for j in range(self.instance.n) if j != i
+                  and isinstance(xij[i][j], Var)) >= 3, 'minimum_3'
+        for i in range(self.instance.n):
+            m += xsum(xij[i][j] for j in range(self.instance.n) if j != i and isinstance(xij[i][j], Var)) \
+                 - xsum(xij[j][i] for j in range(self.instance.n) if j != i and isinstance(xij[i][j], Var)) == 0, \
+                 'flow({})'.format(i)
+        try:
+            m += xsum(
+                self.y[i][j][a].x * xij[i][j] for i in range(self.instance.n) for j in range(self.instance.n) if j != i
+                and not isinstance(self.y[i][j][a], int) and isinstance(xij[i][j], Var)) \
+                 - xsum(xij[i][j] for i in range(self.instance.n) for j in
+                        range(self.instance.n) if j != i and isinstance(xij[i][j], Var)) >= -1, 'triangle_cut'
+        except:
+            print(self.model.status, self.node)
+            for i in range(self.instance.n):
+                for j in range(self.instance.n):
+                    if i != j:
+                        if isinstance(self.y[i][j][a], int):
+                            print('{} {:.4f}'.format(self.y[i][j][a].name, self.y[i][j][a].x))
+                        else:
+                            print('y({},{},{}) ----'.format(i, j, a))
+            input('erro')
+        m.optimize()
+
+        if m.status != OptimizationStatus.OPTIMAL:
+            return 0
+
+        if m.objective_value > -0.000000001 or m.status == OptimizationStatus.INFEASIBLE:
             return 0
 
         S = []
+        names = []
         soma = 0
         for i in range(self.instance.n):
             for j in range(self.instance.n):
-                if xij[i][j].x > 0.99999999:
-                    S.append(self.y[i][j][a])
-                    soma += self.y[i][j][a].x * xij[i][j].x
+                if not isinstance(xij[i][j], int):
+                    if xij[i][j].x > 0.99999999 and not isinstance(self.y[i][j][a], int):
+                        names.append('({}{})'.format(i, j))
+                        S.append(self.y[i][j][a])
+                        soma += self.y[i][j][a].x * xij[i][j].x
 
         if len(S) <= 1 or soma - (len(S) - 1) <= 0.000000001:
-            # print('Soma: {}. Len: {}'.format(soma, len(S)))
-            # input()
             return 0
-
-        self.model += xsum(i for i in S) <= len(S) - 1, 'triangle_cuts_best{}({})'.format(self.iterationsCuts, a)
-        # for i in S:
-        #     print('{} = {}; '.format(i.name, i.x), end='')
-        #
-        # print('Soma: {}. Len: {}'.format(soma, len(S)))
-
+        if len(names) < 3:
+            m.write('teste_cut.lp')
+            print(names, m.objective_value)
+            input('deu merda')
+        c_name = 'cut_triangle_best({},{})'.format(''.join(str(i) for i in names), a)
+        # print(c_name)
+        # m.write('teste_cut.lp')
         # input()
+        # print(c_name)
+        # c = self.model.constr_by_name(c_name)
+        # if c is not None:
+        #     print(c_name)
+        #     m.write('teste_cut.lp')
+        #     input()
+        #     return 0
+        # self.model.remove(c)
+
+        self.model += xsum(i for i in S) <= len(S) - 1, c_name
         return 1
 
     def basic_cuts_plus_epsilon(self, S, a, k):
@@ -1058,3 +1148,64 @@ class Compact:
             for i in range(self.instance.m):
                 print('x({},{}) = {:.2f}\t '.format(j, i, self.x[j][i].x), end='')
             print()
+
+
+    def testCliqueMIP(self, lc=None, hc=None):
+        newConstraints = True
+        self.model.relax()
+        gainObj = 0
+        cutsFound = 0
+        firstObjValue = 0
+        start = time()
+        self.iterationsCuts = 0
+        self.model.verbose = 0
+        self.model.optimize()
+        firstObjValue = self.model.objective_value
+        while newConstraints:
+            self.iterationsCuts += 1
+            hasCuts = 0
+            newConstraints = False
+            for a in range(self.instance.m):
+                clique_cuts = self.clique_cuts_best(a, lc, hc)
+                hasCuts += clique_cuts
+            cutsFound += hasCuts
+
+            if hasCuts > 0:
+                self.model.optimize()
+                newConstraints = True
+
+        end = time()
+        lastObjValue = self.model.objective_value
+        elapsedTime = round(end - start, 2)
+        return firstObjValue, lastObjValue, elapsedTime, cutsFound
+
+    def testCliqueSA(self, steps):
+        newConstraints = True
+        self.model.relax()
+        gainObj = 0
+        cutsFound = 0
+        firstObjValue = 0
+        start = time()
+        self.iterationsCuts = 0
+        self.model.verbose = 0
+        self.model.optimize()
+        firstObjValue = self.model.objective_value
+
+        while newConstraints:
+            self.iterationsCuts += 1
+            hasCuts = 0
+            newConstraints = False
+            self.model.verbose = 0
+            for a in range(self.instance.m):
+                clique_cuts = self.clique_heuristic(a, steps)
+                hasCuts += clique_cuts
+            cutsFound += hasCuts
+
+            if hasCuts > 0:
+                self.model.optimize()
+                newConstraints = True
+
+        end = time()
+        lastObjValue = self.model.objective_value
+        elapsedTime = round(end - start, 2)
+        return firstObjValue, lastObjValue, elapsedTime, cutsFound

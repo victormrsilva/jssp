@@ -21,6 +21,8 @@ class Branch:
         # compact.relax()
         # compact.model.write('teste1.lp')
         node.optNode0()
+        # node.mip.write('{}_cuts.lp'.format(node.instance.instancename))
+        # input('teste')
         end = time() - self.begin
         node.depth = 0
         node.node = 1

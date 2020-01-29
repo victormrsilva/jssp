@@ -2,12 +2,15 @@ from sys import argv
 import time
 from JSSPInstance import JSSPInstance
 from compact import Compact
+import string
+import csv
 from branch import Branch
 
 inst = JSSPInstance(argv[1])
 # inst.print()
 # input('instance')
 compact = Compact(inst)
+instance_name = compact.instance.instancename.translate(str.maketrans('', '', string.punctuation))
 
 # build the model
 # compact.constructProblemM()
@@ -18,26 +21,57 @@ compact = Compact(inst)
 # compact.printSolution()
 # input()
 # compact.constructProblemMcCormick()
-compact.constructProblemMcCormickNonNegative()
+
+# compact.constructProblemMcCormickNonNegative()
 # input()
-branch = Branch()
+# branch = Branch()
 
-branch.branch(compact)
+# branch.branch(compact)
 
 
-start = time.time()
+# start = time.time()
 # execute with cutpool
 # compact.optmizeCuts()
 
 # # execute with adding cuts after relaxing the problem
-compact.relax()
+file = open('{}.csv'.format(instance_name), "w")
+writer = csv.writer(file)
+writer.writerow(['type', 'lc', 'hc', 'first', 'last', 'time', 'cuts'])
+maxlc = min(6, compact.instance.n)
+maxhc = min(11, compact.instance.n+1)
+for lc in range(2, maxlc):
+    for hc in range(3, maxhc):
+        compact = Compact(inst)
+        compact.constructProblemMcCormickNonNegative()
+        first, last, time, cuts = compact.testCliqueMIP(lc, hc)
+        writer.writerow(['mip', lc, hc, first, last, time, cuts])
+        compact.model.write('{}_clique_MIP_lc_{}_hc_{}.lp'.format(instance_name, lc, hc))
+        del compact
+
+writer.writerow(['type', 'try', 'maxstep', 'first', 'last', 'time', 'cuts'])
+maxsteps = [1000, 2000, 3000]
+for step in maxsteps:
+    for i in range(5):
+        compact = Compact(inst)
+        compact.constructProblemMcCormickNonNegative()
+        first, last, time, cuts = compact.testCliqueSA(step)
+        writer.writerow(['SA', i, step, first, last, time, cuts])
+        compact.model.write('{}_clique_SA_{}_iter_{}.lp'.format(instance_name, step, i))
+        del compact
+file.close()
+
+# print(compact.testCliqueMIP(2, 5))
+# print(compact.testCliqueSA())
+# compact.model.write(
+#     '{}_modelMCLinNonNeg_cuts.lp'.format(compact.instance.instancename.translate(str.maketrans('', '', string.punctuation))))
+
 #
 # # execute the integer problem
 # compact.optimizeInteger()
 
 
-end = time.time()
+# end = time.time()
 
 # printing results
 # compact.printSolution()
-print('Elapsed time: {}'.format(end - start))
+# print('Elapsed time: {}'.format(end - start))

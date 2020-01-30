@@ -951,7 +951,8 @@ class Compact:
         timeLimit = 600  # 10 minutes
         lc = self.lc if lc is None else min(lc, self.instance.n)
         hc = self.hc if hc is None else min(hc, self.instance.n)
-        for sizeS in range(lc, hc+1):
+        for sizeS in range(hc, lc, -1):
+            print('LC: {} HC: {} Machine: {}'.format(lc, sizeS, a))
             comb = combinations(list(range(0, self.instance.n)), sizeS)  # combinations of all possibles jobs of size sizeS
             comb = list(comb)
             dict = {}
@@ -978,7 +979,8 @@ class Compact:
                 S = comb[key]
                 cliquesFound += self.clique_cuts(S, a)
                 i += 1
-                if i == self.maxCliques:
+                if i >= self.maxCliques:
+                    # print('Max clique found. Cliques found: {}'.format(i))
                     break
         return cliquesFound
 
@@ -1169,10 +1171,13 @@ class Compact:
                 clique_cuts = self.clique_cuts_best(a, lc, hc)
                 hasCuts += clique_cuts
             cutsFound += hasCuts
-
             if hasCuts > 0:
                 self.model.optimize()
+                print('Added {} cuts'.format(hasCuts))
+                self.model.write('teste.lp')
                 newConstraints = True
+            if cutsFound > 500 and self.iterationsCuts > 2:
+                newConstraints = False
 
         end = time()
         lastObjValue = self.model.objective_value
@@ -1203,7 +1208,11 @@ class Compact:
 
             if hasCuts > 0:
                 self.model.optimize()
+                print('Added {} cuts'.format(hasCuts))
+                self.model.write('teste.lp')
                 newConstraints = True
+            if cutsFound > 500 and self.iterationsCuts > 10:
+                newConstraints = False
 
         end = time()
         lastObjValue = self.model.objective_value

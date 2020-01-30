@@ -1,0 +1,272 @@
+Using Python-MIP package version 1.5.3
+Executing la02 MIP with lc = 2 and hc = 3 ...
+LC: 2 HC: 3 Machine: 0
+LC: 2 HC: 3 Machine: 1
+LC: 2 HC: 3 Machine: 2
+LC: 2 HC: 3 Machine: 3
+LC: 2 HC: 3 Machine: 4
+Added 377 cuts
+LC: 2 HC: 3 Machine: 0
+LC: 2 HC: 3 Machine: 1
+LC: 2 HC: 3 Machine: 2
+LC: 2 HC: 3 Machine: 3
+LC: 2 HC: 3 Machine: 4
+Added 21 cuts
+LC: 2 HC: 3 Machine: 0
+LC: 2 HC: 3 Machine: 1
+LC: 2 HC: 3 Machine: 2
+LC: 2 HC: 3 Machine: 3
+LC: 2 HC: 3 Machine: 4
+Added 2 cuts
+LC: 2 HC: 3 Machine: 0
+LC: 2 HC: 3 Machine: 1
+LC: 2 HC: 3 Machine: 2
+LC: 2 HC: 3 Machine: 3
+LC: 2 HC: 3 Machine: 4
+Added 1 cuts
+LC: 2 HC: 3 Machine: 0
+LC: 2 HC: 3 Machine: 1
+LC: 2 HC: 3 Machine: 2
+LC: 2 HC: 3 Machine: 3
+LC: 2 HC: 3 Machine: 4
+ Done!!!
+Executing la02 MIP with lc = 2 and hc = 4 ...
+LC: 2 HC: 4 Machine: 0
+LC: 2 HC: 3 Machine: 0
+LC: 2 HC: 4 Machine: 1
+LC: 2 HC: 3 Machine: 1
+LC: 2 HC: 4 Machine: 2
+LC: 2 HC: 3 Machine: 2
+LC: 2 HC: 4 Machine: 3
+LC: 2 HC: 3 Machine: 3
+LC: 2 HC: 4 Machine: 4
+LC: 2 HC: 3 Machine: 4
+Added 864 cuts
+LC: 2 HC: 4 Machine: 0
+LC: 2 HC: 3 Machine: 0
+LC: 2 HC: 4 Machine: 1
+LC: 2 HC: 3 Machine: 1
+LC: 2 HC: 4 Machine: 2
+LC: 2 HC: 3 Machine: 2
+LC: 2 HC: 4 Machine: 3
+LC: 2 HC: 3 Machine: 3
+LC: 2 HC: 4 Machine: 4
+LC: 2 HC: 3 Machine: 4
+Added 93 cuts
+LC: 2 HC: 4 Machine: 0
+LC: 2 HC: 3 Machine: 0
+LC: 2 HC: 4 Machine: 1
+LC: 2 HC: 3 Machine: 1
+LC: 2 HC: 4 Machine: 2
+LC: 2 HC: 3 Machine: 2
+LC: 2 HC: 4 Machine: 3
+LC: 2 HC: 3 Machine: 3
+LC: 2 HC: 4 Machine: 4
+LC: 2 HC: 3 Machine: 4
+Added 3 cuts
+ Done!!!
+Executing la02 MIP with lc = 2 and hc = 5 ...
+LC: 2 HC: 5 Machine: 0
+LC: 2 HC: 4 Machine: 0
+LC: 2 HC: 3 Machine: 0
+LC: 2 HC: 5 Machine: 1
+LC: 2 HC: 4 Machine: 1
+LC: 2 HC: 3 Machine: 1
+LC: 2 HC: 5 Machine: 2
+LC: 2 HC: 4 Machine: 2
+LC: 2 HC: 3 Machine: 2
+LC: 2 HC: 5 Machine: 3
+LC: 2 HC: 4 Machine: 3
+LC: 2 HC: 3 Machine: 3
+LC: 2 HC: 5 Machine: 4
+LC: 2 HC: 4 Machine: 4
+LC: 2 HC: 3 Machine: 4
+Added 1363 cuts
+LC: 2 HC: 5 Machine: 0
+LC: 2 HC: 4 Machine: 0
+LC: 2 HC: 3 Machine: 0
+LC: 2 HC: 5 Machine: 1
+LC: 2 HC: 4 Machine: 1
+LC: 2 HC: 3 Machine: 1
+LC: 2 HC: 5 Machine: 2
+LC: 2 HC: 4 Machine: 2
+LC: 2 HC: 3 Machine: 2
+LC: 2 HC: 5 Machine: 3
+LC: 2 HC: 4 Machine: 3
+LC: 2 HC: 3 Machine: 3
+LC: 2 HC: 5 Machine: 4
+LC: 2 HC: 4 Machine: 4
+LC: 2 HC: 3 Machine: 4
+Added 206 cuts
+LC: 2 HC: 5 Machine: 0
+LC: 2 HC: 4 Machine: 0
+LC: 2 HC: 3 Machine: 0
+LC: 2 HC: 5 Machine: 1
+LC: 2 HC: 4 Machine: 1
+LC: 2 HC: 3 Machine: 1
+LC: 2 HC: 5 Machine: 2
+LC: 2 HC: 4 Machine: 2
+LC: 2 HC: 3 Machine: 2
+LC: 2 HC: 5 Machine: 3
+LC: 2 HC: 4 Machine: 3
+LC: 2 HC: 3 Machine: 3
+LC: 2 HC: 5 Machine: 4
+LC: 2 HC: 4 Machine: 4
+LC: 2 HC: 3 Machine: 4
+Added 9 cuts
+ Done!!!
+Executing la02 MIP with lc = 2 and hc = 6 ...
+LC: 2 HC: 6 Machine: 0
+LC: 2 HC: 5 Machine: 0
+LC: 2 HC: 4 Machine: 0
+LC: 2 HC: 3 Machine: 0
+LC: 2 HC: 6 Machine: 1
+LC: 2 HC: 5 Machine: 1
+LC: 2 HC: 4 Machine: 1
+LC: 2 HC: 3 Machine: 1
+LC: 2 HC: 6 Machine: 2
+LC: 2 HC: 5 Machine: 2
+LC: 2 HC: 4 Machine: 2
+LC: 2 HC: 3 Machine: 2
+LC: 2 HC: 6 Machine: 3
+LC: 2 HC: 5 Machine: 3
+LC: 2 HC: 4 Machine: 3
+LC: 2 HC: 3 Machine: 3
+LC: 2 HC: 6 Machine: 4
+LC: 2 HC: 5 Machine: 4
+LC: 2 HC: 4 Machine: 4
+LC: 2 HC: 3 Machine: 4
+Added 1863 cuts
+LC: 2 HC: 6 Machine: 0
+LC: 2 HC: 5 Machine: 0
+LC: 2 HC: 4 Machine: 0
+LC: 2 HC: 3 Machine: 0
+LC: 2 HC: 6 Machine: 1
+LC: 2 HC: 5 Machine: 1
+LC: 2 HC: 4 Machine: 1
+LC: 2 HC: 3 Machine: 1
+LC: 2 HC: 6 Machine: 2
+LC: 2 HC: 5 Machine: 2
+LC: 2 HC: 4 Machine: 2
+LC: 2 HC: 3 Machine: 2
+LC: 2 HC: 6 Machine: 3
+LC: 2 HC: 5 Machine: 3
+LC: 2 HC: 4 Machine: 3
+LC: 2 HC: 3 Machine: 3
+LC: 2 HC: 6 Machine: 4
+LC: 2 HC: 5 Machine: 4
+LC: 2 HC: 4 Machine: 4
+LC: 2 HC: 3 Machine: 4
+Added 440 cuts
+LC: 2 HC: 6 Machine: 0
+LC: 2 HC: 5 Machine: 0
+LC: 2 HC: 4 Machine: 0
+LC: 2 HC: 3 Machine: 0
+LC: 2 HC: 6 Machine: 1
+LC: 2 HC: 5 Machine: 1
+LC: 2 HC: 4 Machine: 1
+LC: 2 HC: 3 Machine: 1
+LC: 2 HC: 6 Machine: 2
+LC: 2 HC: 5 Machine: 2
+LC: 2 HC: 4 Machine: 2
+LC: 2 HC: 3 Machine: 2
+LC: 2 HC: 6 Machine: 3
+LC: 2 HC: 5 Machine: 3
+LC: 2 HC: 4 Machine: 3
+LC: 2 HC: 3 Machine: 3
+LC: 2 HC: 6 Machine: 4
+LC: 2 HC: 5 Machine: 4
+LC: 2 HC: 4 Machine: 4
+LC: 2 HC: 3 Machine: 4
+Added 39 cuts
+ Done!!!
+Executing la02 MIP with lc = 2 and hc = 7 ...
+LC: 2 HC: 7 Machine: 0
+LC: 2 HC: 6 Machine: 0
+LC: 2 HC: 5 Machine: 0
+LC: 2 HC: 4 Machine: 0
+LC: 2 HC: 3 Machine: 0
+LC: 2 HC: 7 Machine: 1
+LC: 2 HC: 6 Machine: 1
+LC: 2 HC: 5 Machine: 1
+LC: 2 HC: 4 Machine: 1
+LC: 2 HC: 3 Machine: 1
+LC: 2 HC: 7 Machine: 2
+LC: 2 HC: 6 Machine: 2
+LC: 2 HC: 5 Machine: 2
+LC: 2 HC: 4 Machine: 2
+LC: 2 HC: 3 Machine: 2
+LC: 2 HC: 7 Machine: 3
+LC: 2 HC: 6 Machine: 3
+LC: 2 HC: 5 Machine: 3
+LC: 2 HC: 4 Machine: 3
+LC: 2 HC: 3 Machine: 3
+LC: 2 HC: 7 Machine: 4
+LC: 2 HC: 6 Machine: 4
+LC: 2 HC: 5 Machine: 4
+LC: 2 HC: 4 Machine: 4
+LC: 2 HC: 3 Machine: 4
+Added 2363 cuts
+LC: 2 HC: 7 Machine: 0
+LC: 2 HC: 6 Machine: 0
+LC: 2 HC: 5 Machine: 0
+LC: 2 HC: 4 Machine: 0
+LC: 2 HC: 3 Machine: 0
+LC: 2 HC: 7 Machine: 1
+LC: 2 HC: 6 Machine: 1
+LC: 2 HC: 5 Machine: 1
+LC: 2 HC: 4 Machine: 1
+LC: 2 HC: 3 Machine: 1
+LC: 2 HC: 7 Machine: 2
+LC: 2 HC: 6 Machine: 2
+LC: 2 HC: 5 Machine: 2
+LC: 2 HC: 4 Machine: 2
+LC: 2 HC: 3 Machine: 2
+LC: 2 HC: 7 Machine: 3
+LC: 2 HC: 6 Machine: 3
+LC: 2 HC: 5 Machine: 3
+LC: 2 HC: 4 Machine: 3
+LC: 2 HC: 3 Machine: 3
+LC: 2 HC: 7 Machine: 4
+LC: 2 HC: 6 Machine: 4
+LC: 2 HC: 5 Machine: 4
+LC: 2 HC: 4 Machine: 4
+LC: 2 HC: 3 Machine: 4
+Added 633 cuts
+LC: 2 HC: 7 Machine: 0
+LC: 2 HC: 6 Machine: 0
+LC: 2 HC: 5 Machine: 0
+LC: 2 HC: 4 Machine: 0
+LC: 2 HC: 3 Machine: 0
+LC: 2 HC: 7 Machine: 1
+LC: 2 HC: 6 Machine: 1
+LC: 2 HC: 5 Machine: 1
+LC: 2 HC: 4 Machine: 1
+LC: 2 HC: 3 Machine: 1
+LC: 2 HC: 7 Machine: 2
+LC: 2 HC: 6 Machine: 2
+LC: 2 HC: 5 Machine: 2
+LC: 2 HC: 4 Machine: 2
+LC: 2 HC: 3 Machine: 2
+LC: 2 HC: 7 Machine: 3
+LC: 2 HC: 6 Machine: 3
+LC: 2 HC: 5 Machine: 3
+LC: 2 HC: 4 Machine: 3
+LC: 2 HC: 3 Machine: 3
+LC: 2 HC: 7 Machine: 4
+LC: 2 HC: 6 Machine: 4
+LC: 2 HC: 5 Machine: 4
+LC: 2 HC: 4 Machine: 4
+LC: 2 HC: 3 Machine: 4
+Added 11 cuts
+ Done!!!
+Executing la02 MIP with lc = 2 and hc = 8 ...
+LC: 2 HC: 8 Machine: 0
+LC: 2 HC: 7 Machine: 0
+LC: 2 HC: 6 Machine: 0
+LC: 2 HC: 5 Machine: 0
+LC: 2 HC: 4 Machine: 0
+LC: 2 HC: 3 Machine: 0
+LC: 2 HC: 8 Machine: 1
+LC: 2 HC: 7 Machine: 1
+LC: 2 HC: 6 Machine: 1

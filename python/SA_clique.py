@@ -8,8 +8,8 @@ class Clique:
         self.est = est
         self.x = x
         self.maxsteps = maxsteps
-        self.debug = True
-        self.max_solutions = 5
+        self.debug = False
+        self.max_solutions = 50
 
     def paths(self, chosen):
         S = np.where(chosen == 1)[1]
@@ -74,12 +74,21 @@ class Clique:
         # print(K)
         # print(lhs_K, penal_min_size, fo, penal_left_1, sum_t)
         # print(100*fo, 100000*penal_left_1, 100000*penal_min_size, - 1e-8*sum_t)
-        # input()
+        # input
         return 100*fo + 100000*penal_min_size + 100000*penal_left_1 - 1e-8*sum_t
 
-    def temperature(self, fraction: float):
+    def initial_temperature(self, chosen, t, path, cost):
+        sum_delta = 0
+        for i in range(10):
+            new_chosen, new_t, new_path = self.random_neighbour(chosen, t, path)
+            new_cost = self.cost_function(new_t, new_chosen, new_path)
+            # print(cost, new_cost, abs(cost - new_cost))
+            sum_delta += abs(cost - new_cost)
+        return sum_delta / 10
+
+    def alpha(self, fraction: float):
         """ Example of temperature dicreasing as the process goes on."""
-        return 1000000*np.maximum(0.01, 1 - fraction)
+        return np.maximum(0.0001, 1 - fraction)
 
     def random_neighbour(self, chosen, t, path):
         # choose a element with probability p
@@ -96,17 +105,23 @@ class Clique:
             pos = np.random.randint(0, self.qtd)
             new_chosen[0][pos] = 1 - chosen[0][pos]
             new_t[0][pos] = new_chosen[0][pos] * np.random.random()
-            # print(pos, chosen[pos], new_chosen[pos], new_t[pos])
+            # print(neighborhood, pos, chosen[0][pos], new_chosen[0][pos], new_t[0][pos])
             new_path = self.paths(new_chosen)
             changePath = True
         elif neighborhood == 1:  # change some value of a valid t
             # print(valids)
             pos = valids[np.random.randint(0, len(valids))]
             new_t[0][pos] = np.random.random()
+            # print(neighborhood, t[0][pos], new_t[0][pos])
             new_path = path.copy()
         else:  # increase/decrease by 1-10% the value of some value of t
             pos = valids[np.random.randint(0, len(valids))]
-            new_t[0][pos] = min(new_t[0][pos] + (np.random.choice([1, -1], 1)[0] * (np.random.randint(1, 11)/100) * new_t[0][pos]), 1)
+            pct = np.random.choice([1, -1], 1)[0] * (np.random.randint(1, 11)/100)
+            new_t_pos = new_t[0][pos] + pct * new_t[0][pos]
+            if new_t_pos > 1:
+                new_t_pos = new_t[0][pos] - pct * new_t[0][pos]
+            new_t[0][pos] = new_t_pos
+            # print(neighborhood, t[0][pos], new_t[0][pos])
             new_path = path.copy()
 
         # if changePath:
@@ -142,25 +157,36 @@ class Clique:
         costs = np.array([])
         worst = -1
         removal = -1
+        accepted = 0
+        # o quanto melhora ou piora de 10 vizinhos a média disso é a temperatura inicial
         if cost < 100:
             chosens = np.vstack([chosens, chosen]) if chosens.size else chosen
             ts = np.vstack([ts, t]) if ts.size else t
             costs = np.vstack([costs, cost]) if costs.size else cost
             solutions += 1
+            accepted += 1
         maxsteps = self.maxsteps
-        for step in range(maxsteps):
-            fraction = float(step / float(maxsteps))
-            T = maxsteps * (1 - fraction) # self.temperature(fraction)
+        T = self.initial_temperature(chosen, t, path, cost)
+        # input(T)
+        rejected = 0
+        step = 0
+        while step < maxsteps:  # and T > 1e-11:   #for step in range(maxsteps):
+            step += 1
             new_chosen, new_t, new_path = self.random_neighbour(chosen, t, path)
             new_cost = self.cost_function(new_t, new_chosen, new_path)
             # print('custos: ', cost, new_cost)
             if self.debug: print("Step #{:>2}/{:>2} : T = {:>4.3g}, chosen = {}, t = {}, cost = {:>4.3g}, "
                             "new_chosen = {}, new_t = {}, new_cost = {:>4.3g} ...".format(step, maxsteps, T, chosen, t, cost, new_chosen, new_t, new_cost), end='')
+            # print("Step #{:>2}/{:>2} : T = {:>4.3g}, accepted = {}, cost = {}, new_cost = {}".format(step, maxsteps, T, accepted, cost, new_cost), end='')
             # input()
             if self.acceptance_probability(cost, new_cost, T) > np.random.random():
                 chosen, t, cost, path = new_chosen, new_t, new_cost, new_path
+                accepted += 1
+                rejected = 0
                 if cost < 100:
                     if solutions < self.max_solutions:
+                        # print()
+                        # if solutions == 0 or np.sum(np.all(np.isclose(ts, t), axis=1)) == 0:  # if t is unique in ts
                         chosens = np.vstack([chosens, chosen]) if chosens.size else chosen
                         ts = np.vstack([ts, t]) if ts.size else t
                         costs = np.vstack([costs, cost]) if costs.size else cost
@@ -168,14 +194,14 @@ class Clique:
                             worst = cost
                             removal = solutions
                         solutions += 1
+                        # else:
+                        #     print(ts)
+                        #     print(t)
+                        #     input()
                     else:
-                        print(chosens)
-                        print(costs)
-                        print(ts)
-                        print(chosens[removal], chosen)
-                        print(ts[removal], t)
-                        print(costs[removal], cost)
-                        if cost < worst:
+                        if cost < worst: # checar se os multiplicadores são iguais também
+                            # if np.sum(np.all(np.isclose(ts, t),
+                            #                  axis=1)) == 0:  # if t is unique in ts
                             chosens[removal] = chosen
                             ts[removal] = t
                             costs[removal] = cost
@@ -185,48 +211,26 @@ class Clique:
                                 if costs[i] > worst:
                                     removal = i
                                     worst = costs[i]
-                            print(chosens)
-                            print(costs)
-                            print(ts)
-                            print('new worst: ', worst, removal)
-                            input()
-
-                    # insert = True
-                    # if chosens.ndim == 1:
-                    #     if np.alltrue(chosens == new_chosen):  # if chosens are already inserted
-                    #         # print(path)
-                    #         if np.alltrue(new_t >= ts):  # if the chosen[i] is dominated
-                    #             chosens = new_chosen
-                    #             ts = new_t
-                    #             costs = new_cost
-                    #         insert = False
-                    # else:
-                    #     for i in range(len(chosens)):
-                    #         if np.alltrue(chosens[i] == new_chosen):  # if chosens are already inserted
-                    #             # print(path)
-                    #             if np.alltrue(new_t >= ts[i]):  # if the chosen[i] is dominated
-                    #                 chosens[i] = new_chosen
-                    #                 ts[i] = new_t
-                    #                 costs[i] = new_cost
-                    #             insert = False
-                    #             break
-                    # if insert:
-                    #     # print(path)
-                    #     chosens = np.vstack([chosens, chosen]) if chosens.size else chosen
-                    #     ts = np.vstack([ts, t]) if ts.size else t
-                    #     costs = np.vstack([costs, cost]) if costs.size else cost
-                        # print(chosens[0], chosen, np.alltrue(chosens[0] == new_chosen))
-                        # input(chosens)
-                    # print('chosen: ', chosen )
-                    # print('t: ', t)
-                    # print('path: ', path)
-                    # print('valid:', valid)
-                    # input()
                 if self.debug: print("  ==> Accept it!")
+                # print("  ==> Accept it!")
             else:
-                if self.debug: print("  ==> Reject it...")
+                # print()
+                if self.debug: print("  ==> Reject it...{}".format(rejected))
+                if T == 1e-11:
+                    rejected += 1
+                if rejected > 0.2*maxsteps:
+                    # input()
+                    return chosens, ts, costs
+
+            fraction = float(step / float(maxsteps))
+            if round(T, 10) == 0:
+                T = 1e-11
+            else:
+                T = T * self.alpha(fraction)  # self.temperature(fraction)
+
             # input()
         # if self.debug: print('chosens', chosens)
+        # input()
         return chosens, ts, costs
 
 
@@ -235,7 +239,7 @@ if __name__ == "__main__":
     x = [0, 0, 10, 19]
     p = [10, 1, 1, 10]
     est = [0, 0, 19, 10]
-    clique = Clique(x, p, est, 1000)
+    clique = Clique(x, p, est, 10000)
     escolhidos, indices, custos = clique.annealing()
     for i in range(len(escolhidos)):
         print('Chosen = {} ; t = {} ; cost = {}'.format(escolhidos[i], indices[i], custos[i]))

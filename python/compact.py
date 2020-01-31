@@ -873,12 +873,12 @@ class Compact:
             # print(escolhidos, t, custos)
             cuts = len(escolhidos)
             for e in range(len(escolhidos)):
-                c_name = 'cut_clique_{}({},{})'.format(self.iterationsCuts, ''.join(str(i) for i in np.where(escolhidos[e] == 1)[0]), a)
+                c_name = 'cut_clique_{}({},{})'.format(self.iterationsCuts, e, a)
                 self.model += xsum(t[e][i] * self.x[i][a] for i in range(self.instance.n)) >= 1, c_name
                 # print('{} : Chosen = {} ; t = {} ; cost = {}'.format(c_name, escolhidos[e], t[e], custos[e]))
         elif escolhidos.ndim == 1 and escolhidos.size > 0:
             cuts = 1
-            c_name = 'cut_clique_{}({},{})'.format(self.iterationsCuts, ''.join(str(i) for i in np.where(escolhidos == 1)[0]), a)
+            c_name = 'cut_clique_{}({},{})'.format(self.iterationsCuts, 1, a)
             self.model += xsum(t[i] * self.x[i][a] for i in range(self.instance.n)) >= 1, c_name
             # print('{} : Chosen = {} ; t = {} ; cost = {}'.format(c_name, escolhidos, t, custos))
         # print(x_bar, p, est)
@@ -1203,15 +1203,16 @@ class Compact:
             self.model.verbose = 0
             for a in range(self.instance.m):
                 clique_cuts = self.clique_heuristic(a, steps)
+                print('Cliques on machine {} = {}'.format(a, clique_cuts))
                 hasCuts += clique_cuts
             cutsFound += hasCuts
 
             if hasCuts > 0:
                 self.model.optimize()
-                print('Added {} cuts'.format(hasCuts))
+                print('Added {} cuts with obj = {}'.format(hasCuts, self.model.objective_value))
                 self.model.write('teste.lp')
                 newConstraints = True
-            if cutsFound > 500 and self.iterationsCuts > 10:
+            if self.iterationsCuts > 15:
                 newConstraints = False
 
         end = time()

@@ -50,18 +50,32 @@ writer = csv.writer(file)
 #         print(' Done!!!')
 #         del compact
 
-writer.writerow(['type', 'try', 'maxstep', 'first', 'last', 'time', 'cuts'])
+# writer.writerow(['type', 'try', 'maxstep', 'first', 'last', 'time', 'cuts'])
+# maxsteps = [1000, 5000, 10000, 50000, 100000, 500000, 1000000]
+# for step in maxsteps:
+#     for i in range(5):
+#         del compact
+#         print('Executing {} SA with maxsteps = {} and iteration = {} ...'.format(instance_name, step, i))
+#         compact = Compact(inst)
+#         compact.constructProblemMcCormickNonNegative()
+#         first, last, time, cuts = compact.testCliqueSA(step)
+#         writer.writerow(['SA', i, step, first, last, time, cuts])
+#         compact.model.write('{}_clique_SA_{}_iter_{}.lp'.format(instance_name, step, i))
+
+writer.writerow(['type', 'try', 'maxstep', 'l', 'first', 'last', 'time', 'cuts'])
 maxsteps = [1000, 5000, 10000, 50000, 100000, 500000, 1000000]
+ls = [10, 25, 50]
 for step in maxsteps:
-    for i in range(5):
-        del compact
-        print('Executing {} SA with maxsteps = {} and iteration = {} ...'.format(instance_name, step, i))
-        compact = Compact(inst)
-        compact.constructProblemMcCormickNonNegative()
-        first, last, time, cuts = compact.testCliqueSA(step)
-        writer.writerow(['SA', i, step, first, last, time, cuts])
-        compact.model.write('{}_clique_SA_{}_iter_{}.lp'.format(instance_name, step, i))
-        print(' Done!!!')
+    for l in ls:
+        for i in range(5):
+            del compact
+            print('Executing {} LAHC with maxsteps = {} and iteration = {} ...'.format(instance_name, step, i))
+            compact = Compact(inst)
+            compact.constructProblemMcCormickNonNegative()
+            first, last, time, cuts = compact.testCliqueLAHC(step, l)
+            writer.writerow(['LAHC', i, step, l, first, last, time, cuts])
+            compact.model.write('{}_clique_LAHC_{} l_{}_iter_{}.lp'.format(instance_name, step, l, i))
+
 file.close()
 
 # print(compact.testCliqueMIP(2, 5))

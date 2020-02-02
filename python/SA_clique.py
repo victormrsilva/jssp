@@ -84,19 +84,19 @@ class Clique:
             new_cost = self.cost_function(new_t, new_chosen, new_path)
             # print(cost, new_cost, abs(cost - new_cost))
             sum_delta += abs(cost - new_cost)
-        return sum_delta / 10
+        return sum_delta
 
     def alpha(self, fraction: float):
         """ Example of temperature dicreasing as the process goes on."""
         return np.maximum(0.0001, 1 - fraction)
 
-    def random_neighbour(self, chosen, t, path):
+    def random_neighbour(self, chosen, t, path, force=False):
         # choose a element with probability p
         valids = np.where(chosen == 1)[1]
-        if len(valids) < 2:
+        if len(valids) < 2 or force:
             neighborhood = 0
         else:
-            neighborhood = np.random.choice([0, 1, 2], 1, p=[0.02, 0.08, 0.9])[0]
+            neighborhood = np.random.choice([0, 1, 2], 1, p=[0.005, 0.005, 0.99])[0]
         # print(neighborhood)
         new_chosen = chosen.copy()
         new_t = t.copy()
@@ -116,7 +116,7 @@ class Clique:
             new_path = path.copy()
         else:  # increase/decrease by 1-10% the value of some value of t
             pos = valids[np.random.randint(0, len(valids))]
-            pct = np.random.choice([1, -1], 1)[0] * (np.random.randint(1, 11)/100)
+            pct = np.random.choice([1, -1], 1)[0] * (np.random.randint(1, 16)/100)
             new_t_pos = new_t[0][pos] + pct * new_t[0][pos]
             if new_t_pos > 1:
                 new_t_pos = new_t[0][pos] - pct * new_t[0][pos]
@@ -166,13 +166,16 @@ class Clique:
             solutions += 1
             accepted += 1
         maxsteps = self.maxsteps
-        T = self.initial_temperature(chosen, t, path, cost)
+        T0 = self.initial_temperature(chosen, t, path, cost)
+        T = T0
         # input(T)
         rejected = 0
         step = 0
+        force = False
         while step < maxsteps:  # and T > 1e-11:   #for step in range(maxsteps):
             step += 1
-            new_chosen, new_t, new_path = self.random_neighbour(chosen, t, path)
+            new_chosen, new_t, new_path = self.random_neighbour(chosen, t, path, force)
+            force = False
             new_cost = self.cost_function(new_t, new_chosen, new_path)
             # print('custos: ', cost, new_cost)
             if self.debug: print("Step #{:>2}/{:>2} : T = {:>4.3g}, chosen = {}, t = {}, cost = {:>4.3g}, "
@@ -216,15 +219,15 @@ class Clique:
             else:
                 # print()
                 if self.debug: print("  ==> Reject it...{}".format(rejected))
-                if T == 1e-11:
+                if T <= 1e-10:
                     rejected += 1
-                if rejected > 0.2*maxsteps:
-                    # input()
-                    return chosens, ts, costs
+                # if rejected > 0.2*maxsteps:
+                #     # input()
+                #     return chosens, ts, costs
 
             fraction = float(step / float(maxsteps))
-            if round(T, 10) == 0:
-                T = 1e-11
+            if T < 1e-10:
+                T = T0
             else:
                 T = T * self.alpha(fraction)  # self.temperature(fraction)
 
@@ -233,13 +236,40 @@ class Clique:
         # input()
         return chosens, ts, costs
 
-
+    def LAHC(self, l):
+        chosen, t, path = self.random_init()
+        cost = self.cost_function(t, chosen, path)
+        best_chosen, best_t, best_cost = chosen, t, cost
+        chosens = np.array([])
+        ts = np.array([])
+        costs = np.array([])
+        for i in range(l):
+            chosens = np.vstack([chosens, chosen]) if chosens.size else chosen
+            ts = np.vstack([ts, t]) if ts.size else t
+            costs = np.vstack([costs, cost]) if costs.size else cost
+        v = 0
+        # print(chosens, ts, costs)
+        for step in range(self.maxsteps):
+            new_chosen, new_t, new_path = self.random_neighbour(chosen, t, path)
+            new_cost = self.cost_function(new_t, new_chosen, new_path)
+            if new_cost < best_cost or new_cost < costs[v]:
+                costs[v] = new_cost
+                chosens[v] = new_chosen
+                ts[v] = new_t
+                if new_cost < best_cost:
+                    best_chosen, best_t, best_cost = new_chosen, new_t, new_cost
+            v = (v + 1) % l
+        # print(chosens, ts, costs)
+        return best_chosen, best_t, best_cost
 
 if __name__ == "__main__":
     x = [0, 0, 10, 19]
     p = [10, 1, 1, 10]
     est = [0, 0, 19, 10]
     clique = Clique(x, p, est, 10000)
+    chosen, t, cost = clique.LAHC(10)
+    print('Chosen = {} ; t = {} ; cost = {}'.format(chosen, t, cost))
+    input()
     escolhidos, indices, custos = clique.annealing()
     for i in range(len(escolhidos)):
         print('Chosen = {} ; t = {} ; cost = {}'.format(escolhidos[i], indices[i], custos[i]))

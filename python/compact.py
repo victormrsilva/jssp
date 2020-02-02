@@ -887,6 +887,25 @@ class Compact:
         # input('lp escrito')
         return cuts
 
+    def LAHC(self, a, steps, l):
+        x_bar = [self.x[j][a].x for j in range(self.instance.n)]
+        p = [self.instance.times[j][a] for j in range(self.instance.n)]
+        est = [self.instance.est[j][a] for j in range(self.instance.n)]
+        clique = Clique(x_bar, p, est, steps)
+        best_chosen, best_t, best_custo = clique.LAHC(l)
+        cuts = 0
+        if best_custo < 100:
+            cuts = 1
+            c_name = 'cut_clique_{}({},{})'.format(self.iterationsCuts, 1, a)
+            self.model += xsum(best_t[0][i] * self.x[i][a] for i in range(self.instance.n)) >= 1, c_name
+            # print('{} : Chosen = {} ; t = {} ; cost = {}'.format(c_name, escolhidos, t, custos))
+        # print(x_bar, p, est)
+        # input('machine: {}'.format(a))
+        # self.model.write('teste.lp')
+        # input('lp escrito')
+        return cuts
+
+
     def clique_cuts(self, S, a):
         s_aux = list(range(len(S)))
         perms = np.asarray(list(permutations(s_aux)))
@@ -1212,8 +1231,45 @@ class Compact:
                 print('Added {} cuts with obj = {}'.format(hasCuts, self.model.objective_value))
                 self.model.write('teste.lp')
                 newConstraints = True
-            if self.iterationsCuts > 15:
-                newConstraints = False
+            # if self.iterationsCuts > 15:
+            #     newConstraints = False
+
+        end = time()
+        lastObjValue = self.model.objective_value
+        elapsedTime = round(end - start, 2)
+        return firstObjValue, lastObjValue, elapsedTime, cutsFound
+
+
+    def testCliqueLAHC(self, steps, l):
+        newConstraints = True
+        self.model.relax()
+        gainObj = 0
+        cutsFound = 0
+        firstObjValue = 0
+        start = time()
+        self.iterationsCuts = 0
+        self.model.verbose = 0
+        self.model.optimize()
+        firstObjValue = self.model.objective_value
+
+        while newConstraints:
+            self.iterationsCuts += 1
+            hasCuts = 0
+            newConstraints = False
+            self.model.verbose = 0
+            for a in range(self.instance.m):
+                clique_cuts = self.LAHC(a, steps, l)
+                print('Cliques on machine {} = {}'.format(a, clique_cuts))
+                hasCuts += clique_cuts
+            cutsFound += hasCuts
+
+            if hasCuts > 0:
+                self.model.optimize()
+                print('Added {} cuts with obj = {}'.format(hasCuts, self.model.objective_value))
+                self.model.write('teste.lp')
+                newConstraints = True
+            # if self.iterationsCuts > 15:
+            #     newConstraints = False
 
         end = time()
         lastObjValue = self.model.objective_value

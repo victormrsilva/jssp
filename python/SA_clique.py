@@ -1,4 +1,6 @@
 import numpy as np
+from mip.model import Model, xsum, Var
+from mip.constants import INTEGER, BINARY, CONTINUOUS, OptimizationStatus
 from itertools import permutations
 
 class Clique:
@@ -10,10 +12,12 @@ class Clique:
         self.maxsteps = maxsteps
         self.debug = False
         self.max_solutions = 50
+        self.m = Model()
+        self.accepted = {}
 
     def paths(self, chosen):
         S = np.where(chosen == 1)[1]
-        perms = np.asarray(list(permutations(S)))
+        perms = np.array(list(permutations(S)))
 
         K = np.zeros((len(perms), self.qtd))
         # print(perms)
@@ -43,6 +47,148 @@ class Clique:
             if soma < 1:
                 return False
         return True
+
+    def mip(self, K, S):
+        m = self.m
+        m.clear()
+        m.verbose = 0
+        m.max_seconds = 90
+        t = [0] * self.qtd
+        for i in S:
+            t[i] = m.add_var(var_type=CONTINUOUS, lb=0, name='t({})'.format(i))
+        # t = np.array([m.add_var(var_type=CONTINUOUS, lb=0, name='t({})'.format(i)) for i in S])
+        # c = m.add_var(var_type=CONTINUOUS, lb=0, name='c')
+        m.objective = xsum(self.x[i] * t[i] for i in S)
+        # print(range(len(K)))
+        # print(range(len(K[0])))
+        # print(t[3])
+        for i in range(len(K)):
+            m += xsum(K[i][j] * t[j] for j in range(len(K[i]))) >= 1, 'K({})'.format(i)
+        m.optimize()
+        # m.write('teste.lp')
+
+        ts = np.zeros(self.qtd)
+        if m.status != OptimizationStatus.OPTIMAL:
+            return ts, 999999
+
+        for i in S:
+            ts[i] = t[i].x
+
+        return ts
+
+    def random_init_mip(self):
+        chosen = np.array([np.random.randint(2, size=self.qtd)])
+        S = np.where(chosen == 1)[1]
+        while len(S) < 2:
+            pos = np.random.randint(0, self.qtd)
+            while chosen[0][pos] == 0:
+                chosen[0][pos] = 1
+                S = np.where(chosen == 1)[1]
+        path = self.paths(chosen)
+        key = '{}'.format(''.join(str(chosen[0][i]) for i in range(self.qtd)))
+        t = self.mip(path, S)
+        value = self.cost_function(t, chosen, path)
+
+        self.accepted[key] = (t, value)
+        return chosen, t, value
+
+    def random_neighbour_mip(self, chosen):
+        neighborhood = np.random.choice([0, 1, 2, 3], 1, p=[0.25, 0.25, 0.25, 0.25])[0]
+        # print(neighborhood)
+        new_chosen = chosen.copy()
+        S = np.where(chosen == 1)[1]
+        maximum = min(self.qtd, 9)
+        minimum = 2
+        # print(self.accepted)
+
+        if neighborhood == 0:  # change some chosen at random
+            # print('neighborhood', 0)
+            pos = np.random.randint(0, self.qtd)
+            new_chosen[0][pos] = 1 - chosen[0][pos]
+            # print('pos', pos, 'new_chosen', new_chosen)
+            # if is in limits
+            S = np.where(new_chosen == 1)[1]
+            # print('S', S)
+            if len(S) < minimum or len(S) > maximum:
+                key = '{}'.format(''.join(str(chosen[0][i]) for i in range(self.qtd)))
+                # print('limit', key)
+                return chosen, self.accepted[key][0], self.accepted[key][1]
+
+            key = '{}'.format(''.join(str(new_chosen[0][i]) for i in range(self.qtd)))
+            # print(key)
+            # if new configuration exists
+            if key in self.accepted:
+                # print('exists', new_chosen)
+                # print(self.accepted[key])
+                return new_chosen, self.accepted[key][0], self.accepted[key][1]
+
+        elif neighborhood == 1:  # change two chosens at random
+            # print('neighborhood', 1)
+            pos1 = np.random.randint(0, self.qtd)
+            pos2 = np.random.randint(0, self.qtd)
+
+            while pos1 == pos2:
+                pos1 = np.random.randint(0, self.qtd)
+                pos2 = np.random.randint(0, self.qtd)
+
+            new_chosen[0][pos1] = 1 - chosen[0][pos1]
+            new_chosen[0][pos2] = 1 - chosen[0][pos2]
+            # print('pos1', pos1, 'pos2', pos2, 'new_chosen', new_chosen)
+            S = np.where(new_chosen == 1)[1]
+
+            # if is in limits
+            if len(S) < minimum or len(S) > maximum:
+                key = '{}'.format(''.join(str(chosen[0][i]) for i in range(self.qtd)))
+                # print('limit', key)
+                return chosen, self.accepted[key][0], self.accepted[key][1]
+
+            key = '{}'.format(''.join(str(new_chosen[0][i]) for i in range(self.qtd)))
+            # if new configuration exists
+            if key in self.accepted:
+                # print('exists', key)
+                return new_chosen, self.accepted[key][0], self.accepted[key][1]
+            # print('dont existt', key)
+
+        elif neighborhood == 2:  # include one that is not in the solution if maximum not reached
+            if len(S) == maximum:
+                key = '{}'.format(''.join(str(chosen[0][i]) for i in range(self.qtd)))
+                return chosen, self.accepted[key][0], self.accepted[key][1]
+
+            S_not = np.where(chosen == 0)[1]
+            # print('S_not', S_not)
+            pos = S_not[np.random.randint(0, len(S_not))]
+            # print('pos', pos)
+            new_chosen[0][pos] = 1
+            key = '{}'.format(''.join(str(new_chosen[0][i]) for i in range(self.qtd)))
+
+            # if new configuration exists
+            if key in self.accepted:
+                # print('exists', key)
+                return new_chosen, self.accepted[key][0], self.accepted[key][1]
+            # print('dont existt', key)
+        else:  # remove one that is in solution
+            if len(S) == minimum:
+                key = '{}'.format(''.join(str(chosen[0][i]) for i in range(self.qtd)))
+                # print('minimum', key)
+                return chosen, self.accepted[key][0], self.accepted[key][1]
+
+            pos = S[np.random.randint(0, len(S))]
+            # print('pos', pos)
+            new_chosen[0][pos] = 0
+            key = '{}'.format(''.join(str(new_chosen[0][i]) for i in range(self.qtd)))
+
+            # if new configuration exists
+            if key in self.accepted:
+                # print('exists', key)
+                return new_chosen, self.accepted[key][0], self.accepted[key][1]
+            # print('dont existt', key)
+
+        S = np.where(new_chosen == 1)[1]
+        K = self.paths(new_chosen)
+        new_t = self.mip(K, S)
+        new_cost = self.cost_function(new_t, new_chosen, K)
+        self.accepted[key] = (new_t, new_cost)
+        return new_chosen, new_t, new_cost
 
     def random_init(self):
         chosen = np.array([np.random.randint(2, size=self.qtd)])
@@ -76,6 +222,17 @@ class Clique:
         # print(100*fo, 100000*penal_left_1, 100000*penal_min_size, - 1e-8*sum_t)
         # input
         return 100*fo + 100000*penal_min_size + 100000*penal_left_1 - 1e-8*sum_t
+
+    def initial_temperature_mip(self, chosen, t, cost):
+        sum_delta = 0
+        for i in range(10):
+            new_chosen, new_t, new_cost = self.random_neighbour_mip(chosen)
+            sum_delta += abs(cost - new_cost)
+        if round(sum_delta / 10, 10) == 0:
+            return 100
+
+        return sum_delta / 10
+
 
     def initial_temperature(self, chosen, t, path, cost):
         sum_delta = 0
@@ -130,22 +287,108 @@ class Clique:
         #
         # new_valid = self.valid_multipliers(new_path, new_t)
 
-        # print('chosen: ', chosen, 'new: ', new_chosen)
+        print('chosen: ', chosen, 'new: ', new_chosen)
         # print('t: ', t, 'new: ', new_t)
-        # print('path: ', path, 'new: ', new_path)
+        print('path: ', path, 'new: ', new_path)
         # print('valid:', valid, 'new: ', new_valid)
-        # input()
+        input()
         return new_chosen, new_t, new_path
 
     def acceptance_probability(self, cost, new_cost, temperature):
 
-        if new_cost < cost:
+        if round(new_cost, 8) < round(cost, 8):
             if self.debug: print("    - Acceptance probabilty = 1 as new_cost = {} < cost = {}...".format(new_cost, cost), end='')
             return 1
         else:
             prob = np.exp(- (new_cost - cost) / temperature)
             if self.debug: print("    - Acceptance probabilty = {:.3g}...".format(prob), end='')
             return prob
+
+    def annealing_mip(self):
+        """ Optimize the black-box function 'cost_function' with the simulated annealing algorithm."""
+        solutions = 0
+        chosens = np.array([])
+        ts = np.array([])
+        costs = np.array([])
+        chosen, t, cost = self.random_init_mip()
+        # o quanto melhora ou piora de 10 vizinhos a média disso é a temperatura inicial
+        if round(cost, 6) < 100:
+            chosens = np.vstack([chosens, chosen]) if chosens.size else chosen
+            ts = np.vstack([ts, t]) if ts.size else t
+            costs = np.vstack([costs, cost]) if costs.size else cost
+            solutions += 1
+        maxsteps = self.maxsteps
+        T0 = self.initial_temperature_mip(chosen, t, cost)
+        T = T0
+        # input(T)
+        worst = -1
+        removal = -1
+
+        rejected = 0
+        step = 0
+        force = False
+        while step < maxsteps:  # and T > 1e-11:   #for step in range(maxsteps):
+            step += 1
+            new_chosen, new_t, new_cost = self.random_neighbour_mip(chosen)
+            # print('custos: ', cost, new_cost)
+            if self.debug: print("Step #{:>2}/{:>2} : T = {:>4.3g}, chosen = {}, t = {}, cost = {:>4.3g}, "
+                            "new_chosen = {}, new_t = {}, new_cost = {:>4.3g} ...".format(step, maxsteps, T, chosen, t, cost, new_chosen, new_t, new_cost), end='')
+            # print("Step #{:>2}/{:>2} : T = {:>4.3g}, accepted = {}, cost = {}, new_cost = {}".format(step, maxsteps, T, accepted, cost, new_cost), end='')
+            # input()
+            if self.acceptance_probability(cost, new_cost, T) > np.random.random():
+                chosen, t, cost = new_chosen, new_t, new_cost
+                rejected = 0
+                if round(cost, 6) < 100:
+                    if solutions < self.max_solutions:
+                        # print()
+                        if any(( chosen == x ).all() for x in chosens) == False:
+                            # if solutions == 0 or np.sum(np.all(np.isclose(ts, t), axis=1)) == 0:  # if t is unique in ts
+                            chosens = np.vstack([chosens, chosen]) if chosens.size else chosen
+                            ts = np.vstack([ts, t]) if ts.size else t
+                            costs = np.vstack([costs, cost]) if costs.size else cost
+                            if cost > worst:
+                                worst = cost
+                                removal = solutions
+                            solutions += 1
+                            # else:
+                            #     print(ts)
+                            #     print(t)
+                            #     input()
+                            # input(chosens)
+                    else:
+                        if cost < worst: # checar se os multiplicadores são iguais também
+                            # if np.sum(np.all(np.isclose(ts, t),
+                            #                  axis=1)) == 0:  # if t is unique in ts
+                            chosens[removal] = chosen
+                            ts[removal] = t
+                            costs[removal] = cost
+                            worst = cost
+                            #find next worst
+                            for i in range(self.max_solutions):
+                                if costs[i] > worst:
+                                    removal = i
+                                    worst = costs[i]
+                if self.debug: print("  ==> Accept it!")
+                # print("  ==> Accept it!")
+            else:
+                # print()
+                if self.debug: print("  ==> Reject it...{}".format(rejected))
+                # if T <= 1e-10:
+                #     rejected += 1
+                # if rejected > 0.2*maxsteps:
+                #     # input()
+                #     return chosens, ts, costs
+
+            fraction = float(step / float(maxsteps))
+            T = T * self.alpha(fraction)  # self.temperature(fraction)
+            if T < 1e-10:
+                return chosens, ts, costs
+
+            # input()
+        # if self.debug: print('chosens', chosens)
+        # input()
+        return chosens, ts, costs
+
 
     def annealing(self):
         """ Optimize the black-box function 'cost_function' with the simulated annealing algorithm."""
@@ -263,13 +506,14 @@ class Clique:
         return best_chosen, best_t, best_cost
 
 if __name__ == "__main__":
-    x = [0, 0, 10, 19]
-    p = [10, 1, 1, 10]
+    x = [0, 0, 19, 10]
+    p = [10, 1, 1, 9]
     est = [0, 0, 19, 10]
     clique = Clique(x, p, est, 10000)
-    chosen, t, cost = clique.LAHC(10)
-    print('Chosen = {} ; t = {} ; cost = {}'.format(chosen, t, cost))
-    input()
-    escolhidos, indices, custos = clique.annealing()
+    # clique.annealing_mip()
+    # chosen, t, cost = clique.LAHC(10)
+    # print('Chosen = {} ; t = {} ; cost = {}'.format(chosen, t, cost))
+    # input()
+    escolhidos, indices, custos = clique.annealing_mip()
     for i in range(len(escolhidos)):
         print('Chosen = {} ; t = {} ; cost = {}'.format(escolhidos[i], indices[i], custos[i]))

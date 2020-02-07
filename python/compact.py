@@ -293,7 +293,7 @@ class Compact:
             newConstraints = False
             self.model.verbose = 0
             self.model.optimize()
-            self.clique_heuristic()
+            # self.clique_heuristic()
             if firstObjValue == 0:  # first execution
                 firstObjValue = self.model.objective_value
                 # execute clique (must be only executed at the beginning of the cuts)
@@ -362,8 +362,8 @@ class Compact:
         #                                                                          self.totalBasicCutsEpsilon,
         #                                                                          self.totalHalfCuts,
         #                                                                          self.totalLateJobCuts))
-        # self.model.write(
-        #     '{}_relax_model.lp'.format(self.instance.instancename.translate(str.maketrans('', '', string.punctuation))))
+        self.model.write(
+            '{}_relax_model.lp'.format(self.instance.instancename.translate(str.maketrans('', '', string.punctuation))))
         end = time()
         print('Time elapsed relaxation: {}s'.format(round(end - start, 2)))
         return
@@ -867,16 +867,16 @@ class Compact:
         p = [self.instance.times[j][a] for j in range(self.instance.n)]
         est = [self.instance.est[j][a] for j in range(self.instance.n)]
         clique = Clique(x_bar, p, est, steps)
-        escolhidos, t, custos = clique.annealing()
+        escolhidos, t, custos = clique.annealing_mip()
         cuts = 0
-        if escolhidos.ndim > 1:
+        if t.ndim > 1:
             # print(escolhidos, t, custos)
             cuts = len(escolhidos)
             for e in range(len(escolhidos)):
                 c_name = 'cut_clique_{}({},{})'.format(self.iterationsCuts, e, a)
                 self.model += xsum(t[e][i] * self.x[i][a] for i in range(self.instance.n)) >= 1, c_name
                 # print('{} : Chosen = {} ; t = {} ; cost = {}'.format(c_name, escolhidos[e], t[e], custos[e]))
-        elif escolhidos.ndim == 1 and escolhidos.size > 0:
+        elif t.ndim == 1 and t.size > 0:
             cuts = 1
             c_name = 'cut_clique_{}({},{})'.format(self.iterationsCuts, 1, a)
             self.model += xsum(t[i] * self.x[i][a] for i in range(self.instance.n)) >= 1, c_name
@@ -1169,7 +1169,12 @@ class Compact:
             for i in range(self.instance.m):
                 print('x({},{}) = {:.2f}\t '.format(j, i, self.x[j][i].x), end='')
             print()
-
+        for i in range(self.instance.m):
+            for j in range(self.instance.n):
+                for k in range(j+1, self.instance.n):
+                    print('y({},{},{}) = {:.2f}\t '.format(j, k, i, self.y[j][k][i].x), end='')
+                    print('y({},{},{}) = {:.2f}\t '.format(k, j, i, self.y[k][j][i].x), end='')
+                    print()
 
     def testCliqueMIP(self, lc=None, hc=None):
         newConstraints = True

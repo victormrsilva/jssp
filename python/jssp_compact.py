@@ -50,7 +50,7 @@ writer = csv.writer(file)
 #         print(' Done!!!')
 #         del compact
 
-writer.writerow(['type', 'try', 'maxstep', 'first', 'last', 'time', 'cuts'])
+writer.writerow(['type', 'try', 'maxstep', 'minimum', 'maximum', 'exact', 'first', 'last', 'time', 'cuts'])
 maxsteps = [1000, 5000, 10000, 50000, 100000, 500000, 1000000]
 for step in maxsteps:
     for i in range(5):
@@ -58,10 +58,11 @@ for step in maxsteps:
         print('Executing {} SA with maxsteps = {} and iteration = {} ...'.format(instance_name, step, i))
         compact = Compact(inst)
         compact.constructProblemMcCormickNonNegative()
-        first, last, time, cuts = compact.testCliqueSA(step)
-        writer.writerow(['SA', i, step, first, last, time, cuts])
+        first, last, time, cuts, minimum, maximum, exact = compact.testCliqueSA(step)
+        writer.writerow(['SA', i, step, minimum, maximum, exact, first, last, time, cuts])
         compact.model.write('{}_clique_SA_{}_iter_{}.lp'.format(instance_name, step, i))
-        # input()
+        print('SA', i, step, minimum, maximum, exact, first, last, time, cuts)
+        input()
 
 # writer.writerow(['type', 'try', 'maxstep', 'l', 'first', 'last', 'time', 'cuts'])
 # maxsteps = [1000, 5000, 10000, 50000, 100000, 500000, 1000000]

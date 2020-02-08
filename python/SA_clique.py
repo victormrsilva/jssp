@@ -1,7 +1,7 @@
 import numpy as np
 from mip.model import Model, xsum, Var
 from mip.constants import INTEGER, BINARY, CONTINUOUS, OptimizationStatus
-from itertools import permutations
+from itertools import permutations, combinations
 
 class Clique:
     def __init__(self, x, p, est, maxsteps):
@@ -14,6 +14,13 @@ class Clique:
         self.max_solutions = 50
         self.m = Model()
         self.accepted = {}
+        self.max_exact = 512
+        self.exact = 0
+        self.minimum = 2
+        self.maximum = min(9, self.qtd)
+        self.chosens = np.array([])
+        self.ts = np.array([])
+        self.costs = np.array([])
 
     def paths(self, chosen):
         S = np.where(chosen == 1)[1]
@@ -76,10 +83,39 @@ class Clique:
 
         return ts
 
+    def resolve_exact(self):
+        qtd = np.math.factorial(self.qtd)/(np.math.factorial(self.minimum)*np.math.factorial(self.qtd - self.minimum))
+        while qtd < self.max_exact and self.minimum < self.maximum:
+            comb = list(combinations(range(self.qtd), self.minimum))
+            for c in comb:
+                # print(c)
+                chosen = np.array([np.zeros(self.qtd)])
+                for i in c:
+                    chosen[0][i] = 1
+                # print(chosen)
+                path = self.paths(chosen)
+                t = self.mip(path, c)
+                value = self.cost_function(t, chosen, path)
+                self.exact += 1
+
+                if round(value, 6) < 100:
+                    self.chosens = np.vstack([self.chosens, chosen]) if self.chosens.size else chosen
+                    self.ts = np.vstack([self.ts, t]) if self.ts.size else t
+                    self.costs = np.vstack([self.costs, value]) if self.costs.size else value
+            self.minimum += 1
+            qtd = np.math.factorial(self.qtd) / (
+                        np.math.factorial(self.minimum) * np.math.factorial(self.qtd - self.minimum))
+        # print('minimum: ', self.minimum)
+        # print('qtd: ', qtd, 'max', self.max_exact)
+        # print(self.chosens)
+        # print(self.ts)
+        # print(self.costs)
+        # input()
+
     def random_init_mip(self):
         chosen = np.array([np.random.randint(2, size=self.qtd)])
         S = np.where(chosen == 1)[1]
-        while len(S) < 2:
+        while len(S) < self.minimum:
             pos = np.random.randint(0, self.qtd)
             while chosen[0][pos] == 0:
                 chosen[0][pos] = 1
@@ -97,8 +133,6 @@ class Clique:
         # print(neighborhood)
         new_chosen = chosen.copy()
         S = np.where(chosen == 1)[1]
-        maximum = min(self.qtd, 9)
-        minimum = 2
         # print(self.accepted)
 
         if neighborhood == 0:  # change some chosen at random
@@ -109,7 +143,7 @@ class Clique:
             # if is in limits
             S = np.where(new_chosen == 1)[1]
             # print('S', S)
-            if len(S) < minimum or len(S) > maximum:
+            if len(S) < self.minimum or len(S) > self.maximum:
                 key = '{}'.format(''.join(str(chosen[0][i]) for i in range(self.qtd)))
                 # print('limit', key)
                 return chosen, self.accepted[key][0], self.accepted[key][1]
@@ -137,7 +171,7 @@ class Clique:
             S = np.where(new_chosen == 1)[1]
 
             # if is in limits
-            if len(S) < minimum or len(S) > maximum:
+            if len(S) < self.minimum or len(S) > self.maximum:
                 key = '{}'.format(''.join(str(chosen[0][i]) for i in range(self.qtd)))
                 # print('limit', key)
                 return chosen, self.accepted[key][0], self.accepted[key][1]
@@ -150,7 +184,7 @@ class Clique:
             # print('dont existt', key)
 
         elif neighborhood == 2:  # include one that is not in the solution if maximum not reached
-            if len(S) == maximum:
+            if len(S) == self.maximum:
                 key = '{}'.format(''.join(str(chosen[0][i]) for i in range(self.qtd)))
                 return chosen, self.accepted[key][0], self.accepted[key][1]
 
@@ -167,7 +201,7 @@ class Clique:
                 return new_chosen, self.accepted[key][0], self.accepted[key][1]
             # print('dont existt', key)
         else:  # remove one that is in solution
-            if len(S) == minimum:
+            if len(S) == self.minimum:
                 key = '{}'.format(''.join(str(chosen[0][i]) for i in range(self.qtd)))
                 # print('minimum', key)
                 return chosen, self.accepted[key][0], self.accepted[key][1]
@@ -287,11 +321,11 @@ class Clique:
         #
         # new_valid = self.valid_multipliers(new_path, new_t)
 
-        print('chosen: ', chosen, 'new: ', new_chosen)
+        # print('chosen: ', chosen, 'new: ', new_chosen)
         # print('t: ', t, 'new: ', new_t)
-        print('path: ', path, 'new: ', new_path)
+        # print('path: ', path, 'new: ', new_path)
         # print('valid:', valid, 'new: ', new_valid)
-        input()
+        # input()
         return new_chosen, new_t, new_path
 
     def acceptance_probability(self, cost, new_cost, temperature):
@@ -307,15 +341,16 @@ class Clique:
     def annealing_mip(self):
         """ Optimize the black-box function 'cost_function' with the simulated annealing algorithm."""
         solutions = 0
-        chosens = np.array([])
-        ts = np.array([])
-        costs = np.array([])
+        self.resolve_exact()
+        # print(self.minimum, self.maximum, self.exact)
+        if self.minimum >= self.maximum:
+            return self.chosens, self.ts, self.costs, self.minimum, self.maximum, self.exact
         chosen, t, cost = self.random_init_mip()
         # o quanto melhora ou piora de 10 vizinhos a média disso é a temperatura inicial
         if round(cost, 6) < 100:
-            chosens = np.vstack([chosens, chosen]) if chosens.size else chosen
-            ts = np.vstack([ts, t]) if ts.size else t
-            costs = np.vstack([costs, cost]) if costs.size else cost
+            self.chosens = np.vstack([self.chosens, chosen]) if self.chosens.size else chosen
+            self.ts = np.vstack([self.ts, t]) if self.ts.size else t
+            self.costs = np.vstack([self.costs, cost]) if self.costs.size else cost
             solutions += 1
         maxsteps = self.maxsteps
         T0 = self.initial_temperature_mip(chosen, t, cost)
@@ -339,35 +374,35 @@ class Clique:
                 chosen, t, cost = new_chosen, new_t, new_cost
                 rejected = 0
                 if round(cost, 6) < 100:
-                    if solutions < self.max_solutions:
+                    # if solutions < self.max_solutions:
                         # print()
-                        if any(( chosen == x ).all() for x in chosens) == False:
-                            # if solutions == 0 or np.sum(np.all(np.isclose(ts, t), axis=1)) == 0:  # if t is unique in ts
-                            chosens = np.vstack([chosens, chosen]) if chosens.size else chosen
-                            ts = np.vstack([ts, t]) if ts.size else t
-                            costs = np.vstack([costs, cost]) if costs.size else cost
-                            if cost > worst:
-                                worst = cost
-                                removal = solutions
-                            solutions += 1
+                    if not any(( chosen == x ).all() for x in self.chosens):
+                        # if solutions == 0 or np.sum(np.all(np.isclose(ts, t), axis=1)) == 0:  # if t is unique in self.ts
+                        self.chosens = np.vstack([self.chosens, chosen]) if self.chosens.size else chosen
+                        self.ts = np.vstack([self.ts, t]) if self.ts.size else t
+                        self.costs = np.vstack([self.costs, cost]) if self.costs.size else cost
+                        # if cost > worst:
+                        #     worst = cost
+                        #     removal = solutions
+                        # solutions += 1
                             # else:
                             #     print(ts)
                             #     print(t)
                             #     input()
-                            # input(chosens)
-                    else:
-                        if cost < worst: # checar se os multiplicadores são iguais também
-                            # if np.sum(np.all(np.isclose(ts, t),
-                            #                  axis=1)) == 0:  # if t is unique in ts
-                            chosens[removal] = chosen
-                            ts[removal] = t
-                            costs[removal] = cost
-                            worst = cost
-                            #find next worst
-                            for i in range(self.max_solutions):
-                                if costs[i] > worst:
-                                    removal = i
-                                    worst = costs[i]
+                            # input(self.chosens)
+                    # else:
+                    #     if cost < worst: # checar se os multiplicadores são iguais também
+                    #         # if np.sum(np.all(np.isclose(ts, t),
+                    #         #                  axis=1)) == 0:  # if t is unique in self.ts
+                    #         self.chosens[removal] = chosen
+                    #         self.ts[removal] = t
+                    #         self.costs[removal] = cost
+                    #         worst = cost
+                    #         #find next worst
+                    #         for i in range(self.max_solutions):
+                    #             if self.costs[i] > worst:
+                    #                 removal = i
+                    #                 worst = self.costs[i]
                 if self.debug: print("  ==> Accept it!")
                 # print("  ==> Accept it!")
             else:
@@ -377,17 +412,17 @@ class Clique:
                 #     rejected += 1
                 # if rejected > 0.2*maxsteps:
                 #     # input()
-                #     return chosens, ts, costs
+                #     return self.chosens, self.ts, self.costs
 
             fraction = float(step / float(maxsteps))
             T = T * self.alpha(fraction)  # self.temperature(fraction)
             if T < 1e-10:
-                return chosens, ts, costs
+                return self.chosens, self.ts, self.costs, self.minimum, self.maximum, self.exact
 
             # input()
-        # if self.debug: print('chosens', chosens)
+        # if self.debug: print('self.chosens', self.chosens)
         # input()
-        return chosens, ts, costs
+        return self.chosens, self.ts, self.costs, self.minimum, self.maximum, self.exact
 
 
     def annealing(self):
@@ -395,17 +430,17 @@ class Clique:
         solutions = 0
         chosen, t, path = self.random_init()
         cost = self.cost_function(t, chosen, path)
-        chosens = np.array([])
-        ts = np.array([])
-        costs = np.array([])
+        self.chosens = np.array([])
+        self.ts = np.array([])
+        self.costs = np.array([])
         worst = -1
         removal = -1
         accepted = 0
         # o quanto melhora ou piora de 10 vizinhos a média disso é a temperatura inicial
         if cost < 100:
-            chosens = np.vstack([chosens, chosen]) if chosens.size else chosen
-            ts = np.vstack([ts, t]) if ts.size else t
-            costs = np.vstack([costs, cost]) if costs.size else cost
+            self.chosens = np.vstack([self.chosens, chosen]) if self.chosens.size else chosen
+            self.ts = np.vstack([self.ts, t]) if self.ts.size else t
+            self.costs = np.vstack([self.costs, cost]) if self.costs.size else cost
             solutions += 1
             accepted += 1
         maxsteps = self.maxsteps
@@ -432,10 +467,10 @@ class Clique:
                 if cost < 100:
                     if solutions < self.max_solutions:
                         # print()
-                        # if solutions == 0 or np.sum(np.all(np.isclose(ts, t), axis=1)) == 0:  # if t is unique in ts
-                        chosens = np.vstack([chosens, chosen]) if chosens.size else chosen
-                        ts = np.vstack([ts, t]) if ts.size else t
-                        costs = np.vstack([costs, cost]) if costs.size else cost
+                        # if solutions == 0 or np.sum(np.all(np.isclose(ts, t), axis=1)) == 0:  # if t is unique in self.ts
+                        self.chosens = np.vstack([self.chosens, chosen]) if self.chosens.size else chosen
+                        self.ts = np.vstack([self.ts, t]) if self.ts.size else t
+                        self.costs = np.vstack([self.costs, cost]) if self.costs.size else cost
                         if cost > worst:
                             worst = cost
                             removal = solutions
@@ -447,16 +482,16 @@ class Clique:
                     else:
                         if cost < worst: # checar se os multiplicadores são iguais também
                             # if np.sum(np.all(np.isclose(ts, t),
-                            #                  axis=1)) == 0:  # if t is unique in ts
-                            chosens[removal] = chosen
-                            ts[removal] = t
-                            costs[removal] = cost
+                            #                  axis=1)) == 0:  # if t is unique in self.ts
+                            self.chosens[removal] = chosen
+                            self.ts[removal] = t
+                            self.costs[removal] = cost
                             worst = cost
                             #find next worst
                             for i in range(self.max_solutions):
-                                if costs[i] > worst:
+                                if self.costs[i] > worst:
                                     removal = i
-                                    worst = costs[i]
+                                    worst = self.costs[i]
                 if self.debug: print("  ==> Accept it!")
                 # print("  ==> Accept it!")
             else:
@@ -466,7 +501,7 @@ class Clique:
                     rejected += 1
                 # if rejected > 0.2*maxsteps:
                 #     # input()
-                #     return chosens, ts, costs
+                #     return self.chosens, self.ts, self.costs
 
             fraction = float(step / float(maxsteps))
             if T < 1e-10:
@@ -475,34 +510,34 @@ class Clique:
                 T = T * self.alpha(fraction)  # self.temperature(fraction)
 
             # input()
-        # if self.debug: print('chosens', chosens)
+        # if self.debug: print('self.chosens', self.chosens)
         # input()
-        return chosens, ts, costs
+        return self.chosens, self.ts, self.costs
 
     def LAHC(self, l):
         chosen, t, path = self.random_init()
         cost = self.cost_function(t, chosen, path)
         best_chosen, best_t, best_cost = chosen, t, cost
-        chosens = np.array([])
-        ts = np.array([])
-        costs = np.array([])
+        self.chosens = np.array([])
+        self.ts = np.array([])
+        self.costs = np.array([])
         for i in range(l):
-            chosens = np.vstack([chosens, chosen]) if chosens.size else chosen
-            ts = np.vstack([ts, t]) if ts.size else t
-            costs = np.vstack([costs, cost]) if costs.size else cost
+            self.chosens = np.vstack([self.chosens, chosen]) if self.chosens.size else chosen
+            self.ts = np.vstack([ts, t]) if self.ts.size else t
+            self.costs = np.vstack([costs, cost]) if self.costs.size else cost
         v = 0
-        # print(chosens, ts, costs)
+        # print(self.chosens, self.ts, self.costs)
         for step in range(self.maxsteps):
             new_chosen, new_t, new_path = self.random_neighbour(chosen, t, path)
             new_cost = self.cost_function(new_t, new_chosen, new_path)
-            if new_cost < best_cost or new_cost < costs[v]:
-                costs[v] = new_cost
-                chosens[v] = new_chosen
-                ts[v] = new_t
+            if new_cost < best_cost or new_cost < self.costs[v]:
+                self.costs[v] = new_cost
+                self.chosens[v] = new_chosen
+                self.ts[v] = new_t
                 if new_cost < best_cost:
                     best_chosen, best_t, best_cost = new_chosen, new_t, new_cost
             v = (v + 1) % l
-        # print(chosens, ts, costs)
+        # print(self.chosens, self.ts, self.costs)
         return best_chosen, best_t, best_cost
 
 if __name__ == "__main__":
@@ -514,6 +549,7 @@ if __name__ == "__main__":
     # chosen, t, cost = clique.LAHC(10)
     # print('Chosen = {} ; t = {} ; cost = {}'.format(chosen, t, cost))
     # input()
-    escolhidos, indices, custos = clique.annealing_mip()
+    escolhidos, indices, custos, minimum, maximum, exact = clique.annealing_mip()
+    print('minimum', minimum, 'maximum', maximum, 'exact', exact)
     for i in range(len(escolhidos)):
         print('Chosen = {} ; t = {} ; cost = {}'.format(escolhidos[i], indices[i], custos[i]))

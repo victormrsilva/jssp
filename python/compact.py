@@ -867,7 +867,7 @@ class Compact:
         p = [self.instance.times[j][a] for j in range(self.instance.n)]
         est = [self.instance.est[j][a] for j in range(self.instance.n)]
         clique = Clique(x_bar, p, est, steps)
-        escolhidos, t, custos = clique.annealing_mip()
+        escolhidos, t, custos, minimum, maximum, exact = clique.annealing_mip()
         cuts = 0
         if t.ndim > 1:
             # print(escolhidos, t, custos)
@@ -885,7 +885,7 @@ class Compact:
         # input('machine: {}'.format(a))
         # self.model.write('teste.lp')
         # input('lp escrito')
-        return cuts
+        return cuts, minimum, maximum, exact
 
     def LAHC(self, a, steps, l):
         x_bar = [self.x[j][a].x for j in range(self.instance.n)]
@@ -1219,6 +1219,9 @@ class Compact:
         self.model.verbose = 0
         self.model.optimize()
         firstObjValue = self.model.objective_value
+        minimum = 0
+        maximum = 0
+        exact = 0
 
         while newConstraints:
             self.iterationsCuts += 1
@@ -1226,8 +1229,8 @@ class Compact:
             newConstraints = False
             self.model.verbose = 0
             for a in range(self.instance.m):
-                clique_cuts = self.clique_heuristic(a, steps)
-                print('Cliques on machine {} = {}'.format(a, clique_cuts))
+                clique_cuts, minimum, maximum, exact = self.clique_heuristic(a, steps)
+                print('Cliques on machine {} = {}. Minimum = {}, maximum = {}, exacts found = {}'.format(a, clique_cuts, minimum, maximum, exact))
                 hasCuts += clique_cuts
             cutsFound += hasCuts
 
@@ -1242,7 +1245,7 @@ class Compact:
         end = time()
         lastObjValue = self.model.objective_value
         elapsedTime = round(end - start, 2)
-        return firstObjValue, lastObjValue, elapsedTime, cutsFound
+        return firstObjValue, lastObjValue, elapsedTime, cutsFound, minimum, maximum, exact
 
 
     def testCliqueLAHC(self, steps, l):

@@ -2,6 +2,7 @@ import numpy as np
 from mip.model import Model, xsum, Var
 from mip.constants import INTEGER, BINARY, CONTINUOUS, OptimizationStatus
 from itertools import permutations, combinations
+import time
 
 class Clique:
     def __init__(self, x, p, est, maxsteps):
@@ -17,29 +18,26 @@ class Clique:
         self.max_exact = 512
         self.exact = 0
         self.minimum = 2
-        self.maximum = min(9, self.qtd)
+        self.maximum = min(8, self.qtd)
         self.chosens = np.array([])
         self.ts = np.array([])
         self.costs = np.array([])
 
     def paths(self, chosen):
         S = np.where(chosen == 1)[1]
+        # print("S = {}".format(S))
         perms = np.array(list(permutations(S)))
 
         K = np.zeros((len(perms), self.qtd))
         # print(perms)
         for i in range(len(perms)):
-            soma = 0
+            K[i][perms[i][0]] = self.est[perms[i][0]]
+            soma = self.est[perms[i][0]]
             # print(perms[i])
-            for j in range(len(perms[i])):
-                if j == 0:
-                    soma = self.est[perms[i][j]]
-                    # print('pos', perms[i][j], 'soma: ', soma, 'est: ', self.est[perms[i][j]])
-                else:
-                    # print('pos', perms[i][j], 'soma: ', soma, 'anterior:', perms[i][j-1], 'tempo', self.p[perms[i][j-1]], 'est: ', self.est[perms[i][j]])
-                    soma = max(soma + self.p[perms[i][j-1]], self.est[perms[i][j]])
-                for aux in range(j, len(perms[j])):
-                    K[i][perms[i][aux]] = soma
+            for j in range(1, len(perms[i])):
+                # print('pos', perms[i][j], 'soma: ', soma, 'anterior:', perms[i][j-1], 'tempo', self.p[perms[i][j-1]], 'est: ', self.est[perms[i][j]])
+                soma = max(soma + self.p[perms[i][j-1]], self.est[perms[i][j]])
+                K[i][perms[i][j]] = soma
             # print(K[i][:])
         # input(K)
         return K
@@ -60,6 +58,7 @@ class Clique:
         m.clear()
         m.verbose = 0
         m.max_seconds = 90
+        # initial = time.time()
         t = [0] * self.qtd
         for i in S:
             t[i] = m.add_var(var_type=CONTINUOUS, lb=0, name='t({})'.format(i))
@@ -70,8 +69,13 @@ class Clique:
         # print(range(len(K[0])))
         # print(t[3])
         for i in range(len(K)):
-            m += xsum(K[i][j] * t[j] for j in range(len(K[i]))) >= 1, 'K({})'.format(i)
+            m += xsum(K[i][S[j]] * t[S[j]] for j in range(len(S))) >= 1, 'K({})'.format(i)
+        # end = time.time()
+        # print("MIP creation: {:4.3g}".format(end - initial))
+        # initial = time.time()
         m.optimize()
+        # end = time.time()
+        # print("MIP solve: {:4.3g}".format(end - initial))
         # m.write('teste.lp')
 
         ts = np.zeros(self.qtd)
@@ -134,8 +138,8 @@ class Clique:
         new_chosen = chosen.copy()
         S = np.where(chosen == 1)[1]
         # print(self.accepted)
-
         if neighborhood == 0:  # change some chosen at random
+            # initial = time.time()
             # print('neighborhood', 0)
             pos = np.random.randint(0, self.qtd)
             new_chosen[0][pos] = 1 - chosen[0][pos]
@@ -146,6 +150,8 @@ class Clique:
             if len(S) < self.minimum or len(S) > self.maximum:
                 key = '{}'.format(''.join(str(chosen[0][i]) for i in range(self.qtd)))
                 # print('limit', key)
+                # end = time.time()
+                # print("time neighbor 0 max-minimum: {:4.3g}".format(end - initial))
                 return chosen, self.accepted[key][0], self.accepted[key][1]
 
             key = '{}'.format(''.join(str(new_chosen[0][i]) for i in range(self.qtd)))
@@ -154,16 +160,23 @@ class Clique:
             if key in self.accepted:
                 # print('exists', new_chosen)
                 # print(self.accepted[key])
+                # end = time.time()
+                # print("time neighbor 0 exists: {:4.3g}".format(end - initial))
                 return new_chosen, self.accepted[key][0], self.accepted[key][1]
+            end = time.time()
+            # print("time neighbor 0: {:4.3g}".format(end-initial))
 
         elif neighborhood == 1:  # change two chosens at random
             # print('neighborhood', 1)
+            # initial = time.time()
             pos1 = np.random.randint(0, self.qtd)
             pos2 = np.random.randint(0, self.qtd)
 
-            while pos1 == pos2:
-                pos1 = np.random.randint(0, self.qtd)
-                pos2 = np.random.randint(0, self.qtd)
+            if pos1 == pos2:
+                if pos1 == 0:
+                    pos1 += 1
+                elif pos1 == self.qtd:
+                    pos1 -= 1
 
             new_chosen[0][pos1] = 1 - chosen[0][pos1]
             new_chosen[0][pos2] = 1 - chosen[0][pos2]
@@ -173,19 +186,27 @@ class Clique:
             # if is in limits
             if len(S) < self.minimum or len(S) > self.maximum:
                 key = '{}'.format(''.join(str(chosen[0][i]) for i in range(self.qtd)))
-                # print('limit', key)
+                # end = time.time()
+                # print("time neighbor 1 maximum minimum: {:4.3g}".format(end - initial))
                 return chosen, self.accepted[key][0], self.accepted[key][1]
 
             key = '{}'.format(''.join(str(new_chosen[0][i]) for i in range(self.qtd)))
             # if new configuration exists
             if key in self.accepted:
                 # print('exists', key)
+                # end = time.time()
+                # print("time neighbor 1 exists: {:4.3g}".format(end - initial))
                 return new_chosen, self.accepted[key][0], self.accepted[key][1]
             # print('dont existt', key)
+            # end = time.time()
+            # print("time neighbor 1: {:4.3g}".format(end-initial))
 
         elif neighborhood == 2:  # include one that is not in the solution if maximum not reached
+            # initial = time.time()
             if len(S) == self.maximum:
                 key = '{}'.format(''.join(str(chosen[0][i]) for i in range(self.qtd)))
+                # end = time.time()
+                # print("time neighbor 2 maximum: {:4.3g}".format(end - initial))
                 return chosen, self.accepted[key][0], self.accepted[key][1]
 
             S_not = np.where(chosen == 0)[1]
@@ -198,12 +219,20 @@ class Clique:
             # if new configuration exists
             if key in self.accepted:
                 # print('exists', key)
+                # end = time.time()
+                # print("time neighbor 2 exists: {:4.3g}".format(end - initial))
                 return new_chosen, self.accepted[key][0], self.accepted[key][1]
             # print('dont existt', key)
+            # end = time.time()
+            # print("time neighbor 2: {:4.3g}".format(end-initial))
+
         else:  # remove one that is in solution
+            # initial = time.time()
             if len(S) == self.minimum:
                 key = '{}'.format(''.join(str(chosen[0][i]) for i in range(self.qtd)))
                 # print('minimum', key)
+                # end = time.time()
+                # print("time neighbor 3 minimum : {:4.3g}".format(end - initial))
                 return chosen, self.accepted[key][0], self.accepted[key][1]
 
             pos = S[np.random.randint(0, len(S))]
@@ -214,13 +243,25 @@ class Clique:
             # if new configuration exists
             if key in self.accepted:
                 # print('exists', key)
+                # end = time.time()
+                # print("time neighbor 3 exists: {:4.3g}".format(end - initial))
                 return new_chosen, self.accepted[key][0], self.accepted[key][1]
+            # end = time.time()
+            # print("time neighbor 3: {:4.3g}".format(end-initial))
             # print('dont existt', key)
-
+        # initial = time.time()
         S = np.where(new_chosen == 1)[1]
         K = self.paths(new_chosen)
+        # end = time.time()
+        # print("time path: {:4.3g}".format(end - initial))
+        # initial = time.time()
         new_t = self.mip(K, S)
+        # end = time.time()
+        # print("time MIP: {:4.3g}".format(end - initial))
+        # initial = time.time()
         new_cost = self.cost_function(new_t, new_chosen, K)
+        # end = time.time()
+        # print("time cost: {:4.3g}".format(end - initial))
         self.accepted[key] = (new_t, new_cost)
         return new_chosen, new_t, new_cost
 
@@ -329,7 +370,9 @@ class Clique:
         return new_chosen, new_t, new_path
 
     def acceptance_probability(self, cost, new_cost, temperature):
-
+        if abs(round(new_cost, 8) - round(cost, 8)) < 1e-8:
+            if self.debug: print("    - Acceptance probabilty = 1e-8...", end='')
+            return 1e-8
         if round(new_cost, 8) < round(cost, 8):
             if self.debug: print("    - Acceptance probabilty = 1 as new_cost = {} < cost = {}...".format(new_cost, cost), end='')
             return 1
@@ -341,7 +384,7 @@ class Clique:
     def annealing_mip(self):
         """ Optimize the black-box function 'cost_function' with the simulated annealing algorithm."""
         solutions = 0
-        self.resolve_exact()
+        # self.resolve_exact()
         # print(self.minimum, self.maximum, self.exact)
         if self.minimum >= self.maximum:
             return self.chosens, self.ts, self.costs, self.minimum, self.maximum, self.exact
@@ -364,18 +407,23 @@ class Clique:
         force = False
         while step < maxsteps:  # and T > 1e-11:   #for step in range(maxsteps):
             step += 1
+            initial = time.time()
             new_chosen, new_t, new_cost = self.random_neighbour_mip(chosen)
+            # end = time.time()
+            # print("Time neighbor: {:>4.3g}".format(end-initial))
             # print('custos: ', cost, new_cost)
             if self.debug: print("Step #{:>2}/{:>2} : T = {:>4.3g}, chosen = {}, t = {}, cost = {:>4.3g}, "
                             "new_chosen = {}, new_t = {}, new_cost = {:>4.3g} ...".format(step, maxsteps, T, chosen, t, cost, new_chosen, new_t, new_cost), end='')
             # print("Step #{:>2}/{:>2} : T = {:>4.3g}, accepted = {}, cost = {}, new_cost = {}".format(step, maxsteps, T, accepted, cost, new_cost), end='')
             # input()
+            # initial = time.time()
             if self.acceptance_probability(cost, new_cost, T) > np.random.random():
                 chosen, t, cost = new_chosen, new_t, new_cost
                 rejected = 0
                 if round(cost, 6) < 100:
                     # if solutions < self.max_solutions:
                         # print()
+                    # initial = time.time()
                     if not any(( chosen == x ).all() for x in self.chosens):
                         # if solutions == 0 or np.sum(np.all(np.isclose(ts, t), axis=1)) == 0:  # if t is unique in self.ts
                         self.chosens = np.vstack([self.chosens, chosen]) if self.chosens.size else chosen
@@ -390,32 +438,26 @@ class Clique:
                             #     print(t)
                             #     input()
                             # input(self.chosens)
-                    # else:
-                    #     if cost < worst: # checar se os multiplicadores são iguais também
-                    #         # if np.sum(np.all(np.isclose(ts, t),
-                    #         #                  axis=1)) == 0:  # if t is unique in self.ts
-                    #         self.chosens[removal] = chosen
-                    #         self.ts[removal] = t
-                    #         self.costs[removal] = cost
-                    #         worst = cost
-                    #         #find next worst
-                    #         for i in range(self.max_solutions):
-                    #             if self.costs[i] > worst:
-                    #                 removal = i
-                    #                 worst = self.costs[i]
-                if self.debug: print("  ==> Accept it!")
+                end = time.time()
+                # print("Time accept: {:>4.3g}".format(end - initial))
+                if self.debug: print("  ==> Accept it! Time = {:>4.3g}".format((end - initial)))
                 # print("  ==> Accept it!")
             else:
                 # print()
-                if self.debug: print("  ==> Reject it...{}".format(rejected))
+                end = time.time()
+                # print("Time reject: {:>4.3g}".format(end - initial))
+                if self.debug: print("  ==> Reject it... Time = {:>4.3g}".format(end-initial))
                 # if T <= 1e-10:
                 #     rejected += 1
                 # if rejected > 0.2*maxsteps:
                 #     # input()
                 #     return self.chosens, self.ts, self.costs
-
+            # initial = time.time()
             fraction = float(step / float(maxsteps))
             T = T * self.alpha(fraction)  # self.temperature(fraction)
+            # end = time.time()
+            # print("Temperature: {:>4.3g}. Time temperature: {:>4.3g}".format(T, end-initial))
+
             if T < 1e-10:
                 return self.chosens, self.ts, self.costs, self.minimum, self.maximum, self.exact
 

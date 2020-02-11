@@ -882,7 +882,6 @@ class Compact:
             self.model += xsum(t[i] * self.x[i][a] for i in range(self.instance.n)) >= 1, c_name
             # print('{} : Chosen = {} ; t = {} ; cost = {}'.format(c_name, escolhidos, t, custos))
         # print(x_bar, p, est)
-        # input('machine: {}'.format(a))
         # self.model.write('teste.lp')
         # input('lp escrito')
         return cuts, minimum, maximum, exact
@@ -1229,8 +1228,10 @@ class Compact:
             newConstraints = False
             self.model.verbose = 0
             for a in range(self.instance.m):
+                initial = time()
                 clique_cuts, minimum, maximum, exact = self.clique_heuristic(a, steps)
-                print('Cliques on machine {} = {}. Minimum = {}, maximum = {}, exacts found = {}'.format(a, clique_cuts, minimum, maximum, exact))
+                end = time()
+                print('Cliques on machine {} = {}. Minimum = {}, maximum = {}, exacts found = {}. Elapsed: {:>4.3g}s'.format(a, clique_cuts, minimum, maximum, exact, end-initial))
                 hasCuts += clique_cuts
             cutsFound += hasCuts
 

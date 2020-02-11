@@ -18,8 +18,8 @@ compact.constructProblemMcCormick()
 # input('feito')
 compact.model.relax()
 compact.model.optimize()
-compact.printSolution()
-input()
+# compact.printSolution()
+# input()
 # compact.constructProblemMcCormick()
 
 # compact.constructProblemMcCormickNonNegative()
@@ -62,7 +62,7 @@ for step in maxsteps:
         writer.writerow(['SA', i, step, minimum, maximum, exact, first, last, time, cuts])
         compact.model.write('{}_clique_SA_{}_iter_{}.lp'.format(instance_name, step, i))
         print('SA', i, step, minimum, maximum, exact, first, last, time, cuts)
-        input()
+        # input()
 
 # writer.writerow(['type', 'try', 'maxstep', 'l', 'first', 'last', 'time', 'cuts'])
 # maxsteps = [1000, 5000, 10000, 50000, 100000, 500000, 1000000]

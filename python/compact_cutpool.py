@@ -1,17 +1,93 @@
 # compact_cutpool.py
-from mip.model import Model, xsum
+from typing import List, Tuple
+from random import seed, randint
+from itertools import product
+from math import sqrt
+import networkx as nx
+from mip import Model, xsum, BINARY, minimize, ConstrsGenerator, CutPool
 from mip.constants import INTEGER, BINARY, CONTINUOUS
-from mip.callbacks import CutPool, ConstrGenerator
+from mip.callbacks import CutPool
 import sys
 from time import process_time
 import numpy as np
+import JSSPInstance
+from itertools import permutations, combinations, product
 
-from itertools import permutations, combinations
+
+class SubTourCutGenerator(ConstrsGenerator):
+    def __init__(self, instance_: JSSPInstance, x_, y_):
+        self.instance = instance_
+        self.x = x_
+        self.y = y_
+        self.m = Model()
+
+    def cycles(self, neighbors, first, edges, cycle, total):
+        # print('neighbors', neighbors, 'first', first, 'edges', edges, 'cycle', cycle, 'cycles', total)
+        if neighbors:
+            # print(neighbors)
+            for n in neighbors:
+                if n >= len(edges) or n < first:  # if is the last one or already checked some
+                    return
+                # print(cycle)
+                # print('edges[{}]'.format(n), edges[n], 'first', first, 'edges', edges, 'cycle', cycle, 'cycles', total)
+                # input()
+                if n == first:
+                    c = cycle.copy()
+                    c.append(n)
+                    total.append(c)
+                elif n not in cycle:
+                    cycle.append(n)
+                    self.cycles(edges[n], first, edges, cycle, total)
+                    cycle.pop()
+        # print('total', total)
+        # input()
+        return total
+
+    def generate_constrs(self, model: Model):
+        xf = model.translate(self.x)
+        yf = model.translate(self.y)
+        V_ = range(self.instance.n)
+
+        cp = CutPool()
+        for a in range(self.instance.m):
+            edges = [[] for i in range(self.instance.n)]
+            for (u, v) in [(k, l) for (k, l) in product(V_, range(self.instance.n+1)) if k != l and abs(yf[k][l][a].x) > 1e-8]:
+                print(yf[u][v][a].name, yf[u][v][a].x)
+                edges[u].append(v)
+            # print(edges)
+            # input()
+            cycles = []
+            for i in range(self.instance.n):
+                c = self.cycles(edges[i], i, edges, [i], [])
+                if c:
+                    for cycle in c:
+                        cycles.append(cycle)
+            # print('cycles', cycles, 'a ', a)
+            # input()
+            for c in cycles:
+                soma = 0
+                rhs = len(c) - 1
+                for i in range(rhs):
+                    u = c[i]
+                    v = c[i+1]
+                    soma += yf[u][v][a].x
+                if soma > rhs - 1 + 1e-8:
+                    cut = xsum(self.y[c[i]][c[i+1]][a] for i in range(rhs)) <= rhs - 1
+                    # print(cut)
+                    # input()
+                    cp.add(cut)
+        for cut in cp.cuts:
+            model += cut
+        print('Total cuts: {}'.format(len(cp.cuts)))
+        input()
 
 
-class Compact_CutPool(ConstrGenerator):
-    def __init__(self, instance):
-        self.instance = instance
+
+class CompactCutPool(ConstrsGenerator):
+    def __init__(self, instance_: JSSPInstance, x_, y_):
+        self.instance = instance_
+        self.x = x_
+        self.y = y_
         self.m = Model()
 
     def generate_cuts(self, model: Model):

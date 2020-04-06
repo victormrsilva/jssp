@@ -1,0 +1,1457 @@
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Using Python-MIP package version 1.6.8
+Executing vi4439 LAHC with maxsteps = 1000 and iteration = 0 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 1000 and iteration = 1 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 1000 and iteration = 2 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 1000 and iteration = 3 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 1000 and iteration = 4 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 1000 and iteration = 0 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 1000 and iteration = 1 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 1000 and iteration = 2 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 1000 and iteration = 3 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 1
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 1000 and iteration = 4 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 1000 and iteration = 0 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 1000 and iteration = 1 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 1000 and iteration = 2 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 1000 and iteration = 3 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 1000 and iteration = 4 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 5000 and iteration = 0 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 5000 and iteration = 1 ...
+Cliques on machine 0 = 1
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 5000 and iteration = 2 ...
+Cliques on machine 0 = 1
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 1
+Cliques on machine 3 = 1
+Added 2 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 5000 and iteration = 3 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 5000 and iteration = 4 ...
+Cliques on machine 0 = 1
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 2 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 5000 and iteration = 0 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 5000 and iteration = 1 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 5000 and iteration = 2 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 5000 and iteration = 3 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 5000 and iteration = 4 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 5000 and iteration = 0 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 1
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 2 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 5000 and iteration = 1 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 5000 and iteration = 2 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 5000 and iteration = 3 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 5000 and iteration = 4 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+
+Executing vi4439 LAHC with maxsteps = 10000 and iteration = 0 ...
+Cliques on machine 0 = 1
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 2 cuts with obj = 29.0
+Cliques on machine 0 = 1
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 10000 and iteration = 1 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 10000 and iteration = 2 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 10000 and iteration = 3 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 10000 and iteration = 4 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 10000 and iteration = 0 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 10000 and iteration = 1 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 1
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 2 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 10000 and iteration = 2 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 10000 and iteration = 3 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 10000 and iteration = 4 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 1
+Cliques on machine 3 = 0
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 10000 and iteration = 0 ...
+Cliques on machine 0 = 1
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 10000 and iteration = 1 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 10000 and iteration = 2 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 10000 and iteration = 3 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 10000 and iteration = 4 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 50000 and iteration = 0 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 1
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 2 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 50000 and iteration = 1 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 50000 and iteration = 2 ...
+Cliques on machine 0 = 1
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 1
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 50000 and iteration = 3 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 50000 and iteration = 4 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 50000 and iteration = 0 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 50000 and iteration = 1 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 50000 and iteration = 2 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 50000 and iteration = 3 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 50000 and iteration = 4 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 50000 and iteration = 0 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 1
+Cliques on machine 3 = 0
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 1
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 50000 and iteration = 1 ...
+Cliques on machine 0 = 1
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 2 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 50000 and iteration = 2 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 50000 and iteration = 3 ...
+Cliques on machine 0 = 1
+Cliques on machine 1 = 1
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 3 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 50000 and iteration = 4 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+
+Executing vi4439 LAHC with maxsteps = 100000 and iteration = 0 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 100000 and iteration = 1 ...
+Cliques on machine 0 = 1
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 100000 and iteration = 2 ...
+Cliques on machine 0 = 1
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Added 1 cuts with obj = 28.999999999999996
+Cliques on machine 0 = 1
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 2 cuts with obj = 28.999999999999993
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 28.999999999999993
+Cliques on machine 0 = 1
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Added 1 cuts with obj = 29.000000000000007
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 100000 and iteration = 3 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 100000 and iteration = 4 ...
+Cliques on machine 0 = 1
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 100000 and iteration = 0 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 100000 and iteration = 1 ...
+Cliques on machine 0 = 1
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 2 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 1
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 2 cuts with obj = 28.999999999999996
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 100000 and iteration = 2 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 100000 and iteration = 3 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 100000 and iteration = 4 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 100000 and iteration = 0 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 100000 and iteration = 1 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 100000 and iteration = 2 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 100000 and iteration = 3 ...
+Cliques on machine 0 = 1
+Cliques on machine 1 = 0
+Cliques on machine 2 = 1
+Cliques on machine 3 = 1
+Added 3 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 100000 and iteration = 4 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 500000 and iteration = 0 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 500000 and iteration = 1 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 500000 and iteration = 2 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 500000 and iteration = 3 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 500000 and iteration = 4 ...
+Cliques on machine 0 = 1
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 2 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 500000 and iteration = 0 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 1
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 500000 and iteration = 1 ...
+Cliques on machine 0 = 1
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 500000 and iteration = 2 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 1
+Cliques on machine 3 = 0
+Added 1 cuts with obj = 29.189171836818822
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 500000 and iteration = 3 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 500000 and iteration = 4 ...
+Cliques on machine 0 = 1
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 2 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 500000 and iteration = 0 ...
+Cliques on machine 0 = 1
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 2 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 500000 and iteration = 1 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 500000 and iteration = 2 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 1Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 2 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0376686928602
+Cliques on machine 0 = 1
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Added 1 cuts with obj = 29.03766869286019
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 500000 and iteration = 3 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 500000 and iteration = 4 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 1
+Cliques on machine 3 = 1
+Added 2 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 1
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 1000000 and iteration = 0 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 1000000 and iteration = 1 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 1000000 and iteration = 2 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 1000000 and iteration = 3 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 1000000 and iteration = 4 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 1000000 and iteration = 0 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 1000000 and iteration = 1 ...
+Cliques on machine 0 = 1
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 2 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 1000000 and iteration = 2 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 1
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 2 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 1000000 and iteration = 3 ...
+Cliques on machine 0 = 1
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 2 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 1000000 and iteration = 4 ...
+Cliques on machine 0 = 1
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 1000000 and iteration = 0 ...
+Cliques on machine 0 = 1
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 1000000 and iteration = 1 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 1000000 and iteration = 2 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 1
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 1000000 and iteration = 3 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Executing vi4439 LAHC with maxsteps = 1000000 and iteration = 4 ...
+Cliques on machine 0 = 1
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Added 1 cuts with obj = 29.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0

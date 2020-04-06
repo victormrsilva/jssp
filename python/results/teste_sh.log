@@ -1,0 +1,3833 @@
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Using Python-MIP package version 1.6.8
+Executing la02 SA with maxsteps = 1000 and iteration = 0 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 20
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 70 cuts with obj = 394.0
+Cliques on machine 0 = 6
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 46
+Added 102 cuts with obj = 394.0
+Cliques on machine 0 = 6
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 6
+Added 62 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 6
+Cliques on machine 2 = 10
+Cliques on machine 3 = 6
+Cliques on machine 4 = 50
+Added 72 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 12
+Cliques on machine 1 = 0
+Cliques on machine 2 = 26
+Cliques on machine 3 = 0
+Cliques on machine 4 = 20
+Added 58 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 46
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 96 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 394.0
+Cliques on machine 0 = 32
+Cliques on machine 1 = 0
+Cliques on machine 2 = 5
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 37 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 7
+Added 7 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.0
+Cliques on machine 0 = 26
+Cliques on machine 1 = 5
+Cliques on machine 2 = 37
+Cliques on machine 3 = 2
+Cliques on machine 4 = 7
+Added 77 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+ Done!!!
+Executing la02 SA with maxsteps = 1000 and iteration = 1 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 28
+Cliques on machine 2 = 0
+Cliques on machine 3 = 12
+Cliques on machine 4 = 50
+Added 90 cuts with obj = 394.0
+Cliques on machine 0 = 7
+Cliques on machine 1 = 37
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 1
+Added 45 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 8
+Cliques on machine 2 = 24
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 82 cuts with obj = 394.0
+Cliques on machine 0 = 15
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 115 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 29
+Cliques on machine 1 = 0
+Cliques on machine 2 = 3
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 82 cuts with obj = 394.0
+Cliques on machine 0 = 2
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 30
+Added 32 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 3
+Cliques on machine 4 = 0
+Added 3 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 2
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 52 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+ Done!!!
+Executing la02 SA with maxsteps = 1000 and iteration = 2 ...
+Cliques on machine 0 = 11
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 10
+Added 71 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 17
+Cliques on machine 1 = 0
+Cliques on machine 2 = 9
+Cliques on machine 3 = 0
+Cliques on machine 4 = 4
+Added 30 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 39
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 89 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 26
+Cliques on machine 2 = 24
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 16
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 66 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 32
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 82 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 4
+Cliques on machine 1 = 9
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 13 cuts with obj = 394.0000000000001
+Cliques on machine 0 = 5
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 2
+Cliques on machine 4 = 0
+Added 7 cuts with obj = 394.0000000000001
+Cliques on machine 0 = 0
+Cliques on machine 1 = 11
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 1
+Added 12 cuts with obj = 394.0000000000001
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+ Done!!!
+Executing la02 SA with maxsteps = 1000 and iteration = 3 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 1
+Cliques on machine 2 = 0
+Cliques on machine 3 = 1
+Cliques on machine 4 = 13
+Added 15 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 24
+Added 74 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 0
+Cliques on machine 1 = 23
+Cliques on machine 2 = 12
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 35 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 10
+Cliques on machine 1 = 50
+Cliques on machine 2 = 3
+Cliques on machine 3 = 0
+Cliques on machine 4 = 9
+Added 72 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 6
+Cliques on machine 2 = 0
+Cliques on machine 3 = 7
+Cliques on machine 4 = 50
+Added 63 cuts with obj = 394.0
+Cliques on machine 0 = 27
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 77 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 22
+Cliques on machine 3 = 0
+Cliques on machine 4 = 4
+Added 26 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 2
+Cliques on machine 4 = 6
+Added 8 cuts with obj = 394.0
+Cliques on machine 0 = 14
+Cliques on machine 1 = 50
+Cliques on machine 2 = 7
+Cliques on machine 3 = 0
+Cliques on machine 4 = 40
+Added 111 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+ Done!!!
+Executing la02 SA with maxsteps = 1000 and iteration = 4 ...
+Cliques on machine 0 = 21
+Cliques on machine 1 = 2
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 73 cuts with obj = 394.0
+Cliques on machine 0 = 10
+Cliques on machine 1 = 27
+Cliques on machine 2 = 0
+Cliques on machine 3 = 4
+Cliques on machine 4 = 9
+Added 50 cuts with obj = 394.0
+Cliques on machine 0 = 2
+Cliques on machine 1 = 27
+Cliques on machine 2 = 0
+Cliques on machine 3 = 9
+Cliques on machine 4 = 50
+Added 88 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 0
+Cliques on machine 1 = 4
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 54 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+ Done!!!
+Executing la02 SA with maxsteps = 5000 and iteration = 0 ...
+Cliques on machine 0 = 50
+Cliques on machine 1 = 50
+Cliques on machine 2 = 33Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 183 cuts with obj = 394.0
+Cliques on machine 0 = 50
+Cliques on machine 1 = 50
+Cliques on machine 2 = 2
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 152 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 393.9999999999999
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 6
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 6 cuts with obj = 393.9999999999999
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 50 cuts with obj = 393.9999999999999
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 10
+Added 10 cuts with obj = 393.9999999999999
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 14
+Added 14 cuts with obj = 393.9999999999999
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 393.9999999999999
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+ Done!!!
+Executing la02 SA with maxsteps = 5000 and iteration = 1 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 394.0
+Cliques on machine 0 = 50
+Cliques on machine 1 = 11
+Cliques on machine 2 = 48
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 159 cuts with obj = 394.0000000000001
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 394.0
+Cliques on machine 0 = 3
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 53 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+ Done!!!
+Executing la02 SA with maxsteps = 5000 and iteration = 2 ...
+Cliques on machine 0 = 9
+Cliques on machine 1 = 46
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 105 cuts with obj = 394.0000000000001
+Cliques on machine 0 = 0
+Cliques on machine 1 = 45
+Cliques on machine 2 = 22
+Cliques on machine 3 = 9
+Cliques on machine 4 = 50
+Added 126 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 35
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 85 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 50
+Cliques on machine 1 = 5
+Cliques on machine 2 = 18
+Cliques on machine 3 = 9
+Cliques on machine 4 = 50
+Added 132 cuts with obj = 394.0
+Cliques on machine 0 = 7
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 57 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 33
+Added 33 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 26
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 26 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 3
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 3 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 17
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 17 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 2
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 17
+Added 19 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 4
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 4 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+ Done!!!
+Executing la02 SA with maxsteps = 5000 and iteration = 3 ...
+Cliques on machine 0 = 18
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 1
+Added 69 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 13
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 113 cuts with obj = 394.0
+Cliques on machine 0 = 10
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 110 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 394.0
+Cliques on machine 0 = 12
+Cliques on machine 1 = 17
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 79 cuts with obj = 394.0
+Cliques on machine 0 = 2
+Cliques on machine 1 = 50
+Cliques on machine 2 = 7
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 109 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 8
+Added 58 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 28
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 33
+Added 61 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 32
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 82 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 24
+Added 24 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 20
+Added 20 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+ Done!!!
+Executing la02 SA with maxsteps = 5000 and iteration = 4 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 30
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 130 cuts with obj = 394.0
+Cliques on machine 0 = 50
+Cliques on machine 1 = 50
+Cliques on machine 2 = 32
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 182 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 17
+Cliques on machine 1 = 0
+Cliques on machine 2 = 11
+Cliques on machine 3 = 0
+Cliques on machine 4 = 19
+Added 47 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 9
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 59 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 0
+Cliques on machine 1 = 12Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 62 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 50
+Cliques on machine 1 = 0
+Cliques on machine 2 = 32
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 132 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 18
+Added 18 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 43
+Cliques on machine 3 = 6
+Cliques on machine 4 = 0
+Added 49 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 12
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 62 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 0
+Cliques on machine 1 = 22
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 22 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+ Done!!!
+Executing la02 SA with maxsteps = 10000 and iteration = 0 ...
+Cliques on machine 0 = 39
+Cliques on machine 1 = 50
+Cliques on machine 2 = 30
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 169 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 5
+Cliques on machine 4 = 50
+Added 155 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 394.0
+Cliques on machine 0 = 50
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 394.0
+Cliques on machine 0 = 6
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 56 cuts with obj = 394.0
+Cliques on machine 0 = 10
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 110 cuts with obj = 394.0
+Cliques on machine 0 = 50
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 50 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 18
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 68 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 43
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 143 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+ Done!!!
+Executing la02 SA with maxsteps = 10000 and iteration = 1 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 9
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 109 cuts with obj = 394.0
+Cliques on machine 0 = 12
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 112 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 31
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 131 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 37
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 87 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 50 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+ Done!!!
+Executing la02 SA with maxsteps = 10000 and iteration = 2 ...
+Cliques on machine 0 = 50
+Cliques on machine 1 = 50
+Cliques on machine 2 = 22
+Cliques on machine 3 = 1
+Cliques on machine 4 = 50
+Added 173 cuts with obj = 394.0
+Cliques on machine 0 = 25
+Cliques on machine 1 = 50
+Cliques on machine 2 = 10
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 135 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 26
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 76 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 39
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 89 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 50 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 50 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 3
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 3 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+ Done!!!
+Executing la02 SA with maxsteps = 10000 and iteration = 3 ...
+Cliques on machine 0 = 18
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 6
+Cliques on machine 4 = 50
+Added 174 cuts with obj = 394.0
+Cliques on machine 0 = 50
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 200 cuts with obj = 394.0
+Cliques on machine 0 = 7
+Cliques on machine 1 = 50
+Cliques on machine 2 = 49
+Cliques on machine 3 = 2
+Cliques on machine 4 = 50
+Added 158 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 24
+Cliques on machine 2 = 14
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 88 cuts with obj = 394.0
+Cliques on machine 0 = 15
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 115 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 5
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 55 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 6
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 106 cuts with obj = 393.99999999999983
+Cliques on machine 0 = 0
+Cliques on machine 1 = 4
+Cliques on machine 2 = 0
+Cliques on machine 3 = 9
+Cliques on machine 4 = 0
+Added 13 cuts with obj = 393.99999999999983
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+ Done!!!
+Executing la02 SA with maxsteps = 10000 and iteration = 4 ...Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+
+Cliques on machine 0 = 18
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 168 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 3
+Cliques on machine 4 = 50
+Added 103 cuts with obj = 394.0
+Cliques on machine 0 = 3
+Cliques on machine 1 = 50
+Cliques on machine 2 = 12
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 115 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 5
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 55 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 50
+Cliques on machine 3 = 9
+Cliques on machine 4 = 50
+Added 109 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 15
+Cliques on machine 1 = 0
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 115 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 33
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 83 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 50 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 34
+Cliques on machine 1 = 8
+Cliques on machine 2 = 50
+Cliques on machine 3 = 3
+Cliques on machine 4 = 0
+Added 95 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 0
+Cliques on machine 1 = 14
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 14 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+ Done!!!
+Executing la02 SA with maxsteps = 50000 and iteration = 0 ...
+Cliques on machine 0 = 50
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 16
+Cliques on machine 4 = 50
+Added 166 cuts with obj = 394.0
+Cliques on machine 0 = 50
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 200 cuts with obj = 394.0
+Cliques on machine 0 = 50
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 200 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 50 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+ Done!!!
+Executing la02 SA with maxsteps = 50000 and iteration = 1 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.0000000000001
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 50
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 394.0
+Cliques on machine 0 = 50
+Cliques on machine 1 = 0
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 393.9999999999999
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 393.9999999999999
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 393.9999999999999
+Cliques on machine 0 = 50
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 50
+Cliques on machine 4 = 0
+Added 200 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 50
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 200 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 0
+Cliques on machine 1 = 20
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 37
+Added 107 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+ Done!!!
+Executing la02 SA with maxsteps = 50000 and iteration = 2 ...
+Cliques on machine 0 = 50
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 394.0
+Cliques on machine 0 = 50
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 6
+Cliques on machine 4 = 50
+Added 206 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 50
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 200 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 50
+Cliques on machine 3 = 34
+Cliques on machine 4 = 0
+Added 84 cuts with obj = 394.0
+Cliques on machine 0 = 50
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 50 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+ Done!!!
+Executing la02 SA with maxsteps = 50000 and iteration = 3 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 50
+Cliques on machine 1 = 50
+Cliques on machine 2 = 26
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 176 cuts with obj = 394.0
+Cliques on machine 0 = 50
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 17
+Cliques on machine 4 = 50
+Added 167 cuts with obj = 394.0
+Cliques on machine 0 = 34
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 84 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 5
+Cliques on machine 4 = 50
+Added 55 cuts with obj = 393.99999999999994Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 11
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 61 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 50 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+ Done!!!
+Executing la02 SA with maxsteps = 50000 and iteration = 4 ...
+Cliques on machine 0 = 50
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 50
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 14
+Cliques on machine 4 = 50
+Added 214 cuts with obj = 394.0
+Cliques on machine 0 = 50
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 50 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 394.0
+Cliques on machine 0 = 16
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 66 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+ Done!!!
+Executing la02 SA with maxsteps = 100000 and iteration = 0 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 50
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 26
+Cliques on machine 4 = 50
+Added 176 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 50
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 394.0
+Cliques on machine 0 = 50
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 150 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 49
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 99 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 37
+Cliques on machine 4 = 50
+Added 137 cuts with obj = 394.0
+Cliques on machine 0 = 9
+Cliques on machine 1 = 37
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 46 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 50 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+ Done!!!
+Executing la02 SA with maxsteps = 100000 and iteration = 1 ...
+Cliques on machine 0 = 50
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 394.0
+Cliques on machine 0 = 50
+Cliques on machine 1 = 0
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 50
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 50
+Cliques on machine 1 = 0
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 50
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 26
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 126 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+ Done!!!
+Executing la02 SA with maxsteps = 100000 and iteration = 2 ...
+Cliques on machine 0 = 50
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.0
+Cliques on machine 0 = 50
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.0
+Cliques on machine 0 = 14
+Cliques on machine 1 = 0
+Cliques on machine 2 = 33
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 97 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 394.0000000000001
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 50
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 150 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+ Done!!!
+Executing la02 SA with maxsteps = 100000 and iteration = 3 ...
+Cliques on machine 0 = 50
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 200 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 22
+Cliques on machine 4 = 50
+Added 122 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 21
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 121 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 50
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+ Done!!!
+Executing la02 SA with maxsteps = 100000 and iteration = 4 ...
+Cliques on machine 0 = 50
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 50
+Cliques on machine 4 = 50
+Added 250 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 21
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 36
+Cliques on machine 4 = 50
+Added 207 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 50
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 394.0
+Cliques on machine 0 = 50
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 50 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 24
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 124 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 0
+Cliques on machine 1 = 34
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 34 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+ Done!!!
+Executing la02 SA with maxsteps = 500000 and iteration = 0 ...
+Cliques on machine 0 = 50
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 394.0
+Cliques on machine 0 = 50
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 394.0
+Cliques on machine 0 = 50
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 19
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 50
+Cliques on machine 4 = 50
+Added 169 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 50 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+ Done!!!
+Executing la02 SA with maxsteps = 500000 and iteration = 1 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.0
+Cliques on machine 0 = 50
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 50
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 150 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 50
+Cliques on machine 4 = 0
+Added 100 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+ Done!!!
+Executing la02 SA with maxsteps = 500000 and iteration = 2 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 50
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.0
+Cliques on machine 0 = 50
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 50
+Cliques on machine 4 = 0
+Added 100 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 4
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 4 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+ Done!!!
+Executing la02 SA with maxsteps = 500000 and iteration = 3 ...
+Cliques on machine 0 = 50
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 3
+Cliques on machine 4 = 50
+Added 153 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 50
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 200 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+ Done!!!
+Executing la02 SA with maxsteps = 500000 and iteration = 4 ...
+Cliques on machine 0 = 50
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 50
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.0
+Cliques on machine 0 = 50
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 100 cuts with obj = 394.0
+Cliques on machine 0 = 50
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+ Done!!!
+Executing la02 SA with maxsteps = 1000000 and iteration = 0 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 7
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 107 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 50
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 50
+Cliques on machine 4 = 0
+Added 100 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 50 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 50 cuts with obj = 394.0
+Cliques on machine 0 = 47
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 47 cuts with obj = 394.0
+Cliques on machine 0 = 50
+Cliques on machine 1 = 0
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 50
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+ Done!!!
+Executing la02 SA with maxsteps = 1000000 and iteration = 1 ...
+Cliques on machine 0 = 50
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 50
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 394.0
+Cliques on machine 0 = 50
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.0
+Cliques on machine 0 = 50
+Cliques on machine 1 = 0
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+ Done!!!
+Executing la02 SA with maxsteps = 1000000 and iteration = 2 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 50
+Cliques on machine 4 = 50
+Added 200 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 50
+Cliques on machine 1 = 0
+Cliques on machine 2 = 50
+Cliques on machine 3 = 50
+Cliques on machine 4 = 50
+Added 200 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 50 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 50
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 50 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 50 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 50 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 50 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 50
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.00000000000006
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+ Done!!!
+Executing la02 SA with maxsteps = 1000000 and iteration = 3 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 33
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 133 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 26
+Cliques on machine 4 = 50
+Added 176 cuts with obj = 394.0
+Cliques on machine 0 = 50
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 50
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 50 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+ Done!!!
+Executing la02 SA with maxsteps = 1000000 and iteration = 4 ...
+Cliques on machine 0 = 50
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 393.99999999999994
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 50
+Cliques on machine 4 = 50
+Added 200 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.0
+Cliques on machine 0 = 50
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.0
+Cliques on machine 0 = 50
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 100 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 50
+Cliques on machine 4 = 50
+Added 150 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Added 50 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 50 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 2
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 50
+Added 52 cuts with obj = 394.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+ Done!!!
+Using Python-MIP package version 1.6.8
+Traceback (most recent call last):
+  File "jssp_compact.py", line 9, in <module>
+    inst = JSSPInstance(argv[1])
+  File "/home/victor/jssp-python/JSSPInstance.py", line 5, in __init__
+    with open(instancename, "r") as instance:
+FileNotFoundError: [Errno 2] No such file or directory: 'vi_44_38'
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Using Python-MIP package version 1.6.8
+Executing ft06 SA with maxsteps = 1000 and iteration = 0 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 7
+Cliques on machine 4 = 6
+Cliques on machine 5 = 0
+Added 113 cuts with obj = 47.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+Added 100 cuts with obj = 46.99999999999999
+Cliques on machine 0 = 0
+Cliques on machine 1 = 31
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 1
+Added 32 cuts with obj = 46.99999999999999
+Cliques on machine 0 = 0
+Cliques on machine 1 = 18
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+Added 18 cuts with obj = 46.99999999999999
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+ Done!!!
+Executing ft06 SA with maxsteps = 1000 and iteration = 1 ...
+Cliques on machine 0 = 3
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 5
+Added 108 cuts with obj = 47.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 29
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+Added 29 cuts with obj = 47.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 3
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+Added 53 cuts with obj = 46.99999999999999
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 8
+Cliques on machine 5 = 0
+Added 58 cuts with obj = 46.99999999999999
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+Added 50 cuts with obj = 46.99999999999999
+Cliques on machine 0 = 0
+Cliques on machine 1 = 4
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+Added 4 cuts with obj = 46.99999999999999
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+ Done!!!
+Executing ft06 SA with maxsteps = 1000 and iteration = 2 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 8
+Cliques on machine 4 = 0
+Cliques on machine 5 = 5
+Added 113 cuts with obj = 47.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 21
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 9
+Cliques on machine 5 = 0
+Added 80 cuts with obj = 47.00000000000001
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 10
+Added 60 cuts with obj = 47.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 24
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+Added 74 cuts with obj = 47.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 15
+Cliques on machine 2 = 25
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+Added 40 cuts with obj = 47.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 19
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+Added 19 cuts with obj = 47.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+ Done!!!
+Executing ft06 SA with maxsteps = 1000 and iteration = 3 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 23
+Cliques on machine 3 = 0
+Cliques on machine 4 = 3
+Cliques on machine 5 = 0
+Added 76 cuts with obj = 47.000000000000014
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 1
+Cliques on machine 5 = 0
+Added 1 cuts with obj = 47.000000000000014
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 50
+Cliques on machine 3 = 3
+Cliques on machine 4 = 7
+Cliques on machine 5 = 0
+Added 60 cuts with obj = 47.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 20
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+Added 20 cuts with obj = 47.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 1
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+Added 1 cuts with obj = 47.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+Added 50 cuts with obj = 47.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+Added 50 cuts with obj = 47.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+ Done!!!
+Executing ft06 SA with maxsteps = 1000 and iteration = 4 ...
+Cliques on machine 0 = 6
+Cliques on machine 1 = 31
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 4
+Cliques on machine 5 = 3
+Added 94 cuts with obj = 47.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 1
+Cliques on machine 5 = 0
+Added 101 cuts with obj = 46.99999999999999
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 17
+Cliques on machine 3 = 0
+Cliques on machine 4 = 4
+Cliques on machine 5 = 1
+Added 22 cuts with obj = 46.99999999999999
+Cliques on machine 0 = 0
+Cliques on machine 1 = 20
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+Added 20 cuts with obj = 46.99999999999999
+Cliques on machine 0 = 3
+Cliques on machine 1 = 18
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 4
+Cliques on machine 5 = 0
+Added 25 cuts with obj = 46.99999999999999
+Cliques on machine 0 = 0
+Cliques on machine 1 = 48
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+Added 48 cuts with obj = 46.99999999999999
+Cliques on machine 0 = 0
+Cliques on machine 1 = 12
+Cliques on machine 2 = 27
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+Added 39 cuts with obj = 46.99999999999999
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+ Done!!!
+Executing ft06 SA with maxsteps = 5000 and iteration = 0 ...
+Cliques on machine 0 = 4
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 16
+Cliques on machine 5 = 0
+Added 120 cuts with obj = 47.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+Added 100 cuts with obj = 46.99999999999999
+Cliques on machine 0 = 16
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 5
+Added 121 cuts with obj = 47.00000000000001
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 5
+Added 105 cuts with obj = 47.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 25
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+Added 25 cuts with obj = 47.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+ Done!!!
+Executing ft06 SA with maxsteps = 5000 and iteration = 1 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 2
+Cliques on machine 5 = 0
+Added 102 cuts with obj = 47.0Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 3
+Cliques on machine 5 = 0
+Added 103 cuts with obj = 47.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+ Done!!!
+Executing ft06 SA with maxsteps = 5000 and iteration = 2 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 1
+Cliques on machine 5 = 0
+Added 101 cuts with obj = 47.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 1
+Cliques on machine 5 = 0
+Added 101 cuts with obj = 46.99999999999998
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+Added 100 cuts with obj = 46.99999999999998
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 6
+Cliques on machine 5 = 0
+Added 6 cuts with obj = 46.99999999999998
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+Added 100 cuts with obj = 46.99999999999997
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+ Done!!!
+Executing ft06 SA with maxsteps = 5000 and iteration = 3 ...
+Cliques on machine 0 = 5
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 4
+Added 109 cuts with obj = 46.99999999999999
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 8
+Cliques on machine 5 = 4
+Added 112 cuts with obj = 47.00000000000001
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+Added 50 cuts with obj = 47.00000000000001
+Cliques on machine 0 = 1
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+Added 101 cuts with obj = 47.00000000000001
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+ Done!!!
+Executing ft06 SA with maxsteps = 5000 and iteration = 4 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 2
+Cliques on machine 5 = 0
+Added 102 cuts with obj = 47.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 4
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+Added 104 cuts with obj = 46.99999999999999
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+Added 100 cuts with obj = 46.99999999999999
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+Added 50 cuts with obj = 46.99999999999999
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+ Done!!!
+Executing ft06 SA with maxsteps = 10000 and iteration = 0 ...
+Cliques on machine 0 = 39
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+Added 139 cuts with obj = 47.00000000000001
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 29
+Added 129 cuts with obj = 46.99999999999999
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+Added 100 cuts with obj = 46.99999999999999
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 10
+Added 110 cuts with obj = 47.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 3
+Cliques on machine 5 = 0
+Added 103 cuts with obj = 47.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+ Done!!!
+Executing ft06 SA with maxsteps = 10000 and iteration = 1 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 8
+Cliques on machine 5 = 0
+Added 108 cuts with obj = 46.99999999999999
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+Added 100 cuts with obj = 46.99999999999999
+Cliques on machine 0 = 8
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+Added 108 cuts with obj = 47.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+ Done!!!
+Executing ft06 SA with maxsteps = 10000 and iteration = 2 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+Added 100 cuts with obj = 47.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 37
+Cliques on machine 2 = 0
+Cliques on machine 3 = 2
+Cliques on machine 4 = 0
+Cliques on machine 5 = 5
+Added 44 cuts with obj = 47.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 14
+Cliques on machine 5 = 0
+Added 64 cuts with obj = 47.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+Added 50 cuts with obj = 47.00000000000001
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 26
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+Added 76 cuts with obj = 47.00000000000001
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+ Done!!!
+Executing ft06 SA with maxsteps = 10000 and iteration = 3 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 30
+Cliques on machine 5 = 0
+Added 130 cuts with obj = 47.00000000000001
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 28
+Cliques on machine 5 = 0
+Added 128 cuts with obj = 47.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+Added 50 cuts with obj = 47.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+Added 50 cuts with obj = 47.0
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+ Done!!!
+Executing ft06 SA with maxsteps = 10000 and iteration = 4 ...
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 5
+Cliques on machine 5 = 0
+Added 105 cuts with obj = 46.99999999999999
+Cliques on machine 0 = 0
+Cliques on machine 1 = 50
+Cliques on machine 2 = 50
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0
+Added 100 cuts with obj = 46.99999999999999
+Cliques on machine 0 = 0
+Cliques on machine 1 = 0
+Cliques on machine 2 = 0
+Cliques on machine 3 = 0
+Cliques on machine 4 = 0
+Cliques on machine 5 = 0Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+
+Starting solution of the Linear programming problem using Dual Simplex
+

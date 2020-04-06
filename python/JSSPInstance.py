@@ -1,6 +1,6 @@
 #JSSPInstance.py
 class JSSPInstance:
-    def __init__(self, instancename):
+    def __init__(self, instancename, H):
         self.instancename = instancename
         with open(instancename, "r") as instance:
             line = instance.readline()
@@ -10,8 +10,11 @@ class JSSPInstance:
             self.times = [[0]*self.m for i in range(self.n)]
             self.e = [[0]*self.m for i in range(self.n)]
             self.f = [[0]*self.m for i in range(self.n)]
-            self.K = 0
-            
+            if H > 0:
+                self.K = H
+            else:
+                self.K = 0
+
             # read instance file
             for j in range(self.n):
                 line = instance.readline()
@@ -23,8 +26,9 @@ class JSSPInstance:
                     self.o[j][value] = i
                     value = int(line[2*i+1])
                     self.times[j][int(line[2*i])] = value
-                    self.K += value
-                    
+                    if H < 0:
+                        self.K += value
+
                     i = i+1
 
             # fill e and f matrix

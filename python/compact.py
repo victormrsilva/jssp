@@ -1,6 +1,7 @@
 # compact.py
 import string
 
+from mip.callbacks import CutPool
 from mip.model import Model, xsum, Var
 from mip.constants import INTEGER, BINARY, CONTINUOUS, OptimizationStatus
 import sys
@@ -8,19 +9,19 @@ from time import process_time, time
 import numpy as np
 import copy
 
-# from compact_cutpool import Compact_CutPool
+from compact_cutpool import SubTourCutGenerator
 from SA_clique import Clique
 
-from itertools import permutations, combinations
+from itertools import permutations, combinations, product
 
 
 class Compact:
     def __init__(self, instance):
         self.instance = instance
-        self.m = Model(solver_name="cbc")
+        self.m = Model(solver_name="gurobi")
         self.m.verbose = 0
-        self.model = Model(name='compact', solver_name="cbc")
-        self.model.verbose = 0
+        self.model = Model(name='compact', solver_name="gurobi")
+        self.model.verbose = 1
         self.iterationsCuts = 0
         self.lc = 2  # lower number of jobs in a clique to be found
         self.hc = 10  # high number of jobs in a clique to be found
@@ -82,6 +83,58 @@ class Compact:
                 self.instance.machines[j][self.instance.m - 1]], 'makespan({})'.format(j)
         self.model.write(
             '{}_modelM.lp'.format(self.instance.instancename.translate(str.maketrans('', '', string.punctuation))))
+
+    # build the problem with big-M
+    def constructProblemMSubCycle(self):
+        # self.instance.print()
+        self.y = [
+            [[0 for i in range(self.instance.m)] for k in range(self.instance.n+1)] for j in range(self.instance.n)]
+
+        self.c = self.model.add_var(var_type=INTEGER, name="C")
+        for i in range(self.instance.m):
+            for j in range(self.instance.n):
+                self.x[j][i] = self.model.add_var(var_type=INTEGER, name='x(j{},m{})'.format(j, i))
+                for k in range(j+1, self.instance.n):
+                    self.y[j][k][i] = self.model.add_var(var_type=BINARY, name='y(j{},k{},m{})'.format(j, k, i))
+                    self.y[k][j][i] = self.model.add_var(var_type=BINARY, name='y(j{},k{},m{})'.format(k, j, i))
+                self.y[j][self.instance.n][i] = self.model.add_var(var_type=BINARY, name='y(j{},k{},m{})'.format(j, self.instance.n, i))
+
+        self.model.objective = self.c
+
+        # constraints (2)
+        for j in range(self.instance.n):
+            for i in range(1, self.instance.m):
+                self.model += self.x[j][self.instance.machines[j][i]] - self.x[j][self.instance.machines[j][i - 1]] >= \
+                              self.instance.times[j][self.instance.machines[j][i - 1]], 'ord({},{})'.format(j, i)
+
+        # constraints (3-4)
+        for i in range(self.instance.m):
+            for j in range(self.instance.n):
+                for k in range(self.instance.n):
+                    if k != j:
+                        self.model += self.x[j][i] - self.x[k][i] + self.instance.K * (1 - self.y[j][k][i]) >= \
+                                      self.instance.times[k][i], 'psy({},{},{})'.format(j, k, i)
+                self.model += xsum(self.y[j][k][i] for k in range(self.instance.n + 1)) == 1, 'sum({},{})'.format(j, i)
+            for k in range(self.instance.n+1):
+                self.model += xsum(self.y[j][k][i] for j in range(self.instance.n) if j != k) <= 1, 'sum2({},{})'.format(k, i)
+
+
+
+        # constraints (5)
+        for j in range(self.instance.n):
+            self.model += self.c - self.x[j][self.instance.machines[j][self.instance.m - 1]] >= self.instance.times[j][
+                self.instance.machines[j][self.instance.m - 1]], 'makespan({})'.format(j)
+        self.model.write(
+            '{}_modelMSubCycle.lp'.format(self.instance.instancename.translate(str.maketrans('', '', string.punctuation))))
+
+    def optimizeSubCycle(self):
+        # self.model.cuts_generator = SubTourCutGenerator(self.instance, self.x, self.y)
+        self.model.optimize()
+        while self.subciclos() > 0:
+            self.model.write('teste.lp')
+            self.model.optimize()
+        # self.printSolution()
+
 
     # build the problem with McCormick linearization
     def constructProblemMcCormick(self):
@@ -464,7 +517,7 @@ class Compact:
                 ls += self.instance.times[S[i]][a] * self.instance.times[S[j]][a]
 
         c_name = 'cut_basic_best({},{})'.format(''.join(str(i) for i in S), a)
-        # m.write('teste_cut.lp')
+        m.write('teste_cut.lp')
         # print(c_name, m.objective_value)
         # c = self.model.constr_by_name(c_name)
         # if c is not None:
@@ -873,12 +926,15 @@ class Compact:
             # print(escolhidos, t, custos)
             cuts = len(escolhidos)
             for e in range(len(escolhidos)):
-                c_name = 'cut_clique_{}({},{})'.format(self.iterationsCuts, e, a)
+                # print(''.join(str(int(i)) for i in escolhidos[e]))
+                c_name = 'cut_clique_{}({},{})'.format(self.iterationsCuts, ''.join(str(int(i)) for i in escolhidos[e]), a)
                 self.model += xsum(t[e][i] * self.x[i][a] for i in range(self.instance.n)) >= 1, c_name
                 # print('{} : Chosen = {} ; t = {} ; cost = {}'.format(c_name, escolhidos[e], t[e], custos[e]))
         elif t.ndim == 1 and t.size > 0:
             cuts = 1
-            c_name = 'cut_clique_{}({},{})'.format(self.iterationsCuts, 1, a)
+            # print(escolhidos[0])
+            # print(''.join(str(int(i)) for i in escolhidos[0]))
+            c_name = 'cut_clique_{}({},{})'.format(self.iterationsCuts, ''.join(str(int(i)) for i in escolhidos[0]), a)
             self.model += xsum(t[i] * self.x[i][a] for i in range(self.instance.n)) >= 1, c_name
             # print('{} : Chosen = {} ; t = {} ; cost = {}'.format(c_name, escolhidos, t, custos))
         # print(x_bar, p, est)
@@ -1050,6 +1106,8 @@ class Compact:
                         else:
                             print('y({},{},{}) ----'.format(i, j, a))
             input('erro')
+        m.write('teste_cut.lp')
+        input('teste')
         m.optimize()
 
         if m.status != OptimizationStatus.OPTIMAL:
@@ -1221,6 +1279,8 @@ class Compact:
         minimum = 0
         maximum = 0
         exact = 0
+        maxTime = 60*60*3   # 3 hours
+        initial = time()
 
         while newConstraints:
             self.iterationsCuts += 1
@@ -1228,18 +1288,29 @@ class Compact:
             newConstraints = False
             self.model.verbose = 0
             for a in range(self.instance.m):
-                initial = time()
                 clique_cuts, minimum, maximum, exact = self.clique_heuristic(a, steps)
                 end = time()
+                if (end - initial) > maxTime:
+                    break
                 print('Cliques on machine {} = {}. Minimum = {}, maximum = {}, exacts found = {}. Elapsed: {:>4.3g}s'.format(a, clique_cuts, minimum, maximum, exact, end-initial))
                 hasCuts += clique_cuts
             cutsFound += hasCuts
 
+            end = time()
+            if (end - initial) > maxTime:
+                break
+
             if hasCuts > 0:
                 self.model.optimize()
                 print('Added {} cuts with obj = {}'.format(hasCuts, self.model.objective_value))
-                self.model.write('teste.lp')
+                # self.model.write('teste.lp')
                 newConstraints = True
+
+            if (end - initial) > maxTime:
+                break
+
+            # self.printSolution()
+            # input()
             # if self.iterationsCuts > 15:
             #     newConstraints = False
 
@@ -1284,3 +1355,313 @@ class Compact:
         lastObjValue = self.model.objective_value
         elapsedTime = round(end - start, 2)
         return firstObjValue, lastObjValue, elapsedTime, cutsFound
+
+    def subciclos(self):
+        yf = self.model.translate(self.y)
+        V_ = range(self.instance.n)
+
+        cp = CutPool()
+        for a in range(self.instance.m):
+            edges = [[] for i in range(self.instance.n)]
+            for (u, v) in [(k, l) for (k, l) in product(V_, range(self.instance.n+1)) if k != l and abs(yf[k][l][a].x) > 1e-8]:
+                print(yf[u][v][a].name, yf[u][v][a].x)
+                edges[u].append(v)
+            # print(edges)
+            # input()
+            cycles = []
+            for i in range(self.instance.n):
+                c = self.cycles(edges[i], i, edges, [i], [])
+                if c:
+                    for cycle in c:
+                        cycles.append(cycle)
+            # print('cycles', cycles, 'a ', a)
+            # input()
+            for c in cycles:
+                soma = 0
+                rhs = len(c) - 1
+                for i in range(rhs):
+                    u = c[i]
+                    v = c[i+1]
+                    soma += yf[u][v][a].x
+                if soma > rhs - 1 + 1e-8:
+                    cut = xsum(self.y[c[i]][c[i+1]][a] for i in range(rhs)) <= rhs - 1
+                    # print(cut)
+                    # input()
+                    cp.add(cut)
+        for cut in cp.cuts:
+            print(cut)
+            self.model += cut
+        print('Total cuts: {}'.format(len(cp.cuts)))
+        input()
+        return len(cp.cuts)
+
+    def cycles(self, neighbors, first, edges, cycle, total):
+        # print('neighbors', neighbors, 'first', first, 'edges', edges, 'cycle', cycle, 'cycles', total)
+        if neighbors:
+            # print(neighbors)
+            for n in neighbors:
+                if n >= len(edges) or n < first:  # if is the last one or already checked some
+                    return
+                # print(cycle)
+                # print('edges[{}]'.format(n), edges[n], 'first', first, 'edges', edges, 'cycle', cycle, 'cycles', total)
+                # input()
+                if n == first:
+                    c = cycle.copy()
+                    c.append(n)
+                    total.append(c)
+                elif n not in cycle:
+                    cycle.append(n)
+                    self.cycles(edges[n], first, edges, cycle, total)
+                    cycle.pop()
+        # print('total', total)
+        # input()
+        return total
+
+    def mip_general_cliques(self):
+        self.model.relax()
+        self.model.optimize()
+        self.printSolution()
+        d = self.select_tuples_intersec(5)
+        print(d)
+        # input('check')
+        cortes = self.general_cliques(d)
+        qtd = 0
+        while cortes > 0:
+            qtd += 1
+            self.model.relax()
+            self.model.optimize()
+            self.printSolution()
+            self.model.write('teste.lp')
+            print('cortes: ', cortes)
+            input()
+            # input('teste.lp')
+            d = self.select_tuples_intersec(5)
+            print(d)
+            # input('check')
+            cortes = self.general_cliques(d)
+        print('iterações:', qtd, 'cortes encontrados:', self.iterationsCuts)
+
+    def select_tuples_random(self, max):
+        if max > self.instance.n * self.instance.m:
+            max = self.instance.n * self.instance.m
+        d = []
+        for i in range(self.instance.m):
+            for j in range(self.instance.n):
+                d.append((j, i))
+        test = []
+        for i in range(max):
+            r = np.random.randint(0, len(d))
+            test.append(d[r])
+            d.pop(r)
+        return test
+
+    def select_tuples_intersec(self, max):
+        d = set()
+        for i in range(self.instance.m):
+            first = False
+            for j in range(self.instance.n):
+                for k in range(j+1, self.instance.n):
+                    if self.x[j][i].x < self.x[k][i].x:
+                        if (self.x[k][i].x - self.x[j][i].x) < self.instance.times[j][i]:
+                            # print(self.x[k][i].x, self.x[j][i].x, self.instance.times[j][i])
+                            if first == False:
+                                first = True
+                                if len(d) < max:
+                                    d.add((j, i))
+                                    # print(len(d))
+                                    # input((j, i))
+                                else:
+                                    break
+                            if len(d) < max:
+                                d.add((k, i))
+                                # print(len(d))
+                                # input((k, i))
+                            else:
+                                break
+                    else:
+                        if (self.x[j][i].x - self.x[k][i].x) < self.instance.times[k][i]:
+                            print(self.x[j][i].x, self.x[k][i].x, self.instance.times[k][i])
+                            if first == False:
+                                first = True
+                                if len(d) < max:
+                                    d.add((j, i))
+                                    # print(len(d))
+                                    # input((j, i))
+                                else:
+                                    break
+                            if len(d) < max:
+                                d.add((k, i))
+                                # print(len(d))
+                                # input((k, i))
+                            else:
+                                break
+        return list(d)
+
+    def select_tuples_y(self, max):
+        d = set()
+        set_y = {}
+        for i in range(self.instance.m):
+            for j in range(self.instance.n):
+                for k in range(j+1, self.instance.n):
+                    if self.y[j][k][i].x < 1 - 1e-8:
+                        set_y[(j, k, i)] = abs(self.y[j][k][i].x - 0.5)
+        set_y = sorted(set_y.items(), key=lambda l: l[1])
+        i = 0
+        # print(set_y, len(set_y))
+        # input()
+        if max > len(set_y):
+            max = len(set_y)
+
+        while i < max:
+            key, value = set_y[i]
+            # print(key, value)
+            d.add((key[0], key[2]))
+            d.add((key[1], key[2]))
+            i += 1
+        return list(d)
+
+    def general_cliques(self, d):
+        print('general_cliques')
+        print(d)
+        pool = self.possible_paths(len(d), d, ([], {}), [])
+        pool = [dict(s) for s in set(frozenset(d.items()) for d in pool)]
+        for p in pool:
+            print(p)
+        input()
+
+        m = self.m
+        m.clear()
+        m.verbose = 0
+        t = {}
+        for (j, i) in d:
+            # print((j, i))
+            t[(j, i)] = m.add_var(name='t({},{})'.format(j, i), lb=0, var_type=CONTINUOUS)
+
+        # for a in t:
+        #     print(a, t[a])
+        qtd = 0
+        for p in pool:
+            # print(p)
+            var = 0
+            for (j, i), est in p.items():
+                # print(est[(j, i)],  t[(j, i)], end='')
+                var += est * t[(j, i)]
+            # print(var)
+            m += var >= 1, 'c({})'.format(qtd)
+            qtd += 1
+        # input(K)
+        for (j,i) in d:
+            print(self.x[j][i].x, t[(j, i)])
+        input()
+        m.objective = xsum(self.x[j][i].x * t[(j, i)] for (j, i) in d)
+        m.write('teste_cuts.lp')
+        # input()
+        m.optimize()
+        if m.status != OptimizationStatus.OPTIMAL or m.objective_value > (1 - 1e-8):
+            if m.status == OptimizationStatus.OPTIMAL:
+                print('obj: ', m.objective_value)
+            print('erro')
+            return 0
+        print('obj: ', m.objective_value)
+        # input()
+
+        print('solutions: ', m.num_solutions)
+        # input()
+        c_name = 'cut_clique_{}'.format(self.iterationsCuts)
+        self.iterationsCuts += 1
+
+        var = 0
+        for (job, machine) in d:
+            var += self.x[job][machine] * t[(job, machine)].x
+        print(var)
+        self.model += var >= 1, c_name
+        return 1
+
+
+    def possible_paths(self, size, d, sol, pool):
+        if len(sol[0]) == size:  # caminho final válido
+            # est = self.calculate_est(sol)
+            pool.append(sol[1].copy())
+            # print('sol =', sol)
+            # print('pool: ', pool)
+            # input()
+            return pool
+
+        for k in range(len(d)):
+            (j, i) = d.pop(k)
+            if self.checkpath(sol, j, i):  # caso caminho seja válido até o moemnto
+                print((j, i), sol)
+                # input()
+                # sol[len(sol):] = [(j, i)]  # inserir na última posição
+                pool = self.possible_paths(size, d, sol, pool)
+                # print(d, sol)
+                # input()
+                sol[0].pop()  # remover da solução para colocar outra
+                del sol[1][(j, i)]
+                d.insert(k, (j, i))  # voltar a tupla para a posição original para não atrapalhar a iteração de d
+            else:
+                # print('faltam =', d, 'sol =', sol, 'rejeitado = (', j, ',', i, ')')
+                # input()
+                d.insert(k, (j, i))  # voltar a tupla para a posição original para não atrapalhar a iteração de d
+                return pool # retornar pool (não precisa continuar a olhar o resto)
+            # print('faltam =', d, 'sol =', sol)
+            # input()
+
+        return pool
+
+    def checkpath(self, solution, j, i):
+        est = self.instance.est[j][i]
+        found_job = False
+        found_machine = False
+        # input(solution)
+        for k in range(len(solution[0])-1, -1, -1):
+            print(k)
+            order = self.instance.o[j][i]
+            j_aux, i_aux = solution[0][k][0], solution[0][k][1]
+            if i_aux == i and not found_machine:
+                print('found_machine', 'comparado = ', (j, i), 'no conjunto = ', (j_aux, i_aux), est, solution[1][(j_aux, i_aux)] + self.instance.times[j_aux][i_aux])
+                est = max(est, solution[1][(j_aux, i_aux)] + self.instance.times[j_aux][i_aux])
+                found_machine = True
+            if j_aux == j:
+                o = self.instance.o[j_aux][i_aux]
+                if o > order:
+                    print('teste: ', (j, i), 'ordem: ', order, ' falhou em: ', solution[0][k], 'ordem: ', o)
+                    return False
+                print('found_job', 'comparado = ', (j, i), 'no conjunto = ', (j_aux, i_aux), est, solution[1][(j_aux, i_aux)] + self.instance.times[j_aux][i_aux])
+                est = max(est, solution[1][(j_aux, i_aux)] + self.instance.distances[j][i][i_aux])
+                found_job = True
+            if found_machine and found_job:
+                break
+        print('est: ', est, 'lst', self.instance.lst[j][i])
+        if est > self.instance.lst[j][i]:
+            print('est invalido: ', est, self.instance.lst[j][i])
+            return False
+        solution[0][len(solution[0]):] = [(j, i)]
+        solution[1][(j, i)] = est
+        return True
+
+    def calculate_est(self, solution):
+        est = {(j, i): self.instance.est[j][i] for (j, i) in solution}
+        # input(est)
+        for k in range(len(solution)):
+            i = solution[k][1]
+            j = solution[k][0]
+            found_job = False
+            found_machine = False
+            for h in range(k+1, len(solution)):
+                a = solution[h][1]
+                b = solution[h][0]
+                if not found_machine and a == i:
+                    # print(solution[k], solution[h], est[solution[k]] + self.instance.times[j][i], est[solution[h]])
+                    est[solution[h]] = max(est[solution[k]] + self.instance.times[j][i], est[solution[h]])
+                    found_machine = True
+                if not found_job and b == j:
+                    # print('distance ', i, '->', a, '= ', self.instance.distances[j][i][a])
+                    # print(solution[k], solution[h], est[solution[k]] + self.instance.distances[j][i][a], est[solution[h]])
+                    est[solution[h]] = max(est[solution[k]] + self.instance.distances[j][i][a], est[solution[h]])
+                    found_job = True
+                if found_machine and found_job:
+                    break
+        # print('final est: ', est)
+        # input()
+        return est

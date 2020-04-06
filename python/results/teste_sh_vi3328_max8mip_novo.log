@@ -1,0 +1,1845 @@
+Welcome to the CBC MILP Solver 
+Version: Trunk
+Build Date: Dec 26 2019 
+
+Coin0506I Presolve 65 (-61) rows, 39 (-25) columns and 202 (-86) elements
+Clp0014I Perturbing problem by 0.001% of 1.570454 - largest nonzero change 9.9420185e-05 ( 0.0063306653%) - largest zero change 9.9299077e-05
+Clp0000I Optimal - objective value 15
+Coin0511I After Postsolve, objective 15, infeasibilities - dual 0 (0), primal 0 (0)
+Clp0032I Optimal objective 15 - 17 iterations time 0.002, Presolve 0.00
+Using Python-MIP package version 1.6.8
+McCormic linearization
+C:  15.0
+x(0,0) = 14.00	 x(0,1) = 0.00	 x(0,2) = 7.00	 
+x(1,0) = 5.00	 x(1,1) = 0.00	 x(1,2) = 8.00	 
+x(2,0) = 13.00	 x(2,1) = 0.00	 x(2,2) = 7.00	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.12	 y(1,0,1) = 0.88	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.19	 y(2,1,1) = 0.81	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Executing vi3328 SA with maxsteps = 1000 and iteration = 0, with prob = [0.25 0.25 0.25 0.25] ...
+gurobi version 9.0 found
+Cliques on machine 0 = 2. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.167s
+Cliques on machine 1 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0334s
+Cliques on machine 2 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0232s
+Added 10 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 4.00	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 0.00	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 4.00	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.00	 y(1,0,1) = 1.00	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.31	 y(2,1,1) = 0.69	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0222s
+Cliques on machine 1 = 1. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0327s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0262s
+Added 1 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0226s
+Cliques on machine 1 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0221s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0323s
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+SA iteration: 0, maxstep: 1000, minimum: 4, maximum: 3, exact: 4, first_lp: 15.0, last_lp: 21.3, time: 0.4, cuts: 11
+Executing vi3328 SA with maxsteps = 1000 and iteration = 1, with prob = [0.25 0.25 0.25 0.25] ...
+Cliques on machine 0 = 2. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0237s
+Cliques on machine 1 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0226s
+Cliques on machine 2 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0329s
+Added 10 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 4.00	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 0.00	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 4.00	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.00	 y(1,0,1) = 1.00	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.31	 y(2,1,1) = 0.69	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0222s
+Cliques on machine 1 = 1. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0256s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0293s
+Added 1 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0221s
+Cliques on machine 1 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.022s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0223s
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+SA iteration: 1, maxstep: 1000, minimum: 4, maximum: 3, exact: 4, first_lp: 15.0, last_lp: 21.3, time: 0.23, cuts: 11
+Executing vi3328 SA with maxsteps = 1000 and iteration = 2, with prob = [0.25 0.25 0.25 0.25] ...
+Cliques on machine 0 = 2. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0366s
+Cliques on machine 1 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0228s
+Cliques on machine 2 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0229s
+Added 10 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 4.00	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 0.00	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 4.00	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.00	 y(1,0,1) = 1.00	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.31	 y(2,1,1) = 0.69	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0319s
+Cliques on machine 1 = 1. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0219s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0222s
+Added 1 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0222s
+Cliques on machine 1 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.022s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.022s
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+SA iteration: 2, maxstep: 1000, minimum: 4, maximum: 3, exact: 4, first_lp: 15.0, last_lp: 21.3, time: 0.23, cuts: 11
+Executing vi3328 SA with maxsteps = 1000 and iteration = 3, with prob = [0.25 0.25 0.25 0.25] ...
+Cliques on machine 0 = 2. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0365s
+Cliques on machine 1 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0204s
+Cliques on machine 2 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0233s
+Added 10 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 4.00	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 0.00	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 4.00	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.00	 y(1,0,1) = 1.00	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.31	 y(2,1,1) = 0.69	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.022s
+Cliques on machine 1 = 1. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0325s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0221s
+Added 1 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0222s
+Cliques on machine 1 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.022s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0321s
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+SA iteration: 3, maxstep: 1000, minimum: 4, maximum: 3, exact: 4, first_lp: 15.0, last_lp: 21.3, time: 0.24, cuts: 11
+Executing vi3328 SA with maxsteps = 1000 and iteration = 4, with prob = [0.25 0.25 0.25 0.25] ...
+Cliques on machine 0 = 2. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0233s
+Cliques on machine 1 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.023s
+Cliques on machine 2 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.033s
+Added 10 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 4.00	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 0.00	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 4.00	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.00	 y(1,0,1) = 1.00	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.31	 y(2,1,1) = 0.69	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0221s
+Cliques on machine 1 = 1. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0321s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0218s
+Added 1 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0225s
+Cliques on machine 1 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0226s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0346s
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+SA iteration: 4, maxstep: 1000, minimum: 4, maximum: 3, exact: 4, first_lp: 15.0, last_lp: 21.3, time: 0.24, cuts: 11
+Executing vi3328 SA with maxsteps = 5000 and iteration = 0, with prob = [0.25 0.25 0.25 0.25] ...
+Cliques on machine 0 = 2. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0233s
+Cliques on machine 1 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0296s
+Cliques on machine 2 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0232s
+Added 10 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 4.00	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 0.00	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 4.00	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.00	 y(1,0,1) = 1.00	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.31	 y(2,1,1) = 0.69	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0223s
+Cliques on machine 1 = 1. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0219s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0302s
+Added 1 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0262s
+Cliques on machine 1 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0251s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0251s
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+SA iteration: 0, maxstep: 5000, minimum: 4, maximum: 3, exact: 4, first_lp: 15.0, last_lp: 21.3, time: 0.23, cuts: 11
+Executing vi3328 SA with maxsteps = 5000 and iteration = 1, with prob = [0.25 0.25 0.25 0.25] ...
+Cliques on machine 0 = 2. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0193s
+Cliques on machine 1 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0325s
+Cliques on machine 2 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0234s
+Added 10 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 4.00	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 0.00	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 4.00	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.00	 y(1,0,1) = 1.00	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.31	 y(2,1,1) = 0.69	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0223s
+Cliques on machine 1 = 1. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0324s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0223s
+Added 1 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0223s
+Cliques on machine 1 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.022s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0324s
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+SA iteration: 1, maxstep: 5000, minimum: 4, maximum: 3, exact: 4, first_lp: 15.0, last_lp: 21.3, time: 0.24, cuts: 11
+Executing vi3328 SA with maxsteps = 5000 and iteration = 2, with prob = [0.25 0.25 0.25 0.25] ...
+Cliques on machine 0 = 2. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0267s
+Cliques on machine 1 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.023s
+Cliques on machine 2 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0331s
+Added 10 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 4.00	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 0.00	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 4.00	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.00	 y(1,0,1) = 1.00	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.31	 y(2,1,1) = 0.69	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0222s
+Cliques on machine 1 = 1. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0222s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0323s
+Added 1 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0221s
+Cliques on machine 1 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0219s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0219s
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+SA iteration: 2, maxstep: 5000, minimum: 4, maximum: 3, exact: 4, first_lp: 15.0, last_lp: 21.3, time: 0.23, cuts: 11
+Executing vi3328 SA with maxsteps = 5000 and iteration = 3, with prob = [0.25 0.25 0.25 0.25] ...
+Cliques on machine 0 = 2. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0301s
+Cliques on machine 1 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0232s
+Cliques on machine 2 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0266s
+Added 10 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 4.00	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 0.00	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 4.00	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.00	 y(1,0,1) = 1.00	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.31	 y(2,1,1) = 0.69	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.022s
+Cliques on machine 1 = 1. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0223s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0252s
+Added 1 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0228s
+Cliques on machine 1 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0225s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0223s
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+SA iteration: 3, maxstep: 5000, minimum: 4, maximum: 3, exact: 4, first_lp: 15.0, last_lp: 21.3, time: 0.23, cuts: 11
+Executing vi3328 SA with maxsteps = 5000 and iteration = 4, with prob = [0.25 0.25 0.25 0.25] ...
+Cliques on machine 0 = 2. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0228s
+Cliques on machine 1 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0331s
+Cliques on machine 2 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0231s
+Added 10 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 4.00	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 0.00	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 4.00	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.00	 y(1,0,1) = 1.00	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.31	 y(2,1,1) = 0.69	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0223s
+Cliques on machine 1 = 1. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0224s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0319s
+Added 1 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0221s
+Cliques on machine 1 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0221s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0221s
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+SA iteration: 4, maxstep: 5000, minimum: 4, maximum: 3, exact: 4, first_lp: 15.0, last_lp: 21.3, time: 0.23, cuts: 11
+Executing vi3328 SA with maxsteps = 10000 and iteration = 0, with prob = [0.25 0.25 0.25 0.25] ...
+Cliques on machine 0 = 2. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0232s
+Cliques on machine 1 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0231s
+Cliques on machine 2 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0333s
+Added 10 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 4.00	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 0.00	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 4.00	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.00	 y(1,0,1) = 1.00	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.31	 y(2,1,1) = 0.69	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0221s
+Cliques on machine 1 = 1. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0222s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0219s
+Added 1 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.022s
+Cliques on machine 1 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0218s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0218s
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+SA iteration: 0, maxstep: 10000, minimum: 4, maximum: 3, exact: 4, first_lp: 15.0, last_lp: 21.3, time: 0.23, cuts: 11
+Executing vi3328 SA with maxsteps = 10000 and iteration = 1, with prob = [0.25 0.25 0.25 0.25] ...
+Cliques on machine 0 = 2. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0228s
+Cliques on machine 1 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0228s
+Cliques on machine 2 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0251s
+Added 10 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 4.00	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 0.00	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 4.00	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.00	 y(1,0,1) = 1.00	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.31	 y(2,1,1) = 0.69	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0256s
+Cliques on machine 1 = 1. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0228s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0219s
+Added 1 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0323s
+Cliques on machine 1 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0222s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0226s
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+SA iteration: 1, maxstep: 10000, minimum: 4, maximum: 3, exact: 4, first_lp: 15.0, last_lp: 21.3, time: 0.22, cuts: 11
+Executing vi3328 SA with maxsteps = 10000 and iteration = 2, with prob = [0.25 0.25 0.25 0.25] ...
+Cliques on machine 0 = 2. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.023s
+Cliques on machine 1 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.033s
+Cliques on machine 2 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.023s
+Added 10 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 4.00	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 0.00	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 4.00	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.00	 y(1,0,1) = 1.00	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.31	 y(2,1,1) = 0.69	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0224s
+Cliques on machine 1 = 1. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0386s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0186s
+Added 1 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0211s
+Cliques on machine 1 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0358s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0219s
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+SA iteration: 2, maxstep: 10000, minimum: 4, maximum: 3, exact: 4, first_lp: 15.0, last_lp: 21.3, time: 0.24, cuts: 11
+Executing vi3328 SA with maxsteps = 10000 and iteration = 3, with prob = [0.25 0.25 0.25 0.25] ...
+Cliques on machine 0 = 2. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.031s
+Cliques on machine 1 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0232s
+Cliques on machine 2 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0337s
+Added 10 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 4.00	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 0.00	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 4.00	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.00	 y(1,0,1) = 1.00	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.31	 y(2,1,1) = 0.69	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0229s
+Cliques on machine 1 = 1. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0328s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0226s
+Added 1 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0226s
+Cliques on machine 1 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0224s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0326s
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+SA iteration: 3, maxstep: 10000, minimum: 4, maximum: 3, exact: 4, first_lp: 15.0, last_lp: 21.3, time: 0.25, cuts: 11
+Executing vi3328 SA with maxsteps = 10000 and iteration = 4, with prob = [0.25 0.25 0.25 0.25] ...
+Cliques on machine 0 = 2. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0246s
+Cliques on machine 1 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0236s
+Cliques on machine 2 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0344s
+Added 10 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 4.00	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 0.00	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 4.00	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.00	 y(1,0,1) = 1.00	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.31	 y(2,1,1) = 0.69	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0301s
+Cliques on machine 1 = 1. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0268s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0228s
+Added 1 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0272s
+Cliques on machine 1 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.034s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0227s
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+SA iteration: 4, maxstep: 10000, minimum: 4, maximum: 3, exact: 4, first_lp: 15.0, last_lp: 21.3, time: 0.26, cuts: 11
+Executing vi3328 SA with maxsteps = 50000 and iteration = 0, with prob = [0.25 0.25 0.25 0.25] ...
+Cliques on machine 0 = 2. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0246s
+Cliques on machine 1 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0339s
+Cliques on machine 2 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0243s
+Added 10 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 4.00	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 0.00	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 4.00	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.00	 y(1,0,1) = 1.00	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.31	 y(2,1,1) = 0.69	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0351s
+Cliques on machine 1 = 1. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.024s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0326s
+Added 1 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0248s
+Cliques on machine 1 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0218s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0219s
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+SA iteration: 0, maxstep: 50000, minimum: 4, maximum: 3, exact: 4, first_lp: 15.0, last_lp: 21.3, time: 0.25, cuts: 11
+Executing vi3328 SA with maxsteps = 50000 and iteration = 1, with prob = [0.25 0.25 0.25 0.25] ...
+Cliques on machine 0 = 2. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0243s
+Cliques on machine 1 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.033s
+Cliques on machine 2 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0201s
+Added 10 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 4.00	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 0.00	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 4.00	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.00	 y(1,0,1) = 1.00	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.31	 y(2,1,1) = 0.69	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0326s
+Cliques on machine 1 = 1. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0292s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.022s
+Added 1 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0222s
+Cliques on machine 1 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0221s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0225s
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+SA iteration: 1, maxstep: 50000, minimum: 4, maximum: 3, exact: 4, first_lp: 15.0, last_lp: 21.3, time: 0.23, cuts: 11
+Executing vi3328 SA with maxsteps = 50000 and iteration = 2, with prob = [0.25 0.25 0.25 0.25] ...
+Cliques on machine 0 = 2. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0352s
+Cliques on machine 1 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.023s
+Cliques on machine 2 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0232s
+Added 10 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 4.00	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 0.00	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 4.00	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.00	 y(1,0,1) = 1.00	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.31	 y(2,1,1) = 0.69	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0218s
+Cliques on machine 1 = 1. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0322s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0217s
+Added 1 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.022s
+Cliques on machine 1 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0315s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.022s
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+SA iteration: 2, maxstep: 50000, minimum: 4, maximum: 3, exact: 4, first_lp: 15.0, last_lp: 21.3, time: 0.24, cuts: 11
+Executing vi3328 SA with maxsteps = 50000 and iteration = 3, with prob = [0.25 0.25 0.25 0.25] ...
+Cliques on machine 0 = 2. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0348s
+Cliques on machine 1 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0257s
+Cliques on machine 2 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0231s
+Added 10 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 4.00	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 0.00	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 4.00	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.00	 y(1,0,1) = 1.00	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.31	 y(2,1,1) = 0.69	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0222s
+Cliques on machine 1 = 1. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0227s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0328s
+Added 1 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0221s
+Cliques on machine 1 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0221s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0222s
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+SA iteration: 3, maxstep: 50000, minimum: 4, maximum: 3, exact: 4, first_lp: 15.0, last_lp: 21.3, time: 0.23, cuts: 11
+Executing vi3328 SA with maxsteps = 50000 and iteration = 4, with prob = [0.25 0.25 0.25 0.25] ...
+Cliques on machine 0 = 2. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0346s
+Cliques on machine 1 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0228s
+Cliques on machine 2 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0232s
+Added 10 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 4.00	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 0.00	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 4.00	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.00	 y(1,0,1) = 1.00	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.31	 y(2,1,1) = 0.69	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0323s
+Cliques on machine 1 = 1. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.022s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0223s
+Added 1 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0219s
+Cliques on machine 1 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.032s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0255s
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+SA iteration: 4, maxstep: 50000, minimum: 4, maximum: 3, exact: 4, first_lp: 15.0, last_lp: 21.3, time: 0.24, cuts: 11
+Executing vi3328 SA with maxsteps = 100000 and iteration = 0, with prob = [0.25 0.25 0.25 0.25] ...
+Cliques on machine 0 = 2. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0144s
+Cliques on machine 1 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0427s
+Cliques on machine 2 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0229s
+Added 10 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 4.00	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 0.00	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 4.00	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.00	 y(1,0,1) = 1.00	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.31	 y(2,1,1) = 0.69	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0229s
+Cliques on machine 1 = 1. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0332s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0222s
+Added 1 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0223s
+Cliques on machine 1 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0221s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0325s
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+SA iteration: 0, maxstep: 100000, minimum: 4, maximum: 3, exact: 4, first_lp: 15.0, last_lp: 21.3, time: 0.24, cuts: 11
+Executing vi3328 SA with maxsteps = 100000 and iteration = 1, with prob = [0.25 0.25 0.25 0.25] ...
+Cliques on machine 0 = 2. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.035s
+Cliques on machine 1 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0231s
+Cliques on machine 2 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0232s
+Added 10 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 4.00	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 0.00	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 4.00	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.00	 y(1,0,1) = 1.00	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.31	 y(2,1,1) = 0.69	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0324s
+Cliques on machine 1 = 1. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0223s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0288s
+Added 1 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.023s
+Cliques on machine 1 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0226s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0323s
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+SA iteration: 1, maxstep: 100000, minimum: 4, maximum: 3, exact: 4, first_lp: 15.0, last_lp: 21.3, time: 0.25, cuts: 11
+Executing vi3328 SA with maxsteps = 100000 and iteration = 2, with prob = [0.25 0.25 0.25 0.25] ...
+Cliques on machine 0 = 2. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0248s
+Cliques on machine 1 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0237s
+Cliques on machine 2 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0333s
+Added 10 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 4.00	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 0.00	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 4.00	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.00	 y(1,0,1) = 1.00	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.31	 y(2,1,1) = 0.69	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0193s
+Cliques on machine 1 = 1. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0227s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0326s
+Added 1 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0224s
+Cliques on machine 1 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0222s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0327s
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+SA iteration: 2, maxstep: 100000, minimum: 4, maximum: 3, exact: 4, first_lp: 15.0, last_lp: 21.3, time: 0.25, cuts: 11
+Executing vi3328 SA with maxsteps = 100000 and iteration = 3, with prob = [0.25 0.25 0.25 0.25] ...
+Cliques on machine 0 = 2. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0385s
+Cliques on machine 1 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0332s
+Cliques on machine 2 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0233s
+Added 10 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 4.00	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 0.00	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 4.00	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.00	 y(1,0,1) = 1.00	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.31	 y(2,1,1) = 0.69	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0223s
+Cliques on machine 1 = 1. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0328s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0221s
+Added 1 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.022s
+Cliques on machine 1 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0318s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0221s
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+SA iteration: 3, maxstep: 100000, minimum: 4, maximum: 3, exact: 4, first_lp: 15.0, last_lp: 21.3, time: 0.25, cuts: 11
+Executing vi3328 SA with maxsteps = 100000 and iteration = 4, with prob = [0.25 0.25 0.25 0.25] ...
+Cliques on machine 0 = 2. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.024s
+Cliques on machine 1 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0229s
+Cliques on machine 2 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0331s
+Added 10 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 4.00	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 0.00	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 4.00	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.00	 y(1,0,1) = 1.00	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.31	 y(2,1,1) = 0.69	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0224s
+Cliques on machine 1 = 1. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0221s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0219s
+Added 1 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0221s
+Cliques on machine 1 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0219s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0234s
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+SA iteration: 4, maxstep: 100000, minimum: 4, maximum: 3, exact: 4, first_lp: 15.0, last_lp: 21.3, time: 0.23, cuts: 11
+Executing vi3328 SA with maxsteps = 500000 and iteration = 0, with prob = [0.25 0.25 0.25 0.25] ...
+Cliques on machine 0 = 2. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0234s
+Cliques on machine 1 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0281s
+Cliques on machine 2 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0216s
+Added 10 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 4.00	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 0.00	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 4.00	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.00	 y(1,0,1) = 1.00	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.31	 y(2,1,1) = 0.69	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0212s
+Cliques on machine 1 = 1. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0219s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0218s
+Added 1 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0221s
+Cliques on machine 1 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0215s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0255s
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+SA iteration: 0, maxstep: 500000, minimum: 4, maximum: 3, exact: 4, first_lp: 15.0, last_lp: 21.3, time: 0.24, cuts: 11
+Executing vi3328 SA with maxsteps = 500000 and iteration = 1, with prob = [0.25 0.25 0.25 0.25] ...
+Cliques on machine 0 = 2. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0338s
+Cliques on machine 1 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0228s
+Cliques on machine 2 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0231s
+Added 10 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 4.00	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 0.00	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 4.00	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.00	 y(1,0,1) = 1.00	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.31	 y(2,1,1) = 0.69	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0317s
+Cliques on machine 1 = 1. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0223s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.022s
+Added 1 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0254s
+Cliques on machine 1 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0321s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.022s
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+SA iteration: 1, maxstep: 500000, minimum: 4, maximum: 3, exact: 4, first_lp: 15.0, last_lp: 21.3, time: 0.24, cuts: 11
+Executing vi3328 SA with maxsteps = 500000 and iteration = 2, with prob = [0.25 0.25 0.25 0.25] ...
+Cliques on machine 0 = 2. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0242s
+Cliques on machine 1 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0234s
+Cliques on machine 2 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0335s
+Added 10 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 4.00	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 0.00	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 4.00	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.00	 y(1,0,1) = 1.00	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.31	 y(2,1,1) = 0.69	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0227s
+Cliques on machine 1 = 1. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0223s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0219s
+Added 1 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0323s
+Cliques on machine 1 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0222s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.022s
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+SA iteration: 2, maxstep: 500000, minimum: 4, maximum: 3, exact: 4, first_lp: 15.0, last_lp: 21.3, time: 0.23, cuts: 11
+Executing vi3328 SA with maxsteps = 500000 and iteration = 3, with prob = [0.25 0.25 0.25 0.25] ...
+Cliques on machine 0 = 2. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0239s
+Cliques on machine 1 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0321s
+Cliques on machine 2 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0228s
+Added 10 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 4.00	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 0.00	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 4.00	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.00	 y(1,0,1) = 1.00	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.31	 y(2,1,1) = 0.69	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0218s
+Cliques on machine 1 = 1. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0219s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0218s
+Added 1 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0225s
+Cliques on machine 1 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0223s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0222s
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+SA iteration: 3, maxstep: 500000, minimum: 4, maximum: 3, exact: 4, first_lp: 15.0, last_lp: 21.3, time: 0.22, cuts: 11
+Executing vi3328 SA with maxsteps = 500000 and iteration = 4, with prob = [0.25 0.25 0.25 0.25] ...
+Cliques on machine 0 = 2. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0344s
+Cliques on machine 1 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.023s
+Cliques on machine 2 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0331s
+Added 10 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 4.00	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 0.00	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 4.00	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.00	 y(1,0,1) = 1.00	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.31	 y(2,1,1) = 0.69	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.022s
+Cliques on machine 1 = 1. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0225s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0347s
+Added 1 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0219s
+Cliques on machine 1 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0217s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0216s
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+SA iteration: 4, maxstep: 500000, minimum: 4, maximum: 3, exact: 4, first_lp: 15.0, last_lp: 21.3, time: 0.24, cuts: 11
+Executing vi3328 SA with maxsteps = 1000000 and iteration = 0, with prob = [0.25 0.25 0.25 0.25] ...
+Cliques on machine 0 = 2. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0364s
+Cliques on machine 1 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0255s
+Cliques on machine 2 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0231s
+Added 10 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 4.00	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 0.00	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 4.00	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.00	 y(1,0,1) = 1.00	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.31	 y(2,1,1) = 0.69	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0181s
+Cliques on machine 1 = 1. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0219s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0318s
+Added 1 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0223s
+Cliques on machine 1 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.022s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0219s
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+SA iteration: 0, maxstep: 1000000, minimum: 4, maximum: 3, exact: 4, first_lp: 15.0, last_lp: 21.3, time: 0.23, cuts: 11
+Executing vi3328 SA with maxsteps = 1000000 and iteration = 1, with prob = [0.25 0.25 0.25 0.25] ...
+Cliques on machine 0 = 2. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0343s
+Cliques on machine 1 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0232s
+Cliques on machine 2 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0261s
+Added 10 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 4.00	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 0.00	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 4.00	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.00	 y(1,0,1) = 1.00	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.31	 y(2,1,1) = 0.69	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0323s
+Cliques on machine 1 = 1. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.022s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0218s
+Added 1 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.022s
+Cliques on machine 1 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.032s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0219s
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+SA iteration: 1, maxstep: 1000000, minimum: 4, maximum: 3, exact: 4, first_lp: 15.0, last_lp: 21.3, time: 0.24, cuts: 11
+Executing vi3328 SA with maxsteps = 1000000 and iteration = 2, with prob = [0.25 0.25 0.25 0.25] ...
+Cliques on machine 0 = 2. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0249s
+Cliques on machine 1 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0325s
+Cliques on machine 2 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0231s
+Added 10 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 4.00	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 0.00	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 4.00	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.00	 y(1,0,1) = 1.00	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.31	 y(2,1,1) = 0.69	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0222s
+Cliques on machine 1 = 1. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.022s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0328s
+Added 1 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0217s
+Cliques on machine 1 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0215s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0216s
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+SA iteration: 2, maxstep: 1000000, minimum: 4, maximum: 3, exact: 4, first_lp: 15.0, last_lp: 21.3, time: 0.23, cuts: 11
+Executing vi3328 SA with maxsteps = 1000000 and iteration = 3, with prob = [0.25 0.25 0.25 0.25] ...
+Cliques on machine 0 = 2. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0237s
+Cliques on machine 1 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.033s
+Cliques on machine 2 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.023s
+Added 10 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 4.00	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 0.00	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 4.00	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.00	 y(1,0,1) = 1.00	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.31	 y(2,1,1) = 0.69	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.022s
+Cliques on machine 1 = 1. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0286s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0233s
+Added 1 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0318s
+Cliques on machine 1 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0256s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0219s
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+SA iteration: 3, maxstep: 1000000, minimum: 4, maximum: 3, exact: 4, first_lp: 15.0, last_lp: 21.3, time: 0.24, cuts: 11
+Executing vi3328 SA with maxsteps = 1000000 and iteration = 4, with prob = [0.25 0.25 0.25 0.25] ...
+Cliques on machine 0 = 2. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0239s
+Cliques on machine 1 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0227s
+Cliques on machine 2 = 4. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0422s
+Added 10 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 4.00	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 0.00	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 4.00	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.00	 y(1,0,1) = 1.00	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.31	 y(2,1,1) = 0.69	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0221s
+Cliques on machine 1 = 1. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.022s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0219s
+Added 1 cuts with obj = 21.3
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+Cliques on machine 0 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.022s
+Cliques on machine 1 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0319s
+Cliques on machine 2 = 0. Minimum = 4, maximum = 3, exacts found = 4. Elapsed: 0.0217s
+C:  21.3
+x(0,0) = 20.30	 x(0,1) = 6.30	 x(0,2) = 13.30	 
+x(1,0) = 11.30	 x(1,1) = 4.20	 x(1,2) = 14.30	 
+x(2,0) = 19.30	 x(2,1) = 6.30	 x(2,2) = 13.30	 
+y(0,1,0) = 0.17	 y(1,0,0) = 0.83	 
+y(0,2,0) = 0.03	 y(2,0,0) = 0.97	 
+y(1,2,0) = 0.25	 y(2,1,0) = 0.75	 
+y(0,1,1) = 0.06	 y(1,0,1) = 0.94	 
+y(0,2,1) = 0.19	 y(2,0,1) = 0.81	 
+y(1,2,1) = 0.25	 y(2,1,1) = 0.75	 
+y(0,1,2) = 0.22	 y(1,0,2) = 0.78	 
+y(0,2,2) = 0.17	 y(2,0,2) = 0.83	 
+y(1,2,2) = 0.14	 y(2,1,2) = 0.86	 
+SA iteration: 4, maxstep: 1000000, minimum: 4, maximum: 3, exact: 4, first_lp: 15.0, last_lp: 21.3, time: 0.23, cuts: 11

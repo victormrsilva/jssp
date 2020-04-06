@@ -58,7 +58,7 @@ class Clique:
         m.clear()
         m.verbose = 0
         m.max_seconds = 90
-        # initial = time.time()
+        initial = time.time()
         t = [0] * self.qtd
         for i in S:
             t[i] = m.add_var(var_type=CONTINUOUS, lb=0, name='t({})'.format(i))
@@ -68,6 +68,10 @@ class Clique:
         # print(range(len(K)))
         # print(range(len(K[0])))
         # print(t[3])
+        # print(S)
+        # print()
+        # if len(K) > 2:
+            # input(len(K))
         for i in range(len(K)):
             m += xsum(K[i][S[j]] * t[S[j]] for j in range(len(S))) >= 1, 'K({})'.format(i)
         # end = time.time()
@@ -89,10 +93,11 @@ class Clique:
 
     def resolve_exact(self):
         qtd = np.math.factorial(self.qtd)/(np.math.factorial(self.minimum)*np.math.factorial(self.qtd - self.minimum))
-        while qtd < self.max_exact and self.minimum < self.maximum:
+        while qtd < self.max_exact and self.minimum <= self.maximum:
             comb = list(combinations(range(self.qtd), self.minimum))
+            # print(comb)
             for c in comb:
-                # print(c)
+                # input(c)
                 chosen = np.array([np.zeros(self.qtd)])
                 for i in c:
                     chosen[0][i] = 1
@@ -103,12 +108,15 @@ class Clique:
                 self.exact += 1
 
                 if round(value, 6) < 100:
+                    # print(c, value)
                     self.chosens = np.vstack([self.chosens, chosen]) if self.chosens.size else chosen
                     self.ts = np.vstack([self.ts, t]) if self.ts.size else t
                     self.costs = np.vstack([self.costs, value]) if self.costs.size else value
             self.minimum += 1
-            qtd = np.math.factorial(self.qtd) / (
+            if self.minimum < self.maximum:
+                qtd = np.math.factorial(self.qtd) / (
                         np.math.factorial(self.minimum) * np.math.factorial(self.qtd - self.minimum))
+            # print(self.minimum, self.maximum, qtd)
         # print('minimum: ', self.minimum)
         # print('qtd: ', qtd, 'max', self.max_exact)
         # print(self.chosens)
@@ -119,13 +127,27 @@ class Clique:
     def random_init_mip(self):
         chosen = np.array([np.random.randint(2, size=self.qtd)])
         S = np.where(chosen == 1)[1]
-        while len(S) < self.minimum:
-            pos = np.random.randint(0, self.qtd)
-            while chosen[0][pos] == 0:
-                chosen[0][pos] = 1
-                S = np.where(chosen == 1)[1]
-        path = self.paths(chosen)
+        size_S = len(S)
+        # key = '{}'.format(''.join(str(chosen[0][i]) for i in range(self.qtd)))
+        # input(key)
+        if size_S < self.minimum:
+            while size_S < self.minimum:
+                pos = np.random.randint(0, self.qtd)
+                if chosen[0][pos] == 0:
+                    chosen[0][pos] = 1
+                    size_S += 1
+            S = np.where(chosen == 1)[1]
+        elif size_S > self.maximum:
+            while size_S > self.maximum:
+                pos = np.random.randint(0, size_S)
+                if chosen[0][S[pos]] == 1:
+                    chosen[0][S[pos]] = 0
+                    size_S -= 1
+            S = np.where(chosen == 1)[1]
+
         key = '{}'.format(''.join(str(chosen[0][i]) for i in range(self.qtd)))
+        # input(key)
+        path = self.paths(chosen)
         t = self.mip(path, S)
         value = self.cost_function(t, chosen, path)
 
@@ -163,7 +185,7 @@ class Clique:
                 # end = time.time()
                 # print("time neighbor 0 exists: {:4.3g}".format(end - initial))
                 return new_chosen, self.accepted[key][0], self.accepted[key][1]
-            end = time.time()
+            # end = time.time()
             # print("time neighbor 0: {:4.3g}".format(end-initial))
 
         elif neighborhood == 1:  # change two chosens at random
@@ -205,7 +227,7 @@ class Clique:
             # initial = time.time()
             if len(S) == self.maximum:
                 key = '{}'.format(''.join(str(chosen[0][i]) for i in range(self.qtd)))
-                # end = time.time()
+                end = time.time()
                 # print("time neighbor 2 maximum: {:4.3g}".format(end - initial))
                 return chosen, self.accepted[key][0], self.accepted[key][1]
 
@@ -301,7 +323,10 @@ class Clique:
     def initial_temperature_mip(self, chosen, t, cost):
         sum_delta = 0
         for i in range(10):
+            initial = time.time()
             new_chosen, new_t, new_cost = self.random_neighbour_mip(chosen)
+            end = time.time()
+            # print(end-initial, cost, new_cost)
             sum_delta += abs(cost - new_cost)
         if round(sum_delta / 10, 10) == 0:
             return 100
@@ -384,7 +409,7 @@ class Clique:
     def annealing_mip(self):
         """ Optimize the black-box function 'cost_function' with the simulated annealing algorithm."""
         solutions = 0
-        # self.resolve_exact()
+        self.resolve_exact()
         # print(self.minimum, self.maximum, self.exact)
         if self.minimum >= self.maximum:
             return self.chosens, self.ts, self.costs, self.minimum, self.maximum, self.exact

@@ -10,8 +10,8 @@ if len(argv) < 3:
 else:
     inst = JSSPInstance(argv[1], int(argv[2]))
 
-inst.print()
-input('instance')
+# inst.print()
+# input('instance')
 compact = Compact(inst)
 instance_name = compact.instance.instancename.translate(str.maketrans('', '', string.punctuation))
 
@@ -24,12 +24,14 @@ instance_name = compact.instance.instancename.translate(str.maketrans('', '', st
 # compact.optimizeSubCycle()
 # compact.model.optimize()
 # compact.printSolution()
-print(compact.instance.o)
+# print(compact.instance.o)
 # input()
-compact.constructProblemMcCormickNonNegative()
+# compact.constructProblemMcCormickNonNegative()
+compact.constructProblemMcCormick()
 # compact.noname_clique()
 compact.mip_general_cliques()
-# input('feito')
+# compact.testCliqueMIP(2, 4)
+input('feito')
 compact.model.relax()
 compact.model.optimize()
 compact.printSolution()

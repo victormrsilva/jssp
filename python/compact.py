@@ -1,9 +1,12 @@
 # compact.py
 import string
+from builtins import list
 
 from mip.callbacks import CutPool
 from mip.model import Model, xsum, Var
 from mip.constants import INTEGER, BINARY, CONTINUOUS, OptimizationStatus
+from mip.constants import CutType
+
 import sys
 from time import process_time, time
 import numpy as np
@@ -18,9 +21,9 @@ from itertools import permutations, combinations, product
 class Compact:
     def __init__(self, instance):
         self.instance = instance
-        self.m = Model(solver_name="gurobi")
+        self.m = Model(solver_name="cbc")
         self.m.verbose = 0
-        self.model = Model(name='compact', solver_name="gurobi")
+        self.model = Model(name='compact', solver_name="cbc")
         self.model.verbose = 1
         self.iterationsCuts = 0
         self.lc = 2  # lower number of jobs in a clique to be found
@@ -292,6 +295,7 @@ class Compact:
         for j in range(self.instance.n):
             for k in range(j + 1, self.instance.n):
                 for i in range(self.instance.m):
+                    print(self.v[j][k][i], self.v[k][j][i])
                     if type(self.v[j][k][i][1]) == int:  # indica que a variável não possui lb negativo
                         vjkL = self.v[j][k][i].lb
                         vjkU = self.v[j][k][i].ub
@@ -1417,29 +1421,50 @@ class Compact:
         # input()
         return total
 
+    def mip_generate_cut_class(self):
+        cp = self.model.generate_cuts([CutType.GOMORY], 8192, 1e-4)
+
+        for c in cp.cuts:
+            self.iterationsCuts += 1
+            self.model.add_constr(c, 'cut({})'.format(self.iterationsCuts))
+        self.model.write('teste.lp')
+        # self.model.optimize(relax=True)
+        # self.printSolution()
+        # input()
+
+
     def mip_general_cliques(self):
-        self.model.relax()
-        self.model.optimize()
-        self.printSolution()
-        d = self.select_tuples_intersec(5)
+        # self.model.relax()
+        self.model.verbose = 0
+        self.model.optimize(relax=True)
+        # self.printSolution()
+        # self.model.write('teste.lp')
+        # input()
+        d = self.select_tuples_l(8)
         print(d)
         # input('check')
         cortes = self.general_cliques(d)
+        self.mip_generate_cut_class()
         qtd = 0
         while cortes > 0:
             qtd += 1
-            self.model.relax()
-            self.model.optimize()
-            self.printSolution()
-            self.model.write('teste.lp')
+            # self.model.relax()
+            self.model.optimize(relax=True)
+            # self.printSolution()
+            # self.model.write('teste.lp')
             print('cortes: ', cortes)
-            input()
+            # input()
             # input('teste.lp')
-            d = self.select_tuples_intersec(5)
+            d = self.select_tuples_l(8)
             print(d)
             # input('check')
             cortes = self.general_cliques(d)
-        print('iterações:', qtd, 'cortes encontrados:', self.iterationsCuts)
+            self.mip_generate_cut_class()
+        print('iterações:', qtd, 'cortes cliques encontrados:', self.totalCliqueCuts, 'gomory:', self.iterationsCuts, 'objective: ', self.model.objective_value)
+        input()
+        self.model.optimize()
+        self.model.write('teste.lp')
+        self.printSolution()
 
     def select_tuples_random(self, max):
         if max > self.instance.n * self.instance.m:
@@ -1520,14 +1545,78 @@ class Compact:
             i += 1
         return list(d)
 
+    def select_tuples_l(self, l):
+        d = set()
+        set_aux = {}
+        for i in range(self.instance.m):
+            for j in range(self.instance.n):
+                for k in range(j+1, self.instance.n):
+                    if self.y[j][k][i].x < 1 - 1e-8:
+                        set_aux[(j, k, i)] = abs(self.y[j][k][i].x - 0.5)
+        set_aux = sorted(set_aux.items(), key=lambda l: l[1])
+        i = 0
+        # print(set_aux, len(set_aux))
+        # input()
+
+        key, value = set_aux[0]
+        # print(key, value)
+
+        # add two sides of most fractionary y
+        d.add((key[0], key[2]))
+        d.add((key[1], key[2]))
+
+        machines = set()
+        machines.add(key[2])
+
+        # add the machines before (j, i) and (k, i) if exists
+        j = key[0]
+        k = key[1]
+        i = key[2]
+        order_j = self.instance.o[j][i]
+        order_k = self.instance.o[k][i]
+        # print(order_j, order_k)
+        if order_j > 0:
+            mach = self.instance.machines[j][order_j - 1]
+            # print('j', j, 'mach', mach)
+            machines.add(mach)
+            d.add((j, mach))
+        if order_k > 0:
+            mach = self.instance.machines[k][order_k - 1]
+            machines.add(mach)
+            # print('k', k, 'mach', mach)
+            d.add((k, mach))
+
+        # print('d', d)
+        # print('machines', machines)
+        # add jobs j that aren't in d which machines i are in set machines that have the lowest value x_ji
+        del set_aux
+        set_aux = {}
+        for i in machines:
+            for j in range(self.instance.n):
+                set_aux[(j, i)] = self.x[j][i].x
+        set_aux = sorted(set_aux.items(), key=lambda l: l[1])
+        # print(set_aux)
+
+        i = 0
+        max = l + len(d)
+        while len(d) < max and i < len(set_aux):
+            key, value = set_aux[i]
+            # print(key, value)
+            d.add((key[0], key[1]))
+            i = i + 1
+        # input(d)
+
+        return list(d)
+
+
     def general_cliques(self, d):
-        print('general_cliques')
-        print(d)
+        # print('general_cliques')
+        # print(d)
         pool = self.possible_paths(len(d), d, ([], {}), [])
         pool = [dict(s) for s in set(frozenset(d.items()) for d in pool)]
-        for p in pool:
-            print(p)
-        input()
+        # for p in pool:
+        #     print(p)
+        # input()
 
         m = self.m
         m.clear()
@@ -1550,9 +1639,9 @@ class Compact:
             m += var >= 1, 'c({})'.format(qtd)
             qtd += 1
         # input(K)
-        for (j,i) in d:
-            print(self.x[j][i].x, t[(j, i)])
-        input()
+        # for (j,i) in d:
+        #     print(self.x[j][i].x, t[(j, i)])
+        # input()
         m.objective = xsum(self.x[j][i].x * t[(j, i)] for (j, i) in d)
         m.write('teste_cuts.lp')
         # input()
@@ -1567,8 +1656,8 @@ class Compact:
 
         print('solutions: ', m.num_solutions)
         # input()
-        c_name = 'cut_clique_{}'.format(self.iterationsCuts)
-        self.iterationsCuts += 1
+        c_name = 'cut_clique_{}'.format(self.totalCliqueCuts)
+        self.totalCliqueCuts += 1
 
         var = 0
         for (job, machine) in d:
@@ -1590,7 +1679,7 @@ class Compact:
         for k in range(len(d)):
             (j, i) = d.pop(k)
             if self.checkpath(sol, j, i):  # caso caminho seja válido até o moemnto
-                print((j, i), sol)
+                # print((j, i), sol)
                 # input()
                 # sol[len(sol):] = [(j, i)]  # inserir na última posição
                 pool = self.possible_paths(size, d, sol, pool)
@@ -1615,26 +1704,26 @@ class Compact:
         found_machine = False
         # input(solution)
         for k in range(len(solution[0])-1, -1, -1):
-            print(k)
+            # print(k)
             order = self.instance.o[j][i]
             j_aux, i_aux = solution[0][k][0], solution[0][k][1]
             if i_aux == i and not found_machine:
-                print('found_machine', 'comparado = ', (j, i), 'no conjunto = ', (j_aux, i_aux), est, solution[1][(j_aux, i_aux)] + self.instance.times[j_aux][i_aux])
+                # print('found_machine', 'comparado = ', (j, i), 'no conjunto = ', (j_aux, i_aux), est, solution[1][(j_aux, i_aux)] + self.instance.times[j_aux][i_aux])
                 est = max(est, solution[1][(j_aux, i_aux)] + self.instance.times[j_aux][i_aux])
                 found_machine = True
             if j_aux == j:
                 o = self.instance.o[j_aux][i_aux]
                 if o > order:
-                    print('teste: ', (j, i), 'ordem: ', order, ' falhou em: ', solution[0][k], 'ordem: ', o)
+                    # print('teste: ', (j, i), 'ordem: ', order, ' falhou em: ', solution[0][k], 'ordem: ', o)
                     return False
-                print('found_job', 'comparado = ', (j, i), 'no conjunto = ', (j_aux, i_aux), est, solution[1][(j_aux, i_aux)] + self.instance.times[j_aux][i_aux])
+                # print('found_job', 'comparado = ', (j, i), 'no conjunto = ', (j_aux, i_aux), est, solution[1][(j_aux, i_aux)] + self.instance.times[j_aux][i_aux])
                 est = max(est, solution[1][(j_aux, i_aux)] + self.instance.distances[j][i][i_aux])
                 found_job = True
             if found_machine and found_job:
                 break
-        print('est: ', est, 'lst', self.instance.lst[j][i])
+        # print('est: ', est, 'lst', self.instance.lst[j][i])
         if est > self.instance.lst[j][i]:
-            print('est invalido: ', est, self.instance.lst[j][i])
+            # print('est invalido: ', est, self.instance.lst[j][i])
             return False
         solution[0][len(solution[0]):] = [(j, i)]
         solution[1][(j, i)] = est

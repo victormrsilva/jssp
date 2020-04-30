@@ -1,18 +1,29 @@
 from sys import argv
 import time
 from JSSPInstance import JSSPInstance
+from config import Config
 from compact import Compact
 import string
 import csv
 from branch import Branch
-if len(argv) < 3:
-    inst = JSSPInstance(argv[1], -1)
-else:
-    inst = JSSPInstance(argv[1], int(argv[2]))
+
+start = time.time()
+conf = Config(argv[1])
+compact = Compact(conf)
+compact.instance.print()
+# input()
+# print(conf.get_property("instance_name"))
+# print(conf.get_property("instance"))
+# input()
+#
+# if len(argv) < 3:
+#     inst = JSSPInstance(argv[1], -1)
+# else:
+#     inst = JSSPInstance(argv[1], int(argv[2]))
 
 # inst.print()
 # input('instance')
-compact = Compact(inst)
+# compact = Compact(inst)
 instance_name = compact.instance.instancename.translate(str.maketrans('', '', string.punctuation))
 
 # build the model
@@ -27,15 +38,34 @@ instance_name = compact.instance.instancename.translate(str.maketrans('', '', st
 # print(compact.instance.o)
 # input()
 # compact.constructProblemMcCormickNonNegative()
-compact.constructProblemMcCormick()
+if conf.get_property("problem") == 0:  # Big-M
+    compact.constructProblemM()
+elif conf.get_property("problem") == 1:  # McCormick
+    compact.constructProblemMcCormick()
+elif conf.get_property("problem") == 2:  # McCormick Non Negative
+    compact.constructProblemMcCormickNonNegative()
+
 # compact.noname_clique()
+
+str = argv[1]
+compact.model.optimize(relax=True)
+str = str + ";{0:.6f}".format(compact.model.objective_value)
 compact.mip_general_cliques()
-# compact.testCliqueMIP(2, 4)
-input('feito')
-compact.model.relax()
+compact.model.optimize(relax=True)
+str = str + ";{0:.6f}".format(compact.model.objective_value)
 compact.model.optimize()
-compact.printSolution()
-compact.model.write('teste.lp')
+str = str + ";{0:.6f}".format(compact.model.objective_value)
+end = time.time()
+str = str + ";{0:.6f}".format(end-start)
+
+with open("{}.csv".format(instance_name), "a") as f:
+    f.write(str+"\n")
+# compact.testCliqueMIP(2, 4)
+# input('feito')
+# compact.model.relax()
+# compact.model.optimize()
+# compact.printSolution()
+# compact.model.write('teste.lp')
 # input('teste')
 # # compact.constructProblemMcCormick()
 #

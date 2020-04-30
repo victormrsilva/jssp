@@ -1,0 +1,515 @@
+Welcome to the CBC MILP Solver 
+Version: Trunk
+Build Date: Apr 16 2020 
+
+Starting solution of the Linear programming relaxation problem using Primal Simplex
+
+Using Python-MIP package version 1.8.1
+Machines:  6 Jobs:  6
+Order: 
+Job  0 : machine 2 ( 1 ) machine 0 ( 3 ) machine 1 ( 6 ) machine 3 ( 7 ) machine 5 ( 3 ) machine 4 ( 6 ) 
+Job  1 : machine 1 ( 8 ) machine 2 ( 5 ) machine 4 ( 10 ) machine 5 ( 10 ) machine 0 ( 10 ) machine 3 ( 4 ) 
+Job  2 : machine 2 ( 5 ) machine 3 ( 4 ) machine 5 ( 8 ) machine 0 ( 9 ) machine 1 ( 1 ) machine 4 ( 7 ) 
+Job  3 : machine 1 ( 5 ) machine 0 ( 5 ) machine 2 ( 5 ) machine 3 ( 3 ) machine 4 ( 8 ) machine 5 ( 9 ) 
+Job  4 : machine 2 ( 9 ) machine 1 ( 3 ) machine 4 ( 5 ) machine 5 ( 4 ) machine 0 ( 3 ) machine 3 ( 1 ) 
+Job  5 : machine 1 ( 3 ) machine 3 ( 3 ) machine 5 ( 9 ) machine 0 ( 10 ) machine 4 ( 4 ) machine 2 ( 1 ) 
+K:  60
+Job  0 , e: machine  0 ( 1 ) machine  1 ( 4 ) machine  2 ( 0 ) machine  3 ( 10 ) machine  4 ( 20 ) machine  5 ( 17 ) 
+Job  1 , e: machine  0 ( 33 ) machine  1 ( 0 ) machine  2 ( 8 ) machine  3 ( 43 ) machine  4 ( 13 ) machine  5 ( 23 ) 
+Job  2 , e: machine  0 ( 17 ) machine  1 ( 26 ) machine  2 ( 0 ) machine  3 ( 5 ) machine  4 ( 27 ) machine  5 ( 9 ) 
+Job  3 , e: machine  0 ( 5 ) machine  1 ( 0 ) machine  2 ( 10 ) machine  3 ( 15 ) machine  4 ( 18 ) machine  5 ( 26 ) 
+Job  4 , e: machine  0 ( 21 ) machine  1 ( 9 ) machine  2 ( 0 ) machine  3 ( 24 ) machine  4 ( 12 ) machine  5 ( 17 ) 
+Job  5 , e: machine  0 ( 15 ) machine  1 ( 0 ) machine  2 ( 29 ) machine  3 ( 3 ) machine  4 ( 25 ) machine  5 ( 6 ) 
+Job  0 , f: machine  0 ( 22 ) machine  1 ( 16 ) machine  2 ( 25 ) machine  3 ( 9 ) machine  4 ( 0 ) machine  5 ( 6 ) 
+Job  1 , f: machine  0 ( 4 ) machine  1 ( 39 ) machine  2 ( 34 ) machine  3 ( 0 ) machine  4 ( 24 ) machine  5 ( 14 ) 
+Job  2 , f: machine  0 ( 8 ) machine  1 ( 7 ) machine  2 ( 29 ) machine  3 ( 25 ) machine  4 ( 0 ) machine  5 ( 17 ) 
+Job  3 , f: machine  0 ( 25 ) machine  1 ( 30 ) machine  2 ( 20 ) machine  3 ( 17 ) machine  4 ( 9 ) machine  5 ( 0 ) 
+Job  4 , f: machine  0 ( 1 ) machine  1 ( 13 ) machine  2 ( 16 ) machine  3 ( 0 ) machine  4 ( 8 ) machine  5 ( 4 ) 
+Job  5 , f: machine  0 ( 5 ) machine  1 ( 27 ) machine  2 ( 0 ) machine  3 ( 24 ) machine  4 ( 1 ) machine  5 ( 15 ) 
+EST and LST:
+Job: 0 Machine: 0 EST: 1 LST: 35
+Job: 0 Machine: 1 EST: 4 LST: 38
+Job: 0 Machine: 2 EST: 0 LST: 34
+Job: 0 Machine: 3 EST: 10 LST: 44
+Job: 0 Machine: 4 EST: 20 LST: 54
+Job: 0 Machine: 5 EST: 17 LST: 51
+Job: 1 Machine: 0 EST: 33 LST: 46
+Job: 1 Machine: 1 EST: 0 LST: 13
+Job: 1 Machine: 2 EST: 8 LST: 21
+Job: 1 Machine: 3 EST: 43 LST: 56
+Job: 1 Machine: 4 EST: 13 LST: 26
+Job: 1 Machine: 5 EST: 23 LST: 36
+Job: 2 Machine: 0 EST: 17 LST: 43
+Job: 2 Machine: 1 EST: 26 LST: 52
+Job: 2 Machine: 2 EST: 0 LST: 26
+Job: 2 Machine: 3 EST: 5 LST: 31
+Job: 2 Machine: 4 EST: 27 LST: 53
+Job: 2 Machine: 5 EST: 9 LST: 35
+Job: 3 Machine: 0 EST: 5 LST: 30
+Job: 3 Machine: 1 EST: 0 LST: 25
+Job: 3 Machine: 2 EST: 10 LST: 35
+Job: 3 Machine: 3 EST: 15 LST: 40
+Job: 3 Machine: 4 EST: 18 LST: 43
+Job: 3 Machine: 5 EST: 26 LST: 51
+Job: 4 Machine: 0 EST: 21 LST: 56
+Job: 4 Machine: 1 EST: 9 LST: 44
+Job: 4 Machine: 2 EST: 0 LST: 35
+Job: 4 Machine: 3 EST: 24 LST: 59
+Job: 4 Machine: 4 EST: 12 LST: 47
+Job: 4 Machine: 5 EST: 17 LST: 52
+Job: 5 Machine: 0 EST: 15 LST: 45
+Job: 5 Machine: 1 EST: 0 LST: 30
+Job: 5 Machine: 2 EST: 29 LST: 59
+Job: 5 Machine: 3 EST: 3 LST: 33
+Job: 5 Machine: 4 EST: 25 LST: 55
+Job: 5 Machine: 5 EST: 6 LST: 36
+Order:
+Job: 0 Machine: 0 = 1 
+Job: 0 Machine: 1 = 2 
+Job: 0 Machine: 2 = 0 
+Job: 0 Machine: 3 = 3 
+Job: 0 Machine: 4 = 5 
+Job: 0 Machine: 5 = 4 
+Job: 1 Machine: 0 = 4 
+Job: 1 Machine: 1 = 0 
+Job: 1 Machine: 2 = 1 
+Job: 1 Machine: 3 = 5 
+Job: 1 Machine: 4 = 2 
+Job: 1 Machine: 5 = 3 
+Job: 2 Machine: 0 = 3 
+Job: 2 Machine: 1 = 4 
+Job: 2 Machine: 2 = 0 
+Job: 2 Machine: 3 = 1 
+Job: 2 Machine: 4 = 5 
+Job: 2 Machine: 5 = 2 
+Job: 3 Machine: 0 = 1 
+Job: 3 Machine: 1 = 0 
+Job: 3 Machine: 2 = 2 
+Job: 3 Machine: 3 = 3 
+Job: 3 Machine: 4 = 4 
+Job: 3 Machine: 5 = 5 
+Job: 4 Machine: 0 = 4 
+Job: 4 Machine: 1 = 1 
+Job: 4 Machine: 2 = 0 
+Job: 4 Machine: 3 = 5 
+Job: 4 Machine: 4 = 2 
+Job: 4 Machine: 5 = 3 
+Job: 5 Machine: 0 = 3 
+Job: 5 Machine: 1 = 0 
+Job: 5 Machine: 2 = 5 
+Job: 5 Machine: 3 = 1 
+Job: 5 Machine: 4 = 4 
+Job: 5 Machine: 5 = 2 
+Distances:
+Job 0, Machine 2 -> Machine 0: distance 1
+Job 0, Machine 2 -> Machine 1: distance 4
+Job 0, Machine 2 -> Machine 3: distance 10
+Job 0, Machine 2 -> Machine 5: distance 17
+Job 0, Machine 2 -> Machine 4: distance 20
+Job 0, Machine 0 -> Machine 1: distance 3
+Job 0, Machine 0 -> Machine 3: distance 9
+Job 0, Machine 0 -> Machine 5: distance 16
+Job 0, Machine 0 -> Machine 4: distance 19
+Job 0, Machine 1 -> Machine 3: distance 6
+Job 0, Machine 1 -> Machine 5: distance 13
+Job 0, Machine 1 -> Machine 4: distance 16
+Job 0, Machine 3 -> Machine 5: distance 7
+Job 0, Machine 3 -> Machine 4: distance 10
+Job 0, Machine 5 -> Machine 4: distance 3
+Job 1, Machine 1 -> Machine 2: distance 8
+Job 1, Machine 1 -> Machine 4: distance 13
+Job 1, Machine 1 -> Machine 5: distance 23
+Job 1, Machine 1 -> Machine 0: distance 33
+Job 1, Machine 1 -> Machine 3: distance 43
+Job 1, Machine 2 -> Machine 4: distance 5
+Job 1, Machine 2 -> Machine 5: distance 15
+Job 1, Machine 2 -> Machine 0: distance 25
+Job 1, Machine 2 -> Machine 3: distance 35
+Job 1, Machine 4 -> Machine 5: distance 10
+Job 1, Machine 4 -> Machine 0: distance 20
+Job 1, Machine 4 -> Machine 3: distance 30
+Job 1, Machine 5 -> Machine 0: distance 10
+Job 1, Machine 5 -> Machine 3: distance 20
+Job 1, Machine 0 -> Machine 3: distance 10
+Job 2, Machine 2 -> Machine 3: distance 5
+Job 2, Machine 2 -> Machine 5: distance 9
+Job 2, Machine 2 -> Machine 0: distance 17
+Job 2, Machine 2 -> Machine 1: distance 26
+Job 2, Machine 2 -> Machine 4: distance 27
+Job 2, Machine 3 -> Machine 5: distance 4
+Job 2, Machine 3 -> Machine 0: distance 12
+Job 2, Machine 3 -> Machine 1: distance 21
+Job 2, Machine 3 -> Machine 4: distance 22
+Job 2, Machine 5 -> Machine 0: distance 8
+Job 2, Machine 5 -> Machine 1: distance 17
+Job 2, Machine 5 -> Machine 4: distance 18
+Job 2, Machine 0 -> Machine 1: distance 9
+Job 2, Machine 0 -> Machine 4: distance 10
+Job 2, Machine 1 -> Machine 4: distance 1
+Job 3, Machine 1 -> Machine 0: distance 5
+Job 3, Machine 1 -> Machine 2: distance 10
+Job 3, Machine 1 -> Machine 3: distance 15
+Job 3, Machine 1 -> Machine 4: distance 18
+Job 3, Machine 1 -> Machine 5: distance 26
+Job 3, Machine 0 -> Machine 2: distance 5
+Job 3, Machine 0 -> Machine 3: distance 10
+Job 3, Machine 0 -> Machine 4: distance 13
+Job 3, Machine 0 -> Machine 5: distance 21
+Job 3, Machine 2 -> Machine 3: distance 5
+Job 3, Machine 2 -> Machine 4: distance 8
+Job 3, Machine 2 -> Machine 5: distance 16
+Job 3, Machine 3 -> Machine 4: distance 3
+Job 3, Machine 3 -> Machine 5: distance 11
+Job 3, Machine 4 -> Machine 5: distance 8
+Job 4, Machine 2 -> Machine 1: distance 9
+Job 4, Machine 2 -> Machine 4: distance 12
+Job 4, Machine 2 -> Machine 5: distance 17
+Job 4, Machine 2 -> Machine 0: distance 21
+Job 4, Machine 2 -> Machine 3: distance 24
+Job 4, Machine 1 -> Machine 4: distance 3
+Job 4, Machine 1 -> Machine 5: distance 8
+Job 4, Machine 1 -> Machine 0: distance 12
+Job 4, Machine 1 -> Machine 3: distance 15
+Job 4, Machine 4 -> Machine 5: distance 5
+Job 4, Machine 4 -> Machine 0: distance 9
+Job 4, Machine 4 -> Machine 3: distance 12
+Job 4, Machine 5 -> Machine 0: distance 4
+Job 4, Machine 5 -> Machine 3: distance 7
+Job 4, Machine 0 -> Machine 3: distance 3
+Job 5, Machine 1 -> Machine 3: distance 3
+Job 5, Machine 1 -> Machine 5: distance 6
+Job 5, Machine 1 -> Machine 0: distance 15
+Job 5, Machine 1 -> Machine 4: distance 25
+Job 5, Machine 1 -> Machine 2: distance 29
+Job 5, Machine 3 -> Machine 5: distance 3
+Job 5, Machine 3 -> Machine 0: distance 12
+Job 5, Machine 3 -> Machine 4: distance 22
+Job 5, Machine 3 -> Machine 2: distance 26
+Job 5, Machine 5 -> Machine 0: distance 9
+Job 5, Machine 5 -> Machine 4: distance 19
+Job 5, Machine 5 -> Machine 2: distance 23
+Job 5, Machine 0 -> Machine 4: distance 10
+Job 5, Machine 0 -> Machine 2: distance 14
+Job 5, Machine 4 -> Machine 2: distance 4
+McCormic linearization
+[(5, 1), (3, 2), (0, 0), (4, 1), (3, 0), (2, 1), (2, 0), (5, 0), (4, 2), (2, 5), (5, 2), (3, 5)]
+obj:  0.8329113924050632
+solutions:  1
++ 0.027848101265822777x(2,0) + 0.020253164556962036x(5,0) 
+C:  47.000000000000014
+x(0,0) = 16.79	 x(0,1) = 20.00	 x(0,2) = 15.79	 x(0,3) = 26.00	 x(0,4) = 36.00	 x(0,5) = 33.00	 
+x(1,0) = 33.00	 x(1,1) = 0.00	 x(1,2) = 8.00	 x(1,3) = 43.00	 x(1,4) = 13.00	 x(1,5) = 23.00	 
+x(2,0) = 30.00	 x(2,1) = 39.00	 x(2,2) = 9.00	 x(2,3) = 14.00	 x(2,4) = 40.00	 x(2,5) = 22.00	 
+x(3,0) = 11.79	 x(3,1) = 4.60	 x(3,2) = 16.79	 x(3,3) = 23.00	 x(3,4) = 26.00	 x(3,5) = 35.95	 
+x(4,0) = 30.00	 x(4,1) = 18.00	 x(4,2) = 9.00	 x(4,3) = 33.00	 x(4,4) = 21.00	 x(4,5) = 26.00	 
+x(5,0) = 23.00	 x(5,1) = 8.00	 x(5,2) = 39.39	 x(5,3) = 11.00	 x(5,4) = 35.39	 x(5,5) = 14.00	 
+y(0,1,0) = 1.00	 y(1,0,0) = 0.00	 
+y(0,2,0) = 0.48	 y(2,0,0) = 0.52	 
+y(0,3,0) = 0.00	 y(3,0,0) = 1.00	 
+y(0,4,0) = 0.28	 y(4,0,0) = 0.72	 
+y(0,5,0) = 0.30	 y(5,0,0) = 0.70	 
+y(1,2,0) = 0.32	 y(2,1,0) = 0.68	 
+y(1,3,0) = 0.00	 y(3,1,0) = 1.00	 
+y(1,4,0) = 0.33	 y(4,1,0) = 0.67	 
+y(1,5,0) = 0.29	 y(5,1,0) = 0.71	 
+y(2,3,0) = 0.40	 y(3,2,0) = 0.60	 
+y(2,4,0) = 0.07	 y(4,2,0) = 0.93	 
+y(2,5,0) = 0.08	 y(5,2,0) = 0.92	 
+y(3,4,0) = 0.39	 y(4,3,0) = 0.61	 
+y(3,5,0) = 0.60	 y(5,3,0) = 0.40	 
+y(4,5,0) = 0.09	 y(5,4,0) = 0.91	 
+y(0,1,1) = 0.40	 y(1,0,1) = 0.60	 
+y(0,2,1) = 0.41	 y(2,0,1) = 0.59	 
+y(0,3,1) = 0.00	 y(3,0,1) = 1.00	 
+y(0,4,1) = 0.02	 y(4,0,1) = 0.98	 
+y(0,5,1) = 0.26	 y(5,0,1) = 0.74	 
+y(1,2,1) = 1.00	 y(2,1,1) = 0.00	 
+y(1,3,1) = 0.32	 y(3,1,1) = 0.68	 
+y(1,4,1) = 0.58	 y(4,1,1) = 0.42	 
+y(1,5,1) = 1.00	 y(5,1,1) = 0.00	 
+y(2,3,1) = 0.00	 y(3,2,1) = 1.00	 
+y(2,4,1) = 0.45	 y(4,2,1) = 0.55	 
+y(2,5,1) = 0.36	 y(5,2,1) = 0.64	 
+y(3,4,1) = 0.35	 y(4,3,1) = 0.65	 
+y(3,5,1) = 0.19	 y(5,3,1) = 0.81	 
+y(4,5,1) = 0.17	 y(5,4,1) = 0.83	 
+y(0,1,2) = 0.13	 y(1,0,2) = 0.87	 
+y(0,2,2) = 0.28	 y(2,0,2) = 0.72	 
+y(0,3,2) = 0.15	 y(3,0,2) = 0.85	 
+y(0,4,2) = 0.05	 y(4,0,2) = 0.95	 
+y(0,5,2) = 0.41	 y(5,0,2) = 0.59	 
+y(1,2,2) = 0.26	 y(2,1,2) = 0.74	 
+y(1,3,2) = 0.83	 y(3,1,2) = 0.17	 
+y(1,4,2) = 0.28	 y(4,1,2) = 0.72	 
+y(1,5,2) = 1.00	 y(5,1,2) = 0.00	 
+y(2,3,2) = 0.32	 y(3,2,2) = 0.68	 
+y(2,4,2) = 0.20	 y(4,2,2) = 0.80	 
+y(2,5,2) = 1.00	 y(5,2,2) = 0.00	 
+y(3,4,2) = 0.04	 y(4,3,2) = 0.96	 
+y(3,5,2) = 0.60	 y(5,3,2) = 0.40	 
+y(4,5,2) = 0.53	 y(5,4,2) = 0.47	 
+y(0,1,3) = 1.00	 y(1,0,3) = 0.00	 
+y(0,2,3) = 0.23	 y(2,0,3) = 0.77	 
+y(0,3,3) = 0.00	 y(3,0,3) = 1.00	 
+y(0,4,3) = 0.16	 y(4,0,3) = 0.84	 
+y(0,5,3) = 0.32	 y(5,0,3) = 0.68	 
+y(1,2,3) = 0.00	 y(2,1,3) = 1.00	 
+y(1,3,3) = 0.00	 y(3,1,3) = 1.00	 
+y(1,4,3) = 0.61	 y(4,1,3) = 0.39	 
+y(1,5,3) = 0.00	 y(5,1,3) = 1.00	 
+y(2,3,3) = 0.32	 y(3,2,3) = 0.68	 
+y(2,4,3) = 0.36	 y(4,2,3) = 0.64	 
+y(2,5,3) = 0.00	 y(5,2,3) = 1.00	 
+y(3,4,3) = 0.24	 y(4,3,3) = 0.76	 
+y(3,5,3) = 0.26	 y(5,3,3) = 0.74	 
+y(4,5,3) = 0.36	 y(5,4,3) = 0.64	 
+y(0,1,4) = 0.38	 y(1,0,4) = 0.62	 
+y(0,2,4) = 0.28	 y(2,0,4) = 0.72	 
+y(0,3,4) = 0.00	 y(3,0,4) = 1.00	 
+y(0,4,4) = 0.27	 y(4,0,4) = 0.73	 
+y(0,5,4) = 0.09	 y(5,0,4) = 0.91	 
+y(1,2,4) = 1.00	 y(2,1,4) = 0.00	 
+y(1,3,4) = 0.85	 y(3,1,4) = 0.15	 
+y(1,4,4) = 0.33	 y(4,1,4) = 0.67	 
+y(1,5,4) = 1.00	 y(5,1,4) = 0.00	 
+y(2,3,4) = 0.22	 y(3,2,4) = 0.78	 
+y(2,4,4) = 0.39	 y(4,2,4) = 0.61	 
+y(2,5,4) = 0.08	 y(5,2,4) = 0.92	 
+y(3,4,4) = 0.00	 y(4,3,4) = 1.00	 
+y(3,5,4) = 0.33	 y(5,3,4) = 0.67	 
+y(4,5,4) = 0.39	 y(5,4,4) = 0.61	 
+y(0,1,5) = 0.00	 y(1,0,5) = 1.00	 
+y(0,2,5) = 0.09	 y(2,0,5) = 0.91	 
+y(0,3,5) = 0.28	 y(3,0,5) = 0.72	 
+y(0,4,5) = 0.00	 y(4,0,5) = 1.00	 
+y(0,5,5) = 0.28	 y(5,0,5) = 0.72	 
+y(1,2,5) = 0.35	 y(2,1,5) = 0.65	 
+y(1,3,5) = 1.00	 y(3,1,5) = 0.00	 
+y(1,4,5) = 0.21	 y(4,1,5) = 0.79	 
+y(1,5,5) = 0.30	 y(5,1,5) = 0.70	 
+y(2,3,5) = 0.45	 y(3,2,5) = 0.55	 
+y(2,4,5) = 0.17	 y(4,2,5) = 0.83	 
+y(2,5,5) = 0.03	 y(5,2,5) = 0.97	 
+y(3,4,5) = 0.20	 y(4,3,5) = 0.80	 
+y(3,5,5) = 0.36	 y(5,3,5) = 0.64	 
+y(4,5,5) = 0.08	 y(5,4,5) = 0.92	 
+obj:  1.3583828775267541
+erro
+[(0, 1), (4, 1), (0, 0), (0, 2), (2, 1), (2, 0), (4, 2), (2, 5), (5, 2), (1, 1), (3, 5)]
+cliques:  0 mip: 403
+C:  46.99999999999998
+x(0,0) = 16.47	 x(0,1) = 20.16	 x(0,2) = 15.47	 x(0,3) = 27.01	 x(0,4) = 37.01	 x(0,5) = 34.01	 
+x(1,0) = 33.00	 x(1,1) = -0.00	 x(1,2) = 8.00	 x(1,3) = 43.00	 x(1,4) = 13.00	 x(1,5) = 23.00	 
+x(2,0) = 19.37	 x(2,1) = 38.31	 x(2,2) = 2.37	 x(2,3) = 7.37	 x(2,4) = 39.31	 x(2,5) = 11.37	 
+x(3,0) = 12.56	 x(3,1) = 1.49	 x(3,2) = 17.56	 x(3,3) = 24.01	 x(3,4) = 27.01	 x(3,5) = 35.01	 
+x(4,0) = 32.18	 x(4,1) = 20.18	 x(4,2) = 11.18	 x(4,3) = 35.18	 x(4,4) = 23.18	 x(4,5) = 28.18	 
+x(5,0) = 28.37	 x(5,1) = 11.77	 x(5,2) = 42.37	 x(5,3) = 14.77	 x(5,4) = 38.37	 x(5,5) = 19.37	 
+y(0,1,0) = 1.00	 y(1,0,0) = 0.00	 
+y(0,2,0) = 0.49	 y(2,0,0) = 0.51	 
+y(0,3,0) = 0.11	 y(3,0,0) = 0.89	 
+y(0,4,0) = 0.32	 y(4,0,0) = 0.68	 
+y(0,5,0) = 0.41	 y(5,0,0) = 0.59	 
+y(1,2,0) = 0.23	 y(2,1,0) = 0.77	 
+y(1,3,0) = 0.00	 y(3,1,0) = 1.00	 
+y(1,4,0) = 0.35	 y(4,1,0) = 0.65	 
+y(1,5,0) = 0.27	 y(5,1,0) = 0.73	 
+y(2,3,0) = 0.05	 y(3,2,0) = 0.95	 
+y(2,4,0) = 0.38	 y(4,2,0) = 0.62	 
+y(2,5,0) = 1.00	 y(5,2,0) = -0.00	 
+y(3,4,0) = 0.57	 y(4,3,0) = 0.43	 
+y(3,5,0) = 0.55	 y(5,3,0) = 0.45	 
+y(4,5,0) = 0.18	 y(5,4,0) = 0.82	 
+y(0,1,1) = 0.41	 y(1,0,1) = 0.59	 
+y(0,2,1) = 0.39	 y(2,0,1) = 0.61	 
+y(0,3,1) = 0.00	 y(3,0,1) = 1.00	 
+y(0,4,1) = 0.07	 y(4,0,1) = 0.93	 
+y(0,5,1) = 0.15	 y(5,0,1) = 0.85	 
+y(1,2,1) = 1.00	 y(2,1,1) = 0.00	 
+y(1,3,1) = 0.22	 y(3,1,1) = 0.78	 
+y(1,4,1) = 0.66	 y(4,1,1) = 0.34	 
+y(1,5,1) = 1.00	 y(5,1,1) = -0.00	 
+y(2,3,1) = 0.00	 y(3,2,1) = 1.00	 
+y(2,4,1) = 0.38	 y(4,2,1) = 0.62	 
+y(2,5,1) = 0.48	 y(5,2,1) = 0.52	 
+y(3,4,1) = 0.46	 y(4,3,1) = 0.54	 
+y(3,5,1) = 0.40	 y(5,3,1) = 0.60	 
+y(4,5,1) = 0.13	 y(5,4,1) = 0.87	 
+y(0,1,2) = 0.12	 y(1,0,2) = 0.88	 
+y(0,2,2) = 0.07	 y(2,0,2) = 0.93	 
+y(0,3,2) = 0.55	 y(3,0,2) = 0.45	 
+y(0,4,2) = 0.11	 y(4,0,2) = 0.89	 
+y(0,5,2) = 0.55	 y(5,0,2) = 0.45	 
+y(1,2,2) = 0.04	 y(2,1,2) = 0.96	 
+y(1,3,2) = 0.79	 y(3,1,2) = 0.21	 
+y(1,4,2) = 0.34	 y(4,1,2) = 0.66	 
+y(1,5,2) = 1.00	 y(5,1,2) = 0.00	 
+y(2,3,2) = 0.50	 y(3,2,2) = 0.50	 
+y(2,4,2) = 0.40	 y(4,2,2) = 0.60	 
+y(2,5,2) = 1.00	 y(5,2,2) = 0.00	 
+y(3,4,2) = 0.08	 y(4,3,2) = 0.92	 
+y(3,5,2) = 0.55	 y(5,3,2) = 0.45	 
+y(4,5,2) = 0.54	 y(5,4,2) = 0.46	 
+y(0,1,3) = 1.00	 y(1,0,3) = 0.00	 
+y(0,2,3) = 0.41	 y(2,0,3) = 0.59	 
+y(0,3,3) = 0.00	 y(3,0,3) = 1.00	 
+y(0,4,3) = 0.18	 y(4,0,3) = 0.82	 
+y(0,5,3) = 0.24	 y(5,0,3) = 0.76	 
+y(1,2,3) = 0.00	 y(2,1,3) = 1.00	 
+y(1,3,3) = 0.00	 y(3,1,3) = 1.00	 
+y(1,4,3) = 0.66	 y(4,1,3) = 0.34	 
+y(1,5,3) = 0.00	 y(5,1,3) = 1.00	 
+y(2,3,3) = 0.52	 y(3,2,3) = 0.48	 
+y(2,4,3) = 0.52	 y(4,2,3) = 0.48	 
+y(2,5,3) = 0.34	 y(5,2,3) = 0.66	 
+y(3,4,3) = 0.41	 y(4,3,3) = 0.59	 
+y(3,5,3) = 0.18	 y(5,3,3) = 0.82	 
+y(4,5,3) = 0.33	 y(5,4,3) = 0.67	 
+y(0,1,4) = 0.36	 y(1,0,4) = 0.64	 
+y(0,2,4) = 0.23	 y(2,0,4) = 0.77	 
+y(0,3,4) = 0.00	 y(3,0,4) = 1.00	 
+y(0,4,4) = 0.24	 y(4,0,4) = 0.76	 
+y(0,5,4) = 0.14	 y(5,0,4) = 0.86	 
+y(1,2,4) = 1.00	 y(2,1,4) = 0.00	 
+y(1,3,4) = 1.00	 y(3,1,4) = -0.00	 
+y(1,4,4) = 0.39	 y(4,1,4) = 0.61	 
+y(1,5,4) = 1.00	 y(5,1,4) = 0.00	 
+y(2,3,4) = 0.16	 y(3,2,4) = 0.84	 
+y(2,4,4) = 0.31	 y(4,2,4) = 0.69	 
+y(2,5,4) = 0.10	 y(5,2,4) = 0.90	 
+y(3,4,4) = 0.23	 y(4,3,4) = 0.77	 
+y(3,5,4) = 0.37	 y(5,3,4) = 0.63	 
+y(4,5,4) = 0.41	 y(5,4,4) = 0.59	 
+y(0,1,5) = 0.36	 y(1,0,5) = 0.64	 
+y(0,2,5) = 0.41	 y(2,0,5) = 0.59	 
+y(0,3,5) = 0.23	 y(3,0,5) = 0.77	 
+y(0,4,5) = 0.00	 y(4,0,5) = 1.00	 
+y(0,5,5) = 0.16	 y(5,0,5) = 0.84	 
+y(1,2,5) = 0.19	 y(2,1,5) = 0.81	 
+y(1,3,5) = 1.00	 y(3,1,5) = -0.00	 
+y(1,4,5) = 0.28	 y(4,1,5) = 0.72	 
+y(1,5,5) = 0.28	 y(5,1,5) = 0.72	 
+y(2,3,5) = 0.64	 y(3,2,5) = 0.36	 
+y(2,4,5) = 0.44	 y(4,2,5) = 0.56	 
+y(2,5,5) = 1.00	 y(5,2,5) = -0.00	 
+y(3,4,5) = 0.09	 y(4,3,5) = 0.91	 
+y(3,5,5) = 0.18	 y(5,3,5) = 0.82	 
+y(4,5,5) = 0.01	 y(5,4,5) = 0.99	 
+obj:  1.1395074120571516
+erro
+[(3, 2), (0, 0), (4, 1), (3, 3), (3, 1), (2, 1), (2, 0), (2, 3), (4, 3), (2, 2), (4, 2), (5, 1), (5, 2)]
+cliques:  0 mip: 729
+C:  46.99999999999764
+x(0,0) = 8.47	 x(0,1) = 14.60	 x(0,2) = 1.93	 x(0,3) = 23.12	 x(0,4) = 40.16	 x(0,5) = 30.12	 
+x(1,0) = 33.00	 x(1,1) = 0.00	 x(1,2) = 8.00	 x(1,3) = 43.00	 x(1,4) = 13.00	 x(1,5) = 23.00	 
+x(2,0) = 22.27	 x(2,1) = 39.00	 x(2,2) = 0.00	 x(2,3) = 5.00	 x(2,4) = 40.00	 x(2,5) = 9.00	 
+x(3,0) = 9.36	 x(3,1) = 0.00	 x(3,2) = 14.36	 x(3,3) = 19.36	 x(3,4) = 22.36	 x(3,5) = 33.12	 
+x(4,0) = 33.73	 x(4,1) = 21.05	 x(4,2) = 12.05	 x(4,3) = 36.73	 x(4,4) = 24.73	 x(4,5) = 29.73	 
+x(5,0) = 31.27	 x(5,1) = 8.25	 x(5,2) = 45.27	 x(5,3) = 11.25	 x(5,4) = 41.27	 x(5,5) = 22.27	 
+y(0,1,0) = 1.00	 y(1,0,0) = 0.00	 
+y(0,2,0) = 0.72	 y(2,0,0) = 0.28	 
+y(0,3,0) = 0.23	 y(3,0,0) = 0.77	 
+y(0,4,0) = 0.49	 y(4,0,0) = 0.51	 
+y(0,5,0) = 0.66	 y(5,0,0) = 0.34	 
+y(1,2,0) = 0.09	 y(2,1,0) = 0.91	 
+y(1,3,0) = 0.00	 y(3,1,0) = 1.00	 
+y(1,4,0) = 0.38	 y(4,1,0) = 0.62	 
+y(1,5,0) = 0.41	 y(5,1,0) = 0.59	 
+y(2,3,0) = 0.24	 y(3,2,0) = 0.76	 
+y(2,4,0) = 0.34	 y(4,2,0) = 0.66	 
+y(2,5,0) = 1.00	 y(5,2,0) = 0.00	 
+y(3,4,0) = 0.58	 y(4,3,0) = 0.42	 
+y(3,5,0) = 0.78	 y(5,3,0) = 0.22	 
+y(4,5,0) = 0.22	 y(5,4,0) = 0.78	 
+y(0,1,1) = 0.53	 y(1,0,1) = 0.47	 
+y(0,2,1) = 0.52	 y(2,0,1) = 0.48	 
+y(0,3,1) = 0.00	 y(3,0,1) = 1.00	 
+y(0,4,1) = 0.22	 y(4,0,1) = 0.78	 
+y(0,5,1) = 0.10	 y(5,0,1) = 0.90	 
+y(1,2,1) = 1.00	 y(2,1,1) = 0.00	 
+y(1,3,1) = 0.17	 y(3,1,1) = 0.83	 
+y(1,4,1) = 0.64	 y(4,1,1) = 0.36	 
+y(1,5,1) = 1.00	 y(5,1,1) = 0.00	 
+y(2,3,1) = 0.00	 y(3,2,1) = 1.00	 
+y(2,4,1) = 0.37	 y(4,2,1) = 0.63	 
+y(2,5,1) = 0.40	 y(5,2,1) = 0.60	 
+y(3,4,1) = 0.51	 y(4,3,1) = 0.49	 
+y(3,5,1) = 0.34	 y(5,3,1) = 0.66	 
+y(4,5,1) = 0.24	 y(5,4,1) = 0.76	 
+y(0,1,2) = 0.43	 y(1,0,2) = 0.57	 
+y(0,2,2) = 0.10	 y(2,0,2) = 0.90	 
+y(0,3,2) = 0.66	 y(3,0,2) = 0.34	 
+y(0,4,2) = 0.43	 y(4,0,2) = 0.57	 
+y(0,5,2) = 0.99	 y(5,0,2) = 0.01	 
+y(1,2,2) = 0.19	 y(2,1,2) = 0.81	 
+y(1,3,2) = 1.00	 y(3,1,2) = 0.00	 
+y(1,4,2) = 0.36	 y(4,1,2) = 0.64	 
+y(1,5,2) = 1.00	 y(5,1,2) = 0.00	 
+y(2,3,2) = 0.48	 y(3,2,2) = 0.52	 
+y(2,4,2) = 0.48	 y(4,2,2) = 0.52	 
+y(2,5,2) = 1.00	 y(5,2,2) = 0.00	 
+y(3,4,2) = 0.20	 y(4,3,2) = 0.80	 
+y(3,5,2) = 0.78	 y(5,3,2) = 0.22	 
+y(4,5,2) = 0.57	 y(5,4,2) = 0.43	 
+y(0,1,3) = 1.00	 y(1,0,3) = 0.00	 
+y(0,2,3) = 0.39	 y(2,0,3) = 0.61	 
+y(0,3,3) = 0.00	 y(3,0,3) = 1.00	 
+y(0,4,3) = 0.29	 y(4,0,3) = 0.71	 
+y(0,5,3) = 0.23	 y(5,0,3) = 0.77	 
+y(1,2,3) = 0.00	 y(2,1,3) = 1.00	 
+y(1,3,3) = 0.00	 y(3,1,3) = 1.00	 
+y(1,4,3) = 0.71	 y(4,1,3) = 0.29	 
+y(1,5,3) = 0.00	 y(5,1,3) = 1.00	 
+y(2,3,3) = 0.46	 y(3,2,3) = 0.54	 
+y(2,4,3) = 0.60	 y(4,2,3) = 0.40	 
+y(2,5,3) = 0.30	 y(5,2,3) = 0.70	 
+y(3,4,3) = 0.51	 y(4,3,3) = 0.49	 
+y(3,5,3) = 0.15	 y(5,3,3) = 0.85	 
+y(4,5,3) = 0.42	 y(5,4,3) = 0.58	 
+y(0,1,4) = 0.29	 y(1,0,4) = 0.71	 
+y(0,2,4) = 0.17	 y(2,0,4) = 0.83	 
+y(0,3,4) = 0.00	 y(3,0,4) = 1.00	 
+y(0,4,4) = 0.28	 y(4,0,4) = 0.72	 
+y(0,5,4) = 0.13	 y(5,0,4) = 0.87	 
+y(1,2,4) = 1.00	 y(2,1,4) = 0.00	 
+y(1,3,4) = 0.79	 y(3,1,4) = 0.21	 
+y(1,4,4) = 0.43	 y(4,1,4) = 0.57	 
+y(1,5,4) = 1.00	 y(5,1,4) = 0.00	 
+y(2,3,4) = 0.36	 y(3,2,4) = 0.64	 
+y(2,4,4) = 0.29	 y(4,2,4) = 0.71	 
+y(2,5,4) = 0.17	 y(5,2,4) = 0.83	 
+y(3,4,4) = 0.38	 y(4,3,4) = 0.62	 
+y(3,5,4) = 0.56	 y(5,3,4) = 0.44	 
+y(4,5,4) = 0.44	 y(5,4,4) = 0.56	 
+y(0,1,5) = 0.67	 y(1,0,5) = 0.33	 
+y(0,2,5) = 0.39	 y(2,0,5) = 0.61	 
+y(0,3,5) = 1.00	 y(3,0,5) = 0.00	 
+y(0,4,5) = 0.09	 y(4,0,5) = 0.91	 
+y(0,5,5) = 0.04	 y(5,0,5) = 0.96	 
+y(1,2,5) = 0.32	 y(2,1,5) = 0.68	 
+y(1,3,5) = 1.00	 y(3,1,5) = 0.00	 
+y(1,4,5) = 0.33	 y(4,1,5) = 0.67	 
+y(1,5,5) = 0.44	 y(5,1,5) = 0.56	 
+y(2,3,5) = 0.65	 y(3,2,5) = 0.35	 
+y(2,4,5) = 0.53	 y(4,2,5) = 0.47	 
+y(2,5,5) = 1.00	 y(5,2,5) = 0.00	 
+y(3,4,5) = 0.02	 y(4,3,5) = 0.98	 
+y(3,5,5) = 0.05	 y(5,3,5) = 0.95	 
+y(4,5,5) = 0.05	 y(5,4,5) = 0.95	 
+obj:  0.9999999999999998
+erro
+[(0, 1), (3, 2), (0, 0), (3, 3), (4, 5), (3, 1), (2, 1), (4, 3), (2, 2), (4, 2), (2, 5), (4, 1), (4, 0)]
+cliques:  0 mip: 0
+iterações: 3 cortes cliques encontrados: 1 mip: 1446 objective:  46.99999999999764
+Coin0506I Presolve 520 (-686) rows, 279 (-298) columns and 1676 (-1086) elements
+Clp1000I sum of infeasibilities 1.63166e-08 - average 3.1378e-11, 0 fixed columns
+Coin0506I Presolve 520 (0) rows, 279 (0) columns and 1676 (0) elements
+Clp0029I End of values pass after 279 iterations
+Clp0000I Optimal - objective value 47
+Clp0000I Optimal - objective value 47
+Coin0511I After Postsolve, objective 47, infeasibilities - dual 0 (0), primal 0 (0)
+Clp0000I Optimal - objective value 47
+Clp0000I Optimal - objective value 47
+Clp0000I Optimal - objective value 47
+Coin0511I After Postsolve, objective 47, infeasibilities - dual 0 (0), primal 0 (0)
+Clp0032I Optimal objective 47 - 0 iterations time 0.092, Presolve 0.01, Idiot 0.08
+Coin3009W Conflict graph built in 0.000 seconds, density: 0.022%

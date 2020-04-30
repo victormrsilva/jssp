@@ -15256,3 +15256,42 @@ Solution count 8: 39 40 41 ... 53
 
 Optimal solution found (tolerance 1.00e-04)
 Best objective 3.900000000000e+01, best bound 3.900000000000e+01, gap 0.0000%
+
+Gurobi 8.1.1 (linux64) logging started Tue Apr 28 20:38:36 2020
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.1.1 build v8.1.1rc0 (linux64)
+Copyright (c) 2019, Gurobi Optimization, LLC
+
+Read LP format model from file teste.lp
+Reading time = 0.04 seconds
+OBJROW: 264 rows, 64 columns, 3063 nonzeros
+Optimize a model with 264 rows, 64 columns and 3063 nonzeros
+Variable types: 0 continuous, 64 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e-03, 6e+03]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 4e+02]
+  RHS range        [1e+00, 1e+04]
+Presolve removed 105 rows and 19 columns
+Presolve time: 0.08s
+Presolved: 159 rows, 45 columns, 903 nonzeros
+Variable types: 0 continuous, 45 integer (9 binary)
+Found heuristic solution: objective 35.0000000
+Found heuristic solution: objective 28.0000000
+
+Root relaxation: objective 2.200000e+01, 42 iterations, 0.01 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 infeasible    0        28.00000   28.00000  0.00%     -    0s
+
+Explored 0 nodes (73 simplex iterations) in 0.19 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 2: 28 35 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.800000000000e+01, best bound 2.800000000000e+01, gap 0.0000%

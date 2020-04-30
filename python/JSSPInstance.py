@@ -10,7 +10,7 @@ class JSSPInstance:
             self.times = [[0]*self.m for i in range(self.n)]
             self.e = [[0]*self.m for i in range(self.n)]
             self.f = [[0]*self.m for i in range(self.n)]
-            if H > 0:
+            if H is not None:
                 self.K = H
             else:
                 self.K = 0
@@ -26,7 +26,7 @@ class JSSPInstance:
                     self.o[j][value] = i
                     value = int(line[2*i+1])
                     self.times[j][int(line[2*i])] = value
-                    if H < 0:
+                    if H is None:
                         self.K += value
 
                     i = i+1

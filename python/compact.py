@@ -1,6 +1,8 @@
 # compact.py
 import string
 from builtins import list
+from config import Config
+from JSSPInstance import JSSPInstance
 
 from mip.callbacks import CutPool
 from mip.model import Model, xsum, Var
@@ -19,8 +21,9 @@ from itertools import permutations, combinations, product
 
 
 class Compact:
-    def __init__(self, instance):
-        self.instance = instance
+    def __init__(self, conf: Config):
+        self.config = conf
+        self.instance = JSSPInstance(conf.get_property("instance_name"), conf.get_property("horizon"))
         self.m = Model(solver_name="cbc")
         self.m.verbose = 0
         self.model = Model(name='compact', solver_name="cbc")
@@ -1422,12 +1425,28 @@ class Compact:
         return total
 
     def mip_generate_cut_class(self):
-        cp = self.model.generate_cuts([CutType.GOMORY], 8192, 1e-4)
-
-        for c in cp.cuts:
-            self.iterationsCuts += 1
-            self.model.add_constr(c, 'cut({})'.format(self.iterationsCuts))
+        cortes = 0
+        if self.config.get_property("cut_type_gomory") == 1:
+            cp = self.model.generate_cuts([CutType.GOMORY], 8192, 1e-4)
+            for c in cp.cuts:
+                self.iterationsCuts += 1
+                if len(c.expr) < self.config.get_property("cut_type_gomory_limit"):
+                    self.model.add_constr(c, 'gomory({})'.format(self.iterationsCuts))
+            cortes += len(cp.cuts)
+        if self.config.get_property("cut_type_zero_half") == 1:
+            cp = self.model.generate_cuts([CutType.ZERO_HALF], 8192, 1e-4)
+            for c in cp.cuts:
+                self.iterationsCuts += 1
+                self.model.add_constr(c, 'zero_half({})'.format(self.iterationsCuts))
+            cortes += len(cp.cuts)
+        if self.config.get_property("cut_type_mir") == 1:
+            cp = self.model.generate_cuts([CutType.MIR], 8192, 1e-4)
+            for c in cp.cuts:
+                self.iterationsCuts += 1
+                self.model.add_constr(c, 'mir({})'.format(self.iterationsCuts))
+            cortes += len(cp.cuts)
         self.model.write('teste.lp')
+        return cortes
         # self.model.optimize(relax=True)
         # self.printSolution()
         # input()
@@ -1440,31 +1459,68 @@ class Compact:
         # self.printSolution()
         # self.model.write('teste.lp')
         # input()
-        d = self.select_tuples_l(8)
+        select = self.config.get_property("mip_general_cliques_select")
+        param = self.config.get_property("mip_general_cliques_parameter")
+        d = {}
+        if select == 0:  # select_y
+            d = self.select_tuples_y(param)
+        elif select == 1:  # select_intersec
+            d = self.select_tuples_intersec(param)
+        elif select == 2:  # select_l
+            d = self.select_tuples_l(param)
+        elif select == 3:
+            d = self.select_tuples_l_intersec(param)
         print(d)
         # input('check')
-        cortes = self.general_cliques(d)
-        self.mip_generate_cut_class()
+        cortes = 0
+        cliques = 0
+        mip = 0
+        if len(d) > 0:
+            cliques = self.general_cliques(d)
+        total = cliques
+
+        mip = self.mip_generate_cut_class()
+        cortes = cliques + mip
         qtd = 0
+        mip_maximum = self.config.get_property("cut_mip_maximum")
+        if mip_maximum is None:
+            mip_maximum = 0
         while cortes > 0:
             qtd += 1
             # self.model.relax()
             self.model.optimize(relax=True)
-            # self.printSolution()
+            self.printSolution()
             # self.model.write('teste.lp')
-            print('cortes: ', cortes)
+            # print('cortes: ', cortes)
+            cliques = 0
+            mip = 0
             # input()
             # input('teste.lp')
-            d = self.select_tuples_l(8)
+            if select == 0:  # select_y
+                d = self.select_tuples_y(param)
+            elif select == 1:  # select_intersec
+                d = self.select_tuples_intersec(param)
+            elif select == 2:  # select_l
+                d = self.select_tuples_l(param)
+            elif select == 3:  # select_l_intersec
+                d = self.select_tuples_l_intersec(param)
+            if len(d) > 0:
+                cliques = self.general_cliques(d)
+                total += cliques
             print(d)
             # input('check')
-            cortes = self.general_cliques(d)
-            self.mip_generate_cut_class()
-        print('iterações:', qtd, 'cortes cliques encontrados:', self.totalCliqueCuts, 'gomory:', self.iterationsCuts, 'objective: ', self.model.objective_value)
-        input()
-        self.model.optimize()
-        self.model.write('teste.lp')
-        self.printSolution()
+
+            if self.iterationsCuts < mip_maximum:
+                mip = self.mip_generate_cut_class()
+            cortes = cliques + mip
+            print("cliques: ", cliques, 'mip:', mip)
+        print('iterações:', qtd, 'cortes cliques encontrados:', self.totalCliqueCuts, 'mip:', self.iterationsCuts, 'objective: ', self.model.objective_value)
+        return total
+        # input()
+        # self.model.optimize()
+        # self.model.write('teste.lp')
+        # self.printSolution()
+        # input()
 
     def select_tuples_random(self, max):
         if max > self.instance.n * self.instance.m:
@@ -1608,6 +1664,87 @@ class Compact:
 
         return list(d)
 
+    def select_tuples_l_intersec(self, l):
+        d = set()
+        set_aux = {}
+        for i in range(self.instance.m):
+            for j in range(self.instance.n):
+                for k in range(j + 1, self.instance.n):
+                    if self.y[j][k][i].x < 1 - 1e-8:
+                        set_aux[(j, k, i)] = abs(self.y[j][k][i].x - 0.5)
+        set_aux = sorted(set_aux.items(), key=lambda l: l[1])
+        i = 0
+        # print(set_aux, len(set_aux))
+        # input()
+
+        key, value = set_aux[0]
+        # print(key, value)
+
+        # add two sides of most fractionary y
+        d.add((key[0], key[2]))
+        d.add((key[1], key[2]))
+
+        machines = set()
+        machines.add(key[2])
+
+        # add the machines before (j, i) and (k, i) if exists
+        j = key[0]
+        k = key[1]
+        i = key[2]
+        order_j = self.instance.o[j][i]
+        order_k = self.instance.o[k][i]
+        # print(order_j, order_k)
+        if order_j > 0:
+            mach = self.instance.machines[j][order_j - 1]
+            # print('j', j, 'mach', mach)
+            machines.add(mach)
+            d.add((j, mach))
+        if order_k > 0:
+            mach = self.instance.machines[k][order_k - 1]
+            machines.add(mach)
+            # print('k', k, 'mach', mach)
+            d.add((k, mach))
+
+        # print('d', d)
+        # print('machines', machines)
+        # add jobs j that aren't in d which machines i are in set machines that have the lowest value x_ji
+        del set_aux
+        set_aux = {}
+        # self.printSolution()
+        for i in machines:
+            for j in range(self.instance.n):
+                for k in range(j+1, self.instance.n):
+                    a0 = self.x[j][i].x
+                    a1 = self.x[j][i].x + self.instance.times[j][i]
+                    b0 = self.x[k][i].x
+                    b1 = self.x[k][i].x + self.instance.times[k][i]
+                    if (b0 > a1) or (a0 > b1):
+                        continue
+                    else:
+                        o0 = max(a0, b0)
+                        o1 = min(a1, b1)
+                        if (o1 - o0) < 1e-8:
+                            continue
+                        # print(self.x[j][i], self.x[j][i].x, self.instance.times[j][i], self.x[k][i], self.x[k][i].x,
+                        #       self.instance.times[k][i])
+                        # print(o1 - o0)
+                        set_aux[(j, k, i)] = o1 - o0
+        set_aux = sorted(set_aux.items(), key=lambda lam: lam[1], reverse=True)
+        # print(set_aux)
+        index = 0
+        maximum = l + len(d)
+        while len(d) < maximum and index < len(set_aux):
+            key, value = set_aux[index]
+            index += 1
+            j = key[0]
+            k = key[1]
+            i = key[2]
+            d.add((j, i))
+            if len(d) < l:
+                d.add((k, i))
+        print(d)
+        # input()
+        return list(d)
 
     def general_cliques(self, d):
         # print('general_cliques')

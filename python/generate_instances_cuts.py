@@ -30,7 +30,7 @@ def find_clique_applegate(compact: Compact):
     lo = compact.config.get_property('applegate_clique_lo')
     hi = compact.config.get_property('applegate_clique_hi')
     print(lo, hi)
-    input()
+    # input()
     constraints = 1
     total = 0
     while constraints > 0:
@@ -42,9 +42,9 @@ def find_clique_applegate(compact: Compact):
             constraints += clique_cuts
             total += clique_cuts
         print(constraints)
-        compact.model.write('teste.lp')
+        # compact.model.write('teste.lp')
         compact.iterationsCuts += 1
-        input()
+        # input()
     return total
 
 def find_general_clique(compact: Compact):
@@ -86,8 +86,8 @@ def main(parameter):
         compact.printSolution()
 
 
-    print("teste")
+    # print("teste")
 
 
 if __name__ == "__main__":
-    main(argv[1])
+    main()

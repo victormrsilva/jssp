@@ -1,0 +1,6 @@
+
+Gurobi 8.1.0 (linux64) logging started Mon May  4 22:31:34 2020
+
+
+ERROR 10009: HostID mismatch (licensed to 8dce8001, hostid is 80b4f2e8) - license file '/home/victor/gurobi.lic'
+

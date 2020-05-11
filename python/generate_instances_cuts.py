@@ -12,8 +12,8 @@ from branch import Branch
 
 def generate_instance():
     with open('inst_teste', 'w') as f:
-        machine = random.randint(3, 5)
-        jobs = random.randint(3, 5)
+        machine = 3  # random.randint(3, 5)
+        jobs = 3  # random.randint(3, 5)
         f.write('{} {}\n'.format(jobs, machine))
         for j in range(jobs):
             order = list(range(machine))
@@ -41,10 +41,12 @@ def find_clique_applegate(compact: Compact):
             clique_cuts = compact.clique_cuts_best(a, lo, hi)
             constraints += clique_cuts
             total += clique_cuts
-        print(constraints)
+        # print(constraints)
         # compact.model.write('teste.lp')
         compact.iterationsCuts += 1
         # input()
+        if compact.iterationsCuts > 10000:
+            return total
     return total
 
 def find_general_clique(compact: Compact):
@@ -54,13 +56,14 @@ def find_general_clique(compact: Compact):
         for p in params:
             compact.config.conf['mip_general_cliques_select'] = s
             compact.config.conf['mip_general_cliques_parameter'] = p
-            print(compact.config.conf)
+            # print(compact.config.conf)
             total = compact.mip_general_cliques()
             if total > 1:
                 return total
     return total
 
-def main(parameter):
+def main():
+    best = -999
     for i in range(100000):
         generate_instance()
         conf = Config('inst_teste.cfg')
@@ -70,12 +73,31 @@ def main(parameter):
         compact.model.verbose = 0
         compact.model.optimize()
         first_opt = compact.model.objective_value
+        print('opt: ', first_opt)
+        if first_opt < 1:
+            i = i - 1
+            continue
+        compact.model.optimize(relax=True)
+        first_relax = compact.model.objective_value
         find_clique_applegate(compact)
+        compact.model.optimize(relax=True)
+        applegate_relax = compact.model.objective_value
         general_cliques = find_general_clique(compact)
+        compact.model.optimize(relax=True)
         print('general', general_cliques)
+        general_relax = compact.model.objective_value
+        gap_applegate = 100 * (applegate_relax / first_opt)
+        gap_general = 100 * (general_relax / first_opt)
+        gap_relax = 100 * (first_relax / first_opt)
+        value = (gap_general - gap_applegate) - (abs(20 - first_opt))
         if general_cliques > 0:
+            print('iteration: ', i)
+            print('opt', first_opt, 'relax', first_relax, 'first_gap', gap_relax, 'applegate_relax', applegate_relax, 'applegate_gap', gap_applegate, 'general_relax', general_relax, 'general_gap', gap_general)
             copyfile('inst_teste', 'teste{}'.format(i))
             compact.model.write('teste_clique_{}.lp'.format(i))
+            if value > best:
+                print('New best found. Earlier: ', best, ' Now: ', value)
+                best = value
         compact.model.optimize()
         second_opt = compact.model.objective_value
         print(first_opt, second_opt)
@@ -83,7 +105,7 @@ def main(parameter):
             copyfile('inst_teste', 'teste_erro{}'.format(i))
             compact.model.write('teste_clique_erro_{}.lp'.format(i))
 
-        compact.printSolution()
+        # compact.printSolution()
 
 
     # print("teste")

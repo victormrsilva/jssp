@@ -1001,16 +1001,16 @@ class Compact:
             return 0
 
         soma = m.objective_value
-        if soma > 0.99999999:
+        if soma > 0.99999:
             return 0
-        # x_bar = []
-        # t_bar = []
+        x_bar = []
+        t_bar = []
         # for i in range(len(S)):
         #     x_bar.append(self.x[S[i]][a].x)
         #     t_bar.append(t[i].x)
         c_name = 'cut_clique_{}({},{})'.format(self.iterationsCuts, ''.join(str(i) for i in S), a)
 
-        # print(x_bar, t_bar, soma, c_name)
+        print(x_bar, t_bar, soma, c_name)
         # m.write('teste_cut.lp')
         # print(S)
         # input('clique machine {}'.format(a))
@@ -1029,11 +1029,11 @@ class Compact:
     def clique_cuts_best(self, a, lc=None, hc=None):
         cliquesFound = 0
         start = time()
-        timeLimit = 600  # 10 minutes
+        timeLimit = 60000  # 10 minutes
         lc = self.lc if lc is None else min(lc, self.instance.n)
         hc = self.hc if hc is None else min(hc, self.instance.n)
         for sizeS in range(hc, lc, -1):
-            print('LC: {} HC: {} Machine: {}'.format(lc, sizeS, a))
+            # print('LC: {} HC: {} Machine: {}'.format(lc, sizeS, a))
             comb = combinations(list(range(0, self.instance.n)), sizeS)  # combinations of all possibles jobs of size sizeS
             comb = list(comb)
             dict = {}
@@ -1242,14 +1242,14 @@ class Compact:
 
     def testCliqueMIP(self, lc=None, hc=None):
         newConstraints = True
-        self.model.relax()
+        # self.model.relax()
         gainObj = 0
         cutsFound = 0
         firstObjValue = 0
         start = time()
         self.iterationsCuts = 0
         self.model.verbose = 0
-        self.model.optimize()
+        self.model.optimize(relax=True)
         firstObjValue = self.model.objective_value
         while newConstraints:
             self.iterationsCuts += 1
@@ -1260,7 +1260,7 @@ class Compact:
                 hasCuts += clique_cuts
             cutsFound += hasCuts
             if hasCuts > 0:
-                self.model.optimize()
+                self.model.optimize(relax=True)
                 print('Added {} cuts'.format(hasCuts))
                 self.model.write('teste.lp')
                 newConstraints = True
@@ -1490,6 +1490,8 @@ class Compact:
             # self.model.relax()
             self.model.optimize(relax=True)
             self.printSolution()
+            input()
+            # self.printSolution()
             # self.model.write('teste.lp')
             # print('cortes: ', cortes)
             cliques = 0
@@ -1507,13 +1509,13 @@ class Compact:
             if len(d) > 0:
                 cliques = self.general_cliques(d)
                 total += cliques
-            print(d)
+            # print(d)
             # input('check')
 
             if self.iterationsCuts < mip_maximum:
                 mip = self.mip_generate_cut_class()
             cortes = cliques + mip
-            print("cliques: ", cliques, 'mip:', mip)
+            # print("cliques: ", cliques, 'mip:', mip)
         print('iterações:', qtd, 'cortes cliques encontrados:', self.totalCliqueCuts, 'mip:', self.iterationsCuts, 'objective: ', self.model.objective_value)
         return total
         # input()
@@ -1742,7 +1744,7 @@ class Compact:
             d.add((j, i))
             if len(d) < l:
                 d.add((k, i))
-        print(d)
+        # print(d)
         # input()
         return list(d)
 

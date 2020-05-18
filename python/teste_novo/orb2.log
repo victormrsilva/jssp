@@ -1,0 +1,112 @@
+Using Python-MIP package version 1.8.1
+McCormic linearization
+LC: 3 HC: 10 Machine: 0
+3 10 620.0 timeout
+McCormic linearization
+LC: 3 HC: 9 Machine: 0
+3 9 620.0 timeout
+McCormic linearization
+LC: 3 HC: 8 Machine: 0
+LC: 3 HC: 7 Machine: 0
+3 8 620.0 timeout
+McCormic linearization
+LC: 3 HC: 7 Machine: 0
+LC: 3 HC: 6 Machine: 0
+LC: 3 HC: 5 Machine: 0
+LC: 3 HC: 4 Machine: 0
+LC: 3 HC: 7 Machine: 1
+LC: 3 HC: 6 Machine: 1
+LC: 3 HC: 5 Machine: 1
+LC: 3 HC: 4 Machine: 1
+LC: 3 HC: 7 Machine: 2
+LC: 3 HC: 6 Machine: 2
+LC: 3 HC: 5 Machine: 2
+LC: 3 HC: 4 Machine: 2
+LC: 3 HC: 7 Machine: 3
+LC: 3 HC: 6 Machine: 3
+LC: 3 HC: 5 Machine: 3
+LC: 3 HC: 4 Machine: 3
+LC: 3 HC: 7 Machine: 4
+LC: 3 HC: 6 Machine: 4
+LC: 3 HC: 5 Machine: 4
+LC: 3 HC: 4 Machine: 4
+LC: 3 HC: 7 Machine: 5
+3 7 620.0 timeout
+McCormic linearization
+LC: 3 HC: 6 Machine: 0
+LC: 3 HC: 5 Machine: 0
+LC: 3 HC: 4 Machine: 0
+LC: 3 HC: 6 Machine: 1
+LC: 3 HC: 5 Machine: 1
+LC: 3 HC: 4 Machine: 1
+LC: 3 HC: 6 Machine: 2
+LC: 3 HC: 5 Machine: 2
+LC: 3 HC: 4 Machine: 2
+LC: 3 HC: 6 Machine: 3
+LC: 3 HC: 5 Machine: 3
+LC: 3 HC: 4 Machine: 3
+LC: 3 HC: 6 Machine: 4
+LC: 3 HC: 5 Machine: 4
+LC: 3 HC: 4 Machine: 4
+LC: 3 HC: 6 Machine: 5
+LC: 3 HC: 5 Machine: 5
+LC: 3 HC: 4 Machine: 5
+LC: 3 HC: 6 Machine: 6
+LC: 3 HC: 5 Machine: 6
+LC: 3 HC: 4 Machine: 6
+LC: 3 HC: 6 Machine: 7
+LC: 3 HC: 5 Machine: 7
+LC: 3 HC: 4 Machine: 7
+LC: 3 HC: 6 Machine: 8
+LC: 3 HC: 5 Machine: 8
+LC: 3 HC: 4 Machine: 8
+LC: 3 HC: 6 Machine: 9
+LC: 3 HC: 5 Machine: 9
+LC: 3 HC: 4 Machine: 9
+Added 4548 cuts
+LC: 3 HC: 6 Machine: 0
+LC: 3 HC: 5 Machine: 0
+LC: 3 HC: 4 Machine: 0
+LC: 3 HC: 6 Machine: 1
+LC: 3 HC: 5 Machine: 1
+LC: 3 HC: 4 Machine: 1
+LC: 3 HC: 6 Machine: 2
+LC: 3 HC: 5 Machine: 2
+LC: 3 HC: 4 Machine: 2
+LC: 3 HC: 6 Machine: 3
+LC: 3 HC: 5 Machine: 3
+LC: 3 HC: 4 Machine: 3
+LC: 3 HC: 6 Machine: 4
+LC: 3 HC: 5 Machine: 4
+LC: 3 HC: 4 Machine: 4
+LC: 3 HC: 6 Machine: 5
+LC: 3 HC: 5 Machine: 5
+LC: 3 HC: 4 Machine: 5
+LC: 3 HC: 6 Machine: 6
+LC: 3 HC: 5 Machine: 6
+LC: 3 HC: 4 Machine: 6
+LC: 3 HC: 6 Machine: 7
+LC: 3 HC: 5 Machine: 7
+LC: 3 HC: 4 Machine: 7
+LC: 3 HC: 6 Machine: 8
+LC: 3 HC: 5 Machine: 8
+LC: 3 HC: 4 Machine: 8
+LC: 3 HC: 6 Machine: 9
+LC: 3 HC: 5 Machine: 9
+LC: 3 HC: 4 Machine: 9
+Added 1 cuts
+LC: 3 HC: 6 Machine: 0
+LC: 3 HC: 5 Machine: 0
+LC: 3 HC: 4 Machine: 0
+LC: 3 HC: 6 Machine: 1
+LC: 3 HC: 5 Machine: 1
+LC: 3 HC: 4 Machine: 1
+LC: 3 HC: 6 Machine: 2
+LC: 3 HC: 5 Machine: 2
+LC: 3 HC: 4 Machine: 2
+LC: 3 HC: 6 Machine: 3
+LC: 3 HC: 5 Machine: 3
+LC: 3 HC: 4 Machine: 3
+LC: 3 HC: 6 Machine: 4
+LC: 3 HC: 5 Machine: 4
+3 6 674.4744304128209 timeout

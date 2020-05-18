@@ -1,0 +1,184 @@
+Using Python-MIP package version 1.8.1
+McCormic linearization
+LC: 3 HC: 6 Machine: 0
+LC: 3 HC: 5 Machine: 0
+LC: 3 HC: 4 Machine: 0
+LC: 3 HC: 6 Machine: 1
+LC: 3 HC: 5 Machine: 1
+LC: 3 HC: 4 Machine: 1
+LC: 3 HC: 6 Machine: 2
+LC: 3 HC: 5 Machine: 2
+LC: 3 HC: 4 Machine: 2
+LC: 3 HC: 6 Machine: 3
+LC: 3 HC: 5 Machine: 3
+LC: 3 HC: 4 Machine: 3
+LC: 3 HC: 6 Machine: 4
+LC: 3 HC: 5 Machine: 4
+LC: 3 HC: 4 Machine: 4
+LC: 3 HC: 6 Machine: 5
+LC: 3 HC: 5 Machine: 5
+LC: 3 HC: 4 Machine: 5
+LC: 3 HC: 6 Machine: 6
+LC: 3 HC: 5 Machine: 6
+LC: 3 HC: 4 Machine: 6
+LC: 3 HC: 6 Machine: 7
+LC: 3 HC: 5 Machine: 7
+LC: 3 HC: 4 Machine: 7
+LC: 3 HC: 6 Machine: 8
+LC: 3 HC: 5 Machine: 8
+LC: 3 HC: 4 Machine: 8
+LC: 3 HC: 6 Machine: 9
+LC: 3 HC: 5 Machine: 9
+LC: 3 HC: 4 Machine: 9
+Added 3166 cuts
+LC: 3 HC: 6 Machine: 0
+LC: 3 HC: 5 Machine: 0
+LC: 3 HC: 4 Machine: 0
+LC: 3 HC: 6 Machine: 1
+LC: 3 HC: 5 Machine: 1
+LC: 3 HC: 4 Machine: 1
+LC: 3 HC: 6 Machine: 2
+LC: 3 HC: 5 Machine: 2
+LC: 3 HC: 4 Machine: 2
+LC: 3 HC: 6 Machine: 3
+LC: 3 HC: 5 Machine: 3
+LC: 3 HC: 4 Machine: 3
+LC: 3 HC: 6 Machine: 4
+LC: 3 HC: 5 Machine: 4
+LC: 3 HC: 4 Machine: 4
+LC: 3 HC: 6 Machine: 5
+LC: 3 HC: 5 Machine: 5
+LC: 3 HC: 4 Machine: 5
+LC: 3 HC: 6 Machine: 6
+LC: 3 HC: 5 Machine: 6
+LC: 3 HC: 4 Machine: 6
+LC: 3 HC: 6 Machine: 7
+LC: 3 HC: 5 Machine: 7
+LC: 3 HC: 4 Machine: 7
+LC: 3 HC: 6 Machine: 8
+LC: 3 HC: 5 Machine: 8
+LC: 3 HC: 4 Machine: 8
+LC: 3 HC: 6 Machine: 9
+LC: 3 HC: 5 Machine: 9
+LC: 3 HC: 4 Machine: 9
+Added 50 cuts
+LC: 3 HC: 6 Machine: 0
+LC: 3 HC: 5 Machine: 0
+LC: 3 HC: 4 Machine: 0
+LC: 3 HC: 6 Machine: 1
+LC: 3 HC: 5 Machine: 1
+LC: 3 HC: 4 Machine: 1
+LC: 3 HC: 6 Machine: 2
+LC: 3 HC: 5 Machine: 2
+LC: 3 HC: 4 Machine: 2
+LC: 3 HC: 6 Machine: 3
+LC: 3 HC: 5 Machine: 3
+LC: 3 HC: 4 Machine: 3
+LC: 3 HC: 6 Machine: 4
+LC: 3 HC: 5 Machine: 4
+LC: 3 HC: 4 Machine: 4
+LC: 3 HC: 6 Machine: 5
+3 6 768.7281076349828 timeout
+McCormic linearization
+LC: 3 HC: 5 Machine: 0
+LC: 3 HC: 4 Machine: 0
+LC: 3 HC: 5 Machine: 1
+LC: 3 HC: 4 Machine: 1
+LC: 3 HC: 5 Machine: 2
+LC: 3 HC: 4 Machine: 2
+LC: 3 HC: 5 Machine: 3
+LC: 3 HC: 4 Machine: 3
+LC: 3 HC: 5 Machine: 4
+LC: 3 HC: 4 Machine: 4
+LC: 3 HC: 5 Machine: 5
+LC: 3 HC: 4 Machine: 5
+LC: 3 HC: 5 Machine: 6
+LC: 3 HC: 4 Machine: 6
+LC: 3 HC: 5 Machine: 7
+LC: 3 HC: 4 Machine: 7
+LC: 3 HC: 5 Machine: 8
+LC: 3 HC: 4 Machine: 8
+LC: 3 HC: 5 Machine: 9
+LC: 3 HC: 4 Machine: 9
+Added 1814 cuts
+LC: 3 HC: 5 Machine: 0
+LC: 3 HC: 4 Machine: 0
+LC: 3 HC: 5 Machine: 1
+LC: 3 HC: 4 Machine: 1
+LC: 3 HC: 5 Machine: 2
+LC: 3 HC: 4 Machine: 2
+LC: 3 HC: 5 Machine: 3
+LC: 3 HC: 4 Machine: 3
+LC: 3 HC: 5 Machine: 4
+LC: 3 HC: 4 Machine: 4
+LC: 3 HC: 5 Machine: 5
+LC: 3 HC: 4 Machine: 5
+LC: 3 HC: 5 Machine: 6
+LC: 3 HC: 4 Machine: 6
+LC: 3 HC: 5 Machine: 7
+LC: 3 HC: 4 Machine: 7
+LC: 3 HC: 5 Machine: 8
+LC: 3 HC: 4 Machine: 8
+LC: 3 HC: 5 Machine: 9
+LC: 3 HC: 4 Machine: 9
+Added 14 cuts
+LC: 3 HC: 5 Machine: 0
+LC: 3 HC: 4 Machine: 0
+LC: 3 HC: 5 Machine: 1
+LC: 3 HC: 4 Machine: 1
+LC: 3 HC: 5 Machine: 2
+LC: 3 HC: 4 Machine: 2
+LC: 3 HC: 5 Machine: 3
+LC: 3 HC: 4 Machine: 3
+LC: 3 HC: 5 Machine: 4
+LC: 3 HC: 4 Machine: 4
+LC: 3 HC: 5 Machine: 5
+LC: 3 HC: 4 Machine: 5
+LC: 3 HC: 5 Machine: 6
+LC: 3 HC: 4 Machine: 6
+LC: 3 HC: 5 Machine: 7
+LC: 3 HC: 4 Machine: 7
+LC: 3 HC: 5 Machine: 8
+LC: 3 HC: 4 Machine: 8
+LC: 3 HC: 5 Machine: 9
+LC: 3 HC: 4 Machine: 9
+(742.0000000000001, 768.728107634983, 179.05, 1828)
+3 5 768.728107634983 179.06733989715576
+McCormic linearization
+LC: 3 HC: 4 Machine: 0
+LC: 3 HC: 4 Machine: 1
+LC: 3 HC: 4 Machine: 2
+LC: 3 HC: 4 Machine: 3
+LC: 3 HC: 4 Machine: 4
+LC: 3 HC: 4 Machine: 5
+LC: 3 HC: 4 Machine: 6
+LC: 3 HC: 4 Machine: 7
+LC: 3 HC: 4 Machine: 8
+LC: 3 HC: 4 Machine: 9
+Added 631 cuts
+LC: 3 HC: 4 Machine: 0
+LC: 3 HC: 4 Machine: 1
+LC: 3 HC: 4 Machine: 2
+LC: 3 HC: 4 Machine: 3
+LC: 3 HC: 4 Machine: 4
+LC: 3 HC: 4 Machine: 5
+LC: 3 HC: 4 Machine: 6
+LC: 3 HC: 4 Machine: 7
+LC: 3 HC: 4 Machine: 8
+LC: 3 HC: 4 Machine: 9
+Added 2 cuts
+LC: 3 HC: 4 Machine: 0
+LC: 3 HC: 4 Machine: 1
+LC: 3 HC: 4 Machine: 2
+LC: 3 HC: 4 Machine: 3
+LC: 3 HC: 4 Machine: 4
+LC: 3 HC: 4 Machine: 5
+LC: 3 HC: 4 Machine: 6
+LC: 3 HC: 4 Machine: 7
+LC: 3 HC: 4 Machine: 8
+LC: 3 HC: 4 Machine: 9
+(742.0000000000001, 768.7281076349832, 35.05, 633)
+3 4 768.7281076349832 35.04927086830139
+McCormic linearization
+(742.0000000000001, 742.0000000000001, 0.01, 0)
+3 3 742.0000000000001 0.005491018295288086

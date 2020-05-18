@@ -3,7 +3,6 @@ from typing import List, Tuple
 from random import seed, randint
 from itertools import product
 from math import sqrt
-import networkx as nx
 from mip import Model, xsum, BINARY, minimize, ConstrsGenerator, CutPool
 from mip.constants import INTEGER, BINARY, CONTINUOUS
 from mip.callbacks import CutPool

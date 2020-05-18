@@ -1003,14 +1003,14 @@ class Compact:
         soma = m.objective_value
         if soma > 0.99999:
             return 0
-        x_bar = []
-        t_bar = []
+        # x_bar = []
+        # t_bar = []
         # for i in range(len(S)):
         #     x_bar.append(self.x[S[i]][a].x)
         #     t_bar.append(t[i].x)
         c_name = 'cut_clique_{}({},{})'.format(self.iterationsCuts, ''.join(str(i) for i in S), a)
 
-        print(x_bar, t_bar, soma, c_name)
+        # print(x_bar, t_bar, soma, c_name)
         # m.write('teste_cut.lp')
         # print(S)
         # input('clique machine {}'.format(a))
@@ -1028,8 +1028,8 @@ class Compact:
 
     def clique_cuts_best(self, a, lc=None, hc=None):
         cliquesFound = 0
-        start = time()
-        timeLimit = 60000  # 10 minutes
+        # start = time()
+        # timeLimit = 60000  # 10 minutes
         lc = self.lc if lc is None else min(lc, self.instance.n)
         hc = self.hc if hc is None else min(hc, self.instance.n)
         for sizeS in range(hc, lc, -1):
@@ -1038,9 +1038,9 @@ class Compact:
             comb = list(comb)
             dict = {}
             for s in range(len(comb)):
-                end = time()
-                if (end - start) >= timeLimit:
-                    return 0
+                # end = time()
+                # if (end - start) >= timeLimit:
+                #     return 0
                 dist = 0
                 S = comb[s]
                 for i in list(range(0, sizeS)):
@@ -1048,15 +1048,15 @@ class Compact:
                         dist += abs(self.x[S[i]][a].x - self.x[S[j]][a].x)
                 dict[s] = dist
             i = 0
-            end = time()
-            if (end - start) >= timeLimit:
-                # print('Time limit for enumaration of cliques')
-                return 0
+            # end = time()
+            # if (end - start) >= timeLimit:
+            #     # print('Time limit for enumaration of cliques')
+            #     return 0
             for key, value in sorted(dict.items(), key=lambda l: l[1]):
-                end = time()
-                if (end - start) >= timeLimit:
-                    # print('Time limit for finding cliques. Cliques found: {}'.format(cliquesFound))
-                    return cliquesFound
+                # end = time()
+                # if (end - start) >= timeLimit:
+                #     # print('Time limit for finding cliques. Cliques found: {}'.format(cliquesFound))
+                #     return cliquesFound
                 S = comb[key]
                 cliquesFound += self.clique_cuts(S, a)
                 i += 1

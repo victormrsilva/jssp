@@ -6,11 +6,13 @@ from compact import Compact
 import string
 import csv
 from branch import Branch
+from func_timeout import func_timeout, FunctionTimedOut
+
 
 start = time.time()
 conf = Config(argv[1])
 compact = Compact(conf)
-compact.instance.print()
+# compact.instance.print()
 # input()
 # print(conf.get_property("instance_name"))
 # print(conf.get_property("instance"))
@@ -38,34 +40,57 @@ instance_name = compact.instance.instancename.translate(str.maketrans('', '', st
 # print(compact.instance.o)
 # input()
 # compact.constructProblemMcCormickNonNegative()
-if conf.get_property("problem") == 0:  # Big-M
-    compact.constructProblemM()
-elif conf.get_property("problem") == 1:  # McCormick
-    compact.constructProblemMcCormick()
-elif conf.get_property("problem") == 2:  # McCormick Non Negative
-    compact.constructProblemMcCormickNonNegative()
 
 # compact.noname_clique()
 
-str = argv[1]
-compact.model.optimize(relax=True)
-str = str + ";{0:.6f}".format(compact.model.objective_value)
+# str = argv[1]
+
+# str = str + ";{0:.6f}".format(compact.model.objective_value)
+
+
 lo = compact.config.get_property('applegate_clique_lo')
 hi = compact.config.get_property('applegate_clique_hi')
-compact.testCliqueMIP(lo, hi)
+hi =  min(hi, compact.instance.n)
+file = open('{}.csv'.format(instance_name), "w")
+with open("{}.csv".format(instance_name), "a") as f:
+    f.write("lo;hi;obj;time\n")
+for i in range(hi, 5, -1):
+    try:
+        if conf.get_property("problem") == 0:  # Big-M
+            compact.constructProblemM()
+        elif conf.get_property("problem") == 1:  # McCormick
+            compact.constructProblemMcCormick()
+        elif conf.get_property("problem") == 2:  # McCormick Non Negative
+            compact.constructProblemMcCormickNonNegative()
+        compact.model.verbose = 0
+        compact.model.optimize(relax=True)
+        start = time.time()
+        doitReturnValue = func_timeout(10, compact.testCliqueMIP, args=(lo, i))
+        end = time.time()
+        print(doitReturnValue)
+        with open("{}.csv".format(instance_name), "a") as f:
+            f.write("{};{};{};{}\n".format(lo, i, compact.model.objective_value, end - start))
+        print(lo, i, compact.model.objective_value, end - start)
+    except FunctionTimedOut:
+        with open("{}.csv".format(instance_name), "a") as f:
+            f.write("{};{};{};-\n".format(lo, i, compact.model.objective_value))
+        print(lo, i, compact.model.objective_value, 'timeout')
+    # except Exception as e:
+        # print('test')
+# compact.testCliqueMIP(lo, hi)
 # compact.printSolution()
 # input()
 # compact.mip_general_cliques()
-compact.printSolution()
-input()
+# compact.printSolution()
+# input()
 # compact.model.optimize(relax=True)
-str = str + ";{0:.6f}".format(compact.model.objective_value)
-compact.model.optimize()
-compact.printSolution()
-input()
-str = str + ";{0:.6f}".format(compact.model.objective_value)
-end = time.time()
-str = str + ";{0:.6f}".format(end-start)
+# str = str + ";{0:.6f}".format(compact.model.objective_value)
+# compact.model.optimize()
+# compact.printSolution()
+# input()
+# str = str + ";{0:.6f}".format(compact.model.objective_value)
+# end = time.time()
+# str = str + ";{0:.6f}".format(end-start)
 
 # with open("{}.csv".format(instance_name), "a") as f:
 #     f.write(str+"\n")

@@ -342,47 +342,67 @@ class Compact:
     # relax model
     def relax(self):
         newConstraints = True
-        self.model.relax()
         gainObj = 0
         cutsFound = 0
         firstObjValue = 0
         start = time()
 
+        self.model.optimize(relax=True)
+        self.model.verbose = 0
+        firstObjValue = self.model.objective_value
+
+        # if self.config.get_property('clique_cuts') == 1:
+        #     for a in range(self.instance.m):
+        #         # clique_cuts = 0
+        #         clique_cuts = self.clique_cuts_best(a)
+        #         self.totalCliqueCuts += clique_cuts
+        self.iterationsCuts = 0
         while newConstraints:
             self.iterationsCuts += 1
             newConstraints = False
-            self.model.verbose = 0
-            self.model.optimize()
             # self.clique_heuristic()
-            if firstObjValue == 0:  # first execution
-                firstObjValue = self.model.objective_value
-                # execute clique (must be only executed at the beginning of the cuts)
-                for a in range(self.instance.m):
-                    # clique_cuts = 0
-                    clique_cuts = self.clique_cuts_best(a)
-                    self.totalCliqueCuts += clique_cuts
-
             # self.printSolution()
             # input('solution')
             hasCuts = 0
             # start = time()
             for a in range(self.instance.m):
-                # print('Machine {}'.format(a))
-                # triangle_cuts = 0
-                triangle_cuts = self.triangle_cuts_best(a)
-                # basic_cuts = 0
-                basic_cuts = self.basic_cuts_best(a)
-                # two_job_cuts = 0
-                two_job_cuts = self.two_jobs_cuts_best(a)
+                triangle_cuts = 0
+                if self.config.get_property('triangle_cuts') == 1:
+                    triangle_cuts = self.triangle_cuts_best(a)
+                basic_cuts = 0
+                if self.config.get_property('basic_cuts') == 1:
+                    set_s = []
+                    # basic_cuts += self.basic_cuts_best(a)
+                    # basic_cuts += self.basic_cuts_reverse_best(a)
+                    for i in range(2, self.instance.n + 1):
+                        comb = list(combinations(list(range(self.instance.n)), i))
+                        for S in comb:
+                            cuts = self.basic_cuts(S, a)
+                            basic_cuts += cuts
+                            if cuts > 0:
+                                set_s.append(S)
+                clique_cuts = 0                    
+                if self.config.get_property('clique_cuts') == 1:
+                    for s in set_s:
+                        # clique_cuts = 0
+                        clique_cuts = self.clique_cuts(s, a)
+                        self.totalCliqueCuts += clique_cuts
+
+                two_job_cuts = 0
+                if self.config.get_property('two_jobs_cuts') == 1:
+                    two_job_cuts = self.two_jobs_cuts_best(a)
 
                 late_jobs_cuts = 0
                 half_cuts = 0
                 basic_cuts_epsilon = 0
                 for k in range(self.instance.n):
-                    half_cuts += self.half_cuts_best(a, k)
-                    basic_cuts_epsilon = self.basic_cuts_plus_epsilon_best(a, k)
-                    for l in range(self.instance.n):
-                        late_jobs_cuts += self.late_job_cuts_best(a, k, l)
+                    if self.config.get_property('half_cuts_best') == 1:
+                        half_cuts += self.half_cuts_best(a, k)
+                    if self.config.get_property('basic_cuts_plus_epsilon') == 1:
+                        basic_cuts_epsilon = self.basic_cuts_plus_epsilon_best(a, k)
+                    if self.config.get_property('late_job_cuts_cuts') == 1:
+                        for l in range(self.instance.n):
+                            late_jobs_cuts += self.late_job_cuts_best(a, k, l)
 
                 self.totalLateJobCuts += triangle_cuts
                 self.totalBasicCuts += basic_cuts
@@ -395,14 +415,13 @@ class Compact:
                 #                                                                          clique_cuts, triangle_cuts,
                 #                                                                          basic_cuts_epsilon, half_cuts,
                 #                                                                          late_jobs_cuts))
-                hasCuts += basic_cuts + basic_cuts_epsilon + half_cuts + late_jobs_cuts + two_job_cuts + triangle_cuts
+                hasCuts += basic_cuts + basic_cuts_epsilon + half_cuts + late_jobs_cuts + two_job_cuts + triangle_cuts + clique_cuts
                 # self.model.write('teste.lp')
-                # input('iteracao completa')
             # end = time()
             # print('Time elapsed for iteration {}: {}s'.format(self.iterationsCuts, round(end - start, 2)))
             cutsFound += hasCuts
-            # print('Cuts found: {}'.format(hasCuts))
-            # print('objective value : {}'.format(self.model.objective_value))
+            print('Cuts found: {}'.format(hasCuts))
+            print('objective value : {}'.format(self.model.objective_value))
             # for j in range(self.instance.n):
             #     for i in range(self.instance.m):
             #         print('x({},{}) = {}\t'.format(j, i, round(self.x[j][i].x, 2)), end='')
@@ -410,6 +429,8 @@ class Compact:
             # input()
             if hasCuts > 0:
                 newConstraints = True
+            self.model.optimize(relax=True)
+            self.model.write('teste.lp')
             gainObj = self.model.objective_value - firstObjValue
         # print(
         #     'Number of iterations: {}. Gain of objective value: {}. Total of cuts found: {}. Objective value: {}.'.format(
@@ -422,20 +443,15 @@ class Compact:
         #                                                                          self.totalBasicCutsEpsilon,
         #                                                                          self.totalHalfCuts,
         #                                                                          self.totalLateJobCuts))
-        self.model.write(
-            '{}_relax_model.lp'.format(self.instance.instancename.translate(str.maketrans('', '', string.punctuation))))
-        end = time()
-        print('Time elapsed relaxation: {}s'.format(round(end - start, 2)))
+        # self.model.write(
+            # '{}_relax_model.lp'.format(self.instance.instancename.translate(str.maketrans('', '', string.punctuation))))
+        # end = time()
+        # print('Time elapsed relaxation: {}s'.format(round(end - start, 2)))
         return
 
     # optimize model
     def optimizeInteger(self):
         self.model.optimize(max_seconds=1800)
-
-    # optimize relax model
-    def optimizeRelax(self):
-        self.model.relax()
-        self.model.optimize()
 
     def E(self, S, a):
         min = 99999999
@@ -464,8 +480,7 @@ class Compact:
         x_aux = [m.add_var(var_type=BINARY, lb=0, name='x({})'.format(i)) for i in range(self.instance.n)]
         v = [m.add_var(var_type=INTEGER, lb=0, name='v({})'.format(i)) for i in range(self.instance.n)]
         e_p = [m.add_var(var_type=INTEGER, lb=0, name='e_p({})'.format(i)) for i in range(self.instance.n)]
-        xij = [[m.add_var(var_type=BINARY, lb=0, name='xij({},{})'.format(i, j)) for i in range(self.instance.n)] for j
-               in range(self.instance.n)]
+        xij = [[m.add_var(var_type=BINARY, lb=0, name='xij({},{})'.format(i, j)) for i in range(self.instance.n)] for j in range(self.instance.n)]
         y = [m.add_var(var_type=INTEGER, lb=0, name='y({})'.format(i)) for i in range(self.instance.n)]
         o = [m.add_var(var_type=BINARY, lb=0, name='e({})'.format(i)) for i in range(self.instance.n)]
         z = m.add_var(var_type=INTEGER, name='E')
@@ -540,6 +555,103 @@ class Compact:
         #                                                                              '{}({},{})'.format(
         #     self.iterationsCuts, ''.join(str(i) for i in S), a)
         return 1
+
+    def basic_cuts_reverse_best(self, a):
+        
+        m = self.m
+        m.clear()
+        m.verbose = 1
+        x_aux = [m.add_var(var_type=BINARY, lb=0, name='x({})'.format(i)) for i in range(self.instance.n)]
+        v = [m.add_var(var_type=INTEGER, lb=0, name='v({})'.format(i)) for i in range(self.instance.n)]
+        f_p = [m.add_var(var_type=INTEGER, lb=0, name='f_p({})'.format(i)) for i in range(self.instance.n)]
+        xij = [[m.add_var(var_type=BINARY, lb=0, name='xij({},{})'.format(i, j)) for i in range(self.instance.n)] for j in range(self.instance.n)]
+        y = [m.add_var(var_type=INTEGER, lb=0, name='y({})'.format(i)) for i in range(self.instance.n)]
+        o = [m.add_var(var_type=BINARY, lb=0, name='e({})'.format(i)) for i in range(self.instance.n)]
+        z = m.add_var(var_type=INTEGER, name='E')
+        c = m.add_var(var_type=CONTINUOUS, lb=-100 * self.instance.K, name='C')
+        rs = m.add_var(var_type=INTEGER, lb=-100 * self.instance.K, name='rs')
+        ls = m.add_var(var_type=INTEGER, lb=-100 * self.instance.K, name='ls')
+
+        m.objective = c
+
+        m += c == rs - ls, 'C'
+        m += rs - ls <= 0, 'violado'
+        m += rs == xsum(self.instance.times[j][a] * (self.c.x - self.x[j][a].x) * x_aux[j] for j in range(self.instance.n)), 'RS'
+        m += ls == xsum(self.instance.times[j][a] * f_p[j] for j in range(self.instance.n)) + xsum(self.instance.times[j][a]*self.instance.times[j][a] * x_aux[j] 
+            for j in range(self.instance.n)) + xsum(self.instance.times[j][a] * self.instance.times[i][a] * xij[j][i] for i in range(self.instance.n) for j
+            in range(i + 1, self.instance.n)), 'LS'
+
+        for j in range(self.instance.n):
+            m += v[j] - self.instance.f[j][a] * x_aux[j] + self.instance.K * x_aux[
+                j] == self.instance.K, 'eq26({})'.format(j)
+            m += z - v[j] <= 0, 'eq27({})'.format(j)
+            m += z - y[j] >= 0, 'eq28({})'.format(j)
+            m += y[j] - self.instance.K * o[j] <= 0, 'eq29({})'.format(j)
+            m += y[j] - v[j] <= 0, 'eq30({})'.format(j)
+            m += y[j] - v[j] - self.instance.K * o[j] >= - self.instance.K, 'eq31({})'.format(j)
+            # z*x(j)
+            m += f_p[j] - self.instance.K * x_aux[j] <= 0, 'f_s1({})'.format(j)
+            m += f_p[j] - z <= 0, 'f_s2({})'.format(j)
+            m += f_p[j] - z - self.instance.K * x_aux[j] >= -self.instance.K, 'f_s3({})'.format(j)
+            # x[i]*x[j]
+            for i in range(j + 1, self.instance.n):
+                m += xij[i][j] <= x_aux[i], 'xij1({},{})'.format(j, i)
+                m += xij[i][j] <= x_aux[j], 'xij2({},{})'.format(j, i)
+                m += xij[i][j] >= x_aux[j] + x_aux[i] - 1, 'xij3({},{})'.format(j, i)
+        m += xsum(o[j] for j in range(self.instance.n)) == 1, 'eq32'
+        m += xsum(x_aux[j] for j in range(self.instance.n)) >= 2, 'minimum_jobs'
+
+        m.optimize()
+        if m.status != OptimizationStatus.OPTIMAL:
+            return 0
+
+        if m.objective_value > -0.0001:
+            return 0
+
+        print(m.num_solutions, m.sol_pool_size)
+        input()
+        S = []
+        for j in range(self.instance.n):
+            if x_aux[j].x > 0.99999:
+                S.append(j)
+
+        if len(S) <= 1:
+            return 0
+
+        # left side
+        ls = self.F(S, a) * self.p(S, a)
+        # print(self.F(S, a), '*', self.p(S, a), '+ ', end='')
+        for i in range(len(S)):
+            ls += self.instance.times[S[i]][a]*self.instance.times[S[i]][a]
+            # print(self.instance.times[S[i]][a], '*', self.instance.times[S[i]][a], '+ ',  end='')
+            for j in range(i + 1, len(S)):
+                ls += self.instance.times[S[i]][a] * self.instance.times[S[j]][a]
+                # print(self.instance.times[S[j]][a], '*', self.instance.times[S[i]][a], '+ ', end='')
+
+        c_name = 'cut_basic_reverse_best({},{})'.format(''.join(str(i) for i in S), a)
+        m.write('teste_cut.lp')
+        # print(c_name, m.objective_value)
+        
+        # c = self.model.constr_by_name(c_name)
+        # if c is not None:
+        #     print(c_name, m.objective_value)
+        #     print(c)
+        #     m.write('teste_cut.lp')
+        #     input()
+        #     return 0
+        # self.model.remove(c)
+        var = xsum(self.instance.times[j][a] * (self.c - self.x[j][a]) for j in S) >= ls
+        # self.printSolution()
+        print(var, c_name)
+        
+        input()
+        self.model += var, c_name
+
+        # self.model += xsum(self.instance.times[j][a] * self.x[j][a] for j in S) >= ls, 'cut_basic_best' \
+        #                                                                              '{}({},{})'.format(
+        #     self.iterationsCuts, ''.join(str(i) for i in S), a)
+        return 1
+
 
     def basic_cuts_plus_epsilon_best(self, a, k):
         m = self.m
@@ -864,44 +976,49 @@ class Compact:
         cuts = 0
 
         # right side
-        rs = 0
+        ls = 0
+
         for j in S:
-            rs += self.instance.times[j][a] * self.x[j][a].x
+            ls += self.instance.times[j][a] * self.x[j][a].x
 
         # left side
 
-        ls = self.E(S, a) * self.p(S, a)
+        rs = self.E(S, a) * self.p(S, a)
         for i in range(len(S)):
             for j in range(i + 1, len(S)):
-                ls += self.instance.times[S[i]][a] * self.instance.times[S[j]][a]
+                rs += self.instance.times[S[i]][a] * self.instance.times[S[j]][a]
+        
         # check violated cut
-        if (ls - rs) > 0.00001:  # if rs < ls:
+        if (rs - ls) > 0.00001:  # if rs < ls:
             cuts += 1
-            self.model += xsum(self.instance.times[j][a] * self.x[j][a] for j in S) >= ls, 'basic_cuts{}({},{})'.format(
+            # print(ls, rs, xsum(self.instance.times[j][a] * self.x[j][a] for j in S) >= rs)
+            # input()
+            self.model += xsum(self.instance.times[j][a] * self.x[j][a] for j in S) >= rs, 'basic_cuts{}({},{})'.format(
                 self.iterationsCuts,
                 ''.join(str(i) for i in S), a)
 
         # reverse
         # right side
-        # rs = 0
-        # for j in S:
-        #     rs += self.instance.times[j][a] * (self.c.x - self.x[j][a].x)
+        ls = 0
+        for j in S:
+            ls += self.instance.times[j][a] * (self.c.x - self.x[j][a].x)
 
-        # # left side
-        # ls = self.F(S, a) * self.p(S, a)
+        # left side
+        rs = self.F(S, a) * self.p(S, a)
 
-        # for j in S:
-        #     ls += self.instance.times[j][a] * self.instance.times[j][a]
+        for j in S:
+            rs += self.instance.times[j][a] * self.instance.times[j][a]
 
-        # for i in range(len(S)):
-        #     for j in range(i + 1, len(S)):
-        #         ls += self.instance.times[S[i]][a] * self.instance.times[S[j]][a]
+        for i in range(len(S)):
+            for j in range(i + 1, len(S)):
+                rs += self.instance.times[S[i]][a] * self.instance.times[S[j]][a]
 
-        # # check violated cut
-        # if (ls - rs) > 0.00001: # if rs < ls:
-        #     cuts += 1
-        #     self.model += xsum(self.instance.times[j][a] * (self.c - self.x[j][a]) for j in
-        #                        S) >= ls, 'basic_cuts_reverse{}({},{})'.format(self.iterationsCuts,''.join(str(i) for i in S), a)
+        # check violated cut
+        
+        if (rs - ls) > 0.00001: # if rs < ls:
+            cuts += 1
+            # print(ls, rs, xsum(self.instance.times[j][a] * (self.c - self.x[j][a]) for j in S) >= rs)
+            self.model += xsum(self.instance.times[j][a] * (self.c - self.x[j][a]) for j in S) >= rs, 'basic_cuts_reverse{}({},{})'.format(self.iterationsCuts,''.join(str(i) for i in S), a)
 
         return cuts
 
@@ -1087,12 +1204,10 @@ class Compact:
                     if not isinstance(self.y[i][j][a], int) or not isinstance(self.y[i][j][a], int):
                         xij[i][j] = m.add_var(var_type=BINARY, name='xij({},{})'.format(i, j))
 
-        var = - xsum(xij[i][j] for i in range(self.instance.n) for j in range(self.instance.n) if i != j
-                     and isinstance(xij[i][j], Var))
+        var = - xsum(xij[i][j] for i in range(self.instance.n) for j in range(self.instance.n) if i != j and isinstance(xij[i][j], Var))
         m.objective = var
 
-        m += xsum(xij[i][j] for i in range(self.instance.n) for j in range(self.instance.n) if j != i
-                  and isinstance(xij[i][j], Var)) >= 3, 'minimum_3'
+        m += xsum(xij[i][j] for i in range(self.instance.n) for j in range(self.instance.n) if j != i and isinstance(xij[i][j], Var)) >= 3, 'minimum_3'
         for i in range(self.instance.n):
             m += xsum(xij[i][j] for j in range(self.instance.n) if j != i and isinstance(xij[i][j], Var)) \
                  - xsum(xij[j][i] for j in range(self.instance.n) if j != i and isinstance(xij[i][j], Var)) == 0, \
@@ -1264,8 +1379,8 @@ class Compact:
                 print('Added {} cuts'.format(hasCuts))
                 self.model.write('teste.lp')
                 newConstraints = True
-            if cutsFound > 500 and self.iterationsCuts > 2:
-                newConstraints = False
+            # if cutsFound > 500 and self.iterationsCuts > 2:
+            #     newConstraints = False
 
         end = time()
         lastObjValue = self.model.objective_value
@@ -1470,27 +1585,30 @@ class Compact:
             d = self.select_tuples_l(param)
         elif select == 3:
             d = self.select_tuples_l_intersec(param)
-        print(d)
+        # print(d)
         # input('check')
         cortes = 0
         cliques = 0
         mip = 0
         if len(d) > 0:
-            cliques = self.general_cliques(d)
+            cliques = self.createK(d)
+            # cliques = self.general_cliques(d)
         total = cliques
 
-        mip = self.mip_generate_cut_class()
+        # mip = self.mip_generate_cut_class()
+        mip = 0
         cortes = cliques + mip
         qtd = 0
         mip_maximum = self.config.get_property("cut_mip_maximum")
+        self.iterationsCuts += 1
         if mip_maximum is None:
             mip_maximum = 0
         while cortes > 0:
             qtd += 1
             # self.model.relax()
             self.model.optimize(relax=True)
-            self.printSolution()
-            input()
+            # self.printSolution()
+            # input()
             # self.printSolution()
             # self.model.write('teste.lp')
             # print('cortes: ', cortes)
@@ -1507,17 +1625,20 @@ class Compact:
             elif select == 3:  # select_l_intersec
                 d = self.select_tuples_l_intersec(param)
             if len(d) > 0:
-                cliques = self.general_cliques(d)
+                cliques = self.createK(d)
+                # cliques = self.general_cliques(d)
                 total += cliques
             # print(d)
             # input('check')
 
-            if self.iterationsCuts < mip_maximum:
-                mip = self.mip_generate_cut_class()
+            # if self.iterationsCuts < mip_maximum:
+            #     mip = self.mip_generate_cut_class()
             cortes = cliques + mip
             # print("cliques: ", cliques, 'mip:', mip)
+        self.iterationsCuts = qtd
         print('iterações:', qtd, 'cortes cliques encontrados:', self.totalCliqueCuts, 'mip:', self.iterationsCuts, 'objective: ', self.model.objective_value)
-        return total
+        
+        return qtd
         # input()
         # self.model.optimize()
         # self.model.write('teste.lp')
@@ -1590,17 +1711,23 @@ class Compact:
                         set_y[(j, k, i)] = abs(self.y[j][k][i].x - 0.5)
         set_y = sorted(set_y.items(), key=lambda l: l[1])
         i = 0
-        # print(set_y, len(set_y))
+        
         # input()
         if max > len(set_y):
             max = len(set_y)
 
+        print(max)
         while i < max:
             key, value = set_y[i]
             # print(key, value)
-            d.add((key[0], key[2]))
-            d.add((key[1], key[2]))
-            i += 1
+            if (key[0], key[2]) not in d:
+                i += 1
+                d.add((key[0], key[2]))
+            if i < max:
+                if (key[1], key[2]) not in d:
+                    i += 1
+                    d.add((key[1], key[2]))
+        
         return list(d)
 
     def select_tuples_l(self, l):
@@ -1676,8 +1803,6 @@ class Compact:
                         set_aux[(j, k, i)] = abs(self.y[j][k][i].x - 0.5)
         set_aux = sorted(set_aux.items(), key=lambda l: l[1])
         i = 0
-        # print(set_aux, len(set_aux))
-        # input()
 
         key, value = set_aux[0]
         # print(key, value)
@@ -1727,12 +1852,9 @@ class Compact:
                         o1 = min(a1, b1)
                         if (o1 - o0) < 1e-8:
                             continue
-                        # print(self.x[j][i], self.x[j][i].x, self.instance.times[j][i], self.x[k][i], self.x[k][i].x,
-                        #       self.instance.times[k][i])
-                        # print(o1 - o0)
                         set_aux[(j, k, i)] = o1 - o0
         set_aux = sorted(set_aux.items(), key=lambda lam: lam[1], reverse=True)
-        # print(set_aux)
+        # input(set_aux)
         index = 0
         maximum = l + len(d)
         while len(d) < maximum and index < len(set_aux):
@@ -1748,11 +1870,213 @@ class Compact:
         # input()
         return list(d)
 
+    def newCreateK(self, S, pos, sol, K, last_job, last_machine, lenK, maxK):
+        # print('S', S, 'len', len(S))
+        # print('sol', sol)
+        # print('pos', pos)
+        # print('K', K[:lenK])
+        # print('last_job', last_job)
+        # print('last_machine', last_machine)
+        # print('lenK', lenK)
+        # print('maxK', maxK)
+        # input()
+        if len(S) < 1:  # caminho final válido
+            # print(sol)
+            # input('fim do caminho')
+
+            if not any((K[:lenK]==sol).all(1)):
+                # print('teste')
+                K[lenK] = sol
+                lenK = lenK + 1
+                if lenK == len(K):
+                    K = np.vstack((K, np.zeros(shape=(maxK, len(S)))))
+            # input()
+            return lenK
+        
+        for k in range(len(S)):
+            # print('removing pos', k, 'from', S)
+            (j, i) = S.pop(k)
+            est_last_machine = 0
+            est_last_job = 0
+            # print((j, i))
+            last_m = last_machine[j]
+            # print('last_m', last_m)
+            order_now = -1
+            order_last = -1
+            if last_m >= 0: # check for order conflict if a machine has been added for the job j
+                order_now = self.instance.o[j][i]
+                order_last = self.instance.o[j][last_m]
+                # print(order_now, order_last, order_now < order_last)
+                est_last_machine = sol[pos[(j, last_m)]] + self.instance.distances[j][last_m][i]
+
+            if order_now < order_last:  # conflict found. Reinsert and go back
+                # print('error. reinsert pos', k, 'from', S, 'and go back')
+                S.insert(k, (j, i))
+                # print('S', S)
+                return lenK
+            else: 
+                last_j = last_job[i]
+                # print('last_j', last_j)
+                if last_j >= 0:
+                    est_last_job = sol[pos[(last_j, i)]] + self.instance.times[last_j][i]
+                est = max(self.instance.est[j][i], est_last_machine, est_last_job)
+                # print(self.instance.est[j][i], est_last_machine, est_last_job, 'est', est)
+                index = pos[(j, i)]
+                est_antigo = sol[index]
+                sol[index] = est
+                last_machine[j] = i
+                last_job[i] = j
+                lenK = self.newCreateK(S, pos, sol, K, last_job, last_machine, lenK, maxK)
+                # print('reinsert pos', k, 'from', S, 'and go back')
+                S.insert(k, (j, i))
+                sol[index] = est_antigo
+                last_machine[j] = last_m
+                last_job[i] = last_j
+                # print('S', S)
+                # print('sol', sol)
+                # input()
+        return lenK
+
+    def createK(self, S):
+        print(S)
+        P = list(permutations(range(len(S))))
+        maxK = 100000
+        lenK = 0
+        pos = {S[i]: i for i in range(len(S))}
+        K = np.zeros(shape=(maxK, len(S)))
+        path = np.full(len(S), -1)
+        last_job = np.full(self.instance.m, -1)  # last job added for machine i
+        last_machine = np.full(self.instance.n, -1)  # last machine added in job j
+
+        lenK = self.newCreateK(S, pos, path, K, last_job, last_machine, lenK, maxK)
+        # input(K[:lenK])
+
+        # for p in P:
+        #     path = np.zeros(len(S))
+        #     last_job = np.full(self.instance.m, -1)  # last job added for machine i
+        #     last_machine = np.full(self.instance.n, -1)  # last machine added in job j
+        #     # print('=========')
+        #     # print('p', p)
+        #     # print('path', path)
+        #     # print('last_job', last_job)
+        #     # print('last_machine', last_machine)
+        #     for index in p:
+        #         (j ,i) = S[index]
+                
+        #         est_last_machine = 0
+        #         est_last_job = 0
+        #         # print((j, i))
+        #         if last_machine[j] >= 0: # check for order conflict if a machine has been added for the job j
+        #             order_now = self.instance.o[j][i]
+        #             order_last = self.instance.o[j][last_machine[j]]
+        #             # print(order_now, order_last, order_now < order_last)
+        #             if order_now < order_last:  # conflict found
+        #                 # input('break')
+        #                 break
+        #             est_last_machine = path[pos[(j, last_machine[j])]] + self.instance.distances[j][last_machine[j]][i]
+        #         if last_job[i] >= 0:
+        #             est_last_job = path[pos[(last_job[i], i)]] + self.instance.times[last_job[i]][i]
+        #         est = max(self.instance.est[j][i], est_last_machine, est_last_job)
+        #         # if est > self.instance.lst[j][i]:
+        #         #     break
+        #         index = pos[(j, i)]
+        #         path[index] = est
+        #         last_machine[j] = i
+        #         last_job[i] = j
+        #     else: 
+        #         # if (path[pos[(5, 2)]] == 40):
+        #         # print(p)
+        #         # print(path)
+        #         #     input()
+        #         # print('last_job', last_job)
+        #         # print('last_machine', last_machine)
+
+        #         if not any((K[:lenK]==path).all(1)):
+        #             # for k in range(self.instance.m):
+        #             #     print('machine {}: '.format(k))
+        #             #     for (j, i) in p:
+        #             #         if k == i:
+        #             #             print('{} - {} '.format((j, i), path[pos[(j, i)]]), end='')
+        #             #     print()
+        #             # for k in range(self.instance.n):
+        #             #     print('job {}: '.format(k))
+        #             #     for (j, i) in p:
+        #             #         if k == j:
+        #             #             print('{} - {} '.format((j, i), path[pos[(j, i)]]), end='')
+        #             #     print()
+        #             # input()
+        #             K[lenK] = path
+        #             lenK = lenK + 1
+
+        #         if lenK == len(K):
+        #             K = np.vstack((K, np.zeros(shape=(maxK, len(S)))))
+        #         # print(K[:lenK])
+        #         # input() 
+        # print(K[:lenK])
+        # input() 
+
+        # for i in range(lenK):
+        #     for index in range(len(S)):
+        #         print(S[index],':', K[i][index], ' ', end='')
+        #     print()
+        # input(lenK)
+
+        m = self.m
+        m.clear()
+        m.verbose = 0
+        t = {}
+        for (j, i) in S:
+            # print((j, i))
+            t[(j, i)] = m.add_var(name='t({},{})'.format(j, i), lb=0, var_type=CONTINUOUS)
+
+        # for a in t:
+        #     print(a, t[a])
+        qtd = 0
+        for p in K[:lenK]:
+            # print(p)
+            m += xsum(p[pos[(j, i)]]*t[(j,i)] for (j, i) in S) >= 1, 'c({})'.format(qtd)
+
+            # for (j, i), est in p.items():
+            #     # print(est[(j, i)],  t[(j, i)], end='')
+            #     var += est * t[(j, i)]
+            # # print(var)
+            # m += var >= 1, 'c({})'.format(qtd)
+            qtd += 1
+        # input(K)
+        # for (j,i) in d:
+        #     print(self.x[j][i].x, t[(j, i)])
+        # input()
+        m.objective = xsum(self.x[j][i].x * t[(j, i)] for (j, i) in S)
+        m.write('teste_cuts.lp')
+        # input('feito')
+        m.optimize()
+        if m.status != OptimizationStatus.OPTIMAL or m.objective_value > (1 - 1e-8):
+            if m.status == OptimizationStatus.OPTIMAL:
+                print('obj: ', m.objective_value)
+            print('erro')
+            return 0
+        print('obj: ', m.objective_value)
+        # input()
+
+        print('solutions: ', m.num_solutions)
+        # input()
+        c_name = 'cut_clique_{}'.format(self.totalCliqueCuts)
+        self.totalCliqueCuts += 1
+
+        var = 0
+        for (job, machine) in S:
+            var += self.x[job][machine] * t[(job, machine)].x
+        print(var)
+        self.model += var >= 1, c_name
+        return 1
+
+
     def general_cliques(self, d):
         # print('general_cliques')
         # print(d)
         pool = self.possible_paths(len(d), d, ([], {}), [])
         pool = [dict(s) for s in set(frozenset(d.items()) for d in pool)]
+        # print(pool)
         # for p in pool:
         #     print(p)
         # input()

@@ -56,7 +56,7 @@ def find_general_clique(compact: Compact):
         for p in params:
             compact.config.conf['mip_general_cliques_select'] = s
             compact.config.conf['mip_general_cliques_parameter'] = p
-            print(compact.config.conf)
+
             total = compact.mip_general_cliques()
             if total > 1:
                 return total
@@ -65,10 +65,10 @@ def find_general_clique(compact: Compact):
 def main():
     best = -999
     for i in range(100000):
-        generate_instance()
+        # generate_instance()
         conf = Config('inst_teste.cfg')
         compact = Compact(conf)
-        # compact.instance.print()
+        compact.instance.print()
         compact.constructProblemMcCormick()
         compact.model.verbose = 0
         compact.model.optimize()
@@ -79,32 +79,35 @@ def main():
             continue
         compact.model.optimize(relax=True)
         first_relax = compact.model.objective_value
+        
         find_clique_applegate(compact)
-        compact.model.optimize(relax=True)
         applegate_relax = compact.model.objective_value
-        # general_cliques = find_general_clique(compact)
-        # compact.model.optimize(relax=True)
-        # print('general', general_cliques)
-        # general_relax = compact.model.objective_value
-        # gap_applegate = 100 * (applegate_relax / first_opt)
-        # gap_general = 100 * (general_relax / first_opt)
-        # gap_relax = 100 * (first_relax / first_opt)
-        # value = (gap_general - gap_applegate) - (abs(20 - first_opt))
-        # if general_cliques > 0:
-        #     print('iteration: ', i)
-        #     print('opt', first_opt, 'relax', first_relax, 'first_gap', gap_relax, 'applegate_relax', applegate_relax, 'applegate_gap', gap_applegate, 'general_relax', general_relax, 'general_gap', gap_general)
-        #     copyfile('inst_teste', 'teste{}'.format(i))
-        #     compact.model.write('teste_clique_{}.lp'.format(i))
-        #     if value > best:
-        #         print('New best found. Earlier: ', best, ' Now: ', value)
-        #         best = value
+        general_cliques = find_general_clique(compact)
+        compact.model.optimize(relax=True)
+        print('general', general_cliques)
+        general_relax = compact.model.objective_value
+        gap_applegate = 100 * (applegate_relax / first_opt)
+        gap_general = 100 * (general_relax / first_opt)
+        gap_relax = 100 * (first_relax / first_opt)
+        value = (gap_general - gap_applegate) - (abs(20 - first_opt))
+        if general_cliques > 0:
+            print('iteration: ', i)
+            print('opt', first_opt, 'relax', first_relax, 'first_gap', gap_relax, 'applegate_relax', applegate_relax, 'applegate_gap', gap_applegate, 'general_relax', general_relax, 'general_gap', gap_general)
+            copyfile('inst_teste', 'teste{}'.format(i))
+            compact.model.write('teste_clique_{}.lp'.format(i))
+            if value > best:
+                print('New best found. Earlier: ', best, ' Now: ', value)
+                input()
+                best = value
         compact.model.optimize()
         second_opt = compact.model.objective_value
         print(first_opt, second_opt)
         if abs(first_opt - second_opt) > 1e-8:
-            input()
-        #     copyfile('inst_teste', 'teste_erro{}'.format(i))
-        #     compact.model.write('teste_clique_erro_{}.lp'.format(i))
+            copyfile('inst_teste', 'teste_erro{}'.format(i))
+            compact.model.write('teste_clique_erro_{}.lp'.format(i))
+            print('erro:', first_opt, second_opt)
+        compact.printSolution()
+        input()
 
         # compact.printSolution()
 

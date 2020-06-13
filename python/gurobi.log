@@ -79,3 +79,311 @@ Iteration    Objective       Primal Inf.    Dual Inf.      Time
 
 Solved in 20 iterations and 0.01 seconds
 Optimal objective  1.911605698e+01
+
+Gurobi 8.1.0 (linux64) logging started Mon May 18 19:19:14 2020
+
+
+ERROR 10009: HostID mismatch (licensed to 8dce8001, hostid is 80b4f2e8) - license file '/home/victor/gurobi.lic'
+
+
+Gurobi 8.1.0 (linux64) logging started Mon May 18 19:24:34 2020
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.1.0 build v8.1.0rc1 (linux64)
+Copyright (c) 2018, Gurobi Optimization, LLC
+
+Read LP format model from file teste.lp
+Reading time = 0.02 seconds
+OBJROW: 1207 rows, 577 columns, 2764 nonzeros
+Optimize a model with 1207 rows, 577 columns and 2764 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 6e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 6e+02]
+  RHS range        [1e+00, 4e+02]
+Presolve removed 705 rows and 309 columns
+Presolve time: 0.03s
+Presolved: 502 rows, 268 columns, 1636 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    3.5000000e+01   1.196250e+02   0.000000e+00      0s
+     112    4.7000000e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 112 iterations and 0.07 seconds
+Optimal objective  4.700000000e+01
+
+Gurobi 8.1.0 (linux64) logging started Mon May 18 19:24:49 2020
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.1.0 build v8.1.0rc1 (linux64)
+Copyright (c) 2018, Gurobi Optimization, LLC
+
+Read LP format model from file teste.lp
+Reading time = 0.01 seconds
+OBJROW: 1207 rows, 577 columns, 2764 nonzeros
+Optimize a model with 1207 rows, 577 columns and 2764 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 6e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 6e+02]
+  RHS range        [1e+00, 4e+02]
+Presolve removed 705 rows and 309 columns
+Presolve time: 0.01s
+Presolved: 502 rows, 268 columns, 1636 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    3.5000000e+01   1.196250e+02   0.000000e+00      0s
+     112    4.7000000e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 112 iterations and 0.02 seconds
+Optimal objective  4.700000000e+01
+
+Wrote result file 'sol.sol'
+
+
+Gurobi 8.1.0 (linux64) logging started Mon May 18 19:26:04 2020
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.1.0 build v8.1.0rc1 (linux64)
+Copyright (c) 2018, Gurobi Optimization, LLC
+
+Read LP format model from file teste.lp
+Reading time = 0.01 seconds
+OBJROW: 1206 rows, 577 columns, 2762 nonzeros
+Optimize a model with 1206 rows, 577 columns and 2762 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 6e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 6e+02]
+  RHS range        [1e+00, 6e+01]
+Presolve removed 705 rows and 309 columns
+Presolve time: 0.01s
+Presolved: 501 rows, 268 columns, 1634 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    3.5000000e+01   1.151250e+02   0.000000e+00      0s
+     118    4.7000000e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 118 iterations and 0.02 seconds
+Optimal objective  4.700000000e+01
+
+Wrote result file 'sol.sol'
+
+
+Gurobi 8.1.0 (linux64) logging started Tue May 19 18:14:53 2020
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.1.0 build v8.1.0rc1 (linux64)
+Copyright (c) 2018, Gurobi Optimization, LLC
+
+Read LP format model from file teste.lp
+Reading time = 0.01 seconds
+OBJROW: 1369 rows, 577 columns, 3429 nonzeros
+Optimize a model with 1369 rows, 577 columns and 3429 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 6e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 6e+02]
+  RHS range        [1e+00, 1e+03]
+Presolve removed 704 rows and 310 columns
+Presolve time: 0.03s
+Presolved: 665 rows, 267 columns, 2289 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    4.5222222e+01   7.543750e+02   0.000000e+00      0s
+     209    5.2000000e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 209 iterations and 0.07 seconds
+Optimal objective  5.200000000e+01
+
+Gurobi 8.1.0 (linux64) logging started Fri Jun  5 21:38:02 2020
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.1.0 build v8.1.0rc1 (linux64)
+Copyright (c) 2018, Gurobi Optimization, LLC
+
+Read LP format model from file teste_clique_0.lp
+Reading time = 0.01 seconds
+OBJROW: 130 rows, 64 columns, 299 nonzeros
+Optimize a model with 130 rows, 64 columns and 299 nonzeros
+Variable types: 0 continuous, 64 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [2e-02, 4e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 4e+02]
+  RHS range        [1e+00, 4e+01]
+Found heuristic solution: objective 43.0000000
+Presolve removed 56 rows and 20 columns
+Presolve time: 0.03s
+Presolved: 74 rows, 44 columns, 198 nonzeros
+Variable types: 0 continuous, 44 integer (9 binary)
+
+Root relaxation: objective 1.977778e+01, 29 iterations, 0.02 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   19.77778    0   13   43.00000   19.77778  54.0%     -    0s
+H    0     0                      28.0000000   19.77778  29.4%     -    0s
+H    0     0                      23.0000000   19.77778  14.0%     -    0s
+H    0     0                      22.0000000   19.77778  10.1%     -    0s
+
+Cutting planes:
+  Gomory: 2
+
+Explored 1 nodes (45 simplex iterations) in 0.12 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 4: 22 23 28 43 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.200000000000e+01, best bound 2.200000000000e+01, gap 0.0000%
+
+Gurobi 8.1.0 (linux64) logging started Fri Jun  5 21:38:09 2020
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.1.0 build v8.1.0rc1 (linux64)
+Copyright (c) 2018, Gurobi Optimization, LLC
+
+Read LP format model from file teste_clique_0.lp
+Reading time = 0.00 seconds
+OBJROW: 130 rows, 64 columns, 299 nonzeros
+Optimize a model with 130 rows, 64 columns and 299 nonzeros
+Coefficient statistics:
+  Matrix range     [2e-02, 4e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 4e+02]
+  RHS range        [1e+00, 4e+01]
+Presolve removed 63 rows and 27 columns
+Presolve time: 0.01s
+Presolved: 67 rows, 37 columns, 209 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.8000000e+01   1.032894e+01   0.000000e+00      0s
+      17    1.9777286e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 17 iterations and 0.01 seconds
+Optimal objective  1.977728614e+01
+
+Gurobi 8.1.0 (linux64) logging started Fri Jun  5 21:38:25 2020
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.1.0 build v8.1.0rc1 (linux64)
+Copyright (c) 2018, Gurobi Optimization, LLC
+
+Read LP format model from file teste_clique_0.lp
+Reading time = 0.00 seconds
+OBJROW: 129 rows, 64 columns, 296 nonzeros
+Optimize a model with 129 rows, 64 columns and 296 nonzeros
+Coefficient statistics:
+  Matrix range     [2e-02, 4e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 4e+02]
+  RHS range        [1e+00, 4e+01]
+Presolve removed 63 rows and 27 columns
+Presolve time: 0.00s
+Presolved: 66 rows, 37 columns, 206 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.8000000e+01   9.696240e+00   0.000000e+00      0s
+      19    1.8363636e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 19 iterations and 0.01 seconds
+Optimal objective  1.836363636e+01
+
+Gurobi 8.1.0 (linux64) logging started Fri Jun  5 21:40:30 2020
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.1.0 build v8.1.0rc1 (linux64)
+Copyright (c) 2018, Gurobi Optimization, LLC
+
+Read LP format model from file teste_clique_0.lp
+Reading time = 0.00 seconds
+OBJROW: 130 rows, 64 columns, 299 nonzeros
+Optimize a model with 130 rows, 64 columns and 299 nonzeros
+Coefficient statistics:
+  Matrix range     [2e-02, 4e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 4e+02]
+  RHS range        [1e+00, 4e+01]
+Presolve removed 63 rows and 27 columns
+Presolve time: 0.00s
+Presolved: 67 rows, 37 columns, 209 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.8000000e+01   1.032894e+01   0.000000e+00      0s
+      17    1.9777286e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 17 iterations and 0.01 seconds
+Optimal objective  1.977728614e+01
+
+Wrote result file 'sol.sol'
+
+
+Gurobi 8.1.0 (linux64) logging started Fri Jun  5 21:45:13 2020
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.1.0 build v8.1.0rc1 (linux64)
+Copyright (c) 2018, Gurobi Optimization, LLC
+
+Read LP format model from file teste_clique_0.lp
+Reading time = 0.00 seconds
+OBJROW: 129 rows, 64 columns, 296 nonzeros
+Optimize a model with 129 rows, 64 columns and 296 nonzeros
+Coefficient statistics:
+  Matrix range     [2e-02, 4e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 4e+02]
+  RHS range        [1e+00, 4e+01]
+Presolve removed 63 rows and 27 columns
+Presolve time: 0.00s
+Presolved: 66 rows, 37 columns, 206 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.8000000e+01   9.696240e+00   0.000000e+00      0s
+      19    1.8363636e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 19 iterations and 0.01 seconds
+Optimal objective  1.836363636e+01
+
+Wrote result file 'sol.sol'
+
+
+Gurobi 8.1.0 (linux64) logging started Fri Jun  5 21:47:55 2020
+
+Academic license - for non-commercial use only
+
+Gurobi Optimizer version 8.1.0 build v8.1.0rc1 (linux64)
+Copyright (c) 2018, Gurobi Optimization, LLC
+
+Read LP format model from file teste_clique_0.lp
+Reading time = 0.00 seconds
+OBJROW: 129 rows, 64 columns, 296 nonzeros
+Optimize a model with 129 rows, 64 columns and 296 nonzeros
+Coefficient statistics:
+  Matrix range     [2e-02, 4e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 4e+02]
+  RHS range        [1e+00, 4e+01]
+Presolve removed 63 rows and 27 columns
+Presolve time: 0.00s
+Presolved: 66 rows, 37 columns, 206 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.8000000e+01   9.696240e+00   0.000000e+00      0s
+      19    1.8363636e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 19 iterations and 0.00 seconds
+Optimal objective  1.836363636e+01
+
+Wrote result file 'sol.sol'
+

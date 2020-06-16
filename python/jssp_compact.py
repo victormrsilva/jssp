@@ -89,7 +89,7 @@ for s in selects:
             start = time.time()
             doitReturnValue = func_timeout(10800, compact.mip_general_cliques)
             end = time.time()
-            # print(doitReturnValue)
+            # input(doitReturnValue)
             with open("{}.csv".format(instance_name), "a") as f:
                 f.write("{};{};{};{};{}\n".format(compact.iterationsCuts, s, p, compact.model.objective_value, end - start))
             compact.model.write('{}_{}_{}.lp'.format(instance_name, s, p))
@@ -103,42 +103,42 @@ for s in selects:
             print('error ', e)
 
 
-with open("{}.csv".format(instance_name), "a") as f:
-    f.write("basic+general_cliques;iter;select;parameter;obj;time\n")
+# with open("{}.csv".format(instance_name), "a") as f:
+#     f.write("basic+general_cliques;iter;select;parameter;obj;time\n")
 
-selects = [0, 3]
-params = list(range(3, 9))
-for s in selects:
-    for p in params:
-        compact.iterationsCuts = 0
-        compact.config.conf['mip_general_cliques_select'] = s
-        compact.config.conf['mip_general_cliques_parameter'] = p
-        try:
-            if conf.get_property("problem") == 0:  # Big-M
-                compact.constructProblemM()
-            elif conf.get_property("problem") == 1:  # McCormick
-                compact.constructProblemMcCormick()
-            elif conf.get_property("problem") == 2:  # McCormick Non Negative
-                compact.constructProblemMcCormickNonNegative()
-            compact.model.verbose = 0
-            compact.model.optimize(relax=True)
-            compact.config.conf['clique_cuts'] = 0
-            compact.relax()
-            start = time.time()
-            doitReturnValue = func_timeout(10800, compact.mip_general_cliques)
-            end = time.time()
-            # print(doitReturnValue)
-            with open("{}.csv".format(instance_name), "a") as f:
-                f.write("{};{};{};{};{}\n".format(compact.iterationsCuts, s, p, compact.model.objective_value, end - start))
-            compact.model.write('{}_basic_{}_{}.lp'.format(instance_name, s, p))
-            print(compact.iterationsCuts, s, p, compact.model.objective_value, end - start)
-        except FunctionTimedOut:
-            with open("{}.csv".format(instance_name), "a") as f:
-                f.write("{};{};{};{};{}\n".format(compact.iterationsCuts, s, p, compact.model.objective_value, 'timeout'))
-            compact.model.write('{}_basic_{}_{}.lp'.format(instance_name, s, p))
-            print(compact.iterationsCuts, s, p, compact.model.objective_value, 'timeout')
-        except Exception as e:
-            print('error ', e)
+# selects = [0, 3]
+# params = list(range(3, 9))
+# for s in selects:
+#     for p in params:
+#         compact.iterationsCuts = 0
+#         compact.config.conf['mip_general_cliques_select'] = s
+#         compact.config.conf['mip_general_cliques_parameter'] = p
+#         try:
+#             if conf.get_property("problem") == 0:  # Big-M
+#                 compact.constructProblemM()
+#             elif conf.get_property("problem") == 1:  # McCormick
+#                 compact.constructProblemMcCormick()
+#             elif conf.get_property("problem") == 2:  # McCormick Non Negative
+#                 compact.constructProblemMcCormickNonNegative()
+#             compact.model.verbose = 0
+#             compact.model.optimize(relax=True)
+#             compact.config.conf['clique_cuts'] = 0
+#             compact.relax()
+#             start = time.time()
+#             doitReturnValue = func_timeout(10800, compact.mip_general_cliques)
+#             end = time.time()
+#             # print(doitReturnValue)
+#             with open("{}.csv".format(instance_name), "a") as f:
+#                 f.write("{};{};{};{};{}\n".format(compact.iterationsCuts, s, p, compact.model.objective_value, end - start))
+#             compact.model.write('{}_basic_{}_{}.lp'.format(instance_name, s, p))
+#             print(compact.iterationsCuts, s, p, compact.model.objective_value, end - start)
+#         except FunctionTimedOut:
+#             with open("{}.csv".format(instance_name), "a") as f:
+#                 f.write("{};{};{};{};{}\n".format(compact.iterationsCuts, s, p, compact.model.objective_value, 'timeout'))
+#             compact.model.write('{}_basic_{}_{}.lp'.format(instance_name, s, p))
+#             print(compact.iterationsCuts, s, p, compact.model.objective_value, 'timeout')
+#         except Exception as e:
+#             print('error ', e)
 
 # input()
 # compact.mip_general_cliques()

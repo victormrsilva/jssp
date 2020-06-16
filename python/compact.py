@@ -1591,7 +1591,15 @@ class Compact:
         cliques = 0
         mip = 0
         if len(d) > 0:
-            cliques = self.createK(d)
+            if select == 3:
+                index = 0
+                while cliques == 0 and index < 5:
+                    cliques = self.createK(d[index])
+                    index += 1
+                    # print(cliques, index)
+                    # input()
+            else:
+                cliques = self.createK(d)
             # cliques = self.general_cliques(d)
         total = cliques
 
@@ -1625,7 +1633,16 @@ class Compact:
             elif select == 3:  # select_l_intersec
                 d = self.select_tuples_l_intersec(param)
             if len(d) > 0:
-                cliques = self.createK(d)
+                if select == 3:
+                    index = 0
+                    cliques = 0
+                    while cliques == 0 and index < 5:
+                        cliques = self.createK(d[index])
+                        index += 1
+                        # print(cliques, index)
+                        # input()
+                else:
+                    cliques = self.createK(d)
                 # cliques = self.general_cliques(d)
                 total += cliques
             # print(d)
@@ -1794,81 +1811,83 @@ class Compact:
         return list(d)
 
     def select_tuples_l_intersec(self, l):
-        d = set()
-        set_aux = {}
+        set_d = [list() for _ in range(5)]
+        
+        set_aux_y = {}
         for i in range(self.instance.m):
             for j in range(self.instance.n):
                 for k in range(j + 1, self.instance.n):
                     if self.y[j][k][i].x < 1 - 1e-8:
-                        set_aux[(j, k, i)] = abs(self.y[j][k][i].x - 0.5)
-        set_aux = sorted(set_aux.items(), key=lambda l: l[1])
+                        set_aux_y[(j, k, i)] = abs(self.y[j][k][i].x - 0.5)
+        set_aux_y = sorted(set_aux_y.items(), key=lambda l: l[1])
         i = 0
+        for aux in range(5):
+            d = set()
+            key, value = set_aux_y[aux]
+            # print(key, value)
 
-        key, value = set_aux[0]
-        # print(key, value)
+            # add two sides of most fractionary y
+            d.add((key[0], key[2]))
+            d.add((key[1], key[2]))
 
-        # add two sides of most fractionary y
-        d.add((key[0], key[2]))
-        d.add((key[1], key[2]))
+            machines = set()
+            machines.add(key[2])
 
-        machines = set()
-        machines.add(key[2])
-
-        # add the machines before (j, i) and (k, i) if exists
-        j = key[0]
-        k = key[1]
-        i = key[2]
-        order_j = self.instance.o[j][i]
-        order_k = self.instance.o[k][i]
-        # print(order_j, order_k)
-        if order_j > 0:
-            mach = self.instance.machines[j][order_j - 1]
-            # print('j', j, 'mach', mach)
-            machines.add(mach)
-            d.add((j, mach))
-        if order_k > 0:
-            mach = self.instance.machines[k][order_k - 1]
-            machines.add(mach)
-            # print('k', k, 'mach', mach)
-            d.add((k, mach))
-
-        # print('d', d)
-        # print('machines', machines)
-        # add jobs j that aren't in d which machines i are in set machines that have the lowest value x_ji
-        del set_aux
-        set_aux = {}
-        # self.printSolution()
-        for i in machines:
-            for j in range(self.instance.n):
-                for k in range(j+1, self.instance.n):
-                    a0 = self.x[j][i].x
-                    a1 = self.x[j][i].x + self.instance.times[j][i]
-                    b0 = self.x[k][i].x
-                    b1 = self.x[k][i].x + self.instance.times[k][i]
-                    if (b0 > a1) or (a0 > b1):
-                        continue
-                    else:
-                        o0 = max(a0, b0)
-                        o1 = min(a1, b1)
-                        if (o1 - o0) < 1e-8:
-                            continue
-                        set_aux[(j, k, i)] = o1 - o0
-        set_aux = sorted(set_aux.items(), key=lambda lam: lam[1], reverse=True)
-        # input(set_aux)
-        index = 0
-        maximum = l + len(d)
-        while len(d) < maximum and index < len(set_aux):
-            key, value = set_aux[index]
-            index += 1
+            # add the machines before (j, i) and (k, i) if exists
             j = key[0]
             k = key[1]
             i = key[2]
-            d.add((j, i))
-            if len(d) < l:
-                d.add((k, i))
-        # print(d)
-        # input()
-        return list(d)
+            order_j = self.instance.o[j][i]
+            order_k = self.instance.o[k][i]
+            # print(order_j, order_k)
+            if order_j > 0:
+                mach = self.instance.machines[j][order_j - 1]
+                # print('j', j, 'mach', mach)
+                machines.add(mach)
+                d.add((j, mach))
+            if order_k > 0:
+                mach = self.instance.machines[k][order_k - 1]
+                machines.add(mach)
+                # print('k', k, 'mach', mach)
+                d.add((k, mach))
+
+            # print('d', d)
+            # print('machines', machines)
+            # add jobs j that aren't in d which machines i are in set machines that have the lowest value x_ji
+            set_aux = {}
+            # self.printSolution()
+            for i in machines:
+                for j in range(self.instance.n):
+                    for k in range(j+1, self.instance.n):
+                        a0 = self.x[j][i].x
+                        a1 = self.x[j][i].x + self.instance.times[j][i]
+                        b0 = self.x[k][i].x
+                        b1 = self.x[k][i].x + self.instance.times[k][i]
+                        if (b0 > a1) or (a0 > b1):
+                            continue
+                        else:
+                            o0 = max(a0, b0)
+                            o1 = min(a1, b1)
+                            if (o1 - o0) < 1e-8:
+                                continue
+                            set_aux[(j, k, i)] = o1 - o0
+            set_aux = sorted(set_aux.items(), key=lambda lam: lam[1], reverse=True)
+            # input(set_aux)
+            index = 0
+            maximum = l + len(d)
+            while len(d) < maximum and index < len(set_aux):
+                key, value = set_aux[index]
+                index += 1
+                j = key[0]
+                k = key[1]
+                i = key[2]
+                d.add((j, i))
+                if len(d) < l:
+                    d.add((k, i))
+            set_d[aux] = list(d)
+        print(set_d)
+        input()
+        return set_d
 
     def newCreateK(self, S, pos, sol, K, last_job, last_machine, lenK, maxK):
         # print('S', S, 'len', len(S))

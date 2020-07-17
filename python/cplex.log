@@ -147,3 +147,53 @@ Presolve - Infeasible.
 Solution time =    0.05 sec.
 Deterministic time = 0.06 ticks  (1.28 ticks/sec)
 No conflict exists.
+
+Log started (V12.8.0.0) Sun Jun 21 13:41:26 2020
+
+
+Problem 'la19_apple_3_4.lp' read.
+Read time = 0.05 sec. (0.24 ticks)
+Infeasible column 'C'.
+Presolve time = 0.01 sec. (0.37 ticks)
+
+Root node processing (before b&c):
+  Real time             =    0.04 sec. (0.53 ticks)
+Parallel b&c, 4 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.04 sec. (0.53 ticks)
+
+
+MIP - Integer infeasible.
+Current MIP best bound =  0.0000000000e+00 (gap is infinite)
+Solution time =    0.06 sec.  Iterations = 0  Nodes = 0
+Deterministic time = 0.54 ticks  (8.73 ticks/sec)
+
+No conflict exists.
+
+Log started (V12.8.0.0) Sun Jun 21 15:24:42 2020
+
+
+Problem 'teste.lp' read.
+Read time = 0.02 sec. (0.26 ticks)
+Infeasible column 'x(j0,m3)'.
+Presolve time = 0.01 sec. (0.39 ticks)
+
+Root node processing (before b&c):
+  Real time             =    0.01 sec. (0.56 ticks)
+Parallel b&c, 4 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.01 sec. (0.56 ticks)
+
+
+MIP - Integer infeasible.
+Current MIP best bound =  0.0000000000e+00 (gap is infinite)
+Solution time =    0.02 sec.  Iterations = 0  Nodes = 0
+Deterministic time = 0.56 ticks  (29.87 ticks/sec)
+
+No conflict exists.

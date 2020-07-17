@@ -1,0 +1,514 @@
+Machines:  6 Jobs:  6
+Order: 
+Job  0 : machine 2 ( 1 ) machine 0 ( 3 ) machine 1 ( 6 ) machine 3 ( 7 ) machine 5 ( 3 ) machine 4 ( 6 ) 
+Job  1 : machine 1 ( 8 ) machine 2 ( 5 ) machine 4 ( 10 ) machine 5 ( 10 ) machine 0 ( 10 ) machine 3 ( 4 ) 
+Job  2 : machine 2 ( 5 ) machine 3 ( 4 ) machine 5 ( 8 ) machine 0 ( 9 ) machine 1 ( 1 ) machine 4 ( 7 ) 
+Job  3 : machine 1 ( 5 ) machine 0 ( 5 ) machine 2 ( 5 ) machine 3 ( 3 ) machine 4 ( 8 ) machine 5 ( 9 ) 
+Job  4 : machine 2 ( 9 ) machine 1 ( 3 ) machine 4 ( 5 ) machine 5 ( 4 ) machine 0 ( 3 ) machine 3 ( 1 ) 
+Job  5 : machine 1 ( 3 ) machine 3 ( 3 ) machine 5 ( 9 ) machine 0 ( 10 ) machine 4 ( 4 ) machine 2 ( 1 ) 
+K:  60
+Job  0 , e: machine  0 ( 1 ) machine  1 ( 4 ) machine  2 ( 0 ) machine  3 ( 10 ) machine  4 ( 20 ) machine  5 ( 17 ) 
+Job  1 , e: machine  0 ( 33 ) machine  1 ( 0 ) machine  2 ( 8 ) machine  3 ( 43 ) machine  4 ( 13 ) machine  5 ( 23 ) 
+Job  2 , e: machine  0 ( 17 ) machine  1 ( 26 ) machine  2 ( 0 ) machine  3 ( 5 ) machine  4 ( 27 ) machine  5 ( 9 ) 
+Job  3 , e: machine  0 ( 5 ) machine  1 ( 0 ) machine  2 ( 10 ) machine  3 ( 15 ) machine  4 ( 18 ) machine  5 ( 26 ) 
+Job  4 , e: machine  0 ( 21 ) machine  1 ( 9 ) machine  2 ( 0 ) machine  3 ( 24 ) machine  4 ( 12 ) machine  5 ( 17 ) 
+Job  5 , e: machine  0 ( 15 ) machine  1 ( 0 ) machine  2 ( 29 ) machine  3 ( 3 ) machine  4 ( 25 ) machine  5 ( 6 ) 
+Job  0 , f: machine  0 ( 22 ) machine  1 ( 16 ) machine  2 ( 25 ) machine  3 ( 9 ) machine  4 ( 0 ) machine  5 ( 6 ) 
+Job  1 , f: machine  0 ( 4 ) machine  1 ( 39 ) machine  2 ( 34 ) machine  3 ( 0 ) machine  4 ( 24 ) machine  5 ( 14 ) 
+Job  2 , f: machine  0 ( 8 ) machine  1 ( 7 ) machine  2 ( 29 ) machine  3 ( 25 ) machine  4 ( 0 ) machine  5 ( 17 ) 
+Job  3 , f: machine  0 ( 25 ) machine  1 ( 30 ) machine  2 ( 20 ) machine  3 ( 17 ) machine  4 ( 9 ) machine  5 ( 0 ) 
+Job  4 , f: machine  0 ( 1 ) machine  1 ( 13 ) machine  2 ( 16 ) machine  3 ( 0 ) machine  4 ( 8 ) machine  5 ( 4 ) 
+Job  5 , f: machine  0 ( 5 ) machine  1 ( 27 ) machine  2 ( 0 ) machine  3 ( 24 ) machine  4 ( 1 ) machine  5 ( 15 ) 
+EST and LST:
+Job: 0 Machine: 0 EST: 1 LST: 35
+Job: 0 Machine: 1 EST: 4 LST: 38
+Job: 0 Machine: 2 EST: 0 LST: 34
+Job: 0 Machine: 3 EST: 10 LST: 44
+Job: 0 Machine: 4 EST: 20 LST: 54
+Job: 0 Machine: 5 EST: 17 LST: 51
+Job: 1 Machine: 0 EST: 33 LST: 46
+Job: 1 Machine: 1 EST: 0 LST: 13
+Job: 1 Machine: 2 EST: 8 LST: 21
+Job: 1 Machine: 3 EST: 43 LST: 56
+Job: 1 Machine: 4 EST: 13 LST: 26
+Job: 1 Machine: 5 EST: 23 LST: 36
+Job: 2 Machine: 0 EST: 17 LST: 43
+Job: 2 Machine: 1 EST: 26 LST: 52
+Job: 2 Machine: 2 EST: 0 LST: 26
+Job: 2 Machine: 3 EST: 5 LST: 31
+Job: 2 Machine: 4 EST: 27 LST: 53
+Job: 2 Machine: 5 EST: 9 LST: 35
+Job: 3 Machine: 0 EST: 5 LST: 30
+Job: 3 Machine: 1 EST: 0 LST: 25
+Job: 3 Machine: 2 EST: 10 LST: 35
+Job: 3 Machine: 3 EST: 15 LST: 40
+Job: 3 Machine: 4 EST: 18 LST: 43
+Job: 3 Machine: 5 EST: 26 LST: 51
+Job: 4 Machine: 0 EST: 21 LST: 56
+Job: 4 Machine: 1 EST: 9 LST: 44
+Job: 4 Machine: 2 EST: 0 LST: 35
+Job: 4 Machine: 3 EST: 24 LST: 59
+Job: 4 Machine: 4 EST: 12 LST: 47
+Job: 4 Machine: 5 EST: 17 LST: 52
+Job: 5 Machine: 0 EST: 15 LST: 45
+Job: 5 Machine: 1 EST: 0 LST: 30
+Job: 5 Machine: 2 EST: 29 LST: 59
+Job: 5 Machine: 3 EST: 3 LST: 33
+Job: 5 Machine: 4 EST: 25 LST: 55
+Job: 5 Machine: 5 EST: 6 LST: 36
+Order:
+Job: 0 Machine: 0 = 1 
+Job: 0 Machine: 1 = 2 
+Job: 0 Machine: 2 = 0 
+Job: 0 Machine: 3 = 3 
+Job: 0 Machine: 4 = 5 
+Job: 0 Machine: 5 = 4 
+Job: 1 Machine: 0 = 4 
+Job: 1 Machine: 1 = 0 
+Job: 1 Machine: 2 = 1 
+Job: 1 Machine: 3 = 5 
+Job: 1 Machine: 4 = 2 
+Job: 1 Machine: 5 = 3 
+Job: 2 Machine: 0 = 3 
+Job: 2 Machine: 1 = 4 
+Job: 2 Machine: 2 = 0 
+Job: 2 Machine: 3 = 1 
+Job: 2 Machine: 4 = 5 
+Job: 2 Machine: 5 = 2 
+Job: 3 Machine: 0 = 1 
+Job: 3 Machine: 1 = 0 
+Job: 3 Machine: 2 = 2 
+Job: 3 Machine: 3 = 3 
+Job: 3 Machine: 4 = 4 
+Job: 3 Machine: 5 = 5 
+Job: 4 Machine: 0 = 4 
+Job: 4 Machine: 1 = 1 
+Job: 4 Machine: 2 = 0 
+Job: 4 Machine: 3 = 5 
+Job: 4 Machine: 4 = 2 
+Job: 4 Machine: 5 = 3 
+Job: 5 Machine: 0 = 3 
+Job: 5 Machine: 1 = 0 
+Job: 5 Machine: 2 = 5 
+Job: 5 Machine: 3 = 1 
+Job: 5 Machine: 4 = 4 
+Job: 5 Machine: 5 = 2 
+Distances:
+Job 0, Machine 2 -> Machine 0: distance 1
+Job 0, Machine 2 -> Machine 1: distance 4
+Job 0, Machine 2 -> Machine 3: distance 10
+Job 0, Machine 2 -> Machine 5: distance 17
+Job 0, Machine 2 -> Machine 4: distance 20
+Job 0, Machine 0 -> Machine 1: distance 3
+Job 0, Machine 0 -> Machine 3: distance 9
+Job 0, Machine 0 -> Machine 5: distance 16
+Job 0, Machine 0 -> Machine 4: distance 19
+Job 0, Machine 1 -> Machine 3: distance 6
+Job 0, Machine 1 -> Machine 5: distance 13
+Job 0, Machine 1 -> Machine 4: distance 16
+Job 0, Machine 3 -> Machine 5: distance 7
+Job 0, Machine 3 -> Machine 4: distance 10
+Job 0, Machine 5 -> Machine 4: distance 3
+Job 1, Machine 1 -> Machine 2: distance 8
+Job 1, Machine 1 -> Machine 4: distance 13
+Job 1, Machine 1 -> Machine 5: distance 23
+Job 1, Machine 1 -> Machine 0: distance 33
+Job 1, Machine 1 -> Machine 3: distance 43
+Job 1, Machine 2 -> Machine 4: distance 5
+Job 1, Machine 2 -> Machine 5: distance 15
+Job 1, Machine 2 -> Machine 0: distance 25
+Job 1, Machine 2 -> Machine 3: distance 35
+Job 1, Machine 4 -> Machine 5: distance 10
+Job 1, Machine 4 -> Machine 0: distance 20
+Job 1, Machine 4 -> Machine 3: distance 30
+Job 1, Machine 5 -> Machine 0: distance 10
+Job 1, Machine 5 -> Machine 3: distance 20
+Job 1, Machine 0 -> Machine 3: distance 10
+Job 2, Machine 2 -> Machine 3: distance 5
+Job 2, Machine 2 -> Machine 5: distance 9
+Job 2, Machine 2 -> Machine 0: distance 17
+Job 2, Machine 2 -> Machine 1: distance 26
+Job 2, Machine 2 -> Machine 4: distance 27
+Job 2, Machine 3 -> Machine 5: distance 4
+Job 2, Machine 3 -> Machine 0: distance 12
+Job 2, Machine 3 -> Machine 1: distance 21
+Job 2, Machine 3 -> Machine 4: distance 22
+Job 2, Machine 5 -> Machine 0: distance 8
+Job 2, Machine 5 -> Machine 1: distance 17
+Job 2, Machine 5 -> Machine 4: distance 18
+Job 2, Machine 0 -> Machine 1: distance 9
+Job 2, Machine 0 -> Machine 4: distance 10
+Job 2, Machine 1 -> Machine 4: distance 1
+Job 3, Machine 1 -> Machine 0: distance 5
+Job 3, Machine 1 -> Machine 2: distance 10
+Job 3, Machine 1 -> Machine 3: distance 15
+Job 3, Machine 1 -> Machine 4: distance 18
+Job 3, Machine 1 -> Machine 5: distance 26
+Job 3, Machine 0 -> Machine 2: distance 5
+Job 3, Machine 0 -> Machine 3: distance 10
+Job 3, Machine 0 -> Machine 4: distance 13
+Job 3, Machine 0 -> Machine 5: distance 21
+Job 3, Machine 2 -> Machine 3: distance 5
+Job 3, Machine 2 -> Machine 4: distance 8
+Job 3, Machine 2 -> Machine 5: distance 16
+Job 3, Machine 3 -> Machine 4: distance 3
+Job 3, Machine 3 -> Machine 5: distance 11
+Job 3, Machine 4 -> Machine 5: distance 8
+Job 4, Machine 2 -> Machine 1: distance 9
+Job 4, Machine 2 -> Machine 4: distance 12
+Job 4, Machine 2 -> Machine 5: distance 17
+Job 4, Machine 2 -> Machine 0: distance 21
+Job 4, Machine 2 -> Machine 3: distance 24
+Job 4, Machine 1 -> Machine 4: distance 3
+Job 4, Machine 1 -> Machine 5: distance 8
+Job 4, Machine 1 -> Machine 0: distance 12
+Job 4, Machine 1 -> Machine 3: distance 15
+Job 4, Machine 4 -> Machine 5: distance 5
+Job 4, Machine 4 -> Machine 0: distance 9
+Job 4, Machine 4 -> Machine 3: distance 12
+Job 4, Machine 5 -> Machine 0: distance 4
+Job 4, Machine 5 -> Machine 3: distance 7
+Job 4, Machine 0 -> Machine 3: distance 3
+Job 5, Machine 1 -> Machine 3: distance 3
+Job 5, Machine 1 -> Machine 5: distance 6
+Job 5, Machine 1 -> Machine 0: distance 15
+Job 5, Machine 1 -> Machine 4: distance 25
+Job 5, Machine 1 -> Machine 2: distance 29
+Job 5, Machine 3 -> Machine 5: distance 3
+Job 5, Machine 3 -> Machine 0: distance 12
+Job 5, Machine 3 -> Machine 4: distance 22
+Job 5, Machine 3 -> Machine 2: distance 26
+Job 5, Machine 5 -> Machine 0: distance 9
+Job 5, Machine 5 -> Machine 4: distance 19
+Job 5, Machine 5 -> Machine 2: distance 23
+Job 5, Machine 0 -> Machine 4: distance 10
+Job 5, Machine 0 -> Machine 2: distance 14
+Job 5, Machine 4 -> Machine 2: distance 4
+iteration 1
+quad_clique_cut_0: + 0.2x(j0,m2) + x(j2,m2) - 1.0
+quad_clique_cut_0: b;0.2;x(j0,m2); 1.0; t(0,2); 0.2;x(j2,m2); 0.0; t(2,2); 1.0
+quad_clique_cut_1: + 0.2x(j1,m1) + 0.125x(j3,m1) - 1.0
+quad_clique_cut_1: b;0.0;x(j1,m1); 0.0; t(1,1); 0.2;x(j3,m1); 0.0; t(3,1); 0.125
+quad_clique_cut_2: + 0.2x(j4,m2) + 0.111111111111x(j2,m2) - 1.0
+quad_clique_cut_2: b;0.0;x(j2,m2); 0.0; t(2,2); 0.1111111111111111;x(j4,m2); 0.0; t(4,2); 0.2
+quad_clique_cut_3: + 0.333333333333x(j3,m1) + 0.2x(j5,m1) - 1.0
+quad_clique_cut_3: b;0.0;x(j3,m1); 0.0; t(3,1); 0.3333333333333333;x(j5,m1); 0.0; t(5,1); 0.2
+quad_clique_cut_4: + 0.026086956522x(j1,m2) + 0.060869565217x(j3,m2) - 1.0
+quad_clique_cut_4: b;0.817391304347826;x(j1,m2); 8.0; t(1,2); 0.02608695652173914;x(j3,m2); 10.0; t(3,2); 0.060869565217391286
+quad_clique_cut_5: + 0.013736263736x(j1,m4) + 0.035714285714x(j3,m4) - 1.0
+quad_clique_cut_5: b;0.8214285714285716;x(j1,m4); 13.0; t(1,4); 0.01373626373626373;x(j3,m4); 18.000000000000004; t(3,4); 0.03571428571428572
+quad_clique_cut_6: + 0.026217228464x(j4,m0) + 0.01872659176x(j2,m0) - 1.0
+quad_clique_cut_6: b;0.8876404494382022;x(j2,m0); 18.0; t(2,0); 0.018726591760299623;x(j4,m0); 21.0; t(4,0); 0.026217228464419477
+quad_clique_cut_7: + 0.031578947368x(j4,m0) + 0.014035087719x(j5,m0) - 1.0
+quad_clique_cut_7: b;0.8736842105263158;x(j4,m0); 21.0; t(4,0); 0.031578947368421054;x(j5,m0); 15.000000000000002; t(5,0); 0.014035087719298242
+quad_clique_cut_8: + 0.012567324955x(j1,m5) + 0.021543985637x(j3,m5) - 1.0
+quad_clique_cut_8: b;0.8491921005385997;x(j1,m5); 23.0; t(1,5); 0.012567324955116699;x(j3,m5); 26.000000000000004; t(3,5); 0.021543985637342906
+cliques 9
+Cuts found: 54
+objective value : 46.99999999999999
+iteration 2
+cliques 0
+Cuts found: 0
+objective value : 47.0
+quad;2;47.0;7.10311222076416
+
+iteration 1
+notsucessor_clique_cut_0: + 0.038461538462x(j0,m4) + 0.008875739645x(j1,m4) - 1.0
+notsucessor_clique_cut_0: b;0.9615384615384615;x(j0,m4); 22.0; t(0,4); 0.03846153846153846;x(j1,m4); 13.0; t(1,4); 0.008875739644970421
+notsucessor_clique_cut_1: + 0.051282051282x(j3,m3) + 0.012820512821x(j0,m3) - 1.0
+notsucessor_clique_cut_1: b;0.9230769230769231;x(j0,m3); 12.0; t(0,3); 0.012820512820512813;x(j3,m3); 15.000000000000002; t(3,3); 0.05128205128205129
+notsucessor_clique_cut_2: + 0.025316455696x(j0,m4) + 0.018987341772x(j3,m4) - 1.0
+notsucessor_clique_cut_2: b;0.89873417721519;x(j0,m4); 22.0; t(0,4); 0.025316455696202538;x(j3,m4); 18.000000000000004; t(3,4); 0.018987341772151892
+notsucessor_clique_cut_3: + 0.013736263736x(j1,m4) + 0.035714285714x(j3,m4) - 1.0
+notsucessor_clique_cut_3: b;0.8214285714285716;x(j1,m4); 13.0; t(1,4); 0.01373626373626373;x(j3,m4); 18.000000000000004; t(3,4); 0.03571428571428572
+notsucessor_clique_cut_4: + 0.008547008547x(j4,m2) + 0.111111111111x(j1,m2) - 1.0
+notsucessor_clique_cut_4: b;0.8888888888888888;x(j1,m2); 8.0; t(1,2); 0.1111111111111111;x(j4,m2); 0.0; t(4,2); 0.008547008547008551
+notsucessor_clique_cut_5: + 0.017021276596x(j4,m4) + 0.046808510638x(j1,m4) - 1.0
+notsucessor_clique_cut_5: b;0.8127659574468085;x(j1,m4); 13.0; t(1,4); 0.046808510638297864;x(j4,m4); 12.0; t(4,4); 0.01702127659574468
+notsucessor_clique_cut_6: + 0.333333333333x(j1,m1) + 0.125x(j5,m1) - 1.0
+notsucessor_clique_cut_6: b;0.0;x(j1,m1); 0.0; t(1,1); 0.3333333333333333;x(j5,m1); 0.0; t(5,1); 0.125
+notsucessor_clique_cut_7: + 0.2x(j4,m2) + 0.111111111111x(j2,m2) - 1.0
+notsucessor_clique_cut_7: b;0.0;x(j2,m2); 0.0; t(2,2); 0.1111111111111111;x(j4,m2); 0.0; t(4,2); 0.2
+notsucessor_clique_cut_8: + 0.026217228464x(j4,m0) + 0.01872659176x(j2,m0) - 1.0
+notsucessor_clique_cut_8: b;0.8876404494382022;x(j2,m0); 18.0; t(2,0); 0.01872659176029962;x(j4,m0); 21.0; t(4,0); 0.026217228464419477
+notsucessor_clique_cut_9: + 0.020253164557x(j5,m0) + 0.027848101266x(j2,m0) - 1.0
+notsucessor_clique_cut_9: b;0.8050632911392405;x(j2,m0); 18.0; t(2,0); 0.027848101265822787;x(j5,m0); 15.000000000000002; t(5,0); 0.02025316455696202
+notsucessor_clique_cut_10: + 0.007639726578x(j5,m3) + 0.016887816647x(j5,m0) + 0.028950542823x(j2,m0) - 1.0
+notsucessor_clique_cut_10: b;0.7973462002412546;x(j2,m0); 18.0; t(2,0); 0.028950542822677918;x(j5,m0); 15.000000000000002; t(5,0); 0.01688781664656213;x(j5,m3); 3.0; t(5,3); 0.007639726578206668
+notsucessor_clique_cut_11: + 0.031578947368x(j4,m0) + 0.014035087719x(j5,m0) - 1.0
+notsucessor_clique_cut_11: b;0.8736842105263157;x(j4,m0); 21.0; t(4,0); 0.031578947368421054;x(j5,m0); 15.000000000000002; t(5,0); 0.014035087719298237
+notsucessor_clique_cut_13: + 0.05x(j1,m1) + 0.125x(j0,m1) - 1.0
+notsucessor_clique_cut_13: b;0.625;x(j0,m1); 5.0; t(0,1); 0.125;x(j1,m1); 0.0; t(1,1); 0.05
+notsucessor_clique_cut_15: + 0.2x(j0,m2) + x(j2,m2) - 1.0
+notsucessor_clique_cut_15: b;0.2;x(j0,m2); 1.0; t(0,2); 0.2;x(j2,m2); 0.0; t(2,2); 1.0
+notsucessor_clique_cut_16: + 0.001234567901x(j3,m1) + 0.027777777778x(j0,m4) + 0.015432098765x(j3,m4) - 1.0
+notsucessor_clique_cut_16: b;0.888888888888889;x(j3,m1); 0.0; t(3,1); 0.0012345679012345512;x(j0,m4); 22.0; t(0,4); 0.027777777777777776;x(j3,m4); 18.000000000000004; t(3,4); 0.015432098765432101
+notsucessor_clique_cut_17: + 0.011904761905x(j0,m1) + 0.095238095238x(j4,m1) - 1.0
+notsucessor_clique_cut_17: b;0.9166666666666671;x(j0,m1); 5.0; t(0,1); 0.011904761904761937;x(j4,m1); 9.0; t(4,1); 0.09523809523809527
+notsucessor_clique_cut_18: + 0.003937007874x(j0,m4) + 0.035433070866x(j5,m4) - 1.0
+notsucessor_clique_cut_18: b;0.9724409448818897;x(j0,m4); 22.0; t(0,4); 0.0039370078740157575;x(j5,m4); 25.0; t(5,4); 0.035433070866141725
+notsucessor_clique_cut_19: + 0.2x(j1,m1) + 0.125x(j3,m1) - 1.0
+notsucessor_clique_cut_19: b;0.0;x(j1,m1); 0.0; t(1,1); 0.2;x(j3,m1); 0.0; t(3,1); 0.125
+notsucessor_clique_cut_24: + 0.029850746269x(j5,m5) + 0.054726368159x(j2,m5) - 1.0
+notsucessor_clique_cut_24: b;0.7263681592039801;x(j2,m5); 10.0; t(2,5); 0.054726368159203974;x(j5,m5); 6.0; t(5,5); 0.02985074626865672
+notsucessor_clique_cut_25: + 0.333333333333x(j3,m1) + 0.2x(j5,m1) - 1.0
+notsucessor_clique_cut_25: b;0.0;x(j3,m1); 0.0; t(3,1); 0.3333333333333333;x(j5,m1); 0.0; t(5,1); 0.2
+notsucessor_clique_cut_31: + 0.111111111111x(j0,m2) + x(j4,m2) - 1.0
+notsucessor_clique_cut_31: b;0.1111111111111111;x(j0,m2); 1.0; t(0,2); 0.1111111111111111;x(j4,m2); 0.0; t(4,2); 1.0
+notsucessor_clique_cut_34: + 0.026086956522x(j1,m2) + 0.060869565217x(j3,m2) - 1.0
+notsucessor_clique_cut_34: b;0.817391304347826;x(j1,m2); 8.0; t(1,2); 0.026086956521739132;x(j3,m2); 10.0; t(3,2); 0.06086956521739129
+notsucessor_clique_cut_42: + 0.012567324955x(j1,m5) + 0.021543985637x(j3,m5) - 1.0
+notsucessor_clique_cut_42: b;0.8491921005385997;x(j1,m5); 23.0; t(1,5); 0.012567324955116699;x(j3,m5); 26.000000000000004; t(3,5); 0.021543985637342906
+notsucessor_clique_cut_44: + 0.005720228809x(j5,m3) + 0.003120124805x(j5,m4) + 0.03120124805x(j2,m4) - 1.0
+notsucessor_clique_cut_44: b;0.968798751950078;x(j5,m3); 3.0; t(5,3); 0.005720228809152365;x(j2,m4); 28.0; t(2,4); 0.031201248049921984;x(j5,m4); 25.0; t(5,4); 0.0031201248049922145
+cliques 24
+Cuts found: 144
+objective value : 46.99999999999999
+iteration 2
+notsucessor_clique_cut_46: + 0.003633060854x(j4,m0) + 0.071752951862x(j1,m2) + 0.008174386921x(j1,m0) - 1.0
+notsucessor_clique_cut_46: b;0.9673024523165014;x(j1,m0); 32.99999999999999; t(1,0); 0.008174386920980931;x(j4,m0); 34.000000000117005; t(4,0); 0.0036330608537693027;x(j1,m2); 8.0; t(1,2); 0.07175295186194366
+notsucessor_clique_cut_47: + 0.004454342984x(j4,m0) + 0.024498886414x(j1,m0) - 1.0
+notsucessor_clique_cut_47: b;0.9599109131408329;x(j1,m0); 32.99999999999999; t(1,0); 0.024498886414253906;x(j4,m0); 34.000000000117005; t(4,0); 0.004454342984409793
+notsucessor_clique_cut_48: + 0.038834951456x(j1,m5) + 0.003236245955x(j0,m5) - 1.0
+notsucessor_clique_cut_48: b;0.9741100323624596;x(j0,m5); 25.000000000000004; t(0,5); 0.00323624595469256;x(j1,m5); 23.0; t(1,5); 0.038834951456310676
+notsucessor_clique_cut_49: + 0.001651982379x(j1,m5) + 0.095264317181x(j1,m2) + 0.006057268722x(j4,m5) - 1.0
+notsucessor_clique_cut_49: b;0.9818281938333079;x(j1,m2); 8.0; t(1,2); 0.09526431718061674;x(j1,m5); 23.0; t(1,5); 0.0016519823788546184;x(j4,m5); 30.000000000117012; t(4,5); 0.006057268722466966
+cliques 4
+Cuts found: 24
+objective value : 46.99999999999999
+iteration 3
+cliques 0
+Cuts found: 0
+objective value : 47.000000000898005
+notsucessor;3;47.000000000898005;0.5564327239990234
+
+iteration 1
+sucessor_clique_cut_0: + 0.026217228464x(j4,m0) + 0.01872659176x(j2,m0) - 1.0
+sucessor_clique_cut_0: b;0.8876404494382022;x(j2,m0); 18.0; t(2,0); 0.018726591760299626;x(j4,m0); 21.0; t(4,0); 0.026217228464419477
+sucessor_clique_cut_1: + 0.020253164557x(j5,m0) + 0.027848101266x(j2,m0) - 1.0
+sucessor_clique_cut_1: b;0.8050632911392405;x(j2,m0); 18.0; t(2,0); 0.02784810126582278;x(j5,m0); 15.000000000000002; t(5,0); 0.020253164556962026
+sucessor_clique_cut_2: + 0.031578947368x(j4,m0) + 0.014035087719x(j5,m0) - 1.0
+sucessor_clique_cut_2: b;0.873684210526316;x(j4,m0); 21.0; t(4,0); 0.03157894736842106;x(j5,m0); 15.000000000000002; t(5,0); 0.014035087719298242
+sucessor_clique_cut_3: + 0.05x(j1,m1) + 0.125x(j0,m1) - 1.0
+sucessor_clique_cut_3: b;0.625;x(j0,m1); 5.0; t(0,1); 0.125;x(j1,m1); 0.0; t(1,1); 0.05
+sucessor_clique_cut_4: + 0.011904761905x(j0,m1) + 0.095238095238x(j4,m1) - 1.0
+sucessor_clique_cut_4: b;0.9166666666666666;x(j0,m1); 5.0; t(0,1); 0.011904761904761894;x(j4,m1); 9.0; t(4,1); 0.09523809523809525
+sucessor_clique_cut_5: + 0.2x(j1,m1) + 0.125x(j3,m1) - 1.0
+sucessor_clique_cut_5: b;0.0;x(j1,m1); 0.0; t(1,1); 0.2;x(j3,m1); 0.0; t(3,1); 0.125
+sucessor_clique_cut_6: + 0.333333333333x(j1,m1) + 0.125x(j5,m1) - 1.0
+sucessor_clique_cut_6: b;0.0;x(j1,m1); 0.0; t(1,1); 0.3333333333333333;x(j5,m1); 0.0; t(5,1); 0.125
+sucessor_clique_cut_7: + 0.333333333333x(j3,m1) + 0.2x(j5,m1) - 1.0
+sucessor_clique_cut_7: b;0.0;x(j3,m1); 0.0; t(3,1); 0.3333333333333333;x(j5,m1); 0.0; t(5,1); 0.2
+sucessor_clique_cut_8: + 0.2x(j0,m2) + x(j2,m2) - 1.0
+sucessor_clique_cut_8: b;0.2;x(j0,m2); 1.0; t(0,2); 0.2;x(j2,m2); 0.0; t(2,2); 1.0
+sucessor_clique_cut_9: + 0.111111111111x(j0,m2) + x(j4,m2) - 1.0
+sucessor_clique_cut_9: b;0.1111111111111111;x(j0,m2); 1.0; t(0,2); 0.1111111111111111;x(j4,m2); 0.0; t(4,2); 1.0
+sucessor_clique_cut_10: + 0.026086956522x(j1,m2) + 0.060869565217x(j3,m2) - 1.0
+sucessor_clique_cut_10: b;0.817391304347826;x(j1,m2); 8.0; t(1,2); 0.026086956521739136;x(j3,m2); 10.0; t(3,2); 0.0608695652173913
+sucessor_clique_cut_11: + 0.008547008547x(j4,m2) + 0.111111111111x(j1,m2) - 1.0
+sucessor_clique_cut_11: b;0.8888888888888888;x(j1,m2); 8.0; t(1,2); 0.1111111111111111;x(j4,m2); 0.0; t(4,2); 0.008547008547008551
+sucessor_clique_cut_12: + 0.2x(j4,m2) + 0.111111111111x(j2,m2) - 1.0
+sucessor_clique_cut_12: b;0.0;x(j2,m2); 0.0; t(2,2); 0.1111111111111111;x(j4,m2); 0.0; t(4,2); 0.2
+sucessor_clique_cut_13: + 0.051282051282x(j3,m3) + 0.012820512821x(j0,m3) - 1.0
+sucessor_clique_cut_13: b;0.9230769230769231;x(j0,m3); 12.0; t(0,3); 0.012820512820512806;x(j3,m3); 15.000000000000002; t(3,3); 0.051282051282051294
+sucessor_clique_cut_14: + 0.01296720061x(j5,m3) + 0.054919908467x(j2,m5) + 0.022883295195x(j5,m5) - 1.0
+sucessor_clique_cut_14: b;0.7254004576659039;x(j5,m3); 3.0; t(5,3); 0.012967200610221212;x(j2,m5); 10.0; t(2,5); 0.054919908466819226;x(j5,m5); 6.0; t(5,5); 0.022883295194507998
+sucessor_clique_cut_15: + 0.038461538462x(j0,m4) + 0.008875739645x(j1,m4) - 1.0
+sucessor_clique_cut_15: b;0.9615384615384616;x(j0,m4); 22.0; t(0,4); 0.038461538461538464;x(j1,m4); 13.0; t(1,4); 0.008875739644970411
+sucessor_clique_cut_16: + 0.025316455696x(j0,m4) + 0.018987341772x(j3,m4) - 1.0
+sucessor_clique_cut_16: b;0.89873417721519;x(j0,m4); 22.0; t(0,4); 0.025316455696202538;x(j3,m4); 18.000000000000004; t(3,4); 0.018987341772151892
+sucessor_clique_cut_17: + 0.003937007874x(j0,m4) + 0.035433070866x(j5,m4) - 1.0
+sucessor_clique_cut_17: b;0.9724409448818898;x(j0,m4); 22.0; t(0,4); 0.003937007874015737;x(j5,m4); 25.0; t(5,4); 0.035433070866141746
+sucessor_clique_cut_18: + 0.013736263736x(j1,m4) + 0.035714285714x(j3,m4) - 1.0
+sucessor_clique_cut_18: b;0.8214285714285718;x(j1,m4); 13.0; t(1,4); 0.013736263736263734;x(j3,m4); 18.000000000000004; t(3,4); 0.035714285714285726
+sucessor_clique_cut_19: + 0.017021276596x(j4,m4) + 0.046808510638x(j1,m4) - 1.0
+sucessor_clique_cut_19: b;0.8127659574468085;x(j1,m4); 13.0; t(1,4); 0.046808510638297864;x(j4,m4); 12.0; t(4,4); 0.017021276595744685
+sucessor_clique_cut_20: + 0.006430868167x(j5,m4) + 0.028938906752x(j2,m4) - 1.0
+sucessor_clique_cut_20: b;0.9710610932475885;x(j2,m4); 28.0; t(2,4); 0.028938906752411585;x(j5,m4); 25.0; t(5,4); 0.0064308681672025645
+sucessor_clique_cut_21: + 0.003289473684x(j3,m4) + 0.036184210526x(j5,m4) - 1.0
+sucessor_clique_cut_21: b;0.9638157894736845;x(j3,m4); 18.000000000000004; t(3,4); 0.0032894736842105183;x(j5,m4); 25.0; t(5,4); 0.036184210526315805
+cliques 22
+Cuts found: 132
+objective value : 46.99999999999999
+iteration 2
+sucessor_clique_cut_22: + 0.006134969325x(j1,m5) + 0.038036809816x(j1,m4) + 0.011042944785x(j4,m5) - 1.0
+sucessor_clique_cut_22: b;0.966871165645464;x(j1,m4); 13.0; t(1,4); 0.03803680981595093;x(j1,m5); 23.0; t(1,5); 0.006134969325153371;x(j4,m5); 30.000000000117005; t(4,5); 0.011042944785276074
+cliques 1
+Cuts found: 6
+objective value : 46.99999999999999
+iteration 3
+cliques 0
+Cuts found: 0
+objective value : 46.99999999999999
+sucessor;3;46.99999999999999;0.3743724822998047
+
+iteration 1
+sucessor_clique_cut_0: + 0.026217228464x(j4,m0) + 0.01872659176x(j2,m0) - 1.0
+sucessor_clique_cut_0: b;0.8876404494382022;x(j2,m0); 18.0; t(2,0); 0.018726591760299626;x(j4,m0); 21.0; t(4,0); 0.026217228464419477
+sucessor_clique_cut_1: + 0.020253164557x(j5,m0) + 0.027848101266x(j2,m0) - 1.0
+sucessor_clique_cut_1: b;0.8050632911392405;x(j2,m0); 18.0; t(2,0); 0.02784810126582278;x(j5,m0); 15.000000000000002; t(5,0); 0.020253164556962026
+sucessor_clique_cut_2: + 0.031578947368x(j4,m0) + 0.014035087719x(j5,m0) - 1.0
+sucessor_clique_cut_2: b;0.873684210526316;x(j4,m0); 21.0; t(4,0); 0.03157894736842106;x(j5,m0); 15.000000000000002; t(5,0); 0.014035087719298242
+sucessor_clique_cut_3: + 0.05x(j1,m1) + 0.125x(j0,m1) - 1.0
+sucessor_clique_cut_3: b;0.625;x(j0,m1); 5.0; t(0,1); 0.125;x(j1,m1); 0.0; t(1,1); 0.05
+sucessor_clique_cut_4: + 0.011904761905x(j0,m1) + 0.095238095238x(j4,m1) - 1.0
+sucessor_clique_cut_4: b;0.9166666666666666;x(j0,m1); 5.0; t(0,1); 0.011904761904761894;x(j4,m1); 9.0; t(4,1); 0.09523809523809525
+sucessor_clique_cut_5: + 0.2x(j1,m1) + 0.125x(j3,m1) - 1.0
+sucessor_clique_cut_5: b;0.0;x(j1,m1); 0.0; t(1,1); 0.2;x(j3,m1); 0.0; t(3,1); 0.125
+sucessor_clique_cut_6: + 0.333333333333x(j1,m1) + 0.125x(j5,m1) - 1.0
+sucessor_clique_cut_6: b;0.0;x(j1,m1); 0.0; t(1,1); 0.3333333333333333;x(j5,m1); 0.0; t(5,1); 0.125
+sucessor_clique_cut_7: + 0.333333333333x(j3,m1) + 0.2x(j5,m1) - 1.0
+sucessor_clique_cut_7: b;0.0;x(j3,m1); 0.0; t(3,1); 0.3333333333333333;x(j5,m1); 0.0; t(5,1); 0.2
+sucessor_clique_cut_8: + 0.2x(j0,m2) + x(j2,m2) - 1.0
+sucessor_clique_cut_8: b;0.2;x(j0,m2); 1.0; t(0,2); 0.2;x(j2,m2); 0.0; t(2,2); 1.0
+sucessor_clique_cut_9: + 0.111111111111x(j0,m2) + x(j4,m2) - 1.0
+sucessor_clique_cut_9: b;0.1111111111111111;x(j0,m2); 1.0; t(0,2); 0.1111111111111111;x(j4,m2); 0.0; t(4,2); 1.0
+sucessor_clique_cut_10: + 0.026086956522x(j1,m2) + 0.060869565217x(j3,m2) - 1.0
+sucessor_clique_cut_10: b;0.817391304347826;x(j1,m2); 8.0; t(1,2); 0.026086956521739136;x(j3,m2); 10.0; t(3,2); 0.0608695652173913
+sucessor_clique_cut_11: + 0.008547008547x(j4,m2) + 0.111111111111x(j1,m2) - 1.0
+sucessor_clique_cut_11: b;0.8888888888888888;x(j1,m2); 8.0; t(1,2); 0.1111111111111111;x(j4,m2); 0.0; t(4,2); 0.008547008547008551
+sucessor_clique_cut_12: + 0.2x(j4,m2) + 0.111111111111x(j2,m2) - 1.0
+sucessor_clique_cut_12: b;0.0;x(j2,m2); 0.0; t(2,2); 0.1111111111111111;x(j4,m2); 0.0; t(4,2); 0.2
+sucessor_clique_cut_13: + 0.051282051282x(j3,m3) + 0.012820512821x(j0,m3) - 1.0
+sucessor_clique_cut_13: b;0.9230769230769231;x(j0,m3); 12.0; t(0,3); 0.012820512820512806;x(j3,m3); 15.000000000000002; t(3,3); 0.051282051282051294
+sucessor_clique_cut_14: + 0.01296720061x(j5,m3) + 0.054919908467x(j2,m5) + 0.022883295195x(j5,m5) - 1.0
+sucessor_clique_cut_14: b;0.7254004576659039;x(j5,m3); 3.0; t(5,3); 0.012967200610221212;x(j2,m5); 10.0; t(2,5); 0.054919908466819226;x(j5,m5); 6.0; t(5,5); 0.022883295194507998
+sucessor_clique_cut_15: + 0.038461538462x(j0,m4) + 0.008875739645x(j1,m4) - 1.0
+sucessor_clique_cut_15: b;0.9615384615384616;x(j0,m4); 22.0; t(0,4); 0.038461538461538464;x(j1,m4); 13.0; t(1,4); 0.008875739644970411
+sucessor_clique_cut_16: + 0.025316455696x(j0,m4) + 0.018987341772x(j3,m4) - 1.0
+sucessor_clique_cut_16: b;0.89873417721519;x(j0,m4); 22.0; t(0,4); 0.025316455696202538;x(j3,m4); 18.000000000000004; t(3,4); 0.018987341772151892
+sucessor_clique_cut_17: + 0.003937007874x(j0,m4) + 0.035433070866x(j5,m4) - 1.0
+sucessor_clique_cut_17: b;0.9724409448818898;x(j0,m4); 22.0; t(0,4); 0.003937007874015737;x(j5,m4); 25.0; t(5,4); 0.035433070866141746
+sucessor_clique_cut_18: + 0.013736263736x(j1,m4) + 0.035714285714x(j3,m4) - 1.0
+sucessor_clique_cut_18: b;0.8214285714285718;x(j1,m4); 13.0; t(1,4); 0.013736263736263734;x(j3,m4); 18.000000000000004; t(3,4); 0.035714285714285726
+sucessor_clique_cut_19: + 0.017021276596x(j4,m4) + 0.046808510638x(j1,m4) - 1.0
+sucessor_clique_cut_19: b;0.8127659574468085;x(j1,m4); 13.0; t(1,4); 0.046808510638297864;x(j4,m4); 12.0; t(4,4); 0.017021276595744685
+sucessor_clique_cut_20: + 0.006430868167x(j5,m4) + 0.028938906752x(j2,m4) - 1.0
+sucessor_clique_cut_20: b;0.9710610932475885;x(j2,m4); 28.0; t(2,4); 0.028938906752411585;x(j5,m4); 25.0; t(5,4); 0.0064308681672025645
+sucessor_clique_cut_21: + 0.003289473684x(j3,m4) + 0.036184210526x(j5,m4) - 1.0
+sucessor_clique_cut_21: b;0.9638157894736845;x(j3,m4); 18.000000000000004; t(3,4); 0.0032894736842105183;x(j5,m4); 25.0; t(5,4); 0.036184210526315805
+notsucessor_clique_cut_32: + 0.007639726578x(j5,m3) + 0.016887816647x(j5,m0) + 0.028950542823x(j2,m0) - 1.0
+notsucessor_clique_cut_32: b;0.7973462002412546;x(j2,m0); 18.0; t(2,0); 0.028950542822677918;x(j5,m0); 15.000000000000002; t(5,0); 0.01688781664656213;x(j5,m3); 3.0; t(5,3); 0.007639726578206668
+notsucessor_clique_cut_38: + 0.001234567901x(j3,m1) + 0.027777777778x(j0,m4) + 0.015432098765x(j3,m4) - 1.0
+notsucessor_clique_cut_38: b;0.888888888888889;x(j3,m1); 0.0; t(3,1); 0.0012345679012345512;x(j0,m4); 22.0; t(0,4); 0.027777777777777776;x(j3,m4); 18.000000000000004; t(3,4); 0.015432098765432101
+notsucessor_clique_cut_46: + 0.029850746269x(j5,m5) + 0.054726368159x(j2,m5) - 1.0
+notsucessor_clique_cut_46: b;0.7263681592039801;x(j2,m5); 10.0; t(2,5); 0.054726368159203974;x(j5,m5); 6.0; t(5,5); 0.02985074626865672
+notsucessor_clique_cut_64: + 0.012567324955x(j1,m5) + 0.021543985637x(j3,m5) - 1.0
+notsucessor_clique_cut_64: b;0.8491921005385997;x(j1,m5); 23.0; t(1,5); 0.012567324955116699;x(j3,m5); 26.000000000000004; t(3,5); 0.021543985637342906
+notsucessor_clique_cut_66: + 0.005720228809x(j5,m3) + 0.003120124805x(j5,m4) + 0.03120124805x(j2,m4) - 1.0
+notsucessor_clique_cut_66: b;0.968798751950078;x(j5,m3); 3.0; t(5,3); 0.005720228809152365;x(j2,m4); 28.0; t(2,4); 0.031201248049921984;x(j5,m4); 25.0; t(5,4); 0.0031201248049922145
+[[(1, 2), (3, 2), (0, 2), (3, 1), (2, 1), (1, 4), (0, 4), (3, 4), (2, 4)], [(1, 2), (5, 4), (3, 2), (3, 1), (2, 4), (0, 4), (3, 4), (5, 2), (1, 1)], [(3, 2), (0, 0), (4, 5), (1, 0), (2, 0), (0, 5), (2, 5), (0, 2), (4, 0)], [(5, 5), (1, 5), (2, 3), (0, 5), (0, 4), (2, 5), (3, 4), (2, 4), (3, 5)], [(5, 4), (3, 2), (0, 2), (5, 2), (0, 4), (4, 2), (3, 4), (2, 4)]]
+general_clique_cut_79: + 0.008804108584x(j0,m4) + 0.005925842316x(j1,m4) + 0.011738811445x(j3,m4) + 0.010271460015x(j2,m4) - 1.0
+general_clique_cut_79: b;0.9882611885568908;x(j1,m4); 12.999999999999998; t(1,4); 0.0059258423161577985;x(j0,m4); 28.000000000117005; t(0,4); 0.008804108584005866;x(j3,m4); 25.999999999999996; t(3,4); 0.011738811445341162;x(j2,m4); 35.000000000117005; t(2,4); 0.010271460014673515
+[[(1, 2), (3, 2), (0, 2), (3, 1), (2, 1), (1, 4), (0, 4), (3, 4), (2, 4)], [(1, 2), (5, 4), (3, 2), (3, 1), (2, 4), (0, 4), (3, 4), (5, 2), (1, 1)], [(3, 2), (0, 0), (4, 5), (1, 0), (2, 0), (0, 5), (2, 5), (0, 2), (4, 0)], [(5, 4), (3, 2), (0, 2), (5, 2), (0, 4), (4, 2), (3, 4), (2, 4)], [(5, 5), (1, 5), (0, 3), (2, 3), (0, 5), (0, 4), (2, 5), (3, 4), (3, 5)]]
+general_clique_cut_80: + 0.052323580034x(j1,m1) + 0.005163511188x(j5,m4) + 0.018502581756x(j3,m4) + 0.009036144578x(j2,m4) - 1.0
+general_clique_cut_80: b;0.9784522706206902;x(j5,m4); 34.0; t(5,4); 0.00516351118760757;x(j2,m4); 35.61538461535638; t(2,4); 0.00903614457831324;x(j3,m4); 25.999999999999996; t(3,4); 0.018502581755593824;x(j1,m1); 0.0; t(1,1); 0.05232358003442341
+[[(1, 2), (0, 1), (3, 2), (3, 1), (2, 1), (1, 4), (0, 4), (3, 4), (2, 4)], [(3, 2), (0, 0), (4, 5), (1, 0), (2, 0), (0, 5), (2, 5), (0, 2), (4, 0)], [(1, 2), (5, 4), (3, 2), (3, 1), (2, 4), (0, 4), (3, 4), (5, 2), (1, 1)], [(3, 2), (0, 0), (5, 5), (1, 0), (2, 0), (0, 5), (5, 0), (2, 5), (0, 2)], [(5, 5), (1, 5), (2, 3), (0, 5), (0, 4), (2, 5), (3, 4), (2, 4), (3, 5)]]
+general_clique_cut_81: + 0.044274300932x(j1,m1) + 0.001264980027x(j0,m4) + 0.006391478029x(j5,m4) + 0.012782956059x(j3,m4) + 0.011185086551x(j2,m4) - 1.0
+general_clique_cut_81: b;0.9997571793280724;x(j5,m4); 34.95978062082819; t(5,4); 0.006391478029294266;x(j2,m4); 35.486288848711915; t(2,4); 0.011185086551264984;x(j0,m4); 27.486288848711876; t(0,4); 0.001264980026631149;x(j3,m4); 26.959780620828194; t(3,4); 0.012782956058588563;x(j1,m1); 0.0; t(1,1); 0.044274300932090595
+[[(1, 2), (0, 1), (3, 2), (3, 1), (2, 1), (1, 4), (0, 4), (3, 4), (2, 4)], [(3, 2), (0, 0), (4, 5), (1, 0), (2, 0), (0, 5), (2, 5), (0, 2), (4, 0)], [(1, 2), (5, 4), (3, 2), (3, 1), (5, 2), (2, 4), (0, 4), (3, 4), (1, 1)], [(3, 2), (0, 0), (5, 5), (1, 0), (2, 0), (0, 5), (5, 0), (2, 5), (0, 2)], [(5, 4), (3, 2), (0, 2), (5, 2), (0, 4), (4, 2), (3, 4), (2, 4)]]
+general_clique_cut_82: + 0.027652803687x(j1,m0) + 0.001426533524x(j5,m0) + 0.001536266872x(j2,m0) - 1.0
+general_clique_cut_82: b;0.9873816360776339;x(j1,m0); 33.0; t(1,0); 0.027652803687040477;x(j2,m0); 25.566371684223817; t(2,0); 0.0015362668715022578;x(j5,m0); 24.929203538180303; t(5,0); 0.0014265335235378114
+[[(5, 5), (3, 0), (3, 1), (1, 5), (2, 0), (2, 5), (0, 5), (5, 0), (1, 0)], [(5, 4), (3, 2), (3, 0), (2, 0), (0, 4), (3, 4), (1, 0), (5, 2), (4, 0)], [(1, 2), (0, 1), (3, 2), (0, 2), (2, 1), (1, 4), (0, 4), (3, 4), (2, 4)], [(3, 2), (0, 0), (4, 5), (1, 5), (2, 0), (2, 5), (1, 0), (0, 2), (4, 0)], [(3, 2), (0, 0), (1, 0), (1, 5), (2, 0), (0, 5), (2, 5), (0, 2), (4, 0)]]
+general_clique_cut_83: + 0.01435768262x(j0,m4) + 0.008816120907x(j1,m4) + 0.019143576826x(j3,m4) - 1.0
+general_clique_cut_83: b;0.9964105796377336;x(j1,m4); 12.999999999999998; t(1,4); 0.00881612090680101;x(j0,m4); 26.750000020382515; t(0,4); 0.014357682619647344;x(j3,m4); 25.999999999999996; t(3,4); 0.019143576826196478
+[[(5, 5), (3, 0), (3, 1), (1, 5), (2, 0), (2, 5), (0, 5), (5, 0), (1, 0)], [(5, 4), (3, 2), (3, 0), (2, 0), (0, 4), (3, 4), (1, 0), (5, 2), (4, 0)], [(1, 2), (0, 1), (3, 2), (0, 2), (2, 1), (1, 4), (0, 4), (3, 4), (2, 4)], [(3, 2), (0, 0), (4, 5), (1, 5), (2, 0), (2, 5), (1, 0), (0, 2), (4, 0)], [(3, 2), (0, 0), (1, 0), (1, 5), (2, 0), (0, 5), (2, 5), (0, 2), (4, 0)]]
+iterações: 5 cortes cliques encontrados: 84 mip: 5 objective:  46.99999999999999
+cliques 32
+Cuts found: 192
+objective value : 46.99999999999999
+iteration 6
+sucessor_clique_cut_84: + 0.006134969325x(j1,m5) + 0.038036809816x(j1,m4) + 0.011042944785x(j4,m5) - 1.0
+sucessor_clique_cut_84: b;0.9913234003317744;x(j1,m4); 12.999999999999998; t(1,4); 0.03803680981595093;x(j1,m5); 23.0; t(1,5); 0.006134969325153371;x(j4,m5); 32.214285696710675; t(4,5); 0.011042944785276074
+notsucessor_clique_cut_85: + 0.003633060854x(j4,m0) + 0.071752951862x(j1,m2) + 0.008174386921x(j1,m0) - 1.0
+notsucessor_clique_cut_85: b;0.9753470869998571;x(j1,m0); 33.00000000000001; t(1,0); 0.008174386920980931;x(j4,m0); 36.21428569671067; t(4,0); 0.0036330608537693027;x(j1,m2); 7.999999999999998; t(1,2); 0.07175295186194366
+notsucessor_clique_cut_86: + 0.004454342984x(j4,m0) + 0.024498886414x(j1,m0) - 1.0
+notsucessor_clique_cut_86: b;0.9697741010989338;x(j1,m0); 33.00000000000001; t(1,0); 0.024498886414253896;x(j4,m0); 36.21428569671067; t(4,0); 0.004454342984409795
+notsucessor_clique_cut_87: + 0.038834951456x(j1,m5) + 0.003236245955x(j0,m5) - 1.0
+notsucessor_clique_cut_87: b;0.9708737864061892;x(j0,m5); 23.999999999512458; t(0,5); 0.00323624595469256;x(j1,m5); 23.0; t(1,5); 0.038834951456310676
+notsucessor_clique_cut_88: + 0.001651982379x(j1,m5) + 0.095264317181x(j1,m2) + 0.006057268722x(j4,m5) - 1.0
+notsucessor_clique_cut_88: b;0.9952407173258905;x(j1,m2); 7.999999999999998; t(1,2); 0.09526431718061674;x(j1,m5); 23.0; t(1,5); 0.0016519823788546184;x(j4,m5); 32.214285696710675; t(4,5); 0.006057268722466966
+[[(1, 2), (5, 4), (3, 2), (3, 0), (2, 0), (0, 4), (1, 0), (5, 2), (2, 4)], [(5, 5), (3, 0), (3, 1), (1, 5), (2, 0), (2, 5), (5, 0), (1, 0), (3, 5)], [(1, 2), (0, 0), (2, 0), (0, 3), (2, 3), (4, 3), (2, 2), (1, 0), (4, 0)], [(1, 2), (0, 0), (5, 5), (1, 5), (2, 0), (2, 5), (5, 0), (1, 0), (0, 2)], [(1, 2), (0, 0), (4, 5), (1, 5), (2, 0), (2, 5), (1, 0), (0, 2), (4, 0)]]
+general_clique_cut_89: + 0.000959577786x(j3,m5) + 0.001079525009x(j5,m0) + 0.02690508484x(j1,m0) + 0.001494726936x(j2,m0) - 1.0
+general_clique_cut_89: b;0.9998800528018719;x(j2,m0); 30.000000000898012; t(2,0); 0.0014947269355329918;x(j5,m0); 32.000000000898005; t(5,0); 0.0010795250089960433;x(j1,m0); 33.000000000898; t(1,0); 0.026905084839593647;x(j3,m5); 33.999999998563204; t(3,5); 0.0009595777857742555
+[[(1, 2), (0, 0), (2, 0), (0, 3), (2, 3), (4, 3), (2, 2), (1, 0), (4, 0)], [(1, 2), (5, 4), (3, 2), (3, 0), (2, 0), (0, 4), (1, 0), (5, 2), (2, 4)], [(5, 5), (3, 0), (3, 1), (1, 5), (2, 0), (2, 5), (5, 0), (1, 0), (3, 5)], [(1, 2), (0, 0), (5, 5), (1, 5), (2, 0), (2, 5), (5, 0), (1, 0), (0, 2)], [(1, 2), (0, 0), (4, 5), (1, 5), (2, 0), (2, 5), (1, 0), (0, 2), (4, 0)]]
+iterações: 1 cortes cliques encontrados: 90 mip: 1 objective:  47.00000000089802
+cliques 6
+Cuts found: 36
+objective value : 47.00000000089802
+iteration 2
+[[(1, 2), (0, 0), (2, 0), (0, 3), (2, 3), (4, 3), (2, 2), (1, 0), (4, 0)], [(1, 2), (5, 4), (3, 2), (3, 0), (2, 0), (0, 4), (1, 0), (5, 2), (2, 4)], [(5, 5), (3, 0), (3, 1), (1, 5), (2, 0), (2, 5), (5, 0), (1, 0), (3, 5)], [(1, 2), (0, 0), (5, 5), (1, 5), (2, 0), (2, 5), (5, 0), (1, 0), (0, 2)], [(1, 2), (0, 0), (4, 5), (1, 5), (2, 0), (2, 5), (1, 0), (0, 2), (4, 0)]]
+iterações: 0 cortes cliques encontrados: 90 mip: 0 objective:  47.00000000089802
+cliques 0
+Cuts found: 0
+objective value : 47.00000000089802
+basic+general5;0;47.00000000089802;30.851590633392334
+
+iteration 1
+sucessor_clique_cut_0: + 0.026217228464x(j4,m0) + 0.01872659176x(j2,m0) - 1.0
+sucessor_clique_cut_0: b;0.8876404494382022;x(j2,m0); 18.0; t(2,0); 0.018726591760299626;x(j4,m0); 21.0; t(4,0); 0.026217228464419477
+sucessor_clique_cut_1: + 0.020253164557x(j5,m0) + 0.027848101266x(j2,m0) - 1.0
+sucessor_clique_cut_1: b;0.8050632911392405;x(j2,m0); 18.0; t(2,0); 0.02784810126582278;x(j5,m0); 15.000000000000002; t(5,0); 0.020253164556962026
+sucessor_clique_cut_2: + 0.031578947368x(j4,m0) + 0.014035087719x(j5,m0) - 1.0
+sucessor_clique_cut_2: b;0.873684210526316;x(j4,m0); 21.0; t(4,0); 0.03157894736842106;x(j5,m0); 15.000000000000002; t(5,0); 0.014035087719298242
+sucessor_clique_cut_3: + 0.05x(j1,m1) + 0.125x(j0,m1) - 1.0
+sucessor_clique_cut_3: b;0.625;x(j0,m1); 5.0; t(0,1); 0.125;x(j1,m1); 0.0; t(1,1); 0.05
+sucessor_clique_cut_4: + 0.011904761905x(j0,m1) + 0.095238095238x(j4,m1) - 1.0
+sucessor_clique_cut_4: b;0.9166666666666666;x(j0,m1); 5.0; t(0,1); 0.011904761904761894;x(j4,m1); 9.0; t(4,1); 0.09523809523809525
+sucessor_clique_cut_5: + 0.2x(j1,m1) + 0.125x(j3,m1) - 1.0
+sucessor_clique_cut_5: b;0.0;x(j1,m1); 0.0; t(1,1); 0.2;x(j3,m1); 0.0; t(3,1); 0.125
+sucessor_clique_cut_6: + 0.333333333333x(j1,m1) + 0.125x(j5,m1) - 1.0
+sucessor_clique_cut_6: b;0.0;x(j1,m1); 0.0; t(1,1); 0.3333333333333333;x(j5,m1); 0.0; t(5,1); 0.125
+sucessor_clique_cut_7: + 0.333333333333x(j3,m1) + 0.2x(j5,m1) - 1.0
+sucessor_clique_cut_7: b;0.0;x(j3,m1); 0.0; t(3,1); 0.3333333333333333;x(j5,m1); 0.0; t(5,1); 0.2
+sucessor_clique_cut_8: + 0.2x(j0,m2) + x(j2,m2) - 1.0
+sucessor_clique_cut_8: b;0.2;x(j0,m2); 1.0; t(0,2); 0.2;x(j2,m2); 0.0; t(2,2); 1.0
+sucessor_clique_cut_9: + 0.111111111111x(j0,m2) + x(j4,m2) - 1.0
+sucessor_clique_cut_9: b;0.1111111111111111;x(j0,m2); 1.0; t(0,2); 0.1111111111111111;x(j4,m2); 0.0; t(4,2); 1.0
+sucessor_clique_cut_10: + 0.026086956522x(j1,m2) + 0.060869565217x(j3,m2) - 1.0
+sucessor_clique_cut_10: b;0.817391304347826;x(j1,m2); 8.0; t(1,2); 0.026086956521739136;x(j3,m2); 10.0; t(3,2); 0.0608695652173913
+sucessor_clique_cut_11: + 0.008547008547x(j4,m2) + 0.111111111111x(j1,m2) - 1.0
+sucessor_clique_cut_11: b;0.8888888888888888;x(j1,m2); 8.0; t(1,2); 0.1111111111111111;x(j4,m2); 0.0; t(4,2); 0.008547008547008551
+sucessor_clique_cut_12: + 0.2x(j4,m2) + 0.111111111111x(j2,m2) - 1.0
+sucessor_clique_cut_12: b;0.0;x(j2,m2); 0.0; t(2,2); 0.1111111111111111;x(j4,m2); 0.0; t(4,2); 0.2
+sucessor_clique_cut_13: + 0.051282051282x(j3,m3) + 0.012820512821x(j0,m3) - 1.0
+sucessor_clique_cut_13: b;0.9230769230769231;x(j0,m3); 12.0; t(0,3); 0.012820512820512806;x(j3,m3); 15.000000000000002; t(3,3); 0.051282051282051294
+sucessor_clique_cut_14: + 0.01296720061x(j5,m3) + 0.054919908467x(j2,m5) + 0.022883295195x(j5,m5) - 1.0
+sucessor_clique_cut_14: b;0.7254004576659039;x(j5,m3); 3.0; t(5,3); 0.012967200610221212;x(j2,m5); 10.0; t(2,5); 0.054919908466819226;x(j5,m5); 6.0; t(5,5); 0.022883295194507998
+sucessor_clique_cut_15: + 0.038461538462x(j0,m4) + 0.008875739645x(j1,m4) - 1.0
+sucessor_clique_cut_15: b;0.9615384615384616;x(j0,m4); 22.0; t(0,4); 0.038461538461538464;x(j1,m4); 13.0; t(1,4); 0.008875739644970411
+sucessor_clique_cut_16: + 0.025316455696x(j0,m4) + 0.018987341772x(j3,m4) - 1.0
+sucessor_clique_cut_16: b;0.89873417721519;x(j0,m4); 22.0; t(0,4); 0.025316455696202538;x(j3,m4); 18.000000000000004; t(3,4); 0.018987341772151892
+sucessor_clique_cut_17: + 0.003937007874x(j0,m4) + 0.035433070866x(j5,m4) - 1.0
+sucessor_clique_cut_17: b;0.9724409448818898;x(j0,m4); 22.0; t(0,4); 0.003937007874015737;x(j5,m4); 25.0; t(5,4); 0.035433070866141746
+sucessor_clique_cut_18: + 0.013736263736x(j1,m4) + 0.035714285714x(j3,m4) - 1.0
+sucessor_clique_cut_18: b;0.8214285714285718;x(j1,m4); 13.0; t(1,4); 0.013736263736263734;x(j3,m4); 18.000000000000004; t(3,4); 0.035714285714285726
+sucessor_clique_cut_19: + 0.017021276596x(j4,m4) + 0.046808510638x(j1,m4) - 1.0
+sucessor_clique_cut_19: b;0.8127659574468085;x(j1,m4); 13.0; t(1,4); 0.046808510638297864;x(j4,m4); 12.0; t(4,4); 0.017021276595744685
+sucessor_clique_cut_20: + 0.006430868167x(j5,m4) + 0.028938906752x(j2,m4) - 1.0
+sucessor_clique_cut_20: b;0.9710610932475885;x(j2,m4); 28.0; t(2,4); 0.028938906752411585;x(j5,m4); 25.0; t(5,4); 0.0064308681672025645
+sucessor_clique_cut_21: + 0.003289473684x(j3,m4) + 0.036184210526x(j5,m4) - 1.0
+sucessor_clique_cut_21: b;0.9638157894736845;x(j3,m4); 18.000000000000004; t(3,4); 0.0032894736842105183;x(j5,m4); 25.0; t(5,4); 0.036184210526315805
+notsucessor_clique_cut_32: + 0.007639726578x(j5,m3) + 0.016887816647x(j5,m0) + 0.028950542823x(j2,m0) - 1.0
+notsucessor_clique_cut_32: b;0.7973462002412546;x(j2,m0); 18.0; t(2,0); 0.028950542822677918;x(j5,m0); 15.000000000000002; t(5,0); 0.01688781664656213;x(j5,m3); 3.0; t(5,3); 0.007639726578206668
+notsucessor_clique_cut_38: + 0.001234567901x(j3,m1) + 0.027777777778x(j0,m4) + 0.015432098765x(j3,m4) - 1.0
+notsucessor_clique_cut_38: b;0.888888888888889;x(j3,m1); 0.0; t(3,1); 0.0012345679012345512;x(j0,m4); 22.0; t(0,4); 0.027777777777777776;x(j3,m4); 18.000000000000004; t(3,4); 0.015432098765432101
+notsucessor_clique_cut_46: + 0.029850746269x(j5,m5) + 0.054726368159x(j2,m5) - 1.0
+notsucessor_clique_cut_46: b;0.7263681592039801;x(j2,m5); 10.0; t(2,5); 0.054726368159203974;x(j5,m5); 6.0; t(5,5); 0.02985074626865672
+notsucessor_clique_cut_64: + 0.012567324955x(j1,m5) + 0.021543985637x(j3,m5) - 1.0
+notsucessor_clique_cut_64: b;0.8491921005385997;x(j1,m5); 23.0; t(1,5); 0.012567324955116699;x(j3,m5); 26.000000000000004; t(3,5); 0.021543985637342906
+notsucessor_clique_cut_66: + 0.005720228809x(j5,m3) + 0.003120124805x(j5,m4) + 0.03120124805x(j2,m4) - 1.0
+notsucessor_clique_cut_66: b;0.968798751950078;x(j5,m3); 3.0; t(5,3); 0.005720228809152365;x(j2,m4); 28.0; t(2,4); 0.031201248049921984;x(j5,m4); 25.0; t(5,4); 0.0031201248049922145
+[[(1, 2), (0, 1), (3, 2), (0, 2), (3, 1), (2, 1), (1, 4), (0, 4), (3, 4), (2, 4)], [(1, 2), (5, 4), (3, 2), (0, 2), (3, 1), (5, 2), (2, 4), (0, 4), (3, 4), (1, 1)], [(3, 2), (0, 0), (4, 5), (1, 0), (2, 0), (0, 5), (5, 0), (2, 5), (0, 2), (4, 0)], [(5, 5), (1, 5), (0, 3), (2, 3), (0, 5), (0, 4), (2, 5), (3, 4), (2, 4), (3, 5)], [(5, 4), (3, 2), (0, 2), (5, 2), (0, 4), (4, 2), (3, 4), (2, 4)]]
+general_clique_cut_79: + 0.008804108584x(j0,m4) + 0.005925842316x(j1,m4) + 0.011738811445x(j3,m4) + 0.010271460015x(j2,m4) - 1.0
+general_clique_cut_79: b;0.9882611885568908;x(j1,m4); 12.999999999999998; t(1,4); 0.005925842316157796;x(j0,m4); 28.000000000117005; t(0,4); 0.008804108584005871;x(j3,m4); 25.999999999999996; t(3,4); 0.01173881144534116;x(j2,m4); 35.000000000117005; t(2,4); 0.010271460014673512
+[[(1, 2), (0, 1), (3, 2), (0, 2), (3, 1), (2, 1), (1, 4), (0, 4), (3, 4), (2, 4)], [(1, 2), (5, 4), (3, 2), (0, 2), (3, 1), (5, 2), (2, 4), (0, 4), (3, 4), (1, 1)], [(3, 2), (0, 0), (4, 5), (1, 0), (2, 0), (0, 5), (5, 0), (2, 5), (0, 2), (4, 0)], [(1, 2), (5, 4), (3, 2), (0, 2), (5, 2), (0, 4), (4, 2), (3, 4), (2, 4)], [(5, 5), (1, 5), (0, 3), (2, 3), (0, 5), (0, 4), (2, 5), (3, 4), (2, 4), (3, 5)]]
+general_clique_cut_80: + 0.052323580034x(j1,m1) + 0.005163511188x(j5,m4) + 0.018502581756x(j3,m4) + 0.009036144578x(j2,m4) - 1.0
+general_clique_cut_80: b;0.9784522706206902;x(j5,m4); 34.0; t(5,4); 0.0051635111876075735;x(j2,m4); 35.61538461535638; t(2,4); 0.00903614457831324;x(j3,m4); 25.999999999999996; t(3,4); 0.01850258175559382;x(j1,m1); 0.0; t(1,1); 0.05232358003442341
+[[(1, 2), (0, 1), (3, 2), (0, 2), (3, 1), (2, 1), (1, 4), (0, 4), (3, 4), (2, 4)], [(3, 2), (0, 0), (4, 5), (1, 0), (2, 0), (0, 5), (5, 0), (2, 5), (0, 2), (4, 0)], [(1, 2), (0, 1), (5, 4), (3, 2), (3, 1), (5, 2), (2, 4), (0, 4), (3, 4), (1, 1)], [(3, 2), (0, 0), (5, 5), (1, 0), (2, 0), (1, 5), (0, 5), (5, 0), (2, 5), (0, 2)], [(5, 5), (1, 5), (0, 3), (2, 3), (0, 5), (0, 4), (2, 5), (3, 4), (2, 4), (3, 5)]]
+general_clique_cut_81: + 0.027652803687x(j1,m0) + 0.001426533524x(j5,m0) + 0.001536266872x(j2,m0) - 1.0
+general_clique_cut_81: b;0.9873022267039101;x(j1,m0); 33.0; t(1,0); 0.0276528036870405;x(j2,m0); 25.486288848711926; t(2,0); 0.0015362668715022435;x(j5,m0); 24.959780620828194; t(5,0); 0.001426533523537796
+[[(3, 2), (0, 0), (5, 5), (1, 0), (1, 5), (2, 0), (0, 5), (2, 5), (0, 2), (4, 0)], [(5, 4), (3, 2), (0, 2), (4, 4), (5, 2), (0, 4), (4, 2), (3, 4), (2, 4)], [(5, 5), (3, 0), (3, 1), (1, 5), (2, 0), (2, 5), (0, 5), (5, 0), (1, 0), (4, 0)], [(5, 4), (3, 2), (3, 0), (2, 0), (5, 0), (0, 4), (3, 4), (1, 0), (5, 2), (2, 4)], [(1, 2), (0, 1), (3, 2), (0, 2), (2, 1), (1, 4), (0, 4), (3, 4), (2, 4)]]
+general_clique_cut_82: + 0.000104800519x(j0,m4) + 0.001454107198x(j5,m4) + 0.000884254377x(j2,m0) + 0.026828932803x(j1,m0) + 9.1700454e-05x(j3,m4) + 0.000641903177x(j2,m4) - 1.0
+general_clique_cut_82: b;0.999463041270581;x(j5,m4); 41.30769228889999; t(5,4); 0.0014541071978306109;x(j2,m0); 27.857142857017664; t(2,0); 0.0008842543770593675;x(j0,m4); 26.00000000000001; t(0,4); 0.00010480051876255217;x(j3,m4); 26.0; t(3,4); 9.17004539172439e-05;x(j1,m0); 33.00000000000001; t(1,0); 0.026828932803217475;x(j2,m4); 37.85714285701767; t(2,4); 0.0006419031774205173
+[[(3, 2), (0, 0), (1, 0), (2, 0), (1, 5), (0, 5), (5, 0), (2, 5), (0, 2), (4, 0)], [(5, 4), (3, 2), (0, 2), (4, 4), (5, 2), (0, 4), (4, 2), (3, 4), (2, 4)], [(5, 5), (3, 0), (3, 1), (1, 5), (2, 0), (2, 5), (0, 5), (5, 0), (1, 0), (4, 0)], [(5, 4), (3, 2), (3, 0), (2, 0), (5, 0), (0, 4), (3, 4), (1, 0), (5, 2), (2, 4)], [(1, 2), (0, 1), (3, 2), (0, 2), (2, 1), (1, 4), (0, 4), (3, 4), (2, 4)]]

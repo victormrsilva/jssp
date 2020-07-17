@@ -5,7 +5,8 @@ import numpy as np
 
 from compact import Compact
 from JSSPInstance import JSSPInstance
-from mip.model import Model, xsum, maximize, Var, VarList, ConstrList, LinExpr
+from mip.model import Model, xsum, maximize
+from mip.entities import Var, LinExpr
 from mip.constants import BINARY, INTEGER, CONTINUOUS, OptimizationStatus
 import collections
 

@@ -1,5 +1,6 @@
 import numpy as np
-from mip.model import Model, xsum, Var
+from mip.model import Model, xsum
+from mip.entities import Var
 from mip.constants import INTEGER, BINARY, CONTINUOUS, OptimizationStatus
 from itertools import permutations, combinations
 import time

@@ -5,7 +5,8 @@ from config import Config
 from JSSPInstance import JSSPInstance
 
 from mip.callbacks import CutPool
-from mip.model import Model, xsum, Var
+from mip.model import Model, xsum, maximize
+from mip.entities import Var
 from mip.constants import INTEGER, BINARY, CONTINUOUS, OptimizationStatus
 from mip.constants import CutType
 
@@ -51,6 +52,7 @@ class Compact:
         self.u = [
             [[0 for i in range(self.instance.m)]
              for k in range(self.instance.n)] for j in range(self.instance.n)]
+        self.cp = CutPool()
 
 
     # build the problem with big-M
@@ -349,8 +351,16 @@ class Compact:
 
         self.model.optimize(relax=True)
         self.model.verbose = 0
-        firstObjValue = self.model.objective_value
+        self.totalBasicCuts = 0
+        self.totalBasicCutsEpsilon = 0
+        self.totalTriangleCuts = 0
+        self.totalCliqueCuts = 0
+        self.totalTwoJobsCuts = 0
+        self.totalLateJobCuts = 0
+        self.totalHalfCuts = 0
 
+        firstObjValue = self.model.objective_value
+        # self.printSolution()
         # if self.config.get_property('clique_cuts') == 1:
         #     for a in range(self.instance.m):
         #         # clique_cuts = 0
@@ -358,14 +368,32 @@ class Compact:
         #         self.totalCliqueCuts += clique_cuts
         self.iterationsCuts = 0
         while newConstraints:
+            self.cp = CutPool()
             self.iterationsCuts += 1
             newConstraints = False
             # self.clique_heuristic()
-            # self.printSolution()
-            # input('solution')
             hasCuts = 0
             # start = time()
+            print('iteration', self.iterationsCuts)
+            # input()
+            clique_cuts = 0
+            if self.config.get_property('mip_general_cliques_sucessor') == 1:
+                clique_cuts += self.executeSucessor()
+                # self.totalCliqueCuts += clique_cuts
+
+            if self.config.get_property('mip_general_cliques_not_sucessor') == 1:
+                clique_cuts += self.executeNotSucessor()
+                # self.totalCliqueCuts += clique_cuts
+
+            if self.config.get_property('mip_general_cliques_quad') == 1:
+                clique_cuts += self.executeQuad(3, 3)
+
+            if self.config.get_property('mip_general_cliques_cuts') == 1:
+                clique_cuts += self.mip_general_cliques()
+                # self.totalCliqueCuts += clique_cuts
+            print('cliques', clique_cuts)
             for a in range(self.instance.m):
+                # print('machine',a)
                 triangle_cuts = 0
                 if self.config.get_property('triangle_cuts') == 1:
                     triangle_cuts = self.triangle_cuts_best(a)
@@ -381,13 +409,16 @@ class Compact:
                             basic_cuts += cuts
                             if cuts > 0:
                                 set_s.append(S)
-                clique_cuts = 0                    
+                                    
                 if self.config.get_property('clique_cuts') == 1:
                     for s in set_s:
                         # clique_cuts = 0
+                        if len(s) > 8:
+                            continue
+                        # print(s)
                         clique_cuts = self.clique_cuts(s, a)
                         self.totalCliqueCuts += clique_cuts
-
+                
                 two_job_cuts = 0
                 if self.config.get_property('two_jobs_cuts') == 1:
                     two_job_cuts = self.two_jobs_cuts_best(a)
@@ -431,6 +462,9 @@ class Compact:
                 newConstraints = True
             self.model.optimize(relax=True)
             self.model.write('teste.lp')
+            # self.printSolution()
+
+
             gainObj = self.model.objective_value - firstObjValue
         # print(
         #     'Number of iterations: {}. Gain of objective value: {}. Total of cuts found: {}. Objective value: {}.'.format(
@@ -609,7 +643,7 @@ class Compact:
             return 0
 
         print(m.num_solutions, m.sol_pool_size)
-        input()
+        # input()
         S = []
         for j in range(self.instance.n):
             if x_aux[j].x > 0.99999:
@@ -644,7 +678,7 @@ class Compact:
         # self.printSolution()
         print(var, c_name)
         
-        input()
+        # input()
         self.model += var, c_name
 
         # self.model += xsum(self.instance.times[j][a] * self.x[j][a] for j in S) >= ls, 'cut_basic_best' \
@@ -1018,7 +1052,9 @@ class Compact:
         if (rs - ls) > 0.00001: # if rs < ls:
             cuts += 1
             # print(ls, rs, xsum(self.instance.times[j][a] * (self.c - self.x[j][a]) for j in S) >= rs)
-            self.model += xsum(self.instance.times[j][a] * (self.c - self.x[j][a]) for j in S) >= rs, 'basic_cuts_reverse{}({},{})'.format(self.iterationsCuts,''.join(str(i) for i in S), a)
+            linexpr = xsum(self.instance.times[j][a] * (self.c - self.x[j][a]) for j in S) >= rs
+            if self.cp.add(linexpr):
+                self.model += linexpr, 'basic_cuts_reverse{}({},{})'.format(self.iterationsCuts,''.join(str(i) for i in S), a)
 
         return cuts
 
@@ -1086,27 +1122,44 @@ class Compact:
 
 
     def clique_cuts(self, S, a):
+
         s_aux = list(range(len(S)))
         perms = np.asarray(list(permutations(s_aux)))
         perms = [np.asarray(s) for s in perms]
 
         K = [[0] * len(S) for i in range(len(perms))]
+        
 
+        # for i in range(len(K)):
+        #     soma = 0
+        #     for j in range(len(K[i])):
+        #         if j == 0:
+        #             soma = self.instance.est[S[perms[i][j]]][a]
+        #         else:
+        #             soma = max(soma + self.instance.times[S[perms[i][j - 1]]][a], self.instance.est[S[perms[i][j]]][a])
+        #         for aux in range(j, len(K[i])):
+        #             K[i][perms[i][aux]] = soma
         for i in range(len(K)):
-            soma = 0
-            for j in range(len(K[i])):
-                if j == 0:
-                    soma = self.instance.est[S[perms[i][j]]][a]
-                else:
-                    soma = max(soma + self.instance.times[S[perms[i][j - 1]]][a], self.instance.est[S[perms[i][j]]][a])
-                for aux in range(j, len(K[i])):
-                    K[i][perms[i][aux]] = soma
+            pos = perms[i][0] 
+            K[i][pos] = self.instance.est[S[pos]][a]
+            for j in range(1,len(K[i])):
+                pos = perms[i][j]
+                pos_ant = perms[i][j-1]
+                K[i][pos] = max(K[i][pos_ant] + self.instance.times[S[pos_ant]][a],  self.instance.est[S[pos]][a])
         m = self.m
         m.clear()
         m.verbose = 0
         t = [m.add_var(var_type=CONTINUOUS, lb=0, name='t({})'.format(i)) for i in S]
         # c = m.add_var(var_type=CONTINUOUS, lb=0, name='c')
-        m.objective = xsum(self.x[S[i]][a].x * t[i] for i in range(len(S)))
+        m.objective = xsum(round(self.x[S[i]][a].x, 8) * t[i] for i in range(len(S)))
+        # print('machine', a)
+        # for i in S:
+        #     print('i', ': est =', self.instance.est[i][a], 'p =', self.instance.times[i][a])
+        # for i in range(len(K)):
+        #     for j in range(len(K[i])):
+        #         print('{}*{} '.format(K[i][j], t[j]), end='')
+        #     print()
+        # input()
 
         for i in range(len(K)):
             m += xsum(K[i][j] * t[j] for j in range(len(K[i]))) >= 1, 'K({})'.format(i)
@@ -1117,8 +1170,8 @@ class Compact:
         if m.status != OptimizationStatus.OPTIMAL:
             return 0
 
-        soma = m.objective_value
-        if soma > 0.99999:
+        soma = round(sum(round(t[i].x, 10) * self.x[S[i]][a].x for i in range(len(S))), 8)
+        if soma >= 0.99:
             return 0
         # x_bar = []
         # t_bar = []
@@ -1128,11 +1181,21 @@ class Compact:
         c_name = 'cut_clique_{}({},{})'.format(self.iterationsCuts, ''.join(str(i) for i in S), a)
 
         # print(x_bar, t_bar, soma, c_name)
+        m.write('teste_cut.lp')
+        # if (c_name == 'cut_clique_1(03478,5)'):
+        #     for i in S:
+        #         print(self.x[i][a], 'est = {} p = {}'.format(self.instance.est[i][a], self.instance.times[i][a]))
+        #     for i in range(len(K)):
+        #         for j in range(len(K[i])):
+        #             print('{}*t({}) '.format(K[i][j], S[j]), end='')
+        #         print()
+        # print(S, soma)
+        # print('obj:', xsum(round(self.x[S[i]][a].x, 8) * t[i] for i in range(len(S))))
         # m.write('teste_cut.lp')
-        # print(S)
+        # print(c_name,':', xsum(round(t[i].x, 8) * self.x[S[i]][a] for i in range(len(S))))
         # input('clique machine {}'.format(a))
 
-        self.model += xsum(round(t[i].x, 10) * self.x[S[i]][a] for i in range(len(S))) >= 1, c_name
+        self.model += xsum(round(t[i].x, 10) * self.x[S[i]][a] for i in range(len(S))) >= 0.99, c_name
 
         return 1
 
@@ -1149,37 +1212,41 @@ class Compact:
         # timeLimit = 60000  # 10 minutes
         lc = self.lc if lc is None else min(lc, self.instance.n)
         hc = self.hc if hc is None else min(hc, self.instance.n)
-        for sizeS in range(hc, lc, -1):
+        set_s = list()
+        for sizeS in range(hc, lc-1, -1):
             # print('LC: {} HC: {} Machine: {}'.format(lc, sizeS, a))
             comb = combinations(list(range(0, self.instance.n)), sizeS)  # combinations of all possibles jobs of size sizeS
             comb = list(comb)
-            dict = {}
-            for s in range(len(comb)):
-                # end = time()
-                # if (end - start) >= timeLimit:
-                #     return 0
-                dist = 0
-                S = comb[s]
-                for i in list(range(0, sizeS)):
-                    for j in list(range(i + 1, sizeS)):
-                        dist += abs(self.x[S[i]][a].x - self.x[S[j]][a].x)
-                dict[s] = dist
-            i = 0
+            set_s.extend(comb)
+        
+        # input(set_s)
+        # for s in set_s:
+        #     # end = time()
+        #     # if (end - start) >= timeLimit:
+        #     #     return 0
+        #     dist = 0
+        #     S = comb[s]
+        #     for i in list(range(0, sizeS)):
+        #         for j in list(range(i + 1, sizeS)):
+        #             dist += abs(self.x[S[i]][a].x - self.x[S[j]][a].x)
+        #     dict[s] = dist
+        i = 0
+        # end = time()
+        # if (end - start) >= timeLimit:
+        #     # print('Time limit for enumaration of cliques')
+        #     return 0
+        for S in set_s:
+            # input(S)
             # end = time()
             # if (end - start) >= timeLimit:
-            #     # print('Time limit for enumaration of cliques')
-            #     return 0
-            for key, value in sorted(dict.items(), key=lambda l: l[1]):
-                # end = time()
-                # if (end - start) >= timeLimit:
-                #     # print('Time limit for finding cliques. Cliques found: {}'.format(cliquesFound))
-                #     return cliquesFound
-                S = comb[key]
-                cliquesFound += self.clique_cuts(S, a)
-                i += 1
-                if i >= self.maxCliques:
-                    # print('Max clique found. Cliques found: {}'.format(i))
-                    break
+            #     # print('Time limit for finding cliques. Cliques found: {}'.format(cliquesFound))
+            #     return cliquesFound
+            # S = comb[key]
+            cliquesFound += self.clique_cuts(S, a)
+            i += 1
+            if i >= self.maxCliques:
+                # print('Max clique found. Cliques found: {}'.format(i))
+                break
         return cliquesFound
 
     # triangle cuts
@@ -1227,9 +1294,9 @@ class Compact:
                             print('{} {:.4f}'.format(self.y[i][j][a].name, self.y[i][j][a].x))
                         else:
                             print('y({},{},{}) ----'.format(i, j, a))
-            input('erro')
+            # input('erro')
         m.write('teste_cut.lp')
-        input('teste')
+        # input('teste')
         m.optimize()
 
         if m.status != OptimizationStatus.OPTIMAL:
@@ -1254,7 +1321,7 @@ class Compact:
         if len(names) < 3:
             m.write('teste_cut.lp')
             print(names, m.objective_value)
-            input('deu merda')
+            # input('deu merda')
         c_name = 'cut_triangle_best({},{})'.format(''.join(str(i) for i in names), a)
         # print(c_name)
         # m.write('teste_cut.lp')
@@ -1365,6 +1432,7 @@ class Compact:
         self.iterationsCuts = 0
         self.model.verbose = 0
         self.model.optimize(relax=True)
+        # self.printSolution()
         firstObjValue = self.model.objective_value
         while newConstraints:
             self.iterationsCuts += 1
@@ -1376,6 +1444,7 @@ class Compact:
             cutsFound += hasCuts
             if hasCuts > 0:
                 self.model.optimize(relax=True)
+                # self.printSolution()
                 print('Added {} cuts'.format(hasCuts))
                 self.model.write('teste.lp')
                 newConstraints = True
@@ -1385,6 +1454,10 @@ class Compact:
         end = time()
         lastObjValue = self.model.objective_value
         elapsedTime = round(end - start, 2)
+
+        self.model.write('teste.lp')
+        print(firstObjValue, lastObjValue, elapsedTime, cutsFound)
+        # input()
         return firstObjValue, lastObjValue, elapsedTime, cutsFound
 
     def testCliqueSA(self, steps):
@@ -1514,7 +1587,7 @@ class Compact:
             print(cut)
             self.model += cut
         print('Total cuts: {}'.format(len(cp.cuts)))
-        input()
+        # input()
         return len(cp.cuts)
 
     def cycles(self, neighbors, first, edges, cycle, total):
@@ -1594,12 +1667,12 @@ class Compact:
             if select == 3:
                 index = 0
                 while cliques == 0 and index < 5:
-                    cliques = self.createK(d[index])
+                    cliques = self.solveGeneralClique(d[index])
                     index += 1
                     # print(cliques, index)
                     # input()
             else:
-                cliques = self.createK(d)
+                cliques = self.solveGeneralClique(d)
             # cliques = self.general_cliques(d)
         total = cliques
 
@@ -1637,12 +1710,12 @@ class Compact:
                     index = 0
                     cliques = 0
                     while cliques == 0 and index < 5:
-                        cliques = self.createK(d[index])
+                        cliques = self.solveGeneralClique(d[index])
                         index += 1
                         # print(cliques, index)
                         # input()
                 else:
-                    cliques = self.createK(d)
+                    cliques = self.solveGeneralClique(d)
                 # cliques = self.general_cliques(d)
                 total += cliques
             # print(d)
@@ -1733,7 +1806,7 @@ class Compact:
         if max > len(set_y):
             max = len(set_y)
 
-        print(max)
+        # print(max)
         while i < max:
             key, value = set_y[i]
             # print(key, value)
@@ -1886,10 +1959,10 @@ class Compact:
                     d.add((k, i))
             set_d[aux] = list(d)
         print(set_d)
-        input()
+        # input()
         return set_d
 
-    def newCreateK(self, S, pos, sol, K, last_job, last_machine, lenK, maxK):
+    def createK(self, S, pos, sol, K, last_job, last_machine, lenK, maxK):
         # print('S', S, 'len', len(S))
         # print('sol', sol)
         # print('pos', pos)
@@ -1945,7 +2018,7 @@ class Compact:
                 sol[index] = est
                 last_machine[j] = i
                 last_job[i] = j
-                lenK = self.newCreateK(S, pos, sol, K, last_job, last_machine, lenK, maxK)
+                lenK = self.createK(S, pos, sol, K, last_job, last_machine, lenK, maxK)
                 # print('reinsert pos', k, 'from', S, 'and go back')
                 S.insert(k, (j, i))
                 sol[index] = est_antigo
@@ -1956,8 +2029,8 @@ class Compact:
                 # input()
         return lenK
 
-    def createK(self, S):
-        print(S)
+    def solveGeneralClique(self, S, name='general'):
+        # print(S)
         P = list(permutations(range(len(S))))
         maxK = 100000
         lenK = 0
@@ -1967,78 +2040,8 @@ class Compact:
         last_job = np.full(self.instance.m, -1)  # last job added for machine i
         last_machine = np.full(self.instance.n, -1)  # last machine added in job j
 
-        lenK = self.newCreateK(S, pos, path, K, last_job, last_machine, lenK, maxK)
+        lenK = self.createK(S, pos, path, K, last_job, last_machine, lenK, maxK)
         # input(K[:lenK])
-
-        # for p in P:
-        #     path = np.zeros(len(S))
-        #     last_job = np.full(self.instance.m, -1)  # last job added for machine i
-        #     last_machine = np.full(self.instance.n, -1)  # last machine added in job j
-        #     # print('=========')
-        #     # print('p', p)
-        #     # print('path', path)
-        #     # print('last_job', last_job)
-        #     # print('last_machine', last_machine)
-        #     for index in p:
-        #         (j ,i) = S[index]
-                
-        #         est_last_machine = 0
-        #         est_last_job = 0
-        #         # print((j, i))
-        #         if last_machine[j] >= 0: # check for order conflict if a machine has been added for the job j
-        #             order_now = self.instance.o[j][i]
-        #             order_last = self.instance.o[j][last_machine[j]]
-        #             # print(order_now, order_last, order_now < order_last)
-        #             if order_now < order_last:  # conflict found
-        #                 # input('break')
-        #                 break
-        #             est_last_machine = path[pos[(j, last_machine[j])]] + self.instance.distances[j][last_machine[j]][i]
-        #         if last_job[i] >= 0:
-        #             est_last_job = path[pos[(last_job[i], i)]] + self.instance.times[last_job[i]][i]
-        #         est = max(self.instance.est[j][i], est_last_machine, est_last_job)
-        #         # if est > self.instance.lst[j][i]:
-        #         #     break
-        #         index = pos[(j, i)]
-        #         path[index] = est
-        #         last_machine[j] = i
-        #         last_job[i] = j
-        #     else: 
-        #         # if (path[pos[(5, 2)]] == 40):
-        #         # print(p)
-        #         # print(path)
-        #         #     input()
-        #         # print('last_job', last_job)
-        #         # print('last_machine', last_machine)
-
-        #         if not any((K[:lenK]==path).all(1)):
-        #             # for k in range(self.instance.m):
-        #             #     print('machine {}: '.format(k))
-        #             #     for (j, i) in p:
-        #             #         if k == i:
-        #             #             print('{} - {} '.format((j, i), path[pos[(j, i)]]), end='')
-        #             #     print()
-        #             # for k in range(self.instance.n):
-        #             #     print('job {}: '.format(k))
-        #             #     for (j, i) in p:
-        #             #         if k == j:
-        #             #             print('{} - {} '.format((j, i), path[pos[(j, i)]]), end='')
-        #             #     print()
-        #             # input()
-        #             K[lenK] = path
-        #             lenK = lenK + 1
-
-        #         if lenK == len(K):
-        #             K = np.vstack((K, np.zeros(shape=(maxK, len(S)))))
-        #         # print(K[:lenK])
-        #         # input() 
-        # print(K[:lenK])
-        # input() 
-
-        # for i in range(lenK):
-        #     for index in range(len(S)):
-        #         print(S[index],':', K[i][index], ' ', end='')
-        #     print()
-        # input(lenK)
 
         m = self.m
         m.clear()
@@ -2051,6 +2054,7 @@ class Compact:
         # for a in t:
         #     print(a, t[a])
         qtd = 0
+        # input()
         for p in K[:lenK]:
             # print(p)
             m += xsum(p[pos[(j, i)]]*t[(j,i)] for (j, i) in S) >= 1, 'c({})'.format(qtd)
@@ -2066,28 +2070,36 @@ class Compact:
         #     print(self.x[j][i].x, t[(j, i)])
         # input()
         m.objective = xsum(self.x[j][i].x * t[(j, i)] for (j, i) in S)
-        m.write('teste_cuts.lp')
+        # m.write('teste_cuts.lp')
         # input('feito')
         m.optimize()
         if m.status != OptimizationStatus.OPTIMAL or m.objective_value > (1 - 1e-8):
-            if m.status == OptimizationStatus.OPTIMAL:
-                print('obj: ', m.objective_value)
-            print('erro')
+            # if m.status == OptimizationStatus.OPTIMAL:
+            #     print('obj: ', m.objective_value)
+            # print('erro')
             return 0
-        print('obj: ', m.objective_value)
+        # print('obj: ', m.objective_value)
         # input()
 
-        print('solutions: ', m.num_solutions)
+        # print('solutions: ', m.num_solutions)
         # input()
-        c_name = 'cut_clique_{}'.format(self.totalCliqueCuts)
+        c_name = '{}_clique_cut_{}'.format(name, self.totalCliqueCuts)
         self.totalCliqueCuts += 1
 
         var = 0
+        values = 'b;{}'.format(m.objective_value)
         for (job, machine) in S:
-            var += self.x[job][machine] * t[(job, machine)].x
-        print(var)
-        self.model += var >= 1, c_name
-        return 1
+            var += self.x[job][machine] * round(t[(job, machine)].x, 12)
+            if t[(job, machine)].x > 0.000001:
+                values += ';{}; {}; {}; {}'.format(self.x[job][machine].name, self.x[job][machine].x, t[(job, machine)].name, t[(job, machine)].x)
+        expr = var >= 1
+        
+        if self.cp.add(expr):
+            self.model += expr, c_name
+            print('{}: {}'.format(c_name, expr))
+            print('{}: {}'.format(c_name, values))
+            return 1
+        return 0
 
 
     def general_cliques(self, d):
@@ -2236,3 +2248,71 @@ class Compact:
         # print('final est: ', est)
         # input()
         return est
+
+    def executeSucessor(self):
+        cliques = 0
+        for i in range(self.instance.m - 1):
+            for j in range(self.instance.n):
+                for k in range(j+1, self.instance.n):
+                    S = [(j, i), (k, i)]
+                    o = self.instance.o[j][i]
+                    if o < self.instance.m-1:
+                        ii = self.instance.machines[j][o+1]
+                        S.append((j, ii))
+                    o = self.instance.o[k][i]
+                    if o < self.instance.m-1:
+                        ii = self.instance.machines[k][o+1]
+                        S.append((k, ii))
+                    cliques += self.solveGeneralClique(S, 'sucessor')
+        return cliques
+
+    def executeNotSucessor(self):
+        cliques = 0
+        for i in range(self.instance.m - 1):
+            for j in range(self.instance.n):
+                for k in range(j+1, self.instance.n):
+                    for h in range(i+1, self.instance.m):
+                        o1 = self.instance.o[j][i]
+                        o2 = self.instance.o[j][h]
+                        o3 = self.instance.o[k][i]
+                        o4 = self.instance.o[k][h]
+                        if abs(o1 - o2) > 1 and abs(o3 - o4) > 1:
+                            S = [(j, i), (k, i), (j, h), (k, h)]
+                            cliques += self.solveGeneralClique(S, 'notsucessor')
+        return cliques
+
+    # execute quadrant separation
+    def executeQuad(self, sizeQ, sizeJ):
+        cliques = 0
+        for i in range(self.instance.m-sizeQ+1):
+            for j in range(self.instance.n-sizeJ+1):
+                S = []
+                for k in range(j, j+sizeJ):
+                    for h in range(i, i+sizeQ):
+                        m2 = self.instance.machines[k][h]
+                        S.append((k, m2))
+                cliques += self.solveGeneralClique(S, 'quad')
+        # self.model.write('teste.lp')
+        # for c in self.cp.cuts:
+        #     print(c)
+        # input('acabou')
+        return cliques
+
+    def splitCuts(self):
+        delta = [0, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5]
+        cuts = 0
+        for i in range(len(delta)-1):
+            cuts += self.splitCutsMip(delta[i])
+
+    def splitCutsMip(self, d):
+        m = self.m
+        m.clear()
+        m.verbose = 0
+        for c in self.model.constrs:
+            print(c.name, c.name.find('cut'))
+        
+        constrs = [c for c in self.model.constrs if c.name.find('cut') == -1]
+        input(constrs)
+
+        u = [m.add_var(var_type=CONTINUOUS, lb=0, name='u({})'.format(constrs[i].name)) for i in range(len(constrs))]
+

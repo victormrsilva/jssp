@@ -25,7 +25,7 @@ class Compact:
     def __init__(self, conf: Config):
         self.config = conf
         self.instance = JSSPInstance(conf.get_property("instance_name"), conf.get_property("horizon"))
-        self.m = Model(solver_name="cbc")
+        self.m = Model(solver_name="grb")
         self.m.verbose = 0
         self.model = Model(name='compact', solver_name="cbc")
         self.model.verbose = 1
@@ -2306,7 +2306,8 @@ class Compact:
         flag = 0
         iterations = 0
         cuts = 0
-        self.model.optimize(relax=True)
+        self.model.relax()
+        self.model.optimize()
         print('solucao relaxada: {}'.format(self.model.objective_value))
         
         self.cp = CutPool()
@@ -2347,10 +2348,10 @@ class Compact:
                 # print('solucao exata: {}'.format(self.model.objective_value))
                 self.model.verbose = 0
                 self.model.write('{}_split.lp'.format(self.instance.instancename))
-                self.model.optimize(relax=True)
+                self.model.optimize()
                 # self.printSolution()
                 print('solucao relaxada: {}'.format(self.model.objective_value))
-                # input()
+                input()
             print('cuts = {}, continue = {}, flag = {}'.format(valid_cuts, continueSeparation, flag))
             
             # input()
@@ -2358,7 +2359,7 @@ class Compact:
         
 
     def splitCutsMip(self, d):
-        print('d', d)
+        # print('d', d)
         m = self.m
         m.clear()
         m.verbose = 0

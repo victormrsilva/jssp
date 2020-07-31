@@ -59,10 +59,10 @@ class Compact:
     def constructProblemM(self):
         # self.instance.print()
 
-        self.c = self.model.add_var(var_type=INTEGER, name="C")
+        self.c = self.model.add_var(var_type=INTEGER, lb=0, ub=self.instance.K, name="C")
         for i in range(self.instance.m):
             for j in range(self.instance.n):
-                self.x[j][i] = self.model.add_var(var_type=INTEGER, name='x(j{},m{})'.format(j, i))
+                self.x[j][i] = self.model.add_var(var_type=INTEGER, lb=self.instance.est[j][i], ub=self.instance.lst[j][i], name='x(j{},m{})'.format(j, i))
                 for k in range(j+1, self.instance.n):
                     self.y[j][k][i] = self.model.add_var(var_type=BINARY, name='y(j{},k{},m{})'.format(j, k, i))
                     self.y[k][j][i] = self.model.add_var(var_type=BINARY, name='y(j{},k{},m{})'.format(k, j, i))
@@ -2299,20 +2299,199 @@ class Compact:
         return cliques
 
     def splitCuts(self):
+        grid = [0, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5]
         delta = [0, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5]
+        continueSeparation = True
+        
+        flag = 0
+        iterations = 0
         cuts = 0
-        for i in range(len(delta)-1):
-            cuts += self.splitCutsMip(delta[i])
+        self.model.optimize(relax=True)
+        print('solucao relaxada: {}'.format(self.model.objective_value))
+        
+        self.cp = CutPool()
+        while continueSeparation:
+            iterations = iterations + 1
+            valid_cuts = 0
+            for d in delta:
+                valid_cuts = valid_cuts + self.splitCutsMip(d)
+                # print('{} '.format(d), end='')
+                
+            print(valid_cuts)
+            
+            if valid_cuts == 0:
+                if flag == 1:
+                    continueSeparation = False
+                else:
+                    flag = 1
+                    # enrich grid
+                    aux = [0]*(2*len(grid)-1)
+                    aux_delta = list()
+                    for i in range(len(grid)-1):
+                        aux[2*i] = grid[i]
+                        aux[2*i +1 ] = (grid[i] + grid[i+1])/2
+                        aux_delta.append((grid[i] + grid[i+1])/2) 
+                    aux[len(aux)-1] = grid[len(grid)-1]
+                    grid = aux
+                    delta = aux_delta
+                    print('new grid: ', grid)
+                    print('new delta: ', delta)
+            else:
+                for c in self.cp.cuts[cuts:]:
+                    cuts = cuts + 1
+                    # print(c)
+                    self.model += c, 'cut_split({})'.format(cuts)
+                flag = 0
+                
+                # self.model.optimize()
+                # print('solucao exata: {}'.format(self.model.objective_value))
+                self.model.verbose = 0
+                self.model.write('{}_split.lp'.format(self.instance.instancename))
+                self.model.optimize(relax=True)
+                # self.printSolution()
+                print('solucao relaxada: {}'.format(self.model.objective_value))
+                # input()
+            print('cuts = {}, continue = {}, flag = {}'.format(valid_cuts, continueSeparation, flag))
+            
+            # input()
+        print('total', cuts)
+        
 
     def splitCutsMip(self, d):
+        print('d', d)
         m = self.m
         m.clear()
         m.verbose = 0
-        for c in self.model.constrs:
-            print(c.name, c.name.find('cut'))
         
         constrs = [c for c in self.model.constrs if c.name.find('cut') == -1]
-        input(constrs)
 
         u = [m.add_var(var_type=CONTINUOUS, lb=0, name='u({})'.format(constrs[i].name)) for i in range(len(constrs))]
+        v = [m.add_var(var_type=CONTINUOUS, lb=0, name='v({})'.format(constrs[i].name)) for i in range(len(constrs))]
+        r = [m.add_var(var_type=INTEGER, lb=0, ub=self.model.vars[i].ub, name='r({})'.format(self.model.vars[i].name)) for i in range(len(self.model.vars))]
+        r0 = m.add_var(var_type=INTEGER, lb=0, ub=self.instance.K, name='r0') 
+
+        newconstraints = {self.model.vars[i].name: [0]*2 for i in range(len(self.model.vars))}
+        newconstraints['b'] = [0]*2
+        # input(newconstraints)
+        for i in range(len(constrs)):
+            mult = 1
+            c = constrs[i]
+            if c.expr.sense == '<':
+                mult = -1
+            for (var, coeff) in c.expr.expr.items():
+                newconstraints[var.name][0] = newconstraints[var.name][0] + mult * u[i] * coeff
+                newconstraints[var.name][1] = newconstraints[var.name][1] + mult * v[i] * coeff
+
+            newconstraints['b'][0] = newconstraints['b'][0] + (-1*c.expr.const) * u[i]
+            newconstraints['b'][1] = newconstraints['b'][1] + (-1*c.expr.const) * v[i]
+
+        lin = 0
+
+        for i in range(len(constrs)):
+            c = constrs[i]
+            if c.expr.sense == '<':
+                mult = -1
+            soma = 0
+
+            # print('(', end='')
+            for (var, coeff) in c.expr.expr.items():
+                # print('aj',(coeff*mult), 'x',var.x, '+ ', end='')
+                soma = soma + (coeff*mult)*var.x
+            
+            soma = soma + c.expr.const * mult
+            # print('b', c.expr.const,') =',soma,u[i])
+            
+            lin = lin + soma*u[i]
+
+        for i in range(len(self.model.vars)):
+            # print(d,r[i],self.model.vars[i].x)
+            lin = lin - d*r[i]*self.model.vars[i].x
+            m += newconstraints[self.model.vars[i].name][0] - newconstraints[self.model.vars[i].name][1] - r[i] == 0, 'c35({})'.format(self.model.vars[i].name)
+        lin = lin + d*r0
+        m.objective = lin
+
+        m += newconstraints['b'][1] - newconstraints['b'][0] + r0 == d-1, 'c37'
+        
+        # print(lin)
+        # input()
+        
+        # m.write('teste.lp')
+        # m.verbose = 1
+        start = time()
+        m.optimize()
+        end = time()
+        print('elapsed: {} sec'.format(round(end-start, 4)))
+        # for i in range(len(u)):
+        #     print(u[i].name, u[i].x)
+        #     print(v[i].name, v[i].x)
+        # for i in range(len(r)):
+        #     print(r[i].name, r[i].x)
+        # input('write_aux')
+        
+        valid_solutions = 0
+        # print(m.num_solutions)
+        for k in range(m.num_solutions):
+            # print(r0.name, r0.xi(k))
+            # print('obj', m.objective_values[k])
+            if round(m.objective_values[k], 8) < -1e-8:
+                
+                verificacao = 0
+                lin = 0        
+                for i in range(len(constrs)):
+                    c = constrs[i]
+                    if c.expr.sense == '<':
+                        mult = -1
+                    soma = 0
+                    aux = 0
+                    # print('(', end='')
+                    for (var, coeff) in c.expr.expr.items():
+                        # print('aj',(coeff*mult), 'x',var.x, '+ ', end='')
+                        soma = soma + (coeff*mult)*var
+                        aux = aux + (coeff*mult)*var.x
+                    
+                    soma = soma + c.expr.const * mult
+                    aux = aux + c.expr.const * mult
+                    # print('b', c.expr.const,') =',soma,u[i])
+                    
+                    verificacao = verificacao + aux*u[i].xi(k)
+                    lin = lin + soma*u[i].xi(k)
+
+                for i in range(len(self.model.vars)):
+                    # print(d,r[i],self.model.vars[i].x)
+                    lin = lin - d*r[i].xi(k)*self.model.vars[i]
+                    verificacao = verificacao - d*r[i].xi(k)*self.model.vars[i].x
+                lin = lin + d*r0.xi(k)
+                verificacao = verificacao + d*r0.xi(k)
+
+                # for i in range(len(constrs)):
+                #     c = constrs[i]
+                #     if c.expr.sense == '<':
+                #         mult = -1
+                #     soma = 0
+                #     for (var, coeff) in c.expr.expr.items():
+                #         verificacao = verificacao + (coeff*mult)*var.x
+                #         soma = soma + (coeff*mult)*var
+                    
+                #     soma = soma + c.expr.const
+                #     verificacao = verificacao + c.expr.const
+                #     lin = lin + soma*u[i].xi(k)
+                #     verificacao = verificacao*u[i].xi(k)
+                # for i in range(len(self.model.vars)):
+                #     lin = lin - d*r[i].xi(k)*self.model.vars[i]
+                #     verificacao = verificacao - d*r[i].xi(k)*self.model.vars[i].x
+                # lin = lin + d*r0.xi(k)
+                # verificacao = verificacao + d*r0.xi(k)
+                # print(lin)
+                # self.printSolution()
+                if self.cp.add(lin >= 0):
+                    valid_solutions = valid_solutions + 1
+                    # print('obj', m.objective_values[k], 'verificacao', verificacao)
+                # self.model.write('{}1_split.lp'.format(self.instance.instancename))
+                # self.model.optimize(relax=True)
+                # self.printSolution()
+                # input('write')
+
+        return valid_solutions
+
+
 

@@ -115,7 +115,7 @@ try:
     compact.model.verbose = 0
     compact.model.optimize(relax=True)
     start = time.time()
-    
+    compact.model.write('{}.lp'.format(instance_name))
     doitReturnValue = func_timeout(10800, compact.splitCuts)
     end = time.time()
 except FunctionTimedOut:

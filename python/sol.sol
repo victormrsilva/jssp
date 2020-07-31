@@ -1,5 +1,30 @@
 # Solution for model OBJROW
-# Objective value = 338
-b 338
-a04 13
-a14 3
+# Objective value = 22
+C 22
+x(j0,m1) 3
+x(j0,m2) 0
+x(j0,m0) 14
+x(j1,m0) 3
+x(j1,m1) 0
+x(j1,m2) 4
+x(j2,m0) 4
+x(j2,m1) 14
+x(j2,m2) 19
+y(j0,k1,m0) 0
+y(j0,k1,m1) 0
+y(j0,k1,m2) 1
+y(j0,k2,m0) 0
+y(j0,k2,m1) 1
+y(j0,k2,m2) 1
+y(j1,k0,m0) 1
+y(j1,k0,m1) 1
+y(j1,k0,m2) 0
+y(j1,k2,m0) 1
+y(j1,k2,m1) 1
+y(j1,k2,m2) 1
+y(j2,k0,m0) 1
+y(j2,k0,m1) 0
+y(j2,k0,m2) 0
+y(j2,k1,m0) 0
+y(j2,k1,m1) 0
+y(j2,k1,m2) 0

@@ -12,72 +12,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="26e86f02-a7b5-4ec3-b676-9458074a76e9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/python/.ipynb_checkpoints/Untitled-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/Untitled.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/cg.lp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/cplex.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/ft06" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/ft06_cg.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/ft06_modelM.lp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/ft06_modelMCLin.lp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/ft06_sety.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/ft06_sety_y.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/nohup.out" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/sol.sol1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/teste.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/teste.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/testep2depth7.lp1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/untitled.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/vi3328_modelM.lp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/vi3328_modelMCLin.lp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/vi4439_modelM.lp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/vi4439_modelMCLin.lp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/vi_33_28" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/vi_33_28.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/vi_33_28.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/vi_33_28_cg.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/vi_33_28_sety.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/vi_33_28_sety_y.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/vi_44_39_cg.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/vi_44_39_sety.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/vi_44_39_sety_y.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/feature_tests.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/code/CMakeFiles/jssp.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/code/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/branch.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/branch.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/python/compact.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/compact.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/cplex.log" beforeDir="false" afterPath="$PROJECT_DIR$/python/cplex.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/ft06_modelMCLin.lp" beforeDir="false" afterPath="$PROJECT_DIR$/python/ft06_modelMCLin.lp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/python/gurobi.log" beforeDir="false" afterPath="$PROJECT_DIR$/python/gurobi.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/instancesft06_modelMCLin.lp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/instancesla02_modelMCLin.lp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/inst_teste.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/python/inst_teste.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/python/jssp_compact.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/jssp_compact.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/node.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/node.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/python/sol.sol" beforeDir="false" afterPath="$PROJECT_DIR$/python/sol.sol" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/sol1.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/sol1.sol" beforeDir="false" afterPath="$PROJECT_DIR$/python/sol1.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/teste.log" beforeDir="false" afterPath="$PROJECT_DIR$/python/teste.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/python/teste.lp" beforeDir="false" afterPath="$PROJECT_DIR$/python/teste.lp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/teste.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/teste.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/teste1.lp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/testenode.lp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/testenodemodify.lp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/testep1depth1.lp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/testep1depth2.lp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/testep1depth7.lp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/testep1depth8.lp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/testep1node0.lp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/testep2depth1.lp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/testep2depth2.lp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/testep2depth7.lp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/testep2depth8.lp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/testep2node0.lp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/testnode.lp" beforeDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -87,7 +32,6 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FavoritesManager">
     <favorites_list name="jssp" />
   </component>
@@ -149,10 +93,15 @@
     <option name="height" value="705" />
   </component>
   <component name="ProjectId" id="1V4qLzAMvSzCdytWBr4JY2pryZ0" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/python/jssp_compact.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
@@ -160,18 +109,6 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/python" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration name="jssp" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="ft06 55 1 Fe" PASS_PARENT_ENVS_2="true" PROJECT_NAME="jssp" TARGET_NAME="jssp" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="jssp" RUN_TARGET_NAME="jssp">
@@ -183,6 +120,7 @@
       </method>
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -262,7 +200,6 @@
           <value>
             <State>
               <option name="BEK_SORT_TYPE" value="1" />
-              <option name="COLUMN_ORDER" />
             </State>
           </value>
         </entry>
@@ -282,9 +219,9 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <MESSAGE value="teste" />
     <MESSAGE value="python cuts compact formulation" />
     <MESSAGE value="python cuts compact formulation - cuts" />

@@ -1040,7 +1040,7 @@ class Node:
                 self.totalCG += 1
                 if self.totalCG > 50:
                     continue
-                self.mip += r, 'gomory{}n{}'.format(self.totalCG, self.node)
+                self.mip += r, 'cut_gomory{}n{}'.format(self.totalCG, self.node)
             self.mip.optimize()
             self.mip.write('teste.lp')
             cg = self.chvatal_gomory()
@@ -1049,7 +1049,7 @@ class Node:
     def chvatal_gomory(self):
         m = self.m_aux
         model = self.model
-        m.clear
+        m.clear()
         m.verbose = 0
         m.max_seconds = 60
         eps = 0.0001
@@ -1066,7 +1066,7 @@ class Node:
             else:
                 zero.append(i)
 
-        constrs = [c for c in model.constrs if not c.name.startswith('gomory')]
+        constrs = [c for c in model.constrs if not c.name.startswith('cut_gomory')]
 
         u = [m.add_var(var_type=CONTINUOUS, lb=(0, -1 + delta)[constrs[i].expr.sense == '='], ub=1 - delta,
                        name='u({})'.format(constrs[i].name)) for i in range(len(constrs))]
